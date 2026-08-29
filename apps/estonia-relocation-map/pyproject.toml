@@ -1,0 +1,43 @@
+[project]
+name = "estonia-relocation-map"
+version = "1.0.0"
+description = "Interactive relocation map for Estonia: verified tech employers, district rents and safety, public transport, and walking distance to big discount supermarkets."
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+    # Reads the Geofabrik Estonia PBF extract. Needs compiled bindings —
+    # `pip install osmium` pulls a wheel on macOS/Linux; on Windows use conda.
+    "osmium>=3.6",
+    # Polygon validity and seamlessness checks in the boundary pipeline.
+    "shapely>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# The data pipeline bootstraps sys.path before importing its siblings, so its
+# imports genuinely cannot all sit at the top of the file.
+"scripts/*.py" = ["E402"]
+# Legacy data modules: large hand-maintained literals, not logic.
+"scripts/*_companies_data.py" = ["E501", "E741"]
+"scripts/*_transit_routes.py" = ["E501", "E741"]
+# Dense lookup tables where one statement per line hurts rather than helps
+# readability — these are data, laid out to be read as a table.
+"scripts/build_safety_scores.py" = ["E402", "E701"]
+"scripts/fetch_osm_asum_boundaries.py" = ["E402", "E702"]

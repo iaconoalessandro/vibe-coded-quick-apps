@@ -8,8 +8,8 @@ with circular station nodes.
 ==============================================================================
 """
 
-import os
 import json
+import os
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
@@ -64,7 +64,7 @@ NARVA_TECH_CLUSTERS = [
         "desc": "University of Tartu Narva College, Tehnopol Startup Incubator, //kood talent hub, and OBJEKT creative lab.",
         "polygons": [
             [
-                [59.3770, 28.1930], [59.3820, 28.1920], [59.3850, 28.1960], 
+                [59.3770, 28.1930], [59.3820, 28.1920], [59.3850, 28.1960],
                 [59.3840, 28.2070], [59.3780, 28.2040], [59.3750, 28.2010], [59.3770, 28.1930]
             ]
         ]
@@ -77,7 +77,7 @@ NARVA_TECH_CLUSTERS = [
         "desc": "Aquaphor R&D mega-plant, NPM rare earth magnetics factory, Stera mechatronics, and IVIA incubator.",
         "polygons": [
             [
-                [59.3780, 28.1400], [59.3785, 28.1560], [59.3720, 28.1650], 
+                [59.3780, 28.1400], [59.3785, 28.1560], [59.3720, 28.1650],
                 [59.3620, 28.1630], [59.3560, 28.1500], [59.3580, 28.1350], [59.3780, 28.1400]
             ]
         ]
@@ -90,7 +90,7 @@ NARVA_TECH_CLUSTERS = [
         "desc": "Monumental 19th-century industrial revitalization: creative offices, startup residencies, and cultural spaces.",
         "polygons": [
             [
-                [59.3670, 28.1750], [59.3680, 28.2040], [59.3520, 28.2030], 
+                [59.3670, 28.1750], [59.3680, 28.2040], [59.3520, 28.2030],
                 [59.3530, 28.1750], [59.3670, 28.1750]
             ]
         ]
@@ -103,7 +103,7 @@ NARVA_TECH_CLUSTERS = [
         "desc": "Enefit Power green hydrogen pilot, carbon capture research, and Elering Baltic synchronous grid terminal.",
         "polygons": [
             [
-                [59.3400, 28.1150], [59.3450, 28.1400], [59.3300, 28.1450], 
+                [59.3400, 28.1150], [59.3450, 28.1400], [59.3300, 28.1450],
                 [59.3250, 28.1200], [59.3400, 28.1150]
             ]
         ]
@@ -129,7 +129,7 @@ NARVA_DISTRICT_LABELS = [
     {"name": "KADASTIKU", "lat": 59.3675, "lon": 28.1480, "type": "sub"},
     {"name": "KULGU", "lat": 59.3560, "lon": 28.1640, "type": "sub"},
     {"name": "ELEKTRIJAAMA", "lat": 59.3360, "lon": 28.1150, "type": "sub"},
-    
+
     # Tech Hub Labels
     {"name": "🎓 TÜ NARVA KOLLEDŽ", "lat": 59.3794, "lon": 28.1965, "type": "tech_hub"},
     {"name": "🚀 TEHNOPOL NARVA", "lat": 59.3785, "lon": 28.1970, "type": "tech_hub"},
@@ -200,14 +200,16 @@ NARVA_TRAIN_LINES = {
 NARVA_BUS_ROUTES = {}
 if os.path.exists(TRANSIT_JSON_PATH):
     try:
-        with open(TRANSIT_JSON_PATH, "r", encoding="utf-8") as f:
+        with open(TRANSIT_JSON_PATH, encoding="utf-8") as f:
             NARVA_BUS_ROUTES = json.load(f)
     except Exception as e:
         print(f"Error loading {TRANSIT_JSON_PATH}: {e}")
 
 if not NARVA_BUS_ROUTES:
-    from build_narva_transit_network import NARVA_TRANSIT_CONFIG, route_via_osrm, clean_and_dedup, clean_reversals, douglas_peucker, apply_clean_parallel_offset
-    for key, num, label, color, offset_m, group, name_override, fallback_wp in NARVA_TRANSIT_CONFIG:
+    from build_narva_transit_network import (
+        NARVA_TRANSIT_CONFIG,
+    )
+    for key, num, label, color, _offset_m, group, name_override, fallback_wp in NARVA_TRANSIT_CONFIG:
         NARVA_BUS_ROUTES[key] = {
             "id": key,
             "num": num,

@@ -1,0 +1,491 @@
+html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            background-color: #0f172a;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+            background-color: #0f172a;
+        }
+        
+        /* FIXED LEFT VERTICAL CITY RAIL (same glassmorphic treatment) */
+        #city-selector-bar {
+            position: fixed;
+            top: 50%;
+            left: 16px;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+            padding: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+            color: #f8fafc;
+            width: 186px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        #city-selector-bar::-webkit-scrollbar { width: 5px; }
+        #city-selector-bar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.18); border-radius: 3px; }
+        .city-label-tag {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            color: #94a3b8;
+            padding: 2px 4px 6px 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.10);
+            margin-bottom: 2px;
+        }
+        .city-toggle-btn {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 3px solid transparent;
+            color: #cbd5e1;
+            padding: 8px 10px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+            transition: all 0.18s ease;
+            user-select: none;
+            text-align: left;
+            width: 100%;
+        }
+        .city-toggle-btn:hover {
+            background: rgba(51, 65, 85, 0.9);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .city-toggle-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #60a5fa;
+            border-left-color: #bfdbfe;
+            box-shadow: 0 0 14px rgba(37, 99, 235, 0.55);
+        }
+        .city-btn-name { display: flex; align-items: center; gap: 6px; font-size: 12.5px; line-height: 1.15; }
+        .city-count-badge {
+            font-size: 9.5px;
+            background: rgba(0, 0, 0, 0.28);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 600;
+            opacity: 0.92;
+            letter-spacing: 0.2px;
+        }
+        .city-rail-note {
+            font-size: 9.5px;
+            color: #94a3b8;
+            line-height: 1.35;
+            padding: 6px 4px 2px 4px;
+            border-top: 1px solid rgba(255,255,255,0.10);
+            margin-top: 2px;
+        }
+        @media (max-height: 620px) {
+            #city-selector-bar { top: 12px; transform: none; }
+        }
+        .meme-toggle-btn {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .meme-toggle-btn:hover {
+            background: rgba(51, 65, 85, 0.9);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-1px);
+        }
+        .meme-toggle-btn.active {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 14px rgba(236, 72, 153, 0.6), 0 0 4px rgba(139, 92, 246, 0.6);
+            animation: meme-pulse 2s infinite ease-in-out;
+        }
+        @keyframes meme-pulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(236, 72, 153, 0.5), 0 0 4px rgba(139, 92, 246, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.85), 0 0 8px rgba(59, 130, 246, 0.85); }
+        }
+
+        /* District & Neighborhood Watermark Labels */
+        .district-label-major {
+            color: rgba(226, 232, 240, 0.40);
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.95);
+            pointer-events: none;
+            user-select: none;
+        }
+        .district-label-tech {
+            color: rgba(56, 189, 248, 0.60);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 3px rgba(0,0,0,0.95);
+            pointer-events: none;
+            user-select: none;
+        }
+        .district-label-sub {
+            color: rgba(203, 213, 225, 0.40);
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 0 3px rgba(0,0,0,0.95);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* COMPACT PRICE-ONLY BADGE */
+        .rent-price-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            color: #ffffff;
+            border: 1.5px solid;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.65);
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .rent-price-pill:hover {
+            transform: scale(1.12);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.85);
+        }
+        /* Rent bands — one national €/m² scale, identical in every city.
+           Derived from the verified median by scripts/verify_rental_prices.py,
+           so the pill colour always matches the number printed on it. */
+        .pill-premium    { background: rgba(107, 33, 168, 0.95); border-color: #c084fc; color: #f3e8ff; }
+        .pill-high       { background: rgba(55, 48, 163, 0.95);  border-color: #818cf8; color: #eef2ff; }
+        .pill-mid        { background: rgba(30, 64, 175, 0.95);  border-color: #60a5fa; color: #eff6ff; }
+        .pill-affordable { background: rgba(17, 94, 89, 0.95);   border-color: #2dd4bf; color: #ecfeff; }
+        .pill-budget     { background: rgba(6, 95, 70, 0.95);    border-color: #34d399; color: #ecfdf5; }
+        .pill-value      { background: rgba(63, 98, 18, 0.95);   border-color: #a3e635; color: #f7fee7; }
+        #rent_legend_bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+            padding: 6px 10px 8px 10px;
+            font-size: 9.5px;
+            color: #cbd5e1;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        #rent_legend_bar .swatch {
+            display: inline-block;
+            width: 9px; height: 9px;
+            border-radius: 2px;
+            margin-right: 3px;
+            vertical-align: -1px;
+            border: 1px solid rgba(255,255,255,0.35);
+        }
+        .rent-val {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: -0.2px;
+        }
+        .rent-unit {
+            font-size: 10px;
+            font-weight: 600;
+            opacity: 0.85;
+        }
+
+        /* DISTRICT SAFETY 5-TIER FACE BADGE */
+        .safety-face-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.85));
+            transition: transform 0.15s ease, filter 0.15s ease;
+            user-select: none;
+        }
+        .safety-face-badge:hover {
+            transform: scale(1.20);
+            filter: drop-shadow(0 7px 20px rgba(0,0,0,0.98));
+        }
+        .safety-score-pill {
+            margin-top: -6px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1.5px solid rgba(255, 255, 255, 0.45);
+            color: #ffffff;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 1.5px 6px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.7);
+            white-space: nowrap;
+        }
+
+        /* Glassmorphism Nested Sidebar */
+        #nested-layer-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 340px;
+            max-height: 88vh;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 12px;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+            color: #f8fafc;
+            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .panel-header {
+            padding: 12px 14px;
+            background: rgba(30, 41, 59, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+        }
+        .permanent-badge {
+            font-size: 10px;
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.35);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        #panel-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 6px 8px;
+        }
+        #panel-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        #panel-body::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 3px;
+        }
+        .accordion-group {
+            margin-bottom: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            background: rgba(30, 41, 59, 0.4);
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 8px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(30, 41, 59, 0.6);
+            cursor: pointer;
+            user-select: none;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        .accordion-header:hover {
+            background: rgba(51, 65, 85, 0.7);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .accordion-arrow {
+            font-size: 10px;
+            color: #94a3b8;
+        }
+        .accordion-content {
+            display: none;
+            padding: 4px 8px 8px 12px;
+            background: rgba(15, 23, 42, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .accordion-content.open {
+            display: block;
+        }
+        .accordion-subgroup {
+            margin: 4px 0 4px 2px;
+            border-left: 2px solid rgba(255, 255, 255, 0.12);
+            border-radius: 0 4px 4px 0;
+            background: rgba(15, 23, 42, 0.35);
+        }
+        .subgroup-header {
+            padding: 5px 8px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #e2e8f0;
+            user-select: none;
+            transition: background 0.15s ease;
+        }
+        .subgroup-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .subgroup-content {
+            display: none;
+            padding: 2px 4px 6px 8px;
+        }
+        .subgroup-content.open {
+            display: block;
+        }
+        .subsubgroup {
+            margin: 3px 0 3px 4px;
+            border-left: 2px solid rgba(59, 130, 246, 0.35);
+            border-radius: 0 4px 4px 0;
+            background: rgba(15, 23, 42, 0.25);
+        }
+        .subsubgroup-header {
+            padding: 4px 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #cbd5e1;
+            user-select: none;
+            transition: background 0.15s ease;
+        }
+        .subsubgroup-header:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .subsubgroup-content {
+            display: none;
+            padding: 2px 4px 4px 6px;
+        }
+        .subsubgroup-content.open {
+            display: block;
+        }
+        .nested-item {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .custom-checkbox, .custom-radio {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+            width: 100%;
+        }
+        .custom-checkbox input, .custom-radio input {
+            cursor: pointer;
+            accent-color: #3b82f6;
+        }
+        .rent-item-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+        .rent-item-name {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        .rent-item-sub {
+            font-size: 10px;
+            color: #94a3b8;
+        }
+        .item-label {
+            font-size: 11.5px;
+            color: #cbd5e1;
+            line-height: 1.3;
+        }
+        .item-count {
+            font-size: 10px;
+            color: #94a3b8;
+        }
+        .color-dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 4px rgba(0,0,0,0.5);
+        }
+        .panel-footer {
+            padding: 8px 12px;
+            background: rgba(30, 41, 59, 0.85);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 6px;
+        }
+        .btn-quick {
+            flex: 1;
+            border: none;
+            color: white;
+            padding: 6px 0;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 11px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-quick:hover {
+            opacity: 0.9;
+        }
+
+        /* Leaflet Popup Styling */
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            padding: 0;
+            overflow: hidden;
+        }
+        .leaflet-popup-content {
+            margin: 0;
+        }
+        .leaflet-div-icon {
+            background: transparent !important;
+            border: none !important;
+        }

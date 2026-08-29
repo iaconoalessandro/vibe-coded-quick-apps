@@ -10,9 +10,9 @@ a local pass over the full Estonia extract. Run:
 Produces every raw slice the district / park / transit builders consume.
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
 from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -21,7 +21,10 @@ if SCRIPT_DIR not in sys.path:
 
 import osmium
 from osm_pipeline_common import (
-    ensure_pbf, save_cache, cache_path, CITY_BBOX, ring_area_m2,
+    CITY_BBOX,
+    ensure_pbf,
+    ring_area_m2,
+    save_cache,
 )
 
 # ---------------------------------------------------------------------------

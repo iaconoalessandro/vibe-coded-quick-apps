@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dev tooling
+        # The build and the tests read committed JSON only — osmium and
+        # shapely are needed to regenerate that data, not to verify it.
+        run: pip install pytest ruff
+
+      - name: Lint Python
+        run: ruff check scripts build.py tests
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check static/app.js
+          node --check static/features.js
+
+      - name: Build
+        run: python build.py --no-exports
+
+      - name: Test
+        run: python -m pytest
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: map-build
+          path: dist/
+          retention-days: 14

@@ -31,12 +31,12 @@ Features:
 ==============================================================================
 """
 
-import os
-import sys
 import json
-import zipfile
+import os
 import re
+import sys
 import xml.etree.ElementTree as ET
+import zipfile
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR) if os.path.basename(SCRIPT_DIR) == "scripts" else SCRIPT_DIR
@@ -138,7 +138,7 @@ def load_exact_district_boundaries():
     """Loads 100% exact official OpenStreetMap street-delimited district polygons."""
     fpath = get_data_path("tallinn_exact_district_boundaries.json")
     if os.path.exists(fpath):
-        with open(fpath, "r", encoding="utf-8") as f:
+        with open(fpath, encoding="utf-8") as f:
             return json.load(f)
     return []
 
@@ -149,7 +149,7 @@ def load_exact_safety_dataset():
     """Loads 100% official OSM street-delimited district safety dataset."""
     fpath = get_data_path("district_safety_data_official.json")
     if os.path.exists(fpath):
-        with open(fpath, "r", encoding="utf-8") as f:
+        with open(fpath, encoding="utf-8") as f:
             return json.load(f)
     return []
 
@@ -195,7 +195,7 @@ TRANSIT_HUBS = [
 def load_tech_cluster_boundaries():
     """Loads the real OSM footprints for the tech clusters (see build_tech_cluster_boundaries.py)."""
     if os.path.exists("tallinn_tech_cluster_boundaries.json"):
-        with open("tallinn_tech_cluster_boundaries.json", "r", encoding="utf-8") as f:
+        with open("tallinn_tech_cluster_boundaries.json", encoding="utf-8") as f:
             return json.load(f)
     return []
 
@@ -362,7 +362,7 @@ def load_exact_transit_routes():
     """Loads exact turn-by-turn road-following bus and trolley routes."""
     fpath = get_data_path("tallinn_exact_transit_routes.json")
     if os.path.exists(fpath):
-        with open(fpath, "r", encoding="utf-8") as f:
+        with open(fpath, encoding="utf-8") as f:
             return json.load(f)
     return {}
 
@@ -371,7 +371,7 @@ def load_parks_data():
     """Loads clean OSM park polygon boundaries for Tallinn."""
     fpath = get_data_path("tallinn_parks_clean.json")
     if os.path.exists(fpath):
-        with open(fpath, "r", encoding="utf-8") as f:
+        with open(fpath, encoding="utf-8") as f:
             return json.load(f)
     return []
 
@@ -383,7 +383,7 @@ def generate_standalone_map(output_html=None):
     semi-transparent district perimeter polygons, and 2-line separated price badges.
     """
     print("Compiling 100% Interactive Standalone Tallinn Tech Map with Separated District Shading & Badges...")
-    
+
     # 1. Prepare Categories
     categories = sorted(list(set(c["category"] for c in COMPANIES_DATA)))
     cat_registry = {}
@@ -437,7 +437,7 @@ def generate_standalone_map(output_html=None):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tallinn Tech & Public Transit Map</title>
-    
+
     <!-- Leaflet CDN with offline fallback -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
@@ -457,7 +457,7 @@ def generate_standalone_map(output_html=None):
             height: 100%;
             background-color: #0f172a;
         }}
-        
+
         /* District & Neighborhood Watermark Labels */
         .district-label-major {{
             color: rgba(226, 232, 240, 0.40);
@@ -886,7 +886,7 @@ def generate_standalone_map(output_html=None):
                     <span class="accordion-arrow">▶</span>
                 </div>
                 <div id="body_transport" class="accordion-content">
-                    
+
                     <!-- A. BUS SUB-ACCORDION -->
                     <div class="accordion-subgroup">
                         <div class="subgroup-header" onclick="toggleAccordion('sub_bus', this)">
@@ -897,7 +897,7 @@ def generate_standalone_map(output_html=None):
                             <span class="accordion-arrow">▶</span>
                         </div>
                         <div id="sub_bus" class="subgroup-content">
-                            
+
                             <!-- A1. Key Center -->
                             <div class="subsubgroup">
                                 <div class="subsubgroup-header" onclick="toggleAccordion('body_bus_key', this)">
@@ -1208,7 +1208,7 @@ def generate_standalone_map(output_html=None):
     const safetyContainer = document.getElementById('body_safety');
     SAFETY_DATA.forEach(s => {{
         const lg = L.layerGroup();
-        
+
         // Exact street/coast delimited polygon
         if (s.polygons && s.polygons.length > 0) {{
             s.polygons.forEach(pCoords => {{
@@ -1227,7 +1227,7 @@ def generate_standalone_map(output_html=None):
             ${{getFaceSvg(s.face_type, 34)}}
             <div class="safety-score-pill">${{s.mean_score.toFixed(1)}}</div>
         </div>`;
-        
+
         const faceIcon = L.divIcon({{
             html: faceHtml,
             className: '',
@@ -1270,7 +1270,7 @@ def generate_standalone_map(output_html=None):
                 ${{renderParamRow('🍺 Public Sobriety & Order', s.scores.drunkenness, s.drunkenness_desc)}}
                 ${{renderParamRow('⚖️ Homicides & Sexual Offenses', s.scores.severe_crimes, s.severe_crimes_desc)}}
                 ${{renderParamRow('📊 Demographic & Immigrant Factor', s.scores.demographics, s.demographics_desc)}}
-                
+
                 <div style="margin-top: 8px; padding: 6px 8px; background: #f0fdf4; border-radius: 4px; border-left: 3px solid ${{s.color}};">
                     <div style="font-size: 11px; color: #166534;">
                         💡 <b>Living Verdict:</b> ${{s.verdict}}
@@ -1306,7 +1306,7 @@ def generate_standalone_map(output_html=None):
     const rentalContainer = document.getElementById('body_rental');
     RENTALS_DATA.forEach(r => {{
         const lg = L.layerGroup();
-        
+
         // 5.1 Exact Street/Coast/Railway Delimited Official Polygons
         if (r.polygons && r.polygons.length > 0) {{
             r.polygons.forEach(polyCoords => {{
@@ -1326,7 +1326,7 @@ def generate_standalone_map(output_html=None):
             <span class="rent-val">€${{r.mean_sqm}}</span>
             <span class="rent-unit">/ m²</span>
         </div>`;
-        
+
         const badgeIcon = L.divIcon({{
             html: badgeHtml,
             className: '',
@@ -1357,11 +1357,11 @@ def generate_standalone_map(output_html=None):
                     🚍 <b>Tech Commute:</b> ${{r.tech_commute}}
                 </div>
                 <div style="display: flex; gap: 6px;">
-                    <a href="${{r.kv_link}}" target="_blank" 
+                    <a href="${{r.kv_link}}" target="_blank"
                        style="flex: 1; text-align: center; background: #ea580c; color: white; text-decoration: none; padding: 6px 0; border-radius: 4px; font-size: 11px; font-weight: 700;">
                         🔎 KV.ee Listings
                     </a>
-                    <a href="${{r.city24_link}}" target="_blank" 
+                    <a href="${{r.city24_link}}" target="_blank"
                        style="flex: 1; text-align: center; background: #0284c7; color: white; text-decoration: none; padding: 6px 0; border-radius: 4px; font-size: 11px; font-weight: 700;">
                         🏢 City24 Listings
                     </a>
@@ -1397,7 +1397,7 @@ def generate_standalone_map(output_html=None):
         let className = 'district-label-sub';
         if (d.type === 'major') className = 'district-label-major';
         if (d.type === 'tech_hub') className = 'district-label-tech';
-        
+
         const labelIcon = L.divIcon({{
             className: className,
             html: d.name,
@@ -1448,7 +1448,7 @@ def generate_standalone_map(output_html=None):
     Object.keys(CATEGORIES_DATA).forEach(catName => {{
         const catInfo = CATEGORIES_DATA[catName];
         const lg = L.layerGroup();
-        
+
         catInfo.companies.forEach(c => {{
             const markerHtml = `<div style="
                 background-color: ${{c.color}}; color: white; width: 26px; height: 26px; border-radius: 50%;
@@ -1456,7 +1456,7 @@ def generate_standalone_map(output_html=None):
                 border: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.4); cursor: pointer;
             ">${{c.icon}}</div>`;
             const customIcon = L.divIcon({{html: markerHtml, className: '', iconSize: [26, 26], iconAnchor: [13, 13]}});
-            
+
             const popupHtml = `<div style="font-family: sans-serif; width: 280px; line-height: 1.4;">
                 <div style="background-color: ${{c.color}}; color: white; padding: 8px 12px; border-radius: 6px 6px 0 0;">
                     <span style="font-size: 15px; font-weight: 700;">${{c.icon}} ${{c.name}}</span>
@@ -1478,7 +1478,7 @@ def generate_standalone_map(output_html=None):
                         <div style="color: #14532d; font-size: 11px; font-weight: 600; margin-top: 2px;">${{c.transit}}</div>
                     </div>
                     <div style="margin-top: 8px; display: flex; gap: 6px;">
-                        <a href="https://www.google.com/maps/search/?api=1&query=${{c.lat}},${{c.lon}}" target="_blank" 
+                        <a href="https://www.google.com/maps/search/?api=1&query=${{c.lat}},${{c.lon}}" target="_blank"
                            style="flex: 1; text-align: center; background: #2563eb; color: white; text-decoration: none; padding: 5px 0; border-radius: 4px; font-size: 11px; font-weight: 600;">
                             🗺️ Google Maps
                         </a>
@@ -1489,15 +1489,15 @@ def generate_standalone_map(output_html=None):
                     </div>
                 </div>
             </div>`;
-            
+
             L.marker([c.lat, c.lon], {{icon: customIcon}})
                 .bindPopup(popupHtml, {{maxWidth: 320}})
                 .bindTooltip(`<b>${{c.name}}</b> (${{c.district}})<br><span style="color:gray;">${{c.address}}</span>`, {{sticky: true}})
                 .addTo(lg);
         }});
-        
+
         LAYERS['layer_' + catInfo.id] = lg;
-        
+
         // Append nested checkbox in sidebar
         const itemHtml = `<div class="nested-item">
             <label class="custom-checkbox">
@@ -1523,9 +1523,9 @@ def generate_standalone_map(output_html=None):
                 lineCap: 'round',
                 lineJoin: 'round'
             }}).bindTooltip(`<b style="color:${{t.color}};">${{t.label}}</b><br>Route: ${{t.name || 'Transit Line'}}`, {{sticky: true}}).addTo(lg);
-            
+
             LAYERS['layer_' + key] = lg;
-            
+
             const cbCall = callbackName ? `${{callbackName}}();` : '';
             const itemHtml = `<div class="nested-item">
                 <label class="custom-checkbox">
@@ -1546,7 +1546,7 @@ def generate_standalone_map(output_html=None):
         Object.keys(trainDict).forEach(key => {{
             const item = trainDict[key];
             const lg = L.layerGroup();
-            
+
             // 1. Train track line
             L.polyline(item.coords, {{
                 color: item.color,
@@ -1574,7 +1574,7 @@ def generate_standalone_map(output_html=None):
                         iconSize: [size, size],
                         iconAnchor: [size / 2, size / 2]
                     }});
-                    
+
                     const popupHtml = `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; min-width: 210px; line-height: 1.4;">
                         <div style="background-color: ${{item.color}}; color: white; padding: 6px 10px; font-weight: bold; font-size: 12px; border-radius: 4px 4px 0 0;">
                             🚆 ${{st.name}} Station
@@ -1584,7 +1584,7 @@ def generate_standalone_map(output_html=None):
                             <div style="color: #475569; font-size: 11px;">${{st.desc || 'Elron Commuter Station'}}</div>
                         </div>
                     </div>`;
-                    
+
                     L.marker([st.lat, st.lon], {{icon: dotIcon, zIndexOffset: 2000}})
                         .bindPopup(popupHtml, {{maxWidth: 280}})
                         .bindTooltip(`🚆 <b>${{st.name}}</b><br><span style="font-size:10px; color:#cbd5e1;">Commuter Rail Station</span>`, {{sticky: true}})
@@ -1655,7 +1655,7 @@ def generate_standalone_map(output_html=None):
         updateParentCheck('parent_bus_key', 'body_bus_key');
         updateParentCheck('parent_bus_suburb', 'body_bus_suburb');
         updateParentCheck('parent_bus_outside', 'body_bus_outside');
-        
+
         const parentBusAll = document.getElementById('parent_bus_all');
         const busContainers = ['body_bus_key', 'body_bus_suburb', 'body_bus_outside'];
         const allBusChecks = [];
@@ -1692,12 +1692,12 @@ def generate_standalone_map(output_html=None):
         toggleAllInGroup('body_trolleys', state);
         toggleAllInGroup('body_rail', state);
         toggleAllInGroup('body_trams', state);
-        
+
         const parentTransport = document.getElementById('parent_transport');
         const parentTrolleys = document.getElementById('parent_trolleys');
         const parentRail = document.getElementById('parent_rail');
         const parentTrams = document.getElementById('parent_trams');
-        
+
         if (parentTransport) parentTransport.checked = state;
         if (parentTrolleys) parentTrolleys.checked = state;
         if (parentRail) parentRail.checked = state;
@@ -1766,17 +1766,17 @@ def generate_standalone_map(output_html=None):
 
     if not output_html:
         output_html = os.path.join(ROOT_DIR, "index.html")
-    
+
     with open(output_html, 'w', encoding='utf-8') as f:
         f.write(html_template)
     print(f"Map successfully generated as: {output_html}")
-    
+
     alt_html = os.path.join(ROOT_DIR, "tallinn_tech_transit_map.html")
     if output_html != alt_html:
         with open(alt_html, 'w', encoding='utf-8') as f:
             f.write(html_template)
         print(f"Map copy successfully generated as: {alt_html}")
-        
+
     return output_html
 
 
@@ -1793,7 +1793,7 @@ def export_kml_kmz(kml_out=None, kmz_out=None):
     print("Exporting KML & KMZ files for offline mapping apps...")
     kml = ET.Element('kml', xmlns='http://www.opengis.net/kml/2.2')
     doc = ET.SubElement(kml, 'Document')
-    
+
     doc_name = ET.SubElement(doc, 'name')
     doc_name.text = 'Tallinn Tech & R&D Hubs (59 Companies)'
     doc_desc = ET.SubElement(doc, 'description')
@@ -1809,10 +1809,10 @@ def export_kml_kmz(kml_out=None, kmz_out=None):
 
     for c in COMPANIES_DATA:
         pm = ET.SubElement(folder_map[c["category"]], 'Placemark')
-        
+
         name_elem = ET.SubElement(pm, 'name')
         name_elem.text = c["name"]
-        
+
         desc_elem = ET.SubElement(pm, 'description')
         desc_text = f"""<b>Company:</b> {c['name']}<br/>
 <b>Category:</b> {c['category']}<br/>
@@ -1821,7 +1821,7 @@ def export_kml_kmz(kml_out=None, kmz_out=None):
 <b>Engineering Focus:</b> {c['tech_focus']}<br/>
 <b>Transit Access:</b> {c['transit']}"""
         desc_elem.text = desc_text
-        
+
         pt = ET.SubElement(pm, 'Point')
         coords = ET.SubElement(pt, 'coordinates')
         coords.text = f"{c['lon']},{c['lat']},0"
@@ -1838,10 +1838,10 @@ def export_kml_kmz(kml_out=None, kmz_out=None):
 if __name__ == "__main__":
     # 1. Generate 100% Interactive Standalone Leaflet HTML Map with Separated District Shading & Badges
     html_file = generate_standalone_map()
-    
+
     # 2. Export KML and KMZ for mobile offline GPS navigation
     export_kml_kmz()
-    
+
     print("\n" + "="*78)
     print("ALL ASSETS GENERATED IN ORGANIZED FOLDERS:")
     print(f"1. Standalone Offline HTML Map (Main): {os.path.join(ROOT_DIR, 'index.html')}")

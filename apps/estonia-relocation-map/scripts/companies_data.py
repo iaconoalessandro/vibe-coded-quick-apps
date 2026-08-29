@@ -1,7 +1,3 @@
-import urllib.request
-import urllib.parse
-import json
-import time
 
 companies_raw = [
     # Page 1

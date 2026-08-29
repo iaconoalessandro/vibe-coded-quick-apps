@@ -1,8 +1,7 @@
-import urllib.request
 import json
 import math
 import time
-import os
+import urllib.request
 
 print("Downloading official stops from transport.tallinn.ee...")
 req = urllib.request.Request('https://transport.tallinn.ee/data/stops.txt', headers={'User-Agent': 'Mozilla/5.0'})
@@ -120,15 +119,15 @@ def clean_reversals(points):
         p_prev = cleaned[-1]
         p_curr = points[i]
         p_next = points[i+1]
-        
+
         v1 = (p_curr[0] - p_prev[0], p_curr[1] - p_prev[1])
         v2 = (p_next[0] - p_curr[0], p_next[1] - p_curr[1])
         l1 = math.hypot(*v1)
         l2 = math.hypot(*v2)
-        
+
         if l1 < 0.00005 or l2 < 0.00005:
             continue
-            
+
         dot = (v1[0]*v2[0] + v1[1]*v2[1]) / (l1 * l2)
         if dot < -0.6:  # Sharp >125 degree backtracking spike
             continue
@@ -140,7 +139,7 @@ def douglas_peucker(points, tol=0.00006):
     """Simplifies polyline to remove micro-jitter while preserving road curves."""
     if len(points) <= 2:
         return points
-        
+
     def point_line_dist(pt, start, end):
         if start == end:
             return math.hypot(pt[0]-start[0], pt[1]-start[1])
@@ -157,7 +156,7 @@ def douglas_peucker(points, tol=0.00006):
         if d > dmax:
             index = i
             dmax = d
-            
+
     if dmax > tol:
         rec1 = douglas_peucker(points[:index+1], tol)
         rec2 = douglas_peucker(points[index:], tol)
@@ -171,13 +170,13 @@ def apply_clean_parallel_offset(coords, offset_meters):
     """
     if offset_meters == 0 or len(coords) < 2:
         return coords
-    
+
     m_per_lat = 111139.0
     m_per_lon = 56500.0
-    
+
     offset_coords = []
     n = len(coords)
-    
+
     for i in range(n):
         if i == 0:
             dx = (coords[1][1] - coords[0][1]) * m_per_lon
@@ -188,19 +187,19 @@ def apply_clean_parallel_offset(coords, offset_meters):
         else:
             dx = (coords[i+1][1] - coords[i-1][1]) * m_per_lon
             dy = (coords[i+1][0] - coords[i-1][0]) * m_per_lat
-            
+
         l = math.hypot(dx, dy)
         if l == 0:
             offset_coords.append(coords[i])
             continue
-            
+
         nx = -dy / l
         ny = dx / l
-        
+
         off_lat = coords[i][0] + (ny * offset_meters) / m_per_lat
         off_lon = coords[i][1] + (nx * offset_meters) / m_per_lon
         offset_coords.append([round(off_lat, 6), round(off_lon, 6)])
-        
+
     return offset_coords
 
 results = {}
@@ -209,14 +208,14 @@ for num, label, color, offset_val, cat in all_target_lines:
     if num not in parsed_routes:
         print(f"Skipping {num}: Not found in parsed routes")
         continue
-    
+
     direction = max(parsed_routes[num], key=lambda x: len(x["stops"]))
     stop_ids = direction["stops"]
     raw_stop_coords = [stops_dict[sid][:2] for sid in stop_ids if sid in stops_dict]
     stop_coords = clean_and_dedup(raw_stop_coords)
-    
+
     print(f"Processing {label} with {len(stop_coords)} deduplicated stops...")
-    
+
     full_road_path = []
     chunk_size = 12
     for i in range(0, len(stop_coords) - 1, chunk_size - 1):
@@ -242,20 +241,20 @@ for num, label, color, offset_val, cat in all_target_lines:
             else:
                 full_road_path.extend(chunk)
         time.sleep(0.3)
-    
+
     # 1. Clean U-turns and reversals
     clean_path = clean_reversals(full_road_path)
     clean_path = clean_reversals(clean_path)
-    
+
     # 2. Smooth polyline
     smoothed_path = douglas_peucker(clean_path, tol=0.00006)
-    
+
     # 3. Apply clean parallel offset in meters (1.6m per offset unit)
     offset_meters = offset_val * 1.6
     parallel_path = apply_clean_parallel_offset(smoothed_path, offset_meters)
-    
+
     print(f"  -> Generated {len(parallel_path)} clean road coordinates for {label}")
-    
+
     results[label] = {
         "num": num,
         "label": label,

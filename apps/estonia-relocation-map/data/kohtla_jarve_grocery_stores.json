@@ -1,0 +1,611 @@
+{
+ "stores": [
+  {
+   "name": "Lidl",
+   "chain": "lidl",
+   "chainLabel": "Lidl",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 1,
+   "format": "big",
+   "colour": "#0050AA",
+   "note": "Hard discounter — cheapest basket in Estonia. Large format, own-brand heavy.",
+   "lat": 59.350931,
+   "lon": 27.420629,
+   "street": "Puru tee",
+   "housenumber": "5",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "way/916605976"
+  },
+  {
+   "name": "Grossi Toidukaubad",
+   "chain": "grossi",
+   "chainLabel": "Grossi Toidukaubad",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 1,
+   "format": "small",
+   "colour": "#E4032E",
+   "note": "Cheapest basket alongside Lidl, but small-format — a top-up shop, not a weekly one. Strongest in Kohtla-Järve and Narva.",
+   "lat": 59.327484,
+   "lon": 27.420403,
+   "street": "",
+   "housenumber": "",
+   "hours": "",
+   "osmId": "node/614142268"
+  },
+  {
+   "name": "Grossi Toidukaubad",
+   "chain": "grossi",
+   "chainLabel": "Grossi Toidukaubad",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 1,
+   "format": "small",
+   "colour": "#E4032E",
+   "note": "Cheapest basket alongside Lidl, but small-format — a top-up shop, not a weekly one. Strongest in Kohtla-Järve and Narva.",
+   "lat": 59.329715,
+   "lon": 27.426241,
+   "street": "Estonia pst",
+   "housenumber": "30a",
+   "hours": "",
+   "osmId": "way/55786389"
+  },
+  {
+   "name": "Grossi Toidukaubad",
+   "chain": "grossi",
+   "chainLabel": "Grossi Toidukaubad",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 1,
+   "format": "small",
+   "colour": "#E4032E",
+   "note": "Cheapest basket alongside Lidl, but small-format — a top-up shop, not a weekly one. Strongest in Kohtla-Järve and Narva.",
+   "lat": 59.353204,
+   "lon": 27.411644,
+   "street": "Tartu mnt",
+   "housenumber": "15a",
+   "hours": "",
+   "osmId": "way/104504988"
+  },
+  {
+   "name": "Maxima X",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.35753,
+   "lon": 27.419109,
+   "street": "",
+   "housenumber": "",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/728599637"
+  },
+  {
+   "name": "Maxima X",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.358231,
+   "lon": 27.414097,
+   "street": "Keskväljak",
+   "housenumber": "4",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/728600350"
+  },
+  {
+   "name": "Maxima X",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.406584,
+   "lon": 27.2907,
+   "street": "Mõisa tee",
+   "housenumber": "3",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/7127823136"
+  },
+  {
+   "name": "Maxima X",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.402423,
+   "lon": 27.284618,
+   "street": "Keskallee",
+   "housenumber": "12",
+   "hours": "",
+   "osmId": "way/73513269"
+  },
+  {
+   "name": "Maxima XX",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.337984,
+   "lon": 27.420184,
+   "street": "",
+   "housenumber": "",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/4209704695"
+  },
+  {
+   "name": "Maxima XX",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.397924,
+   "lon": 27.285296,
+   "street": "",
+   "housenumber": "",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/4472745289"
+  },
+  {
+   "name": "Maxima XX",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 59.362086,
+   "lon": 27.401385,
+   "street": "Rakvere",
+   "housenumber": "29",
+   "hours": "",
+   "osmId": "way/148327355"
+  },
+  {
+   "name": "COOP Kohtla-Järve Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 59.396679,
+   "lon": 27.294959,
+   "street": "Outokumpu",
+   "housenumber": "13",
+   "hours": "Mo-Sa 09:00-21:00; Su 10:00-21:00",
+   "osmId": "way/73513232"
+  },
+  {
+   "name": "Coop",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 59.353715,
+   "lon": 27.419759,
+   "street": "Puru tee",
+   "housenumber": "1",
+   "hours": "08:00-22:00",
+   "osmId": "node/7041618586"
+  },
+  {
+   "name": "Coop Jõhvi Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 59.359529,
+   "lon": 27.429044,
+   "street": "Narva mnt",
+   "housenumber": "38",
+   "hours": "Mo-Sa 09:00-21:00; Su 10:00-21:00",
+   "osmId": "way/115641673"
+  },
+  {
+   "name": "Kohtla-Järve Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 59.401563,
+   "lon": 27.298084,
+   "street": "Järveküla tee",
+   "housenumber": "68",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/64835273"
+  },
+  {
+   "name": "Realiseerimiskeskus",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 59.359938,
+   "lon": 27.417569,
+   "street": "Vahe",
+   "housenumber": "5",
+   "hours": "Mo-Fr 09:00-19:00; Sa 10:00-18:00; Su 10:00-17:00",
+   "osmId": "way/60730184"
+  },
+  {
+   "name": "Rimi",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 59.407228,
+   "lon": 27.284893,
+   "street": "Põhja allee",
+   "housenumber": "4",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/7127823135"
+  },
+  {
+   "name": "Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 59.357357,
+   "lon": 27.418346,
+   "street": "Narva mnt",
+   "housenumber": "8",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/728600105"
+  },
+  {
+   "name": "A1000 Market",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.40326,
+   "lon": 27.297874,
+   "street": "",
+   "housenumber": "",
+   "hours": "Mo-Su 09:00-21:00",
+   "osmId": "node/613393563"
+  },
+  {
+   "name": "Ahtme kaubanduskeskus",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.327359,
+   "lon": 27.420606,
+   "street": "Maleva",
+   "housenumber": "23",
+   "hours": "",
+   "osmId": "way/55786386"
+  },
+  {
+   "name": "Ida Kapike",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.407297,
+   "lon": 27.284652,
+   "street": "Põhja allee",
+   "housenumber": "4",
+   "hours": "Mo-Fr 09:00-18:00",
+   "osmId": "node/12862554654"
+  },
+  {
+   "name": "JEWE",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.357527,
+   "lon": 27.418134,
+   "street": "",
+   "housenumber": "",
+   "hours": "",
+   "osmId": "node/1285778489"
+  },
+  {
+   "name": "Jõhvi Kaupmees",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.364951,
+   "lon": 27.400638,
+   "street": "Rakvere",
+   "housenumber": "38c",
+   "hours": "Mo-Fr 08:00-19:00; Sa 08:00-16:00",
+   "osmId": "way/1202589731"
+  },
+  {
+   "name": "Prestone kaubamaja",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 59.403249,
+   "lon": 27.297756,
+   "street": "Järveküla tee",
+   "housenumber": "87",
+   "hours": "",
+   "osmId": "way/59418916"
+  }
+ ],
+ "districtAccess": {
+  "Jõhvi Kesklinn (County Capital & //kood Campus)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 68,
+    "walkMinutes": 1
+   },
+   "nearestAny": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 68,
+    "walkMinutes": 1
+   }
+  },
+  "Järve Kesklinn (City Hall, Central Park & TalTech)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 390,
+    "walkMinutes": 6
+   },
+   "nearestAny": {
+    "name": "Prestone kaubamaja",
+    "chain": "Independent",
+    "metres": 214,
+    "walkMinutes": 3
+   }
+  },
+  "Kukruse (Historic Manor & Polar Center)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 3023,
+    "walkMinutes": 49
+   },
+   "nearestAny": {
+    "name": "Kohtla-Järve Selver",
+    "chain": "Selver",
+    "metres": 2524,
+    "walkMinutes": 41
+   }
+  },
+  "Tammiku (Suburban Oak Forest & Industrial Park)": {
+   "nearestBig": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 1443,
+    "walkMinutes": 23
+   },
+   "nearestAny": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 1443,
+    "walkMinutes": 23
+   }
+  },
+  "Puru (Central Hospital Campus & Southern Health)": {
+   "nearestBig": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 1711,
+    "walkMinutes": 28
+   },
+   "nearestAny": {
+    "name": "Grossi Toidukaubad",
+    "chain": "Grossi Toidukaubad",
+    "metres": 838,
+    "walkMinutes": 14
+   }
+  },
+  "Uusküla (Sinivoore Green Woods & Clean Tech)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 1724,
+    "walkMinutes": 28
+   },
+   "nearestAny": {
+    "name": "Ida Kapike",
+    "chain": "Independent",
+    "metres": 1392,
+    "walkMinutes": 23
+   }
+  },
+  "Ahtme / Iidla (High-Density Soviet Panel Quarter)": {
+   "nearestBig": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 3215,
+    "walkMinutes": 52
+   },
+   "nearestAny": {
+    "name": "Grossi Toidukaubad",
+    "chain": "Grossi Toidukaubad",
+    "metres": 2267,
+    "walkMinutes": 37
+   }
+  },
+  "Käva (Historic Mining Quarter & Industrial South)": {
+   "nearestBig": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 3227,
+    "walkMinutes": 52
+   },
+   "nearestAny": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 3227,
+    "walkMinutes": 52
+   }
+  },
+  "Oru (Pine Forest Settlement & Peat Industry)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 8402,
+    "walkMinutes": 137
+   },
+   "nearestAny": {
+    "name": "Coop Jõhvi Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 7814,
+    "walkMinutes": 127
+   }
+  },
+  "Sompa (Mining Heritage Exclave)": {
+   "nearestBig": {
+    "name": "Maxima XX",
+    "chain": "Maxima",
+    "metres": 6984,
+    "walkMinutes": 113
+   },
+   "nearestAny": {
+    "name": "COOP Kohtla-Järve Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 6906,
+    "walkMinutes": 112
+   }
+  }
+ },
+ "chains": {
+  "lidl": {
+   "label": "Lidl",
+   "tier": "discount_big",
+   "price_band": 1,
+   "colour": "#0050AA",
+   "note": "Hard discounter — cheapest basket in Estonia. Large format, own-brand heavy."
+  },
+  "prisma": {
+   "label": "Prisma",
+   "tier": "discount_big",
+   "price_band": 2,
+   "colour": "#00A94F",
+   "note": "Hypermarket. Full weekly shop, low prices, big non-food range."
+  },
+  "maxima": {
+   "label": "Maxima",
+   "tier": "discount_big",
+   "price_band": 2,
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop."
+  },
+  "grossi": {
+   "label": "Grossi Toidukaubad",
+   "tier": "standard",
+   "price_band": 1,
+   "colour": "#E4032E",
+   "note": "Cheapest basket alongside Lidl, but small-format — a top-up shop, not a weekly one. Strongest in Kohtla-Järve and Narva."
+  },
+  "rimi": {
+   "label": "Rimi",
+   "tier": "large",
+   "price_band": 3,
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store."
+  },
+  "selver": {
+   "label": "Selver",
+   "tier": "large",
+   "price_band": 3,
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format."
+  },
+  "coop": {
+   "label": "Coop / Konsum",
+   "tier": "standard",
+   "price_band": 3,
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs."
+  }
+ },
+ "tierLabels": {
+  "discount_big": "Big & cheap",
+  "large": "Large supermarket",
+  "standard": "Neighbourhood store"
+ },
+ "source": "OpenStreetMap via Overpass (ODbL)"
+}

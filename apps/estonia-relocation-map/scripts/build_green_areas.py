@@ -22,15 +22,15 @@ Output: data/<city>_parks_clean.json  ->  [{name, kind, category, coords}, ...]
 Run:    python3 scripts/build_green_areas.py
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from osm_pipeline_common import DATA_DIR, load_cache, douglas_peucker, CITY_LABEL
+from osm_pipeline_common import CITY_LABEL, DATA_DIR, douglas_peucker, load_cache
 
 OUT_FILE = {
     "tallinn": "tallinn_parks_clean.json",

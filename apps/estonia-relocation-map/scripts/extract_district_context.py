@@ -19,9 +19,9 @@ Output: data/osm_cache/district_context.json
 Run:    python3 scripts/extract_district_context.py
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
 from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -30,7 +30,12 @@ if SCRIPT_DIR not in sys.path:
 
 import osmium
 from osm_pipeline_common import (
-    DATA_DIR, ensure_pbf, save_cache, load_cache, CITY_BBOX, ring_area_m2, point_in_ring,
+    CITY_BBOX,
+    DATA_DIR,
+    ensure_pbf,
+    point_in_ring,
+    ring_area_m2,
+    save_cache,
 )
 
 RENT_FILE = {
@@ -125,7 +130,7 @@ def main():
         t = dict(o.tags)
         if not t:
             continue
-        am, sh, pt, bl = t.get("amenity"), t.get("shop"), t.get("public_transport"), t.get("building")
+        am, sh, _pt, _bl = t.get("amenity"), t.get("shop"), t.get("public_transport"), t.get("building")
         key = None
         if am in NIGHTLIFE:
             key = "nightlife"

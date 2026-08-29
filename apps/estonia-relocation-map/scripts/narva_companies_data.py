@@ -2,7 +2,7 @@
 ==============================================================================
 NARVA VERIFIED TECH HUBS & INNOVATION ECOSYSTEM DATABASE
 ==============================================================================
-Comprehensive registry of verified tech companies, software agencies, 
+Comprehensive registry of verified tech companies, software agencies,
 robotics manufacturers, clean tech innovators, research institutes,
 and startup hubs operating in Narva, Estonia.
 ==============================================================================

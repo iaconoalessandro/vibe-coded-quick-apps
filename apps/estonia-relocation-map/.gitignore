@@ -13,3 +13,5 @@ data/osm_cache/
 
 # Build output (regenerate with `make build`)
 dist/
+
+# Build output — regenerate with `make build`

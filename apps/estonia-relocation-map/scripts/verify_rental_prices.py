@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 ==============================================================================
 RENTAL PRICE VERIFICATION AGAINST LIVE KV.EE + CITY24.EE LISTINGS
@@ -29,14 +28,14 @@ NOT presented as observed.
 Run: python3 scripts/verify_rental_prices.py
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
-from osm_pipeline_common import DATA_DIR, CITY_LABEL
+from osm_pipeline_common import CITY_LABEL, DATA_DIR
 
 CAPTURE_DATE = "2026-08-28"
 

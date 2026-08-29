@@ -16,16 +16,11 @@ Pipeline:
 ==============================================================================
 """
 
-import os
-import sys
 import json
 import math
+import os
 import time
 import urllib.request
-import zipfile
-import io
-import csv
-from collections import defaultdict
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(SCRIPT_DIR) if os.path.basename(SCRIPT_DIR) == "scripts" else SCRIPT_DIR
@@ -56,15 +51,15 @@ def clean_reversals(points):
         p_prev = cleaned[-1]
         p_curr = points[i]
         p_next = points[i+1]
-        
+
         v1 = (p_curr[0] - p_prev[0], p_curr[1] - p_prev[1])
         v2 = (p_next[0] - p_curr[0], p_next[1] - p_curr[1])
         l1 = math.hypot(*v1)
         l2 = math.hypot(*v2)
-        
+
         if l1 < 0.00005 or l2 < 0.00005:
             continue
-            
+
         dot = (v1[0]*v2[0] + v1[1]*v2[1]) / (l1 * l2)
         if dot < -0.6:  # Sharp >125 degree backtracking spike
             continue
@@ -76,7 +71,7 @@ def douglas_peucker(points, tol=0.00006):
     """Simplifies polyline to remove micro-jitter while preserving road curves."""
     if len(points) <= 2:
         return points
-        
+
     def point_line_dist(pt, start, end):
         if start == end:
             return math.hypot(pt[0]-start[0], pt[1]-start[1])
@@ -93,7 +88,7 @@ def douglas_peucker(points, tol=0.00006):
         if d > dmax:
             index = i
             dmax = d
-            
+
     if dmax > tol:
         rec1 = douglas_peucker(points[:index+1], tol)
         rec2 = douglas_peucker(points[index:], tol)
@@ -107,13 +102,13 @@ def apply_clean_parallel_offset(coords, offset_meters):
     """
     if offset_meters == 0 or len(coords) < 2:
         return coords
-    
+
     m_per_lat = 111139.0
     m_per_lon = 56500.0
-    
+
     offset_coords = []
     n = len(coords)
-    
+
     for i in range(n):
         if i == 0:
             dx = (coords[1][1] - coords[0][1]) * m_per_lon
@@ -124,19 +119,19 @@ def apply_clean_parallel_offset(coords, offset_meters):
         else:
             dx = (coords[i+1][1] - coords[i-1][1]) * m_per_lon
             dy = (coords[i+1][0] - coords[i-1][0]) * m_per_lat
-            
-        l = math.hypot(dx, dy)
-        if l == 0:
+
+        seg_len = math.hypot(dx, dy)
+        if seg_len == 0:
             offset_coords.append(coords[i])
             continue
-            
-        nx = -dy / l
-        ny = dx / l
-        
+
+        nx = -dy / seg_len
+        ny = dx / seg_len
+
         off_lat = coords[i][0] + (ny * offset_meters) / m_per_lat
         off_lon = coords[i][1] + (nx * offset_meters) / m_per_lon
         offset_coords.append([round(off_lat, 6), round(off_lon, 6)])
-        
+
     return offset_coords
 
 def route_via_osrm(waypoints):
@@ -161,7 +156,7 @@ def route_via_osrm(waypoints):
                     full_path.extend(lat_lon_chunk[1:])
                 else:
                     full_path.extend(lat_lon_chunk)
-        except Exception as e:
+        except Exception:
             if full_path:
                 full_path.extend(chunk[1:])
             else:
@@ -181,7 +176,7 @@ NARVA_TRANSIT_CONFIG = [
         "#E6194B", -2.5, "bus_key",
         "Paemurru – Kerese – Astri Keskus – Tallinna mnt – Fama – Hariduse – Kauba",
         [
-            [59.3700, 28.1720], [59.3750, 28.1810], [59.3780, 28.1860], 
+            [59.3700, 28.1720], [59.3750, 28.1810], [59.3780, 28.1860],
             [59.3820, 28.1880], [59.3880, 28.1750]
         ]
     ),
@@ -190,7 +185,7 @@ NARVA_TRANSIT_CONFIG = [
         "#F032E6", 2.0, "bus_key",
         "Paemurru – Sepa – Narova – Peetri plats – Kreenholmi – Joala",
         [
-            [59.3700, 28.1720], [59.3740, 28.1850], [59.3790, 28.1960], 
+            [59.3700, 28.1720], [59.3740, 28.1850], [59.3790, 28.1960],
             [59.3680, 28.1940], [59.3600, 28.1900], [59.3540, 28.1750]
         ]
     ),
@@ -199,7 +194,7 @@ NARVA_TRANSIT_CONFIG = [
         "#3CB44B", -3.0, "bus_key",
         "Kutsekooli – Kreenholmi – Kerese – Astri – Tallinna mnt – Narova",
         [
-            [59.3605, 28.1875], [59.3670, 28.1850], [59.3760, 28.1840], 
+            [59.3605, 28.1875], [59.3670, 28.1850], [59.3760, 28.1840],
             [59.3800, 28.1880], [59.3840, 28.1920]
         ]
     ),
@@ -208,7 +203,7 @@ NARVA_TRANSIT_CONFIG = [
         "#F58231", 1.5, "bus_key",
         "Kutsekooli – Joala – Pushkini – Kesklinn – Hariduse – Kauba – Pähklimäe",
         [
-            [59.3605, 28.1875], [59.3680, 28.1940], [59.3760, 28.1950], 
+            [59.3605, 28.1875], [59.3680, 28.1940], [59.3760, 28.1950],
             [59.3840, 28.1900], [59.3900, 28.1820], [59.3950, 28.1750]
         ]
     ),
@@ -217,7 +212,7 @@ NARVA_TRANSIT_CONFIG = [
         "#911EB4", -4.0, "bus_key",
         "Sendi – Tallinna mnt (Soldino) – Astri – Hariduse – Võidu – Narova",
         [
-            [59.3880, 28.1480], [59.3840, 28.1650], [59.3790, 28.1820], 
+            [59.3880, 28.1480], [59.3840, 28.1650], [59.3790, 28.1820],
             [59.3760, 28.1920], [59.3810, 28.1980]
         ]
     ),
@@ -228,7 +223,7 @@ NARVA_TRANSIT_CONFIG = [
         "#3b82f6", 2.0, "bus_suburb",
         "Paemurru – Jaam – Pushkini – Tempo – Siivertsi – Riigiküla – Kudruküla",
         [
-            [59.3700, 28.1720], [59.3690, 28.2000], [59.3790, 28.1960], 
+            [59.3700, 28.1720], [59.3690, 28.2000], [59.3790, 28.1960],
             [59.3980, 28.1960], [59.4120, 28.2060], [59.4250, 28.1600]
         ]
     ),
@@ -237,7 +232,7 @@ NARVA_TRANSIT_CONFIG = [
         "#22c55e", -2.0, "bus_suburb",
         "Nahavabriku – Narova – Tallinna mnt – Paemurru – Joaoru",
         [
-            [59.3900, 28.1950], [59.3800, 28.1960], [59.3740, 28.1850], 
+            [59.3900, 28.1950], [59.3800, 28.1960], [59.3740, 28.1850],
             [59.3700, 28.1720], [59.3725, 28.2000]
         ]
     ),
@@ -246,7 +241,7 @@ NARVA_TRANSIT_CONFIG = [
         "#14b8a6", 2.5, "bus_suburb",
         "Sendi – Soldino – Mõisa – Hariduse – Kerese – Paemurru",
         [
-            [59.3880, 28.1480], [59.3860, 28.1650], [59.3820, 28.1850], 
+            [59.3880, 28.1480], [59.3860, 28.1650], [59.3820, 28.1850],
             [59.3750, 28.1800], [59.3700, 28.1720]
         ]
     ),
@@ -255,7 +250,7 @@ NARVA_TRANSIT_CONFIG = [
         "#a855f7", -2.5, "bus_suburb",
         "Sendi – Tallinna mnt – Peetri plats – Koorikooli – Paemurru",
         [
-            [59.3880, 28.1480], [59.3840, 28.1680], [59.3790, 28.1960], 
+            [59.3880, 28.1480], [59.3840, 28.1680], [59.3790, 28.1960],
             [59.3740, 28.1900], [59.3700, 28.1720]
         ]
     ),
@@ -266,7 +261,7 @@ NARVA_TRANSIT_CONFIG = [
         "#059669", 3.0, "bus_outside",
         "Narva Raudteejaam – Peetri plats – Siivertsi – Tõrvajõe – Peeterristi – Narva-Jõesuu Meresuu Spa",
         [
-            [59.3690, 28.2000], [59.3790, 28.1960], [59.4080, 28.2000], 
+            [59.3690, 28.2000], [59.3790, 28.1960], [59.4080, 28.2000],
             [59.4150, 28.1500], [59.4520, 28.0450]
         ]
     ),
@@ -275,7 +270,7 @@ NARVA_TRANSIT_CONFIG = [
         "#0284c7", -3.0, "bus_outside",
         "Narva – Pushkini – Siivertsi – Riigiküla – Kudruküla – Narva-Jõesuu",
         [
-            [59.3790, 28.1960], [59.4000, 28.1950], [59.4200, 28.1800], 
+            [59.3790, 28.1960], [59.4000, 28.1950], [59.4200, 28.1800],
             [59.4400, 28.1000], [59.4580, 28.0350]
         ]
     ),
@@ -284,7 +279,7 @@ NARVA_TRANSIT_CONFIG = [
         "#d97706", 3.5, "bus_outside",
         "Narva – Tallinna mnt – Olgina – Sinimäe – Auvere – Sillamäe Bussijaam",
         [
-            [59.3790, 28.1820], [59.3880, 28.1400], [59.3750, 27.9800], 
+            [59.3790, 28.1820], [59.3880, 28.1400], [59.3750, 27.9800],
             [59.3950, 27.7600]
         ]
     ),
@@ -293,7 +288,7 @@ NARVA_TRANSIT_CONFIG = [
         "#dc2626", -3.5, "bus_outside",
         "Narva Bussiterminal – Tallinna mnt – Sillamäe – Voka – Jõhvi Bussijaam",
         [
-            [59.3690, 28.2000], [59.3850, 28.1500], [59.3980, 27.7600], 
+            [59.3690, 28.2000], [59.3850, 28.1500], [59.3980, 27.7600],
             [59.3580, 27.4200]
         ]
     )
@@ -396,7 +391,7 @@ NARVA_TECH_CLUSTERS = [
     {
         "name": "Vanalinn Innovation & University Quarter",
         "coords": [
-            [59.3770, 28.1930], [59.3820, 28.1920], [59.3850, 28.1960], 
+            [59.3770, 28.1930], [59.3820, 28.1920], [59.3850, 28.1960],
             [59.3840, 28.2070], [59.3780, 28.2040], [59.3750, 28.2010], [59.3770, 28.1930]
         ],
         "desc": "Academic & digital hub featuring UT Narva College, Tehnopol Startup Incubator, and OBJEKT creative center.",
@@ -405,7 +400,7 @@ NARVA_TECH_CLUSTERS = [
     {
         "name": "Kadastiku Industrial & CleanTech Park",
         "coords": [
-            [59.3780, 28.1400], [59.3785, 28.1560], [59.3720, 28.1650], 
+            [59.3780, 28.1400], [59.3785, 28.1560], [59.3720, 28.1650],
             [59.3620, 28.1630], [59.3560, 28.1500], [59.3580, 28.1350], [59.3780, 28.1400]
         ],
         "desc": "Major European manufacturing hub home to Aquaphor R&D mega-plant, NPM magnetics, Stera, and IVIA incubator.",
@@ -414,7 +409,7 @@ NARVA_TECH_CLUSTERS = [
     {
         "name": "Kreenholm Textile & Creative Campus",
         "coords": [
-            [59.3670, 28.1750], [59.3680, 28.2040], [59.3520, 28.2030], 
+            [59.3670, 28.1750], [59.3680, 28.2040], [59.3520, 28.2030],
             [59.3530, 28.1750], [59.3670, 28.1750]
         ],
         "desc": "Heritage regeneration quarter transforming 19th-century brick mills into modern tech studios and cultural lofts.",
@@ -423,7 +418,7 @@ NARVA_TECH_CLUSTERS = [
     {
         "name": "Balti Green Energy & Hydrogen Complex",
         "coords": [
-            [59.3400, 28.1150], [59.3450, 28.1400], [59.3300, 28.1450], 
+            [59.3400, 28.1150], [59.3450, 28.1400], [59.3300, 28.1450],
             [59.3250, 28.1200], [59.3400, 28.1150]
         ],
         "desc": "Renewable transformation and green hydrogen pilot center operated by Enefit Power and Elering smart grid.",
@@ -452,19 +447,19 @@ NARVA_DISTRICT_LABELS = [
 def build_narva_transit_dataset():
     print("Building exact street-following Narva transit network...")
     final_routes = {}
-    
+
     for key, num, label, color, offset_m, group, name_override, fallback_wp in NARVA_TRANSIT_CONFIG:
         print(f"Processing route {num} ({label})...")
-        
+
         # 1. Route through OSRM road driving engine for exact street geometry
         road_path = route_via_osrm(fallback_wp)
-        
+
         # 2. Apply Tallinn geometry cleanup pipeline
         p1 = clean_and_dedup(road_path)
         p2 = clean_reversals(p1)
         p3 = douglas_peucker(p2, tol=0.00004)
         p4 = apply_clean_parallel_offset(p3, offset_m)
-        
+
         final_routes[key] = {
             "id": key,
             "num": num,
@@ -477,7 +472,7 @@ def build_narva_transit_dataset():
             "show": False
         }
         print(f"  -> Generated {len(p4)} street-following coordinates for line {num}")
-        
+
     return final_routes
 
 if __name__ == "__main__":

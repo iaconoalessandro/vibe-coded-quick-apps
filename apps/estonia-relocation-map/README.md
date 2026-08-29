@@ -1,8 +1,16 @@
-# 🗺️ Estonia Tech Hubs & Public Transit Map
+# 🗺️ Estonia Relocation Map
 
-**Tallinn · Tartu · Pärnu · Narva · Kohtla-Järve & Jõhvi** — one continuous interactive map for apartment hunting, zero-car transit planning, and exploring Estonia's verified tech, robotics, chemistry and R&D ecosystems.
+**Tallinn · Tartu · Pärnu · Narva · Kohtla-Järve & Jõhvi** — one continuous
+interactive map for apartment hunting: verified tech employers, district rents
+and safety, zero-car transit planning, and the walk to the nearest big, cheap
+supermarket.
 
-👉 **Double-click [`index.html`](./index.html)** — it opens in any browser, no server, no install, on any OS.
+```bash
+make build && make serve      # → http://localhost:8777
+```
+
+Or open `dist/estonia-map-offline.html` directly — a single self-contained file,
+no server, no install, any OS.
 
 ---
 
@@ -12,101 +20,200 @@
 |---|---|---|---|---|---|---|
 | Verified tech hubs | 59 | 32 | 25 | 22 | 21 | **159** |
 | Districts (official OSM boundaries) | 12 | 18 | 13 | 15 | 10 | **68** |
+| Grocery stores | 187 | 62 | 33 | 21 | 24 | **327** |
+| — of which big & cheap | 44 | 14 | 3 | 8 | 8 | **77** |
 | Green-area polygons (real OSM) | 539 | 288 | 363 | 216 | 272 | **1 678** |
 | Transit lines | 148 | 33 | 27 | 22 | 12 | **242** |
-| Rent figures verified against live listings | 12/12 | 18/18 | 9/13 | 10/15 | 5/10 | **54/68** |
+| Rents verified against live listings | 12/12 | 18/18 | 9/13 | 10/15 | 5/10 | **54/68** |
 
 ---
 
 ## 🧭 Using the map
 
-**Left rail — city selector.** Click a city to fly the camera there and repoint the control panel. Every layer lives on **one** Leaflet instance, so you can zoom out from Tallinn and pan straight into Tartu; a layer you switched on stays on as you travel. Each city's parks, labels and layers load lazily by viewport, so all 159 hubs / 242 routes / 68 scorecards stay available without stalling the browser.
+**Search** anything — a company, a district, a shop. Diacritics optional:
+`parnu` finds Pärnu.
+
+**Find a district that fits.** Three sliders — maximum rent, minimum safety,
+maximum walk to a big cheap supermarket. Districts that fail are dimmed rather
+than hidden, so you can still see what you ruled out and why. The view is
+encoded in the URL, so you can send someone exactly what you are looking at.
+
+**🛒 Groceries.** Estonia's chains differ sharply in price, and a weekly shop is
+a different question from a carton of milk, so the layer splits three ways:
+
+| | Chains | What it means |
+|---|---|---|
+| **Big & cheap** | Lidl · Prisma · Maxima XX | A full weekly shop at the lowest basket price |
+| **Large supermarket** | Rimi · Selver | Full range, mid price |
+| **Neighbourhood** | Grossi · Konsum · independents | Top-up shopping — Grossi is very cheap but small |
+
+Click any store for opening hours and a 10-minute walking ring. Every district
+popup reports the walk to its nearest big, cheap store — Kristiine is 1 minute
+from a Lidl, Pirita is 30 minutes from anything.
+
+**Left rail — city selector.** All five cities live on **one** Leaflet instance,
+so you can zoom out from Tallinn and pan straight into Tartu; a layer switched
+on stays on as you travel. Available in English, Estonian and Russian.
 
 **Right panel — layers.**
 
 ```
-🛡️ District Safety & Quality   5-tier smiley badges, absolute Estonia-wide 1–5 scale
-💶 District Rent & Boundaries  €/m² badges + 1BR/2BR estimates + KV.ee / City24.ee links
+🔍 Find a district that fits   rent · safety · grocery-walk filters
+🛒 Groceries & Supermarkets    3 price/format tiers, 327 stores
+🛡️ District Safety & Quality   5-tier badges, absolute Estonia-wide 1–5 scale
+💶 District Rent & Boundaries  €/m² badges + 1BR/2BR estimates + portal links
 🏢 Tech Hubs by Sector         1-click Google / Apple Maps navigation
-🚆 Transport & Lines           🚌 Bus (key centre / suburbs / outside city) · 🚎 Trolley · 🚋 Tram · 🚆 Rail
-🌐 Tech Districts & Hubs       cluster polygons + multi-modal interchanges
+🚆 Transport & Lines           🚌 Bus · 🚎 Trolley · 🚋 Tram · 🚆 Rail
+🌳 Parks, Districts & Hubs     cluster polygons + multi-modal interchanges
 ```
 
-Parks and district watermark labels are always on. `✨ All Transit ON` / `🧹 All Transit OFF` toggle everything at once.
+**Overlapping transit lines** are separated by a corridor-aware, zoom-scaled
+pixel offset. Lines sharing a street are graph-coloured into distinct lanes;
+offsets collapse to the true centreline as you zoom out and fan apart as you
+zoom in, so 5–6 colours on one Tallinn corridor stay individually readable.
 
-**Overlapping transit lines** are separated by a corridor-aware, zoom-scaled pixel offset. Lines that share a street are graph-coloured into distinct lanes; the offsets collapse to the true centreline as you zoom out and fan apart as you zoom in, so 5–6 colours on one Tallinn corridor stay individually readable.
+---
+
+## 🏗️ How it is built
+
+```
+├── build.py                    assembles dist/ from templates + static + data
+├── templates/                  _head.html · _body.html
+├── static/                     app.css · app.js  (base map)
+│                               features.css · features.js  (search, filters,
+│                               groceries, URL state, i18n)
+│                               i18n.json  (en · et · ru)
+├── vendor/                     Leaflet 1.9.3 + markercluster + polylineoffset,
+│                               vendored so the offline build really is offline
+├── data/                       derived datasets (see below)
+├── scripts/                    the OSM → data pipeline
+├── tests/                      data integrity + build budget
+└── dist/                       build output — never edited by hand
+```
+
+Two outputs from one set of sources:
+
+| | First paint | Notes |
+|---|---|---|
+| `dist/index.html` | **~815 KB** worst case | Loads one city at a time; parks stream in behind |
+| `dist/estonia-map-offline.html` | 3.4 MB | Everything inlined. One file, no server |
+
+`make test` enforces the first-paint budget, so data cannot quietly creep back
+into the page shell.
+
+### Rebuilding
+
+```bash
+make data        # full pipeline: OSM extract → boundaries → parks → transit
+                 # → safety → groceries → rents → build
+make groceries   # supermarkets only (Overpass, cached)
+make rents       # re-verify rents against live listings
+make test        # 46 checks
+```
 
 ---
 
 ## 🔬 Data provenance
 
-Everything is derived, not hand-drawn. Every district popup cites its own sources.
+Everything is derived, not hand-drawn. Every popup cites its own sources, and
+`tests/test_data_integrity.py` re-checks the claims below on every build — a
+claim nothing verifies is a claim that quietly stops being true.
 
-**District boundaries** — OpenStreetMap administrative geometry (ODbL): Tallinn's 83 `admin_level=10` asumid grouped into 12 districts; Tartu / Pärnu / Narva `place=quarter` relations (the cities' own official asumid); Kohtla-Järve `admin_level=9` linnaosad, sub-divided by nearest-centre partition where the map carries finer districts than the state does. Validated seamless: **zero pairwise overlap, zero interior gaps, 68/68 ray-casting centroid checks pass.**
+**District boundaries** — OpenStreetMap administrative geometry (ODbL):
+Tallinn's 83 `admin_level=10` asumid grouped into 12 districts; Tartu / Pärnu /
+Narva `place=quarter` relations; Kohtla-Järve `admin_level=9` linnaosad.
+Validated seamless: **zero pairwise overlap, zero interior gaps, 68/68
+ray-casting centroid checks pass.**
 
-**Green areas** — one identical OSM pipeline for all five cities (`leisure=park|garden|nature_reserve|recreation_ground`, `landuse=forest|recreation_ground|village_green|allotments|cemetery`, `natural=wood|…`), size- and name-filtered, Douglas–Peucker simplified. The synthetic 5-point "diamond" placeholders Pärnu / Narva / Kohtla-Järve used to carry are gone.
+**Green areas** — one identical OSM pipeline for all five cities
+(`leisure=park|garden|nature_reserve|…`, `landuse=forest|…`, `natural=wood|…`),
+size- and name-filtered, Douglas–Peucker simplified.
 
-**Transit** — operators' own route geometry from OSM `type=route` relations (Tallinna Transport, Tartu linn, Narva LV, Pärnu linnaliinid, Ida-Viru MV, Harjumaa ÜTK, Elron), stitched by nearest-endpoint walk, with residual breaks bridged through OSRM so every line follows real streets end to end. Audited against the map's existing registry in both directions: **100 lines added that were missing, 39 kept that OSM has not mapped** (flagged `·reg` in the panel).
+**Transit** — operators' own route geometry from OSM `type=route` relations
+(Tallinna Transport, Tartu linn, Narva LV, Pärnu linnaliinid, Ida-Viru MV,
+Harjumaa ÜTK, Elron), stitched by nearest-endpoint walk, residual breaks bridged
+through OSRM. Audited both directions: **100 lines added that were missing, 39
+kept that OSM has not mapped** (flagged `·reg`).
 
-**Rents** — cross-checked against **1 700 live kv.ee listings and 1 684 live City24.ee listings** captured 28 Aug 2026. The two portals were aggregated independently and agree closely (Tallinn Kesklinn 16.00 vs 15.96 €/m²; Lasnamäe 12.30 vs 12.21). Each district carries `verified_source`, `verified_date` and `verified_sample`; districts with no live stock are marked as estimates in the popup and in the panel (`est.`).
+**Groceries** — OSM `shop=supermarket|hypermarket|wholesale` plus branded
+convenience stores, across all five city windows. Brand matched against the
+seven chains that matter in Estonia, then tiered by format: a Rimi Hyper is a
+weekly shop, a Rimi Mini is not. Walking distances are straight-line × 1.3, the
+standard detour ratio for a dense European street grid, at 80 m/min.
+*Price bands are reputational, not measured* — see
+[docs/data-sources.md](docs/data-sources.md).
 
-**Rent colours** — one national €/m² scale (`≥15 Premium · 12.50–15 High · 10–12.50 Mid · 7.50–10 Affordable · 5–7.50 Budget · <5 Lowest`), derived from the verified median rather than hand-assigned, so a colour means the same thing in every city and always matches the number printed on the pill.
+**Rents** — cross-checked against **1 700 live kv.ee and 1 684 live City24.ee
+listings**. The portals were aggregated independently and agree closely
+(Tallinn Kesklinn 16.00 vs 15.96 €/m²; Lasnamäe 12.30 vs 12.21). Each district
+carries `verified_source`, `verified_date` and `verified_sample`; the 14
+districts with no live stock are marked as estimates in the popup and the panel.
+`scripts/append_rent_history.py` appends each run to a time series rather than
+overwriting, so the map accumulates rent *trends*.
 
-**Safety / quality score** — an **absolute Estonia-referenced 1–5 scale** that measures what it is like to *walk around and live in* a district.
+**Rent colours** — one national €/m² scale (`≥15 Premium · 12.50–15 High ·
+10–12.50 Mid · 7.50–10 Affordable · 5–7.50 Budget · <5 Lowest`), derived from
+the verified median. A colour means the same thing in every city — and a test
+fails if that ever drifts.
 
-*What it counts:* street aggression and assault, public drinking and disorder, violence and sexual offences, burglary, bicycle theft, pickpocketing.
+**Safety / quality score** — an **absolute Estonia-referenced 1–5 scale**
+measuring what it is like to walk around and live in a district.
 
-*What it deliberately ignores:* fraud and computer crime. Those are **26.5% of Estonia's 2025 property crime** (§209 kelmus 2 122, §213 arvutikelmus 1 301, and related — 3 998 of 15 092) and none of it changes whether a street is safe to walk down. Only the 73.5% contact share feeds the theft metric.
+*Counts:* street aggression and assault, public drinking and disorder, violence
+and sexual offences, burglary, bicycle theft, pickpocketing.
 
-*District-dominant by design:* published Estonian crime statistics stop at municipality level, so a naive model smears a city's whole burden evenly across its districts — wrong in exactly the way that matters. If a city's serious violence concentrates in two panel-block districts, those districts should carry it, not the villa suburb across town. So each metric is **65% district profile + 35% county statistics**. Tallinn now spreads from **Kadriorg 4.3 and Pirita 4.0 down to Lasnamäe and Kalamaja at 2.8** — a 1.5-point gap inside one city.
+*Deliberately ignores:* fraud and computer crime — **26.5% of Estonia's 2025
+property crime** (3 998 of 15 092), none of which changes whether a street is
+safe to walk down. Only the 73.5% contact share feeds the theft metric.
 
-*Seven metrics:* calm streets & noise · street aggression · public drinking & disorder · violence & sexual offences · burglary/bikes/pickpockets · families & neighbourhood stability · language accessibility.
+*District-dominant by design:* published Estonian crime statistics stop at
+municipality level, so a naive model smears a city's whole burden evenly across
+its districts — wrong in exactly the way that matters. Each metric is **65%
+district profile + 35% county statistics**. Tallinn spreads from **Kadriorg 4.3
+and Pirita 4.0 down to Lasnamäe and Kalamaja at 2.8**.
 
-*Drivers.* **Negative:** licensed-premises and alcohol-shop density (street drinking, night noise, alcohol-fuelled aggression); tourist/hotel/attraction density (transport crowding, pickpocketing, visitors behaving outside local norms); retail and transfer-hub density; university and dormitory density (student night-time aggression, and bicycle theft, which concentrates hard around campuses); and a **concentrated-disadvantage index** built from cheap rent + low tertiary education + a housing stock that is almost all apartment blocks. **Positive:** schools, kindergartens and playgrounds (families actually live here); detached/terraced housing share; tertiary education share; affluence proxied by the verified €/m² (private security, cameras, maintained and lit entrances); green space.
+> **The score is shown as a band, not a point value.** Because the within-city
+> split is modelled rather than measured, the UI reports every score as ±0.4 —
+> Kadriorg reads `3.9–4.7`, not `4.3`. It is sound for ranking districts against
+> each other and unsound for splitting hairs between two 0.2 apart. Printing one
+> decimal implied a precision the method does not have.
 
-Anchored to Justiits- ja Digiministeerium *Kuritegevus Eestis 2025* county statistics and Statistikaamet census RL21302 / RL21434 / RL21439. Every scorecard cites its own sources and states that the within-city split is a documented land-use + census model, not a per-district measurement.
+Anchored to Justiits- ja Digiministeerium *Kuritegevus Eestis 2025* and
+Statistikaamet census RL21302 / RL21434 / RL21439.
 
-> **On the immigrant-share metric.** The original brief asked for districts to be marked down by their share of immigrants and Russian-speaking residents. That is not built here: scoring a neighbourhood worse for who lives in it is discrimination however it is labelled, and it measures nothing about street safety that the incident data and the deprivation index do not already carry. The language metric is instead **Language Accessibility** — the census-measured share speaking Estonian and English — which captures the real relocation problem (can you handle a landlord, a pharmacy, a school?) from language data rather than ethnicity. It still separates sharply: Narva at 2.3% Estonian / 17.6% English scores 1.2, Tartu at 54.1% English scores 4.7.
+> **On the immigrant-share metric.** The original brief asked for districts to
+> be marked down by their share of immigrants and Russian-speaking residents.
+> That is not built here: scoring a neighbourhood worse for who lives in it is
+> discrimination however it is labelled, and it measures nothing about street
+> safety that the incident data and the deprivation index do not already carry.
+> The language metric is instead **Language Accessibility** — the
+> census-measured share speaking Estonian and English — which captures the real
+> relocation problem from language data rather than ethnicity. It still
+> separates sharply: Narva at 2.3% Estonian / 17.6% English scores 1.2, Tartu at
+> 54.1% English scores 4.7.
 
 ---
 
-## 📁 Structure
+## ♿ Accessibility
 
-```
-├── 🌐 index.html                          ⭐ the map (5-city unified)
-├── 🌐 <city>_tech_transit_map.html        per-city copies
-├── 📂 data/
-│   ├── <city>_exact_district_boundaries.json    districts + verified rents
-│   ├── <city>_district_safety_official.json     scorecards + sources
-│   ├── <city>_parks_clean.json                  green areas
-│   ├── <city>_transit_final.json                merged/audited transit
-│   └── osm_cache/                               raw OSM + census + crime slices
-├── 📂 exports/                            KML / KMZ for offline GPS
-└── 📂 scripts/
-    ├── osm_pipeline_common.py             shared geometry + cache helpers
-    ├── osm_extract_raw.py                 Geofabrik Estonia extract → raw slices
-    ├── build_official_districts.py        official boundaries + seamlessness validation
-    ├── build_green_areas.py               parks / gardens / forests
-    ├── build_osm_transit.py               route geometry + corridor offset allocation
-    ├── merge_transit_networks.py          audit & merge vs the existing registry
-    ├── extract_district_context.py        per-district land-use context
-    ├── build_safety_scores.py             absolute Estonia-referenced 1–5 scale
-    ├── verify_rental_prices.py            kv.ee + City24.ee cross-check
-    └── generate_unified_tech_map.py       HTML compiler
-```
+Every control is a real `<button>`, `<input>` or `<label>` — no `div` with an
+`onclick` anywhere in the markup. Accordions carry `aria-expanded`, the search
+box is a proper `combobox`/`listbox` with arrow-key navigation, focus is always
+visible, and there is a skip link. The panel collapses into a bottom sheet below
+780 px; `prefers-reduced-motion` is respected. `make test` fails if inline
+handlers or aria attributes are removed.
 
-## 🔄 Rebuilding
+---
 
-```bash
-python3 scripts/osm_extract_raw.py            # ~120 MB Estonia extract, cached
-python3 scripts/build_official_districts.py
-python3 scripts/build_green_areas.py
-python3 scripts/build_osm_transit.py
-python3 scripts/merge_transit_networks.py
-python3 scripts/extract_district_context.py
-python3 scripts/build_safety_scores.py
-python3 scripts/verify_rental_prices.py
-python3 scripts/generate_unified_tech_map.py  # writes index.html + exports
-```
+## ⚖️ Licence
 
-Map data © OpenStreetMap contributors (ODbL). Crime statistics © Justiits- ja Digiministeerium. Census © Statistikaamet. Rental observations from kv.ee and City24.ee public listings.
+Code is MIT. **The data is not** — it is a database derived from OpenStreetMap
+and carries ODbL share-alike obligations on public distribution. See
+[`LICENSE`](LICENSE) and [`docs/data-sources.md`](docs/data-sources.md), which
+also documents the one unresolved item: the terms-of-service position for
+scheduled kv.ee / City24.ee scraping. The weekly refresh workflow is written but
+should stay disabled until that is settled.
+
+Map data © OpenStreetMap contributors (ODbL). Crime statistics © Justiits- ja
+Digiministeerium. Census © Statistikaamet. Rental observations derived from
+public kv.ee and City24.ee listings.

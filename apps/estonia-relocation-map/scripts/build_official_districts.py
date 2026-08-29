@@ -26,23 +26,27 @@ Post-processing guarantees the layer is seamless and non-overlapping:
 Run:  python3 scripts/build_official_districts.py
 ==============================================================================
 """
-import os
-import sys
 import json
 import math
+import os
+import sys
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from shapely.geometry import Polygon, MultiPolygon, Point, shape
-from shapely.ops import unary_union, voronoi_diagram
-from shapely import make_valid
-
 from osm_pipeline_common import (
-    DATA_DIR, load_cache, douglas_peucker, ring_area_m2,
-    point_in_polygons, representative_point, CITY_LABEL,
+    CITY_LABEL,
+    DATA_DIR,
+    douglas_peucker,
+    load_cache,
+    point_in_polygons,
+    representative_point,
+    ring_area_m2,
 )
+from shapely import make_valid
+from shapely.geometry import MultiPolygon, Point, Polygon
+from shapely.ops import unary_union, voronoi_diagram
 
 # ---------------------------------------------------------------------------
 # District -> OSM source mapping

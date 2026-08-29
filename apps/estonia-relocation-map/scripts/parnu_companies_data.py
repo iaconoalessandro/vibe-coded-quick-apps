@@ -8,8 +8,8 @@ in Pärnu, Estonia.
 ==============================================================================
 """
 
-import os
 import json
+import os
 
 PARNU_COMPANIES = [
     # 1. Academic & Startup Ecosystem

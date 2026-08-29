@@ -8,8 +8,8 @@ and Elron commuter rail corridors with circular station nodes.
 ==============================================================================
 """
 
-import os
 import json
+import os
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
@@ -64,8 +64,8 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
         "desc": "TalTech Virumaa College, Oil Shale Competence Center, VKG R&D complex, and Eastman Chemical.",
         "polygons": [
             [
-                [59.4000, 27.2600], [59.4080, 27.2620], [59.4180, 27.2680], 
-                [59.4180, 27.2880], [59.4120, 27.2980], [59.4030, 27.2920], 
+                [59.4000, 27.2600], [59.4080, 27.2620], [59.4180, 27.2680],
+                [59.4180, 27.2880], [59.4120, 27.2980], [59.4030, 27.2920],
                 [59.3980, 27.2780], [59.4000, 27.2600]
             ]
         ]
@@ -78,8 +78,8 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
         "desc": "//kood Jõhvi modern coding campus, Tehnopol Startup Incubator, OBJEKT creative lab, and Enefit Power R&D.",
         "polygons": [
             [
-                [59.3480, 27.3950], [59.3620, 27.3980], [59.3680, 27.4250], 
-                [59.3620, 27.4420], [59.3480, 27.4350], [59.3440, 27.4120], 
+                [59.3480, 27.3950], [59.3620, 27.3980], [59.3680, 27.4250],
+                [59.3620, 27.4420], [59.3480, 27.4350], [59.3440, 27.4120],
                 [59.3480, 27.3950]
             ]
         ]
@@ -92,7 +92,7 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
         "desc": "Hanza Mechanics precision mechatronics and Radius Machining multi-axis CNC manufacturing.",
         "polygons": [
             [
-                [59.3460, 27.3980], [59.3520, 27.4000], [59.3510, 27.4100], 
+                [59.3460, 27.3980], [59.3520, 27.4000], [59.3510, 27.4100],
                 [59.3450, 27.4080], [59.3460, 27.3980]
             ]
         ]
@@ -105,7 +105,7 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
         "desc": "Ida-Viru Central Hospital digital telemedicine telemetry and Ahtme clean thermal peak power generation.",
         "polygons": [
             [
-                [59.3240, 27.3960], [59.3360, 27.4000], [59.3380, 27.4420], 
+                [59.3240, 27.3960], [59.3360, 27.4000], [59.3380, 27.4420],
                 [59.3260, 27.4400], [59.3240, 27.3960]
             ]
         ]
@@ -126,7 +126,7 @@ KOHTLA_JARVE_DISTRICT_LABELS = [
     {"name": "KÄVA", "lat": 59.3940, "lon": 27.2580, "type": "major"},
     {"name": "SOMPA", "lat": 59.3210, "lon": 27.2880, "type": "sub"},
     {"name": "ORU", "lat": 59.3910, "lon": 27.5450, "type": "sub"},
-    
+
     # Tech Hub Labels
     {"name": "🎓 TALTECH VIRUMAA KOLLEDŽ", "lat": 59.4152, "lon": 27.2735, "type": "tech_hub"},
     {"name": "💻 //KOOD JÕHVI CAMPUS", "lat": 59.3525, "lon": 27.4110, "type": "tech_hub"},
@@ -189,21 +189,16 @@ KOHTLA_JARVE_TRAIN_LINES = {
 KOHTLA_JARVE_BUS_ROUTES = {}
 if os.path.exists(TRANSIT_JSON_PATH):
     try:
-        with open(TRANSIT_JSON_PATH, "r", encoding="utf-8") as f:
+        with open(TRANSIT_JSON_PATH, encoding="utf-8") as f:
             KOHTLA_JARVE_BUS_ROUTES = json.load(f)
     except Exception as e:
         print(f"Error loading {TRANSIT_JSON_PATH}: {e}")
 
 if not KOHTLA_JARVE_BUS_ROUTES:
     from build_kohtla_jarve_transit_network import (
-        KOHTLA_JARVE_TRANSIT_CONFIG, 
-        route_via_osrm, 
-        clean_and_dedup, 
-        clean_reversals, 
-        douglas_peucker, 
-        apply_clean_parallel_offset
+        KOHTLA_JARVE_TRANSIT_CONFIG,
     )
-    for key, num, label, color, offset_m, group, name_override, fallback_wp in KOHTLA_JARVE_TRANSIT_CONFIG:
+    for key, num, label, color, _offset_m, group, name_override, fallback_wp in KOHTLA_JARVE_TRANSIT_CONFIG:
         KOHTLA_JARVE_BUS_ROUTES[key] = {
             "id": key,
             "num": num,

@@ -15,10 +15,9 @@ Pipeline:
 ==============================================================================
 """
 
-import os
-import sys
 import json
 import math
+import os
 import time
 import urllib.request
 
@@ -51,15 +50,15 @@ def clean_reversals(points):
         p_prev = cleaned[-1]
         p_curr = points[i]
         p_next = points[i+1]
-        
+
         v1 = (p_curr[0] - p_prev[0], p_curr[1] - p_prev[1])
         v2 = (p_next[0] - p_curr[0], p_next[1] - p_curr[1])
         l1 = math.hypot(*v1)
         l2 = math.hypot(*v2)
-        
+
         if l1 < 0.00005 or l2 < 0.00005:
             continue
-            
+
         dot = (v1[0]*v2[0] + v1[1]*v2[1]) / (l1 * l2)
         if dot < -0.6:  # Sharp >125 degree backtracking spike
             continue
@@ -71,7 +70,7 @@ def douglas_peucker(points, tol=0.00005):
     """Simplifies polyline to remove micro-jitter while preserving road curves."""
     if len(points) <= 2:
         return points
-        
+
     def point_line_dist(pt, start, end):
         if start == end:
             return math.hypot(pt[0]-start[0], pt[1]-start[1])
@@ -88,7 +87,7 @@ def douglas_peucker(points, tol=0.00005):
         if d > dmax:
             index = i
             dmax = d
-            
+
     if dmax > tol:
         rec1 = douglas_peucker(points[:index+1], tol)
         rec2 = douglas_peucker(points[index:], tol)
@@ -102,13 +101,13 @@ def apply_clean_parallel_offset(coords, offset_meters):
     """
     if offset_meters == 0 or len(coords) < 2:
         return coords
-    
+
     m_per_lat = 111139.0
     m_per_lon = 56500.0
-    
+
     offset_coords = []
     n = len(coords)
-    
+
     for i in range(n):
         if i == 0:
             dx = (coords[1][1] - coords[0][1]) * m_per_lon
@@ -119,19 +118,19 @@ def apply_clean_parallel_offset(coords, offset_meters):
         else:
             dx = (coords[i+1][1] - coords[i-1][1]) * m_per_lon
             dy = (coords[i+1][0] - coords[i-1][0]) * m_per_lat
-            
-        l = math.hypot(dx, dy)
-        if l == 0:
+
+        seg_len = math.hypot(dx, dy)
+        if seg_len == 0:
             offset_coords.append(coords[i])
             continue
-            
-        nx = -dy / l
-        ny = dx / l
-        
+
+        nx = -dy / seg_len
+        ny = dx / seg_len
+
         off_lat = coords[i][0] + (ny * offset_meters) / m_per_lat
         off_lon = coords[i][1] + (nx * offset_meters) / m_per_lon
         offset_coords.append([round(off_lat, 6), round(off_lon, 6)])
-        
+
     return offset_coords
 
 def route_via_osrm(waypoints):
@@ -156,7 +155,7 @@ def route_via_osrm(waypoints):
                     full_path.extend(lat_lon_chunk[1:])
                 else:
                     full_path.extend(lat_lon_chunk)
-        except Exception as e:
+        except Exception:
             if full_path:
                 full_path.extend(chunk[1:])
             else:
@@ -176,7 +175,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#E6194B", -2.5, "bus_key",
         "Kohtla-Järve (Virula väljak) – TalTech – Kukruse – Jõhvi Bussijaam – Iidla Keskus – Puru Haigla",
         [
-            [59.4080, 27.2780], [59.4150, 27.2750], [59.3980, 27.3600], 
+            [59.4080, 27.2780], [59.4150, 27.2750], [59.3980, 27.3600],
             [59.3580, 27.4200], [59.3450, 27.4180], [59.3360, 27.4250], [59.3270, 27.4050]
         ]
     ),
@@ -185,7 +184,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#F58231", 2.0, "bus_key",
         "Kohtla-Järve – Kukruse – Jõhvi Reisiterminal – Kutsehariduskeskus – Ahtme mnt – Tammiku",
         [
-            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200], 
+            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200],
             [59.3540, 27.4260], [59.3360, 27.4380], [59.3360, 27.4250], [59.3460, 27.3850]
         ]
     ),
@@ -194,7 +193,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#3CB44B", -3.0, "bus_key",
         "Virula väljak – Järveküla tee – Kukruse – Edise – Jõhvi Narva mnt – Jõhvi Bussijaam",
         [
-            [59.4080, 27.2780], [59.4120, 27.2880], [59.4030, 27.3200], 
+            [59.4080, 27.2780], [59.4120, 27.2880], [59.4030, 27.3200],
             [59.3980, 27.3600], [59.3780, 27.3950], [59.3580, 27.4200]
         ]
     ),
@@ -203,7 +202,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#911EB4", 3.0, "bus_key",
         "Järve Kesklinn (Virula) ↔ Kukruse Kiirtee ↔ Jõhvi Reisiterminal ↔ Iidla Keskus Express",
         [
-            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200], 
+            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200],
             [59.3450, 27.4180], [59.3360, 27.4250]
         ]
     ),
@@ -214,7 +213,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#3b82f6", -2.0, "bus_suburb",
         "Virula väljak – Ehitajate tee (TalTech) – Uusküla – Sinivoore – Tehase tee – VKG – Virula",
         [
-            [59.4080, 27.2780], [59.4152, 27.2735], [59.4220, 27.2750], 
+            [59.4080, 27.2780], [59.4152, 27.2735], [59.4220, 27.2750],
             [59.4250, 27.2650], [59.4120, 27.2550], [59.4030, 27.2650], [59.4080, 27.2780]
         ]
     ),
@@ -223,7 +222,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#14b8a6", 2.5, "bus_suburb",
         "Jõhvi Reisiterminal – //kood Jõhvi – Kaasiku Tööstuspark – Tammiku – Ahtme – Iidla Grossi",
         [
-            [59.3580, 27.4200], [59.3525, 27.4110], [59.3490, 27.4050], 
+            [59.3580, 27.4200], [59.3525, 27.4110], [59.3490, 27.4050],
             [59.3460, 27.3850], [59.3380, 27.4050], [59.3360, 27.4250]
         ]
     ),
@@ -234,7 +233,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#059669", -3.0, "bus_outside",
         "Virula väljak – Järveküla tee – Käva tööstusala – Kaasiku tee – Sompa Rahvamaja",
         [
-            [59.4080, 27.2780], [59.4020, 27.2650], [59.3940, 27.2580], 
+            [59.4080, 27.2780], [59.4020, 27.2650], [59.3940, 27.2580],
             [59.3650, 27.2680], [59.3240, 27.2880]
         ]
     ),
@@ -243,7 +242,7 @@ KOHTLA_JARVE_TRANSIT_CONFIG = [
         "#d97706", 3.5, "bus_outside",
         "Kohtla-Järve Virula – Kukruse – Jõhvi Bussijaam – Voka teerist – Oru Asula Männipark",
         [
-            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200], 
+            [59.4080, 27.2780], [59.3980, 27.3600], [59.3580, 27.4200],
             [59.3680, 27.4600], [59.3850, 27.5100], [59.3920, 27.5450]
         ]
     )
@@ -341,8 +340,8 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
     {
         "name": "Järve Chemical & Academic Valley",
         "coords": [
-            [59.4000, 27.2600], [59.4080, 27.2620], [59.4180, 27.2680], 
-            [59.4180, 27.2880], [59.4120, 27.2980], [59.4030, 27.2920], 
+            [59.4000, 27.2600], [59.4080, 27.2620], [59.4180, 27.2680],
+            [59.4180, 27.2880], [59.4120, 27.2980], [59.4030, 27.2920],
             [59.3980, 27.2780], [59.4000, 27.2600]
         ],
         "desc": "Academic & chemical engineering heart featuring TalTech Virumaa College, Oil Shale Competence Center, VKG R&D complex, and Eastman Chemical.",
@@ -351,8 +350,8 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
     {
         "name": "Jõhvi Tech & Modern Coding Hub",
         "coords": [
-            [59.3480, 27.3950], [59.3620, 27.3980], [59.3680, 27.4250], 
-            [59.3620, 27.4420], [59.3480, 27.4350], [59.3440, 27.4120], 
+            [59.3480, 27.3950], [59.3620, 27.3980], [59.3680, 27.4250],
+            [59.3620, 27.4420], [59.3480, 27.4350], [59.3440, 27.4120],
             [59.3480, 27.3950]
         ],
         "desc": "County capital digital cluster with //kood Jõhvi campus, Tehnopol Startup Incubator, OBJEKT creative lab, and Enefit Power R&D.",
@@ -361,7 +360,7 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
     {
         "name": "Kaasiku Precision Mechatronics Park",
         "coords": [
-            [59.3460, 27.3980], [59.3520, 27.4000], [59.3510, 27.4100], 
+            [59.3460, 27.3980], [59.3520, 27.4000], [59.3510, 27.4100],
             [59.3450, 27.4080], [59.3460, 27.3980]
         ],
         "desc": "Advanced CNC manufacturing and robotics mechatronics hub featuring Hanza Mechanics and Radius Machining.",
@@ -370,7 +369,7 @@ KOHTLA_JARVE_TECH_CLUSTERS = [
     {
         "name": "Puru & Ahtme HealthTech & Energy Node",
         "coords": [
-            [59.3240, 27.3960], [59.3360, 27.4000], [59.3380, 27.4420], 
+            [59.3240, 27.3960], [59.3360, 27.4000], [59.3380, 27.4420],
             [59.3260, 27.4400], [59.3240, 27.3960]
         ],
         "desc": "Regional e-health telemedicine infrastructure and green thermal peak power generation.",
@@ -389,7 +388,7 @@ KOHTLA_JARVE_DISTRICT_LABELS = [
     {"name": "KÄVA", "lat": 59.3940, "lon": 27.2580, "type": "major"},
     {"name": "SOMPA", "lat": 59.3210, "lon": 27.2880, "type": "sub"},
     {"name": "ORU", "lat": 59.3910, "lon": 27.5450, "type": "sub"},
-    
+
     # Tech Hub Labels
     {"name": "🎓 TALTECH VIRUMAA KOLLEDŽ", "lat": 59.4152, "lon": 27.2735, "type": "tech_hub"},
     {"name": "💻 //KOOD JÕHVI CAMPUS", "lat": 59.3525, "lon": 27.4110, "type": "tech_hub"},
@@ -402,19 +401,19 @@ KOHTLA_JARVE_DISTRICT_LABELS = [
 def build_kohtla_jarve_transit_dataset():
     print("Building exact street-following Kohtla-Järve & Jõhvi transit network...", flush=True)
     final_routes = {}
-    
+
     for key, num, label, color, offset_m, group, name_override, fallback_wp in KOHTLA_JARVE_TRANSIT_CONFIG:
         print(f"Processing route {num} ({label})...", flush=True)
-        
+
         # 1. Route through OSRM road driving engine for exact street geometry
         road_path = route_via_osrm(fallback_wp)
-        
+
         # 2. Apply Tallinn geometry cleanup pipeline
         p1 = clean_and_dedup(road_path)
         p2 = clean_reversals(p1)
         p3 = douglas_peucker(p2, tol=0.00004)
         p4 = apply_clean_parallel_offset(p3, offset_m)
-        
+
         final_routes[key] = {
             "id": key,
             "num": num,
@@ -427,7 +426,7 @@ def build_kohtla_jarve_transit_dataset():
             "show": False
         }
         print(f"  -> Generated {len(p4)} street-following coordinates for line {num}", flush=True)
-        
+
     return final_routes
 
 if __name__ == "__main__":

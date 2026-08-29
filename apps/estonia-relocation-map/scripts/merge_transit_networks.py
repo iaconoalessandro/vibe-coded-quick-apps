@@ -26,19 +26,23 @@ Output: data/<city>_transit_final.json
 Run:    python3 scripts/merge_transit_networks.py
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
-from collections import Counter, defaultdict
+from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
-from osm_pipeline_common import DATA_DIR, load_cache, CITY_LABEL, douglas_peucker
 from build_osm_transit import (
-    allocate_offsets, CITY_CENTER, dist_m, path_length_m, PALETTE, LINE_WEIGHT,
+    CITY_CENTER,
+    LINE_WEIGHT,
+    allocate_offsets,
+    dist_m,
+    path_length_m,
 )
+from osm_pipeline_common import CITY_LABEL, DATA_DIR, load_cache
 
 # Tallinn battery-trolley lines as of Aug 2026 (TLT / Tallinna trollibussiliiklus).
 TALLINN_TROLLEY_REFS = {"72", "81", "83", "84", "85"}
@@ -58,7 +62,7 @@ def load_legacy(city):
                            encoding="utf-8"))
         for label, r in d.items():
             out[str(r.get("num"))] = dict(r, label=label)
-        from generate_tallinn_tech_map import TRAM_LINES, TRAIN_LINES
+        from generate_tallinn_tech_map import TRAIN_LINES, TRAM_LINES
         for k, v in TRAM_LINES.items():
             out["T" + k.split("_")[-1]] = dict(v, num="T" + k.split("_")[-1], group="tram")
         for k, v in TRAIN_LINES.items():

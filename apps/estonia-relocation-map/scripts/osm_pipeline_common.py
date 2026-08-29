@@ -16,9 +16,9 @@ Source: OpenStreetMap via Geofabrik (ODbL). Everything downstream is derived
 from real OSM geometry — no hand-drawn polygons anywhere in the chain.
 ==============================================================================
 """
-import os
 import json
 import math
+import os
 import urllib.request
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,7 +52,7 @@ def load_cache(name, default=None):
     p = cache_path(name)
     if not os.path.exists(p):
         return default
-    with open(p, "r", encoding="utf-8") as f:
+    with open(p, encoding="utf-8") as f:
         return json.load(f)
 
 

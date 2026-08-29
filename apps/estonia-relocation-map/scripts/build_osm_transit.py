@@ -25,10 +25,10 @@ Output: data/<city>_exact_transit_routes.json (+ trams / trains / hubs)
 Run:    python3 scripts/build_osm_transit.py
 ==============================================================================
 """
-import os
-import sys
 import json
 import math
+import os
+import sys
 import time
 import urllib.request
 from collections import defaultdict
@@ -38,7 +38,12 @@ if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
 
 from osm_pipeline_common import (
-    DATA_DIR, load_cache, douglas_peucker, M_PER_DEG_LAT, m_per_deg_lon, CITY_LABEL,
+    CITY_LABEL,
+    DATA_DIR,
+    M_PER_DEG_LAT,
+    douglas_peucker,
+    load_cache,
+    m_per_deg_lon,
 )
 
 # ---------------------------------------------------------------------------
@@ -242,7 +247,7 @@ def allocate_offsets(routes, lat0):
 
     conflicts = defaultdict(set)
     pair_counts = defaultdict(int)
-    for cell, members in occupancy.items():
+    for members in occupancy.values():
         if len(members) < 2:
             continue
         for i in range(len(members)):
@@ -319,7 +324,7 @@ def build_city(city, geom):
     built = {}
     stats = {"clean": 0, "bridged": 0, "broken": 0}
 
-    for (net, ref, kind), variants in sorted(cands.items(), key=lambda t: (t[0][2], len(t[0][1]), t[0][1])):
+    for (net, ref, _kind), variants in sorted(cands.items(), key=lambda t: (t[0][2], len(t[0][1]), t[0][1])):
         best, best_path, best_gaps = None, [], []
         for r in variants:
             p, g = stitch_ways(r["members"], ways)

@@ -7,8 +7,8 @@ regional Tartumaa lines (within 30km), and Elron commuter rail corridors
 with circular station nodes.
 """
 
-import os
 import json
+import os
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
@@ -127,7 +127,7 @@ TARTU_DISTRICT_LABELS = [
     {"name": "KVISSENTALI", "lat": 58.4010, "lon": 26.7150, "type": "sub"},
     {"name": "RAADI-KRUUSAMÄE", "lat": 58.3980, "lon": 26.7450, "type": "major"},
     {"name": "JAAMAMÕISA", "lat": 58.3840, "lon": 26.7620, "type": "sub"},
-    
+
     # Tech Hub Labels
     {"name": "🏢 DELTA CENTRE", "lat": 58.3852, "lon": 26.7265, "type": "tech_hub"},
     {"name": "🚀 TARTU SCIENCE PARK", "lat": 58.3590, "lon": 26.6850, "type": "tech_hub"},
@@ -499,7 +499,7 @@ TARTU_BUS_ROUTES = {
 _exact_routes_file = os.path.join(DATA_DIR, "tartu_exact_transit_routes.json")
 if os.path.exists(_exact_routes_file):
     try:
-        with open(_exact_routes_file, "r", encoding="utf-8") as _f:
+        with open(_exact_routes_file, encoding="utf-8") as _f:
             _loaded_routes = json.load(_f)
             if _loaded_routes and isinstance(_loaded_routes, dict) and len(_loaded_routes) > 0:
                 TARTU_BUS_ROUTES = _loaded_routes

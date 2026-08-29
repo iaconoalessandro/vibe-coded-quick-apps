@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 ==============================================================================
 DISTRICT LIVED-SAFETY SCORE — ABSOLUTE ESTONIA SCALE, DISTRICT-DOMINANT
@@ -69,14 +68,14 @@ SOURCES
 Run: python3 scripts/build_safety_scores.py
 ==============================================================================
 """
+import json
 import os
 import sys
-import json
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 if SCRIPT_DIR not in sys.path:
     sys.path.insert(0, SCRIPT_DIR)
-from osm_pipeline_common import DATA_DIR, load_cache, CITY_LABEL
+from osm_pipeline_common import CITY_LABEL, DATA_DIR, load_cache
 
 SRC_CRIME = ("Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 "
              "(maakonnad, 10 000 elaniku kohta)")
@@ -195,7 +194,7 @@ def blended_pctl(values, keys_by_city, w_nat=0.55):
     nat = pctl_map(values)
     vmap = dict(values)
     out = {}
-    for city, keys in keys_by_city.items():
+    for _city, keys in keys_by_city.items():
         loc = pctl_map([(k, vmap[k]) for k in keys if k in vmap])
         for k in keys:
             if k in nat:
@@ -218,7 +217,8 @@ def build():
             rows.append([city, r["short_name"], r, rentmap[city].get(r["short_name"], {}),
                          ctx.get(city, {}).get(r["short_name"], {})])
 
-    key = lambda city, sn: f"{city}||{sn}"
+    def key(city, sn):
+        return f"{city}||{sn}"
     IDX = {}
     for field, name in [("alcohol_per_km2", "night"), ("tourism_per_km2", "tourist"),
                         ("retail_per_km2", "retail"), ("family_per_km2", "family"),

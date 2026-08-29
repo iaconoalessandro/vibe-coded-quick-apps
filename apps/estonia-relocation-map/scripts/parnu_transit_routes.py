@@ -8,8 +8,8 @@ tech clusters, and district watermarks for Pärnu.
 ==============================================================================
 """
 
-import os
 import json
+import os
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT_DIR, "data")
@@ -358,7 +358,7 @@ PARNU_BUS_ROUTES = {
 _exact_routes_file = os.path.join(DATA_DIR, "parnu_exact_transit_routes.json")
 if os.path.exists(_exact_routes_file):
     try:
-        with open(_exact_routes_file, "r", encoding="utf-8") as _f:
+        with open(_exact_routes_file, encoding="utf-8") as _f:
             _loaded_routes = json.load(_f)
             if _loaded_routes and isinstance(_loaded_routes, dict) and len(_loaded_routes) > 0:
                 PARNU_BUS_ROUTES = _loaded_routes
