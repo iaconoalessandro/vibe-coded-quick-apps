@@ -502,7 +502,12 @@ function syncUrl() {
         if (FILTER_STATE.minSafety != null) p.set('safety', String(FILTER_STATE.minSafety));
         if (FILTER_STATE.maxGroceryWalk != null) p.set('shop', String(FILTER_STATE.maxGroceryWalk));
 
-        history.replaceState(null, '', location.pathname + '?' + p.toString());
+        try {
+            history.replaceState(null, '', location.pathname + '?' + p.toString());
+        } catch {
+            // file:// — some browsers refuse replaceState on a local file.
+            // The map works fine; only the shareable link is unavailable.
+        }
     }, 400);
 }
 
@@ -527,6 +532,12 @@ function applyUrlLayers(state) {
 function wireShareButton() {
     const btn = document.getElementById('btn-share');
     if (!btn) return;
+    // Opened by double-click there is no URL worth sharing, so say so rather
+    // than offering a button that copies a path off someone's own disk.
+    if (location.protocol === 'file:') {
+        btn.hidden = true;
+        return;
+    }
     btn.addEventListener('click', async () => {
         const url = location.href;
         try {

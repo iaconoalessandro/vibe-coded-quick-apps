@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
 """
 ==============================================================================
-BUILD — assembles the map from templates, static assets and derived data
+BUILD — produces index.html
 ==============================================================================
-Two outputs, from one set of sources:
+The deliverable is ONE file: index.html at the project root.
 
-  dist/index.html                 loads data per city over HTTP.
-                                  First paint costs the manifest plus one
-                                  city (~400 KB) instead of all five (3.4 MB).
+    Double-click it and it runs. Drop it on any static host and it runs.
+    No server, no install, no Python, nothing to configure. Everything —
+    map library, styles, code, and all five cities of data — is inside it.
 
-  dist/estonia-map-offline.html   everything inlined in a single file, for
-                                  a USB stick or a laptop with no network.
-                                  Tiles still need a connection; the data
-                                  does not.
+Python is needed only to REBUILD that file after the data changes. Nobody
+opening or hosting the map needs Python, or anything else.
 
-Both share the same templates/ and static/ sources — there is no second copy
-of the markup or the JavaScript anywhere in this repository.
+    python3 build.py              → index.html          (the deliverable)
+    python3 build.py --split      → also writes dist/   (see below)
+
+`--split` additionally emits a multi-file version that fetches data per city
+over HTTP. It loads faster on a real web server but does NOT work by
+double-click, because browsers block fetch() on file:// URLs. It exists for
+if this is ever hosted properly and the first paint matters. Until then,
+index.html is the whole product.
 ==============================================================================
 """
 import base64
@@ -48,6 +52,24 @@ def write(path, text):
         f.write(text)
 
 
+# 6 decimal places is 11 cm. On a map whose smallest feature is a park, that
+# is precision nobody can see, paid for in bytes on every coordinate. 5 places
+# is ~1.1 m — still far finer than the source geometry is actually accurate —
+# and it takes a meaningful bite out of the file people have to download.
+COORD_DECIMALS = 5
+
+
+def quantise(node):
+    """Round every float in a nested structure, in place where possible."""
+    if isinstance(node, float):
+        return round(node, COORD_DECIMALS)
+    if isinstance(node, list):
+        return [quantise(v) for v in node]
+    if isinstance(node, dict):
+        return {k: quantise(v) for k, v in node.items()}
+    return node
+
+
 def load_json(path, default=None):
     if not os.path.exists(path):
         return default
@@ -68,7 +90,7 @@ def build_city_payloads():
         groceries = load_json(os.path.join(DATA, f"{city_key}_grocery_stores.json"))
         if groceries:
             payload["groceries"] = groceries
-        payloads[city_key] = payload
+        payloads[city_key] = quantise(payload)
     return payloads
 
 
@@ -139,8 +161,13 @@ def build_hosted(payloads, manifest):
     shutil.copytree(VENDOR, dst_vendor)
 
 
-def build_offline(payloads, manifest):
-    """Single self-contained file: no fetch, no vendor directory, no server."""
+def build_single_file(payloads, manifest, out_path):
+    """
+    The deliverable: one HTML file with everything inside it.
+
+    Works from file:// (double-click) and from any static host, because it
+    never asks the network for anything but map tiles.
+    """
     head = read(os.path.join(TEMPLATES, "_head.html"))
     body = read(os.path.join(TEMPLATES, "_body.html"))
 
@@ -152,14 +179,11 @@ def build_offline(payloads, manifest):
         return f"<script>\n{read(os.path.join(VENDOR, name))}\n</script>"
 
     head = head.replace('<link rel="stylesheet" href="vendor/leaflet.css">', inline_css("leaflet.css"))
-    head = head.replace('<link rel="stylesheet" href="vendor/MarkerCluster.css">', inline_css("MarkerCluster.css"))
-    head = head.replace('<link rel="stylesheet" href="vendor/MarkerCluster.Default.css">', inline_css("MarkerCluster.Default.css"))
     head = head.replace('<link rel="stylesheet" href="static/app.css">',
                         f"<style>\n{read(os.path.join(STATIC, 'app.css'))}\n</style>")
     head = head.replace('<link rel="stylesheet" href="static/features.css">',
                         f"<style>\n{read(os.path.join(STATIC, 'features.css'))}\n</style>")
     head = head.replace('<script src="vendor/leaflet.js"></script>', inline_js("leaflet.js"))
-    head = head.replace('<script src="vendor/leaflet.markercluster.js"></script>', inline_js("leaflet.markercluster.js"))
     head = head.replace('<script src="vendor/leaflet.polylineoffset.js"></script>', inline_js("leaflet.polylineoffset.js"))
 
     # Leaflet's CSS refers to marker images by relative path; embed them.
@@ -214,7 +238,7 @@ def build_offline(payloads, manifest):
         "    <script>\n" + read(os.path.join(STATIC, "app.js")) + "\n</script>\n"
         "    <script>\n" + read(os.path.join(STATIC, "features.js")) + "\n</script>"
     )
-    write(os.path.join(DIST, "estonia-map-offline.html"), assemble_page(head, body, scripts))
+    write(out_path, assemble_page(head, body, scripts))
 
 
 # ----------------------------------------------------------------------------
@@ -223,7 +247,7 @@ def build_offline(payloads, manifest):
 def build_exports(payloads):
     from generate_unified_tech_map import CITY_SOURCES, export_kml_kmz
 
-    out = os.path.join(DIST, "exports")
+    out = os.path.join(ROOT, "exports")
     os.makedirs(out, exist_ok=True)
     labels = {"tallinn": "Tallinn", "tartu": "Tartu", "parnu": "Parnu",
               "narva": "Narva", "kohtla_jarve": "Kohtla-Jarve"}
@@ -237,39 +261,46 @@ def build_exports(payloads):
 
 # ----------------------------------------------------------------------------
 def main():
-    if os.path.isdir(DIST):
-        shutil.rmtree(DIST)
+    split = "--split" in sys.argv
 
     print("Building city payloads…")
     payloads = build_city_payloads()
     manifest = build_manifest(payloads)
 
-    print("Writing hosted build…")
-    build_hosted(payloads, manifest)
+    print("Writing index.html…")
+    index = os.path.join(ROOT, "index.html")
+    build_single_file(payloads, manifest, index)
 
-    print("Writing offline build…")
-    build_offline(payloads, manifest)
+    if split:
+        print("Writing dist/ (multi-file, needs a web server)…")
+        if os.path.isdir(DIST):
+            shutil.rmtree(DIST)
+        build_hosted(payloads, manifest)
+        build_single_file(payloads, manifest,
+                          os.path.join(DIST, "estonia-map-offline.html"))
 
     if "--no-exports" not in sys.argv:
         print("Writing KML / KMZ exports…")
         build_exports(payloads)
 
-    # Report what actually matters: what a first visit costs.
-    manifest_kb = os.path.getsize(os.path.join(DIST, "data/manifest.json")) / 1024
-    index_kb = os.path.getsize(os.path.join(DIST, "index.html")) / 1024
-    biggest = max(payloads, key=lambda k: os.path.getsize(os.path.join(DIST, f"data/city/{k}.json")))
-    biggest_kb = os.path.getsize(os.path.join(DIST, f"data/city/{biggest}.json")) / 1024
-    offline_mb = os.path.getsize(os.path.join(DIST, "estonia-map-offline.html")) / 1024 / 1024
+    size_mb = os.path.getsize(index) / 1024 / 1024
+    gz = _gzipped_size(index) / 1024 / 1024
 
     print()
-    print(f"  index.html            {index_kb:8.0f} KB")
-    print(f"  manifest.json         {manifest_kb:8.0f} KB")
-    print(f"  largest city payload  {biggest_kb:8.0f} KB  ({biggest})")
-    print(f"  → first paint         {index_kb + manifest_kb + biggest_kb:8.0f} KB worst case")
-    print(f"  offline build         {offline_mb:8.1f} MB  (single file)")
-    total = sum(os.path.getsize(os.path.join(dp, f))
-                for dp, _, fs in os.walk(DIST) for f in fs) / 1024 / 1024
-    print(f"  dist/ total           {total:8.1f} MB")
+    print(f"  index.html   {size_mb:5.1f} MB on disk")
+    print(f"               {gz:5.1f} MB over the wire (any host gzips it)")
+    print()
+    print("  Double-click index.html, or upload it anywhere. Nothing to install.")
+    if split:
+        total = sum(os.path.getsize(os.path.join(dp, f))
+                    for dp, _, fs in os.walk(DIST) for f in fs) / 1024 / 1024
+        print(f"  dist/        {total:5.1f} MB  (optional, for hosting on a server)")
+
+
+def _gzipped_size(path):
+    import gzip
+    with open(path, "rb") as f:
+        return len(gzip.compress(f.read(), 6))
 
 
 if __name__ == "__main__":

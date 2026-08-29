@@ -33,14 +33,14 @@ jobs:
           node --check static/features.js
 
       - name: Build
-        run: python build.py --no-exports
+        run: python build.py --no-exports --split
 
       - name: Test
         run: python -m pytest
 
-      - name: Upload build
+      - name: Upload the deliverable
         uses: actions/upload-artifact@v4
         with:
-          name: map-build
-          path: dist/
+          name: estonia-map
+          path: index.html
           retention-days: 14

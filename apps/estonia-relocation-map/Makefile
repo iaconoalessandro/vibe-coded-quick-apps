@@ -1,16 +1,22 @@
-.PHONY: help build data groceries rents test lint serve clean
+.PHONY: help build data groceries rents test lint open clean
 
 help:
-	@echo "make build      — assemble dist/ (hosted + offline builds, exports)"
-	@echo "make data       — run the full OSM pipeline, then build"
+	@echo "make build      — rebuild index.html (the whole deliverable)"
+	@echo "make open       — rebuild and open it in your browser"
+	@echo "make data       — re-run the full OSM pipeline, then build"
 	@echo "make groceries  — refresh supermarket data only"
 	@echo "make rents      — re-verify rents against live listings"
 	@echo "make test       — run the data and build test suite"
 	@echo "make lint       — ruff + node syntax check"
-	@echo "make serve      — serve dist/ at http://localhost:8777"
+	@echo ""
+	@echo "index.html needs no server and no install. Double-click it,"
+	@echo "or upload it to any static host. Python is only for rebuilding."
 
 build:
 	python3 build.py
+
+open: build
+	open index.html || xdg-open index.html
 
 data:
 	python3 scripts/osm_extract_raw.py
@@ -36,12 +42,9 @@ test:
 	python3 -m pytest
 
 lint:
-	ruff check scripts build.py tests || true
+	ruff check scripts build.py tests
 	node --check static/app.js
 	node --check static/features.js
-
-serve: build
-	python3 -m http.server 8777 --directory dist
 
 clean:
 	rm -rf dist __pycache__ scripts/__pycache__ .pytest_cache

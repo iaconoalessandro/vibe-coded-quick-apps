@@ -11,7 +11,6 @@ venv/
 data/osm_cache/
 *.osm.pbf
 
-# Build output (regenerate with `make build`)
+# Optional multi-file build for hosting on a real web server.
+# The deliverable, index.html, IS committed — see the README.
 dist/
-
-# Build output — regenerate with `make build`

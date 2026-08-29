@@ -5,12 +5,38 @@ interactive map for apartment hunting: verified tech employers, district rents
 and safety, zero-car transit planning, and the walk to the nearest big, cheap
 supermarket.
 
+## 👉 Double-click [`index.html`](index.html)
+
+That's it. It opens in any browser, on any OS. **No server, no install, nothing
+to set up.** Everything — the map library, the styles, the code, and all five
+cities of data — lives inside that one file.
+
+To put it online, upload `index.html` to anything that serves a file: GitHub
+Pages, Netlify, Cloudflare Pages, an S3 bucket, a folder on a web host. There is
+no build step to run and no configuration. It is 3.2 MB on disk and about
+0.7 MB over the wire, because every host gzips it.
+
+You can email it or put it on a USB stick. The only thing it asks the network
+for is the basemap tiles — every layer of data is already inside, so with no
+connection you still get all five cities' districts, rents, safety, transit and
+shops, drawn over an empty background.
+
+<details>
+<summary><b>Do I need Python?</b> — Only to rebuild it.</summary>
+
+No one opening, sharing or hosting the map needs Python or anything else.
+
+Python is used once, by you, to regenerate `index.html` after the underlying
+data changes — new rent figures, a new supermarket, a fresh OSM extract:
+
 ```bash
-make build && make serve      # → http://localhost:8777
+make build      # rewrites index.html
+make open       # rewrites it and opens it in your browser
 ```
 
-Or open `dist/estonia-map-offline.html` directly — a single self-contained file,
-no server, no install, any OS.
+`index.html` is committed to the repository, so even that is optional until the
+data needs updating.
+</details>
 
 ---
 
@@ -77,41 +103,51 @@ zoom in, so 5–6 colours on one Tallinn corridor stay individually readable.
 ## 🏗️ How it is built
 
 ```
-├── build.py                    assembles dist/ from templates + static + data
+├── index.html                  ⭐ THE DELIVERABLE — one self-contained file
+├── build.py                    regenerates it from the sources below
 ├── templates/                  _head.html · _body.html
-├── static/                     app.css · app.js  (base map)
-│                               features.css · features.js  (search, filters,
+├── static/                     app.css · app.js          (base map)
+│                               features.css · features.js (search, filters,
 │                               groceries, URL state, i18n)
-│                               i18n.json  (en · et · ru)
-├── vendor/                     Leaflet 1.9.3 + markercluster + polylineoffset,
-│                               vendored so the offline build really is offline
-├── data/                       derived datasets (see below)
+│                               i18n.json                  (en · et · ru)
+├── vendor/                     Leaflet 1.9.3 + polylineoffset, vendored
+├── data/                       derived datasets
 ├── scripts/                    the OSM → data pipeline
-├── tests/                      data integrity + build budget
-└── dist/                       build output — never edited by hand
+├── exports/                    KML / KMZ for offline GPS
+└── tests/                      data integrity + the single-file guarantees
 ```
 
-Two outputs from one set of sources:
+The source is split into real files so it can be edited, linted and diffed.
+`build.py` inlines all of it into `index.html`. You edit the sources; users only
+ever see the one file.
 
-| | First paint | Notes |
-|---|---|---|
-| `dist/index.html` | **~815 KB** worst case | Loads one city at a time; parks stream in behind |
-| `dist/estonia-map-offline.html` | 3.4 MB | Everything inlined. One file, no server |
+### The tests defend the double-click
 
-`make test` enforces the first-paint budget, so data cannot quietly creep back
-into the page shell.
+`make test` fails if `index.html` ever references a local stylesheet, script or
+data file, picks up a third-party CDN, or starts using ES modules — each of
+which would silently break it when opened from `file://`. It also holds the
+file to a 3.6 MB budget.
 
-### Rebuilding
+### If you ever host it properly
+
+```bash
+python3 build.py --split
+```
+
+also writes `dist/`, a multi-file version that fetches data per city over HTTP.
+First paint drops to ~815 KB instead of 3.2 MB. It needs a real web server —
+browsers block `fetch()` on `file://`, so it will *not* work by double-click.
+It exists for later; `index.html` is the product.
+
+### Rebuilding the data
 
 ```bash
 make data        # full pipeline: OSM extract → boundaries → parks → transit
                  # → safety → groceries → rents → build
 make groceries   # supermarkets only (Overpass, cached)
 make rents       # re-verify rents against live listings
-make test        # 46 checks
+make test        # 50 checks
 ```
-
----
 
 ## 🔬 Data provenance
 
