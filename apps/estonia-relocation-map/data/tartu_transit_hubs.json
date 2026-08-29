@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Tartu Central Railway Station (Raudteejaam)",
+    "description": "Historic Vaksali railway hub. Direct Elron commuter trains to Tallinn, Valga, and Koidula/Põlva + Buses 3, 6, 11, 25.",
+    "lat": 58.3741,
+    "lon": 26.7078,
+    "color": "#581c87",
+    "icon": "🚆"
+  },
+  {
+    "name": "Tartu Central Bus Station (Bussijaam)",
+    "description": "Central long-distance and regional transit terminal at Tasku & Kvartal. Key nexus for all city buses (Lines 1–8).",
+    "lat": 58.378,
+    "lon": 26.731,
+    "color": "#581c87",
+    "icon": "🚌"
+  },
+  {
+    "name": "Delta Centre & Riverfront Node",
+    "description": "Multi-modal river transfer node serving UT Delta Computer Science campus, Atlantis promenade & northern lines.",
+    "lat": 58.3845,
+    "lon": 26.7265,
+    "color": "#581c87",
+    "icon": "🎓"
+  },
+  {
+    "name": "Lõunakeskus Regional Transit Terminal",
+    "description": "South-western transit terminal connecting Tartu Science Park, Ringtee tech corridor, and western regional coaches.",
+    "lat": 58.357,
+    "lon": 26.68,
+    "color": "#581c87",
+    "icon": "🏬"
+  },
+  {
+    "name": "Maarjamõisa MedTech & Science Node",
+    "description": "Puusepa / Ravila medical and tech transfer point serving TÜ Hospital, Biomedicum, Chemicum & Physicum.",
+    "lat": 58.3695,
+    "lon": 26.697,
+    "color": "#581c87",
+    "icon": "🔬"
+  }
+]

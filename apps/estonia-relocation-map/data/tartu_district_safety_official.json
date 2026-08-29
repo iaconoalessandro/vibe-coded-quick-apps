@@ -1,0 +1,3769 @@
+[
+  {
+    "id": "safety_tammelinn",
+    "name": "Tammelinn",
+    "district": "Tammelinn (Oak Town)",
+    "short_name": "Tammelinn",
+    "lat": 58.362306,
+    "lon": 26.701528,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.1,
+    "scores": {
+      "calmness": 2.1,
+      "assaults": 3.4,
+      "thefts": 2.4,
+      "drunkenness": 3.4,
+      "severe_crimes": 3.3,
+      "family": 3.0,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "2 bars/pubs/clubs and 0 alcohol shops (72th percentile nationally), 3 hotels/attractions, 15th-percentile green cover, 75% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 72th percentile, students/dormitories at the 81th, tourist footfall at the 72th, deprivation index 0.29 (cheap rent + 43% tertiary education + 25% apartment blocks). Offset by 0 schools/kindergartens and 4 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 45th percentile, tourist density 72th (pickpocketing), student/campus density 81th (bicycle theft), affluence 58th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 2 licensed premises and alcohol shops in this district (72th percentile nationally); deprivation index 0.29; 3 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.29) and night-time economy (72th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.1/5.0 nationally — around the Estonian average. A night-time drinking hotspot — expect noise and street drinkers; a reasonable family presence; well-off and well-kept (43% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.358308,
+          26.683883
+        ],
+        [
+          58.358864,
+          26.684948
+        ],
+        [
+          58.361602,
+          26.690863
+        ],
+        [
+          58.363557,
+          26.68835
+        ],
+        [
+          58.367293,
+          26.69974
+        ],
+        [
+          58.366333,
+          26.700712
+        ],
+        [
+          58.3668,
+          26.703555
+        ],
+        [
+          58.37333,
+          26.699616
+        ],
+        [
+          58.37346,
+          26.699479
+        ],
+        [
+          58.373544,
+          26.699216
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.372994,
+          26.704227
+        ],
+        [
+          58.37219,
+          26.705801
+        ],
+        [
+          58.371465,
+          26.707601
+        ],
+        [
+          58.369845,
+          26.712626
+        ],
+        [
+          58.368854,
+          26.714064
+        ],
+        [
+          58.367596,
+          26.715617
+        ],
+        [
+          58.36615,
+          26.716783
+        ],
+        [
+          58.364626,
+          26.717537
+        ],
+        [
+          58.362927,
+          26.717727
+        ],
+        [
+          58.361767,
+          26.717572
+        ],
+        [
+          58.360462,
+          26.717044
+        ],
+        [
+          58.359386,
+          26.716372
+        ],
+        [
+          58.358426,
+          26.715529
+        ],
+        [
+          58.357653,
+          26.714614
+        ],
+        [
+          58.356232,
+          26.712345
+        ],
+        [
+          58.347353,
+          26.69436
+        ],
+        [
+          58.347555,
+          26.694057
+        ],
+        [
+          58.347771,
+          26.694531
+        ],
+        [
+          58.35148,
+          26.689661
+        ],
+        [
+          58.352913,
+          26.687982
+        ],
+        [
+          58.355142,
+          26.685669
+        ],
+        [
+          58.356052,
+          26.684421
+        ],
+        [
+          58.35723,
+          26.68221
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.72,
+      "tourist_pctile": 0.72,
+      "retail_pctile": 0.45,
+      "student_pctile": 0.81,
+      "family_amenity_pctile": 0.39,
+      "green_pctile": 0.15,
+      "house_share_pctile": 0.61,
+      "affluence_pctile": 0.58,
+      "education_pctile": 0.82,
+      "deprivation_index": 0.29,
+      "tertiary_education_pct": 43.0,
+      "rent_eur_m2": 11.41
+    },
+    "family_desc": "0 schools/kindergartens and 4 playgrounds (39th percentile nationally), 0 sports facilities, 75% detached/terraced housing, 43% of adults hold a bachelor's degree or higher, rent €11.41/m² (58th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_tähtvere",
+    "name": "Tähtvere",
+    "district": "Tähtvere (Song Festival & Academic Quarter)",
+    "short_name": "Tähtvere",
+    "lat": 58.385888,
+    "lon": 26.703425,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.0,
+    "scores": {
+      "calmness": 3.8,
+      "assaults": 4.4,
+      "thefts": 2.0,
+      "drunkenness": 4.7,
+      "severe_crimes": 3.9,
+      "family": 4.5,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (1th percentile nationally), 6 hotels/attractions, 85th-percentile green cover, 33% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 1th percentile, students/dormitories at the 94th, tourist footfall at the 84th, deprivation index 0.38 (cheap rent + 49% tertiary education + 67% apartment blocks). Offset by 1 schools/kindergartens and 5 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 43th percentile, tourist density 84th (pickpocketing), student/campus density 94th (bicycle theft), affluence 51th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (1th percentile nationally); deprivation index 0.38; 6 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.38) and night-time economy (1th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.0/5.0 nationally — well above the Estonian average. Nights are quiet; a reasonable family presence; mixed (49% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.382563,
+          26.692054
+        ],
+        [
+          58.383496,
+          26.690697
+        ],
+        [
+          58.38514,
+          26.688927
+        ],
+        [
+          58.395874,
+          26.681039
+        ],
+        [
+          58.398761,
+          26.694882
+        ],
+        [
+          58.396782,
+          26.697788
+        ],
+        [
+          58.396012,
+          26.701761
+        ],
+        [
+          58.394604,
+          26.706141
+        ],
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.387747,
+          26.70457
+        ],
+        [
+          58.386262,
+          26.708034
+        ],
+        [
+          58.384498,
+          26.711222
+        ],
+        [
+          58.383692,
+          26.712448
+        ],
+        [
+          58.382593,
+          26.71439
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383012,
+          26.711101
+        ],
+        [
+          58.382124,
+          26.709571
+        ],
+        [
+          58.381897,
+          26.709465
+        ],
+        [
+          58.379918,
+          26.709313
+        ],
+        [
+          58.379245,
+          26.709871
+        ],
+        [
+          58.378112,
+          26.703677
+        ],
+        [
+          58.377578,
+          26.701834
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.382563,
+          26.692054
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.01,
+      "tourist_pctile": 0.84,
+      "retail_pctile": 0.43,
+      "student_pctile": 0.94,
+      "family_amenity_pctile": 0.51,
+      "green_pctile": 0.85,
+      "house_share_pctile": 0.43,
+      "affluence_pctile": 0.51,
+      "education_pctile": 0.97,
+      "deprivation_index": 0.38,
+      "tertiary_education_pct": 49.0,
+      "rent_eur_m2": 11.24
+    },
+    "family_desc": "1 schools/kindergartens and 5 playgrounds (51th percentile nationally), 0 sports facilities, 33% detached/terraced housing, 49% of adults hold a bachelor's degree or higher, rent €11.24/m² (51th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_ihaste",
+    "name": "Ihaste",
+    "district": "Ihaste (Pine Forest Villa Quarter)",
+    "short_name": "Ihaste",
+    "lat": 58.352068,
+    "lon": 26.772476,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.3,
+    "scores": {
+      "calmness": 4.0,
+      "assaults": 4.7,
+      "thefts": 3.6,
+      "drunkenness": 4.8,
+      "severe_crimes": 4.1,
+      "family": 4.3,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (3th percentile nationally), 0 hotels/attractions, 76th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 3th percentile, students/dormitories at the 3th, tourist footfall at the 0th, deprivation index 0.23 (cheap rent + 42% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 0th percentile, tourist density 0th (pickpocketing), student/campus density 3th (bicycle theft), affluence 62th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (3th percentile nationally); deprivation index 0.23; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.23) and night-time economy (3th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.3/5.0 nationally — among the best in Estonia. Nights are quiet; few families — this is not a school-run neighbourhood; well-off and well-kept (42% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.357059,
+          26.754296
+        ],
+        [
+          58.359272,
+          26.759696
+        ],
+        [
+          58.357764,
+          26.76056
+        ],
+        [
+          58.354337,
+          26.765376
+        ],
+        [
+          58.354676,
+          26.770861
+        ],
+        [
+          58.354866,
+          26.771748
+        ],
+        [
+          58.355727,
+          26.77303
+        ],
+        [
+          58.358326,
+          26.776267
+        ],
+        [
+          58.359717,
+          26.777718
+        ],
+        [
+          58.362865,
+          26.780026
+        ],
+        [
+          58.364609,
+          26.780802
+        ],
+        [
+          58.364043,
+          26.787244
+        ],
+        [
+          58.3636,
+          26.798007
+        ],
+        [
+          58.361817,
+          26.796795
+        ],
+        [
+          58.361392,
+          26.796608
+        ],
+        [
+          58.35883,
+          26.796438
+        ],
+        [
+          58.350658,
+          26.788181
+        ],
+        [
+          58.348379,
+          26.790801
+        ],
+        [
+          58.344319,
+          26.791393
+        ],
+        [
+          58.339281,
+          26.775987
+        ],
+        [
+          58.339011,
+          26.775321
+        ],
+        [
+          58.341587,
+          26.774577
+        ],
+        [
+          58.342044,
+          26.774146
+        ],
+        [
+          58.34238,
+          26.773394
+        ],
+        [
+          58.342615,
+          26.77235
+        ],
+        [
+          58.342336,
+          26.769723
+        ],
+        [
+          58.342876,
+          26.767381
+        ],
+        [
+          58.343402,
+          26.765617
+        ],
+        [
+          58.345241,
+          26.76226
+        ],
+        [
+          58.34638,
+          26.758906
+        ],
+        [
+          58.348776,
+          26.756662
+        ],
+        [
+          58.349757,
+          26.751066
+        ],
+        [
+          58.353395,
+          26.749471
+        ],
+        [
+          58.355523,
+          26.746971
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.03,
+      "tourist_pctile": 0.0,
+      "retail_pctile": 0.0,
+      "student_pctile": 0.03,
+      "family_amenity_pctile": 0.0,
+      "green_pctile": 0.76,
+      "house_share_pctile": 0.73,
+      "affluence_pctile": 0.62,
+      "education_pctile": 0.78,
+      "deprivation_index": 0.23,
+      "tertiary_education_pct": 42.0,
+      "rent_eur_m2": 11.48
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (0th percentile nationally), 2 sports facilities, 100% detached/terraced housing, 42% of adults hold a bachelor's degree or higher, rent €11.48/m² (62th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kvissentali",
+    "name": "Kvissentali",
+    "district": "Kvissentali (Riverside Villa Quarter)",
+    "short_name": "Kvissentali",
+    "lat": 58.401651,
+    "lon": 26.702862,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.4,
+    "scores": {
+      "calmness": 4.0,
+      "assaults": 4.7,
+      "thefts": 3.6,
+      "drunkenness": 4.8,
+      "severe_crimes": 4.1,
+      "family": 5.0,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (4th percentile nationally), 0 hotels/attractions, 91th-percentile green cover, 92% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 4th percentile, students/dormitories at the 4th, tourist footfall at the 1th, deprivation index 0.22 (cheap rent + 41% tertiary education + 8% apartment blocks). Offset by 0 schools/kindergartens and 2 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 1th percentile, tourist density 1th (pickpocketing), student/campus density 4th (bicycle theft), affluence 77th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (4th percentile nationally); deprivation index 0.22; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.22) and night-time economy (4th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.4/5.0 nationally — among the best in Estonia. Nights are quiet; a reasonable family presence; well-off and well-kept (41% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.410365,
+          26.690309
+        ],
+        [
+          58.410885,
+          26.692983
+        ],
+        [
+          58.408693,
+          26.704765
+        ],
+        [
+          58.408966,
+          26.707583
+        ],
+        [
+          58.406696,
+          26.708009
+        ],
+        [
+          58.406525,
+          26.708874
+        ],
+        [
+          58.404279,
+          26.708727
+        ],
+        [
+          58.404229,
+          26.708371
+        ],
+        [
+          58.404073,
+          26.708354
+        ],
+        [
+          58.39998,
+          26.708402
+        ],
+        [
+          58.399205,
+          26.708657
+        ],
+        [
+          58.397896,
+          26.70976
+        ],
+        [
+          58.396666,
+          26.711554
+        ],
+        [
+          58.396021,
+          26.712737
+        ],
+        [
+          58.395151,
+          26.711118
+        ],
+        [
+          58.394725,
+          26.710812
+        ],
+        [
+          58.394147,
+          26.710899
+        ],
+        [
+          58.393773,
+          26.709835
+        ],
+        [
+          58.39352,
+          26.709587
+        ],
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.394604,
+          26.706141
+        ],
+        [
+          58.396012,
+          26.701761
+        ],
+        [
+          58.396782,
+          26.697788
+        ],
+        [
+          58.398761,
+          26.694882
+        ],
+        [
+          58.400791,
+          26.693261
+        ],
+        [
+          58.402519,
+          26.692271
+        ],
+        [
+          58.405507,
+          26.690936
+        ],
+        [
+          58.407315,
+          26.691003
+        ],
+        [
+          58.409216,
+          26.690321
+        ],
+        [
+          58.41025,
+          26.689786
+        ],
+        [
+          58.410365,
+          26.690309
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.04,
+      "tourist_pctile": 0.01,
+      "retail_pctile": 0.01,
+      "student_pctile": 0.04,
+      "family_amenity_pctile": 0.4,
+      "green_pctile": 0.91,
+      "house_share_pctile": 0.7,
+      "affluence_pctile": 0.77,
+      "education_pctile": 0.71,
+      "deprivation_index": 0.22,
+      "tertiary_education_pct": 41.0,
+      "rent_eur_m2": 12.6
+    },
+    "family_desc": "0 schools/kindergartens and 2 playgrounds (40th percentile nationally), 0 sports facilities, 92% detached/terraced housing, 41% of adults hold a bachelor's degree or higher, rent €12.6/m² (77th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_supilinn",
+    "name": "Supilinn",
+    "district": "Supilinn (Soup Town / Bohemian Wooden Quarter)",
+    "short_name": "Supilinn",
+    "lat": 58.386266,
+    "lon": 26.71322,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.4,
+    "scores": {
+      "calmness": 4.0,
+      "assaults": 4.7,
+      "thefts": 3.5,
+      "drunkenness": 4.8,
+      "severe_crimes": 4.1,
+      "family": 5.0,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (6th percentile nationally), 0 hotels/attractions, 90th-percentile green cover, 20% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 6th percentile, students/dormitories at the 6th, tourist footfall at the 3th, deprivation index 0.33 (cheap rent + 45% tertiary education + 80% apartment blocks). Offset by 0 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 60th percentile, tourist density 3th (pickpocketing), student/campus density 6th (bicycle theft), affluence 81th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (6th percentile nationally); deprivation index 0.33; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.33) and night-time economy (6th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.4/5.0 nationally — among the best in Estonia. Nights are quiet; plenty of families with children around; well-off and well-kept (45% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.387747,
+          26.70457
+        ],
+        [
+          58.386262,
+          26.708034
+        ],
+        [
+          58.384498,
+          26.711222
+        ],
+        [
+          58.383692,
+          26.712448
+        ],
+        [
+          58.382593,
+          26.71439
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383887,
+          26.715744
+        ],
+        [
+          58.383978,
+          26.715943
+        ],
+        [
+          58.384418,
+          26.718238
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.387929,
+          26.719171
+        ],
+        [
+          58.38937,
+          26.715117
+        ],
+        [
+          58.39112,
+          26.711726
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.387747,
+          26.70457
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.06,
+      "tourist_pctile": 0.03,
+      "retail_pctile": 0.6,
+      "student_pctile": 0.06,
+      "family_amenity_pctile": 0.88,
+      "green_pctile": 0.9,
+      "house_share_pctile": 0.28,
+      "affluence_pctile": 0.81,
+      "education_pctile": 0.86,
+      "deprivation_index": 0.33,
+      "tertiary_education_pct": 45.0,
+      "rent_eur_m2": 12.8
+    },
+    "family_desc": "0 schools/kindergartens and 6 playgrounds (88th percentile nationally), 0 sports facilities, 20% detached/terraced housing, 45% of adults hold a bachelor's degree or higher, rent €12.8/m² (81th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_maarjamõisa",
+    "name": "Maarjamõisa",
+    "district": "Maarjamõisa (Medical & Technology Hub)",
+    "short_name": "Maarjamõisa",
+    "lat": 58.366101,
+    "lon": 26.689131,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.3,
+    "scores": {
+      "calmness": 4.0,
+      "assaults": 4.7,
+      "thefts": 3.1,
+      "drunkenness": 4.8,
+      "severe_crimes": 4.1,
+      "family": 4.8,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (7th percentile nationally), 0 hotels/attractions, 61th-percentile green cover, 82% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 7th percentile, students/dormitories at the 99th, tourist footfall at the 4th, deprivation index 0.14 (cheap rent + 46% tertiary education + 18% apartment blocks). Offset by 1 schools/kindergartens and 2 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 54th percentile, tourist density 4th (pickpocketing), student/campus density 99th (bicycle theft), affluence 85th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (7th percentile nationally); deprivation index 0.14; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.14) and night-time economy (7th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.3/5.0 nationally — among the best in Estonia. Nights are quiet; a reasonable family presence; well-off and well-kept (46% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.364807,
+          26.677989
+        ],
+        [
+          58.367083,
+          26.678129
+        ],
+        [
+          58.368314,
+          26.6839
+        ],
+        [
+          58.370066,
+          26.690441
+        ],
+        [
+          58.368961,
+          26.69185
+        ],
+        [
+          58.370148,
+          26.695571
+        ],
+        [
+          58.370711,
+          26.694921
+        ],
+        [
+          58.371267,
+          26.696668
+        ],
+        [
+          58.371354,
+          26.69715
+        ],
+        [
+          58.372758,
+          26.696534
+        ],
+        [
+          58.373544,
+          26.699216
+        ],
+        [
+          58.37346,
+          26.699479
+        ],
+        [
+          58.37333,
+          26.699616
+        ],
+        [
+          58.3668,
+          26.703555
+        ],
+        [
+          58.366333,
+          26.700712
+        ],
+        [
+          58.367293,
+          26.69974
+        ],
+        [
+          58.363557,
+          26.68835
+        ],
+        [
+          58.361602,
+          26.690863
+        ],
+        [
+          58.358864,
+          26.684948
+        ],
+        [
+          58.358308,
+          26.683883
+        ],
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.35907,
+          26.6797
+        ],
+        [
+          58.359829,
+          26.678849
+        ],
+        [
+          58.360531,
+          26.678324
+        ],
+        [
+          58.361326,
+          26.678028
+        ],
+        [
+          58.363364,
+          26.677931
+        ],
+        [
+          58.364807,
+          26.677989
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.07,
+      "tourist_pctile": 0.04,
+      "retail_pctile": 0.54,
+      "student_pctile": 0.99,
+      "family_amenity_pctile": 0.58,
+      "green_pctile": 0.61,
+      "house_share_pctile": 0.66,
+      "affluence_pctile": 0.85,
+      "education_pctile": 0.9,
+      "deprivation_index": 0.14,
+      "tertiary_education_pct": 46.0,
+      "rent_eur_m2": 13.5
+    },
+    "family_desc": "1 schools/kindergartens and 2 playgrounds (58th percentile nationally), 0 sports facilities, 82% detached/terraced housing, 46% of adults hold a bachelor's degree or higher, rent €13.5/m² (85th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_veeriku",
+    "name": "Veeriku",
+    "district": "Veeriku (Western Residential Quarter)",
+    "short_name": "Veeriku",
+    "lat": 58.378934,
+    "lon": 26.685796,
+    "color": "#ca8a04",
+    "fill_color": "#eab308",
+    "face_type": "neutral",
+    "mean_score": 3.9,
+    "scores": {
+      "calmness": 3.1,
+      "assaults": 4.7,
+      "thefts": 2.6,
+      "drunkenness": 4.5,
+      "severe_crimes": 3.6,
+      "family": 4.2,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (9th percentile nationally), 2 hotels/attractions, 16th-percentile green cover, 31% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 9th percentile, students/dormitories at the 7th, tourist footfall at the 64th, deprivation index 0.47 (cheap rent + 41% tertiary education + 69% apartment blocks). Offset by 1 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 64th percentile, tourist density 64th (pickpocketing), student/campus density 7th (bicycle theft), affluence 48th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (9th percentile nationally); deprivation index 0.47; 2 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.47) and night-time economy (9th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.9/5.0 nationally — well above the Estonian average. Nights are quiet; a reasonable family presence; mixed (41% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.36963,
+          26.678268
+        ],
+        [
+          58.372807,
+          26.678349
+        ],
+        [
+          58.374199,
+          26.678146
+        ],
+        [
+          58.376092,
+          26.677585
+        ],
+        [
+          58.378619,
+          26.676325
+        ],
+        [
+          58.378901,
+          26.676493
+        ],
+        [
+          58.379016,
+          26.677029
+        ],
+        [
+          58.379025,
+          26.678516
+        ],
+        [
+          58.380951,
+          26.683042
+        ],
+        [
+          58.405798,
+          26.667075
+        ],
+        [
+          58.404562,
+          26.673665
+        ],
+        [
+          58.403346,
+          26.674729
+        ],
+        [
+          58.39574,
+          26.680377
+        ],
+        [
+          58.395874,
+          26.681039
+        ],
+        [
+          58.38514,
+          26.688927
+        ],
+        [
+          58.383496,
+          26.690697
+        ],
+        [
+          58.382563,
+          26.692054
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.37583,
+          26.701369
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.373591,
+          26.699349
+        ],
+        [
+          58.372758,
+          26.696534
+        ],
+        [
+          58.371354,
+          26.69715
+        ],
+        [
+          58.371267,
+          26.696668
+        ],
+        [
+          58.370711,
+          26.694921
+        ],
+        [
+          58.370148,
+          26.695571
+        ],
+        [
+          58.368961,
+          26.69185
+        ],
+        [
+          58.370066,
+          26.690441
+        ],
+        [
+          58.368314,
+          26.6839
+        ],
+        [
+          58.367083,
+          26.678129
+        ],
+        [
+          58.36963,
+          26.678268
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.09,
+      "tourist_pctile": 0.64,
+      "retail_pctile": 0.64,
+      "student_pctile": 0.07,
+      "family_amenity_pctile": 0.54,
+      "green_pctile": 0.16,
+      "house_share_pctile": 0.4,
+      "affluence_pctile": 0.48,
+      "education_pctile": 0.74,
+      "deprivation_index": 0.47,
+      "tertiary_education_pct": 41.0,
+      "rent_eur_m2": 11.02
+    },
+    "family_desc": "1 schools/kindergartens and 6 playgrounds (54th percentile nationally), 0 sports facilities, 31% detached/terraced housing, 41% of adults hold a bachelor's degree or higher, rent €11.02/m² (48th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_karlova",
+    "name": "Karlova",
+    "district": "Karlova (Artisan Wooden Heritage Quarter)",
+    "short_name": "Karlova",
+    "lat": 58.365797,
+    "lon": 26.736477,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.9,
+    "scores": {
+      "calmness": 1.9,
+      "assaults": 3.1,
+      "thefts": 1.9,
+      "drunkenness": 3.5,
+      "severe_crimes": 3.0,
+      "family": 3.0,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "1 bars/pubs/clubs and 0 alcohol shops (67th percentile nationally), 3 hotels/attractions, 18th-percentile green cover, 48% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 67th percentile, students/dormitories at the 87th, tourist footfall at the 79th, deprivation index 0.41 (cheap rent + 37% tertiary education + 52% apartment blocks). Offset by 0 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 79th percentile, tourist density 79th (pickpocketing), student/campus density 87th (bicycle theft), affluence 74th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 1 licensed premises and alcohol shops in this district (67th percentile nationally); deprivation index 0.41; 3 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.41) and night-time economy (67th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.9/5.0 nationally — below the Estonian average. Some night-time bar traffic; a reasonable family presence; mixed (37% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.363415,
+          26.720877
+        ],
+        [
+          58.365298,
+          26.721368
+        ],
+        [
+          58.367624,
+          26.721225
+        ],
+        [
+          58.370581,
+          26.721548
+        ],
+        [
+          58.371583,
+          26.721878
+        ],
+        [
+          58.37207,
+          26.722197
+        ],
+        [
+          58.371994,
+          26.722635
+        ],
+        [
+          58.371963,
+          26.723558
+        ],
+        [
+          58.372369,
+          26.726016
+        ],
+        [
+          58.370829,
+          26.727108
+        ],
+        [
+          58.370873,
+          26.727336
+        ],
+        [
+          58.371374,
+          26.728298
+        ],
+        [
+          58.371848,
+          26.7287
+        ],
+        [
+          58.372048,
+          26.729426
+        ],
+        [
+          58.372362,
+          26.732142
+        ],
+        [
+          58.372662,
+          26.731757
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.371551,
+          26.741421
+        ],
+        [
+          58.370266,
+          26.743529
+        ],
+        [
+          58.36942,
+          26.745961
+        ],
+        [
+          58.368768,
+          26.748333
+        ],
+        [
+          58.368403,
+          26.749167
+        ],
+        [
+          58.367982,
+          26.749776
+        ],
+        [
+          58.367526,
+          26.750224
+        ],
+        [
+          58.367126,
+          26.750368
+        ],
+        [
+          58.366624,
+          26.750356
+        ],
+        [
+          58.36601,
+          26.750059
+        ],
+        [
+          58.364998,
+          26.748843
+        ],
+        [
+          58.364618,
+          26.748605
+        ],
+        [
+          58.364103,
+          26.748503
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.363442,
+          26.747455
+        ],
+        [
+          58.363241,
+          26.747376
+        ],
+        [
+          58.362726,
+          26.746901
+        ],
+        [
+          58.362243,
+          26.746065
+        ],
+        [
+          58.361003,
+          26.742657
+        ],
+        [
+          58.3606,
+          26.741846
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.358557,
+          26.739984
+        ],
+        [
+          58.358061,
+          26.73937
+        ],
+        [
+          58.357697,
+          26.738744
+        ],
+        [
+          58.357386,
+          26.737887
+        ],
+        [
+          58.357086,
+          26.736713
+        ],
+        [
+          58.357,
+          26.735285
+        ],
+        [
+          58.357007,
+          26.733794
+        ],
+        [
+          58.357758,
+          26.73018
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.361581,
+          26.721204
+        ],
+        [
+          58.363415,
+          26.720877
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.67,
+      "tourist_pctile": 0.79,
+      "retail_pctile": 0.79,
+      "student_pctile": 0.87,
+      "family_amenity_pctile": 0.57,
+      "green_pctile": 0.18,
+      "house_share_pctile": 0.51,
+      "affluence_pctile": 0.74,
+      "education_pctile": 0.49,
+      "deprivation_index": 0.41,
+      "tertiary_education_pct": 37.0,
+      "rent_eur_m2": 12.46
+    },
+    "family_desc": "0 schools/kindergartens and 6 playgrounds (57th percentile nationally), 1 sports facilities, 48% detached/terraced housing, 37% of adults hold a bachelor's degree or higher, rent €12.46/m² (74th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_variku",
+    "name": "Variku",
+    "district": "Variku (Southern Suburb)",
+    "short_name": "Variku",
+    "lat": 58.3521,
+    "lon": 26.709496,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.0,
+    "scores": {
+      "calmness": 3.7,
+      "assaults": 4.7,
+      "thefts": 3.3,
+      "drunkenness": 4.5,
+      "severe_crimes": 3.8,
+      "family": 3.4,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (10th percentile nationally), 0 hotels/attractions, 9th-percentile green cover, 97% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 10th percentile, students/dormitories at the 9th, tourist footfall at the 6th, deprivation index 0.40 (cheap rent + 40% tertiary education + 3% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 49th percentile, tourist density 6th (pickpocketing), student/campus density 9th (bicycle theft), affluence 30th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (10th percentile nationally); deprivation index 0.40; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.40) and night-time economy (10th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.0/5.0 nationally — well above the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; mixed (40% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.354743,
+          26.709335
+        ],
+        [
+          58.356232,
+          26.712345
+        ],
+        [
+          58.357312,
+          26.714158
+        ],
+        [
+          58.358426,
+          26.715529
+        ],
+        [
+          58.359386,
+          26.716372
+        ],
+        [
+          58.360029,
+          26.716793
+        ],
+        [
+          58.35224,
+          26.712172
+        ],
+        [
+          58.351777,
+          26.712014
+        ],
+        [
+          58.350014,
+          26.711591
+        ],
+        [
+          58.348642,
+          26.71173
+        ],
+        [
+          58.345255,
+          26.712333
+        ],
+        [
+          58.345335,
+          26.707476
+        ],
+        [
+          58.344943,
+          26.701762
+        ],
+        [
+          58.347174,
+          26.694627
+        ],
+        [
+          58.347353,
+          26.69436
+        ],
+        [
+          58.354743,
+          26.709335
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.1,
+      "tourist_pctile": 0.06,
+      "retail_pctile": 0.49,
+      "student_pctile": 0.09,
+      "family_amenity_pctile": 0.01,
+      "green_pctile": 0.09,
+      "house_share_pctile": 0.72,
+      "affluence_pctile": 0.3,
+      "education_pctile": 0.67,
+      "deprivation_index": 0.4,
+      "tertiary_education_pct": 40.0,
+      "rent_eur_m2": 8.84
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (1th percentile nationally), 0 sports facilities, 97% detached/terraced housing, 40% of adults hold a bachelor's degree or higher, rent €8.84/m² (30th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_ränilinn",
+    "name": "Ränilinn",
+    "district": "Ränilinn (Lõunakeskus Commercial Quarter)",
+    "short_name": "Ränilinn",
+    "lat": 58.355584,
+    "lon": 26.677713,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 1.4,
+      "assaults": 3.4,
+      "thefts": 2.1,
+      "drunkenness": 3.1,
+      "severe_crimes": 2.7,
+      "family": 3.0,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "2 bars/pubs/clubs and 0 alcohol shops (88th percentile nationally), 1 hotels/attractions, 19th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 88th percentile, students/dormitories at the 10th, tourist footfall at the 66th, deprivation index 0.54 (cheap rent + 37% tertiary education + 100% apartment blocks). Offset by 1 schools/kindergartens and 11 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 94th percentile, tourist density 66th (pickpocketing), student/campus density 10th (bicycle theft), affluence 69th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 2 licensed premises and alcohol shops in this district (88th percentile nationally); deprivation index 0.54; 1 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.54) and night-time economy (88th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; mixed (37% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.356052,
+          26.684421
+        ],
+        [
+          58.355142,
+          26.685669
+        ],
+        [
+          58.352913,
+          26.687982
+        ],
+        [
+          58.35148,
+          26.689661
+        ],
+        [
+          58.347771,
+          26.694531
+        ],
+        [
+          58.343126,
+          26.684969
+        ],
+        [
+          58.343377,
+          26.684325
+        ],
+        [
+          58.343937,
+          26.683597
+        ],
+        [
+          58.348908,
+          26.678804
+        ],
+        [
+          58.351577,
+          26.676018
+        ],
+        [
+          58.351875,
+          26.675459
+        ],
+        [
+          58.353117,
+          26.677243
+        ],
+        [
+          58.352859,
+          26.675369
+        ],
+        [
+          58.35368,
+          26.674954
+        ],
+        [
+          58.353541,
+          26.673898
+        ],
+        [
+          58.356713,
+          26.670949
+        ],
+        [
+          58.357005,
+          26.669882
+        ],
+        [
+          58.35744,
+          26.670717
+        ],
+        [
+          58.357797,
+          26.671001
+        ],
+        [
+          58.357727,
+          26.671271
+        ],
+        [
+          58.357985,
+          26.671767
+        ],
+        [
+          58.358083,
+          26.671384
+        ],
+        [
+          58.359768,
+          26.673101
+        ],
+        [
+          58.359871,
+          26.67274
+        ],
+        [
+          58.3602,
+          26.673079
+        ],
+        [
+          58.360029,
+          26.673679
+        ],
+        [
+          58.359858,
+          26.674909
+        ],
+        [
+          58.3599,
+          26.675034
+        ],
+        [
+          58.359864,
+          26.675202
+        ],
+        [
+          58.360541,
+          26.675867
+        ],
+        [
+          58.360421,
+          26.676364
+        ],
+        [
+          58.361326,
+          26.678028
+        ],
+        [
+          58.360531,
+          26.678324
+        ],
+        [
+          58.359829,
+          26.678849
+        ],
+        [
+          58.35907,
+          26.6797
+        ],
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.356052,
+          26.684421
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.88,
+      "tourist_pctile": 0.66,
+      "retail_pctile": 0.94,
+      "student_pctile": 0.1,
+      "family_amenity_pctile": 0.82,
+      "green_pctile": 0.19,
+      "house_share_pctile": 0.0,
+      "affluence_pctile": 0.69,
+      "education_pctile": 0.53,
+      "deprivation_index": 0.54,
+      "tertiary_education_pct": 37.0,
+      "rent_eur_m2": 12.19
+    },
+    "family_desc": "1 schools/kindergartens and 11 playgrounds (82th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 37% of adults hold a bachelor's degree or higher, rent €12.19/m² (69th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_raadi_kruusamäe",
+    "name": "Raadi-Kruusamäe",
+    "district": "Raadi-Kruusamäe (ERM & Cultural Quarter)",
+    "short_name": "Raadi-Kruusamäe",
+    "lat": 58.398,
+    "lon": 26.745,
+    "color": "#ca8a04",
+    "fill_color": "#eab308",
+    "face_type": "neutral",
+    "mean_score": 3.7,
+    "scores": {
+      "calmness": 3.7,
+      "assaults": 4.2,
+      "thefts": 3.4,
+      "drunkenness": 4.0,
+      "severe_crimes": 3.1,
+      "family": 2.8,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (12th percentile nationally), 0 hotels/attractions, 0th-percentile green cover, 50% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 12th percentile, students/dormitories at the 12th, tourist footfall at the 7th, deprivation index 0.68 (cheap rent + 37% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 3th percentile, tourist density 7th (pickpocketing), student/campus density 12th (bicycle theft), affluence 0th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (12th percentile nationally); deprivation index 0.68; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.68) and night-time economy (12th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.7/5.0 nationally — well above the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; socially strained — cheap stock, low attainment, wall-to-wall blocks (37% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.383976,
+          26.744417
+        ],
+        [
+          58.388664,
+          26.731244
+        ],
+        [
+          58.389633,
+          26.728523
+        ],
+        [
+          58.392147,
+          26.721455
+        ],
+        [
+          58.392263,
+          26.721127
+        ],
+        [
+          58.392325,
+          26.720953
+        ],
+        [
+          58.393467,
+          26.71774
+        ],
+        [
+          58.395313,
+          26.714123
+        ],
+        [
+          58.396021,
+          26.712737
+        ],
+        [
+          58.396224,
+          26.71234
+        ],
+        [
+          58.396666,
+          26.711554
+        ],
+        [
+          58.397672,
+          26.710081
+        ],
+        [
+          58.397896,
+          26.70976
+        ],
+        [
+          58.398402,
+          26.709315
+        ],
+        [
+          58.399205,
+          26.708657
+        ],
+        [
+          58.39998,
+          26.708402
+        ],
+        [
+          58.40097,
+          26.708368
+        ],
+        [
+          58.404073,
+          26.708354
+        ],
+        [
+          58.404229,
+          26.708371
+        ],
+        [
+          58.404279,
+          26.708727
+        ],
+        [
+          58.404136,
+          26.709797
+        ],
+        [
+          58.404112,
+          26.70999
+        ],
+        [
+          58.404023,
+          26.71064
+        ],
+        [
+          58.403971,
+          26.711017
+        ],
+        [
+          58.402789,
+          26.715654
+        ],
+        [
+          58.402783,
+          26.715698
+        ],
+        [
+          58.402632,
+          26.716834
+        ],
+        [
+          58.402613,
+          26.716974
+        ],
+        [
+          58.402476,
+          26.718002
+        ],
+        [
+          58.402456,
+          26.718152
+        ],
+        [
+          58.40238,
+          26.718726
+        ],
+        [
+          58.402311,
+          26.719241
+        ],
+        [
+          58.402305,
+          26.719282
+        ],
+        [
+          58.4023,
+          26.719313
+        ],
+        [
+          58.402284,
+          26.719425
+        ],
+        [
+          58.402119,
+          26.720545
+        ],
+        [
+          58.402097,
+          26.72069
+        ],
+        [
+          58.401932,
+          26.721814
+        ],
+        [
+          58.401857,
+          26.722321
+        ],
+        [
+          58.401826,
+          26.722535
+        ],
+        [
+          58.401798,
+          26.722667
+        ],
+        [
+          58.40067,
+          26.72803
+        ],
+        [
+          58.398538,
+          26.732184
+        ],
+        [
+          58.398092,
+          26.733039
+        ],
+        [
+          58.396862,
+          26.735391
+        ],
+        [
+          58.399634,
+          26.73812
+        ],
+        [
+          58.399729,
+          26.738263
+        ],
+        [
+          58.400532,
+          26.739576
+        ],
+        [
+          58.401705,
+          26.741468
+        ],
+        [
+          58.401658,
+          26.741572
+        ],
+        [
+          58.40043,
+          26.744384
+        ],
+        [
+          58.398229,
+          26.748619
+        ],
+        [
+          58.396117,
+          26.745857
+        ],
+        [
+          58.395174,
+          26.744812
+        ],
+        [
+          58.394283,
+          26.743932
+        ],
+        [
+          58.390972,
+          26.752817
+        ],
+        [
+          58.38782,
+          26.749215
+        ],
+        [
+          58.387945,
+          26.748409
+        ],
+        [
+          58.386848,
+          26.747447
+        ],
+        [
+          58.386475,
+          26.748287
+        ],
+        [
+          58.383976,
+          26.744417
+        ]
+      ]
+    ],
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.12,
+      "tourist_pctile": 0.07,
+      "retail_pctile": 0.03,
+      "student_pctile": 0.12,
+      "family_amenity_pctile": 0.03,
+      "green_pctile": 0.0,
+      "house_share_pctile": 0.54,
+      "affluence_pctile": 0.0,
+      "education_pctile": 0.56,
+      "deprivation_index": 0.68,
+      "tertiary_education_pct": 37.0,
+      "rent_eur_m2": null
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (3th percentile nationally), 0 sports facilities, 50% detached/terraced housing, 37% of adults hold a bachelor's degree or higher, rent €–/m² (0th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_ülejõe",
+    "name": "Ülejõe",
+    "district": "Ülejõe (Delta Innovation & Student Quarter)",
+    "short_name": "Ülejõe",
+    "lat": 58.386727,
+    "lon": 26.724943,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 2.0,
+      "assaults": 3.0,
+      "thefts": 1.7,
+      "drunkenness": 3.3,
+      "severe_crimes": 2.9,
+      "family": 3.1,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "1 bars/pubs/clubs and 0 alcohol shops (73th percentile nationally), 4 hotels/attractions, 46th-percentile green cover, 31% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 73th percentile, students/dormitories at the 97th, tourist footfall at the 87th, deprivation index 0.45 (cheap rent + 37% tertiary education + 69% apartment blocks). Offset by 0 schools/kindergartens and 9 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 70th percentile, tourist density 87th (pickpocketing), student/campus density 97th (bicycle theft), affluence 66th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 1 licensed premises and alcohol shops in this district (73th percentile nationally); deprivation index 0.45; 4 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.45) and night-time economy (73th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; mixed (37% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.39352,
+          26.709587
+        ],
+        [
+          58.393773,
+          26.709835
+        ],
+        [
+          58.394147,
+          26.710899
+        ],
+        [
+          58.394725,
+          26.710812
+        ],
+        [
+          58.395151,
+          26.711118
+        ],
+        [
+          58.396021,
+          26.712737
+        ],
+        [
+          58.393467,
+          26.71774
+        ],
+        [
+          58.383362,
+          26.746129
+        ],
+        [
+          58.383006,
+          26.746741
+        ],
+        [
+          58.382344,
+          26.747539
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.381823,
+          26.747644
+        ],
+        [
+          58.377769,
+          26.737564
+        ],
+        [
+          58.379659,
+          26.737424
+        ],
+        [
+          58.380252,
+          26.735427
+        ],
+        [
+          58.380093,
+          26.733955
+        ],
+        [
+          58.379319,
+          26.732138
+        ],
+        [
+          58.379461,
+          26.728517
+        ],
+        [
+          58.380361,
+          26.726552
+        ],
+        [
+          58.38116,
+          26.725817
+        ],
+        [
+          58.383575,
+          26.725625
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.387929,
+          26.719171
+        ],
+        [
+          58.38937,
+          26.715117
+        ],
+        [
+          58.39112,
+          26.711726
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.393277,
+          26.70893
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.73,
+      "tourist_pctile": 0.87,
+      "retail_pctile": 0.7,
+      "student_pctile": 0.97,
+      "family_amenity_pctile": 0.67,
+      "green_pctile": 0.46,
+      "house_share_pctile": 0.39,
+      "affluence_pctile": 0.66,
+      "education_pctile": 0.6,
+      "deprivation_index": 0.45,
+      "tertiary_education_pct": 37.0,
+      "rent_eur_m2": 12.11
+    },
+    "family_desc": "0 schools/kindergartens and 9 playgrounds (67th percentile nationally), 0 sports facilities, 31% detached/terraced housing, 37% of adults hold a bachelor's degree or higher, rent €12.11/m² (66th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_vaksali",
+    "name": "Vaksali",
+    "district": "Vaksali (Railway Hub & Aparaaditehas)",
+    "short_name": "Vaksali",
+    "lat": 58.375773,
+    "lon": 26.706304,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 1.6,
+      "assaults": 3.0,
+      "thefts": 1.6,
+      "drunkenness": 3.3,
+      "severe_crimes": 3.0,
+      "family": 3.3,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "1 bars/pubs/clubs and 0 alcohol shops (85th percentile nationally), 5 hotels/attractions, 45th-percentile green cover, 16% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 85th percentile, students/dormitories at the 96th, tourist footfall at the 88th, deprivation index 0.39 (cheap rent + 37% tertiary education + 84% apartment blocks). Offset by 3 schools/kindergartens and 5 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 93th percentile, tourist density 88th (pickpocketing), student/campus density 96th (bicycle theft), affluence 88th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 1 licensed premises and alcohol shops in this district (85th percentile nationally); deprivation index 0.39; 5 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.39) and night-time economy (85th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; mixed (37% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.377402,
+          26.701312
+        ],
+        [
+          58.378112,
+          26.703677
+        ],
+        [
+          58.379075,
+          26.709027
+        ],
+        [
+          58.374292,
+          26.712167
+        ],
+        [
+          58.370846,
+          26.714759
+        ],
+        [
+          58.371849,
+          26.717228
+        ],
+        [
+          58.369067,
+          26.721407
+        ],
+        [
+          58.367624,
+          26.721225
+        ],
+        [
+          58.365298,
+          26.721368
+        ],
+        [
+          58.363415,
+          26.720877
+        ],
+        [
+          58.361581,
+          26.721204
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.360418,
+          26.720682
+        ],
+        [
+          58.360797,
+          26.719873
+        ],
+        [
+          58.361054,
+          26.719468
+        ],
+        [
+          58.361594,
+          26.718912
+        ],
+        [
+          58.361999,
+          26.718668
+        ],
+        [
+          58.36399,
+          26.717927
+        ],
+        [
+          58.365677,
+          26.717076
+        ],
+        [
+          58.367062,
+          26.716109
+        ],
+        [
+          58.368202,
+          26.714903
+        ],
+        [
+          58.369845,
+          26.712626
+        ],
+        [
+          58.371465,
+          26.707601
+        ],
+        [
+          58.37219,
+          26.705801
+        ],
+        [
+          58.372994,
+          26.704227
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.37583,
+          26.701369
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.377402,
+          26.701312
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.85,
+      "tourist_pctile": 0.88,
+      "retail_pctile": 0.93,
+      "student_pctile": 0.96,
+      "family_amenity_pctile": 0.84,
+      "green_pctile": 0.45,
+      "house_share_pctile": 0.24,
+      "affluence_pctile": 0.88,
+      "education_pctile": 0.63,
+      "deprivation_index": 0.39,
+      "tertiary_education_pct": 37.0,
+      "rent_eur_m2": 13.64
+    },
+    "family_desc": "3 schools/kindergartens and 5 playgrounds (84th percentile nationally), 1 sports facilities, 16% detached/terraced housing, 37% of adults hold a bachelor's degree or higher, rent €13.64/m² (88th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_ropka",
+    "name": "Ropka",
+    "district": "Ropka (Southern Mixed Quarter)",
+    "short_name": "Ropka",
+    "lat": 58.355022,
+    "lon": 26.725431,
+    "color": "#ca8a04",
+    "fill_color": "#eab308",
+    "face_type": "neutral",
+    "mean_score": 3.7,
+    "scores": {
+      "calmness": 3.1,
+      "assaults": 4.3,
+      "thefts": 2.4,
+      "drunkenness": 4.3,
+      "severe_crimes": 3.3,
+      "family": 3.8,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (13th percentile nationally), 1 hotels/attractions, 24th-percentile green cover, 73% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 13th percentile, students/dormitories at the 13th, tourist footfall at the 63th, deprivation index 0.50 (cheap rent + 30% tertiary education + 27% apartment blocks). Offset by 0 schools/kindergartens and 2 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 73th percentile, tourist density 63th (pickpocketing), student/campus density 13th (bicycle theft), affluence 44th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (13th percentile nationally); deprivation index 0.50; 1 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.50) and night-time economy (13th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.7/5.0 nationally — well above the Estonian average. Nights are quiet; a reasonable family presence; mixed (30% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.350014,
+          26.711591
+        ],
+        [
+          58.350606,
+          26.711669
+        ],
+        [
+          58.35224,
+          26.712172
+        ],
+        [
+          58.358891,
+          26.716182
+        ],
+        [
+          58.361151,
+          26.71736
+        ],
+        [
+          58.361767,
+          26.717572
+        ],
+        [
+          58.362927,
+          26.717727
+        ],
+        [
+          58.364626,
+          26.717537
+        ],
+        [
+          58.36399,
+          26.717927
+        ],
+        [
+          58.361999,
+          26.718668
+        ],
+        [
+          58.361594,
+          26.718912
+        ],
+        [
+          58.361054,
+          26.719468
+        ],
+        [
+          58.360624,
+          26.72023
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.357758,
+          26.73018
+        ],
+        [
+          58.357007,
+          26.733794
+        ],
+        [
+          58.357,
+          26.735285
+        ],
+        [
+          58.357086,
+          26.736713
+        ],
+        [
+          58.357386,
+          26.737887
+        ],
+        [
+          58.357697,
+          26.738744
+        ],
+        [
+          58.358259,
+          26.73965
+        ],
+        [
+          58.358922,
+          26.740289
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.359724,
+          26.741325
+        ],
+        [
+          58.358753,
+          26.741179
+        ],
+        [
+          58.357692,
+          26.740497
+        ],
+        [
+          58.354985,
+          26.740796
+        ],
+        [
+          58.355271,
+          26.737772
+        ],
+        [
+          58.355142,
+          26.734052
+        ],
+        [
+          58.355207,
+          26.732636
+        ],
+        [
+          58.355391,
+          26.731924
+        ],
+        [
+          58.355752,
+          26.731014
+        ],
+        [
+          58.355814,
+          26.730057
+        ],
+        [
+          58.353778,
+          26.730411
+        ],
+        [
+          58.353683,
+          26.726671
+        ],
+        [
+          58.350412,
+          26.727028
+        ],
+        [
+          58.350259,
+          26.723189
+        ],
+        [
+          58.346913,
+          26.723514
+        ],
+        [
+          58.345894,
+          26.723485
+        ],
+        [
+          58.345897,
+          26.716828
+        ],
+        [
+          58.345985,
+          26.715057
+        ],
+        [
+          58.343712,
+          26.714422
+        ],
+        [
+          58.34377,
+          26.713021
+        ],
+        [
+          58.345248,
+          26.712755
+        ],
+        [
+          58.345255,
+          26.712333
+        ],
+        [
+          58.348642,
+          26.71173
+        ],
+        [
+          58.350014,
+          26.711591
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.13,
+      "tourist_pctile": 0.63,
+      "retail_pctile": 0.73,
+      "student_pctile": 0.13,
+      "family_amenity_pctile": 0.42,
+      "green_pctile": 0.24,
+      "house_share_pctile": 0.6,
+      "affluence_pctile": 0.44,
+      "education_pctile": 0.4,
+      "deprivation_index": 0.5,
+      "tertiary_education_pct": 30.0,
+      "rent_eur_m2": 10.68
+    },
+    "family_desc": "0 schools/kindergartens and 2 playgrounds (42th percentile nationally), 1 sports facilities, 73% detached/terraced housing, 30% of adults hold a bachelor's degree or higher, rent €10.68/m² (44th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_jaamamõisa",
+    "name": "Jaamamõisa",
+    "district": "Jaamamõisa (North-Eastern Residential)",
+    "short_name": "Jaamamõisa",
+    "lat": 58.384278,
+    "lon": 26.757777,
+    "color": "#059669",
+    "fill_color": "#10b981",
+    "face_type": "happy",
+    "mean_score": 4.2,
+    "scores": {
+      "calmness": 4.0,
+      "assaults": 4.7,
+      "thefts": 3.4,
+      "drunkenness": 4.8,
+      "severe_crimes": 3.6,
+      "family": 4.7,
+      "language": 4.4,
+      "demographics": 4.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (15th percentile nationally), 0 hotels/attractions, 40th-percentile green cover, 36% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 15th percentile, students/dormitories at the 15th, tourist footfall at the 9th, deprivation index 0.54 (cheap rent + 32% tertiary education + 64% apartment blocks). Offset by 0 schools/kindergartens and 20 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 37th percentile, tourist density 9th (pickpocketing), student/campus density 15th (bicycle theft), affluence 55th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (15th percentile nationally); deprivation index 0.54; 0 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.54) and night-time economy (15th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "71.0% give Estonian as their mother tongue; an estimated 51% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "4.2/5.0 nationally — among the best in Estonia. Nights are quiet; plenty of families with children around; mixed (32% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.386475,
+          26.748287
+        ],
+        [
+          58.386848,
+          26.747447
+        ],
+        [
+          58.387945,
+          26.748409
+        ],
+        [
+          58.38782,
+          26.749215
+        ],
+        [
+          58.390972,
+          26.752817
+        ],
+        [
+          58.388812,
+          26.75838
+        ],
+        [
+          58.387492,
+          26.763533
+        ],
+        [
+          58.389391,
+          26.766336
+        ],
+        [
+          58.389808,
+          26.768847
+        ],
+        [
+          58.3834,
+          26.775337
+        ],
+        [
+          58.382271,
+          26.775682
+        ],
+        [
+          58.378727,
+          26.7752
+        ],
+        [
+          58.379227,
+          26.773385
+        ],
+        [
+          58.379539,
+          26.771366
+        ],
+        [
+          58.379926,
+          26.76739
+        ],
+        [
+          58.380338,
+          26.759292
+        ],
+        [
+          58.380948,
+          26.753702
+        ],
+        [
+          58.381464,
+          26.750813
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.382344,
+          26.747539
+        ],
+        [
+          58.383006,
+          26.746741
+        ],
+        [
+          58.383362,
+          26.746129
+        ],
+        [
+          58.383976,
+          26.744417
+        ],
+        [
+          58.386475,
+          26.748287
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "71.0% give Estonian as their mother tongue; an estimated 51% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.15,
+      "tourist_pctile": 0.09,
+      "retail_pctile": 0.37,
+      "student_pctile": 0.15,
+      "family_amenity_pctile": 0.91,
+      "green_pctile": 0.4,
+      "house_share_pctile": 0.45,
+      "affluence_pctile": 0.55,
+      "education_pctile": 0.43,
+      "deprivation_index": 0.54,
+      "tertiary_education_pct": 32.0,
+      "rent_eur_m2": 11.34
+    },
+    "family_desc": "0 schools/kindergartens and 20 playgrounds (91th percentile nationally), 0 sports facilities, 36% detached/terraced housing, 32% of adults hold a bachelor's degree or higher, rent €11.34/m² (55th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_ropka_tööstusrajoon",
+    "name": "Ropka tööstusrajoon",
+    "district": "Ropka tööstusrajoon (Industrial District)",
+    "short_name": "Ropka Tööstus",
+    "lat": 58.352926,
+    "lon": 26.740221,
+    "color": "#ca8a04",
+    "fill_color": "#eab308",
+    "face_type": "neutral",
+    "mean_score": 3.5,
+    "scores": {
+      "calmness": 3.2,
+      "assaults": 4.0,
+      "thefts": 2.5,
+      "drunkenness": 4.0,
+      "severe_crimes": 3.2,
+      "family": 3.1,
+      "language": 4.3,
+      "demographics": 4.3
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (16th percentile nationally), 1 hotels/attractions, 22th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 16th percentile, students/dormitories at the 16th, tourist footfall at the 52th, deprivation index 0.54 (cheap rent + 26% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 69th percentile, tourist density 52th (pickpocketing), student/campus density 16th (bicycle theft), affluence 26th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (16th percentile nationally); deprivation index 0.54; 1 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.54) and night-time economy (16th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "68.0% give Estonian as their mother tongue; an estimated 51% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.5/5.0 nationally — around the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; mixed (26% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.362442,
+          26.749847
+        ],
+        [
+          58.36204,
+          26.750453
+        ],
+        [
+          58.360992,
+          26.751694
+        ],
+        [
+          58.360381,
+          26.751919
+        ],
+        [
+          58.359895,
+          26.751888
+        ],
+        [
+          58.359131,
+          26.751578
+        ],
+        [
+          58.358733,
+          26.751156
+        ],
+        [
+          58.358012,
+          26.750031
+        ],
+        [
+          58.35723,
+          26.747725
+        ],
+        [
+          58.35696,
+          26.747383
+        ],
+        [
+          58.356108,
+          26.746758
+        ],
+        [
+          58.35589,
+          26.746765
+        ],
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.353395,
+          26.749471
+        ],
+        [
+          58.349757,
+          26.751066
+        ],
+        [
+          58.348776,
+          26.756662
+        ],
+        [
+          58.34638,
+          26.758906
+        ],
+        [
+          58.345855,
+          26.760453
+        ],
+        [
+          58.344987,
+          26.759113
+        ],
+        [
+          58.344256,
+          26.757631
+        ],
+        [
+          58.343389,
+          26.755124
+        ],
+        [
+          58.343044,
+          26.753696
+        ],
+        [
+          58.342722,
+          26.751705
+        ],
+        [
+          58.342529,
+          26.750065
+        ],
+        [
+          58.339223,
+          26.745659
+        ],
+        [
+          58.339235,
+          26.724498
+        ],
+        [
+          58.340469,
+          26.724473
+        ],
+        [
+          58.340333,
+          26.714663
+        ],
+        [
+          58.340877,
+          26.714611
+        ],
+        [
+          58.340534,
+          26.713605
+        ],
+        [
+          58.34377,
+          26.713021
+        ],
+        [
+          58.343712,
+          26.714422
+        ],
+        [
+          58.345985,
+          26.715057
+        ],
+        [
+          58.345897,
+          26.716828
+        ],
+        [
+          58.345894,
+          26.723485
+        ],
+        [
+          58.346913,
+          26.723514
+        ],
+        [
+          58.350259,
+          26.723189
+        ],
+        [
+          58.350412,
+          26.727028
+        ],
+        [
+          58.353683,
+          26.726671
+        ],
+        [
+          58.353778,
+          26.730411
+        ],
+        [
+          58.355814,
+          26.730057
+        ],
+        [
+          58.355752,
+          26.731014
+        ],
+        [
+          58.355391,
+          26.731924
+        ],
+        [
+          58.355207,
+          26.732636
+        ],
+        [
+          58.355142,
+          26.734052
+        ],
+        [
+          58.355271,
+          26.737772
+        ],
+        [
+          58.354985,
+          26.740796
+        ],
+        [
+          58.357495,
+          26.740481
+        ],
+        [
+          58.357866,
+          26.74055
+        ],
+        [
+          58.358487,
+          26.741031
+        ],
+        [
+          58.359026,
+          26.741263
+        ],
+        [
+          58.359724,
+          26.741325
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.3606,
+          26.741846
+        ],
+        [
+          58.361003,
+          26.742657
+        ],
+        [
+          58.362243,
+          26.746065
+        ],
+        [
+          58.362484,
+          26.746539
+        ],
+        [
+          58.363034,
+          26.747211
+        ],
+        [
+          58.363442,
+          26.747455
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.362442,
+          26.749847
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "68.0% give Estonian as their mother tongue; an estimated 51% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.16,
+      "tourist_pctile": 0.52,
+      "retail_pctile": 0.69,
+      "student_pctile": 0.16,
+      "family_amenity_pctile": 0.04,
+      "green_pctile": 0.22,
+      "house_share_pctile": 0.75,
+      "affluence_pctile": 0.26,
+      "education_pctile": 0.31,
+      "deprivation_index": 0.54,
+      "tertiary_education_pct": 26.0,
+      "rent_eur_m2": 8.72
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (4th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 26% of adults hold a bachelor's degree or higher, rent €8.72/m² (26th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kesklinn",
+    "name": "Kesklinn",
+    "district": "Kesklinn (Historic City Centre & Nightlife)",
+    "short_name": "Kesklinn",
+    "lat": 58.376898,
+    "lon": 26.722369,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 1.6,
+      "assaults": 3.1,
+      "thefts": 1.5,
+      "drunkenness": 3.1,
+      "severe_crimes": 3.1,
+      "family": 3.6,
+      "language": 4.7,
+      "demographics": 4.7
+    },
+    "calmness_desc": "34 bars/pubs/clubs and 0 alcohol shops (99th percentile nationally), 42 hotels/attractions, 79th-percentile green cover, 4% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 99th percentile, students/dormitories at the 100th, tourist footfall at the 99th, deprivation index 0.29 (cheap rent + 48% tertiary education + 96% apartment blocks). Offset by 5 schools/kindergartens and 18 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 96th percentile, tourist density 99th (pickpocketing), student/campus density 100th (bicycle theft), affluence 93th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 34 licensed premises and alcohol shops in this district (99th percentile nationally); deprivation index 0.29; 42 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.29) and night-time economy (99th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; well-off and well-kept (48% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.379075,
+          26.709027
+        ],
+        [
+          58.379245,
+          26.709871
+        ],
+        [
+          58.379918,
+          26.709313
+        ],
+        [
+          58.381637,
+          26.709414
+        ],
+        [
+          58.382124,
+          26.709571
+        ],
+        [
+          58.383012,
+          26.711101
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383887,
+          26.715744
+        ],
+        [
+          58.383978,
+          26.715943
+        ],
+        [
+          58.384418,
+          26.718238
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.383575,
+          26.725625
+        ],
+        [
+          58.38116,
+          26.725817
+        ],
+        [
+          58.380361,
+          26.726552
+        ],
+        [
+          58.379461,
+          26.728517
+        ],
+        [
+          58.379319,
+          26.732138
+        ],
+        [
+          58.380093,
+          26.733955
+        ],
+        [
+          58.380252,
+          26.735427
+        ],
+        [
+          58.379659,
+          26.737424
+        ],
+        [
+          58.377209,
+          26.737595
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.372662,
+          26.731757
+        ],
+        [
+          58.372362,
+          26.732142
+        ],
+        [
+          58.372048,
+          26.729426
+        ],
+        [
+          58.371848,
+          26.7287
+        ],
+        [
+          58.371374,
+          26.728298
+        ],
+        [
+          58.370873,
+          26.727336
+        ],
+        [
+          58.370829,
+          26.727108
+        ],
+        [
+          58.372369,
+          26.726016
+        ],
+        [
+          58.371963,
+          26.723558
+        ],
+        [
+          58.371994,
+          26.722635
+        ],
+        [
+          58.37207,
+          26.722197
+        ],
+        [
+          58.371583,
+          26.721878
+        ],
+        [
+          58.370581,
+          26.721548
+        ],
+        [
+          58.369067,
+          26.721407
+        ],
+        [
+          58.371849,
+          26.717228
+        ],
+        [
+          58.370846,
+          26.714759
+        ],
+        [
+          58.374016,
+          26.712366
+        ],
+        [
+          58.376178,
+          26.710911
+        ],
+        [
+          58.379075,
+          26.709027
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "79.5% give Estonian as their mother tongue; an estimated 54% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.99,
+      "tourist_pctile": 0.99,
+      "retail_pctile": 0.96,
+      "student_pctile": 1.0,
+      "family_amenity_pctile": 0.9,
+      "green_pctile": 0.79,
+      "house_share_pctile": 0.15,
+      "affluence_pctile": 0.93,
+      "education_pctile": 0.93,
+      "deprivation_index": 0.29,
+      "tertiary_education_pct": 48.0,
+      "rent_eur_m2": 13.97
+    },
+    "family_desc": "5 schools/kindergartens and 18 playgrounds (90th percentile nationally), 2 sports facilities, 4% detached/terraced housing, 48% of adults hold a bachelor's degree or higher, rent €13.97/m² (93th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_annelinn",
+    "name": "Annelinn",
+    "district": "Annelinn (Eastern Residential Panel District)",
+    "short_name": "Annelinn",
+    "lat": 58.367262,
+    "lon": 26.759655,
+    "color": "#ca8a04",
+    "fill_color": "#eab308",
+    "face_type": "neutral",
+    "mean_score": 3.6,
+    "scores": {
+      "calmness": 3.3,
+      "assaults": 4.2,
+      "thefts": 2.2,
+      "drunkenness": 4.2,
+      "severe_crimes": 3.0,
+      "family": 3.9,
+      "language": 4.1,
+      "demographics": 4.1
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (18th percentile nationally), 2 hotels/attractions, 49th-percentile green cover, 18% of the housing stock detached or terraced. County baseline: 237 registered crimes per 10 000 (Tartu maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 18th percentile, students/dormitories at the 18th, tourist footfall at the 54th, deprivation index 0.69 (cheap rent + 28% tertiary education + 82% apartment blocks). Offset by 3 schools/kindergartens and 41 playgrounds. County baseline: §121 assault 28/10 000 (Tartu maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 72th percentile, tourist density 54th (pickpocketing), student/campus density 18th (bicycle theft), affluence 35th (private security, cameras, controlled entrances). County baseline: §199 theft 120/10 000 (Tartu maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (18th percentile nationally); deprivation index 0.69; 2 tourist venues. County baseline: §424 driving under the influence 15/10 000 — the published proxy for alcohol-related disorder (Tartu maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 39/10 000 and sexual offences 99.4/100 000 (Tartu maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.69) and night-time economy (18th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "62.0% give Estonian as their mother tongue; an estimated 49% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.6/5.0 nationally — well above the Estonian average. Nights are quiet; plenty of families with children around; socially strained — cheap stock, low attainment, wall-to-wall blocks (28% degree-holders). English is enough day to day.",
+    "polygons": [
+      [
+        [
+          58.377769,
+          26.737564
+        ],
+        [
+          58.381823,
+          26.747644
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.381464,
+          26.750813
+        ],
+        [
+          58.380948,
+          26.753702
+        ],
+        [
+          58.380338,
+          26.759292
+        ],
+        [
+          58.379926,
+          26.76739
+        ],
+        [
+          58.379539,
+          26.771366
+        ],
+        [
+          58.379227,
+          26.773385
+        ],
+        [
+          58.378727,
+          26.7752
+        ],
+        [
+          58.378905,
+          26.775235
+        ],
+        [
+          58.377784,
+          26.778749
+        ],
+        [
+          58.377003,
+          26.779212
+        ],
+        [
+          58.375438,
+          26.784158
+        ],
+        [
+          58.375103,
+          26.783598
+        ],
+        [
+          58.374174,
+          26.782613
+        ],
+        [
+          58.371592,
+          26.782918
+        ],
+        [
+          58.371286,
+          26.783912
+        ],
+        [
+          58.369129,
+          26.783455
+        ],
+        [
+          58.369022,
+          26.782143
+        ],
+        [
+          58.367193,
+          26.781705
+        ],
+        [
+          58.363445,
+          26.780319
+        ],
+        [
+          58.362462,
+          26.779754
+        ],
+        [
+          58.359717,
+          26.777718
+        ],
+        [
+          58.358326,
+          26.776267
+        ],
+        [
+          58.356937,
+          26.774593
+        ],
+        [
+          58.355727,
+          26.77303
+        ],
+        [
+          58.354866,
+          26.771748
+        ],
+        [
+          58.354676,
+          26.770861
+        ],
+        [
+          58.354337,
+          26.765376
+        ],
+        [
+          58.357764,
+          26.76056
+        ],
+        [
+          58.359272,
+          26.759696
+        ],
+        [
+          58.357059,
+          26.754296
+        ],
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.35589,
+          26.746765
+        ],
+        [
+          58.356108,
+          26.746758
+        ],
+        [
+          58.35696,
+          26.747383
+        ],
+        [
+          58.35723,
+          26.747725
+        ],
+        [
+          58.358012,
+          26.750031
+        ],
+        [
+          58.358733,
+          26.751156
+        ],
+        [
+          58.359131,
+          26.751578
+        ],
+        [
+          58.359895,
+          26.751888
+        ],
+        [
+          58.360381,
+          26.751919
+        ],
+        [
+          58.360992,
+          26.751694
+        ],
+        [
+          58.36204,
+          26.750453
+        ],
+        [
+          58.362442,
+          26.749847
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.364103,
+          26.748503
+        ],
+        [
+          58.364618,
+          26.748605
+        ],
+        [
+          58.364998,
+          26.748843
+        ],
+        [
+          58.36601,
+          26.750059
+        ],
+        [
+          58.366624,
+          26.750356
+        ],
+        [
+          58.367126,
+          26.750368
+        ],
+        [
+          58.367526,
+          26.750224
+        ],
+        [
+          58.367982,
+          26.749776
+        ],
+        [
+          58.368403,
+          26.749167
+        ],
+        [
+          58.368768,
+          26.748333
+        ],
+        [
+          58.36942,
+          26.745961
+        ],
+        [
+          58.370266,
+          26.743529
+        ],
+        [
+          58.371551,
+          26.741421
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.377209,
+          26.737595
+        ],
+        [
+          58.377769,
+          26.737564
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "62.0% give Estonian as their mother tongue; an estimated 49% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Tartu maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.18,
+      "tourist_pctile": 0.54,
+      "retail_pctile": 0.72,
+      "student_pctile": 0.18,
+      "family_amenity_pctile": 0.75,
+      "green_pctile": 0.49,
+      "house_share_pctile": 0.27,
+      "affluence_pctile": 0.35,
+      "education_pctile": 0.35,
+      "deprivation_index": 0.69,
+      "tertiary_education_pct": 28.0,
+      "rent_eur_m2": 9.85
+    },
+    "family_desc": "3 schools/kindergartens and 41 playgrounds (75th percentile nationally), 3 sports facilities, 18% detached/terraced housing, 28% of adults hold a bachelor's degree or higher, rent €9.85/m² (35th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  }
+]

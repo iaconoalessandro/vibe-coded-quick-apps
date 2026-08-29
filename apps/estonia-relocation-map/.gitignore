@@ -1,0 +1,15 @@
+# Caches & OS cruft
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Large regenerable OSM extracts / raw slices
+data/osm_cache/
+*.osm.pbf
+
+# Build output (regenerate with `make build`)
+dist/

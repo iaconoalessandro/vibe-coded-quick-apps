@@ -1,0 +1,592 @@
+[
+  {
+    "id": 1,
+    "name": "ABB",
+    "address": "Valukoja 8",
+    "district": "Ülemiste City",
+    "description": "ABB Tallinn Service & Engineering Hub",
+    "lat": 59.4195798,
+    "lon": 24.8047829,
+    "osm_display": "Öpiku 2, 8/2, Valukoja, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 2,
+    "name": "Ericsson",
+    "address": "Valukoja 8/1",
+    "district": "Ülemiste City",
+    "description": "Ericsson Eesti AS Tech / R&D Office",
+    "lat": 59.4201154,
+    "lon": 24.804787,
+    "osm_display": "8/1, Valukoja, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 3,
+    "name": "Monese",
+    "address": "Telliskivi 60/2",
+    "district": "Põhja-Tallinn",
+    "description": "Monese Tallinn Office",
+    "lat": 59.4395353,
+    "lon": 24.732987,
+    "osm_display": "I-hoone, 60/2, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 4,
+    "name": "Riverty",
+    "address": "Telliskivi 60/2",
+    "district": "Põhja-Tallinn",
+    "description": "Riverty Tech OÜ",
+    "lat": 59.4395353,
+    "lon": 24.732987,
+    "osm_display": "I-hoone, 60/2, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 5,
+    "name": "Kuehne+Nagel",
+    "address": "Valukoja 8",
+    "district": "Ülemiste City",
+    "description": "Kuehne + Nagel IT Service Centre",
+    "lat": 59.4195798,
+    "lon": 24.8047829,
+    "osm_display": "Öpiku 2, 8/2, Valukoja, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 6,
+    "name": "SYNLAB Eesti",
+    "address": "Veerenni 53a",
+    "district": "Kesklinn",
+    "description": "SYNLAB Eesti Central Lab & IT Hub",
+    "lat": 59.4174762,
+    "lon": 24.7536368,
+    "osm_display": "Veerenni Tervisekeskus, 53a, Veerenni, Juhkentali, Kesklinna linnaosa, Tallinn, Harju maakond, 10138, Eesti"
+  },
+  {
+    "id": 7,
+    "name": "Guardtime",
+    "address": "A. H. Tammsaare tee 60",
+    "district": "Mustamäe",
+    "description": "Guardtime HQ",
+    "lat": 59.4027993,
+    "lon": 24.7168372,
+    "osm_display": "60, A. H. Tammsaare tee, Tondi, Kristiine linnaosa, Tallinn, Harju maakond, 11316, Eesti"
+  },
+  {
+    "id": 8,
+    "name": "Antegenes",
+    "address": "Teaduspargi 6/1",
+    "district": "Mustamäe",
+    "description": "Antegenes HealthTech",
+    "lat": 59.3980416,
+    "lon": 24.6566715,
+    "osm_display": "6/1, Teaduspargi, Teaduspark Tehnopol, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 9,
+    "name": "MindTitan",
+    "address": "Volta 1",
+    "district": "Põhja-Tallinn",
+    "description": "MindTitan AI Office",
+    "lat": 59.4450346,
+    "lon": 24.7224475,
+    "osm_display": "Volta 1, 1, Volta, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 10,
+    "name": "Auve Tech",
+    "address": "Järvevana tee 11",
+    "district": "Kesklinn",
+    "description": "Auve Tech Autonomous Tech Hub",
+    "lat": 59.4027685,
+    "lon": 24.7321108,
+    "osm_display": "Veho AS, 11, Järvevana tee, Kitseküla, Kesklinna linnaosa, Tallinn, Harju maakond, 11314, Eesti"
+  },
+  {
+    "id": 11,
+    "name": "indiGOtech Europe",
+    "address": "Lõõtsa 8",
+    "district": "Ülemiste City",
+    "description": "indiGOtech Europe",
+    "lat": 59.4206479,
+    "lon": 24.7999416,
+    "osm_display": "Ustus Aguri maja, 8, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 12,
+    "name": "Krakul",
+    "address": "Pärnu mnt 186",
+    "district": "Kristiine",
+    "description": "Krakul IoT & Autonomous Systems",
+    "lat": 59.3974612,
+    "lon": 24.7255151,
+    "osm_display": "Tavex Group, 186, Pärnu mnt, Järve, Kristiine linnaosa, Tallinn, Harju maakond, 11314, Eesti"
+  },
+  {
+    "id": 13,
+    "name": "DefSecIntel Solutions",
+    "address": "Akadeemia tee 21/4",
+    "district": "Mustamäe",
+    "description": "DefSecIntel Defense AI Hub",
+    "lat": 59.3980259,
+    "lon": 24.6585052,
+    "osm_display": "21/4, Akadeemia tee, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 14,
+    "name": "EyeVi Technologies",
+    "address": "Teaduspargi 8",
+    "district": "Mustamäe",
+    "description": "EyeVi Technologies (Tehnopol)",
+    "lat": 59.400037,
+    "lon": 24.6565315,
+    "osm_display": "8, Teaduspargi, Teaduspark Tehnopol, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 15,
+    "name": "Twilio",
+    "address": "Veerenni 24",
+    "district": "Kesklinn",
+    "description": "Twilio Tallinn Office",
+    "lat": 59.4238919,
+    "lon": 24.7491799,
+    "osm_display": "Baltika Grupp, 24, Veerenni, Kesklinna linnaosa, Tallinn, Harju maakond, 10135, Eesti"
+  },
+  {
+    "id": 16,
+    "name": "OlyBet Group",
+    "address": "Pronksi 19",
+    "district": "Kesklinn",
+    "description": "Olympic Entertainment Group / OlyBet HQ",
+    "lat": 59.4334912,
+    "lon": 24.7641776,
+    "osm_display": "19, Pronksi, Kompassi, Kesklinna linnaosa, Tallinn, Harju maakond, 10124, Eesti"
+  },
+  {
+    "id": 17,
+    "name": "Evolution",
+    "address": "Tartu mnt 83",
+    "district": "Kesklinn",
+    "description": "Evolution Estonia Tech Hub",
+    "lat": 59.4275894,
+    "lon": 24.7790363,
+    "osm_display": "83, Tartu mnt, Juhkentali, Kesklinna linnaosa, Tallinn, Harju maakond, 10115, Eesti"
+  },
+  {
+    "id": 18,
+    "name": "Betsson Group",
+    "address": "Hobujaama 4",
+    "district": "Kesklinn",
+    "description": "Betsson Tallinn Tech Hub",
+    "lat": 59.4380204,
+    "lon": 24.7580067,
+    "osm_display": "4, Hobujaama, Sadama, Kesklinna linnaosa, Tallinn, Harju maakond, 10151, Eesti"
+  },
+  {
+    "id": 19,
+    "name": "Paf - Games Sport Casino",
+    "address": "Rotermanni 8",
+    "district": "Kesklinn",
+    "description": "Paf Tallinn Tech Office",
+    "lat": 59.4387076,
+    "lon": 24.7570308,
+    "osm_display": "Vana jahuladu, 8, Rotermanni, Rotermanni kvartal, Sadama, Kesklinna linnaosa, Tallinn, Harju maakond, 15172, Eesti"
+  },
+  {
+    "id": 20,
+    "name": "Bally's Interactive",
+    "address": "Sepapaja 1",
+    "district": "Ülemiste City",
+    "description": "Bally's Interactive Tallinn",
+    "lat": 59.4213526,
+    "lon": 24.8065058,
+    "osm_display": "Ülemiste tervisemaja 2, 12/1, Sepapaja, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 21,
+    "name": "Relax Gaming Ltd",
+    "address": "Pärnu mnt 141",
+    "district": "Kristiine",
+    "description": "Relax Gaming Tallinn Office",
+    "lat": 59.4026654,
+    "lon": 24.7309935,
+    "osm_display": "Delta Plaza, 141, Pärnu mnt, Kitseküla, Kesklinna linnaosa, Tallinn, Harju maakond, 11314, Eesti"
+  },
+  {
+    "id": 22,
+    "name": "Coolbet",
+    "address": "Telliskivi 60/1",
+    "district": "Põhja-Tallinn",
+    "description": "Coolbet / Vincent Group HQ",
+    "lat": 59.4401705,
+    "lon": 24.7302799,
+    "osm_display": "ON-Hoone, 60/1, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 23,
+    "name": "Yolo Group",
+    "address": "Erika 14",
+    "district": "Põhja-Tallinn",
+    "description": "Yolo Group HQ (Noblessner/Kalamaja area)",
+    "lat": 59.4514602,
+    "lon": 24.7173827,
+    "osm_display": "Arsenal Keskus, 14, Erika, Karjamaa, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10416, Eesti"
+  },
+  {
+    "id": 24,
+    "name": "Zendesk QA (Klaus)",
+    "address": "Telliskivi 60a",
+    "district": "Põhja-Tallinn",
+    "description": "Zendesk QA (Klaus)",
+    "lat": 59.4405618,
+    "lon": 24.7319121,
+    "osm_display": "Pudel, 60a, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 25,
+    "name": "Lingvist",
+    "address": "Pärnu mnt 67a",
+    "district": "Kesklinn",
+    "description": "Lingvist HQ",
+    "lat": 59.4251534,
+    "lon": 24.7438482,
+    "osm_display": "67a, Pärnu mnt, Uus Maailm, Kesklinna linnaosa, Tallinn, Harju maakond, 10131, Eesti"
+  },
+  {
+    "id": 26,
+    "name": "Modash",
+    "address": "Telliskivi 60a",
+    "district": "Põhja-Tallinn",
+    "description": "Modash HQ",
+    "lat": 59.4405618,
+    "lon": 24.7319121,
+    "osm_display": "Pudel, 60a, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 27,
+    "name": "Katana Cloud Inventory",
+    "address": "Kalaranna 8",
+    "district": "Põhja-Tallinn",
+    "description": "Katana Cloud Inventory HQ",
+    "lat": 59.4463761,
+    "lon": 24.7470902,
+    "osm_display": "Kalaranna Cafe Resto, 8, Kalaranna, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10415, Eesti"
+  },
+  {
+    "id": 28,
+    "name": "Xolo",
+    "address": "A. H. Tammsaare tee 47",
+    "district": "Mustamäe",
+    "description": "Xolo HQ",
+    "lat": 59.401419,
+    "lon": 24.7175188,
+    "osm_display": "Tammsaare ärikeskus, 47, A. H. Tammsaare tee, Tondi, Kristiine linnaosa, Tallinn, Harju maakond, 11316, Eesti"
+  },
+  {
+    "id": 29,
+    "name": "Zone.eu",
+    "address": "Lõõtsa 5",
+    "district": "Ülemiste City",
+    "description": "Zone Media OÜ HQ",
+    "lat": 59.4211768,
+    "lon": 24.8027991,
+    "osm_display": "Bernard Schmidt'i büroohoone, 5, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 30,
+    "name": "Bondora",
+    "address": "A. H. Tammsaare tee 47",
+    "district": "Mustamäe",
+    "description": "Bondora Group HQ",
+    "lat": 59.401419,
+    "lon": 24.7175188,
+    "osm_display": "Tammsaare ärikeskus, 47, A. H. Tammsaare tee, Tondi, Kristiine linnaosa, Tallinn, Harju maakond, 11316, Eesti"
+  },
+  {
+    "id": 31,
+    "name": "Adcash",
+    "address": "Kentmanni 4",
+    "district": "Kesklinn",
+    "description": "Adcash HQ",
+    "lat": 59.4323659,
+    "lon": 24.7487532,
+    "osm_display": "Richbeth, 4, Kentmanni, Südalinn, Kesklinna linnaosa, Tallinn, Harju maakond, 15095, Eesti"
+  },
+  {
+    "id": 32,
+    "name": "Inbank",
+    "address": "Niine 11",
+    "district": "Põhja-Tallinn",
+    "description": "Inbank HQ",
+    "lat": 59.4436962,
+    "lon": 24.7394894,
+    "osm_display": "11, Niine, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10414, Eesti"
+  },
+  {
+    "id": 33,
+    "name": "Coop Pank AS",
+    "address": "Maakri 30",
+    "district": "Kesklinn",
+    "description": "Coop Pank HQ (Skyon)",
+    "lat": 59.4327604,
+    "lon": 24.7592271,
+    "osm_display": "Hollandi suursaatkond, 30, Maakri, Kesklinna linnaosa, Tallinn, Harju maakond, 10145, Eesti"
+  },
+  {
+    "id": 34,
+    "name": "Cleveron",
+    "address": "Mäealuse 2/1",
+    "district": "Mustamäe",
+    "description": "Cleveron Tallinn Tech Hub (Tehnopol)",
+    "lat": 59.396177,
+    "lon": 24.6592456,
+    "osm_display": "2/1, Mäealuse, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 35,
+    "name": "Testlio",
+    "address": "Telliskivi 60a",
+    "district": "Põhja-Tallinn",
+    "description": "Testlio HQ",
+    "lat": 59.4405618,
+    "lon": 24.7319121,
+    "osm_display": "Pudel, 60a, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 36,
+    "name": "Proekspert AS",
+    "address": "Sõpruse pst 157",
+    "district": "Kristiine",
+    "description": "Proekspert AS HQ",
+    "lat": 59.4113333,
+    "lon": 24.7071637,
+    "osm_display": "157, Sõpruse pst, Lilleküla, Kristiine linnaosa, Tallinn, Harju maakond, 13417, Eesti"
+  },
+  {
+    "id": 37,
+    "name": "Cybernetica",
+    "address": "Mäealuse 2/1",
+    "district": "Mustamäe",
+    "description": "Cybernetica HQ (Tehnopol)",
+    "lat": 59.396177,
+    "lon": 24.6592456,
+    "osm_display": "2/1, Mäealuse, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 38,
+    "name": "Mooncascade",
+    "address": "Telliskivi 60a",
+    "district": "Põhja-Tallinn",
+    "description": "Mooncascade Tallinn Office",
+    "lat": 59.4405618,
+    "lon": 24.7319121,
+    "osm_display": "Pudel, 60a, Telliskivi, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10412, Eesti"
+  },
+  {
+    "id": 39,
+    "name": "Icefire OÜ",
+    "address": "Valukoja 8",
+    "district": "Ülemiste City",
+    "description": "Icefire / Checkout.com Tech Hub",
+    "lat": 59.4195798,
+    "lon": 24.8047829,
+    "osm_display": "Öpiku 2, 8/2, Valukoja, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 40,
+    "name": "Milrem Robotics",
+    "address": "Mäealuse 2/1",
+    "district": "Mustamäe",
+    "description": "Milrem Robotics Tallinn R&D Hub",
+    "lat": 59.396177,
+    "lon": 24.6592456,
+    "osm_display": "2/1, Mäealuse, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 41,
+    "name": "Bigbank",
+    "address": "Tartu mnt 18",
+    "district": "Kesklinn",
+    "description": "Bigbank HQ",
+    "lat": 59.433158,
+    "lon": 24.7625965,
+    "osm_display": "18, Tartu mnt, Maakri, Kesklinna linnaosa, Tallinn, Harju maakond, 10145, Eesti"
+  },
+  {
+    "id": 42,
+    "name": "Luminor Group",
+    "address": "Liivalaia 45",
+    "district": "Kesklinn",
+    "description": "Luminor HQ & Tech Hub",
+    "lat": 59.4312395,
+    "lon": 24.7602941,
+    "osm_display": "Luminor, 45, Liivalaia, Maakri, Kesklinna linnaosa, Tallinn, Harju maakond, 10145, Eesti"
+  },
+  {
+    "id": 43,
+    "name": "LHV",
+    "address": "Tartu mnt 2",
+    "district": "Kesklinn",
+    "description": "LHV Pank HQ & Tech Centre",
+    "lat": 59.4346976,
+    "lon": 24.7580157,
+    "osm_display": "2, Tartu mnt, Kompassi, Kesklinna linnaosa, Tallinn, Harju maakond, 10145, Eesti"
+  },
+  {
+    "id": 44,
+    "name": "Skeleton Technologies",
+    "address": "Kaabli 1",
+    "district": "Ülemiste / Rae",
+    "description": "Skeleton Technologies R&D Hub",
+    "lat": 59.4077868,
+    "lon": 24.8085727,
+    "osm_display": "6/1, Kaabli, Mõigu, Kesklinna linnaosa, Tallinn, Harju maakond, 10112, Eesti"
+  },
+  {
+    "id": 45,
+    "name": "Starship Technologies",
+    "address": "Teaduspargi 8",
+    "district": "Mustamäe",
+    "description": "Starship Technologies HQ (Tehnopol)",
+    "lat": 59.400037,
+    "lon": 24.6565315,
+    "osm_display": "8, Teaduspargi, Teaduspark Tehnopol, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  },
+  {
+    "id": 46,
+    "name": "CGI",
+    "address": "Lõõtsa 1a",
+    "district": "Ülemiste City",
+    "description": "CGI Eesti AS (Ülemiste City)",
+    "lat": 59.4226883,
+    "lon": 24.8027546,
+    "osm_display": "1a, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 47,
+    "name": "Eesti Energia",
+    "address": "Lelle 22",
+    "district": "Kristiine",
+    "description": "Eesti Energia HQ & Tech",
+    "lat": 59.4039686,
+    "lon": 24.7334188,
+    "osm_display": "22, Lelle, Kitseküla, Kesklinna linnaosa, Tallinn, Harju maakond, 11318, Eesti"
+  },
+  {
+    "id": 48,
+    "name": "Helmes",
+    "address": "Lõõtsa 6",
+    "district": "Ülemiste City",
+    "description": "Helmes HQ",
+    "lat": 59.4214917,
+    "lon": 24.801129,
+    "osm_display": "6, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 49,
+    "name": "Elisa Eesti AS",
+    "address": "Sõpruse pst 145",
+    "district": "Kristiine",
+    "description": "Elisa Eesti AS HQ",
+    "lat": 59.4155504,
+    "lon": 24.7106708,
+    "osm_display": "145, Sõpruse pst, Lilleküla, Kristiine linnaosa, Tallinn, Harju maakond, 13425, Eesti"
+  },
+  {
+    "id": 50,
+    "name": "SEB Eesti",
+    "address": "Tornimäe 2",
+    "district": "Kesklinn",
+    "description": "SEB Eesti HQ & Innovation Centre",
+    "lat": 59.4339538,
+    "lon": 24.7605539,
+    "osm_display": "SEB peakontor, 2, Tornimäe, Maakri, Kesklinna linnaosa, Tallinn, Harju maakond, 10145, Eesti"
+  },
+  {
+    "id": 51,
+    "name": "Telia",
+    "address": "Mustamäe tee 3",
+    "district": "Kristiine",
+    "description": "Telia Eesti AS HQ",
+    "lat": 59.4280348,
+    "lon": 24.7049581,
+    "osm_display": "3, Mustamäe tee, Lilleküla, Kristiine linnaosa, Tallinn, Harju maakond, 10615, Eesti"
+  },
+  {
+    "id": 52,
+    "name": "Swedbank Estonia",
+    "address": "Liivalaia 8",
+    "district": "Kesklinn",
+    "description": "Swedbank HQ & IT Hub",
+    "lat": 59.4273135,
+    "lon": 24.7461561,
+    "osm_display": "8, Liivalaia, Tatari, Kesklinna linnaosa, Tallinn, Harju maakond, 15040, Eesti"
+  },
+  {
+    "id": 53,
+    "name": "Nortal",
+    "address": "Lõõtsa 6c",
+    "district": "Ülemiste City",
+    "description": "Nortal HQ",
+    "lat": 59.4211755,
+    "lon": 24.8016523,
+    "osm_display": "Nortal AS, 6C, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 54,
+    "name": "Playtech",
+    "address": "Lõõtsa 5",
+    "district": "Ülemiste City",
+    "description": "Playtech Tallinn Tech Hub",
+    "lat": 59.4211768,
+    "lon": 24.8027991,
+    "osm_display": "Bernard Schmidt'i büroohoone, 5, Lõõtsa, Ülemiste City, Ülemiste, Lasnamäe linnaosa, Tallinn, Harju maakond, 11415, Eesti"
+  },
+  {
+    "id": 55,
+    "name": "Pipedrive",
+    "address": "Mustamäe tee 3a",
+    "district": "Kristiine",
+    "description": "Pipedrive HQ (WoHo)",
+    "lat": 59.4281277,
+    "lon": 24.7043349,
+    "osm_display": "Pipedrive, 3a, Mustamäe tee, Lilleküla, Kristiine linnaosa, Tallinn, Harju maakond, 10615, Eesti"
+  },
+  {
+    "id": 56,
+    "name": "Veriff",
+    "address": "Niine 11",
+    "district": "Põhja-Tallinn",
+    "description": "Veriff HQ",
+    "lat": 59.4436962,
+    "lon": 24.7394894,
+    "osm_display": "11, Niine, Krulli kvartal, Kalamaja, Põhja-Tallinna linnaosa, Tallinn, Harju maakond, 10414, Eesti"
+  },
+  {
+    "id": 57,
+    "name": "Wise",
+    "address": "Veerenni 24",
+    "district": "Kesklinn",
+    "description": "Wise Tallinn HQ (Baltika Kvartal)",
+    "lat": 59.4238919,
+    "lon": 24.7491799,
+    "osm_display": "Baltika Grupp, 24, Veerenni, Kesklinna linnaosa, Tallinn, Harju maakond, 10135, Eesti"
+  },
+  {
+    "id": 58,
+    "name": "Bolt",
+    "address": "Vana-Lõuna 39/1",
+    "district": "Kesklinn",
+    "description": "Bolt Global HQ",
+    "lat": 59.4206267,
+    "lon": 24.7453303,
+    "osm_display": "Lutheri Masinasaal, 39/1, Vana-Lõuna, Veerenni, Kesklinna linnaosa, Tallinn, Harju maakond, 10134, Eesti"
+  },
+  {
+    "id": 59,
+    "name": "Microsoft",
+    "address": "Akadeemia tee 15b",
+    "district": "Mustamäe",
+    "description": "Microsoft Development Center Estonia (Tehnopol)",
+    "lat": 59.3970807,
+    "lon": 24.6610067,
+    "osm_display": "Microsoft, 15b, Akadeemia tee, Kadaka, Mustamäe linnaosa, Tallinn, Harju maakond, 12618, Eesti"
+  }
+]

@@ -1,0 +1,2520 @@
+[
+  {
+    "id": "safety_kj_jõhvi_kesklinn",
+    "name": "Jõhvi Kesklinn",
+    "district": "Jõhvi Kesklinn (County Capital, Town Square & //kood Campus)",
+    "short_name": "Jõhvi",
+    "lat": 59.356957,
+    "lon": 27.419521,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.2,
+    "scores": {
+      "calmness": 1.4,
+      "assaults": 1.9,
+      "thefts": 2.6,
+      "drunkenness": 1.8,
+      "severe_crimes": 2.8,
+      "family": 2.6,
+      "language": 2.9,
+      "demographics": 2.9
+    },
+    "calmness_desc": "12 bars/pubs/clubs and 0 alcohol shops (87th percentile nationally), 7 hotels/attractions, 43th-percentile green cover, 32% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 87th percentile, students/dormitories at the 75th, tourist footfall at the 70th, deprivation index 0.42 (cheap rent + 25% tertiary education + 68% apartment blocks). Offset by 2 schools/kindergartens and 4 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 78th percentile, tourist density 70th (pickpocketing), student/campus density 75th (bicycle theft), affluence 58th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 12 licensed premises and alcohol shops in this district (87th percentile nationally); deprivation index 0.42; 7 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.42) and night-time economy (87th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "33.8% give Estonian as their mother tongue; an estimated 37% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.2/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; few families — this is not a school-run neighbourhood; mixed (25% degree-holders). English mostly works, some Estonian or Russian helps.",
+    "polygons": [
+      [
+        [
+          59.34729,
+          27.405783
+        ],
+        [
+          59.347607,
+          27.406036
+        ],
+        [
+          59.347701,
+          27.40627
+        ],
+        [
+          59.348771,
+          27.406087
+        ],
+        [
+          59.349275,
+          27.403972
+        ],
+        [
+          59.350689,
+          27.403586
+        ],
+        [
+          59.352412,
+          27.40357
+        ],
+        [
+          59.353023,
+          27.403389
+        ],
+        [
+          59.354535,
+          27.403364
+        ],
+        [
+          59.354771,
+          27.39514
+        ],
+        [
+          59.354482,
+          27.395094
+        ],
+        [
+          59.354551,
+          27.393327
+        ],
+        [
+          59.354641,
+          27.392447
+        ],
+        [
+          59.354878,
+          27.391731
+        ],
+        [
+          59.35559,
+          27.390272
+        ],
+        [
+          59.355649,
+          27.389517
+        ],
+        [
+          59.356025,
+          27.37585
+        ],
+        [
+          59.35708,
+          27.376371
+        ],
+        [
+          59.357359,
+          27.376171
+        ],
+        [
+          59.35858,
+          27.376828
+        ],
+        [
+          59.359363,
+          27.378642
+        ],
+        [
+          59.359969,
+          27.378786
+        ],
+        [
+          59.360227,
+          27.379234
+        ],
+        [
+          59.36041,
+          27.37982
+        ],
+        [
+          59.360701,
+          27.381195
+        ],
+        [
+          59.361719,
+          27.382703
+        ],
+        [
+          59.362472,
+          27.384526
+        ],
+        [
+          59.36267,
+          27.384866
+        ],
+        [
+          59.36284,
+          27.386223
+        ],
+        [
+          59.363228,
+          27.387876
+        ],
+        [
+          59.364371,
+          27.390612
+        ],
+        [
+          59.365978,
+          27.395373
+        ],
+        [
+          59.368121,
+          27.390444
+        ],
+        [
+          59.368389,
+          27.39101
+        ],
+        [
+          59.368242,
+          27.39358
+        ],
+        [
+          59.368188,
+          27.398256
+        ],
+        [
+          59.3683,
+          27.398261
+        ],
+        [
+          59.36821,
+          27.39931
+        ],
+        [
+          59.367947,
+          27.417178
+        ],
+        [
+          59.367845,
+          27.418515
+        ],
+        [
+          59.367666,
+          27.420554
+        ],
+        [
+          59.36536,
+          27.439849
+        ],
+        [
+          59.362874,
+          27.459517
+        ],
+        [
+          59.362787,
+          27.461464
+        ],
+        [
+          59.362839,
+          27.461457
+        ],
+        [
+          59.362904,
+          27.462755
+        ],
+        [
+          59.362819,
+          27.463107
+        ],
+        [
+          59.362618,
+          27.46339
+        ],
+        [
+          59.363622,
+          27.466753
+        ],
+        [
+          59.362032,
+          27.467746
+        ],
+        [
+          59.362154,
+          27.468419
+        ],
+        [
+          59.361869,
+          27.468615
+        ],
+        [
+          59.362352,
+          27.47117
+        ],
+        [
+          59.361687,
+          27.47179
+        ],
+        [
+          59.36073,
+          27.467139
+        ],
+        [
+          59.35997,
+          27.467295
+        ],
+        [
+          59.358953,
+          27.461486
+        ],
+        [
+          59.357146,
+          27.461234
+        ],
+        [
+          59.355543,
+          27.459839
+        ],
+        [
+          59.355485,
+          27.450417
+        ],
+        [
+          59.355356,
+          27.447269
+        ],
+        [
+          59.355412,
+          27.447252
+        ],
+        [
+          59.355404,
+          27.446709
+        ],
+        [
+          59.355343,
+          27.445508
+        ],
+        [
+          59.355154,
+          27.443735
+        ],
+        [
+          59.355223,
+          27.442982
+        ],
+        [
+          59.355166,
+          27.440922
+        ],
+        [
+          59.35256,
+          27.439923
+        ],
+        [
+          59.348432,
+          27.447029
+        ],
+        [
+          59.34786,
+          27.445238
+        ],
+        [
+          59.346439,
+          27.436941
+        ],
+        [
+          59.346946,
+          27.43618
+        ],
+        [
+          59.349516,
+          27.433489
+        ],
+        [
+          59.349373,
+          27.431791
+        ],
+        [
+          59.346737,
+          27.421464
+        ],
+        [
+          59.346667,
+          27.420402
+        ],
+        [
+          59.346761,
+          27.419833
+        ],
+        [
+          59.346823,
+          27.414122
+        ],
+        [
+          59.346872,
+          27.413343
+        ],
+        [
+          59.347344,
+          27.410466
+        ],
+        [
+          59.347436,
+          27.409558
+        ],
+        [
+          59.347439,
+          27.408259
+        ],
+        [
+          59.347321,
+          27.406356
+        ],
+        [
+          59.34729,
+          27.405783
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "33.8% give Estonian as their mother tongue; an estimated 37% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.87,
+      "tourist_pctile": 0.7,
+      "retail_pctile": 0.78,
+      "student_pctile": 0.75,
+      "family_amenity_pctile": 0.34,
+      "green_pctile": 0.43,
+      "house_share_pctile": 0.42,
+      "affluence_pctile": 0.58,
+      "education_pctile": 0.75,
+      "deprivation_index": 0.42,
+      "tertiary_education_pct": 25.1,
+      "rent_eur_m2": 6.0
+    },
+    "family_desc": "2 schools/kindergartens and 4 playgrounds (34th percentile nationally), 1 sports facilities, 32% detached/terraced housing, 25% of adults hold a bachelor's degree or higher, rent €6.0/m² (58th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_järve_kesklinn",
+    "name": "Järve Kesklinn",
+    "district": "Järve Kesklinn (City Hall, Central Park & TalTech Campus)",
+    "short_name": "Järve Kesklinn",
+    "lat": 59.403509,
+    "lon": 27.294013,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 1.8,
+    "scores": {
+      "calmness": 2.4,
+      "assaults": 1.3,
+      "thefts": 2.2,
+      "drunkenness": 1.7,
+      "severe_crimes": 1.7,
+      "family": 2.0,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "1 bars/pubs/clubs and 0 alcohol shops (63th percentile nationally), 3 hotels/attractions, 93th-percentile green cover, 4% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 63th percentile, students/dormitories at the 78th, tourist footfall at the 58th, deprivation index 0.93 (cheap rent + 17% tertiary education + 96% apartment blocks). Offset by 2 schools/kindergartens and 7 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 57th percentile, tourist density 58th (pickpocketing), student/campus density 78th (bicycle theft), affluence 14th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 1 licensed premises and alcohol shops in this district (63th percentile nationally); deprivation index 0.93; 3 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.93) and night-time economy (63th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "1.8/5.0 nationally — among the weakest in Estonia. Some night-time bar traffic; a reasonable family presence; socially strained — cheap stock, low attainment, wall-to-wall blocks (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.414028,
+          27.299379
+        ],
+        [
+          59.413891,
+          27.299795
+        ],
+        [
+          59.413845,
+          27.299738
+        ],
+        [
+          59.412784,
+          27.302947
+        ],
+        [
+          59.41161,
+          27.300183
+        ],
+        [
+          59.410038,
+          27.302625
+        ],
+        [
+          59.408394,
+          27.29843
+        ],
+        [
+          59.406208,
+          27.300891
+        ],
+        [
+          59.402816,
+          27.299898
+        ],
+        [
+          59.402585,
+          27.299381
+        ],
+        [
+          59.401406,
+          27.299724
+        ],
+        [
+          59.398177,
+          27.300111
+        ],
+        [
+          59.396009,
+          27.2999
+        ],
+        [
+          59.395917,
+          27.30005
+        ],
+        [
+          59.3932,
+          27.299617
+        ],
+        [
+          59.392767,
+          27.299675
+        ],
+        [
+          59.392602,
+          27.293858
+        ],
+        [
+          59.392793,
+          27.293711
+        ],
+        [
+          59.391753,
+          27.273833
+        ],
+        [
+          59.391475,
+          27.271497
+        ],
+        [
+          59.391301,
+          27.270621
+        ],
+        [
+          59.407051,
+          27.261403
+        ],
+        [
+          59.417747,
+          27.288142
+        ],
+        [
+          59.415295,
+          27.295544
+        ],
+        [
+          59.414028,
+          27.299379
+        ]
+      ],
+      [
+        [
+          59.385334,
+          27.276551
+        ],
+        [
+          59.385902,
+          27.279833
+        ],
+        [
+          59.381904,
+          27.287108
+        ],
+        [
+          59.381507,
+          27.285717
+        ],
+        [
+          59.380003,
+          27.285275
+        ],
+        [
+          59.380048,
+          27.288632
+        ],
+        [
+          59.378538,
+          27.291014
+        ],
+        [
+          59.377549,
+          27.288715
+        ],
+        [
+          59.376765,
+          27.285422
+        ],
+        [
+          59.376514,
+          27.285089
+        ],
+        [
+          59.376064,
+          27.283568
+        ],
+        [
+          59.37686,
+          27.282233
+        ],
+        [
+          59.377764,
+          27.282061
+        ],
+        [
+          59.377076,
+          27.278946
+        ],
+        [
+          59.382928,
+          27.27558
+        ],
+        [
+          59.385334,
+          27.276551
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.63,
+      "tourist_pctile": 0.58,
+      "retail_pctile": 0.57,
+      "student_pctile": 0.78,
+      "family_amenity_pctile": 0.46,
+      "green_pctile": 0.93,
+      "house_share_pctile": 0.16,
+      "affluence_pctile": 0.14,
+      "education_pctile": 0.0,
+      "deprivation_index": 0.93,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.15
+    },
+    "family_desc": "2 schools/kindergartens and 7 playgrounds (46th percentile nationally), 0 sports facilities, 4% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.15/m² (14th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_kukruse",
+    "name": "Kukruse",
+    "district": "Kukruse (Historic Polar Manor & Low-Density Residential)",
+    "short_name": "Kukruse",
+    "lat": 59.400126,
+    "lon": 27.342586,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.9,
+    "scores": {
+      "calmness": 3.6,
+      "assaults": 2.2,
+      "thefts": 3.8,
+      "drunkenness": 2.5,
+      "severe_crimes": 2.8,
+      "family": 3.3,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (46th percentile nationally), 0 hotels/attractions, 96th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 46th percentile, students/dormitories at the 55th, tourist footfall at the 30th, deprivation index 0.56 (cheap rent + 17% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 19th percentile, tourist density 30th (pickpocketing), student/campus density 55th (bicycle theft), affluence 41th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (46th percentile nationally); deprivation index 0.56; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.56) and night-time economy (46th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.9/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.401349,
+          27.336315
+        ],
+        [
+          59.401497,
+          27.337122
+        ],
+        [
+          59.402218,
+          27.335828
+        ],
+        [
+          59.402852,
+          27.338304
+        ],
+        [
+          59.405666,
+          27.334976
+        ],
+        [
+          59.407039,
+          27.338391
+        ],
+        [
+          59.406213,
+          27.340228
+        ],
+        [
+          59.405578,
+          27.342065
+        ],
+        [
+          59.404741,
+          27.346905
+        ],
+        [
+          59.403622,
+          27.352826
+        ],
+        [
+          59.402843,
+          27.3555
+        ],
+        [
+          59.402068,
+          27.357078
+        ],
+        [
+          59.397248,
+          27.364646
+        ],
+        [
+          59.395343,
+          27.359392
+        ],
+        [
+          59.392296,
+          27.350385
+        ],
+        [
+          59.39165,
+          27.346983
+        ],
+        [
+          59.396068,
+          27.342984
+        ],
+        [
+          59.396041,
+          27.342884
+        ],
+        [
+          59.39655,
+          27.342373
+        ],
+        [
+          59.396467,
+          27.341759
+        ],
+        [
+          59.396903,
+          27.341414
+        ],
+        [
+          59.397604,
+          27.340068
+        ],
+        [
+          59.399665,
+          27.33483
+        ],
+        [
+          59.399704,
+          27.334262
+        ],
+        [
+          59.400177,
+          27.332965
+        ],
+        [
+          59.400246,
+          27.333273
+        ],
+        [
+          59.400531,
+          27.332345
+        ],
+        [
+          59.401349,
+          27.336315
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.46,
+      "tourist_pctile": 0.3,
+      "retail_pctile": 0.19,
+      "student_pctile": 0.55,
+      "family_amenity_pctile": 0.24,
+      "green_pctile": 0.96,
+      "house_share_pctile": 0.94,
+      "affluence_pctile": 0.41,
+      "education_pctile": 0.06,
+      "deprivation_index": 0.56,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 5.13
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (24th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €5.13/m² (41th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_tammiku",
+    "name": "Tammiku",
+    "district": "Tammiku (Suburban Oak Forest & Industrial Tech Park)",
+    "short_name": "Tammiku",
+    "lat": 59.33896,
+    "lon": 27.394813,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.7,
+    "scores": {
+      "calmness": 2.8,
+      "assaults": 2.3,
+      "thefts": 3.9,
+      "drunkenness": 2.5,
+      "severe_crimes": 2.9,
+      "family": 2.9,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (48th percentile nationally), 0 hotels/attractions, 6th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 48th percentile, students/dormitories at the 57th, tourist footfall at the 31th, deprivation index 0.52 (cheap rent + 17% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 21th percentile, tourist density 31th (pickpocketing), student/campus density 57th (bicycle theft), affluence 47th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (48th percentile nationally); deprivation index 0.52; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.52) and night-time economy (48th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.7/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.334617,
+          27.402654
+        ],
+        [
+          59.3369,
+          27.397104
+        ],
+        [
+          59.337102,
+          27.397053
+        ],
+        [
+          59.334897,
+          27.386607
+        ],
+        [
+          59.335045,
+          27.386529
+        ],
+        [
+          59.335583,
+          27.386594
+        ],
+        [
+          59.335594,
+          27.387515
+        ],
+        [
+          59.335686,
+          27.388042
+        ],
+        [
+          59.337691,
+          27.387948
+        ],
+        [
+          59.337216,
+          27.383896
+        ],
+        [
+          59.337202,
+          27.38284
+        ],
+        [
+          59.339032,
+          27.383635
+        ],
+        [
+          59.339298,
+          27.386294
+        ],
+        [
+          59.340532,
+          27.386789
+        ],
+        [
+          59.343815,
+          27.387394
+        ],
+        [
+          59.343381,
+          27.394568
+        ],
+        [
+          59.341996,
+          27.396403
+        ],
+        [
+          59.341998,
+          27.396718
+        ],
+        [
+          59.34113,
+          27.396562
+        ],
+        [
+          59.339739,
+          27.396817
+        ],
+        [
+          59.33724,
+          27.397862
+        ],
+        [
+          59.33811,
+          27.402093
+        ],
+        [
+          59.338298,
+          27.402638
+        ],
+        [
+          59.343866,
+          27.403973
+        ],
+        [
+          59.343875,
+          27.403904
+        ],
+        [
+          59.347321,
+          27.406356
+        ],
+        [
+          59.347325,
+          27.406444
+        ],
+        [
+          59.335409,
+          27.403888
+        ],
+        [
+          59.334294,
+          27.402606
+        ],
+        [
+          59.334617,
+          27.402654
+        ]
+      ],
+      [
+        [
+          59.329847,
+          27.397383
+        ],
+        [
+          59.33207,
+          27.397469
+        ],
+        [
+          59.332601,
+          27.400659
+        ],
+        [
+          59.329845,
+          27.397489
+        ],
+        [
+          59.329847,
+          27.397383
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.48,
+      "tourist_pctile": 0.31,
+      "retail_pctile": 0.21,
+      "student_pctile": 0.57,
+      "family_amenity_pctile": 0.25,
+      "green_pctile": 0.06,
+      "house_share_pctile": 0.96,
+      "affluence_pctile": 0.47,
+      "education_pctile": 0.12,
+      "deprivation_index": 0.52,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 5.13
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (25th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €5.13/m² (47th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_puru",
+    "name": "Puru",
+    "district": "Puru (Central Hospital Campus & Southern Health Quarter)",
+    "short_name": "Puru",
+    "lat": 59.324088,
+    "lon": 27.407212,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.1,
+    "scores": {
+      "calmness": 2.1,
+      "assaults": 1.8,
+      "thefts": 3.1,
+      "drunkenness": 2.0,
+      "severe_crimes": 2.2,
+      "family": 1.6,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (49th percentile nationally), 0 hotels/attractions, 7th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 49th percentile, students/dormitories at the 58th, tourist footfall at the 33th, deprivation index 0.86 (cheap rent + 17% tertiary education + 100% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 22th percentile, tourist density 33th (pickpocketing), student/campus density 58th (bicycle theft), affluence 20th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (49th percentile nationally); deprivation index 0.86; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.86) and night-time economy (49th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.1/5.0 nationally — among the weakest in Estonia. Some night-time bar traffic; few families — this is not a school-run neighbourhood; socially strained — cheap stock, low attainment, wall-to-wall blocks (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.333424,
+          27.402477
+        ],
+        [
+          59.334294,
+          27.402606
+        ],
+        [
+          59.335409,
+          27.403888
+        ],
+        [
+          59.317015,
+          27.415992
+        ],
+        [
+          59.317532,
+          27.414927
+        ],
+        [
+          59.318191,
+          27.414182
+        ],
+        [
+          59.318452,
+          27.41398
+        ],
+        [
+          59.31861,
+          27.414022
+        ],
+        [
+          59.318876,
+          27.413768
+        ],
+        [
+          59.318959,
+          27.413351
+        ],
+        [
+          59.319131,
+          27.413487
+        ],
+        [
+          59.31953,
+          27.413083
+        ],
+        [
+          59.319629,
+          27.413125
+        ],
+        [
+          59.319626,
+          27.413217
+        ],
+        [
+          59.319972,
+          27.41325
+        ],
+        [
+          59.319736,
+          27.412689
+        ],
+        [
+          59.320914,
+          27.411683
+        ],
+        [
+          59.322002,
+          27.408019
+        ],
+        [
+          59.323874,
+          27.405569
+        ],
+        [
+          59.322204,
+          27.399867
+        ],
+        [
+          59.321501,
+          27.397204
+        ],
+        [
+          59.323312,
+          27.399162
+        ],
+        [
+          59.325417,
+          27.399956
+        ],
+        [
+          59.326949,
+          27.400195
+        ],
+        [
+          59.32958,
+          27.401988
+        ],
+        [
+          59.329719,
+          27.401565
+        ],
+        [
+          59.329845,
+          27.397489
+        ],
+        [
+          59.332601,
+          27.400659
+        ],
+        [
+          59.332904,
+          27.402476
+        ],
+        [
+          59.333424,
+          27.402477
+        ]
+      ],
+      [
+        [
+          59.309706,
+          27.416922
+        ],
+        [
+          59.311914,
+          27.417645
+        ],
+        [
+          59.312861,
+          27.417769
+        ],
+        [
+          59.313852,
+          27.418074
+        ],
+        [
+          59.309357,
+          27.421032
+        ],
+        [
+          59.309412,
+          27.416822
+        ],
+        [
+          59.309706,
+          27.416922
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.49,
+      "tourist_pctile": 0.33,
+      "retail_pctile": 0.22,
+      "student_pctile": 0.58,
+      "family_amenity_pctile": 0.27,
+      "green_pctile": 0.07,
+      "house_share_pctile": 0.06,
+      "affluence_pctile": 0.2,
+      "education_pctile": 0.17,
+      "deprivation_index": 0.86,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.16
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (27th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.16/m² (20th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_uusküla",
+    "name": "Uusküla",
+    "district": "Uusküla (Northern Residential & Sports Complex)",
+    "short_name": "Uusküla",
+    "lat": 59.413482,
+    "lon": 27.26326,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 3.6,
+      "assaults": 2.2,
+      "thefts": 3.7,
+      "drunkenness": 2.4,
+      "severe_crimes": 2.8,
+      "family": 3.4,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (51th percentile nationally), 0 hotels/attractions, 97th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 51th percentile, students/dormitories at the 60th, tourist footfall at the 34th, deprivation index 0.54 (cheap rent + 17% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 24th percentile, tourist density 34th (pickpocketing), student/campus density 60th (bicycle theft), affluence 33th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (51th percentile nationally); deprivation index 0.54; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.54) and night-time economy (51th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.415074,
+          27.247814
+        ],
+        [
+          59.413684,
+          27.250054
+        ],
+        [
+          59.41542,
+          27.267638
+        ],
+        [
+          59.416456,
+          27.275331
+        ],
+        [
+          59.4172,
+          27.279867
+        ],
+        [
+          59.419912,
+          27.279579
+        ],
+        [
+          59.419238,
+          27.283075
+        ],
+        [
+          59.418363,
+          27.286282
+        ],
+        [
+          59.417747,
+          27.288142
+        ],
+        [
+          59.407051,
+          27.261403
+        ],
+        [
+          59.415466,
+          27.245227
+        ],
+        [
+          59.415958,
+          27.246445
+        ],
+        [
+          59.415074,
+          27.247814
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.51,
+      "tourist_pctile": 0.34,
+      "retail_pctile": 0.24,
+      "student_pctile": 0.6,
+      "family_amenity_pctile": 0.28,
+      "green_pctile": 0.97,
+      "house_share_pctile": 0.97,
+      "affluence_pctile": 0.33,
+      "education_pctile": 0.23,
+      "deprivation_index": 0.54,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.52
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (28th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.52/m² (33th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_oru",
+    "name": "Oru",
+    "district": "Oru (Pine Forest Settlement & Peat Industrial Quarter)",
+    "short_name": "Oru",
+    "lat": 59.368755,
+    "lon": 27.565747,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.5,
+    "scores": {
+      "calmness": 2.1,
+      "assaults": 2.3,
+      "thefts": 3.3,
+      "drunkenness": 2.5,
+      "severe_crimes": 2.8,
+      "family": 2.5,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (52th percentile nationally), 0 hotels/attractions, 10th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 52th percentile, students/dormitories at the 61th, tourist footfall at the 36th, deprivation index 0.64 (cheap rent + 17% tertiary education + 100% apartment blocks). Offset by 1 schools/kindergartens and 2 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 36th percentile, tourist density 36th (pickpocketing), student/campus density 61th (bicycle theft), affluence 65th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (52th percentile nationally); deprivation index 0.64; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.64) and night-time economy (52th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.5/5.0 nationally — below the Estonian average. Some night-time bar traffic; a reasonable family presence; socially strained — cheap stock, low attainment, wall-to-wall blocks (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.370674,
+          27.555486
+        ],
+        [
+          59.372551,
+          27.554297
+        ],
+        [
+          59.375703,
+          27.583133
+        ],
+        [
+          59.374978,
+          27.583527
+        ],
+        [
+          59.371658,
+          27.57776
+        ],
+        [
+          59.369601,
+          27.578037
+        ],
+        [
+          59.368541,
+          27.576271
+        ],
+        [
+          59.367666,
+          27.573915
+        ],
+        [
+          59.366913,
+          27.571469
+        ],
+        [
+          59.366444,
+          27.570222
+        ],
+        [
+          59.364871,
+          27.565345
+        ],
+        [
+          59.364699,
+          27.563689
+        ],
+        [
+          59.36546,
+          27.557721
+        ],
+        [
+          59.366109,
+          27.55757
+        ],
+        [
+          59.36651,
+          27.55732
+        ],
+        [
+          59.367566,
+          27.556996
+        ],
+        [
+          59.367877,
+          27.556789
+        ],
+        [
+          59.367851,
+          27.554156
+        ],
+        [
+          59.370674,
+          27.555486
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.52,
+      "tourist_pctile": 0.36,
+      "retail_pctile": 0.36,
+      "student_pctile": 0.61,
+      "family_amenity_pctile": 0.55,
+      "green_pctile": 0.1,
+      "house_share_pctile": 0.07,
+      "affluence_pctile": 0.65,
+      "education_pctile": 0.29,
+      "deprivation_index": 0.64,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 6.09
+    },
+    "family_desc": "1 schools/kindergartens and 2 playgrounds (55th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €6.09/m² (65th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_käva",
+    "name": "Käva",
+    "district": "Käva (Historic Industrial & Mining Housing Sector)",
+    "short_name": "Käva",
+    "lat": 59.381757,
+    "lon": 27.237958,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.5,
+    "scores": {
+      "calmness": 2.8,
+      "assaults": 2.1,
+      "thefts": 3.3,
+      "drunkenness": 2.1,
+      "severe_crimes": 2.5,
+      "family": 2.8,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (54th percentile nationally), 0 hotels/attractions, 25th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 54th percentile, students/dormitories at the 63th, tourist footfall at the 37th, deprivation index 0.62 (cheap rent + 17% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 27th percentile, tourist density 37th (pickpocketing), student/campus density 63th (bicycle theft), affluence 2th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (54th percentile nationally); deprivation index 0.62; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.62) and night-time economy (54th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.5/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; socially strained — cheap stock, low attainment, wall-to-wall blocks (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.374424,
+          27.260588
+        ],
+        [
+          59.371292,
+          27.260447
+        ],
+        [
+          59.369011,
+          27.25341
+        ],
+        [
+          59.368575,
+          27.252477
+        ],
+        [
+          59.368627,
+          27.251511
+        ],
+        [
+          59.364591,
+          27.248965
+        ],
+        [
+          59.364586,
+          27.249057
+        ],
+        [
+          59.363573,
+          27.248088
+        ],
+        [
+          59.359769,
+          27.243673
+        ],
+        [
+          59.360088,
+          27.234566
+        ],
+        [
+          59.360217,
+          27.228146
+        ],
+        [
+          59.361,
+          27.22817
+        ],
+        [
+          59.361197,
+          27.229485
+        ],
+        [
+          59.361833,
+          27.231612
+        ],
+        [
+          59.362349,
+          27.233014
+        ],
+        [
+          59.362957,
+          27.234257
+        ],
+        [
+          59.363189,
+          27.234498
+        ],
+        [
+          59.364445,
+          27.231331
+        ],
+        [
+          59.364622,
+          27.231023
+        ],
+        [
+          59.36462,
+          27.230504
+        ],
+        [
+          59.368063,
+          27.230964
+        ],
+        [
+          59.369151,
+          27.230653
+        ],
+        [
+          59.369002,
+          27.229543
+        ],
+        [
+          59.373095,
+          27.22766
+        ],
+        [
+          59.372599,
+          27.224719
+        ],
+        [
+          59.372173,
+          27.222793
+        ],
+        [
+          59.371709,
+          27.220202
+        ],
+        [
+          59.375737,
+          27.216359
+        ],
+        [
+          59.377191,
+          27.218873
+        ],
+        [
+          59.377358,
+          27.218594
+        ],
+        [
+          59.37881,
+          27.21749
+        ],
+        [
+          59.379384,
+          27.215766
+        ],
+        [
+          59.379553,
+          27.215492
+        ],
+        [
+          59.379029,
+          27.208059
+        ],
+        [
+          59.39051,
+          27.199514
+        ],
+        [
+          59.393087,
+          27.197445
+        ],
+        [
+          59.396238,
+          27.20467
+        ],
+        [
+          59.397335,
+          27.204312
+        ],
+        [
+          59.397413,
+          27.204106
+        ],
+        [
+          59.398812,
+          27.20311
+        ],
+        [
+          59.39927,
+          27.205736
+        ],
+        [
+          59.399839,
+          27.207323
+        ],
+        [
+          59.406766,
+          27.224237
+        ],
+        [
+          59.407117,
+          27.223492
+        ],
+        [
+          59.407186,
+          27.223653
+        ],
+        [
+          59.407715,
+          27.224948
+        ],
+        [
+          59.40732,
+          27.225634
+        ],
+        [
+          59.41196,
+          27.236938
+        ],
+        [
+          59.412366,
+          27.236279
+        ],
+        [
+          59.412728,
+          27.23716
+        ],
+        [
+          59.412328,
+          27.23779
+        ],
+        [
+          59.415466,
+          27.245227
+        ],
+        [
+          59.407051,
+          27.261403
+        ],
+        [
+          59.391301,
+          27.270621
+        ],
+        [
+          59.3903,
+          27.266074
+        ],
+        [
+          59.38945,
+          27.261234
+        ],
+        [
+          59.388067,
+          27.260635
+        ],
+        [
+          59.385921,
+          27.260442
+        ],
+        [
+          59.385298,
+          27.260267
+        ],
+        [
+          59.382542,
+          27.260246
+        ],
+        [
+          59.380123,
+          27.261158
+        ],
+        [
+          59.37972,
+          27.264302
+        ],
+        [
+          59.379447,
+          27.269996
+        ],
+        [
+          59.381894,
+          27.271784
+        ],
+        [
+          59.382263,
+          27.272251
+        ],
+        [
+          59.381897,
+          27.273863
+        ],
+        [
+          59.382902,
+          27.275537
+        ],
+        [
+          59.377076,
+          27.278946
+        ],
+        [
+          59.376016,
+          27.274142
+        ],
+        [
+          59.374424,
+          27.260588
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.54,
+      "tourist_pctile": 0.37,
+      "retail_pctile": 0.27,
+      "student_pctile": 0.63,
+      "family_amenity_pctile": 0.3,
+      "green_pctile": 0.25,
+      "house_share_pctile": 0.99,
+      "affluence_pctile": 0.02,
+      "education_pctile": 0.35,
+      "deprivation_index": 0.62,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.01
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (30th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.01/m² (2th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_ahtme___iidla",
+    "name": "Ahtme / Iidla",
+    "district": "Ahtme / Iidla (High-Density Soviet Panel Quarter)",
+    "short_name": "Ahtme / Iidla",
+    "lat": 59.313711,
+    "lon": 27.450993,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.2,
+    "scores": {
+      "calmness": 2.2,
+      "assaults": 1.9,
+      "thefts": 2.8,
+      "drunkenness": 2.0,
+      "severe_crimes": 2.3,
+      "family": 2.4,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "3 bars/pubs/clubs and 0 alcohol shops (66th percentile nationally), 0 hotels/attractions, 58th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 66th percentile, students/dormitories at the 64th, tourist footfall at the 39th, deprivation index 0.75 (cheap rent + 17% tertiary education + 100% apartment blocks). Offset by 0 schools/kindergartens and 18 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 46th percentile, tourist density 39th (pickpocketing), student/campus density 64th (bicycle theft), affluence 27th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 3 licensed premises and alcohol shops in this district (66th percentile nationally); deprivation index 0.75; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.75) and night-time economy (66th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.2/5.0 nationally — among the weakest in Estonia. Some night-time bar traffic; a reasonable family presence; socially strained — cheap stock, low attainment, wall-to-wall blocks (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.315166,
+          27.418537
+        ],
+        [
+          59.315497,
+          27.418783
+        ],
+        [
+          59.317015,
+          27.415992
+        ],
+        [
+          59.335409,
+          27.403888
+        ],
+        [
+          59.347325,
+          27.406444
+        ],
+        [
+          59.347439,
+          27.408259
+        ],
+        [
+          59.347436,
+          27.409558
+        ],
+        [
+          59.347344,
+          27.410466
+        ],
+        [
+          59.346872,
+          27.413343
+        ],
+        [
+          59.346823,
+          27.414122
+        ],
+        [
+          59.346761,
+          27.419833
+        ],
+        [
+          59.346667,
+          27.420402
+        ],
+        [
+          59.346737,
+          27.421464
+        ],
+        [
+          59.349373,
+          27.431791
+        ],
+        [
+          59.349516,
+          27.433489
+        ],
+        [
+          59.346946,
+          27.43618
+        ],
+        [
+          59.346439,
+          27.436941
+        ],
+        [
+          59.345976,
+          27.435034
+        ],
+        [
+          59.344347,
+          27.429455
+        ],
+        [
+          59.344121,
+          27.428287
+        ],
+        [
+          59.343305,
+          27.425171
+        ],
+        [
+          59.337615,
+          27.431136
+        ],
+        [
+          59.336701,
+          27.421144
+        ],
+        [
+          59.335631,
+          27.421404
+        ],
+        [
+          59.334115,
+          27.42304
+        ],
+        [
+          59.334089,
+          27.422945
+        ],
+        [
+          59.334033,
+          27.423006
+        ],
+        [
+          59.334052,
+          27.423066
+        ],
+        [
+          59.333302,
+          27.423949
+        ],
+        [
+          59.333336,
+          27.424057
+        ],
+        [
+          59.332725,
+          27.425138
+        ],
+        [
+          59.327797,
+          27.43159
+        ],
+        [
+          59.328806,
+          27.437473
+        ],
+        [
+          59.3262,
+          27.439733
+        ],
+        [
+          59.325058,
+          27.435199
+        ],
+        [
+          59.324765,
+          27.43563
+        ],
+        [
+          59.320982,
+          27.436211
+        ],
+        [
+          59.318628,
+          27.440582
+        ],
+        [
+          59.316038,
+          27.448328
+        ],
+        [
+          59.316091,
+          27.452495
+        ],
+        [
+          59.315995,
+          27.453363
+        ],
+        [
+          59.316068,
+          27.455067
+        ],
+        [
+          59.316048,
+          27.455429
+        ],
+        [
+          59.315866,
+          27.455437
+        ],
+        [
+          59.31585,
+          27.455729
+        ],
+        [
+          59.316137,
+          27.458051
+        ],
+        [
+          59.316302,
+          27.460413
+        ],
+        [
+          59.31651,
+          27.461831
+        ],
+        [
+          59.316463,
+          27.462411
+        ],
+        [
+          59.31651,
+          27.464037
+        ],
+        [
+          59.317709,
+          27.465078
+        ],
+        [
+          59.318489,
+          27.466952
+        ],
+        [
+          59.318552,
+          27.467634
+        ],
+        [
+          59.318776,
+          27.478678
+        ],
+        [
+          59.313975,
+          27.479009
+        ],
+        [
+          59.314079,
+          27.483783
+        ],
+        [
+          59.310602,
+          27.484131
+        ],
+        [
+          59.308381,
+          27.487088
+        ],
+        [
+          59.307203,
+          27.488361
+        ],
+        [
+          59.306243,
+          27.484988
+        ],
+        [
+          59.30469,
+          27.486715
+        ],
+        [
+          59.303469,
+          27.484962
+        ],
+        [
+          59.302304,
+          27.486554
+        ],
+        [
+          59.300838,
+          27.487789
+        ],
+        [
+          59.298711,
+          27.487058
+        ],
+        [
+          59.298713,
+          27.485912
+        ],
+        [
+          59.297183,
+          27.487048
+        ],
+        [
+          59.296472,
+          27.486449
+        ],
+        [
+          59.300486,
+          27.470922
+        ],
+        [
+          59.30638,
+          27.461553
+        ],
+        [
+          59.304927,
+          27.45799
+        ],
+        [
+          59.308911,
+          27.45088
+        ],
+        [
+          59.309101,
+          27.450053
+        ],
+        [
+          59.311835,
+          27.445082
+        ],
+        [
+          59.312857,
+          27.438308
+        ],
+        [
+          59.310363,
+          27.436679
+        ],
+        [
+          59.311072,
+          27.433023
+        ],
+        [
+          59.311213,
+          27.431902
+        ],
+        [
+          59.311282,
+          27.426529
+        ],
+        [
+          59.310779,
+          27.424006
+        ],
+        [
+          59.309335,
+          27.422698
+        ],
+        [
+          59.309357,
+          27.421032
+        ],
+        [
+          59.313852,
+          27.418074
+        ],
+        [
+          59.314765,
+          27.41836
+        ],
+        [
+          59.315166,
+          27.418537
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.66,
+      "tourist_pctile": 0.39,
+      "retail_pctile": 0.46,
+      "student_pctile": 0.64,
+      "family_amenity_pctile": 0.49,
+      "green_pctile": 0.58,
+      "house_share_pctile": 0.09,
+      "affluence_pctile": 0.27,
+      "education_pctile": 0.41,
+      "deprivation_index": 0.75,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.45
+    },
+    "family_desc": "0 schools/kindergartens and 18 playgrounds (49th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.45/m² (27th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_kj_sompa",
+    "name": "Sompa",
+    "district": "Sompa (Separated Mining Town Exclave)",
+    "short_name": "Sompa",
+    "lat": 59.335255,
+    "lon": 27.276951,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.6,
+    "scores": {
+      "calmness": 3.1,
+      "assaults": 2.2,
+      "thefts": 3.3,
+      "drunkenness": 2.2,
+      "severe_crimes": 2.6,
+      "family": 3.3,
+      "language": 1.4,
+      "demographics": 1.4
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (55th percentile nationally), 0 hotels/attractions, 69th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 55th percentile, students/dormitories at the 66th, tourist footfall at the 40th, deprivation index 0.55 (cheap rent + 17% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 33th percentile, tourist density 40th (pickpocketing), student/campus density 66th (bicycle theft), affluence 8th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (55th percentile nationally); deprivation index 0.55; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.55) and night-time economy (55th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.6/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (17% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.329917,
+          27.259975
+        ],
+        [
+          59.333281,
+          27.257591
+        ],
+        [
+          59.334042,
+          27.25695
+        ],
+        [
+          59.334376,
+          27.261561
+        ],
+        [
+          59.33499,
+          27.263419
+        ],
+        [
+          59.33556,
+          27.262661
+        ],
+        [
+          59.336612,
+          27.260703
+        ],
+        [
+          59.33733,
+          27.265272
+        ],
+        [
+          59.341196,
+          27.26338
+        ],
+        [
+          59.341565,
+          27.266494
+        ],
+        [
+          59.342286,
+          27.266371
+        ],
+        [
+          59.344999,
+          27.263639
+        ],
+        [
+          59.345519,
+          27.264195
+        ],
+        [
+          59.347497,
+          27.262669
+        ],
+        [
+          59.348532,
+          27.265412
+        ],
+        [
+          59.344855,
+          27.268244
+        ],
+        [
+          59.346937,
+          27.269794
+        ],
+        [
+          59.347017,
+          27.270274
+        ],
+        [
+          59.345448,
+          27.277687
+        ],
+        [
+          59.34605,
+          27.279786
+        ],
+        [
+          59.345963,
+          27.29168
+        ],
+        [
+          59.344851,
+          27.292855
+        ],
+        [
+          59.345034,
+          27.296568
+        ],
+        [
+          59.344488,
+          27.297523
+        ],
+        [
+          59.344471,
+          27.297681
+        ],
+        [
+          59.344067,
+          27.298461
+        ],
+        [
+          59.34412,
+          27.300758
+        ],
+        [
+          59.342571,
+          27.301662
+        ],
+        [
+          59.342375,
+          27.301641
+        ],
+        [
+          59.338851,
+          27.303418
+        ],
+        [
+          59.338862,
+          27.304228
+        ],
+        [
+          59.335538,
+          27.302362
+        ],
+        [
+          59.33546,
+          27.295759
+        ],
+        [
+          59.335082,
+          27.295126
+        ],
+        [
+          59.334905,
+          27.294582
+        ],
+        [
+          59.334487,
+          27.293887
+        ],
+        [
+          59.332695,
+          27.287756
+        ],
+        [
+          59.333628,
+          27.286551
+        ],
+        [
+          59.332497,
+          27.281833
+        ],
+        [
+          59.330647,
+          27.278721
+        ],
+        [
+          59.326664,
+          27.278063
+        ],
+        [
+          59.326476,
+          27.278398
+        ],
+        [
+          59.325836,
+          27.278197
+        ],
+        [
+          59.323609,
+          27.280714
+        ],
+        [
+          59.319468,
+          27.280075
+        ],
+        [
+          59.319957,
+          27.272184
+        ],
+        [
+          59.318932,
+          27.272121
+        ],
+        [
+          59.318938,
+          27.271498
+        ],
+        [
+          59.319817,
+          27.270503
+        ],
+        [
+          59.323459,
+          27.26427
+        ],
+        [
+          59.322706,
+          27.262589
+        ],
+        [
+          59.323676,
+          27.260545
+        ],
+        [
+          59.324325,
+          27.261495
+        ],
+        [
+          59.325538,
+          27.257233
+        ],
+        [
+          59.326344,
+          27.252274
+        ],
+        [
+          59.329917,
+          27.259975
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "10.4% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.55,
+      "tourist_pctile": 0.4,
+      "retail_pctile": 0.33,
+      "student_pctile": 0.66,
+      "family_amenity_pctile": 0.31,
+      "green_pctile": 0.69,
+      "house_share_pctile": 1.0,
+      "affluence_pctile": 0.08,
+      "education_pctile": 0.47,
+      "deprivation_index": 0.55,
+      "tertiary_education_pct": 17.3,
+      "rent_eur_m2": 4.01
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (31th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 17% of adults hold a bachelor's degree or higher, rent €4.01/m² (8th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  }
+]

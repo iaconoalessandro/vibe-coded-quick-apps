@@ -1,0 +1,276 @@
+{
+  "tartu_rail_north": {
+    "id": "tartu_rail_north",
+    "label": "🚆 Elron North: Tartu ↔ Kärkna ↔ Tabivere ↔ Jõgeva (Tallinn)",
+    "color": "#ff6d00",
+    "weight": 5.5,
+    "coords": [
+      [
+        58.3741,
+        26.7078
+      ],
+      [
+        58.395,
+        26.69
+      ],
+      [
+        58.425,
+        26.67
+      ],
+      [
+        58.465,
+        26.65
+      ],
+      [
+        58.552,
+        26.598
+      ],
+      [
+        58.655,
+        26.515
+      ],
+      [
+        58.745,
+        26.395
+      ]
+    ],
+    "stations": [
+      {
+        "name": "Tartu Raudteejaam",
+        "lat": 58.3741,
+        "lon": 26.7078,
+        "type": "major_hub",
+        "desc": "Central Railway Station (Intercity Express to Tallinn, Valga, Koidula)"
+      },
+      {
+        "name": "Kärkna",
+        "lat": 58.465,
+        "lon": 26.65,
+        "type": "station",
+        "desc": "Kärkna Commuter Station (Tartu vald)"
+      },
+      {
+        "name": "Tabivere",
+        "lat": 58.552,
+        "lon": 26.598,
+        "type": "station",
+        "desc": "Tabivere Saadjärv Commuter Station"
+      },
+      {
+        "name": "Kaarepere",
+        "lat": 58.655,
+        "lon": 26.515,
+        "type": "station",
+        "desc": "Kaarepere Vooremaa Stop"
+      },
+      {
+        "name": "Jõgeva",
+        "lat": 58.745,
+        "lon": 26.395,
+        "type": "major_hub",
+        "desc": "Jõgeva Regional Hub & Tallinn Express Connection"
+      }
+    ]
+  },
+  "tartu_rail_south": {
+    "id": "tartu_rail_south",
+    "label": "🚆 Elron South: Tartu ↔ Aardla ↔ Ropka ↔ Nõo ↔ Tõravere ↔ Elva ↔ Valga",
+    "color": "#ff9100",
+    "weight": 5.5,
+    "coords": [
+      [
+        58.3741,
+        26.7078
+      ],
+      [
+        58.354,
+        26.711
+      ],
+      [
+        58.342,
+        26.712
+      ],
+      [
+        58.32,
+        26.675
+      ],
+      [
+        58.278,
+        26.535
+      ],
+      [
+        58.265,
+        26.468
+      ],
+      [
+        58.24,
+        26.435
+      ],
+      [
+        58.225,
+        26.415
+      ],
+      [
+        58.12,
+        26.32
+      ],
+      [
+        57.78,
+        26.05
+      ]
+    ],
+    "stations": [
+      {
+        "name": "Tartu Raudteejaam",
+        "lat": 58.3741,
+        "lon": 26.7078,
+        "type": "major_hub",
+        "desc": "Central Railway Station"
+      },
+      {
+        "name": "Aardla",
+        "lat": 58.354,
+        "lon": 26.711,
+        "type": "station",
+        "desc": "Variku / Ropka southern city rail stop"
+      },
+      {
+        "name": "Variku",
+        "lat": 58.342,
+        "lon": 26.712,
+        "type": "station",
+        "desc": "Variku rail depot connection"
+      },
+      {
+        "name": "Ropka",
+        "lat": 58.32,
+        "lon": 26.675,
+        "type": "station",
+        "desc": "Külitse / Ropka suburban stop"
+      },
+      {
+        "name": "Nõo",
+        "lat": 58.278,
+        "lon": 26.535,
+        "type": "station",
+        "desc": "Nõo Town Station & Gymnasium"
+      },
+      {
+        "name": "Tõravere",
+        "lat": 58.265,
+        "lon": 26.468,
+        "type": "station",
+        "desc": "Tartu Observatory & Space Research Center"
+      },
+      {
+        "name": "Peedu",
+        "lat": 58.24,
+        "lon": 26.435,
+        "type": "station",
+        "desc": "Peedu Pine Forest Residential Stop"
+      },
+      {
+        "name": "Elva",
+        "lat": 58.225,
+        "lon": 26.415,
+        "type": "major_hub",
+        "desc": "Elva City Resort Station & Commuter Terminus"
+      }
+    ]
+  },
+  "tartu_rail_east": {
+    "id": "tartu_rail_east",
+    "label": "🚆 Elron East: Tartu ↔ Kirsi ↔ Ülenurme ↔ Reola ↔ Vana-Kuuste ↔ Põlva",
+    "color": "#ffab00",
+    "weight": 5.5,
+    "coords": [
+      [
+        58.3741,
+        26.7078
+      ],
+      [
+        58.361,
+        26.745
+      ],
+      [
+        58.318,
+        26.728
+      ],
+      [
+        58.295,
+        26.742
+      ],
+      [
+        58.278,
+        26.755
+      ],
+      [
+        58.256,
+        26.782
+      ],
+      [
+        58.225,
+        26.845
+      ],
+      [
+        58.165,
+        26.935
+      ],
+      [
+        58.058,
+        27.065
+      ]
+    ],
+    "stations": [
+      {
+        "name": "Tartu Raudteejaam",
+        "lat": 58.3741,
+        "lon": 26.7078,
+        "type": "major_hub",
+        "desc": "Central Railway Station"
+      },
+      {
+        "name": "Kirsi",
+        "lat": 58.361,
+        "lon": 26.745,
+        "type": "station",
+        "desc": "Ropka / Teguri tech quarter rail stop"
+      },
+      {
+        "name": "Ülenurme",
+        "lat": 58.318,
+        "lon": 26.728,
+        "type": "station",
+        "desc": "Ülenurme Suburb & Tartu Airport gateway"
+      },
+      {
+        "name": "Uhti",
+        "lat": 58.295,
+        "lon": 26.742,
+        "type": "station",
+        "desc": "Uhti Suburb Commuter Stop"
+      },
+      {
+        "name": "Reola",
+        "lat": 58.278,
+        "lon": 26.755,
+        "type": "station",
+        "desc": "Reola Logistics & Industrial Stop"
+      },
+      {
+        "name": "Vana-Kuuste",
+        "lat": 58.256,
+        "lon": 26.782,
+        "type": "station",
+        "desc": "Vana-Kuuste Regional Station"
+      },
+      {
+        "name": "Põlva",
+        "lat": 58.058,
+        "lon": 27.065,
+        "type": "major_hub",
+        "desc": "Põlva Regional Rail Hub (to Koidula/Piusa)"
+      }
+    ]
+  }
+}

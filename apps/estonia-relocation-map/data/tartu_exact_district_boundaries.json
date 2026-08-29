@@ -1,0 +1,3044 @@
+[
+  {
+    "id": "rent_kesklinn",
+    "name": "Kesklinn",
+    "district": "Kesklinn (Historic City Centre)",
+    "short_name": "Kesklinn",
+    "mean_sqm": 13.97,
+    "range_sqm": "€10.06 – €19.84 / m²",
+    "one_bed_est": "€535 – €785 / mo",
+    "two_bed_est": "€770 – €1,135 / mo",
+    "tier": "High — upper third nationally",
+    "tier_class": "high",
+    "color": "#4338ca",
+    "badge_color": "#3730a3",
+    "lat": 58.376898,
+    "lon": 26.722369,
+    "tech_commute": "0–5 min walk to Playtech HQ, Bolt, Tasku, Kvartal & Emajõgi tech strip.",
+    "desc": "The historic heart of Tartu around Raekoja plats and Rüütli street. Highly walkable, vibrant dining, historic renovated apartments and luxury riverfront developments.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.379075,
+          26.709027
+        ],
+        [
+          58.379245,
+          26.709871
+        ],
+        [
+          58.379918,
+          26.709313
+        ],
+        [
+          58.381637,
+          26.709414
+        ],
+        [
+          58.382124,
+          26.709571
+        ],
+        [
+          58.383012,
+          26.711101
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383887,
+          26.715744
+        ],
+        [
+          58.383978,
+          26.715943
+        ],
+        [
+          58.384418,
+          26.718238
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.383575,
+          26.725625
+        ],
+        [
+          58.38116,
+          26.725817
+        ],
+        [
+          58.380361,
+          26.726552
+        ],
+        [
+          58.379461,
+          26.728517
+        ],
+        [
+          58.379319,
+          26.732138
+        ],
+        [
+          58.380093,
+          26.733955
+        ],
+        [
+          58.380252,
+          26.735427
+        ],
+        [
+          58.379659,
+          26.737424
+        ],
+        [
+          58.377209,
+          26.737595
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.372662,
+          26.731757
+        ],
+        [
+          58.372362,
+          26.732142
+        ],
+        [
+          58.372048,
+          26.729426
+        ],
+        [
+          58.371848,
+          26.7287
+        ],
+        [
+          58.371374,
+          26.728298
+        ],
+        [
+          58.370873,
+          26.727336
+        ],
+        [
+          58.370829,
+          26.727108
+        ],
+        [
+          58.372369,
+          26.726016
+        ],
+        [
+          58.371963,
+          26.723558
+        ],
+        [
+          58.371994,
+          26.722635
+        ],
+        [
+          58.37207,
+          26.722197
+        ],
+        [
+          58.371583,
+          26.721878
+        ],
+        [
+          58.370581,
+          26.721548
+        ],
+        [
+          58.369067,
+          26.721407
+        ],
+        [
+          58.371849,
+          26.717228
+        ],
+        [
+          58.370846,
+          26.714759
+        ],
+        [
+          58.374016,
+          26.712366
+        ],
+        [
+          58.376178,
+          26.710911
+        ],
+        [
+          58.379075,
+          26.709027
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=109, City24.ee n=46 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 155,
+    "verified_observed": true,
+    "observed_1room_median": 373,
+    "observed_2room_median": 560
+  },
+  {
+    "id": "rent_supilinn",
+    "name": "Supilinn",
+    "district": "Supilinn (Bohemian Wooden Quarter)",
+    "short_name": "Supilinn",
+    "mean_sqm": 12.8,
+    "range_sqm": "€9.22 – €18.18 / m²",
+    "one_bed_est": "€490 – €720 / mo",
+    "two_bed_est": "€705 – €1,040 / mo",
+    "tier": "High — upper third nationally",
+    "tier_class": "high",
+    "color": "#4338ca",
+    "badge_color": "#3730a3",
+    "lat": 58.386266,
+    "lon": 26.71322,
+    "tech_commute": "5–8 min bike / 12 min walk to Delta Centre & Kesklinn via Emajõgi promenade.",
+    "desc": "Tartu's iconic wooden architectural quarter with private courtyards, Herne bakery, and direct access to Emajõe river paths and Tähtvere sports park.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.387747,
+          26.70457
+        ],
+        [
+          58.386262,
+          26.708034
+        ],
+        [
+          58.384498,
+          26.711222
+        ],
+        [
+          58.383692,
+          26.712448
+        ],
+        [
+          58.382593,
+          26.71439
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383887,
+          26.715744
+        ],
+        [
+          58.383978,
+          26.715943
+        ],
+        [
+          58.384418,
+          26.718238
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.387929,
+          26.719171
+        ],
+        [
+          58.38937,
+          26.715117
+        ],
+        [
+          58.39112,
+          26.711726
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.387747,
+          26.70457
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=14, City24.ee n=4 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 18,
+    "verified_observed": true,
+    "observed_1room_median": 340,
+    "observed_2room_median": 595
+  },
+  {
+    "id": "rent_tähtvere",
+    "name": "Tähtvere",
+    "district": "Tähtvere (Song Festival & Academic Quarter)",
+    "short_name": "Tähtvere",
+    "mean_sqm": 11.24,
+    "range_sqm": "€8.10 – €15.97 / m²",
+    "one_bed_est": "€430 – €635 / mo",
+    "two_bed_est": "€620 – €915 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.385888,
+    "lon": 26.703425,
+    "tech_commute": "5 min bike / 10 min bus to Delta & Kesklinn; next to EyeVi Technologies.",
+    "desc": "Leafy academic neighborhood with functionalist villas, university faculty residences, Tähtvere Park, and song festival grounds.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.382563,
+          26.692054
+        ],
+        [
+          58.383496,
+          26.690697
+        ],
+        [
+          58.38514,
+          26.688927
+        ],
+        [
+          58.395874,
+          26.681039
+        ],
+        [
+          58.398761,
+          26.694882
+        ],
+        [
+          58.396782,
+          26.697788
+        ],
+        [
+          58.396012,
+          26.701761
+        ],
+        [
+          58.394604,
+          26.706141
+        ],
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.387747,
+          26.70457
+        ],
+        [
+          58.386262,
+          26.708034
+        ],
+        [
+          58.384498,
+          26.711222
+        ],
+        [
+          58.383692,
+          26.712448
+        ],
+        [
+          58.382593,
+          26.71439
+        ],
+        [
+          58.382461,
+          26.714483
+        ],
+        [
+          58.383012,
+          26.711101
+        ],
+        [
+          58.382124,
+          26.709571
+        ],
+        [
+          58.381897,
+          26.709465
+        ],
+        [
+          58.379918,
+          26.709313
+        ],
+        [
+          58.379245,
+          26.709871
+        ],
+        [
+          58.378112,
+          26.703677
+        ],
+        [
+          58.377578,
+          26.701834
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.382563,
+          26.692054
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=15, City24.ee n=3 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 18,
+    "verified_observed": true,
+    "observed_1room_median": 250,
+    "observed_2room_median": 575
+  },
+  {
+    "id": "rent_ülejõe",
+    "name": "Ülejõe",
+    "district": "Ülejõe (Delta Innovation Hub)",
+    "short_name": "Ülejõe",
+    "mean_sqm": 12.11,
+    "range_sqm": "€8.72 – €17.20 / m²",
+    "one_bed_est": "€465 – €680 / mo",
+    "two_bed_est": "€670 – €985 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.386727,
+    "lon": 26.724943,
+    "tech_commute": "1–3 min walk to UT Delta Centre (Computer Science & AI Hub), Nortal, Antegenes.",
+    "desc": "Directly across the river from Old Town, centered around the flagship Delta Centre, Raatuse health complex, and modern riverside apartments.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.39352,
+          26.709587
+        ],
+        [
+          58.393773,
+          26.709835
+        ],
+        [
+          58.394147,
+          26.710899
+        ],
+        [
+          58.394725,
+          26.710812
+        ],
+        [
+          58.395151,
+          26.711118
+        ],
+        [
+          58.396021,
+          26.712737
+        ],
+        [
+          58.393467,
+          26.71774
+        ],
+        [
+          58.383362,
+          26.746129
+        ],
+        [
+          58.383006,
+          26.746741
+        ],
+        [
+          58.382344,
+          26.747539
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.381823,
+          26.747644
+        ],
+        [
+          58.377769,
+          26.737564
+        ],
+        [
+          58.379659,
+          26.737424
+        ],
+        [
+          58.380252,
+          26.735427
+        ],
+        [
+          58.380093,
+          26.733955
+        ],
+        [
+          58.379319,
+          26.732138
+        ],
+        [
+          58.379461,
+          26.728517
+        ],
+        [
+          58.380361,
+          26.726552
+        ],
+        [
+          58.38116,
+          26.725817
+        ],
+        [
+          58.383575,
+          26.725625
+        ],
+        [
+          58.386425,
+          26.72193
+        ],
+        [
+          58.387929,
+          26.719171
+        ],
+        [
+          58.38937,
+          26.715117
+        ],
+        [
+          58.39112,
+          26.711726
+        ],
+        [
+          58.391861,
+          26.710711
+        ],
+        [
+          58.393277,
+          26.70893
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=74, City24.ee n=21 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 95,
+    "verified_observed": true,
+    "observed_1room_median": 389,
+    "observed_2room_median": 501
+  },
+  {
+    "id": "rent_vaksali",
+    "name": "Vaksali",
+    "district": "Vaksali (Station & Aparaaditehas)",
+    "short_name": "Vaksali",
+    "mean_sqm": 13.64,
+    "range_sqm": "€9.82 – €19.37 / m²",
+    "one_bed_est": "€520 – €765 / mo",
+    "two_bed_est": "€755 – €1,110 / mo",
+    "tier": "High — upper third nationally",
+    "tier_class": "high",
+    "color": "#4338ca",
+    "badge_color": "#3730a3",
+    "lat": 58.375773,
+    "lon": 26.706304,
+    "tech_commute": "0–3 min walk to Aparaaditehas (Fractory, Voog, Reach-U) & Tartu Rail Station.",
+    "desc": "Dynamic creative quarter featuring Aparaaditehas arts & startup complex, historic train station, and quick Elron rail links to Tallinn.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.377402,
+          26.701312
+        ],
+        [
+          58.378112,
+          26.703677
+        ],
+        [
+          58.379075,
+          26.709027
+        ],
+        [
+          58.374292,
+          26.712167
+        ],
+        [
+          58.370846,
+          26.714759
+        ],
+        [
+          58.371849,
+          26.717228
+        ],
+        [
+          58.369067,
+          26.721407
+        ],
+        [
+          58.367624,
+          26.721225
+        ],
+        [
+          58.365298,
+          26.721368
+        ],
+        [
+          58.363415,
+          26.720877
+        ],
+        [
+          58.361581,
+          26.721204
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.360418,
+          26.720682
+        ],
+        [
+          58.360797,
+          26.719873
+        ],
+        [
+          58.361054,
+          26.719468
+        ],
+        [
+          58.361594,
+          26.718912
+        ],
+        [
+          58.361999,
+          26.718668
+        ],
+        [
+          58.36399,
+          26.717927
+        ],
+        [
+          58.365677,
+          26.717076
+        ],
+        [
+          58.367062,
+          26.716109
+        ],
+        [
+          58.368202,
+          26.714903
+        ],
+        [
+          58.369845,
+          26.712626
+        ],
+        [
+          58.371465,
+          26.707601
+        ],
+        [
+          58.37219,
+          26.705801
+        ],
+        [
+          58.372994,
+          26.704227
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.37583,
+          26.701369
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.377402,
+          26.701312
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=24, City24.ee n=14 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 38,
+    "verified_observed": true,
+    "observed_1room_median": 351,
+    "observed_2room_median": 544
+  },
+  {
+    "id": "rent_karlova",
+    "name": "Karlova",
+    "district": "Karlova (Artisan Wooden Heritage)",
+    "short_name": "Karlova",
+    "mean_sqm": 12.46,
+    "range_sqm": "€8.97 – €17.69 / m²",
+    "one_bed_est": "€475 – €700 / mo",
+    "two_bed_est": "€690 – €1,010 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.365797,
+    "lon": 26.736477,
+    "tech_commute": "8 min bike / 10 min walk to Kesklinn and Emajõgi riverfront.",
+    "desc": "Tartu's beloved bohemian wooden neighborhood known for specialty coffee shops, artistic courtyards, cozy bakeries, and high community trust.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.363415,
+          26.720877
+        ],
+        [
+          58.365298,
+          26.721368
+        ],
+        [
+          58.367624,
+          26.721225
+        ],
+        [
+          58.370581,
+          26.721548
+        ],
+        [
+          58.371583,
+          26.721878
+        ],
+        [
+          58.37207,
+          26.722197
+        ],
+        [
+          58.371994,
+          26.722635
+        ],
+        [
+          58.371963,
+          26.723558
+        ],
+        [
+          58.372369,
+          26.726016
+        ],
+        [
+          58.370829,
+          26.727108
+        ],
+        [
+          58.370873,
+          26.727336
+        ],
+        [
+          58.371374,
+          26.728298
+        ],
+        [
+          58.371848,
+          26.7287
+        ],
+        [
+          58.372048,
+          26.729426
+        ],
+        [
+          58.372362,
+          26.732142
+        ],
+        [
+          58.372662,
+          26.731757
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.371551,
+          26.741421
+        ],
+        [
+          58.370266,
+          26.743529
+        ],
+        [
+          58.36942,
+          26.745961
+        ],
+        [
+          58.368768,
+          26.748333
+        ],
+        [
+          58.368403,
+          26.749167
+        ],
+        [
+          58.367982,
+          26.749776
+        ],
+        [
+          58.367526,
+          26.750224
+        ],
+        [
+          58.367126,
+          26.750368
+        ],
+        [
+          58.366624,
+          26.750356
+        ],
+        [
+          58.36601,
+          26.750059
+        ],
+        [
+          58.364998,
+          26.748843
+        ],
+        [
+          58.364618,
+          26.748605
+        ],
+        [
+          58.364103,
+          26.748503
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.363442,
+          26.747455
+        ],
+        [
+          58.363241,
+          26.747376
+        ],
+        [
+          58.362726,
+          26.746901
+        ],
+        [
+          58.362243,
+          26.746065
+        ],
+        [
+          58.361003,
+          26.742657
+        ],
+        [
+          58.3606,
+          26.741846
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.358557,
+          26.739984
+        ],
+        [
+          58.358061,
+          26.73937
+        ],
+        [
+          58.357697,
+          26.738744
+        ],
+        [
+          58.357386,
+          26.737887
+        ],
+        [
+          58.357086,
+          26.736713
+        ],
+        [
+          58.357,
+          26.735285
+        ],
+        [
+          58.357007,
+          26.733794
+        ],
+        [
+          58.357758,
+          26.73018
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.361581,
+          26.721204
+        ],
+        [
+          58.363415,
+          26.720877
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=51, City24.ee n=20 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 71,
+    "verified_observed": true,
+    "observed_1room_median": 336,
+    "observed_2room_median": 547
+  },
+  {
+    "id": "rent_kvissentali",
+    "name": "Kvissentali",
+    "district": "Kvissentali (Riverside Villa Quarter)",
+    "short_name": "Kvissentali",
+    "mean_sqm": 12.6,
+    "range_sqm": "€9.07 – €17.89 / m²",
+    "one_bed_est": "€480 – €710 / mo",
+    "two_bed_est": "€695 – €1,025 / mo",
+    "tier": "High — upper third nationally",
+    "tier_class": "high",
+    "color": "#4338ca",
+    "badge_color": "#3730a3",
+    "lat": 58.401651,
+    "lon": 26.702862,
+    "tech_commute": "12 min bus (Bus 6, 8) to Kesklinn / Delta Centre.",
+    "desc": "Exclusive modern single-family villa neighborhood right along the northern Emajõgi riverfront with scenic nature views.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.410365,
+          26.690309
+        ],
+        [
+          58.410885,
+          26.692983
+        ],
+        [
+          58.408693,
+          26.704765
+        ],
+        [
+          58.408966,
+          26.707583
+        ],
+        [
+          58.406696,
+          26.708009
+        ],
+        [
+          58.406525,
+          26.708874
+        ],
+        [
+          58.404279,
+          26.708727
+        ],
+        [
+          58.404229,
+          26.708371
+        ],
+        [
+          58.404073,
+          26.708354
+        ],
+        [
+          58.39998,
+          26.708402
+        ],
+        [
+          58.399205,
+          26.708657
+        ],
+        [
+          58.397896,
+          26.70976
+        ],
+        [
+          58.396666,
+          26.711554
+        ],
+        [
+          58.396021,
+          26.712737
+        ],
+        [
+          58.395151,
+          26.711118
+        ],
+        [
+          58.394725,
+          26.710812
+        ],
+        [
+          58.394147,
+          26.710899
+        ],
+        [
+          58.393773,
+          26.709835
+        ],
+        [
+          58.39352,
+          26.709587
+        ],
+        [
+          58.393277,
+          26.70893
+        ],
+        [
+          58.394604,
+          26.706141
+        ],
+        [
+          58.396012,
+          26.701761
+        ],
+        [
+          58.396782,
+          26.697788
+        ],
+        [
+          58.398761,
+          26.694882
+        ],
+        [
+          58.400791,
+          26.693261
+        ],
+        [
+          58.402519,
+          26.692271
+        ],
+        [
+          58.405507,
+          26.690936
+        ],
+        [
+          58.407315,
+          26.691003
+        ],
+        [
+          58.409216,
+          26.690321
+        ],
+        [
+          58.41025,
+          26.689786
+        ],
+        [
+          58.410365,
+          26.690309
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 1,
+    "verified_observed": true,
+    "observed_1room_median": null,
+    "observed_2room_median": null
+  },
+  {
+    "id": "rent_maarjamõisa",
+    "name": "Maarjamõisa",
+    "district": "Maarjamõisa (Science Campus & Clinics)",
+    "short_name": "Maarjamõisa",
+    "mean_sqm": 13.5,
+    "range_sqm": "€9.72 – €19.16 / m²",
+    "one_bed_est": "€515 – €760 / mo",
+    "two_bed_est": "€745 – €1,095 / mo",
+    "tier": "High — upper third nationally",
+    "tier_class": "high",
+    "color": "#4338ca",
+    "badge_color": "#3730a3",
+    "lat": 58.366101,
+    "lon": 26.689131,
+    "tech_commute": "0–5 min walk to Tartu Science Park, Chemicum, Physicum & TÜ Hospital.",
+    "desc": "High-tech academic and medical cluster with new modern apartment buildings catering to researchers, physicians, and tech engineers.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.364807,
+          26.677989
+        ],
+        [
+          58.367083,
+          26.678129
+        ],
+        [
+          58.368314,
+          26.6839
+        ],
+        [
+          58.370066,
+          26.690441
+        ],
+        [
+          58.368961,
+          26.69185
+        ],
+        [
+          58.370148,
+          26.695571
+        ],
+        [
+          58.370711,
+          26.694921
+        ],
+        [
+          58.371267,
+          26.696668
+        ],
+        [
+          58.371354,
+          26.69715
+        ],
+        [
+          58.372758,
+          26.696534
+        ],
+        [
+          58.373544,
+          26.699216
+        ],
+        [
+          58.37346,
+          26.699479
+        ],
+        [
+          58.37333,
+          26.699616
+        ],
+        [
+          58.3668,
+          26.703555
+        ],
+        [
+          58.366333,
+          26.700712
+        ],
+        [
+          58.367293,
+          26.69974
+        ],
+        [
+          58.363557,
+          26.68835
+        ],
+        [
+          58.361602,
+          26.690863
+        ],
+        [
+          58.358864,
+          26.684948
+        ],
+        [
+          58.358308,
+          26.683883
+        ],
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.35907,
+          26.6797
+        ],
+        [
+          58.359829,
+          26.678849
+        ],
+        [
+          58.360531,
+          26.678324
+        ],
+        [
+          58.361326,
+          26.678028
+        ],
+        [
+          58.363364,
+          26.677931
+        ],
+        [
+          58.364807,
+          26.677989
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=4, City24.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 5,
+    "verified_observed": true,
+    "observed_1room_median": 350,
+    "observed_2room_median": null
+  },
+  {
+    "id": "rent_ränilinn",
+    "name": "Ränilinn",
+    "district": "Ränilinn (Lõunakeskus Modern)",
+    "short_name": "Ränilinn",
+    "mean_sqm": 12.19,
+    "range_sqm": "€8.78 – €17.31 / m²",
+    "one_bed_est": "€465 – €685 / mo",
+    "two_bed_est": "€675 – €990 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.355584,
+    "lon": 26.677713,
+    "tech_commute": "5 min walk to Tartu Science Park; 12 min express bus to Kesklinn.",
+    "desc": "Modern residential apartment blocks next to Lõunakeskus (South Estonia's largest mall/entertainment hub) and Tartu Teaduspark.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.356052,
+          26.684421
+        ],
+        [
+          58.355142,
+          26.685669
+        ],
+        [
+          58.352913,
+          26.687982
+        ],
+        [
+          58.35148,
+          26.689661
+        ],
+        [
+          58.347771,
+          26.694531
+        ],
+        [
+          58.343126,
+          26.684969
+        ],
+        [
+          58.343377,
+          26.684325
+        ],
+        [
+          58.343937,
+          26.683597
+        ],
+        [
+          58.348908,
+          26.678804
+        ],
+        [
+          58.351577,
+          26.676018
+        ],
+        [
+          58.351875,
+          26.675459
+        ],
+        [
+          58.353117,
+          26.677243
+        ],
+        [
+          58.352859,
+          26.675369
+        ],
+        [
+          58.35368,
+          26.674954
+        ],
+        [
+          58.353541,
+          26.673898
+        ],
+        [
+          58.356713,
+          26.670949
+        ],
+        [
+          58.357005,
+          26.669882
+        ],
+        [
+          58.35744,
+          26.670717
+        ],
+        [
+          58.357797,
+          26.671001
+        ],
+        [
+          58.357727,
+          26.671271
+        ],
+        [
+          58.357985,
+          26.671767
+        ],
+        [
+          58.358083,
+          26.671384
+        ],
+        [
+          58.359768,
+          26.673101
+        ],
+        [
+          58.359871,
+          26.67274
+        ],
+        [
+          58.3602,
+          26.673079
+        ],
+        [
+          58.360029,
+          26.673679
+        ],
+        [
+          58.359858,
+          26.674909
+        ],
+        [
+          58.3599,
+          26.675034
+        ],
+        [
+          58.359864,
+          26.675202
+        ],
+        [
+          58.360541,
+          26.675867
+        ],
+        [
+          58.360421,
+          26.676364
+        ],
+        [
+          58.361326,
+          26.678028
+        ],
+        [
+          58.360531,
+          26.678324
+        ],
+        [
+          58.359829,
+          26.678849
+        ],
+        [
+          58.35907,
+          26.6797
+        ],
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.356052,
+          26.684421
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=15, City24.ee n=5 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 20,
+    "verified_observed": true,
+    "observed_1room_median": 328,
+    "observed_2room_median": 580
+  },
+  {
+    "id": "rent_raadi_kruusamäe",
+    "name": "Raadi-Kruusamäe",
+    "district": "Raadi-Kruusamäe (ERM Culture District)",
+    "short_name": "Raadi",
+    "mean_sqm": 12.01,
+    "range_sqm": "€8.65 – €17.05 / m²",
+    "one_bed_est": "€460 – €675 / mo",
+    "two_bed_est": "€665 – €975 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.3972,
+    "lon": 26.727722,
+    "tech_commute": "8 min bus (Bus 1, 7) to Delta Centre & City Center.",
+    "desc": "Rapidly gentrifying northern district near the Estonian National Museum (ERM), Raadi Manor park, and modern energy-efficient residential developments.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.404073,
+          26.708354
+        ],
+        [
+          58.404229,
+          26.708371
+        ],
+        [
+          58.404279,
+          26.708727
+        ],
+        [
+          58.403971,
+          26.711017
+        ],
+        [
+          58.402789,
+          26.715654
+        ],
+        [
+          58.401826,
+          26.722535
+        ],
+        [
+          58.40067,
+          26.72803
+        ],
+        [
+          58.396862,
+          26.735391
+        ],
+        [
+          58.399634,
+          26.73812
+        ],
+        [
+          58.401705,
+          26.741468
+        ],
+        [
+          58.40043,
+          26.744384
+        ],
+        [
+          58.398229,
+          26.748619
+        ],
+        [
+          58.396117,
+          26.745857
+        ],
+        [
+          58.394283,
+          26.743932
+        ],
+        [
+          58.390972,
+          26.752817
+        ],
+        [
+          58.38782,
+          26.749215
+        ],
+        [
+          58.387945,
+          26.748409
+        ],
+        [
+          58.386848,
+          26.747447
+        ],
+        [
+          58.386475,
+          26.748287
+        ],
+        [
+          58.383976,
+          26.744417
+        ],
+        [
+          58.393467,
+          26.71774
+        ],
+        [
+          58.396224,
+          26.71234
+        ],
+        [
+          58.396666,
+          26.711554
+        ],
+        [
+          58.397896,
+          26.70976
+        ],
+        [
+          58.399205,
+          26.708657
+        ],
+        [
+          58.39998,
+          26.708402
+        ],
+        [
+          58.40097,
+          26.708368
+        ],
+        [
+          58.404073,
+          26.708354
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=25, City24.ee n=12 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 37,
+    "verified_observed": true,
+    "observed_1room_median": 263,
+    "observed_2room_median": 556
+  },
+  {
+    "id": "rent_tammelinn",
+    "name": "Tammelinn",
+    "district": "Tammelinn (Oak Town Garden District)",
+    "short_name": "Tammelinn",
+    "mean_sqm": 11.41,
+    "range_sqm": "€8.22 – €16.20 / m²",
+    "one_bed_est": "€435 – €640 / mo",
+    "two_bed_est": "€630 – €925 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.362306,
+    "lon": 26.701528,
+    "tech_commute": "8 min bike / 10 min bus (Bus 8, 12) to Kesklinn and Science Park.",
+    "desc": "Prestigious garden-city suburb with private homes, oak-lined streets, Tamme Stadium, and top tranquility.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.35723,
+          26.68221
+        ],
+        [
+          58.358308,
+          26.683883
+        ],
+        [
+          58.358864,
+          26.684948
+        ],
+        [
+          58.361602,
+          26.690863
+        ],
+        [
+          58.363557,
+          26.68835
+        ],
+        [
+          58.367293,
+          26.69974
+        ],
+        [
+          58.366333,
+          26.700712
+        ],
+        [
+          58.3668,
+          26.703555
+        ],
+        [
+          58.37333,
+          26.699616
+        ],
+        [
+          58.37346,
+          26.699479
+        ],
+        [
+          58.373544,
+          26.699216
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.372994,
+          26.704227
+        ],
+        [
+          58.37219,
+          26.705801
+        ],
+        [
+          58.371465,
+          26.707601
+        ],
+        [
+          58.369845,
+          26.712626
+        ],
+        [
+          58.368854,
+          26.714064
+        ],
+        [
+          58.367596,
+          26.715617
+        ],
+        [
+          58.36615,
+          26.716783
+        ],
+        [
+          58.364626,
+          26.717537
+        ],
+        [
+          58.362927,
+          26.717727
+        ],
+        [
+          58.361767,
+          26.717572
+        ],
+        [
+          58.360462,
+          26.717044
+        ],
+        [
+          58.359386,
+          26.716372
+        ],
+        [
+          58.358426,
+          26.715529
+        ],
+        [
+          58.357653,
+          26.714614
+        ],
+        [
+          58.356232,
+          26.712345
+        ],
+        [
+          58.347353,
+          26.69436
+        ],
+        [
+          58.347555,
+          26.694057
+        ],
+        [
+          58.347771,
+          26.694531
+        ],
+        [
+          58.35148,
+          26.689661
+        ],
+        [
+          58.352913,
+          26.687982
+        ],
+        [
+          58.355142,
+          26.685669
+        ],
+        [
+          58.356052,
+          26.684421
+        ],
+        [
+          58.35723,
+          26.68221
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=7, City24.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 8,
+    "verified_observed": true,
+    "observed_1room_median": 450,
+    "observed_2room_median": 498
+  },
+  {
+    "id": "rent_veeriku",
+    "name": "Veeriku",
+    "district": "Veeriku (Western Residential)",
+    "short_name": "Veeriku",
+    "mean_sqm": 11.02,
+    "range_sqm": "€7.93 – €15.64 / m²",
+    "one_bed_est": "€420 – €620 / mo",
+    "two_bed_est": "€610 – €895 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.378934,
+    "lon": 26.685796,
+    "tech_commute": "5 min bike to Maarjamõisa campus; 10 min bus to downtown.",
+    "desc": "Quiet western residential neighborhood with convenient grocery shopping (Veeriku Selver) and direct Maarjamõisa connectivity.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.36963,
+          26.678268
+        ],
+        [
+          58.372807,
+          26.678349
+        ],
+        [
+          58.374199,
+          26.678146
+        ],
+        [
+          58.376092,
+          26.677585
+        ],
+        [
+          58.378619,
+          26.676325
+        ],
+        [
+          58.378901,
+          26.676493
+        ],
+        [
+          58.379016,
+          26.677029
+        ],
+        [
+          58.379025,
+          26.678516
+        ],
+        [
+          58.380951,
+          26.683042
+        ],
+        [
+          58.405798,
+          26.667075
+        ],
+        [
+          58.404562,
+          26.673665
+        ],
+        [
+          58.403346,
+          26.674729
+        ],
+        [
+          58.39574,
+          26.680377
+        ],
+        [
+          58.395874,
+          26.681039
+        ],
+        [
+          58.38514,
+          26.688927
+        ],
+        [
+          58.383496,
+          26.690697
+        ],
+        [
+          58.382563,
+          26.692054
+        ],
+        [
+          58.377139,
+          26.700663
+        ],
+        [
+          58.37583,
+          26.701369
+        ],
+        [
+          58.374328,
+          26.702543
+        ],
+        [
+          58.373591,
+          26.699349
+        ],
+        [
+          58.372758,
+          26.696534
+        ],
+        [
+          58.371354,
+          26.69715
+        ],
+        [
+          58.371267,
+          26.696668
+        ],
+        [
+          58.370711,
+          26.694921
+        ],
+        [
+          58.370148,
+          26.695571
+        ],
+        [
+          58.368961,
+          26.69185
+        ],
+        [
+          58.370066,
+          26.690441
+        ],
+        [
+          58.368314,
+          26.6839
+        ],
+        [
+          58.367083,
+          26.678129
+        ],
+        [
+          58.36963,
+          26.678268
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=12, City24.ee n=4 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 16,
+    "verified_observed": true,
+    "observed_1room_median": 362,
+    "observed_2room_median": 454
+  },
+  {
+    "id": "rent_ihaste",
+    "name": "Ihaste",
+    "district": "Ihaste (Pine Forest Villa Suburb)",
+    "short_name": "Ihaste",
+    "mean_sqm": 11.48,
+    "range_sqm": "€8.26 – €16.30 / m²",
+    "one_bed_est": "€440 – €645 / mo",
+    "two_bed_est": "€635 – €935 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.352068,
+    "lon": 26.772476,
+    "tech_commute": "15 min bus (Bus 5, 11) to Kesklinn; great cycling via Ihaste bridge.",
+    "desc": "Secluded suburban enclave surrounded by pine forests, upscale detached houses, and peaceful nature trails.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.357059,
+          26.754296
+        ],
+        [
+          58.359272,
+          26.759696
+        ],
+        [
+          58.357764,
+          26.76056
+        ],
+        [
+          58.354337,
+          26.765376
+        ],
+        [
+          58.354676,
+          26.770861
+        ],
+        [
+          58.354866,
+          26.771748
+        ],
+        [
+          58.355727,
+          26.77303
+        ],
+        [
+          58.358326,
+          26.776267
+        ],
+        [
+          58.359717,
+          26.777718
+        ],
+        [
+          58.362865,
+          26.780026
+        ],
+        [
+          58.364609,
+          26.780802
+        ],
+        [
+          58.364043,
+          26.787244
+        ],
+        [
+          58.3636,
+          26.798007
+        ],
+        [
+          58.361817,
+          26.796795
+        ],
+        [
+          58.361392,
+          26.796608
+        ],
+        [
+          58.35883,
+          26.796438
+        ],
+        [
+          58.350658,
+          26.788181
+        ],
+        [
+          58.348379,
+          26.790801
+        ],
+        [
+          58.344319,
+          26.791393
+        ],
+        [
+          58.339281,
+          26.775987
+        ],
+        [
+          58.339011,
+          26.775321
+        ],
+        [
+          58.341587,
+          26.774577
+        ],
+        [
+          58.342044,
+          26.774146
+        ],
+        [
+          58.34238,
+          26.773394
+        ],
+        [
+          58.342615,
+          26.77235
+        ],
+        [
+          58.342336,
+          26.769723
+        ],
+        [
+          58.342876,
+          26.767381
+        ],
+        [
+          58.343402,
+          26.765617
+        ],
+        [
+          58.345241,
+          26.76226
+        ],
+        [
+          58.34638,
+          26.758906
+        ],
+        [
+          58.348776,
+          26.756662
+        ],
+        [
+          58.349757,
+          26.751066
+        ],
+        [
+          58.353395,
+          26.749471
+        ],
+        [
+          58.355523,
+          26.746971
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=4, City24.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 5,
+    "verified_observed": true,
+    "observed_1room_median": null,
+    "observed_2room_median": 500
+  },
+  {
+    "id": "rent_ropka",
+    "name": "Ropka",
+    "district": "Ropka (Southern Mixed Quarter)",
+    "short_name": "Ropka",
+    "mean_sqm": 10.68,
+    "range_sqm": "€7.69 – €15.17 / m²",
+    "one_bed_est": "€410 – €600 / mo",
+    "two_bed_est": "€590 – €870 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.355022,
+    "lon": 26.725431,
+    "tech_commute": "10 min bus (Bus 4, 9, 12) to Kesklinn / Aparaaditehas.",
+    "desc": "Affordable residential area with parks, good bus lines, and Teguri commercial and light tech offices.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.350014,
+          26.711591
+        ],
+        [
+          58.350606,
+          26.711669
+        ],
+        [
+          58.35224,
+          26.712172
+        ],
+        [
+          58.358891,
+          26.716182
+        ],
+        [
+          58.361151,
+          26.71736
+        ],
+        [
+          58.361767,
+          26.717572
+        ],
+        [
+          58.362927,
+          26.717727
+        ],
+        [
+          58.364626,
+          26.717537
+        ],
+        [
+          58.36399,
+          26.717927
+        ],
+        [
+          58.361999,
+          26.718668
+        ],
+        [
+          58.361594,
+          26.718912
+        ],
+        [
+          58.361054,
+          26.719468
+        ],
+        [
+          58.360624,
+          26.72023
+        ],
+        [
+          58.360207,
+          26.72131
+        ],
+        [
+          58.357758,
+          26.73018
+        ],
+        [
+          58.357007,
+          26.733794
+        ],
+        [
+          58.357,
+          26.735285
+        ],
+        [
+          58.357086,
+          26.736713
+        ],
+        [
+          58.357386,
+          26.737887
+        ],
+        [
+          58.357697,
+          26.738744
+        ],
+        [
+          58.358259,
+          26.73965
+        ],
+        [
+          58.358922,
+          26.740289
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.359724,
+          26.741325
+        ],
+        [
+          58.358753,
+          26.741179
+        ],
+        [
+          58.357692,
+          26.740497
+        ],
+        [
+          58.354985,
+          26.740796
+        ],
+        [
+          58.355271,
+          26.737772
+        ],
+        [
+          58.355142,
+          26.734052
+        ],
+        [
+          58.355207,
+          26.732636
+        ],
+        [
+          58.355391,
+          26.731924
+        ],
+        [
+          58.355752,
+          26.731014
+        ],
+        [
+          58.355814,
+          26.730057
+        ],
+        [
+          58.353778,
+          26.730411
+        ],
+        [
+          58.353683,
+          26.726671
+        ],
+        [
+          58.350412,
+          26.727028
+        ],
+        [
+          58.350259,
+          26.723189
+        ],
+        [
+          58.346913,
+          26.723514
+        ],
+        [
+          58.345894,
+          26.723485
+        ],
+        [
+          58.345897,
+          26.716828
+        ],
+        [
+          58.345985,
+          26.715057
+        ],
+        [
+          58.343712,
+          26.714422
+        ],
+        [
+          58.34377,
+          26.713021
+        ],
+        [
+          58.345248,
+          26.712755
+        ],
+        [
+          58.345255,
+          26.712333
+        ],
+        [
+          58.348642,
+          26.71173
+        ],
+        [
+          58.350014,
+          26.711591
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=8, City24.ee n=4 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 12,
+    "verified_observed": true,
+    "observed_1room_median": 220,
+    "observed_2room_median": 483
+  },
+  {
+    "id": "rent_variku",
+    "name": "Variku",
+    "district": "Variku (Southern Suburban Rail)",
+    "short_name": "Variku",
+    "mean_sqm": 8.84,
+    "range_sqm": "€6.36 – €12.55 / m²",
+    "one_bed_est": "€340 – €495 / mo",
+    "two_bed_est": "€490 – €720 / mo",
+    "tier": "Affordable — below the national average",
+    "tier_class": "affordable",
+    "color": "#0f766e",
+    "badge_color": "#115e59",
+    "lat": 58.3521,
+    "lon": 26.709496,
+    "tech_commute": "5 min train (Aardla stop) or 12 min bus (Bus 12) to Kesklinn.",
+    "desc": "Quiet residential area with private homes and easy commuter train access to Tartu Central Station.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.354743,
+          26.709335
+        ],
+        [
+          58.356232,
+          26.712345
+        ],
+        [
+          58.357312,
+          26.714158
+        ],
+        [
+          58.358426,
+          26.715529
+        ],
+        [
+          58.359386,
+          26.716372
+        ],
+        [
+          58.360029,
+          26.716793
+        ],
+        [
+          58.35224,
+          26.712172
+        ],
+        [
+          58.351777,
+          26.712014
+        ],
+        [
+          58.350014,
+          26.711591
+        ],
+        [
+          58.348642,
+          26.71173
+        ],
+        [
+          58.345255,
+          26.712333
+        ],
+        [
+          58.345335,
+          26.707476
+        ],
+        [
+          58.344943,
+          26.701762
+        ],
+        [
+          58.347174,
+          26.694627
+        ],
+        [
+          58.347353,
+          26.69436
+        ],
+        [
+          58.354743,
+          26.709335
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=2, City24.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 3,
+    "verified_observed": true,
+    "observed_1room_median": 350,
+    "observed_2room_median": null
+  },
+  {
+    "id": "rent_jaamamõisa",
+    "name": "Jaamamõisa",
+    "district": "Jaamamõisa (North-Eastern)",
+    "short_name": "Jaamamõisa",
+    "mean_sqm": 11.34,
+    "range_sqm": "€8.16 – €16.10 / m²",
+    "one_bed_est": "€435 – €640 / mo",
+    "two_bed_est": "€625 – €920 / mo",
+    "tier": "Mid — around the Estonian urban average",
+    "tier_class": "mid",
+    "color": "#1d4ed8",
+    "badge_color": "#1e40af",
+    "lat": 58.384278,
+    "lon": 26.757777,
+    "tech_commute": "10 min bus (Bus 2, 7, 10) to Delta Centre & Kesklinn.",
+    "desc": "Affordable residential area with convenient supermarket strips and fast access to northern Ringtee.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.386475,
+          26.748287
+        ],
+        [
+          58.386848,
+          26.747447
+        ],
+        [
+          58.387945,
+          26.748409
+        ],
+        [
+          58.38782,
+          26.749215
+        ],
+        [
+          58.390972,
+          26.752817
+        ],
+        [
+          58.388812,
+          26.75838
+        ],
+        [
+          58.387492,
+          26.763533
+        ],
+        [
+          58.389391,
+          26.766336
+        ],
+        [
+          58.389808,
+          26.768847
+        ],
+        [
+          58.3834,
+          26.775337
+        ],
+        [
+          58.382271,
+          26.775682
+        ],
+        [
+          58.378727,
+          26.7752
+        ],
+        [
+          58.379227,
+          26.773385
+        ],
+        [
+          58.379539,
+          26.771366
+        ],
+        [
+          58.379926,
+          26.76739
+        ],
+        [
+          58.380338,
+          26.759292
+        ],
+        [
+          58.380948,
+          26.753702
+        ],
+        [
+          58.381464,
+          26.750813
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.382344,
+          26.747539
+        ],
+        [
+          58.383006,
+          26.746741
+        ],
+        [
+          58.383362,
+          26.746129
+        ],
+        [
+          58.383976,
+          26.744417
+        ],
+        [
+          58.386475,
+          26.748287
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=10, City24.ee n=2 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 12,
+    "verified_observed": true,
+    "observed_1room_median": 390,
+    "observed_2room_median": 516
+  },
+  {
+    "id": "rent_annelinn",
+    "name": "Annelinn",
+    "district": "Annelinn (Eastern Residential Panel)",
+    "short_name": "Annelinn",
+    "mean_sqm": 9.85,
+    "range_sqm": "€7.09 – €13.99 / m²",
+    "one_bed_est": "€375 – €555 / mo",
+    "two_bed_est": "€545 – €800 / mo",
+    "tier": "Affordable — below the national average",
+    "tier_class": "affordable",
+    "color": "#0f766e",
+    "badge_color": "#115e59",
+    "lat": 58.367262,
+    "lon": 26.759655,
+    "tech_commute": "10–14 min high-frequency bus (Bus 1, 2, 3, 5, 7) to Kesklinn & Delta.",
+    "desc": "Tartu's most affordable high-density panel district with supermarkets, Anne Kanal sports grounds, and the most frequent bus connections in the city.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.377769,
+          26.737564
+        ],
+        [
+          58.381823,
+          26.747644
+        ],
+        [
+          58.382097,
+          26.748094
+        ],
+        [
+          58.381464,
+          26.750813
+        ],
+        [
+          58.380948,
+          26.753702
+        ],
+        [
+          58.380338,
+          26.759292
+        ],
+        [
+          58.379926,
+          26.76739
+        ],
+        [
+          58.379539,
+          26.771366
+        ],
+        [
+          58.379227,
+          26.773385
+        ],
+        [
+          58.378727,
+          26.7752
+        ],
+        [
+          58.378905,
+          26.775235
+        ],
+        [
+          58.377784,
+          26.778749
+        ],
+        [
+          58.377003,
+          26.779212
+        ],
+        [
+          58.375438,
+          26.784158
+        ],
+        [
+          58.375103,
+          26.783598
+        ],
+        [
+          58.374174,
+          26.782613
+        ],
+        [
+          58.371592,
+          26.782918
+        ],
+        [
+          58.371286,
+          26.783912
+        ],
+        [
+          58.369129,
+          26.783455
+        ],
+        [
+          58.369022,
+          26.782143
+        ],
+        [
+          58.367193,
+          26.781705
+        ],
+        [
+          58.363445,
+          26.780319
+        ],
+        [
+          58.362462,
+          26.779754
+        ],
+        [
+          58.359717,
+          26.777718
+        ],
+        [
+          58.358326,
+          26.776267
+        ],
+        [
+          58.356937,
+          26.774593
+        ],
+        [
+          58.355727,
+          26.77303
+        ],
+        [
+          58.354866,
+          26.771748
+        ],
+        [
+          58.354676,
+          26.770861
+        ],
+        [
+          58.354337,
+          26.765376
+        ],
+        [
+          58.357764,
+          26.76056
+        ],
+        [
+          58.359272,
+          26.759696
+        ],
+        [
+          58.357059,
+          26.754296
+        ],
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.35589,
+          26.746765
+        ],
+        [
+          58.356108,
+          26.746758
+        ],
+        [
+          58.35696,
+          26.747383
+        ],
+        [
+          58.35723,
+          26.747725
+        ],
+        [
+          58.358012,
+          26.750031
+        ],
+        [
+          58.358733,
+          26.751156
+        ],
+        [
+          58.359131,
+          26.751578
+        ],
+        [
+          58.359895,
+          26.751888
+        ],
+        [
+          58.360381,
+          26.751919
+        ],
+        [
+          58.360992,
+          26.751694
+        ],
+        [
+          58.36204,
+          26.750453
+        ],
+        [
+          58.362442,
+          26.749847
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.364103,
+          26.748503
+        ],
+        [
+          58.364618,
+          26.748605
+        ],
+        [
+          58.364998,
+          26.748843
+        ],
+        [
+          58.36601,
+          26.750059
+        ],
+        [
+          58.366624,
+          26.750356
+        ],
+        [
+          58.367126,
+          26.750368
+        ],
+        [
+          58.367526,
+          26.750224
+        ],
+        [
+          58.367982,
+          26.749776
+        ],
+        [
+          58.368403,
+          26.749167
+        ],
+        [
+          58.368768,
+          26.748333
+        ],
+        [
+          58.36942,
+          26.745961
+        ],
+        [
+          58.370266,
+          26.743529
+        ],
+        [
+          58.371551,
+          26.741421
+        ],
+        [
+          58.375052,
+          26.738759
+        ],
+        [
+          58.377209,
+          26.737595
+        ],
+        [
+          58.377769,
+          26.737564
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=41, City24.ee n=20 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 61,
+    "verified_observed": true,
+    "observed_1room_median": 310,
+    "observed_2room_median": 443
+  },
+  {
+    "id": "rent_ropka_tööstusrajoon",
+    "name": "Ropka tööstusrajoon",
+    "district": "Ropka tööstusrajoon (Industrial District)",
+    "short_name": "Ropka Tööstus",
+    "mean_sqm": 8.72,
+    "range_sqm": "€6.28 – €12.38 / m²",
+    "one_bed_est": "€335 – €490 / mo",
+    "two_bed_est": "€480 – €710 / mo",
+    "tier": "Affordable — below the national average",
+    "tier_class": "affordable",
+    "color": "#0f766e",
+    "badge_color": "#115e59",
+    "lat": 58.352926,
+    "lon": 26.740221,
+    "tech_commute": "Direct access to Milrem Robotics, Ringtee logistics & manufacturing centers.",
+    "desc": "Industrial and warehouse hub along southern Ringtee with commercial office and workshop rentals.",
+    "kv_link": "https://www.kv.ee/search?deal_type=2&search_type=new&county=14&parish=1063&city%5B0%5D=1063&price_max=3000",
+    "city24_link": "https://www.city24.ee/et/kinnisvara/korterite-uur/Tartu",
+    "polygons": [
+      [
+        [
+          58.362442,
+          26.749847
+        ],
+        [
+          58.36204,
+          26.750453
+        ],
+        [
+          58.360992,
+          26.751694
+        ],
+        [
+          58.360381,
+          26.751919
+        ],
+        [
+          58.359895,
+          26.751888
+        ],
+        [
+          58.359131,
+          26.751578
+        ],
+        [
+          58.358733,
+          26.751156
+        ],
+        [
+          58.358012,
+          26.750031
+        ],
+        [
+          58.35723,
+          26.747725
+        ],
+        [
+          58.35696,
+          26.747383
+        ],
+        [
+          58.356108,
+          26.746758
+        ],
+        [
+          58.35589,
+          26.746765
+        ],
+        [
+          58.355523,
+          26.746971
+        ],
+        [
+          58.353395,
+          26.749471
+        ],
+        [
+          58.349757,
+          26.751066
+        ],
+        [
+          58.348776,
+          26.756662
+        ],
+        [
+          58.34638,
+          26.758906
+        ],
+        [
+          58.345855,
+          26.760453
+        ],
+        [
+          58.344987,
+          26.759113
+        ],
+        [
+          58.344256,
+          26.757631
+        ],
+        [
+          58.343389,
+          26.755124
+        ],
+        [
+          58.343044,
+          26.753696
+        ],
+        [
+          58.342722,
+          26.751705
+        ],
+        [
+          58.342529,
+          26.750065
+        ],
+        [
+          58.339223,
+          26.745659
+        ],
+        [
+          58.339235,
+          26.724498
+        ],
+        [
+          58.340469,
+          26.724473
+        ],
+        [
+          58.340333,
+          26.714663
+        ],
+        [
+          58.340877,
+          26.714611
+        ],
+        [
+          58.340534,
+          26.713605
+        ],
+        [
+          58.34377,
+          26.713021
+        ],
+        [
+          58.343712,
+          26.714422
+        ],
+        [
+          58.345985,
+          26.715057
+        ],
+        [
+          58.345897,
+          26.716828
+        ],
+        [
+          58.345894,
+          26.723485
+        ],
+        [
+          58.346913,
+          26.723514
+        ],
+        [
+          58.350259,
+          26.723189
+        ],
+        [
+          58.350412,
+          26.727028
+        ],
+        [
+          58.353683,
+          26.726671
+        ],
+        [
+          58.353778,
+          26.730411
+        ],
+        [
+          58.355814,
+          26.730057
+        ],
+        [
+          58.355752,
+          26.731014
+        ],
+        [
+          58.355391,
+          26.731924
+        ],
+        [
+          58.355207,
+          26.732636
+        ],
+        [
+          58.355142,
+          26.734052
+        ],
+        [
+          58.355271,
+          26.737772
+        ],
+        [
+          58.354985,
+          26.740796
+        ],
+        [
+          58.357495,
+          26.740481
+        ],
+        [
+          58.357866,
+          26.74055
+        ],
+        [
+          58.358487,
+          26.741031
+        ],
+        [
+          58.359026,
+          26.741263
+        ],
+        [
+          58.359724,
+          26.741325
+        ],
+        [
+          58.360038,
+          26.741088
+        ],
+        [
+          58.3606,
+          26.741846
+        ],
+        [
+          58.361003,
+          26.742657
+        ],
+        [
+          58.362243,
+          26.746065
+        ],
+        [
+          58.362484,
+          26.746539
+        ],
+        [
+          58.363034,
+          26.747211
+        ],
+        [
+          58.363442,
+          26.747455
+        ],
+        [
+          58.363664,
+          26.748648
+        ],
+        [
+          58.362442,
+          26.749847
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "verified_source": "Live listings 2026-08-28: kv.ee n=6, City24.ee n=1 (median €/m²; pooled across portals)",
+    "verified_date": "2026-08-28",
+    "verified_sample": 7,
+    "verified_observed": true,
+    "observed_1room_median": null,
+    "observed_2room_median": 568
+  }
+]

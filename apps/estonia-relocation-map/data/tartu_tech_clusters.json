@@ -1,0 +1,161 @@
+[
+  {
+    "id": "cluster_delta",
+    "name": "UT Delta Centre & River Tech Quarter",
+    "color": "#ea580c",
+    "fillColor": "#f97316",
+    "desc": "€30M+ IT & AI Hub: UT Computer Science, Cybernetica, Sandbox Incubator, Swedbank IT & river tech strip.",
+    "polygons": [
+      [
+        [
+          58.386,
+          26.723
+        ],
+        [
+          58.3865,
+          26.7275
+        ],
+        [
+          58.3835,
+          26.731
+        ],
+        [
+          58.382,
+          26.726
+        ],
+        [
+          58.3835,
+          26.7225
+        ],
+        [
+          58.386,
+          26.723
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_teaduspark",
+    "name": "Tartu Science Park (Tartu Teaduspark)",
+    "color": "#0284c7",
+    "fillColor": "#38bdf8",
+    "desc": "Estonia's oldest science park: ESA BIC space incubator, Click & Grow, Skeleton R&D, hardware labs & 50+ deep tech firms.",
+    "polygons": [
+      [
+        [
+          58.361,
+          26.681
+        ],
+        [
+          58.3615,
+          26.69
+        ],
+        [
+          58.356,
+          26.691
+        ],
+        [
+          58.355,
+          26.682
+        ],
+        [
+          58.361,
+          26.681
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_aparaaditehas",
+    "name": "Aparaaditehas Creative & Hardware Campus",
+    "color": "#9333ea",
+    "fillColor": "#a855f7",
+    "desc": "Transformed widget factory hosting Fractory HQ, Voog, Reach-U, Bercman Tech, maker studios & artisanal dining.",
+    "polygons": [
+      [
+        [
+          58.3725,
+          26.7115
+        ],
+        [
+          58.3728,
+          26.716
+        ],
+        [
+          58.3695,
+          26.717
+        ],
+        [
+          58.3692,
+          26.7125
+        ],
+        [
+          58.3725,
+          26.7115
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_biomedicum",
+    "name": "Maarjamõisa Biomed & Life Sciences Campus",
+    "color": "#16a34a",
+    "fillColor": "#22c55e",
+    "desc": "Biomedicum, Chemicum, Physicum, Icosagen, Quretec & Tartu University Hospital medical genomics center.",
+    "polygons": [
+      [
+        [
+          58.372,
+          26.691
+        ],
+        [
+          58.3725,
+          26.702
+        ],
+        [
+          58.365,
+          26.703
+        ],
+        [
+          58.3645,
+          26.692
+        ],
+        [
+          58.372,
+          26.691
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_raadi",
+    "name": "Raadi Innovation & Cultural Hub",
+    "color": "#0d9488",
+    "fillColor": "#14b8a6",
+    "desc": "Estonian National Museum (ERM), Salvest R&D, green energy testing grounds & modern northern tech residential quarter.",
+    "polygons": [
+      [
+        [
+          58.403,
+          26.738
+        ],
+        [
+          58.404,
+          26.755
+        ],
+        [
+          58.394,
+          26.758
+        ],
+        [
+          58.393,
+          26.741
+        ],
+        [
+          58.403,
+          26.738
+        ]
+      ]
+    ]
+  }
+]
