@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Computing Chances — Admission Chances Calculator</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="crumbs">
+      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="it.html">IT &amp; Computing</a><span class="sep">/</span>
+      <span class="here" id="crumb">Computer Science</span>
+    </div>
+    <div class="score-chip"><span class="n" id="chip">0</span><span class="k">/ 100</span></div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <section id="wizard-view">
+    <div id="intro"></div>
+    <div class="stepnav" id="stepnav"></div>
+    <div class="progress"><i id="bar" style="width:0%"></i></div>
+    <div id="wizard"></div>
+  </section>
+
+  <section id="results-view" hidden></section>
+
+  <footer class="foot">
+    <p><strong>An original model, not a reproduction.</strong> The entry rules are quoted from
+      each programme and tagged with where they came from. The weights and the score thresholds
+      are mine — no computing programme publishes a points requirement, and unlike the business
+      schools none publishes an admitted-student profile to anchor one against either.</p>
+    <p>Runs from local files with no network access. Answers stay in this browser.</p>
+  </footer>
+
+</div>
+
+<script src="data/it-model.js"></script>
+<script src="data/it-evidence.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/score-it.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/page-it.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/session.js"></script>
+</body>
+</html>

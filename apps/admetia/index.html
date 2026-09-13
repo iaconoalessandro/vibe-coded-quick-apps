@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admission Chances Calculator</title>
+<meta name="description" content="Offline admissions scoring for MBA, business master's and IT &amp; computing master's programmes. No account, no network requests.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/app.css">
+<script src="js/theme.js"></script>
+</head>
+<body class="has-hero-shot">
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="crumbs">
+      <span class="brand"><span class="glyph-box"><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 24 9l20 9-20 9z"/><path d="M12 22v11c0 3 5.4 6 12 6s12-3 12-6V22"/><path d="M40 19.5V30" opacity=".6"/></svg></span>
+        <span class="here">Admission Chances Calculator</span></span>
+    </div>
+  </div>
+</div>
+
+<header class="shot hero-shot">
+  <img src="img/photo/hero.jpg" width="1800" height="1200" fetchpriority="high"
+       alt="Two university students at desks, heads down, writing an exam paper.">
+  <a class="shot-credit" href="CREDITS.md">Photo: Pexels</a>
+  <div class="shot-body">
+    <p class="eyebrow dot">Offline · no account · nothing leaves this machine</p>
+    <h1>Work out where you <em>actually</em> stand.</h1>
+    <p>Three calculators. A reimplementation of a published, points-based MBA admissions
+      model; a purpose-built model for pre-experience business master's degrees;
+      and a rule-first model for IT &amp; computing master's in the UK and Europe.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="business.html">Start with business →</a>
+      <a class="btn primary" href="it.html">Start with IT &amp; computing →</a>
+      <a class="btn" href="#how">How the scoring works</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <p class="eyebrow">Choose your field</p>
+  <div class="choice-grid">
+
+    <a class="choice-card shot-card reveal" href="business.html">
+      <span class="card-media">
+        <img src="img/photo/business.jpg" width="1200" height="800" loading="lazy" decoding="async"
+             alt="Graduating students throwing their caps in the air outside a business school.">
+        <svg class="art mba" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"> <path d="M4 18 24 9l20 9-20 9z"/> <path d="M12 22v11c0 3 5.4 6 12 6s12-3 12-6V22"/> <path d="M40 19.5V30" opacity=".6"/> </svg>
+      </span>
+      <span class="card-text">
+        <h2>Business</h2>
+        <p>MBA, Master in Finance, Master in Management, and Master in Marketing.
+          Scored against roughly 60 programmes in Europe and the US.</p>
+        <span class="tag">Start →</span>
+      </span>
+    </a>
+
+    <a class="choice-card shot-card reveal" href="it.html">
+      <span class="card-media">
+        <img src="img/photo/it.jpg" width="1200" height="800" loading="lazy" decoding="async"
+             alt="Dense, syntax-highlighted source code filling a monitor.">
+        <svg class="art it" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"> <rect x="6" y="9" width="36" height="26" rx="3"/> <path d="M17 41h14M24 35v6"/> <path d="m18 17-5 5 5 5M30 17l5 5-5 5M27 15l-6 14" opacity=".7"/> </svg>
+      </span>
+      <span class="card-text">
+        <h2>IT &amp; Computing</h2>
+        <p>Computer Science, Data Science and AI, and conversion master’s for graduates
+          of other subjects. Scored against the entry rules each programme publishes.</p>
+        <span class="tag">Start →</span>
+      </span>
+    </a>
+
+  </div>
+
+  <section class="shot band reveal" id="how">
+    <img src="img/photo/scoring.jpg" width="1800" height="1200" loading="lazy" decoding="async"
+         alt="Two assessors at a table going through a printed application file, pen in hand.">
+    <a class="shot-credit" href="CREDITS.md">Photo: Pexels</a>
+    <div class="band-body">
+      <p class="eyebrow">How the scoring works</p>
+      <h2>Three things this does that a generic calculator does not.</h2>
+      <div class="feature-strip">
+        <div class="feature">
+          <svg class="art gate" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="21" width="30" height="19" rx="3"/> <path d="M16 21v-6a8 8 0 0 1 16 0v6"/> <path d="M24 28v6"/> </svg>
+          <h3>Hard rules come first</h3>
+          <p>Most published requirements at master's level are pass/fail: ECTS
+            prerequisites, experience caps, test floors. A school you fail one of is
+            reported ineligible rather than merely scored low — a 780 GMAT does not
+            buy back a missing statistics module.</p>
+        </div>
+        <div class="feature">
+          <svg class="art scale" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"> <path d="M24 8v32M14 40h20"/> <path d="M8 15h32" /> <path d="M14 15 8 28h12zM34 15l-6 13h12z" opacity=".75"/> <circle cx="24" cy="12" r="2.4" fill="currentColor" stroke="none"/> </svg>
+          <h3>Every school weighs it differently</h3>
+          <p>Bocconi runs no interview, takes no reference letters and names GPA as a
+            compulsory pillar — grades and the test are close to the whole ranking there.
+            HEC and IE read essays and interview you instead. Each programme is scored
+            under its own weighting, not one average.</p>
+        </div>
+        <div class="feature">
+          <svg class="art source" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 6h16l8 8v28H12z"/> <path d="M28 6v9h8" opacity=".7"/> <path d="M18 24h12M18 31h12M18 38h7" opacity=".6"/> </svg>
+          <h3>Every number is sourced</h3>
+          <p>Facts are tagged by where they came from — the school's own page, a school
+            document, a third-party aggregator, an FOI disclosure — and the tool says
+            plainly when a school publishes nothing at all, which is most of them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="note-card">
+    <strong>What this is.</strong> An independent, unofficial tool built for personal use.
+    It is not affiliated with, endorsed by, or connected to any admissions consultancy or
+    business school. It produces a rough estimate and cannot predict a decision.
+  </div>
+
+  <footer class="foot">
+    <p>Runs entirely from local files. There are no network requests, no analytics and no
+      lead capture — your answers are stored only in this browser, and only so a refresh
+      does not lose them.</p>
+    <p>Photographs are licensed for free use and are stored in this folder rather than
+      loaded from anywhere — see <a href="CREDITS.md">CREDITS.md</a> for each one's source
+      and licence.</p>
+  </footer>
+
+</div>
+<script src="js/ui.js"></script>
+<script src="js/session.js"></script>
+</body>
+</html>
