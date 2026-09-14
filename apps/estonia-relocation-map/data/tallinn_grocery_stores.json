@@ -885,23 +885,6 @@
    "osmId": "way/974410762"
   },
   {
-   "name": "Prisma",
-   "chain": "prisma",
-   "chainLabel": "Prisma",
-   "tier": "discount_big",
-   "tierLabel": "Big & cheap",
-   "priceBand": 2,
-   "format": "big",
-   "colour": "#00A94F",
-   "note": "Hypermarket. Full weekly shop, low prices, big non-food range.",
-   "lat": 59.407188,
-   "lon": 24.616292,
-   "street": "Roo tee",
-   "housenumber": "1",
-   "hours": "Mo-Su 07:00-23:00",
-   "osmId": "way/1099678970"
-  },
-  {
    "name": "Maxima X",
    "chain": "maxima",
    "chainLabel": "Maxima",
@@ -1070,6 +1053,23 @@
    "housenumber": "41a",
    "hours": "09:00-22:00",
    "osmId": "way/204863228"
+  },
+  {
+   "name": "Coop",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 59.407188,
+   "lon": 24.616292,
+   "street": "Roo tee",
+   "housenumber": "1",
+   "hours": "Mo-Su 07:00-23:00",
+   "osmId": "way/1099678970"
   },
   {
    "name": "Coop Haabneeme Konsum",

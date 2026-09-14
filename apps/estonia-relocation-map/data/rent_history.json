@@ -1359,6 +1359,686 @@
    "sample": 95,
    "observed": true,
    "source": "Live listings 2026-08-28: kv.ee n=74, City24.ee n=21 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_ahtme___iidla",
+   "name": "Ahtme / Iidla (High-Density Soviet Panel Quarter)",
+   "mean_sqm": 4.45,
+   "sample": 17,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=11, City24.ee n=6 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_järve_kesklinn",
+   "name": "Järve Kesklinn (City Hall, Central Park & TalTech)",
+   "mean_sqm": 4.15,
+   "sample": 23,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=14, City24.ee n=9 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_jõhvi_kesklinn",
+   "name": "Jõhvi Kesklinn (County Capital & //kood Campus)",
+   "mean_sqm": 6.0,
+   "sample": 41,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=26, City24.ee n=15 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_kukruse",
+   "name": "Kukruse (Historic Manor & Polar Center)",
+   "mean_sqm": 4.36,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Kohtla-Järve & Jõhvi live median (5.13 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_käva",
+   "name": "Käva (Historic Mining Quarter & Industrial South)",
+   "mean_sqm": 4.36,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Kohtla-Järve & Jõhvi live median (5.13 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_oru",
+   "name": "Oru (Pine Forest Settlement & Peat Industry)",
+   "mean_sqm": 6.09,
+   "sample": 1,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_puru",
+   "name": "Puru (Central Hospital Campus & Southern Health)",
+   "mean_sqm": 4.16,
+   "sample": 2,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_sompa",
+   "name": "Sompa (Mining Heritage Exclave)",
+   "mean_sqm": 4.36,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Kohtla-Järve & Jõhvi live median (5.13 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_tammiku",
+   "name": "Tammiku (Suburban Oak Forest & Industrial Park)",
+   "mean_sqm": 4.36,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Kohtla-Järve & Jõhvi live median (5.13 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "kohtla_jarve",
+   "district": "rent_kj_uusküla",
+   "name": "Uusküla (Sinivoore Green Woods & Clean Tech)",
+   "mean_sqm": 4.36,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Kohtla-Järve & Jõhvi live median (5.13 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_elektrijaama",
+   "name": "Elektrijaama & Veekulgu (Energy Infrastructure)",
+   "mean_sqm": 5.31,
+   "sample": 1,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_joaorg",
+   "name": "Joaorg (Linnuse Riverside Recreation Quarter)",
+   "mean_sqm": 8.59,
+   "sample": 9,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=4, City24.ee n=5 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_kalevi",
+   "name": "Kalevi (Central Commercial & Fama Quarter)",
+   "mean_sqm": 3.24,
+   "sample": 1,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_kerese",
+   "name": "Kerese (Paul Keres Central Axis & Astri)",
+   "mean_sqm": 5.16,
+   "sample": 10,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=5, City24.ee n=5 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_kreenholm",
+   "name": "Kreenholm (Historic Industrial & Joala Quarter)",
+   "mean_sqm": 4.56,
+   "sample": 15,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=3, City24.ee n=12 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_kudruküla",
+   "name": "Kudruküla (Garden & Summer Cottage Quarter)",
+   "mean_sqm": 5.61,
+   "sample": 2,
+   "observed": true,
+   "source": "Live listings 2026-08-28: City24.ee n=2 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_kulgu",
+   "name": "Kulgu (Reservoir & Boat Harbor Quarter)",
+   "mean_sqm": 4.7,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Narva live median (5.53 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_olgina",
+   "name": "Olgina (Suburban Airfield Quarter)",
+   "mean_sqm": 4.7,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Narva live median (5.53 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_paemurru",
+   "name": "Paemurru (Railway Station & Commuter Quarter)",
+   "mean_sqm": 3.16,
+   "sample": 1,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_pähklimäe",
+   "name": "Pähklimäe (Äkkeküla Green Residential Quarter)",
+   "mean_sqm": 5.41,
+   "sample": 11,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=7, City24.ee n=4 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_siivertsi",
+   "name": "Siivertsi (Riverside Villa Quarter)",
+   "mean_sqm": 4.7,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Narva live median (5.53 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_soldino",
+   "name": "Soldino (Tallinna Mnt Residential Quarter)",
+   "mean_sqm": 4.85,
+   "sample": 11,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=3, City24.ee n=8 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_sutthoffi",
+   "name": "Sutthoffi (Hospital & Forest Quarter)",
+   "mean_sqm": 4.7,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Narva live median (5.53 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_vanalinn",
+   "name": "Vanalinn (Historic Old Town & Castle View)",
+   "mean_sqm": 6.06,
+   "sample": 8,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1, City24.ee n=7 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "narva",
+   "district": "rent_narva_veekulgu",
+   "name": "Veekulgu (Industrial & Water-Intake Belt)",
+   "mean_sqm": 4.7,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Narva live median (5.53 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_audru",
+   "name": "Audru & Valgeranna (Golf & CleanTech Borough)",
+   "mean_sqm": 6.43,
+   "sample": 2,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=2 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_eeslinn",
+   "name": "Eeslinn (Inner Suburb & Wooden Villa Belt)",
+   "mean_sqm": 9.12,
+   "sample": 4,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=3, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_kesklinn",
+   "name": "Kesklinn (Historic City Centre & Port)",
+   "mean_sqm": 9.91,
+   "sample": 105,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=61, City24.ee n=44 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_lodja",
+   "name": "Lodja (Southern Pine Belt & Allotments)",
+   "mean_sqm": 8.69,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Pärnu live median (9.87 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_paikuse",
+   "name": "Paikuse (Academy & Family Green Suburb)",
+   "mean_sqm": 8.69,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Pärnu live median (9.87 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_papiniidu___mai",
+   "name": "Papiniidu / Mai (Coastal Panel & Commercial Hub)",
+   "mean_sqm": 10.12,
+   "sample": 28,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=15, City24.ee n=13 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_raeküla",
+   "name": "Raeküla (Pine Forest Coastal Villa Quarter)",
+   "mean_sqm": 10.08,
+   "sample": 3,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=2, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_rannarajoon",
+   "name": "Rannarajoon (Resort & Beach Promenade)",
+   "mean_sqm": 10.23,
+   "sample": 58,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=36, City24.ee n=22 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_rääma",
+   "name": "Rääma (Riverfront & HealthTech Campus)",
+   "mean_sqm": 8.34,
+   "sample": 7,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=5, City24.ee n=2 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_sindi",
+   "name": "Sindi (Historic Riverfront Mechatronics Town)",
+   "mean_sqm": 8.69,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Pärnu live median (9.87 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_tammiste",
+   "name": "Tammiste (Riverside Villa Suburb)",
+   "mean_sqm": 8.69,
+   "sample": 0,
+   "observed": false,
+   "source": "No active rental listings on kv.ee or City24.ee on 2026-08-28; modelled from the Pärnu live median (9.87 €/m²) scaled by the district's price tier — ESTIMATE"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_vana_pärnu",
+   "name": "Vana-Pärnu (Historic Seaside Wooden Quarter)",
+   "mean_sqm": 10.67,
+   "sample": 4,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=3, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "parnu",
+   "district": "rent_ülejõe",
+   "name": "Ülejõe (Northern Innovation & Härma)",
+   "mean_sqm": 9.13,
+   "sample": 20,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=14, City24.ee n=6 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_haabersti",
+   "name": "Haabersti / Õismäe / Rocca al Mare",
+   "mean_sqm": 14.49,
+   "sample": 145,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=68, City24.ee n=77 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_kadriorg",
+   "name": "Kadriorg",
+   "mean_sqm": 14.15,
+   "sample": 96,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=58, City24.ee n=38 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_kalamaja",
+   "name": "Kalamaja, Telliskivi & Noblessner",
+   "mean_sqm": 18.0,
+   "sample": 45,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=38, City24.ee n=7 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_kesklinn",
+   "name": "Kesklinn (City Center / Downtown / Vanalinn / Maakri)",
+   "mean_sqm": 15.98,
+   "sample": 786,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=350, City24.ee n=436 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_kristiine",
+   "name": "Kristiine / Lilleküla / WoHo",
+   "mean_sqm": 14.74,
+   "sample": 148,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=82, City24.ee n=66 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_lasnamae",
+   "name": "Lasnamäe (Central & East)",
+   "mean_sqm": 12.25,
+   "sample": 211,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=93, City24.ee n=118 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_mustamae",
+   "name": "Mustamäe (Tehnopol / TalTech)",
+   "mean_sqm": 13.66,
+   "sample": 215,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=108, City24.ee n=107 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_nomme",
+   "name": "Nõmme (Forest Town / Metsalinn)",
+   "mean_sqm": 13.19,
+   "sample": 104,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=51, City24.ee n=53 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_pelgulinn",
+   "name": "Pelgulinn, Pelguranna & Kopli (Stroomi Beach)",
+   "mean_sqm": 16.16,
+   "sample": 271,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=126, City24.ee n=145 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_pirita",
+   "name": "Pirita (Coastal Marina & Forest)",
+   "mean_sqm": 14.98,
+   "sample": 78,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=40, City24.ee n=38 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_ulemiste",
+   "name": "Ülemiste / Sikupilli / Majaka & Ülemiste City",
+   "mean_sqm": 16.62,
+   "sample": 12,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=9, City24.ee n=3 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tallinn",
+   "district": "rent_veerenni",
+   "name": "Veerenni / Uus-Veerenni & Kitseküla (Baltika/Bolt)",
+   "mean_sqm": 14.6,
+   "sample": 22,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=22 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_annelinn",
+   "name": "Annelinn (Eastern Residential Panel)",
+   "mean_sqm": 9.85,
+   "sample": 61,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=41, City24.ee n=20 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_ihaste",
+   "name": "Ihaste (Pine Forest Villa Suburb)",
+   "mean_sqm": 11.48,
+   "sample": 5,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=4, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_jaamamõisa",
+   "name": "Jaamamõisa (North-Eastern)",
+   "mean_sqm": 11.34,
+   "sample": 12,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=10, City24.ee n=2 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_karlova",
+   "name": "Karlova (Artisan Wooden Heritage)",
+   "mean_sqm": 12.46,
+   "sample": 71,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=51, City24.ee n=20 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_kesklinn",
+   "name": "Kesklinn (Historic City Centre)",
+   "mean_sqm": 13.97,
+   "sample": 155,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=109, City24.ee n=46 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_kvissentali",
+   "name": "Kvissentali (Riverside Villa Quarter)",
+   "mean_sqm": 12.6,
+   "sample": 1,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_maarjamõisa",
+   "name": "Maarjamõisa (Science Campus & Clinics)",
+   "mean_sqm": 13.5,
+   "sample": 5,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=4, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_raadi_kruusamäe",
+   "name": "Raadi-Kruusamäe (ERM Culture District)",
+   "mean_sqm": 12.01,
+   "sample": 37,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=25, City24.ee n=12 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_ropka",
+   "name": "Ropka (Southern Mixed Quarter)",
+   "mean_sqm": 10.68,
+   "sample": 12,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=8, City24.ee n=4 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_ropka_tööstusrajoon",
+   "name": "Ropka tööstusrajoon (Industrial District)",
+   "mean_sqm": 8.72,
+   "sample": 7,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=6, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_ränilinn",
+   "name": "Ränilinn (Lõunakeskus Modern)",
+   "mean_sqm": 12.19,
+   "sample": 20,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=15, City24.ee n=5 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_supilinn",
+   "name": "Supilinn (Bohemian Wooden Quarter)",
+   "mean_sqm": 12.8,
+   "sample": 18,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=14, City24.ee n=4 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_tammelinn",
+   "name": "Tammelinn (Oak Town Garden District)",
+   "mean_sqm": 11.41,
+   "sample": 8,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=7, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_tähtvere",
+   "name": "Tähtvere (Song Festival & Academic Quarter)",
+   "mean_sqm": 11.24,
+   "sample": 18,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=15, City24.ee n=3 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_vaksali",
+   "name": "Vaksali (Station & Aparaaditehas)",
+   "mean_sqm": 13.64,
+   "sample": 38,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=24, City24.ee n=14 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_variku",
+   "name": "Variku (Southern Suburban Rail)",
+   "mean_sqm": 8.84,
+   "sample": 3,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=2, City24.ee n=1 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_veeriku",
+   "name": "Veeriku (Western Residential)",
+   "mean_sqm": 11.02,
+   "sample": 16,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=12, City24.ee n=4 (median €/m²; pooled across portals)"
+  },
+  {
+   "date": "2026-09-14",
+   "city": "tartu",
+   "district": "rent_ülejõe",
+   "name": "Ülejõe (Delta Innovation Hub)",
+   "mean_sqm": 12.11,
+   "sample": 95,
+   "observed": true,
+   "source": "Live listings 2026-08-28: kv.ee n=74, City24.ee n=21 (median €/m²; pooled across portals)"
   }
  ],
  "note": "Appended weekly. One row per district per run. mean_sqm is the verified median €/m²; sample is the number of live listings behind it, 0 where the figure is a model estimate rather than an observation."
