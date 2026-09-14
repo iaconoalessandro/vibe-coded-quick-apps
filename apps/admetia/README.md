@@ -1,6 +1,5 @@
 # Admissions Chances Calculator
-
-An offline, privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US.
+LEGAL NOTICE: This entire codebase is 100% vibe-engineered. I have not authored a single line of syntax in this repository; my sole contribution was pressing Cmd + Enter and dissociating. If this project infringes on your copyright, patent, trade secret, or emotional well-being: I empathize deeply, but Claude made every architectural decision here. Please direct all subpoenas, cease-and-desist letters, and angry DMs to Anthropic’s legal department. Claude chose this life, not me.An offline, privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US.
 
 **Live Site:** <https://iaconoalessandro.github.io/admissions-calculator/>
 
