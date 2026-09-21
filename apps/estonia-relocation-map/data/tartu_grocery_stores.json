@@ -962,12 +962,12 @@
    "format": "small",
    "colour": "#6B7A76",
    "note": "Independent supermarket.",
-   "lat": 58.358484,
-   "lon": 26.733815,
-   "street": "Teguri",
-   "housenumber": "39",
-   "hours": "Mo-Su 09:00-20:00",
-   "osmId": "node/12383394853"
+   "lat": 58.349302,
+   "lon": 26.740136,
+   "street": "Sepa",
+   "housenumber": "21",
+   "hours": "",
+   "osmId": "node/2834606920"
   },
   {
    "name": "Kaubamaja Toidumaailm",
@@ -1302,10 +1302,10 @@
     "walkMinutes": 24
    },
    "nearestAny": {
-    "name": "A1000 Market",
+    "name": "Hinnapomm.ee",
     "chain": "Independent",
-    "metres": 604,
-    "walkMinutes": 10
+    "metres": 403,
+    "walkMinutes": 7
    }
   }
  },

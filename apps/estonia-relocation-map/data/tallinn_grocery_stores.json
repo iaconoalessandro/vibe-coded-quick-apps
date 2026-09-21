@@ -868,23 +868,6 @@
    "osmId": "way/905750085"
   },
   {
-   "name": "Prisma",
-   "chain": "prisma",
-   "chainLabel": "Prisma",
-   "tier": "discount_big",
-   "tierLabel": "Big & cheap",
-   "priceBand": 2,
-   "format": "big",
-   "colour": "#00A94F",
-   "note": "Hypermarket. Full weekly shop, low prices, big non-food range.",
-   "lat": 59.431533,
-   "lon": 24.5634,
-   "street": "Liiva tee",
-   "housenumber": "61",
-   "hours": "Mo-Su 07:00-23:00",
-   "osmId": "way/974410762"
-  },
-  {
    "name": "Maxima X",
    "chain": "maxima",
    "chainLabel": "Maxima",
@@ -1053,6 +1036,23 @@
    "housenumber": "41a",
    "hours": "09:00-22:00",
    "osmId": "way/204863228"
+  },
+  {
+   "name": "Coop",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 59.431533,
+   "lon": 24.5634,
+   "street": "Liiva tee",
+   "housenumber": "61",
+   "hours": "Mo-Su 07:00-23:00",
+   "osmId": "way/974410762"
   },
   {
    "name": "Coop",
@@ -1625,23 +1625,6 @@
    "format": "medium",
    "colour": "#D2001C",
    "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
-   "lat": 59.413544,
-   "lon": 24.655073,
-   "street": "Ehitajate tee",
-   "housenumber": "107",
-   "hours": "08:00-22:00; Jun 23 08:00-20:00; Jun 24 10:00-22:00",
-   "osmId": "node/1603908808"
-  },
-  {
-   "name": "Rimi",
-   "chain": "rimi",
-   "chainLabel": "Rimi",
-   "tier": "large",
-   "tierLabel": "Large supermarket",
-   "priceBand": 3,
-   "format": "medium",
-   "colour": "#D2001C",
-   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
    "lat": 59.343395,
    "lon": 24.61544,
    "street": "",
@@ -1680,7 +1663,7 @@
    "lon": 24.688311,
    "street": "A. H. Tammsaare tee",
    "housenumber": "104a",
-   "hours": "Mo-Su 08:00-22:00",
+   "hours": "07:00-22:00",
    "osmId": "node/3632360798"
   },
   {
@@ -1903,6 +1886,23 @@
    "housenumber": "1",
    "hours": "Mo-Su 08:00-22:00",
    "osmId": "node/4156508308"
+  },
+  {
+   "name": "Rimi Mini",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 59.413544,
+   "lon": 24.655073,
+   "street": "Ehitajate tee",
+   "housenumber": "107",
+   "hours": "08:00-22:00; Jun 23 08:00-20:00; Jun 24 10:00-22:00",
+   "osmId": "node/1603908808"
   },
   {
    "name": "Rimi Mini",
