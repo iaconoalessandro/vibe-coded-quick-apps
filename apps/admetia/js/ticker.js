@@ -36,22 +36,47 @@
   function has(a) { return a && Object.keys(a).length > 0; }
   function round1(n) { return Math.round(n * 10) / 10; }
 
-  /* Every programme the loaded models know about, with your margin where
-   * you have answers for that calculator. */
-  function collect() {
+  /* Every programme the models know about, in ticker order, without your
+   * margins. The published build (tools/build.js) runs this once and ships
+   * the result as window.TICKER_DATA.rows, so the front pages need not load
+   * ~200 KB of models just to list bars. */
+  function programmes() {
     var out = [];
-    var M = window.MASTERS_MODEL, MS = window.MASTERS_SCORE;
-    var I = window.IT_MODEL, IS = window.IT_SCORE;
-    var B = window.MBA_MODEL, BS = window.MBA_SCORE;
-
-    function add(track, rows, mine) {
+    var M = window.MASTERS_MODEL, I = window.IT_MODEL, B = window.MBA_MODEL;
+    function add(track, rows) {
       rows.forEach(function (s) {
-        out.push({ sym: symbol(s.name) + '·' + TRACK_CODE[track], name: s.name, track: track,
-          bar: s.threshold, delta: mine ? mine[s.id] : undefined });
+        out.push({ id: s.id, sym: symbol(s.name) + '·' + TRACK_CODE[track], name: s.name, track: track, bar: s.threshold });
       });
     }
-    function margins(score, track, key) {
-      var a = load(key);
+    if (M) ['mim', 'mif', 'marketing'].forEach(function (t) {
+      add(t, M.schools.filter(function (s) { return s.tracks.indexOf(t) > -1; }));
+    });
+    if (I) ['cs', 'dsai', 'conversion'].forEach(function (t) {
+      add(t, I.schools.filter(function (s) { return (s.tracks || [s.track]).indexOf(t) > -1; }));
+    });
+    if (B) B.generalSchools.forEach(function (s) {
+      out.push({ sym: symbol(s.name) + '·MBA', name: s.name, track: 'mba', bar: s.points });
+    });
+    return out;
+  }
+
+  var DATA = window.TICKER_DATA;
+  function rows() { return window.MASTERS_MODEL || !DATA ? programmes() : DATA.rows; }
+
+  /* Where your saved answers live, per track. */
+  var ANSWERS = { mim: 'masters:mim', mif: 'masters:mif', marketing: 'masters:marketing',
+    cs: 'it:cs', dsai: 'it:dsai', conversion: 'it:conversion', mba: 'mba2' };
+  function anyAnswers() {
+    return Object.keys(ANSWERS).some(function (t) { return has(load(ANSWERS[t])); });
+  }
+
+  /* Every programme, with your margin where you have answers for that
+   * calculator and its scoring is loaded. */
+  function collect() {
+    var MS = window.MASTERS_SCORE, IS = window.IT_SCORE, BS = window.MBA_SCORE;
+    var mine = {};
+    function margins(score, track) {
+      var a = load(ANSWERS[track]);
       if (!score || !has(a)) return null;
       try {
         var m = {};
@@ -59,22 +84,17 @@
         return m;
       } catch (e) { return null; }
     }
+    ['mim', 'mif', 'marketing'].forEach(function (t) { mine[t] = margins(MS, t); });
+    ['cs', 'dsai', 'conversion'].forEach(function (t) { mine[t] = margins(IS, t); });
+    var a = load(ANSWERS.mba), base = null;
+    if (BS && has(a)) { try { base = BS.score(a, 'published').base; } catch (e) { base = null; } }
 
-    if (M) ['mim', 'mif', 'marketing'].forEach(function (t) {
-      add(t, M.schools.filter(function (s) { return s.tracks.indexOf(t) > -1; }), margins(MS, t, 'masters:' + t));
+    return rows().map(function (r) {
+      var delta = r.track === 'mba'
+        ? (base === null ? undefined : round1(base - r.bar))
+        : (mine[r.track] ? mine[r.track][r.id] : undefined);
+      return { sym: r.sym, name: r.name, track: r.track, bar: r.bar, delta: delta };
     });
-    if (I) ['cs', 'dsai', 'conversion'].forEach(function (t) {
-      add(t, I.schools.filter(function (s) { return (s.tracks || [s.track]).indexOf(t) > -1; }), margins(IS, t, 'it:' + t));
-    });
-    if (B) {
-      var a = load('mba2'), base = null;
-      if (BS && has(a)) { try { base = BS.score(a, 'published').base; } catch (e) { base = null; } }
-      B.generalSchools.forEach(function (s) {
-        out.push({ sym: symbol(s.name) + '·MBA', name: s.name, track: 'mba', bar: s.points,
-          delta: base === null ? undefined : round1(base - s.points) });
-      });
-    }
-    return out;
   }
 
   /* One composite per track, like an index: the average bar, and your
@@ -210,8 +230,21 @@
     };
   }
 
+  /* Scoring your margins needs the models. A page built without them loads
+   * them only when there are saved answers to score; until then the ticker
+   * waits, so it never draws once bare and again with your figures. */
+  function withModels(done) {
+    if (window.MASTERS_MODEL || !DATA || !DATA.models || !anyAnswers()) return done();
+    var s = document.createElement('script');
+    s.src = DATA.models;
+    s.onload = s.onerror = done;
+    document.head.appendChild(s);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    render();
     highest();
+    withModels(render);
   });
+
+  window.Ticker = { programmes: programmes };
 }());

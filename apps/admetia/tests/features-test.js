@@ -95,3 +95,4 @@ t('claimed gain matches an actual recomputation',
 const pth=BS.pathTo(20, imp);
 t('pathTo accumulates until the gap is closed', pth.total>=20 || !pth.reached);
 console.log('\n'+pass+' passed, '+fail+' failed');
+process.exitCode = fail ? 1 : 0;

@@ -12,7 +12,7 @@ An offline, privacy-first admissions chances evaluator for top-tier **MBA**, **B
 
 **Live Site:** <https://iaconoalessandro.github.io/admissions-calculator/>
 
-Zero build steps. Zero runtime dependencies. Zero network calls. Everything runs locally in your browser.
+Zero build steps to run it. Zero runtime dependencies. Zero network calls. Everything runs locally in your browser.
 
 ---
 
@@ -28,7 +28,15 @@ Zero build steps. Zero runtime dependencies. Zero network calls. Everything runs
   ```bash
   node tests/mba-test.js && node tests/masters-test.js && node tests/features-test.js && node tests/profiles-test.js && node tests/it-test.js
   ```
-  *(146 tests passing across all models and edge cases).*
+  *(146 tests passing across all models and edge cases).* `npm test` runs the same suites.
+
+- **Publish:** pushing to `main` runs `.github/workflows/pages.yml`, which tests, runs
+  `npm run build` and deploys `_site/` to GitHub Pages. The build (`tools/build.js`) only
+  repackages for speed — one minified script and stylesheet per page, `theme.js` inlined,
+  hashed file names, and no models on the front pages unless there are saved answers to
+  score. The pages in the repo keep working unbuilt, so there is nothing to rebuild while
+  editing. To try the published version locally: `npm install && npm run build`, then serve
+  `_site/`.
 
 ---
 
@@ -89,6 +97,7 @@ data/*-model.js     Declarative question definitions, school profiles, and thres
 data/it-evidence.js 5-year aggregated admissions data
 
 tests/*.js          Comprehensive test suites (equivalence, gates, profiles)
+tools/build.js      Packages the site into _site/ for publishing (bundled, minified, hashed)
 docs/               Supplementary documentation and employer placement guide
 design/concepts/    Parked alternative redesigns (static mockups, not part of the site)
 CREDITS.md          Photograph and typeface credits and licensing details

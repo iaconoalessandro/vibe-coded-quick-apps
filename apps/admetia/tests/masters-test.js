@@ -94,3 +94,4 @@ t('score stays within 0–100', S.score({},'mim').total>=0 && S.score(withTest,'
 console.log('\nmaxed mim profile scores', S.score(withTest,'mim').total,
             '| empty profile', S.score({},'mim').total);
 console.log('\n'+pass+' passed, '+fail+' failed');
+process.exitCode = fail ? 1 : 0;

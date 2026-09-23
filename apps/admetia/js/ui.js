@@ -6,9 +6,10 @@
  *   2. Shadow the top bar once the page has scrolled under it.
  *   3. Draw the animated score dial and count its number up.
  *
- * All three degrade to nothing. The `no-js` class is removed immediately so
- * that a page whose scripts fail still shows every .reveal element rather than
- * a column of invisible boxes.
+ * All three degrade to nothing. js/theme.js removes the `no-js` class in
+ * <head> and restores it if this file never loads, so a page whose scripts
+ * fail still shows every .reveal element rather than a column of invisible
+ * boxes.
  * ------------------------------------------------------------------------ */
 
 window.UI = (function () {
@@ -196,7 +197,6 @@ window.UI = (function () {
     window.requestAnimationFrame(frame);
   }
 
-  document.documentElement.classList.remove('no-js');
   document.addEventListener('DOMContentLoaded', function () {
     stickyBar();
     reveal(document);

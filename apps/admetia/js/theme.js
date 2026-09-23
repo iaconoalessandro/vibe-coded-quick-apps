@@ -41,6 +41,9 @@
     watchlist: ['noto-serif-display', 'hanken-grotesk']
   };
   function preloadFonts(id) {
+    /* Once sw.js controls the page the fonts come from its cache at once, and
+     * a preload would only fetch each one a second time. */
+    if (navigator.serviceWorker && navigator.serviceWorker.controller) return;
     (FONTS[id] || []).forEach(function (f) {
       var l = document.createElement('link');
       l.rel = 'preload';
@@ -54,6 +57,16 @@
 
   apply(stored() || DEFAULT);
   preloadFonts(current());
+
+  /* .reveal elements start hidden once `no-js` is gone (css/app.css). Drop it
+   * here, before first paint, rather than in the deferred js/ui.js — otherwise
+   * a slow script shows them, hides them, then fades them in. If ui.js never
+   * arrives, put the class back so nothing stays invisible. */
+  var root = document.documentElement;
+  root.classList.remove('no-js');
+  window.addEventListener('load', function () {
+    if (!window.UI) root.classList.add('no-js');
+  });
 
   function current() { return document.documentElement.getAttribute('data-theme'); }
 
