@@ -64,6 +64,18 @@
    * arrives, put the class back so nothing stays invisible. */
   var root = document.documentElement;
   root.classList.remove('no-js');
+
+  /* Italian readers: set the page language now, and keep the page hidden
+   * until js/i18n.js has translated it (it removes i18n-wait), so there is
+   * no flash of English. If that script never arrives, show the page anyway
+   * — English is better than nothing. */
+  try {
+    if (localStorage.getItem('admissions-calc:lang') === 'it') {
+      root.lang = 'it';
+      root.classList.add('i18n-wait');
+      setTimeout(function () { root.classList.remove('i18n-wait'); }, 3000);
+    }
+  } catch (e) { /* storage blocked: English */ }
   window.addEventListener('load', function () {
     if (!window.UI) root.classList.add('no-js');
   });
@@ -115,7 +127,7 @@
       var label = document.createElement('span');
       label.className = 'edition-label';
       label.id = 'edition-label';
-      label.textContent = 'Edition';
+      label.textContent = window.I18N ? I18N.t('Edition') : 'Edition';
       wrap.appendChild(label);
 
       set = document.createElement('div');
@@ -139,6 +151,7 @@
       var t = document.createElement('span');
       t.className = 't';
       t.textContent = ed.label;
+      if (window.I18N) b.title = ed.label + ' — ' + I18N.t(ed.title);
       b.appendChild(t);
       b.addEventListener('click', function () { choose(ed.id); });
       set.appendChild(b);
@@ -186,7 +199,7 @@
     var d = document.querySelector('.dateline .date');
     if (!d) return;
     try {
-      d.textContent = new Date().toLocaleDateString('en-GB',
+      d.textContent = new Date().toLocaleDateString(window.I18N ? I18N.locale : 'en-GB',
         { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
     } catch (e) { d.textContent = new Date().toDateString(); }
   }

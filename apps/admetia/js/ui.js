@@ -118,7 +118,7 @@ window.UI = (function () {
 
     var root = svg('svg', {
       width: size, height: size, viewBox: '0 0 ' + size + ' ' + size,
-      role: 'img', 'aria-label': value + ' out of 100'
+      role: 'img', 'aria-label': (window.I18N ? I18N.t('{n} out of 100', { n: value }) : value + ' out of 100')
     });
 
     /* The stop colours go in style, not the stop-color attribute: presentation

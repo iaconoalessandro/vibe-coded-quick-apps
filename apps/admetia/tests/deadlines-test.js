@@ -41,11 +41,17 @@ const unsourced=E.filter(([,e])=>(e.rounds||e.rolling)&&TAGS.indexOf(e.src)<0);
 t('every date and every rolling claim carries a source tag',unsourced.length===0,unsourced.map(([k])=>k).join(', '));
 const labelled=E.every(([,e])=>(e.rounds||[]).every(r=>typeof r[0]==='string'&&r[0].length>0));
 t('every round has a label',labelled);
-/* Read on 23 September 2026 for the 2026–27 cycle: nothing may be older
- * than the start of that cycle, nor further out than its end. */
-const outside=E.filter(([,e])=>(e.rounds||[]).some(r=>r[1]<'2026-08-01'||r[1]>'2027-07-31'));
-t('every date falls inside the 2026–27 cycle',outside.length===0,outside.map(([k])=>k).join(', '));
+/* Nothing may be older than the start of the calendar's own cycle, nor
+ * further out than its end. The cycle comes from data/deadlines.js, so
+ * moving to next year's dates means changing `cycle` there, not this test. */
+const cy=/^(\d{4})[–-](\d{2})$/.exec(CAL.cycle||'');
+t('the calendar names its cycle, like 2026–27',!!cy&&+cy[2]===(+cy[1]+1)%100,CAL.cycle);
+const y0=cy?+cy[1]:0, from=y0+'-08-01', to=(y0+1)+'-07-31';
+const outside=E.filter(([,e])=>(e.rounds||[]).some(r=>r[1]<from||r[1]>to));
+t('every date falls inside the '+CAL.cycle+' cycle',outside.length===0,outside.map(([k])=>k).join(', '));
 t('the calendar says when it was read',ISO.test(CAL.checked));
+const badChecked=E.filter(([,e])=>e.checked!==undefined&&!ISO.test(e.checked));
+t('any per-programme checked date is a YYYY-MM-DD date',badChecked.length===0,badChecked.map(([k])=>k).join(', '));
 
 /* ---------------------------------------------------------- countdowns --- */
 const at=(iso)=>{ const p=iso.split('-'); return new Date(+p[0],+p[1]-1,+p[2],15,30); };
@@ -69,6 +75,23 @@ c=K.calendar('bocconi-mgmt',at('2026-10-24'));
 t('a countdown across the October clock change counts whole days',c.next.days===5,String(c.next.days));
 c=K.calendar('bocconi-mgmt',at('2027-03-27'));
 t('a countdown across the March clock change counts whole days',c.next.days===33,String(c.next.days));
+
+/* ----------------------------------------------------------- freshness --- */
+const added=(iso,days)=>{ const d=at(iso); d.setDate(d.getDate()+days); return d; };
+c=K.calendar('mba:Harvard',added(CAL.checked,10));
+t('every entry reports when it was checked',c.checked===CAL.checked&&!c.stale);
+t('fresh dates raise no warning',K.staleness(added(CAL.checked,K.STALE_DAYS))===null);
+const st=K.staleness(added(CAL.checked,K.STALE_DAYS+1));
+t('one day past the limit, the dates read as stale',!!st&&st.days===K.STALE_DAYS+1&&st.date===CAL.checked,JSON.stringify(st));
+t('and the entry itself says so',K.calendar('mba:Harvard',added(CAL.checked,K.STALE_DAYS+1)).stale);
+t('stale months are rounded, so 121 days reads as four months',st&&st.months===4);
+/* A programme re-read on its own carries its own date, and the warning
+ * follows the oldest date among the programmes asked about. */
+CAL.schools['mba:Harvard'].checked='2099-01-01';
+t('a per-programme date overrides the file date',K.calendar('mba:Harvard',at('2099-02-01')).checked==='2099-01-01');
+t('the warning is limited to the programmes asked about',K.staleness(at('2099-02-01'),['mba:Harvard'])===null);
+t('and still fires for the rest',K.staleness(at('2099-02-01'))!==null);
+delete CAL.schools['mba:Harvard'].checked;
 
 /* --------------------------------------------------------------- regions --- */
 t('UK reads as UK',K.regionOf('UK')==='uk');

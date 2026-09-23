@@ -27,6 +27,12 @@
 
   var M = window.IT_MODEL;
 
+  /* Sentences built here are shown on the results page. js/i18n.js
+   * translates them in the browser; the tests run without it. */
+  var T = window.I18N ? window.I18N.t : function (s, v) {
+    return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s;
+  };
+
   var OPTION = {}, GROUP = {};
   M.steps.forEach(function (step) {
     step.groups.forEach(function (group) {
@@ -190,7 +196,7 @@
              * accepted at most of these, so it is a warning rather than a bar
              * when the rest of the transcript carries it. */
             if (val(a, 'degreeField', 'quant', false) === true && val(a, 'csEcts', 'n', 0) >= 30) {
-              warn(gate, ' — your degree is not computing, but your computing credit may satisfy it');
+              warn(gate, ' — ' + T('your degree is not computing, but your computing credit may satisfy it'));
             } else {
               fail(gate);
             }
@@ -202,7 +208,7 @@
         case 'noCsDegree':
           if (a.degreeField !== undefined && val(a, 'degreeField', 'cs', false) === true) fail(gate);
           else if (val(a, 'csEcts', 'n', 0) >= 75) {
-            warn(gate, ' — your degree is not computing, but this much computing credit may still exclude you');
+            warn(gate, ' — ' + T('your degree is not computing, but this much computing credit may still exclude you'));
           }
           break;
 
@@ -210,7 +216,7 @@
           if (anyTicked(a)) {
             var n = countTicked(a, gate.modules);
             if (n < gate.value) {
-              fail(gate, ' — you have ' + n + ' of the ' + gate.value + ' required');
+              fail(gate, ' — ' + T('you have {n} of the {required} required', { n: n, required: gate.value }));
             }
           }
           break;

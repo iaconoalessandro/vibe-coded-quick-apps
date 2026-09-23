@@ -29,6 +29,12 @@
 (function () {
   'use strict';
 
+  /* Sentences built here are shown on the results page. js/i18n.js
+   * translates them in the browser; the tests run without it. */
+  var T = window.I18N ? window.I18N.t : function (s, v) {
+    return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s;
+  };
+
   var M = window.MASTERS_MODEL;
   var C = window.CONVERT;
 
@@ -263,7 +269,7 @@
           break;
         case 'testMinGmat':
           if (t.submitting && t.gmat !== null && t.gmat < gate.value) {
-            failures.push({ label: gate.label + ' — your score converts to about ' + t.gmat, src: gate.src });
+            failures.push({ label: gate.label + ' — ' + T('your score converts to about {gmat}', { gmat: t.gmat }), src: gate.src });
           }
           break;
         case 'minEnglish':

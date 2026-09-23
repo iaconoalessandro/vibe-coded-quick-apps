@@ -13,6 +13,10 @@
 (function () {
   'use strict';
 
+  /* Translated when drawn, never in programmes(): tools/build.js runs that
+   * at build time, where there is no language. */
+  function T(s, v) { return window.I18N ? I18N.t(s, v) : s; }
+
   var TRACK_CODE = { mim: 'MIM', mif: 'MIF', marketing: 'MKT', cs: 'CS', dsai: 'AI', conversion: 'CONV' };
   var TRACK_NAME = { mim: 'Management', mif: 'Finance', marketing: 'Marketing',
     cs: 'Computer Science', dsai: 'Data Science & AI', conversion: 'Conversion' };
@@ -123,7 +127,7 @@
   function item(it) {
     var n = el('span', 'tk' + (it.composite ? ' idx' : '') +
       (it.delta === undefined ? '' : it.delta >= 0 ? ' up' : ' down'));
-    n.title = it.name;
+    n.title = T(it.name);
     n.appendChild(el('b', 'sym', it.sym));
     n.appendChild(el('span', 'px', it.bar.toFixed(1)));
     if (it.delta !== undefined) {
@@ -158,10 +162,10 @@
       } else {
         bar = el('div', 'ticker');
         bar.setAttribute('role', 'region');
-        bar.setAttribute('aria-label', 'Admissions index');
+        bar.setAttribute('aria-label', T('Admissions index'));
         var label = el('div', 'ticker-label');
         label.appendChild(el('span', 'ticker-arrow', '↗'));
-        label.appendChild(el('span', 'ticker-name', 'Admissions index'));
+        label.appendChild(el('span', 'ticker-name', T('Admissions index')));
         bar.appendChild(label);
         var view = el('div', 'ticker-view');
         track = el('div', 'ticker-track');
@@ -173,9 +177,9 @@
     }
     var lbl = bar.querySelector('.ticker-label');
     if (lbl) {
-      lbl.title = personal
+      lbl.title = T(personal
         ? 'Price: the Competitive bar. Change: your margin against it, from your saved answers.'
-        : 'Price: the Competitive bar each programme is scored against. Answer a calculator to see your margin.';
+        : 'Price: the Competitive bar each programme is scored against. Answer a calculator to see your margin.');
     }
 
     /* Two copies, so the loop is seamless; the second is hidden from screen
@@ -214,7 +218,7 @@
       var a = el('a');
       a.href = TRACK_PAGE[x.track];
       a.appendChild(el('span', 't', x.name));
-      a.appendChild(el('span', 'm', TRACK_NAME[x.track] + ' · bar ' + x.bar));
+      a.appendChild(el('span', 'm', T('{track} · bar {bar}', { track: T(TRACK_NAME[x.track]), bar: x.bar })));
       li.appendChild(a);
       list.appendChild(li);
     });

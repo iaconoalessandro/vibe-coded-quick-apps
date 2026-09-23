@@ -954,6 +954,51 @@ details.breakdown .inner { padding: 0 0 16px; }
 .dl .provenance { margin-left: 0; }
 .dl-note { flex-basis: 100%; font: italic 13.5px/1.4 var(--font-head); color: var(--muted); }
 
+/* When the entry was last read; red once it is older than the site allows. */
+.dl-checked { font-size: 12.5px; color: var(--muted); }
+.dl-checked::before { content: "\2713  "; }
+.dl-checked.stale { color: var(--low); font-weight: 600; }
+.dl-checked.stale::before { content: "\26A0  "; }
+.stale-notice strong { color: var(--low); }
+
+/* Me now / Me after, inside the what-if panel. */
+.compare { margin-top: 14px; }
+.cmp-row { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; align-items: stretch; }
+.cmp-card { padding: 12px 14px; border: 1px solid var(--hair); background: var(--paper-3); min-width: 0; }
+.cmp-card.after { border-color: var(--good); box-shadow: inset 0 3px 0 var(--good); }
+.cmp-k { margin: 0 0 4px; font: 700 11.5px/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.cmp-score { margin: 0 0 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.cmp-score b { font: var(--head-weight) 30px/1 var(--font-num); font-variant-numeric: lining-nums tabular-nums; color: var(--ink); }
+.cmp-score span { font: 500 12.5px/1.3 var(--font-ui); color: var(--muted); }
+.cmp-card em, .cmp-moves em { font: 700 13px/1 var(--font-ui); font-style: normal; }
+.cmp-card em.up { color: var(--up); }
+.cmp-card em.down { color: var(--down); }
+.cmp-tiers { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font: 500 13px/1.5 var(--font-ui); color: var(--ink-2); }
+.cmp-tiers li { display: inline-flex; align-items: baseline; gap: 5px; }
+.cmp-tiers b { font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+.cmp-tiers li.safe b { color: var(--high); }
+.cmp-tiers li.target b { color: var(--good); }
+.cmp-tiers li.dream b { color: var(--mid); }
+.cmp-tiers li.out b { color: var(--low); }
+.cmp-what { list-style: none; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid var(--hair); font: 500 13px/1.45 var(--font-ui); color: var(--ink-2); }
+.cmp-arrow { align-self: center; font: 700 22px/1 var(--font-ui); color: var(--good); }
+.cmp-moves { margin-top: 12px; }
+.cmp-moves h4 { margin: 0 0 6px; font: 700 13px/1.3 var(--font-ui); letter-spacing: .04em; color: var(--ink); }
+.cmp-moves ul { list-style: none; margin: 0; padding: 0; }
+.cmp-moves li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; padding: 5px 0; border-bottom: 1px solid var(--hair); font: 500 13.5px/1.35 var(--font-ui); }
+.cmp-moves li .nm { flex: 1 1 180px; min-width: 0; color: var(--ink); font-weight: 600; }
+.cmp-moves li .badge { min-width: 0; text-align: left; }
+.cmp-moves li .to { color: var(--muted); }
+.cmp-moves li.up .to { color: var(--up); }
+.cmp-moves li.down .to { color: var(--down); }
+.cmp-moves li.more { color: var(--muted); font-style: italic; }
+
+/* The language switch shares the edition picker's look (.edition-set). */
+.lang-set .lt { font: 700 11.5px/1 var(--font-ui); letter-spacing: .06em; }
+.ticker .edition .lang-set { margin-right: 4px; }
+/* Italian readers: hidden until js/i18n.js has translated the page. */
+html.i18n-wait body { visibility: hidden; }
+
 /* The battle plan only exists for printing. */
 .plan { display: none; }
 
@@ -1609,6 +1654,11 @@ html.no-js .reveal { opacity: 1; animation: none; }
 /* Phones. Targets follow the 44px minimum; form text is 16px or more so iOS
  * Safari does not zoom into a field on focus. */
 @media (max-width: 640px) {
+  .cmp-row { grid-template-columns: minmax(0, 1fr); }
+  .cmp-arrow { justify-self: center; transform: rotate(90deg); }
+  /* The strip is tight on a phone: offer only the other language, as one
+   * button, so the ticker keeps its room. */
+  .lang-set button[aria-checked="true"] { display: none; }
   :root { --gutter: 18px; }
   body { font-size: 16.5px; }
   .dateline, .edition-label, .score-chip .label, .score-chip .k { display: none; }

@@ -18,12 +18,24 @@
  *   rolling  true where the programme admits on a rolling basis — no countdown,
  *            but a reminder that earlier is better
  *   note     anything the dates alone would mislead about
+ *   checked  'YYYY-MM-DD' — when this one entry was last read, if it was
+ *            re-read on its own. Without it an entry counts as read on the
+ *            file's own `checked` date at the bottom.
  *   src      OFF  = read from the school's own page
  *            OFF2 = the school's own wording, reached through a search summary
  *            TP   = a third-party deadline list (mbaMission, Clear Admit and
  *                   others), spot-checked against official pages where they
  *                   could be read; Harvard, Stanford GSB, INSEAD, Rotman and
  *                   Georgetown all matched
+ *
+ * Keeping it fresh (every three or four months):
+ *   - re-read every school's page, fix the rounds, and set `checked` at the
+ *     bottom of this file to the day you finished;
+ *   - if you only re-read some schools, give each of them its own `checked`
+ *     instead, e.g. r(url, 'OFF', rounds, { checked: '2027-01-10' }).
+ * Every programme shows "Checked <date>" beside its deadline. Once the oldest
+ * date here is more than 120 days old (STALE_DAYS in js/results-kit.js),
+ * every results page carries a warning telling the developer to get moving.
  * ------------------------------------------------------------------------- */
 
 window.ADMISSIONS_CALENDAR = (function () {
@@ -34,7 +46,11 @@ window.ADMISSIONS_CALENDAR = (function () {
     if (extra) Object.keys(extra).forEach(function (k) { e[k] = extra[k]; });
     return e;
   }
-  function link(url) { return { url: url, src: null, rounds: null }; }
+  function link(url, extra) {
+    var e = { url: url, src: null, rounds: null };
+    if (extra) Object.keys(extra).forEach(function (k) { e[k] = extra[k]; });
+    return e;
+  }
 
   var S = {
 

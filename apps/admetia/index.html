@@ -4,7 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Admission Chances Calculator</title>
-<meta name="description" content="Offline admissions scoring for MBA, business master's and IT &amp; computing master's programmes. No account, no network requests.">
+<meta name="description" content="Free, private admissions calculators for MBA, business master&#x27;s and computing master&#x27;s programmes in the UK, Europe and the US. Your answers never leave your browser. In English and Italian.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Admission Chances">
+<meta property="og:title" content="Admission Chances — where do you actually stand?">
+<meta property="og:description" content="Free, private admissions calculators for MBA, business master&#x27;s and computing master&#x27;s programmes in the UK, Europe and the US. Your answers never leave your browser. In English and Italian.">
+<meta property="og:url" content="https://iaconoalessandro.github.io/admissions-calculator/">
+<meta property="og:image" content="https://iaconoalessandro.github.io/admissions-calculator/img/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Admission Chances: MBA, business and computing master’s calculators.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" type="image/webp" fetchpriority="high"
       imagesrcset="img/photo/hero-480.webp 480w, img/photo/hero-800.webp 800w, img/photo/hero-1240.webp 1240w"
@@ -56,7 +68,7 @@
       <h1 class="headline">Work out where you <em>actually</em> stand.</h1>
       <p class="standfirst">Three calculators. A reimplementation of a published, points-based MBA
         admissions model; a purpose-built model for pre-experience business master’s degrees;
-        and a rule-first model for IT &amp; computing master’s in the UK and Europe.</p>
+        and a rule-first model for IT &amp; computing master’s in the UK, Europe and the US.</p>
       <figure class="photo lead-photo">
         <span class="plate">
           <picture>
@@ -149,8 +161,8 @@
   </section>
 
   <footer class="foot">
-    <p><b class="rubric-in">Colophon</b>Runs entirely from local files. There are no network
-      requests, no analytics and no lead capture.</p>
+    <p><b class="rubric-in">Colophon</b>Runs in your browser. No accounts, no cookies and no lead
+      capture; visits are counted anonymously — which page, never what you type.</p>
     <p><b class="rubric-in">Your answers</b>Stored only in this browser, and only so a refresh does
       not lose them.</p>
     <p><b class="rubric-in">Sources</b>Every figure is tagged by where it came from, or marked as an
@@ -158,18 +170,22 @@
   </footer>
 
 </main>
+<script defer src="js/i18n.js"></script>
+<script defer src="js/i18n-it.js"></script>
 <script defer src="data/conversions.js"></script>
 <script defer src="data/masters-model.js"></script>
 <script defer src="data/it-model.js"></script>
 <script defer src="data/it-evidence.js"></script>
 <script defer src="data/mba-model.js"></script>
 <script defer src="data/mba-companies.js"></script>
+<script defer src="data/i18n-it-models.js"></script>
 <script defer src="js/storage.js"></script>
 <script defer src="js/score-masters.js"></script>
 <script defer src="js/score-it.js"></script>
 <script defer src="js/score-mba.js"></script>
 <script defer src="js/ui.js"></script>
 <script defer src="js/session.js"></script>
+<script defer src="js/stats.js"></script>
 <script defer src="js/ticker.js"></script>
 </body>
 </html>

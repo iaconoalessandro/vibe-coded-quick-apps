@@ -13,10 +13,16 @@
 window.Wizard = (function () {
   'use strict';
 
+  var I = window.I18N;
+  var T = I.t;
+
+  /* Text passes through the translation by itself, so a plain English
+   * string here arrives in the reader's language. Sentences built from
+   * numbers are translated as templates before they get this far. */
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
-    if (text !== undefined) n.textContent = text;
+    if (text !== undefined) n.textContent = T(text);
     return n;
   }
 
@@ -25,9 +31,9 @@ window.Wizard = (function () {
     return ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][n] || String(n);
   }
 
-  /* Newspaper style: one to nine in words, 10 and up in figures. */
-  var WORDS = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  function words(n) { return WORDS[n] || String(n); }
+  /* Newspaper style: one to nine in words, 10 and up in figures (figures
+   * throughout in Italian — see js/i18n.js). */
+  function words(n) { return I.words(n); }
 
   function create(cfg) {
     var model = cfg.model;
@@ -69,7 +75,7 @@ window.Wizard = (function () {
           if (i === current) b.setAttribute('aria-current', 'step');
           else b.removeAttribute('aria-current');
           b.setAttribute('aria-label', b.textContent +
-            (gaps ? ' — ' + gaps + ' unanswered' : ''));
+            (gaps ? ' — ' + T('{n} unanswered', { n: gaps }) : ''));
         });
       }
       drawSkipped();
@@ -99,7 +105,7 @@ window.Wizard = (function () {
         clearTimeout(deltaTimer);
         deltaTimer = setTimeout(function () { delta.className = 'delta'; }, 1600);
       }
-      box.setAttribute('aria-label', 'Score so far: ' + value + ' ' +
+      box.setAttribute('aria-label', T('Score so far: {value}', { value: value }) + ' ' +
         ((box.querySelector('.k') || {}).textContent || ''));
     }
 
@@ -133,14 +139,13 @@ window.Wizard = (function () {
       skipNote.hidden = !gaps.length;
       if (!gaps.length) return;
       var total = gaps.reduce(function (t, g) { return t + g.count; }, 0);
-      skipNote.appendChild(el('strong', null, total === 1
-        ? '1 question is still unanswered.'
-        : total + ' questions are still unanswered.'));
+      skipNote.appendChild(el('strong', null, I.tn(total,
+        '1 question is still unanswered.', '{n} questions are still unanswered.')));
       skipNote.appendChild(document.createTextNode(
-        ' You can see results now, but they will be less accurate.'));
+        ' ' + T('You can see results now, but they will be less accurate.')));
       var links = el('div', 'skip-links');
       gaps.forEach(function (g) {
-        var b = el('button', 'btn small', 'Go to ' + (g.index + 1) + '. ' + steps[g.index].title);
+        var b = el('button', 'btn small', T('Go to {n}. {title}', { n: g.index + 1, title: steps[g.index].title }));
         b.type = 'button';
         b.addEventListener('click', function () { go(g.index); });
         links.appendChild(b);
@@ -233,7 +238,7 @@ window.Wizard = (function () {
       var wrap = el('div');
       var search = document.createElement('input');
       search.type = 'search';
-      search.placeholder = 'Search employers…';
+      search.placeholder = T('Search employers…');
       var row = el('div', 'numrow');
 
       var num = document.createElement('input');
@@ -394,7 +399,7 @@ window.Wizard = (function () {
       syncers = [];
 
       var head = el('div', 'step-head');
-      head.appendChild(el('p', 'kicker', 'Part ' + roman(current + 1) + ' of ' + roman(steps.length)));
+      head.appendChild(el('p', 'kicker', T('Part {n} of {total}', { n: roman(current + 1), total: roman(steps.length) })));
       var title = el('h1', null, step.title);
       title.tabIndex = -1;       // focus target when moving between steps
       head.appendChild(title);
@@ -423,7 +428,7 @@ window.Wizard = (function () {
       var reset = el('button', 'btn ghost reset', 'Reset');
       reset.appendChild(el('span', 'long', ' answers'));
       reset.addEventListener('click', function () {
-        if (!confirm('Clear every answer and start over?')) return;
+        if (!confirm(T('Clear every answer and start over?'))) return;
         answers = {}; furthest = 0; Store.clear(cfg.key); go(0);
         if (cfg.onChange) cfg.onChange(answers);
       });
@@ -515,10 +520,10 @@ window.Wizard = (function () {
     box.appendChild(el('strong', null, pct < 30
       ? 'You have answered very little so far.'
       : 'Some main questions are still unanswered.'));
-    box.appendChild(document.createTextNode(
-      ' You have answered ' + pct + '% of the main questions. A missing answer usually scores nothing, ' +
+    box.appendChild(document.createTextNode(' ' + T(
+      'You have answered {pct}% of the main questions. A missing answer usually scores nothing, ' +
       'and an entry rule that depends on it cannot be checked — so treat these results ' +
-      'as a rough first look.'));
+      'as a rough first look.', { pct: pct })));
     var row = el('div', 'skip-links');
     var b = el('button', 'btn small', '← Answer the rest');
     b.type = 'button';
@@ -536,9 +541,9 @@ window.Wizard = (function () {
     var text = el('div', 'sec-text');
     text.appendChild(el('p', 'kicker', kicker));
     var h = el('h1', 'headline');
-    h.appendChild(document.createTextNode(title[0]));
+    h.appendChild(document.createTextNode(T(title[0])));
     h.appendChild(el('em', null, title[1]));
-    h.appendChild(document.createTextNode(title[2]));
+    h.appendChild(document.createTextNode(T(title[2])));
     text.appendChild(h);
     text.appendChild(el('p', 'standfirst', standfirst));
     head.appendChild(text);
@@ -563,7 +568,7 @@ window.Wizard = (function () {
       var img = document.createElement('img');
       img.src = shot.src;
       img.width = shot.w; img.height = shot.h;
-      img.alt = shot.alt;
+      img.alt = T(shot.alt);
       img.setAttribute('fetchpriority', 'high');
       pic.appendChild(img);
       plate.appendChild(pic);

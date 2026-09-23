@@ -7,12 +7,13 @@
   var S = window.IT_SCORE;
   var EV = window.IT_EVIDENCE || null;
   var el = Wizard.el;
+  var T = I18N.t, tn = I18N.tn, W = Wizard.words;
 
   var FACTOR_NAMES = {
-    academic: 'Degree class', institution: 'Undergraduate institution',
-    foundations: 'Computing foundations', maths: 'Mathematics',
-    evidence: 'What you have built', experience: 'Professional experience',
-    essays: 'Statement and motivation', references: 'References'
+    academic: T('Degree class'), institution: T('Undergraduate institution'),
+    foundations: T('Computing foundations'), maths: T('Mathematics'),
+    evidence: T('What you have built'), experience: T('Professional experience'),
+    essays: T('Statement and motivation'), references: T('References')
   };
 
   var SRC_LABEL = {
@@ -28,7 +29,7 @@
 
   var crumb = document.getElementById('crumb');
   if (crumb) crumb.textContent = track.name;
-  document.title = track.name + ' — Admission Chances Calculator';
+  document.title = T('{track} — Admission Chances Calculator', { track: track.name });
 
   /* One photograph per track, chosen for what the track actually selects on
    * rather than for a campus: computer science is people reading code, data
@@ -77,6 +78,7 @@
   /* --------------------------------------------------------------------- */
 
   function showResults(a, keepScroll) {
+    if (!keepScroll && window.Stats) Stats.event('results-computing-' + trackId);
     var res = S.evaluate(a, trackId);
     resultsView.innerHTML = '';
     wizardView.hidden = true;
@@ -94,13 +96,12 @@
     });
 
     var pct = S.completeness(a);
-    resultsView.appendChild(Wizard.resultsHead('Your results \u00b7 ' + track.name,
+    resultsView.appendChild(Wizard.resultsHead(T('Your results · {track}', { track: track.name }),
       headline(competitive.length, eligible.length, blocked.length),
-      'Your answers score ' + fmt(res.score.total) + ' on the track weighting' +
       (best && worst && best !== worst
-        ? ', and ' + fmt(worst.profileScore) + '\u2013' + fmt(best.profileScore) +
-          ' once each programme reads the file its own way. '
-        : '. ') +
+        ? T('Your answers score {score} on the track weighting, and {lo}–{hi} once each programme reads the file its own way.',
+            { score: fmt(res.score.total), lo: fmt(worst.profileScore), hi: fmt(best.profileScore) })
+        : T('Your answers score {score} on the track weighting.', { score: fmt(res.score.total) })) + ' ' +
       blockedLine(blocked.length, pct)));
 
     var grid = el('div', 'summary reveal');
@@ -113,7 +114,7 @@
       grid.appendChild(range);
     }
     grid.appendChild(cell('Competitive or better', String(competitive.length),
-      'of ' + res.rows.length + ' modelled'));
+      T('of {total} modelled', { total: res.rows.length })));
     grid.appendChild(cell('Ruled out by a published rule', String(blocked.length),
       blocked.length ? 'a rule, not a judgement'
                      : (pct < 100 ? 'none so far — some answers missing' : 'nothing blocks you')));
@@ -122,6 +123,8 @@
       wiz.go(wiz.firstMissingStep());
     });
     if (gapNote) resultsView.appendChild(gapNote);
+    var stale = window.ResultsKit && ResultsKit.staleNotice(res.rows.map(function (r) { return r.school.id; }));
+    if (stale) resultsView.appendChild(stale);
     resultsView.appendChild(grid);
 
     /* The thing that most needs saying on this track, said first. */
@@ -253,11 +256,12 @@
     var res = S.evaluate(merged(answers, patch), trackId);
     var rows = {}, comp = 0, elig = 0;
     res.rows.forEach(function (r) {
-      rows[r.school.id] = { num: fmt(r.adjusted), verdict: r.verdict, tier: tierOf(r), value: r.adjusted };
+      rows[r.school.id] = { num: fmt(r.adjusted), verdict: r.verdict, tier: tierOf(r), value: r.adjusted, name: r.school.name };
       if (r.eligible) { elig++; if (r.adjusted >= r.school.threshold) comp++; }
     });
-    return { rows: rows, summary: 'Profile score ' + fmt(res.score.total) + ' — Competitive or better at ' +
-      comp + ' of ' + elig + ' eligible' };
+    return { rows: rows, score: fmt(res.score.total), scoreLabel: 'Profile score',
+      summary: T('Profile score {score} — Competitive or better at {n} of {total} eligible',
+        { score: fmt(res.score.total), n: comp, total: elig }) };
   }
 
   /* No test factor on this track, so the levers are the parts of the file
@@ -292,28 +296,29 @@
     var strengths = contrib.filter(function (c) { return c.value >= 0.6; })
       .sort(function (x, y) { return y.value * y.weight - x.value * x.weight; }).slice(0, 4)
       .map(function (c) {
-        return { label: FACTOR_NAMES[c.key], detail: Math.round(c.value * 100) + '% of its ' + fmt(c.weight) + ' points' };
+        return { label: FACTOR_NAMES[c.key], detail: T('{pct}% of its {weight} points', { pct: Math.round(c.value * 100), weight: fmt(c.weight) }) };
       });
     var strong = strengths.map(function (x) { return x.label; });
     var gaps = contrib.filter(function (c) { return c.value < 0.8 && strong.indexOf(FACTOR_NAMES[c.key]) < 0; })
       .sort(function (x, y) { return (1 - y.value) * y.weight - (1 - x.value) * x.weight; }).slice(0, 4)
       .map(function (c) {
-        return { label: FACTOR_NAMES[c.key], detail: fmt((1 - c.value) * c.weight) + ' of ' + fmt(c.weight) + ' points not yet earned' };
+        return { label: FACTOR_NAMES[c.key], detail: T('{missing} of {weight} points not yet earned', { missing: fmt((1 - c.value) * c.weight), weight: fmt(c.weight) }) };
       });
 
     var steps = res.improvements.slice(0, 4).map(function (i) {
-      return i.groupLabel + ' → ' + i.optionLabel + ' (+' + fmt(i.gain) + ' on the track weighting)';
+      return T('{group} → {option} (+{gain} on the track weighting)', { group: T(i.groupLabel), option: T(i.optionLabel), gain: fmt(i.gain) });
     });
     blocked.slice(0, 3).forEach(function (r) {
-      steps.push('Ruled out at ' + r.school.name + ': ' + r.gates.failures[0].label.replace(/^./, function (c) { return c.toLowerCase(); }) + '.');
+      steps.push(T('Ruled out at {school}: {rule}.', { school: r.school.name,
+        rule: T(r.gates.failures[0].label).replace(/^./, function (c) { return c.toLowerCase(); }) }));
     });
     if (S.completeness(answers) < 100) steps.unshift('Answer the questions you skipped — a missing answer scores nothing.');
 
     return {
       kicker: track.full,
       title: headline(comp.length, eligible.length, blocked.length),
-      standfirst: 'A profile score of ' + fmt(sc.total) + ' on the track weighting, before any programme’s ' +
-        'own emphasis. ' + blockedLine(blocked.length, S.completeness(answers)),
+      standfirst: T('A profile score of {score} on the track weighting, before any programme’s own emphasis.',
+        { score: fmt(sc.total) }) + ' ' + blockedLine(blocked.length, S.completeness(answers)),
       facts: [['Profile score', fmt(sc.total) + ' / 100'], ['Competitive or better', comp.length + ' / ' + eligible.length],
               ['Ruled out by a rule', String(blocked.length)], ['Answered', S.completeness(answers) + '%']],
       rows: rows, strengths: strengths, gaps: gaps, steps: steps
@@ -325,8 +330,8 @@
   function profileExplainer(res) {
     var box = el('div', 'prof-legend reveal');
     var intro_ = el('p', 'why-note');
-    intro_.textContent = 'The same answers are worth different amounts at different programmes. ' +
-      'Each one below is read the way its published process suggests it is actually read.';
+    intro_.textContent = T('The same answers are worth different amounts at different programmes. ' +
+      'Each one below is read the way its published process suggests it is actually read.');
     box.appendChild(intro_);
 
     var byProfile = {};
@@ -350,9 +355,9 @@
     });
 
     var caveat = el('p', 'prof-caveat');
-    caveat.appendChild(document.createTextNode(
+    caveat.appendChild(document.createTextNode(T(
       'Which programme gets which reading is my judgement of its published process, not ' +
-      'something any of them state in these terms.'));
+      'something any of them state in these terms.')));
     caveat.appendChild(src('CAL'));
     box.appendChild(caveat);
     return box;
@@ -385,7 +390,7 @@
 
   function emphasisPanel(r) {
     var box = el('div', 'why emph');
-    box.appendChild(el('p', 'why-head', 'How this programme reads a file · ' + r.profile.label));
+    box.appendChild(el('p', 'why-head', T('How this programme reads a file · {profile}', { profile: r.profile.label })));
 
     var why = el('p', 'why-note');
     why.style.marginBottom = '10px';
@@ -398,10 +403,10 @@
     if (Math.abs(r.profileShift) >= 0.5) {
       var shift = el('p', 'shift ' + (r.profileShift > 0 ? 'up' : 'down'));
       shift.textContent = r.profileShift > 0
-        ? 'Worth ' + fmt(r.profileShift) + ' points to you against the track average — this ' +
-          'programme leans on the parts of your file that are strong.'
-        : 'Costs you ' + fmt(-r.profileShift) + ' points against the track average — it leans ' +
-          'on the parts of your file that are thin.';
+        ? T('Worth {n} points to you against the track average — this ' +
+          'programme leans on the parts of your file that are strong.', { n: fmt(r.profileShift) })
+        : T('Costs you {n} points against the track average — it leans ' +
+          'on the parts of your file that are thin.', { n: fmt(-r.profileShift) });
       box.appendChild(shift);
     }
     return box;
@@ -413,11 +418,10 @@
 
     var head = el('p', 'why-head');
     if (r.gap > 0) {
-      head.textContent = 'You are ' + fmt(r.gap) + ' points short of the Competitive threshold ' +
-        'used here, which is ' + sc.threshold + '.';
+      head.textContent = T('You are {n} points short of the Competitive threshold used here, which is {threshold}.',
+        { n: fmt(r.gap), threshold: sc.threshold });
     } else {
-      head.textContent = 'On score you clear the threshold used here by ' +
-        fmt(-r.gap) + ' points.';
+      head.textContent = T('On score you clear the threshold used here by {n} points.', { n: fmt(-r.gap) });
     }
     box.appendChild(head);
 
@@ -430,13 +434,13 @@
 
     if (r.roundGain > 0) {
       box.appendChild(bullet(
-        'Applying earlier in the cycle would be worth ' + fmt(r.roundGain) + ' points here.',
+        T('Applying earlier in the cycle would be worth {n} points here.', { n: fmt(r.roundGain) }),
         '+' + fmt(r.roundGain), r.regime.note));
     }
 
     if (r.gap > 0 && r.path.steps.length) {
       r.path.steps.slice(0, 4).forEach(function (st) {
-        box.appendChild(bullet(st.groupLabel + ' → ' + st.optionLabel, '+' + fmt(st.gain)));
+        box.appendChild(bullet(T(st.groupLabel) + ' → ' + T(st.optionLabel), '+' + fmt(st.gain)));
       });
       if (!r.path.reached) {
         box.appendChild(el('p', 'why-note',
@@ -454,7 +458,7 @@
   function bullet(text, gain, note_) {
     var li = el('div', 'why-item');
     var main = el('span', 'why-text');
-    main.textContent = text;
+    main.textContent = T(text);
     li.appendChild(main);
     if (gain) li.appendChild(el('span', 'why-gain', gain));
     if (note_) li.appendChild(el('small', 'why-note', note_));
@@ -472,17 +476,16 @@
 
     if (!e.n) {
       v.appendChild(document.createTextNode(
-        'No applicant has posted a computing master\u2019s result for ' + e.institution +
-        ' since January 2021.'));
+        T('No applicant has posted a computing master’s result for {institution} since January 2021.', { institution: e.institution })));
       v.appendChild(src('GC'));
       row.appendChild(v);
       return row;
     }
 
-    var line = e.n + ' result' + (e.n === 1 ? '' : 's') + ' posted for computing ' +
-      'master\u2019s at ' + e.institution + ', ' + e.window + ' \u2014 ' +
-      e.reported.accepted + ' accepted, ' + e.reported.rejected + ' rejected' +
-      (e.reported.waitlisted ? ', ' + e.reported.waitlisted + ' waitlisted' : '') + '.';
+    var line = tn(e.n, '{n} result posted for computing master’s at {institution}, {window}',
+        '{n} results posted for computing master’s at {institution}, {window}', { institution: e.institution, window: T(e.window) }) +
+      ' — ' + T('{acc} accepted, {rej} rejected', { acc: e.reported.accepted, rej: e.reported.rejected }) +
+      (e.reported.waitlisted ? ', ' + T('{n} waitlisted', { n: e.reported.waitlisted }) : '') + '.';
     v.appendChild(document.createTextNode(line));
     v.appendChild(src('GC'));
 
@@ -495,15 +498,14 @@
 
     if (e.timing && e.timing.median) {
       v.appendChild(el('small', 'why-note',
-        'Decisions reported between ' + e.timing.earliest + ' and ' + e.timing.latest +
-        ', with the middle of them around ' + e.timing.median + '.'));
+        T('Decisions reported between {earliest} and {latest}, with the middle of them around {median}.',
+          { earliest: T(e.timing.earliest), latest: T(e.timing.latest), median: T(e.timing.median) })));
     }
     if (e.gpa) {
       v.appendChild(el('small', 'why-note',
-        'Reported grade average among those accepted: median ' + e.gpa.accMedian +
-        ' (middle half ' + e.gpa.accP25 + '\u2013' + e.gpa.accP75 + ', from ' +
-        e.gpa.accN + ' reports on a four-point scale)' +
-        (e.gpa.rejMedian ? '; among those rejected, ' + e.gpa.rejMedian : '') + '.'));
+        T('Reported grade average among those accepted: median {median} (middle half {p25}–{p75}, from {n} reports on a four-point scale)',
+          { median: e.gpa.accMedian, p25: e.gpa.accP25, p75: e.gpa.accP75, n: e.gpa.accN }) +
+        (e.gpa.rejMedian ? T('; among those rejected, {median}', { median: e.gpa.rejMedian }) : '') + '.'));
     } else {
       v.appendChild(el('small', 'why-note',
         'Too few reports to say anything about the grades of people admitted here, so ' +
@@ -516,9 +518,9 @@
       var pool = e.tier && EV && EV.tiers[e.tier];
       if (pool && pool.gpa) {
         v.appendChild(el('small', 'why-note',
-          'Pooled across comparable programmes (' + pool.n + ' reports), applicants who were ' +
-          'accepted reported a median of ' + pool.gpa.accMedian + ' and those rejected ' +
-          pool.gpa.rejMedian + '. That is a group pattern, not this programme\u2019s bar.'));
+          T('Pooled across comparable programmes ({n} reports), applicants who were accepted reported a median of ' +
+            '{acc} and those rejected {rej}. That is a group pattern, not this programme’s bar.',
+            { n: pool.n, acc: pool.gpa.accMedian, rej: pool.gpa.rejMedian })));
       }
     }
     v.appendChild(el('small', 'why-note',
@@ -534,9 +536,9 @@
 
     var name = el('div', 'name');
     name.appendChild(document.createTextNode(sc.name));
-    var meta = sc.region + ' · ' + (sc.gates || []).length + ' published rule' +
-      ((sc.gates || []).length === 1 ? '' : 's') + ' · ' + r.regime.label.toLowerCase();
-    if (r.roundMod) meta += ' (' + r.roundMod + ' for your timing)';
+    var meta = T(sc.region) + ' · ' + tn((sc.gates || []).length, '{n} published rule', '{n} published rules') +
+      ' · ' + r.regime.label.toLowerCase();
+    if (r.roundMod) meta += ' ' + T('({n} for your timing)', { n: r.roundMod });
     var m = el('small', null, meta);
     m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
@@ -547,23 +549,23 @@
       var ul = el('ul', 'gatelist');
       r.gates.failures.forEach(function (f) {
         var li = el('li');
-        li.appendChild(document.createTextNode(f.label));
+        li.appendChild(document.createTextNode(T(f.label)));
         var t = src(f.src); if (t) li.appendChild(t);
         ul.appendChild(li);
       });
       name.appendChild(ul);
 
       var stand = el('p', 'standing ' + r.band.tone);
-      stand.textContent = 'On score alone you would be ' + r.band.label.toLowerCase() +
-        ' here — ' + fmt(r.adjusted) + ' against a threshold of ' + sc.threshold +
-        '. The rule above is what blocks you, not your profile.';
+      stand.textContent = T('On score alone you would be {band} here — {score} against a threshold of {threshold}. ' +
+        'The rule above is what blocks you, not your profile.',
+        { band: T(r.band.label).toLowerCase(), score: fmt(r.adjusted), threshold: sc.threshold });
       name.appendChild(stand);
     }
     if (r.gates.warnings.length) {
       var uw = el('ul', 'gatelist warn');
       r.gates.warnings.forEach(function (f) {
         var li = el('li');
-        li.appendChild(document.createTextNode(f.label));
+        li.appendChild(document.createTextNode(T(f.label)));
         var t = src(f.src); if (t) li.appendChild(t);
         uw.appendChild(li);
       });
@@ -577,7 +579,7 @@
     det.style.marginTop = '8px';
     var sm = el('summary');
     sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--muted);list-style:none';
-    sm.textContent = 'What this programme actually publishes';
+    sm.textContent = T('What this programme actually publishes');
     det.appendChild(sm);
     var facts = el('div', 'facts');
     facts.style.marginTop = '8px';
@@ -606,7 +608,7 @@
     var thr = el('div', 'fact');
     thr.appendChild(el('span', 'fk', 'Score threshold used here'));
     var tv = el('span', 'fv');
-    tv.appendChild(document.createTextNode(sc.threshold + ' competitive, ' + sc.strong + ' strong'));
+    tv.appendChild(document.createTextNode(T('{c} competitive, {s} strong', { c: sc.threshold, s: sc.strong })));
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
@@ -633,14 +635,14 @@
   function breakdown(res) {
     var det = el('details', 'breakdown reveal');
     var sm = el('summary');
-    sm.textContent = 'How the headline score was built';
+    sm.textContent = T('How the headline score was built');
     det.appendChild(sm);
     var inner = el('div', 'inner');
     res.score.contributions.slice().sort(function (a, b) { return b.pts - a.pts; })
       .forEach(function (c) {
         var row = el('div', 'bd-row');
         row.appendChild(el('span', null, FACTOR_NAMES[c.key] + ' · ' +
-          Math.round(c.value * 100) + '% of a possible ' + fmt(c.weight)));
+          T('{pct}% of a possible {weight}', { pct: Math.round(c.value * 100), weight: fmt(c.weight) })));
         row.appendChild(el('span', 'p', fmt(c.pts)));
         inner.appendChild(row);
       });
@@ -660,18 +662,19 @@
 
   /* The results headline, in words. */
   function headline(competitive, eligible, blocked) {
-    if (!eligible) return 'Every programme here is ruled out by a published rule.';
-    var of = Wizard.words(eligible) + (blocked ? ' eligible' : '');
-    if (!competitive) return 'Not yet competitive at any of the ' + of + '.';
-    return 'Competitive or better at ' + Wizard.words(competitive) + ' of ' + of + '.';
+    if (!eligible) return T('Every programme here is ruled out by a published rule.');
+    var v = { n: W(competitive), total: W(eligible) };
+    if (!competitive) return blocked ? T('Not yet competitive at any of the {total} eligible.', v)
+                                     : T('Not yet competitive at any of the {total}.', v);
+    return blocked ? T('Competitive or better at {n} of {total} eligible.', v)
+                   : T('Competitive or better at {n} of {total}.', v);
   }
   function blockedLine(blocked, pct) {
     if (blocked) {
-      var n = Wizard.words(blocked);
-      return n.charAt(0).toUpperCase() + n.slice(1) + (blocked === 1 ? ' programme is' : ' programmes are') +
-        ' ruled out by a published rule.';
+      return tn(blocked, '{N} programme is ruled out by a published rule.',
+        '{N} programmes are ruled out by a published rule.', { N: I18N.cap(W(blocked)) });
     }
-    return pct < 100 ? 'No published rule blocks you on the answers so far.' : 'No published rule blocks you.';
+    return T(pct < 100 ? 'No published rule blocks you on the answers so far.' : 'No published rule blocks you.');
   }
 
   function cell(k, v, sub) {
@@ -693,7 +696,7 @@
   }
   function section(title, sub) {
     var h = el('h2', 'section reveal');
-    h.appendChild(document.createTextNode(title));
+    h.appendChild(document.createTextNode(T(title)));
     if (sub !== undefined && sub !== null) h.appendChild(el('span', 'count', String(sub)));
     return h;
   }

@@ -7,11 +7,12 @@
   var S = window.MASTERS_SCORE;
   var C = window.CONVERT;
   var el = Wizard.el;
+  var T = I18N.t, tn = I18N.tn, W = Wizard.words;
 
   var FACTOR_NAMES = {
-    academic: 'Academic record', test: 'Test score', institution: 'Undergraduate institution',
-    quant: 'Quantitative preparation', internship: 'Internships', leadership: 'Leadership',
-    international: 'International exposure', essays: 'Essays and motivation'
+    academic: T('Academic record'), test: T('Test score'), institution: T('Undergraduate institution'),
+    quant: T('Quantitative preparation'), internship: T('Internships'), leadership: T('Leadership'),
+    international: T('International exposure'), essays: T('Essays and motivation')
   };
 
   var SRC_LABEL = {
@@ -31,7 +32,7 @@
 
   var crumb = document.getElementById('crumb');
   if (crumb) crumb.textContent = track.name;
-  document.title = track.name + " master's — Admission Chances Calculator";
+  document.title = T('{track} master’s — Admission Chances Calculator', { track: track.name });
 
   /* One photograph per track, chosen for the world the programme feeds into
    * rather than for a campus: finance is a business district, management a
@@ -86,17 +87,17 @@
         return;
       }
       var l1 = el('div');
-      l1.appendChild(document.createTextNode('Projected degree mark before committee points: '));
+      l1.appendChild(document.createTextNode(T('Projected degree mark before committee points:') + ' '));
       l1.appendChild(el('b', null, r.projectedBase + ' / 110'));
       out.appendChild(l1);
 
       var l2 = el('div');
-      l2.appendChild(document.createTextNode('With typical discretionary points, plausibly up to '));
+      l2.appendChild(document.createTextNode(T('With typical discretionary points, plausibly up to') + ' '));
       l2.appendChild(el('b', null, r.projectedCeiling + ' / 110'));
       out.appendChild(l2);
 
       var l3 = el('div');
-      l3.appendChild(document.createTextNode('Transcript-average GPA equivalent: '));
+      l3.appendChild(document.createTextNode(T('Transcript-average GPA equivalent:') + ' '));
       l3.appendChild(el('b', null, r.gpa + ' / 4.0'));
       out.appendChild(l3);
 
@@ -133,11 +134,8 @@
 
   function fmt(n) { return (Math.round(n * 10) / 10).toString(); }
 
-  /* 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st */
-  function ordinal(n) {
-    var s = ['th', 'st', 'nd', 'rd'], v = n % 100;
-    return n + (s[(v - 20) % 10] || s[v] || s[0]);
-  }
+  /* 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st (75º in Italian) */
+  function ordinal(n) { return I18N.ordinal(n); }
 
   /* Inline SVG rather than a CSS mask. A mask referencing an external SVG is
    * treated as a cross-origin image by Chrome, and every file:// document is
@@ -178,6 +176,7 @@
   }
 
   function showResults(answers, keepScroll) {
+    if (!keepScroll && window.Stats) Stats.event('results-masters-' + trackId);
     lastAnswers = answers;
     var res = S.evaluate(answers, trackId);
     var s = res.score;
@@ -198,21 +197,21 @@
     var bestFit = spread[0], worstFit = spread[spread.length - 1];
     var pct = S.completeness(answers);
 
-    resultsView.appendChild(Wizard.resultsHead('Your results \u00b7 ' + track.name,
+    resultsView.appendChild(Wizard.resultsHead(T('Your results · {track}', { track: track.name }),
       headline(competitive.length, eligible.length, blocked.length),
-      'Your answers score ' + fmt(s.total) + ' on the ' + track.name.toLowerCase() +
-      ' weighting, and ' + fmt(worstFit.profileScore) + '\u2013' + fmt(bestFit.profileScore) +
-      ' once each school applies its own emphasis. ' + blockedLine(blocked.length, pct)));
+      T('Your answers score {score} on the {track} weighting, and {lo}–{hi} once each school applies its own emphasis.',
+        { score: fmt(s.total), track: track.name.toLowerCase(), lo: fmt(worstFit.profileScore), hi: fmt(bestFit.profileScore) }) +
+      ' ' + blockedLine(blocked.length, pct)));
 
     var sum = el('div', 'summary reveal');
     sum.appendChild(dialCell('Profile score', s.total,
-      track.name.toLowerCase() + ' weighting, before any school\u2019s own emphasis'));
+      T('{track} weighting, before any school’s own emphasis', { track: track.name.toLowerCase() })));
     var rangeCell = cell('Under each school\u2019s own weighting',
       fmt(worstFit.profileScore) + '\u2013' + fmt(bestFit.profileScore),
       'the same answers, reweighted');
     rangeCell.querySelector('.v').classList.add('range');
     sum.appendChild(rangeCell);
-    sum.appendChild(cell('Competitive or better', String(competitive.length), 'of ' + eligible.length + ' eligible programmes'));
+    sum.appendChild(cell('Competitive or better', String(competitive.length), T('of {total} eligible programmes', { total: eligible.length })));
     sum.appendChild(cell('Ruled out by a hard rule', String(blocked.length),
       blocked.length ? 'see below' : (pct < 100 ? 'none so far — some answers missing' : 'none')));
     var gapNote = Wizard.incompleteNote(pct, function () {
@@ -220,6 +219,8 @@
       wiz.go(wiz.firstMissingStep());
     });
     if (gapNote) resultsView.appendChild(gapNote);
+    var stale = window.ResultsKit && ResultsKit.staleNotice(res.rows.map(function (r) { return r.school.id; }));
+    if (stale) resultsView.appendChild(stale);
     resultsView.appendChild(sum);
 
     /* What-if and the filter pills sit above the explainer, so the tables
@@ -247,16 +248,16 @@
         'test are listed as ineligible rather than scored low.'));
     }
     if (s.test && s.test.submitting) {
-      resultsView.appendChild(note(
-        'Your score sits at roughly the ' + ordinal(Math.round(s.test.pct)) + ' percentile, ' +
-        'which converts to about ' + s.test.gmat + ' on the GMAT 10th Edition scale. ' +
+      resultsView.appendChild(note(T(
+        'Your score sits at roughly the {pct} percentile, which converts to about {gmat} on the GMAT 10th Edition scale. ' +
         'Cross-scale conversion is approximate — GMAT Focus and the GMAT 10th Edition are ' +
-        'different instruments, and many published "averages" do not say which one they mean.'));
+        'different instruments, and many published "averages" do not say which one they mean.',
+        { pct: ordinal(Math.round(s.test.pct)), gmat: s.test.gmat })));
     }
 
     /* ---- eligible schools ---- */
     resultsView.appendChild(section('Programmes you are eligible for',
-      eligible.length + ' of ' + res.rows.length));
+      T('{n} of {total}', { n: eligible.length, total: res.rows.length })));
 
     if (!eligible.length) {
       resultsView.appendChild(el('div', 'table', '')).appendChild(
@@ -309,13 +310,13 @@
 
     /* ---- breakdown ---- */
     var det = el('details', 'breakdown');
-    det.appendChild(el('summary', null, 'How your ' + fmt(s.total) + ' was calculated'));
+    det.appendChild(el('summary', null, T('How your {score} was calculated', { score: fmt(s.total) })));
     var inner = el('div', 'inner');
     var NAMES = FACTOR_NAMES;
     s.contributions.forEach(function (c) {
       var r = el('div', 'bd-row');
       r.appendChild(el('span', null, NAMES[c.key] + '  ·  ' +
-        Math.round(c.value * 100) + '% of a possible ' + Math.round(c.weight * 10) / 10));
+        T('{pct}% of a possible {weight}', { pct: Math.round(c.value * 100), weight: Math.round(c.weight * 10) / 10 })));
       r.appendChild(el('span', 'p', fmt(c.pts)));
       inner.appendChild(r);
     });
@@ -349,7 +350,7 @@
     actions.appendChild(el('span', 'spacer'));
     var other = el('a', 'btn');
     other.href = 'business.html';
-    other.textContent = 'Try another track';
+    other.textContent = T('Try another track');
     actions.appendChild(other);
     var print = el('button', 'btn', 'Print the page');
     print.addEventListener('click', function () { window.print(); });
@@ -391,11 +392,12 @@
     var res = S.evaluate(merged(answers, patch), trackId);
     var rows = {}, comp = 0, elig = 0;
     res.rows.forEach(function (r) {
-      rows[r.school.id] = { num: fmt(r.adjusted), verdict: r.verdict, tier: tierOf(r), value: r.adjusted };
+      rows[r.school.id] = { num: fmt(r.adjusted), verdict: r.verdict, tier: tierOf(r), value: r.adjusted, name: r.school.name };
       if (r.eligible) { elig++; if (r.band.tone === 'good' || r.band.tone === 'high') comp++; }
     });
-    return { rows: rows, summary: 'Profile score ' + fmt(res.score.total) + ' — Competitive or better at ' +
-      comp + ' of ' + elig + ' eligible' };
+    return { rows: rows, score: fmt(res.score.total), scoreLabel: 'Profile score',
+      summary: T('Profile score {score} — Competitive or better at {n} of {total} eligible',
+        { score: fmt(res.score.total), n: comp, total: elig }) };
   }
 
   /* The test first, on the scale you answered in (Focus if you have not sat
@@ -408,7 +410,7 @@
     function add(lo, hi, step, fn) { for (var v = lo; v <= hi; v += step) steps.push(fn(v)); }
     if (kind === 'gre') {
       add(140, 170, 1, function (v) {
-        return { label: 'GRE quant ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gre', greQuant: v } };
+        return { label: T('GRE quant {n}', { n: v }), v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gre', greQuant: v } };
       });
     } else if (kind === 'gmat') {
       add(500, 800, 10, function (v) {
@@ -453,32 +455,33 @@
     var strengths = contrib.filter(function (c) { return c.value >= 0.6; })
       .sort(function (x, y) { return y.value * y.weight - x.value * x.weight; }).slice(0, 4)
       .map(function (c) {
-        return { label: FACTOR_NAMES[c.key], detail: Math.round(c.value * 100) + '% of its ' + fmt(c.weight) + ' points' };
+        return { label: FACTOR_NAMES[c.key], detail: T('{pct}% of its {weight} points', { pct: Math.round(c.value * 100), weight: fmt(c.weight) }) };
       });
     var strong = strengths.map(function (x) { return x.label; });
     var gaps = contrib.filter(function (c) { return c.value < 0.8 && strong.indexOf(FACTOR_NAMES[c.key]) < 0; })
       .sort(function (x, y) { return (1 - y.value) * y.weight - (1 - x.value) * x.weight; }).slice(0, 4)
       .map(function (c) {
-        return { label: FACTOR_NAMES[c.key], detail: fmt((1 - c.value) * c.weight) + ' of ' + fmt(c.weight) + ' points not yet earned' };
+        return { label: FACTOR_NAMES[c.key], detail: T('{missing} of {weight} points not yet earned', { missing: fmt((1 - c.value) * c.weight), weight: fmt(c.weight) }) };
       });
 
     var steps = res.improvements.slice(0, 4).map(function (i) {
-      return i.groupLabel + ' → ' + i.optionLabel + ' (+' + fmt(i.gain) + ' on the track weighting)';
+      return T('{group} → {option} (+{gain} on the track weighting)', { group: T(i.groupLabel), option: T(i.optionLabel), gain: fmt(i.gain) });
     });
     if (!s.test.submitting && res.breakEven) {
-      steps.push('Decide on a test: it only helps above roughly the ' + ordinal(res.breakEven.percentile) +
-        ' percentile — about ' + res.breakEven.gmat + ' GMAT or ' + res.breakEven.focus + ' Focus.');
+      steps.push(T('Decide on a test: it only helps above roughly the {pct} percentile — about {gmat} GMAT or {focus} Focus.',
+        { pct: ordinal(res.breakEven.percentile), gmat: res.breakEven.gmat, focus: res.breakEven.focus }));
     }
     blocked.slice(0, 3).forEach(function (r) {
-      steps.push('Ruled out at ' + r.school.name + ': ' + r.gates.failures[0].label.replace(/^./, function (c) { return c.toLowerCase(); }) + '.');
+      steps.push(T('Ruled out at {school}: {rule}.', { school: r.school.name,
+        rule: T(r.gates.failures[0].label).replace(/^./, function (c) { return c.toLowerCase(); }) }));
     });
     if (S.completeness(answers) < 100) steps.unshift('Answer the questions you skipped — a missing answer scores nothing.');
 
     return {
       kicker: track.full,
       title: headline(comp.length, eligible.length, blocked.length),
-      standfirst: 'A profile score of ' + fmt(s.total) + ' on the ' + track.name.toLowerCase() +
-        ' weighting, before any school’s own emphasis. ' + blockedLine(blocked.length, S.completeness(answers)),
+      standfirst: T('A profile score of {score} on the {track} weighting, before any school’s own emphasis.',
+        { score: fmt(s.total), track: track.name.toLowerCase() }) + ' ' + blockedLine(blocked.length, S.completeness(answers)),
       facts: [['Profile score', fmt(s.total) + ' / 100'], ['Competitive or better', comp.length + ' / ' + eligible.length],
               ['Ruled out by a rule', String(blocked.length)], ['Answered', S.completeness(answers) + '%']],
       rows: rows, strengths: strengths, gaps: gaps, steps: steps
@@ -500,26 +503,27 @@
 
     var body = el('div', 'panel-body');
     var lead = el('p');
-    lead.textContent =
-      'A track weighting says what a ' + track.name.toLowerCase() + ' applicant is generally ' +
+    lead.textContent = T(
+      'A track weighting says what a {track} applicant is generally ' +
       'judged on. It does not say what any one school does with the file, and that difference ' +
       'is large. Bocconi runs no interview and takes no reference letters on the standard ' +
       'route, names GPA as a compulsory pillar, may recalculate that GPA from your transcript ' +
       'itself, and applies a test floor to everyone — grades and the test are close to the ' +
       'whole ranking there. HEC and IE run essays, recorded answers and live interviews ' +
-      'instead. So every programme below is scored under its own weighting.';
+      'instead. So every programme below is scored under its own weighting.', { track: track.name.toLowerCase() });
     body.appendChild(lead);
 
     var spread = Math.round((bestFit.profileScore - worstFit.profileScore) * 10) / 10;
     if (spread >= 4) {
       var p2 = el('p');
-      p2.textContent =
-        'For your answers that is a ' + fmt(spread) + '-point swing. Your profile suits ' +
-        bestFit.school.name + ' \u2014 ' + bestFit.profile.short + ', ' +
-        fmt(bestFit.profileScore) + ' \u2014 and works against you at ' + worstFit.school.name +
-        ' \u2014 ' + worstFit.profile.short + ', ' + fmt(worstFit.profileScore) +
-        '. Choosing where to apply is doing more work here than any single thing you could ' +
-        'change about the application.';
+      p2.textContent = T(
+        'For your answers that is a {spread}-point swing. Your profile suits {best} — {bestProfile}, ' +
+        '{bestScore} — and works against you at {worst} — {worstProfile}, {worstScore}. ' +
+        'Choosing where to apply is doing more work here than any single thing you could ' +
+        'change about the application.', {
+          spread: fmt(spread), best: bestFit.school.name, bestProfile: bestFit.profile.short,
+          bestScore: fmt(bestFit.profileScore), worst: worstFit.school.name,
+          worstProfile: worstFit.profile.short, worstScore: fmt(worstFit.profileScore) });
       body.appendChild(p2);
     }
 
@@ -544,25 +548,25 @@
 
       var names = schools.map(function (r) { return r.school.name; });
       row.appendChild(el('p', 'prof-schools',
-        names.length + (names.length === 1 ? ' programme: ' : ' programmes: ') + names.join(' · ')));
+        tn(names.length, '{n} programme:', '{n} programmes:') + ' ' + names.join(' · ')));
       legend.appendChild(row);
     });
     body.appendChild(legend);
 
     var legend = el('p', 'prof-caveat');
-    legend.textContent =
+    legend.textContent = T(
       'In the bars above and on every programme below: a green bar with a + means this ' +
       'school weighs that factor more heavily than the track average, and a grey bar with ' +
-      'a \u2212 means it weighs it less. The number is the weight out of 100.';
+      'a − means it weighs it less. The number is the weight out of 100.');
     body.appendChild(legend);
 
     var caveat = el('p', 'prof-caveat');
-    caveat.appendChild(document.createTextNode(
+    caveat.appendChild(document.createTextNode(T(
       'Which profile a school belongs to is my reading of its published process, not ' +
       'something any school states as a formula. The multipliers rescale back to the same ' +
       'hundred points, so a profile moves emphasis around rather than handing anyone free ' +
       'marks — an evenly balanced applicant scores about the same everywhere, and only a ' +
-      'lopsided one moves much.'));
+      'lopsided one moves much.')));
     caveat.appendChild(src('CAL'));
     body.appendChild(caveat);
 
@@ -601,7 +605,7 @@
   function emphasisPanel(r) {
     var box = el('div', 'why emph');
     var head = el('p', 'why-head');
-    head.textContent = 'What this school weighs \u00b7 ' + r.profile.label;
+    head.textContent = T('What this school weighs · {profile}', { profile: r.profile.label });
     box.appendChild(head);
 
     var why = el('p', 'why-note');
@@ -615,10 +619,10 @@
     if (Math.abs(r.profileShift) >= 0.5) {
       var shift = el('p', 'shift ' + (r.profileShift > 0 ? 'up' : 'down'));
       shift.textContent = r.profileShift > 0
-        ? 'Worth ' + fmt(r.profileShift) + ' points to you against the track average — this ' +
-          'school leans on the parts of your file that are strong.'
-        : 'Costs you ' + fmt(-r.profileShift) + ' points against the track average — it leans ' +
-          'on the parts of your file that are thin.';
+        ? T('Worth {n} points to you against the track average — this ' +
+          'school leans on the parts of your file that are strong.', { n: fmt(r.profileShift) })
+        : T('Costs you {n} points against the track average — it leans ' +
+          'on the parts of your file that are thin.', { n: fmt(-r.profileShift) });
       box.appendChild(shift);
     }
     return box;
@@ -634,11 +638,11 @@
 
     var head = el('p', 'why-head');
     if (r.gap > 0) {
-      head.textContent = 'You are ' + fmt(r.gap) + ' points short of this programme\'s ' +
-        'Competitive threshold of ' + sc.threshold + '.';
+      head.textContent = T('You are {n} points short of this programme’s Competitive threshold of {threshold}.',
+        { n: fmt(r.gap), threshold: sc.threshold });
     } else {
-      head.textContent = 'You are ' + fmt(-r.gap) + ' points clear of the Competitive ' +
-        'threshold of ' + sc.threshold + '.';
+      head.textContent = T('You are {n} points clear of the Competitive threshold of {threshold}.',
+        { n: fmt(-r.gap), threshold: sc.threshold });
     }
     box.appendChild(head);
 
@@ -657,9 +661,9 @@
 
     if (r.gap > 0 && r.minTest) {
       box.appendChild(bullet(
-        'Sit a test scoring about ' + r.minTest.gmat + ' (GMAT) / ' + r.minTest.focus + ' (Focus)',
-        'reaches ' + sc.threshold,
-        'Roughly the ' + ordinal(r.minTest.percentile) + ' percentile. That alone would close the gap.'));
+        T('Sit a test scoring about {gmat} (GMAT) / {focus} (Focus)', { gmat: r.minTest.gmat, focus: r.minTest.focus }),
+        T('reaches {n}', { n: sc.threshold }),
+        T('Roughly the {pct} percentile. That alone would close the gap.', { pct: ordinal(r.minTest.percentile) })));
 
     } else if (r.gap > 0 && !r.minTest && notSubmitting) {
       box.appendChild(bullet('A test score alone will not close this gap', null,
@@ -670,29 +674,29 @@
        * useful number is the floor that keeps you clear, not a target. */
       box.appendChild(bullet(
         'You need a test here, but only a modest one',
-        'about ' + r.minTest.gmat,
-        'Your profile is ' + fmt(-r.gap) + ' points clear of the threshold without a score, so ' +
-        'anything from roughly the ' + ordinal(r.minTest.percentile) + ' percentile up — about ' +
-        r.minTest.gmat + ' GMAT or ' + r.minTest.focus + ' Focus — keeps you at or above ' +
-        sc.threshold + '. A weaker score than that would pull you back under it.'));
+        T('about {n}', { n: r.minTest.gmat }),
+        T('Your profile is {n} points clear of the threshold without a score, so ' +
+          'anything from roughly the {pct} percentile up — about {gmat} GMAT or {focus} Focus — keeps you at or above ' +
+          '{threshold}. A weaker score than that would pull you back under it.',
+          { n: fmt(-r.gap), pct: ordinal(r.minTest.percentile), gmat: r.minTest.gmat, focus: r.minTest.focus, threshold: sc.threshold })));
 
     } else if (r.gap <= 0 && !mustTest && breakEven) {
       box.appendChild(bullet(
         'You clear this without a test, and it does not require one', null,
-        'Submitting anyway only helps above roughly the ' + ordinal(breakEven.percentile) +
-        ' percentile — about ' + breakEven.gmat + ' GMAT or ' + breakEven.focus +
-        ' Focus. Below that it would lower your score for no reason.'));
+        T('Submitting anyway only helps above roughly the {pct} percentile — about {gmat} GMAT or {focus} ' +
+          'Focus. Below that it would lower your score for no reason.',
+          { pct: ordinal(breakEven.percentile), gmat: breakEven.gmat, focus: breakEven.focus })));
     }
 
     /* Everything else that would move the number, cheapest first. */
     if (r.gap > 0 && r.path.steps.length) {
       var intro = el('p', 'why-sub');
-      intro.textContent = r.path.reached
+      intro.textContent = T(r.path.reached
         ? 'These changes together would get you there:'
-        : 'The biggest available gains — not enough on their own, but they close most of it:';
+        : 'The biggest available gains — not enough on their own, but they close most of it:');
       box.appendChild(intro);
       r.path.steps.slice(0, 4).forEach(function (st) {
-        box.appendChild(bullet(st.groupLabel + ' → ' + st.optionLabel, '+' + fmt(st.gain)));
+        box.appendChild(bullet(T(st.groupLabel) + ' → ' + T(st.optionLabel), '+' + fmt(st.gain)));
       });
     }
 
@@ -702,7 +706,7 @@
   function bullet(text, gain, note) {
     var li = el('div', 'why-item');
     var main = el('span', 'why-text');
-    main.textContent = text;
+    main.textContent = T(text);
     li.appendChild(main);
     if (gain) li.appendChild(el('span', 'why-gain', gain));
     if (note) li.appendChild(el('small', 'why-note', note));
@@ -715,8 +719,9 @@
 
     var name = el('div', 'name');
     name.appendChild(document.createTextNode(sc.name));
-    var meta = sc.region + ' · test: ' + sc.test.policy + ' · rounds: ' + r.regime.label.toLowerCase();
-    if (r.roundMod) meta += ' (' + r.roundMod + ' for your timing)';
+    var meta = T('{region} · test: {policy} · rounds: {regime}',
+      { region: T(sc.region), policy: T(sc.test.policy), regime: r.regime.label.toLowerCase() });
+    if (r.roundMod) meta += ' ' + T('({n} for your timing)', { n: r.roundMod });
     var m = el('small', null, meta);
     m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
@@ -727,7 +732,7 @@
       var ul = el('ul', 'gatelist');
       r.gates.failures.forEach(function (f) {
         var li = el('li');
-        li.appendChild(document.createTextNode(f.label));
+        li.appendChild(document.createTextNode(T(f.label)));
         var t = src(f.src); if (t) li.appendChild(t);
         ul.appendChild(li);
       });
@@ -735,16 +740,16 @@
 
       /* Blocked, but say where the profile itself lands. */
       var stand = el('p', 'standing ' + r.band.tone);
-      stand.textContent = 'On score alone you would be ' + r.band.label.toLowerCase() +
-        ' here — ' + fmt(r.adjusted) + ' against a threshold of ' + sc.threshold +
-        '. The rule above is what blocks you, not your profile.';
+      stand.textContent = T('On score alone you would be {band} here — {score} against a threshold of {threshold}. ' +
+        'The rule above is what blocks you, not your profile.',
+        { band: T(r.band.label).toLowerCase(), score: fmt(r.adjusted), threshold: sc.threshold });
       name.appendChild(stand);
     }
     if (r.gates.warnings.length) {
       var uw = el('ul', 'gatelist warn');
       r.gates.warnings.forEach(function (f) {
         var li = el('li');
-        li.appendChild(document.createTextNode(f.label));
+        li.appendChild(document.createTextNode(T(f.label)));
         var t = src(f.src); if (t) li.appendChild(t);
         uw.appendChild(li);
       });
@@ -763,7 +768,7 @@
     det.style.marginTop = '8px';
     var sm = el('summary');
     sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--muted);list-style:none';
-    sm.textContent = 'What this school actually publishes';
+    sm.textContent = T('What this school actually publishes');
     det.appendChild(sm);
     var facts = el('div', 'facts');
     facts.style.marginTop = '8px';
@@ -783,7 +788,7 @@
     var prow = el('div', 'fact');
     prow.appendChild(el('span', 'fk', 'Weighting applied here'));
     var pv = el('span', 'fv');
-    pv.appendChild(document.createTextNode(sc.profile ? r.profile.label : 'Track weighting, unchanged'));
+    pv.appendChild(document.createTextNode(sc.profile ? r.profile.label : T('Track weighting, unchanged')));
     pv.appendChild(src('CAL'));
     if (sc.because) pv.appendChild(el('small', 'why-note', sc.because));
     prow.appendChild(pv);
@@ -792,7 +797,7 @@
     var thr = el('div', 'fact');
     thr.appendChild(el('span', 'fk', 'Score threshold used here'));
     var tv = el('span', 'fv');
-    tv.appendChild(document.createTextNode(sc.threshold + ' competitive, ' + sc.strong + ' strong'));
+    tv.appendChild(document.createTextNode(T('{c} competitive, {s} strong', { c: sc.threshold, s: sc.strong })));
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
@@ -827,13 +832,12 @@
     row.appendChild(el('span', 'fk', 'Estimated admitted GMAT'));
     var v = el('span', 'fv');
     v.appendChild(document.createTextNode(
-      'median ~' + e.median + ', about 68% between ' + lo + ' and ' + hi +
-      ' (±1 SD ' + e.sd + ')'));
+      T('median ~{median}, about 68% between {lo} and {hi} (±1 SD {sd})', { median: e.median, lo: lo, hi: hi, sd: e.sd })));
     v.appendChild(src('EST'));
-    v.appendChild(el('small', 'why-note', 'Estimated from ' + e.from +
-      (e.basis === 'published'
-        ? '. The school publishes the anchor; the spread and any scale conversion are mine.'
-        : '. The school publishes no admitted average — this whole figure is inferred.')));
+    v.appendChild(el('small', 'why-note', T('Estimated from {from}.', { from: e.from }) + ' ' +
+      T(e.basis === 'published'
+        ? 'The school publishes the anchor; the spread and any scale conversion are mine.'
+        : 'The school publishes no admitted average — this whole figure is inferred.')));
 
     var t = S.testInfo(lastAnswers || {});
     if (t.submitting && t.gmat !== null) {
@@ -845,8 +849,7 @@
       else if (z >= -1) where = 'below the estimated median but inside the estimated middle 68%';
       else where = 'below the estimated middle 68%';
       v.appendChild(el('small', 'why-note',
-        'Your ~' + t.gmat + ' sits ' + where + ' (' + (z >= 0 ? '+' : '') +
-        (Math.round(z * 100) / 100) + ' SD).'));
+        T('Your ~{gmat} sits {where} ({z} SD).', { gmat: t.gmat, where: T(where), z: (z >= 0 ? '+' : '') + (Math.round(z * 100) / 100) })));
     }
     row.appendChild(v);
     return row;
@@ -854,18 +857,19 @@
 
   /* The results headline, in words. */
   function headline(competitive, eligible, blocked) {
-    if (!eligible) return 'Every programme here is ruled out by a published rule.';
-    var of = Wizard.words(eligible) + (blocked ? ' eligible' : '');
-    if (!competitive) return 'Not yet competitive at any of the ' + of + '.';
-    return 'Competitive or better at ' + Wizard.words(competitive) + ' of ' + of + '.';
+    if (!eligible) return T('Every programme here is ruled out by a published rule.');
+    var v = { n: W(competitive), total: W(eligible) };
+    if (!competitive) return blocked ? T('Not yet competitive at any of the {total} eligible.', v)
+                                     : T('Not yet competitive at any of the {total}.', v);
+    return blocked ? T('Competitive or better at {n} of {total} eligible.', v)
+                   : T('Competitive or better at {n} of {total}.', v);
   }
   function blockedLine(blocked, pct) {
     if (blocked) {
-      var n = Wizard.words(blocked);
-      return n.charAt(0).toUpperCase() + n.slice(1) + (blocked === 1 ? ' programme is' : ' programmes are') +
-        ' ruled out by a published requirement.';
+      return tn(blocked, '{N} programme is ruled out by a published requirement.',
+        '{N} programmes are ruled out by a published requirement.', { N: I18N.cap(W(blocked)) });
     }
-    return pct < 100 ? 'No hard rule rules you out on the answers so far.' : 'No hard rule rules you out.';
+    return T(pct < 100 ? 'No hard rule rules you out on the answers so far.' : 'No hard rule rules you out.');
   }
 
   function cell(k, v, sub) {
@@ -890,7 +894,7 @@
   }
   function section(title, sub) {
     var h = el('h2', 'section reveal');
-    h.appendChild(document.createTextNode(title));
+    h.appendChild(document.createTextNode(T(title)));
     if (sub) h.appendChild(el('span', 'count', String(sub)));
     return h;
   }

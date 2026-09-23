@@ -17,7 +17,10 @@ window.Session = (function () {
 
   var PREFIX = 'admissions-calc:';
   var WIPE_KEY = PREFIX + 'wipe-on-close';
-  var KEEP = [PREFIX + 'theme', WIPE_KEY];
+  /* Settings, not answers: the edition, the language, the visit-count
+   * opt-out, and this switch. */
+  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', WIPE_KEY];
+  function T(s, v) { return window.I18N ? I18N.t(s, v) : s; }
 
   function answerKeys() {
     var out = [];
@@ -57,9 +60,9 @@ window.Session = (function () {
 
   function describe() {
     var n = answerKeys().length;
-    if (!n) return 'Nothing saved.';
-    return n === 1 ? 'One calculator has saved answers.'
-                   : n + ' calculators have saved answers.';
+    if (!n) return T('Nothing saved.');
+    return n === 1 ? T('One calculator has saved answers.')
+                   : T('{n} calculators have saved answers.', { n: n });
   }
 
   /* ------------------------------------------------------------------ */
@@ -67,7 +70,7 @@ window.Session = (function () {
   function el(tag, cls, text) {
     var n = document.createElement(tag);
     if (cls) n.className = cls;
-    if (text !== undefined) n.textContent = text;
+    if (text !== undefined) n.textContent = T(text);
     return n;
   }
 
@@ -85,7 +88,7 @@ window.Session = (function () {
     btn.type = 'button';
     btn.addEventListener('click', function () {
       if (!hasAnswers()) return;
-      if (!confirm('Delete every saved answer, across all calculators?\n\nThis cannot be undone.')) return;
+      if (!confirm(T('Delete every saved answer, across all calculators?') + '\n\n' + T('This cannot be undone.'))) return;
       clearAll();
       status.textContent = describe();
       sync();
@@ -124,7 +127,7 @@ window.Session = (function () {
     var fresh = el('button', 'btn ghost small', 'Start fresh');
     fresh.type = 'button';
     fresh.addEventListener('click', function () {
-      if (!confirm('Clear every saved answer, across all calculators?')) return;
+      if (!confirm(T('Clear every saved answer, across all calculators?'))) return;
       clearAll();
       location.reload();
     });

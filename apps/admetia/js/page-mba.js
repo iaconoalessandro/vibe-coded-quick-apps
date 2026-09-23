@@ -6,6 +6,7 @@
   var M = window.MBA_MODEL;
   var S = window.MBA_SCORE;
   var el = Wizard.el;
+  var T = I18N.t, tn = I18N.tn, W = Wizard.words;
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');
@@ -38,7 +39,12 @@
 
   /* --------------------------------------------------------------------- */
 
+  function modelName() {
+    return T(mode === 'published' ? 'model as published' : 'corrected model');
+  }
+
   function showResults(answers, keepScroll) {
+    if (!keepScroll && window.Stats) Stats.event('results-mba');
     var published = S.score(answers, 'published');
     var corrected = S.score(answers, 'corrected');
     var active = mode === 'corrected' ? corrected : published;
@@ -56,28 +62,29 @@
     var top = M.generalSchools.filter(function (s) { return active.base - s.points >= 0; });
 
     var n = M.generalSchools.length;
-    resultsView.appendChild(Wizard.resultsHead('Your results \u00b7 MBA',
+    resultsView.appendChild(Wizard.resultsHead(T('Your results · MBA'),
       reached.length
-        ? 'Competitive or better at ' + Wizard.words(reached.length) + ' of ' + Wizard.words(n) + ' schools.'
-        : 'Not yet competitive at any of the ' + Wizard.words(n) + ' schools.',
-      'A base score of ' + fmt(active.base) + ' on the ' +
-      (mode === 'published' ? 'model as published' : 'corrected model') + ', against ' +
-      Wizard.words(n) + ' schools on the shared scale. ' +
+        ? T('Competitive or better at {n} of {total} schools.', { n: W(reached.length), total: W(n) })
+        : T('Not yet competitive at any of the {total} schools.', { total: W(n) }),
+      T('A base score of {score} on the {model}, against {total} schools on the shared scale.',
+        { score: fmt(active.base), model: modelName(), total: W(n) }) + ' ' +
       (top.length
-        ? Wizard.words(top.length).charAt(0).toUpperCase() + Wizard.words(top.length).slice(1) +
-          (top.length === 1 ? ' is' : ' are') + ' at or above the point requirement \u2014 the scholarship range.'
-        : 'None is yet in the scholarship range.')));
+        ? tn(top.length, '{N} is at or above the point requirement — the scholarship range.',
+            '{N} are at or above the point requirement — the scholarship range.', { N: I18N.cap(W(top.length)) })
+        : T('None is yet in the scholarship range.'))));
 
     var gapNote = Wizard.incompleteNote(S.completeness(answers), function () {
       resultsView.hidden = true; wizardView.hidden = false;
       wiz.go(wiz.firstMissingStep());
     });
     if (gapNote) resultsView.appendChild(gapNote);
+    var stale = window.ResultsKit && ResultsKit.staleNotice(allKeys());
+    if (stale) resultsView.appendChild(stale);
 
     var sum = el('div', 'summary');
     sum.appendChild(cell('Your score', fmt(active.base), mode === 'published' ? 'published model' : 'corrected model'));
     sum.appendChild(cell('Competitive or better', String(reached.length),
-      'of ' + M.generalSchools.length + ' on the shared scale'));
+      T('of {total} on the shared scale', { total: M.generalSchools.length })));
     sum.appendChild(cell('Scholarship range', String(top.length), 'schools at or above their threshold'));
     resultsView.appendChild(sum);
 
@@ -91,7 +98,8 @@
     });
     bar.appendChild(sw);
     bar.appendChild(el('span', null, differs
-      ? 'The two models disagree on your profile — ' + fmt(published.base) + ' vs ' + fmt(corrected.base) + ' base, and the school-level scores differ too.'
+      ? T('The two models disagree on your profile — {a} vs {b} base, and the school-level scores differ too.',
+          { a: fmt(published.base), b: fmt(corrected.base) })
       : 'Both models agree on your profile. The corrected model only changes results for scores the published model mishandles.'));
     resultsView.appendChild(bar);
 
@@ -132,7 +140,8 @@
 
       var name = el('div', 'name');
       name.appendChild(document.createTextNode(school.name));
-      var detail = school.region + ' · Stretch ' + school.stretch + ' · Competitive ' + school.competitive + ' · Strong ' + school.strong;
+      var detail = T('{region} · Stretch {stretch} · Competitive {competitive} · Strong {strong}',
+        { region: T(school.region), stretch: school.stretch, competitive: school.competitive, strong: school.strong });
       if (notes.length) detail += ' — ' + notes.join(', ');
       name.appendChild(el('small', null, detail));
       addDeadline(name, school.name);
@@ -173,7 +182,7 @@
 
         var name = el('div', 'name');
         name.appendChild(document.createTextNode(school.name));
-        name.appendChild(el('small', null, school.region + ' · needs ' + school.points + ' points'));
+        name.appendChild(el('small', null, T('{region} · needs {points} points', { region: T(school.region), points: school.points })));
         addDeadline(name, school.name);
 
         /* "Competitive" starts at a gap of −2, so that is the bar to explain
@@ -202,7 +211,7 @@
 
     /* ---- breakdown ---- */
     var det = el('details', 'breakdown');
-    det.appendChild(el('summary', null, 'Where your ' + fmt(active.base) + ' points came from'));
+    det.appendChild(el('summary', null, T('Where your {score} points came from', { score: fmt(active.base) })));
     var inner = el('div', 'inner');
     if (!active.breakdown.length) {
       inner.appendChild(el('p', 'help', 'Nothing answered yet.'));
@@ -255,6 +264,9 @@
    * ------------------------------------------------------------------ */
 
   function KEY(name) { return 'mba:' + name; }
+  function allKeys() {
+    return M.adjustedSchools.concat(M.generalSchools).map(function (s) { return KEY(s.name); });
+  }
 
   /* Safe at or above a school's Strong line; Target from Competitive up;
    * Dream below it. On the shared scale Competitive starts at a gap of −2,
@@ -288,17 +300,18 @@
     M.adjustedSchools.forEach(function (school) {
       var sc = res.schools[school.id];
       rows[KEY(school.name)] = { num: fmt(sc), verdict: S.verdictForSchool(sc, school),
-        tier: adjustedTier(sc, school), value: sc - school.competitive };
+        tier: adjustedTier(sc, school), value: sc - school.competitive, name: school.name };
     });
     var reached = 0;
     M.generalSchools.forEach(function (school) {
       var gap = res.base - school.points;
       if (gap >= -2) reached++;
       rows[KEY(school.name)] = { num: signed(gap), verdict: S.verdictForGap(gap),
-        tier: generalTier(gap), value: gap };
+        tier: generalTier(gap), value: gap, name: school.name };
     });
-    return { rows: rows, summary: 'Base score ' + fmt(res.base) + ' — Competitive or better at ' +
-      reached + ' of ' + M.generalSchools.length + ' schools on the shared scale' };
+    return { rows: rows, score: fmt(res.base), scoreLabel: 'Base score',
+      summary: T('Base score {score} — Competitive or better at {n} of {total} schools on the shared scale',
+        { score: fmt(res.base), n: reached, total: M.generalSchools.length }) };
   }
 
   /* The test score first — the question people most want to try — then the
@@ -334,31 +347,31 @@
       var gap = active.base - school.points;
       rows.push({ key: KEY(school.name), name: school.name, region: ResultsKit.regionLabel(school.region),
         tier: generalTier(gap), verdict: S.verdictForGap(gap).label,
-        score: signed(gap) + ' vs ' + school.points, margin: gap });
+        score: T('{gap} vs {points}', { gap: signed(gap), points: school.points }), margin: gap });
     });
     rows.sort(function (x, y) { return y.margin - x.margin; });
 
     var strengths = active.breakdown.filter(function (b) { return b.pts > 0; })
       .sort(function (x, y) { return y.pts - x.pts; }).slice(0, 4)
-      .map(function (b) { return { label: b.label, detail: signed(b.pts) + ' points' }; });
+      .map(function (b) { return { label: b.label, detail: T('{pts} points', { pts: signed(b.pts) }) }; });
     var gaps = active.breakdown.filter(function (b) { return b.pts < 0; })
-      .map(function (b) { return { label: b.label, detail: signed(b.pts) + ' points' }; })
+      .map(function (b) { return { label: b.label, detail: T('{pts} points', { pts: signed(b.pts) }) }; })
       .concat(improvementList.slice(0, 4).map(function (i) {
-        return { label: i.groupLabel, detail: i.optionLabel + ' would add +' + fmt(i.gain) };
+        return { label: T(i.groupLabel), detail: T('{option} would add +{gain}', { option: T(i.optionLabel), gain: fmt(i.gain) }) };
       })).slice(0, 5);
 
     var steps = improvementList.slice(0, 4).map(function (i) {
-      return i.groupLabel + ' → ' + i.optionLabel + ' (+' + fmt(i.gain) + ' on the base score)';
+      return T('{group} → {option} (+{gain} on the base score)', { group: T(i.groupLabel), option: T(i.optionLabel), gain: fmt(i.gain) });
     });
     if (S.completeness(answers) < 100) steps.unshift('Answer the questions you skipped — a missing answer scores nothing.');
 
     return {
-      kicker: 'MBA · ' + (mode === 'published' ? 'model as published' : 'corrected model'),
+      kicker: 'MBA · ' + modelName(),
       title: reached.length
-        ? 'Competitive or better at ' + reached.length + ' of ' + M.generalSchools.length + ' schools.'
-        : 'Not yet competitive at any of the ' + M.generalSchools.length + ' schools.',
-      standfirst: 'A base score of ' + fmt(active.base) + '. ' + top.length +
-        (top.length === 1 ? ' school is' : ' schools are') + ' at or above the point requirement.',
+        ? T('Competitive or better at {n} of {total} schools.', { n: reached.length, total: M.generalSchools.length })
+        : T('Not yet competitive at any of the {total} schools.', { total: M.generalSchools.length }),
+      standfirst: T('A base score of {score}.', { score: fmt(active.base) }) + ' ' +
+        tn(top.length, '{n} school is at or above the point requirement.', '{n} schools are at or above the point requirement.'),
       facts: [['Base score', fmt(active.base)], ['Competitive or better', reached.length + ' / ' + M.generalSchools.length],
               ['Scholarship range', String(top.length)], ['Answered', S.completeness(answers) + '%']],
       rows: rows, strengths: strengths, gaps: gaps, steps: steps
@@ -373,8 +386,7 @@
   function whyBox(needed, target, improvementList) {
     var box = el('div', 'why');
     box.appendChild(el('p', 'why-head',
-      'You are ' + fmt(needed) + ' points below Competitive here, which starts at ' +
-      fmt(target) + '.'));
+      T('You are {needed} points below Competitive here, which starts at {target}.', { needed: fmt(needed), target: fmt(target) })));
 
     var path = S.pathTo(needed, improvementList);
     if (!path.steps.length) {
@@ -389,16 +401,15 @@
 
     path.steps.slice(0, 4).forEach(function (st) {
       var item = el('div', 'why-item');
-      item.appendChild(el('span', 'why-text', st.groupLabel + ' → ' + st.optionLabel));
+      item.appendChild(el('span', 'why-text', T(st.groupLabel) + ' → ' + T(st.optionLabel)));
       item.appendChild(el('span', 'why-gain', '+' + fmt(st.gain)));
       box.appendChild(item);
     });
 
     if (!path.reached) {
       box.appendChild(el('small', 'why-note',
-        'Everything actionable adds up to +' + fmt(path.total) + ', leaving you ' +
-        fmt(Math.round((needed - path.total) * 10) / 10) + ' short. The rest of this ' +
-        'model is fixed history.'));
+        T('Everything actionable adds up to +{total}, leaving you {short} short. The rest of this ' +
+          'model is fixed history.', { total: fmt(path.total), short: fmt(Math.round((needed - path.total) * 10) / 10) })));
     }
     return box;
   }
@@ -413,7 +424,7 @@
 
   function section(title, sub) {
     var h = el('h2', 'section');
-    h.appendChild(document.createTextNode(title));
+    h.appendChild(document.createTextNode(T(title)));
     if (sub) h.appendChild(el('span', 'count', sub));
     return h;
   }

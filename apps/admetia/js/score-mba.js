@@ -17,6 +17,12 @@
 (function () {
   'use strict';
 
+  /* Sentences built here are shown on the results page. js/i18n.js
+   * translates them in the browser; the tests run without it. */
+  var T = window.I18N ? window.I18N.t : function (s, v) {
+    return v ? s.replace(/\{(\w+)\}/g, function (m, k) { return k in v ? v[k] : m; }) : s;
+  };
+
   var M = window.MBA_MODEL;
 
   /* id -> option and id -> group, across every step */
@@ -226,7 +232,7 @@
           if (gain > 0.05) {
             out.push({
               groupId: 'gmat', groupLabel: 'Test score',
-              optionLabel: 'retake and reach ' + target,
+              optionLabel: T('retake and reach {target}', { target: target }),
               gain: gain
             });
           }
