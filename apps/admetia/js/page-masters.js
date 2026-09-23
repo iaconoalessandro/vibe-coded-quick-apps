@@ -29,7 +29,8 @@
   if (!M.tracks[trackId]) trackId = 'mim';
   var track = M.tracks[trackId];
 
-  document.getElementById('crumb').textContent = track.name;
+  var crumb = document.getElementById('crumb');
+  if (crumb) crumb.textContent = track.name;
   document.title = track.name + " master's — Admission Chances Calculator";
 
   /* One photograph per track, chosen for the world the programme feeds into
