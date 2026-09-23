@@ -508,11 +508,6 @@ window.Wizard = (function () {
       img.setAttribute('fetchpriority', 'high');
       plate.appendChild(img);
       fig.appendChild(plate);
-      var cap = el('figcaption');
-      var credit = el('a', null, 'Photograph: Pexels');
-      credit.href = 'CREDITS.md';
-      cap.appendChild(credit);
-      fig.appendChild(cap);
       head.appendChild(fig);
     }
     return head;
