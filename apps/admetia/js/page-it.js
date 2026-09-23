@@ -26,7 +26,8 @@
   if (!M.tracks[trackId]) trackId = 'cs';
   var track = M.tracks[trackId];
 
-  document.getElementById('crumb').textContent = track.name;
+  var crumb = document.getElementById('crumb');
+  if (crumb) crumb.textContent = track.name;
   document.title = track.name + ' — Admission Chances Calculator';
 
   /* One photograph per track, chosen for what the track actually selects on
