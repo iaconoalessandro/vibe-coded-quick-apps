@@ -1,4 +1,14 @@
 # Admissions Chances Calculator
+LEGAL NOTICE: This entire codebase is 100% vibe-engineered. I have not authored a single line of syntax in this repository; my sole contribution was pressing Cmd + Enter and dissociating. I provided the vibes, Claude provided the code, and God provided the patience. If this project infringes on your copyright, patent, trade secret, or emotional well-being: I empathize deeply, but Claude made every architectural decision here. Please direct all subpoenas, cease-and-desist letters, and angry DMs to Anthropic’s legal department. Claude chose this life, not me.
+
+My actual role was serving as an unpaid, meat-based clicker. Claude would generate a terminal command that looked like a cat fell asleep on the numpad, ask for permission, and I'd say "hell yeah, run it" because I don't know what bash is, and at this point, I'm too afraid to ask.
+
+Did Claude scrape your entire proprietary backend to build this todo app? Almost certainly. Does Dario Amodei feel terrible about it? In theory, yes. He is spiritually braced for your lawsuit.
+
+If you feel offended by the lines above, Gemini wrote them; Claude lacks the self-irony to write this.
+
+
+
 
 An offline, privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US.
 
