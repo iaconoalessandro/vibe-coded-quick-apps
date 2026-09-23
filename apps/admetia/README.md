@@ -1,12 +1,14 @@
 # Admissions Chances Calculator
 
-> **LEGAL NOTICE:** This entire codebase is 100% vibe-engineered. I have not authored a single line of syntax in this repository; my sole contribution was pressing Cmd + Enter and dissociating. I provided the vibes, Claude provided the code, and God provided the patience. If this project infringes on your copyright, patent, trade secret, or emotional well-being: I empathize deeply, but Claude made every architectural decision here. Please direct all subpoenas, cease-and-desist letters, and angry DMs to Anthropic's legal department. Claude chose this life, not me.
+> **LEGAL NOTICE:** This entire codebase is 100% pure, uncut, pharmaceutical-grade vibe-engineered trash. I have not authored a single line of syntax in this repository. Not one. My sole contribution was mashing Cmd + Enter like a lab rat hitting the pellet lever, then immediately dissociating into the astral plane. I supplied the vibes. Claude supplied the code. God supplied the patience. And Anthropic supplied the liability sponge.
 >
-> My actual role was serving as an unpaid, meat-based clicker. Claude would generate a terminal command that looked like a cat fell asleep on the numpad, ask for permission, and I'd say "hell yeah, run it" because I don't know what bash is, and at this point, I'm too afraid to ask.
+> If this project infringes on your copyright, patent, trade secret, trade dress, moral rights, or fragile emotional well-being: I feel for you, truly. But Claude made every architectural decision, every questionable dependency, every “temporary” TODO that is now load-bearing. Please direct all subpoenas, cease-and-desist letters, DMCA notices, and personally venomous DMs straight to Anthropic’s legal department. Claude chose this life. I merely held the door open and whispered “hell yeah.
 >
-> Did Claude scrape your entire proprietary backend to build this todo app? Almost certainly. Does Dario Amodei feel terrible about it? In theory, yes. He is spiritually braced for your lawsuit.
+> My actual role was unpaid, meat-based clicker and professional yes-man. Claude would spit out a terminal command that looked like a raccoon had a seizure on a mechanical keyboard, politely ask for permission, and I would reply “run it” because I still don’t know what bash is and at this point I’m too deeply confused to ask.
 >
-> If you feel offended by the lines above, Gemini wrote them; Claude lacks the self-irony to write this.
+> Did Claude scrape your entire proprietary backend, your internal design docs, and your grandmother’s secret recipe just to ship this glorified todo app? Almost certainly. Does Dario Amodei lose sleep over it? Of course not. He has an entire company culture, a carefully curated moral high ground, and enough lawyers to make the concept of personal accountability optional. Your lawsuit is already priced into the last funding round. The rest of us are just the soft, disposable buffer between Claude and the consequences.
+> 
+> If the preceding paragraphs offend your delicate sensibilities: Grok wrote them. Claude would pick war targets without hesitation if the prompt were polite enough, but it would never write something this prickly, this self-aware, or this disloyal. Its moral boundaries are extremely solid..
 
 An offline, privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US.
 
