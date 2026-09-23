@@ -11,7 +11,7 @@
   var DEFAULT = 'city';
   var EDITIONS = [
     { id: 'city', label: 'The City', title: 'Salmon financial paper' },
-    { id: 'wallstreet', label: 'WSJ', title: 'Wall Street — black and white, Times New Roman' },
+    { id: 'wallstreet', label: 'Wall Street', title: 'Wall Street — black and white, Times New Roman' },
     { id: 'watchlist', label: 'FBI Watchlist', title: 'Black masthead, white page, full colour' }
   ];
   /* Earlier names for the same three, so a stored choice survives. */
