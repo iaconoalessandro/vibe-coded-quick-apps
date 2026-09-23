@@ -336,7 +336,7 @@ a:hover { text-decoration-thickness: 2px; }
 .tk.idx .sym { padding: 1px 5px; border: 1px solid currentColor; }
 @keyframes tick { to { transform: translateX(-50%); } }
 
-/* Right 25%: "edition the city, wsj, fbi watchlist" */
+/* Right 25%: "edition the city, wall street, fbi watchlist" */
 .ticker .edition {
   flex: 0 0 25%; width: 25%; max-width: 25%;
   box-sizing: border-box;
@@ -344,6 +344,7 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 0 max(var(--gutter), env(safe-area-inset-right)) 0 12px;
   margin: 0;
 }
+.ticker .edition button { padding: 5px 8px; gap: 6px; }
 
 /* ---------- front page: highest bars ---------- */
 .highest-box { margin: 26px 0 0; }
