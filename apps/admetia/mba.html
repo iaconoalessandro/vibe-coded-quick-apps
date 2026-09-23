@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MBA Chances — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/photo/mba.webp" as="image" type="image/webp">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" media="(min-width: 641px)"
+      imagesrcset="img/photo/mba-480.webp 480w, img/photo/mba-800.webp 800w, img/photo/mba-1240.webp 1240w"
+      imagesizes="(max-width: 900px) 100vw, 620px">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
-<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -60,7 +60,11 @@
       <figure class="photo">
         <span class="plate">
           <picture>
-            <source srcset="img/photo/mba.webp" type="image/webp">
+            <!-- Phones hide this photo (css/app.css, max-width: 640px); an empty
+                 source there keeps them from downloading it anyway. -->
+            <source media="(max-width: 640px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+            <source type="image/webp" srcset="img/photo/mba-480.webp 480w, img/photo/mba-800.webp 800w, img/photo/mba-1240.webp 1240w"
+                    sizes="(max-width: 900px) 100vw, 620px">
             <img src="img/photo/mba.jpg" width="1200" height="800" fetchpriority="high"
                  alt="A senior executive in a dark suit standing, arms folded, in front of a boardroom in session.">
           </picture>

@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IT &amp; Computing — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/photo/it.webp" as="image" type="image/webp">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="img/photo/it-480.webp 480w, img/photo/it-800.webp 800w, img/photo/it-1240.webp 1240w"
+      imagesizes="(max-width: 900px) 100vw, 620px">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
-<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -59,7 +59,8 @@
     <figure class="photo">
       <span class="plate">
         <picture>
-          <source srcset="img/photo/it.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/it-480.webp 480w, img/photo/it-800.webp 800w, img/photo/it-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 620px">
           <img src="img/photo/it.jpg" width="1200" height="800" fetchpriority="high"
                alt="Dense, syntax-highlighted source code filling a monitor.">
         </picture>
@@ -72,7 +73,8 @@
     <a class="story reveal" href="computing.html?track=cs">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/cs.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/cs-480.webp 480w, img/photo/cs-800.webp 800w, img/photo/cs-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/cs.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="Two people reading source code on a large wall-mounted display.">
         </picture>
@@ -86,7 +88,8 @@
     <a class="story reveal" href="computing.html?track=dsai">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/datascience.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/datascience-480.webp 480w, img/photo/datascience-800.webp 800w, img/photo/datascience-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/datascience.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="A laptop showing data dashboards, with printed charts on the desk beside it.">
         </picture>
@@ -99,7 +102,8 @@
     <a class="story reveal" href="computing.html?track=conversion">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/conversion.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/conversion-480.webp 480w, img/photo/conversion-800.webp 800w, img/photo/conversion-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/conversion.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="Hands typing beginner HTML and JavaScript on a laptop, a notebook open alongside.">
         </picture>

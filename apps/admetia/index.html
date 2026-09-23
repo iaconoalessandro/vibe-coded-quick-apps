@@ -6,12 +6,12 @@
 <title>Admission Chances Calculator</title>
 <meta name="description" content="Offline admissions scoring for MBA, business master's and IT &amp; computing master's programmes. No account, no network requests.">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/photo/hero.webp" as="image" type="image/webp">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="img/photo/hero-480.webp 480w, img/photo/hero-800.webp 800w, img/photo/hero-1240.webp 1240w"
+      imagesizes="(max-width: 900px) 100vw, 620px">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
-<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -60,7 +60,8 @@
       <figure class="photo lead-photo">
         <span class="plate">
           <picture>
-            <source srcset="img/photo/hero.webp" type="image/webp">
+            <source type="image/webp" srcset="img/photo/hero-480.webp 480w, img/photo/hero-800.webp 800w, img/photo/hero-1240.webp 1240w"
+                    sizes="(max-width: 900px) 100vw, 620px">
             <img src="img/photo/hero.jpg" width="1800" height="1200" fetchpriority="high"
                  alt="Two university students at desks, heads down, writing an exam paper.">
           </picture>
@@ -78,7 +79,8 @@
           <h3>Business</h3>
           <span class="photo"><span class="plate">
             <picture>
-              <source srcset="img/photo/business.webp" type="image/webp">
+              <source type="image/webp" srcset="img/photo/business-480.webp 480w, img/photo/business-800.webp 800w, img/photo/business-1240.webp 1240w"
+                      sizes="(max-width: 900px) 100vw, 350px">
               <img src="img/photo/business.jpg" width="1200" height="800" loading="lazy" decoding="async"
                    alt="Graduating students throwing their caps in the air outside a business school.">
             </picture>

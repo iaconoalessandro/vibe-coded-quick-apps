@@ -894,6 +894,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .nameplate {
   display: block; margin: 0 auto; width: min(100%, 440px); aspect-ratio: 1040 / 131;
   background: url("../img/wordmark/wall-street.png") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/wall-street.webp") type("image/webp"), url("../img/wordmark/wall-street.png") type("image/png"));
   font-size: 0; line-height: 0; color: transparent;
 }
 :root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 340px); }
@@ -1015,6 +1016,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="watchlist"] .nameplate {
   display: block; margin: 4px auto 0; width: min(100%, 560px); aspect-ratio: 1560 / 148;
   background: url("../img/wordmark/fbi-watchlist.png") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/fbi-watchlist.webp") type("image/webp"), url("../img/wordmark/fbi-watchlist.png") type("image/png"));
   font-size: 0; line-height: 0; color: transparent;
 }
 :root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 400px); }

@@ -31,7 +31,29 @@
   }
   function apply(id) { document.documentElement.setAttribute('data-theme', id); }
 
+  /* The faces each edition sets above the fold (see css/fonts.css). Preloading
+   * them here, rather than with static <link> tags, means a reader on Wall
+   * Street never downloads The City's fonts, and the fetch starts before the
+   * stylesheet is parsed instead of after first layout. */
+  var FONTS = {
+    city: ['source-serif-4-roman', 'hanken-grotesk'],
+    wallstreet: ['roboto-serif-condensed', 'hanken-grotesk'],
+    watchlist: ['noto-serif-display', 'hanken-grotesk']
+  };
+  function preloadFonts(id) {
+    (FONTS[id] || []).forEach(function (f) {
+      var l = document.createElement('link');
+      l.rel = 'preload';
+      l.as = 'font';
+      l.type = 'font/woff2';
+      l.crossOrigin = 'anonymous';
+      l.href = 'fonts/' + f + '.woff2';
+      document.head.appendChild(l);
+    });
+  }
+
   apply(stored() || DEFAULT);
+  preloadFonts(current());
 
   function current() { return document.documentElement.getAttribute('data-theme'); }
 

@@ -502,10 +502,19 @@ window.Wizard = (function () {
       var fig = el('figure', 'photo');
       var plate = el('span', 'plate');
       var pic = document.createElement('picture');
-      var srcWebp = shot.src.replace(/\.jpg$/, '.webp');
+      /* Phones hide this photo (css/app.css, max-width: 640px); an empty
+       * source there keeps them from downloading it anyway. */
+      var none = document.createElement('source');
+      none.media = '(max-width: 640px)';
+      none.srcset = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+      pic.appendChild(none);
+      /* Sized WebP variants from tools/build-images.sh; the JPEG stays as
+       * the fallback. */
+      var base = shot.src.replace(/\.jpg$/, '');
       var source = document.createElement('source');
-      source.srcset = srcWebp;
       source.type = 'image/webp';
+      source.srcset = [480, 800, 1240].map(function (w) { return base + '-' + w + '.webp ' + w + 'w'; }).join(', ');
+      source.sizes = '(max-width: 900px) 100vw, 620px';
       pic.appendChild(source);
       var img = document.createElement('img');
       img.src = shot.src;

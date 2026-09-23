@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Business tracks — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/photo/picker.webp" as="image" type="image/webp">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high"
+      imagesrcset="img/photo/picker-480.webp 480w, img/photo/picker-800.webp 800w, img/photo/picker-1240.webp 1240w"
+      imagesizes="(max-width: 900px) 100vw, 620px">
+<script src="js/theme.js"></script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
-<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -60,7 +60,8 @@
     <figure class="photo">
       <span class="plate">
         <picture>
-          <source srcset="img/photo/picker.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/picker-480.webp 480w, img/photo/picker-800.webp 800w, img/photo/picker-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 620px">
           <img src="img/photo/picker.jpg" width="1800" height="1200" fetchpriority="high"
                alt="Four students working through notes and laptops together at a campus table.">
         </picture>
@@ -72,7 +73,8 @@
   <a class="story story-lead reveal" href="mba.html">
     <span class="photo"><span class="plate">
       <picture>
-        <source srcset="img/photo/mba.webp" type="image/webp">
+        <source type="image/webp" srcset="img/photo/mba-480.webp 480w, img/photo/mba-800.webp 800w, img/photo/mba-1240.webp 1240w"
+                sizes="(max-width: 900px) 100vw, 620px">
         <img src="img/photo/mba.jpg" width="1200" height="800" loading="lazy" decoding="async"
              alt="A senior executive in a dark suit standing, arms folded, in front of a boardroom in session.">
       </picture>
@@ -91,7 +93,8 @@
     <a class="story reveal" href="masters.html?track=mif">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/finance.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/finance-480.webp 480w, img/photo/finance-800.webp 800w, img/photo/finance-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/finance.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="A trading desk of stacked monitors showing live candlestick charts.">
         </picture>
@@ -104,7 +107,8 @@
     <a class="story reveal" href="masters.html?track=mim">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/management.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/management-480.webp 480w, img/photo/management-800.webp 800w, img/photo/management-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/management.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="Three consultants in a meeting, going through figures on a tablet together.">
         </picture>
@@ -117,7 +121,8 @@
     <a class="story reveal" href="masters.html?track=marketing">
       <span class="photo"><span class="plate">
         <picture>
-          <source srcset="img/photo/marketing.webp" type="image/webp">
+          <source type="image/webp" srcset="img/photo/marketing-480.webp 480w, img/photo/marketing-800.webp 800w, img/photo/marketing-1240.webp 1240w"
+                  sizes="(max-width: 900px) 100vw, 350px">
           <img src="img/photo/marketing.jpg" width="1200" height="800" loading="lazy" decoding="async"
                alt="A street wall of brand billboards — Gucci, adidas and the NBA stacked above a storefront.">
         </picture>

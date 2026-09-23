@@ -1,109 +1,87 @@
-/* Service Worker for Admissions Calculator: Instant offline & cache-first navigation */
-const CACHE_NAME = 'admissions-calc-v1';
+/* ---------------------------------------------------------------------------
+ * Service worker: keeps the calculators working offline once visited.
+ *
+ * - Pages, scripts, styles and models are network-first: a new deploy shows
+ *   up on the next load, and the cached copy is only used when offline.
+ *   (Cache-first here would pin returning readers to whatever version they
+ *   first saw, HTML and scripts drifting apart.)
+ * - Photos and fonts are cache-first and cached on first use, not up front,
+ *   so a first visit downloads only what the page actually shows.
+ *
+ * Bump VERSION when the shell list changes; old caches are dropped on
+ * activate.
+ * ------------------------------------------------------------------------- */
 
-const STATIC_ASSETS = [
+var VERSION = 'v2';
+var SHELL = 'admissions-shell-' + VERSION;
+var MEDIA = 'admissions-media-' + VERSION;
+
+var SHELL_FILES = [
   './',
-  'index.html',
-  'business.html',
-  'it.html',
-  'computing.html',
-  'masters.html',
-  'mba.html',
-  'css/fonts.css',
-  'css/app.css',
-  'fonts/hanken-grotesk.woff2',
-  'fonts/noto-serif-display.woff2',
-  'fonts/roboto-serif-condensed.woff2',
-  'fonts/source-serif-4-italic.woff2',
-  'fonts/source-serif-4-roman.woff2',
-  'data/conversions.js',
-  'data/masters-model.js',
-  'data/it-model.js',
-  'data/it-evidence.js',
-  'data/mba-model.js',
-  'data/mba-companies.js',
-  'js/storage.js',
-  'js/session.js',
-  'js/engine.js',
-  'js/score-masters.js',
-  'js/score-it.js',
-  'js/score-mba.js',
-  'js/page-masters.js',
-  'js/page-it.js',
-  'js/page-mba.js',
-  'js/ticker.js',
-  'js/theme.js',
-  'js/ui.js',
-  'img/photo/hero.jpg',
-  'img/photo/hero.webp',
-  'img/photo/picker.jpg',
-  'img/photo/picker.webp',
-  'img/photo/mba.jpg',
-  'img/photo/mba.webp',
-  'img/photo/business.jpg',
-  'img/photo/business.webp',
-  'img/photo/finance.jpg',
-  'img/photo/finance.webp',
-  'img/photo/management.jpg',
-  'img/photo/management.webp',
-  'img/photo/marketing.jpg',
-  'img/photo/marketing.webp',
-  'img/photo/it.jpg',
-  'img/photo/it.webp',
-  'img/photo/cs.jpg',
-  'img/photo/cs.webp',
-  'img/photo/datascience.jpg',
-  'img/photo/datascience.webp',
-  'img/photo/conversion.jpg',
-  'img/photo/conversion.webp'
+  'index.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html',
+  'css/fonts.css', 'css/app.css',
+  'data/conversions.js', 'data/masters-model.js', 'data/it-model.js',
+  'data/it-evidence.js', 'data/mba-model.js', 'data/mba-companies.js',
+  'js/theme.js', 'js/storage.js', 'js/session.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',
+  'js/score-masters.js', 'js/score-it.js', 'js/score-mba.js',
+  'js/page-masters.js', 'js/page-it.js', 'js/page-mba.js'
 ];
 
-self.addEventListener('install', (event) => {
+self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS).catch((err) => {
-        console.warn('Pre-caching partial failure:', err);
-      });
-    }).then(() => self.skipWaiting())
+    caches.open(SHELL).then(function (cache) {
+      /* One missing file must not abort the whole install. */
+      return Promise.all(SHELL_FILES.map(function (f) {
+        return cache.add(f).catch(function () {});
+      }));
+    }).then(function () { return self.skipWaiting(); })
   );
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
+    caches.keys().then(function (keys) {
+      return Promise.all(keys.map(function (k) {
+        if (k !== SHELL && k !== MEDIA) return caches.delete(k);
+      }));
+    }).then(function () { return self.clients.claim(); })
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-  const url = new URL(event.request.url);
+function isMedia(url) { return /\.(webp|jpe?g|png|svg|woff2)$/.test(url.pathname); }
 
-  // Only handle same-origin requests
-  if (url.origin !== self.location.origin) return;
+function networkFirst(request) {
+  return fetch(request).then(function (res) {
+    if (res && res.ok && res.type === 'basic') {
+      var copy = res.clone();
+      caches.open(SHELL).then(function (c) { c.put(request, copy); });
+    }
+    return res;
+  }).catch(function () {
+    /* masters.html?track=mif is cached as masters.html. */
+    return caches.match(request, { ignoreSearch: true }).then(function (hit) {
+      if (hit || request.mode !== 'navigate') return hit;
+      return caches.match('index.html');
+    }).then(function (res) { return res || Response.error(); });
+  });
+}
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
+function cacheFirst(request) {
+  return caches.match(request).then(function (hit) {
+    return hit || fetch(request).then(function (res) {
+      if (res && res.ok && res.type === 'basic') {
+        var copy = res.clone();
+        caches.open(MEDIA).then(function (c) { c.put(request, copy); });
       }
-      return fetch(event.request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-          return networkResponse;
-        }
-        const responseToCache = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-        return networkResponse;
-      });
-    })
-  );
+      return res;
+    });
+  });
+}
+
+self.addEventListener('fetch', function (event) {
+  var request = event.request;
+  if (request.method !== 'GET') return;
+  var url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  event.respondWith(isMedia(url) ? cacheFirst(request) : networkFirst(request));
 });

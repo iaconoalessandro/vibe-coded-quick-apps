@@ -92,6 +92,7 @@ banner to `3 / 1` — and re-run the same resize:
 
 ```bash
 sips -s format jpeg -s formatOptions 70 --resampleWidth 1800 source.jpg --out img/photo/hero.jpg
+tools/build-images.sh   # the sized WebP copies the pages actually serve (needs cwebp)
 ```
 
 Then update this table. The credit line under each photograph on the site links here, so
