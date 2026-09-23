@@ -551,36 +551,36 @@ window.MBA_MODEL = (function () {
 
   /* Scored off the base total. Verdict comes from (score - points). */
   var GENERAL_SCHOOLS = [
-    { name: 'Chicago Booth', points: 73 },
-    { name: 'Kellogg', points: 72 },
-    { name: 'INSEAD', points: 70 },
-    { name: 'Berkeley Haas', points: 69 },
-    { name: 'Tuck', points: 68 },
-    { name: 'London Business School', points: 68 },
-    { name: 'Michigan Ross', points: 67 },
-    { name: 'Duke Fuqua', points: 66 },
-    { name: 'Cambridge Judge', points: 66 },
-    { name: 'Oxford Saïd', points: 65 },
-    { name: 'UCLA Anderson', points: 65 },
-    { name: 'Darden', points: 65 },
-    { name: 'Cornell Johnson', points: 65 },
-    { name: 'Carnegie Mellon Tepper', points: 63 },
-    { name: 'IESE', points: 63 },
-    { name: 'Toronto Rotman', points: 63 },
-    { name: 'UNC Kenan-Flagler', points: 62 },
-    { name: 'USC Marshall', points: 62 },
-    { name: 'UT Austin McCombs', points: 62 },
-    { name: 'Emory Goizueta', points: 62 },
-    { name: 'Georgetown McDonough', points: 62 },
-    { name: 'HEC Paris', points: 61 },
-    { name: 'ESADE', points: 61 },
-    { name: 'IE Business School', points: 61 },
-    { name: 'Ivey', points: 61 },
-    { name: 'McGill Desautels', points: 61 },
-    { name: 'Schulich', points: 61 },
-    { name: 'Babson', points: 61 },
-    { name: 'SDA Bocconi', points: 61 },
-    { name: 'WashU Olin', points: 61 }
+    { name: 'Chicago Booth', points: 73, region: 'USA' },
+    { name: 'Kellogg', points: 72, region: 'USA' },
+    { name: 'INSEAD', points: 70, region: 'France / Singapore' },
+    { name: 'Berkeley Haas', points: 69, region: 'USA' },
+    { name: 'Tuck', points: 68, region: 'USA' },
+    { name: 'London Business School', points: 68, region: 'UK' },
+    { name: 'Michigan Ross', points: 67, region: 'USA' },
+    { name: 'Duke Fuqua', points: 66, region: 'USA' },
+    { name: 'Cambridge Judge', points: 66, region: 'UK' },
+    { name: 'Oxford Saïd', points: 65, region: 'UK' },
+    { name: 'UCLA Anderson', points: 65, region: 'USA' },
+    { name: 'Darden', points: 65, region: 'USA' },
+    { name: 'Cornell Johnson', points: 65, region: 'USA' },
+    { name: 'Carnegie Mellon Tepper', points: 63, region: 'USA' },
+    { name: 'IESE', points: 63, region: 'Spain' },
+    { name: 'Toronto Rotman', points: 63, region: 'Canada' },
+    { name: 'UNC Kenan-Flagler', points: 62, region: 'USA' },
+    { name: 'USC Marshall', points: 62, region: 'USA' },
+    { name: 'UT Austin McCombs', points: 62, region: 'USA' },
+    { name: 'Emory Goizueta', points: 62, region: 'USA' },
+    { name: 'Georgetown McDonough', points: 62, region: 'USA' },
+    { name: 'HEC Paris', points: 61, region: 'France' },
+    { name: 'ESADE', points: 61, region: 'Spain' },
+    { name: 'IE Business School', points: 61, region: 'Spain' },
+    { name: 'Ivey', points: 61, region: 'Canada' },
+    { name: 'McGill Desautels', points: 61, region: 'Canada' },
+    { name: 'Schulich', points: 61, region: 'Canada' },
+    { name: 'Babson', points: 61, region: 'USA' },
+    { name: 'SDA Bocconi', points: 61, region: 'Italy' },
+    { name: 'WashU Olin', points: 61, region: 'USA' }
   ];
 
   /* Gap between your score and a school's points, mapped to a verdict. */
@@ -606,7 +606,7 @@ window.MBA_MODEL = (function () {
    *   unlessTicked      an option is not ticked */
   var ADJUSTED_SCHOOLS = [
     {
-      id: 'Columbia', name: 'Columbia', stretch: 64, competitive: 70, strong: 74,
+      id: 'Columbia', name: 'Columbia', region: 'USA', stretch: 64, competitive: 70, strong: 74,
       adjust: [
         { label: 'High-tech background', ticked: 'co_tech', delta: -0.5 },
         { label: 'Founder status', answer: 'columbiaFounder' },
@@ -617,7 +617,7 @@ window.MBA_MODEL = (function () {
     {
       /* Starts below the base total, then rebuilds management and promotions
        * on its own scale. */
-      id: 'Harvard', name: 'Harvard', stretch: 67, competitive: 73, strong: 77,
+      id: 'Harvard', name: 'Harvard', region: 'USA', stretch: 67, competitive: 73, strong: 77,
       adjust: [
         { label: 'Base adjustment', delta: -4.9 },
         {
@@ -645,7 +645,7 @@ window.MBA_MODEL = (function () {
     },
     {
       /* Rewards being older rather than younger. */
-      id: 'IMD', name: 'IMD', stretch: 63, competitive: 69, strong: 73,
+      id: 'IMD', name: 'IMD', region: 'Switzerland', stretch: 63, competitive: 69, strong: 73,
       adjust: [
         {
           label: 'Age', answer: 'age',
@@ -654,14 +654,14 @@ window.MBA_MODEL = (function () {
       ]
     },
     {
-      id: 'MIT', name: 'MIT Sloan', stretch: 63, competitive: 69, strong: 73,
+      id: 'MIT', name: 'MIT Sloan', region: 'USA', stretch: 63, competitive: 69, strong: 73,
       adjust: [
         { label: 'Founder status', answer: 'mitFounder' }
       ]
     },
     {
       /* The only school where applying in round one costs you points. */
-      id: 'NYU', name: 'NYU Stern', stretch: 59, competitive: 65, strong: 69,
+      id: 'NYU', name: 'NYU Stern', region: 'USA', stretch: 59, competitive: 65, strong: 69,
       adjust: [
         { label: 'High test score', test: 'nyuHigh', delta: 1 },
         { label: 'Low test score', test: 'low', delta: -0.5 },
@@ -670,7 +670,7 @@ window.MBA_MODEL = (function () {
       ]
     },
     {
-      id: 'Stanford', name: 'Stanford GSB', stretch: 67, competitive: 73, strong: 77,
+      id: 'Stanford', name: 'Stanford GSB', region: 'USA', stretch: 67, competitive: 73, strong: 77,
       adjust: [
         { label: 'High test score', test: 'high', delta: 0.5 },
         { label: 'Low test score', test: 'low', delta: -0.5 }
@@ -678,7 +678,7 @@ window.MBA_MODEL = (function () {
     },
     {
       /* Re-weights community service more sharply than the base. */
-      id: 'Wharton', name: 'Wharton', stretch: 65, competitive: 72, strong: 75,
+      id: 'Wharton', name: 'Wharton', region: 'USA', stretch: 65, competitive: 72, strong: 75,
       adjust: [
         {
           label: 'Community service', answer: 'community',
@@ -687,7 +687,7 @@ window.MBA_MODEL = (function () {
       ]
     },
     {
-      id: 'Yale', name: 'Yale SOM', stretch: 62, competitive: 68, strong: 72,
+      id: 'Yale', name: 'Yale SOM', region: 'USA', stretch: 62, competitive: 68, strong: 72,
       adjust: [
         { label: 'Low test score', test: 'low', delta: -0.5 }
       ]

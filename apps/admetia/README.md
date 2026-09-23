@@ -28,15 +28,17 @@ Zero build steps to run it. Zero runtime dependencies. Zero network calls. Every
 
 - **Run test suites:**
   ```bash
-  node tests/mba-test.js && node tests/masters-test.js && node tests/features-test.js && node tests/profiles-test.js && node tests/it-test.js
+  npm test
   ```
-  *(146 tests passing across all models and edge cases).* `npm test` runs the same suites.
+  *(177 tests passing across all models, edge cases and the application calendar).* The runner
+  (`tools/run-tests.js`) is plain Node, so it behaves the same on Windows, macOS and Linux; pass
+  `-- -v` to see every assertion. Each suite also runs on its own, e.g. `node tests/it-test.js`.
 
 - **Publish:** pushing to `main` runs `.github/workflows/pages.yml`, which tests, runs
   `npm run build` and deploys `_site/` to GitHub Pages. The build (`tools/build.js`) only
   repackages for speed — one minified script and stylesheet per page, `theme.js` inlined,
   hashed file names, and no models on the front pages unless there are saved answers to
-  score. The pages in the repo keep working unbuilt, so there is nothing to rebuild while
+  score. Tests, tooling, the parked mockups and repository-only documents stay out of `_site/`. The pages in the repo keep working unbuilt, so there is nothing to rebuild while
   editing. To try the published version locally: `npm install && npm run build`, then serve
   `_site/`.
 
@@ -56,16 +58,23 @@ An original multi-track model for pre-experience Master's in Management (MiM), F
 - **Counterfactual Guidance:** Tells you exactly which improvements (GMAT score, essays, recommendations) would close the gap for your target schools.
 
 ### 3. IT & Computing Master's Calculator
-A rule-first evaluation model for 22 premier UK and European computing master's programmes across three specialisations:
+A rule-first evaluation model for 26 computing master's programmes in the UK, Europe and the US (Stanford, Carnegie Mellon and Berkeley) across three specialisations:
 - **Tracks:** Computer Science (MSc CS), Data Science & AI, and Conversion MSc.
 - **Inverted Rules:** Directly models conversion gates that disqualify candidates who already hold a computing degree (e.g., Imperial, UCL, Glasgow).
 - **Hard Academic Bars:** Evaluates first-class honours requirements, prerequisite module audits, and minimum mathematics credits.
-- **Calibrated Admissions Data:** Incorporates 5 years of pooled applicant outcomes and acceptance distributions under strict sample-size thresholds.
+- **Calibrated Admissions Data:** Incorporates 5 years of pooled applicant outcomes and acceptance distributions under strict sample-size thresholds (UK and European programmes; the US ones are modelled from their published rules only).
+- **Why not MIT:** MIT EECS has no terminal master's for outside applicants — everyone is admitted to the PhD — so there is nothing to score, and the results page says so.
 
 ---
 
 ## Key Features
 
+- **Running Score:** The questionnaire shows your score as you fill it in — the evenly weighted track score (the MBA's base points), before any school's own emphasis — and flashes how much each answer moved it. On phones it rides in the pinned Back / Next bar.
+- **What-If Slider:** On every results page, move one answer — your test score first, then essays, experience, maths and the rest — and every programme below re-scores in place, flipping verdicts and tiers as it goes. Nothing is saved unless you press *Keep this answer*.
+- **Filter Pills:** *All · UK · Europe · US · Canada* and *Safe · Target · Dream* cut a 30-school table down to the part you care about. Safe is at or above a school's Strong line, Target is Competitive, Dream is eligible but below it.
+- **Deadlines and Official Links:** Each programme shows its next application deadline as a countdown ("Round 2 · 6 Jan 2027 · in 15 weeks") beside a link to its official admissions page, from `data/deadlines.js`. Every date is tagged with where it came from, and programmes whose dates could not be confirmed show the link alone rather than a guess. Dates were read on 23 September 2026 for the 2026–27 cycle.
+- **Battle Plan (PDF):** A two-page summary — your list by tier with deadlines, your strengths and gaps, and a dated checklist — sent to the print dialog, where *Save as PDF* makes the file.
+- **Built for Thumbs:** On phones every control is at least 44px, answers are full-width cards, and the sideways menus fade at the edge and snap to an item.
 - **Hard Gates Before Scoring:** If a programme requires a quantitative degree or excludes computing graduates, it is explicitly flagged as *Ineligible* alongside the exact published rule.
 - **Targeted Score Insights:** Shows estimated GMAT/GRE distributions for admitted cohorts and calculates break-even test percentiles.
 - **Built-in Employer Placement:** In-app dropdown examples help you benchmark internship and full-time employer prestige without guesswork. *(Detailed reference in [docs/EMPLOYER-GUIDE.md](docs/EMPLOYER-GUIDE.md)).*
@@ -92,14 +101,17 @@ img/wordmark/       Nameplate images for the Wall Street and FBI Watchlist editi
 sw.js               Service worker — keeps visited calculators working offline
 js/theme.js         Edition picker, section-nav highlighting and the dateline
 js/ticker.js        The Admissions Index ticker and the front page's "Highest bars"
-js/engine.js        Core wizard runtime and reactive form logic
+js/engine.js        Core wizard runtime, reactive form logic and the running score
+js/results-kit.js   Filter pills, the what-if slider, deadline countdowns, the battle plan
 js/score-*.js       Scoring algorithms and gate evaluation rules
 js/page-*.js        UI presentation and dynamic results rendering
 data/*-model.js     Declarative question definitions, school profiles, and thresholds
 data/it-evidence.js 5-year aggregated admissions data
+data/deadlines.js   Official admissions links and 2026–27 deadlines, each date source-tagged
 
 tests/*.js          Comprehensive test suites (equivalence, gates, profiles)
 tools/build.js      Packages the site into _site/ for publishing (bundled, minified, hashed)
+tools/run-tests.js  Cross-platform test runner behind `npm test`
 docs/               Supplementary documentation and employer placement guide
 design/concepts/    Parked alternative redesigns (static mockups, not part of the site)
 CREDITS.md          Photograph and typeface credits and licensing details

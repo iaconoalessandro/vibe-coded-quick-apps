@@ -60,11 +60,7 @@ window.Wizard = (function () {
         barEl.style.width = pct + '%';
         if (barEl.parentNode) barEl.parentNode.setAttribute('aria-valuenow', String(pct));
       }
-      if (chipEl) {
-        chipEl.textContent = cfg.chipValue(answers);
-        chipEl.parentNode.setAttribute('aria-label',
-          'Score so far: ' + chipEl.parentNode.textContent.replace(/\s+/g, ' ').trim());
-      }
+      if (chipEl) drawChip(cfg.chipValue(answers));
       if (navEl) {
         Array.prototype.forEach.call(navEl.children, function (b, i) {
           var gaps = i !== current && i <= furthest ? missingIn(i).length : 0;
@@ -77,6 +73,34 @@ window.Wizard = (function () {
         });
       }
       drawSkipped();
+    }
+
+    /* The running score, updated as each box is filled: the value, and for a
+     * moment after a change, by how much it moved. On phones the same figure
+     * is repeated in the Back / Next bar pinned to the bottom of the screen,
+     * because the score beside the contents has scrolled away by then. */
+    var chipShown = null, deltaTimer = null;
+    function drawChip(value) {
+      var n = parseFloat(value);
+      var moved = chipShown !== null && !isNaN(n) && Math.abs(n - chipShown) >= 0.05
+        ? Math.round((n - chipShown) * 10) / 10 : 0;
+      chipShown = isNaN(n) ? null : n;
+      chipEl.textContent = value;
+      mount.querySelectorAll('.bar-score .n').forEach(function (b) { b.textContent = value; });
+
+      var box = chipEl.parentNode;
+      var delta = box.querySelector('.delta');
+      if (moved && delta) {
+        delta.textContent = (moved > 0 ? '+' : '−') + Math.abs(moved);
+        delta.className = 'delta ' + (moved > 0 ? 'up' : 'down');
+        box.classList.remove('bump');
+        void box.offsetWidth;            // restart the animation
+        box.classList.add('bump');
+        clearTimeout(deltaTimer);
+        deltaTimer = setTimeout(function () { delta.className = 'delta'; }, 1600);
+      }
+      box.setAttribute('aria-label', 'Score so far: ' + value + ' ' +
+        ((box.querySelector('.k') || {}).textContent || ''));
     }
 
     /* Main questions left empty: everything that is not optional, and not a
@@ -405,6 +429,14 @@ window.Wizard = (function () {
       });
       actions.appendChild(reset);
 
+      if (chipEl) {
+        var mini = el('span', 'bar-score');
+        mini.setAttribute('aria-hidden', 'true');   // the full score box is the one read out
+        mini.appendChild(el('span', 'k', 'Score'));
+        mini.appendChild(el('span', 'n', chipEl.textContent));
+        actions.appendChild(mini);
+      }
+
       var next = el('button', 'btn primary',
         current === steps.length - 1 ? 'See results →' : 'Next →');
       next.addEventListener('click', function () {
@@ -453,6 +485,18 @@ window.Wizard = (function () {
 
     return {
       answers: function () { return answers; },
+      /* Write several answers at once — the results page's what-if panel,
+       * when you choose to keep what you tried. */
+      update: function (patch) {
+        Object.keys(patch).forEach(function (k) {
+          var v = patch[k];
+          if (v === undefined || v === null || v === '') delete answers[k];
+          else answers[k] = v;
+        });
+        persist();
+        refreshMeta();
+        if (cfg.onChange) cfg.onChange(answers);
+      },
       go: go,
       refresh: refreshMeta,
       firstMissingStep: function () {

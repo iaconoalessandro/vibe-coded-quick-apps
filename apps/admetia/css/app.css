@@ -842,6 +842,122 @@ details.breakdown .inner { padding: 0 0 16px; }
 .empty { padding: 28px 0; text-align: center; font: italic 17px var(--font-head); color: var(--muted); }
 
 /* ===========================================================================
+ * Running score, what-if, filters and deadlines
+ * ======================================================================== */
+
+/* The running score beside the contents: the answers so far on the evenly
+ * weighted track scale, with the last change flashed beside it. */
+.score-chip.live {
+  display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; column-gap: 6px;
+  margin-top: 18px; padding: 12px 14px; white-space: normal;
+  border: 1px solid var(--rule); background: var(--paper-3);
+}
+.score-chip.live .label { grid-column: 1 / -1; margin-bottom: 4px; }
+.score-chip.live .n { font-size: 34px; letter-spacing: -.02em; }
+.score-chip.live .k { font-size: 13px; }
+.score-chip.live .delta { justify-self: end; font: 700 13px/1 var(--font-ui); font-variant-numeric: tabular-nums; opacity: 0; transition: opacity .3s; }
+.score-chip.live .delta.up { color: var(--good); opacity: 1; }
+.score-chip.live .delta.down { color: var(--low); opacity: 1; }
+.score-chip.live .chip-note { grid-column: 1 / -1; margin: 8px 0 0; font: italic 13.5px/1.45 var(--font-head); color: var(--muted); }
+.score-chip.live.bump .n { animation: bump .45s cubic-bezier(.3, 1.6, .5, 1); }
+:root[data-theme] .score-chip.live .n { color: var(--ink); }
+:root[data-theme] .score-chip.live .label, :root[data-theme] .score-chip.live .k { color: var(--muted); }
+@keyframes bump { 40% { transform: scale(1.12); } }
+
+/* Its copy in the Back / Next bar, shown only where that bar is pinned. */
+.bar-score { display: none; }
+
+/* Filter pills. Sticky under the ticker so they stay in reach down a long
+ * table. */
+.filters {
+  position: sticky; top: calc(42px + env(safe-area-inset-top)); z-index: 12;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
+  margin: 0 0 22px; padding: 10px 0;
+  background: var(--paper); border-bottom: 1px solid var(--rule);
+}
+.pill-group { display: flex; flex-wrap: wrap; gap: 6px; padding-left: 14px; border-left: 1px solid var(--hair); }
+.pill {
+  display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 14px;
+  font: 600 13.5px/1 var(--font-ui); color: var(--ink); cursor: pointer;
+  background: var(--paper-3); border: 1px solid var(--rule); border-radius: 999px;
+  transition: background .12s, color .12s;
+}
+.pill .c { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.pill:hover { background: var(--paper-2); }
+.pill.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.pill.on .c { color: inherit; opacity: .75; }
+.pill:disabled { opacity: .38; cursor: default; }
+.pill:disabled:hover { background: var(--paper-3); }
+.filter-status { margin-left: auto; font: italic 14px/1.3 var(--font-head); color: var(--muted); }
+.filter-empty { padding: 16px 0; font: italic 15.5px/1.4 var(--font-head); color: var(--muted); }
+
+/* What-if. */
+.whatif { margin: 0 0 22px; padding: 16px 20px 18px; border: 1px solid var(--rule); border-top: 3px solid var(--accent); background: var(--paper-2); }
+.whatif.trying { border-top-color: var(--good); }
+.whatif-head h3 { margin: 0 0 4px; font: var(--head-weight) 22px/1.15 var(--font-head); }
+.whatif-head p { margin: 0 0 14px; font-size: 15.5px; line-height: 1.5; color: var(--ink-2); }
+.whatif-controls { display: grid; grid-template-columns: minmax(170px, 240px) minmax(0, 1fr); gap: 12px 22px; align-items: start; }
+.whatif-pick { display: grid; gap: 6px; font: 700 11.5px/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.whatif-pick select { width: 100%; text-transform: none; letter-spacing: 0; min-height: 44px; }
+.whatif-single { font: 700 11.5px/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+.whatif-slider { display: grid; gap: 6px; min-width: 0; }
+.whatif-value { font: var(--head-weight) 20px/1.25 var(--font-head); color: var(--ink); }
+.whatif-ends { display: flex; justify-content: space-between; gap: 12px; font: 500 12px/1.3 var(--font-ui); color: var(--muted); }
+.whatif-ends span:last-child { text-align: right; }
+.whatif-result { margin: 14px 0 0; font: 600 15px/1.45 var(--font-ui); color: var(--ink); }
+.whatif-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+/* A range input drawn to match: a thick track filled to the thumb, and a
+ * thumb big enough to catch with a thumb. */
+.whatif input[type="range"] {
+  -webkit-appearance: none; appearance: none; width: 100%; height: 36px; margin: 0;
+  background: transparent; cursor: pointer; --fill: 0%;
+}
+.whatif input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px; border-radius: 4px;
+  background: linear-gradient(to right, var(--meter) var(--fill), var(--meter-track) var(--fill));
+}
+.whatif input[type="range"]::-moz-range-track { height: 8px; border-radius: 4px; background: var(--meter-track); }
+.whatif input[type="range"]::-moz-range-progress { height: 8px; border-radius: 4px; background: var(--meter); }
+.whatif input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: 28px; height: 28px; margin-top: -10px; border-radius: 50%;
+  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+}
+.whatif input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+}
+.whatif input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* A row the what-if has moved: flashes when its verdict flips, and keeps a
+ * marker in the margin while the trial answer stands. */
+.row.flip { animation: flip .9s ease-out; }
+@keyframes flip { 0% { background: color-mix(in srgb, var(--good) 22%, transparent); } 100% { background: transparent; } }
+.row.moved-up .num b::after, .row.moved-down .num b::after { font: 700 13px/1 var(--font-ui); margin-left: 4px; }
+.row.moved-up .num b::after { content: "\25B2"; color: var(--good); }
+.row.moved-down .num b::after { content: "\25BC"; color: var(--low); }
+
+/* Deadlines: the next round as a countdown, and the official page. */
+.row .name > .dl {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 7px;
+  font: 500 13.5px/1.4 var(--font-ui); letter-spacing: 0;
+}
+.dl-badge { display: inline-flex; gap: 5px; align-items: baseline; padding: 2px 8px; border: 1px solid var(--hair); background: var(--paper-3); color: var(--ink-2); }
+.dl-badge b { font-weight: 700; color: var(--ink); }
+.dl-badge.near { border-color: var(--mid); }
+.dl-badge.soon { border-color: var(--low); background: color-mix(in srgb, var(--low) 9%, var(--paper-3)); }
+.dl-badge.soon b { color: var(--low); }
+.dl-badge.past, .dl-badge.rolling { font-style: italic; color: var(--muted); }
+.dl-after { color: var(--muted); }
+.dl-link { color: var(--accent-2); text-underline-offset: 2px; white-space: nowrap; }
+.dl-link::after { content: " \2197"; }
+.dl .provenance { margin-left: 0; }
+.dl-note { flex-basis: 100%; font: italic 13.5px/1.4 var(--font-head); color: var(--muted); }
+
+/* The battle plan only exists for printing. */
+.plan { display: none; }
+
+/* ===========================================================================
  * Colophon
  * ======================================================================== */
 
@@ -1571,6 +1687,60 @@ html.no-js .reveal { opacity: 1; animation: none; }
   h2.section .count { margin-left: 0; text-align: left; }
   footer.foot > p { padding: 12px 0; border-left: 0; border-top: 1px solid var(--hair); }
   footer.foot > p:first-of-type { border-top: 0; }
+
+  /* Fat-finger pass. Every control a thumb has to hit is at least 44px in
+   * both directions, and answers become full-width cards rather than a small
+   * box beside a line of text. */
+  .sections a { min-height: 44px; min-width: 44px; justify-content: center; }
+  .edition button { min-width: 42px; min-height: 42px; }
+  .options:not(.grid) { gap: 8px; }
+  .opt:not(.compact) {
+    min-height: 54px; padding: 10px 14px; gap: 14px;
+    border: 1px solid var(--hair); background: var(--paper-3); border-radius: 6px;
+    transition: border-color .12s, background .12s;
+  }
+  .opt:not(.compact) .mark { width: 24px; height: 24px; }
+  .opt:not(.compact) .mark::after { width: 12px; height: 6px; }
+  .opt:not(.compact).on { border: 2px solid var(--ink); padding: 9px 13px; }
+  .opt:active:not(.disabled) { background: var(--paper-2); }
+  .opt.compact { min-height: 48px; border-radius: 6px; }
+  .options.grid { gap: 8px; }
+  .clear-link { padding: 0 4px; }
+
+  /* The two sideways-scrolling menus fade at the edge, so it is plain there
+   * is more to swipe to, and settle on an item rather than between two. */
+  .stepnav, .sections-inner {
+    scroll-snap-type: x proximity; scroll-padding: 0 var(--gutter);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent);
+  }
+  .stepnav button, .sec-cluster { scroll-snap-align: start; }
+  .stepnav button { min-height: 48px; }
+
+  .score-chip.live { grid-template-columns: auto auto auto 1fr; margin: 12px 0 0; padding: 8px 12px; }
+  .score-chip.live .label { grid-column: auto; margin: 0 6px 0 0; display: inline; }
+  .score-chip.live .k { display: inline; }
+  .score-chip.live .n { font-size: 24px; }
+  .score-chip.live .chip-note { display: none; }
+  #wizard .actions .bar-score { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 52px; }
+  .bar-score .k { font: 700 9.5px/1 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .bar-score .n { font: var(--head-weight) 19px/1.1 var(--font-num); font-variant-numeric: tabular-nums; color: var(--ink); }
+  #wizard .actions .btn.primary { min-height: 50px; }
+
+  .filters {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 8px;
+    margin: 0 calc(-1 * var(--gutter)) 18px; padding: 8px var(--gutter);
+  }
+  .filters::-webkit-scrollbar { display: none; }
+  .pill-group { flex-wrap: nowrap; padding-left: 8px; }
+  .pill { min-height: 44px; flex: none; padding: 0 16px; font-size: 14.5px; }
+  .filter-status { display: none; }
+  .whatif { padding: 14px 16px 16px; margin-left: calc(-1 * var(--gutter) + 6px); margin-right: calc(-1 * var(--gutter) + 6px); }
+  .whatif-controls { grid-template-columns: minmax(0, 1fr); }
+  .whatif input[type="range"] { height: 44px; }
+  .whatif input[type="range"]::-webkit-slider-thumb { width: 32px; height: 32px; margin-top: -12px; }
+  .whatif-actions .btn { flex: 1; }
+  .dl-link { display: inline-flex; align-items: center; min-height: 44px; }
 }
 
 @media (max-width: 360px) {
@@ -1596,4 +1766,41 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .photo { display: none; }
   .panel, .note-card, .boxout, .why { box-shadow: none !important; }
   .incomplete .skip-links, .skipped { display: none; }
+  .filters, .whatif, .dl-link, .score-chip.live { display: none !important; }
+
+  /* The battle plan: when it is what is being printed, it is all that is
+   * printed — two A4 pages, set plainly. */
+  html.print-plan body > *:not(.plan) { display: none !important; }
+  html.print-plan .plan { display: block; color: #000; font: 10.5pt/1.4 var(--font-body); }
+  html.print-plan .plan * { color: #000; }
 }
+@page { size: A4; margin: 14mm 14mm 16mm; }
+.plan-page + .plan-page { break-before: page; page-break-before: always; }
+.plan-mast { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 5pt; border-bottom: 2pt solid #000; }
+.plan-name { font: 700 16pt/1 var(--font-display); letter-spacing: -.01em; }
+.plan-date { font: 600 8.5pt/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.plan-kicker { margin: 10pt 0 2pt; font: 700 8.5pt/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; }
+.plan-title { margin: 0 0 4pt; font: 700 21pt/1.1 var(--font-head); letter-spacing: -.01em; }
+.plan-stand { margin: 0 0 8pt; font: italic 10.5pt/1.4 var(--font-head); }
+.plan-facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: .75pt solid #000; border-bottom: .75pt solid #000; margin-bottom: 8pt; }
+.plan-facts > div { padding: 5pt 8pt 6pt 0; }
+.plan-facts > div + div { padding-left: 8pt; border-left: .5pt solid #999; }
+.plan-facts b { display: block; font: 700 15pt/1.1 var(--font-num); }
+.plan-facts span { font: 600 7.5pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.plan-h { margin: 9pt 0 3pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.plan-more { font-weight: 500; letter-spacing: 0; text-transform: none; }
+.plan-table { width: 100%; border-collapse: collapse; font: 9pt/1.3 var(--font-ui); }
+.plan-table th { text-align: left; font: 700 7pt/1.2 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; border-bottom: .75pt solid #000; padding: 2pt 4pt 2pt 0; }
+.plan-table td { padding: 2.5pt 4pt 2.5pt 0; border-bottom: .5pt solid #bbb; vertical-align: top; }
+.plan-table td.nm { font-weight: 600; width: 34%; }
+.plan-table td.sc { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.plan-h2 { margin: 0 0 6pt; padding-bottom: 3pt; border-bottom: 2pt solid #000; font: 700 15pt/1.1 var(--font-head); }
+.plan-h2 + .plan-cols, .plan-cols + .plan-h2 { margin-top: 12pt; }
+.plan-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; }
+.plan-cols h3 { margin: 0 0 4pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.plan-cols ul { margin: 0; padding-left: 12pt; }
+.plan-cols li { margin-bottom: 3pt; }
+.plan-check { list-style: none; margin: 0; padding: 0; }
+.plan-check li { position: relative; padding: 4pt 0 4pt 18pt; border-bottom: .5pt solid #bbb; }
+.plan-check li::before { content: ""; position: absolute; left: 0; top: 5pt; width: 9pt; height: 9pt; border: 1pt solid #000; }
+.plan-foot { margin-top: 12pt; font: italic 8.5pt/1.4 var(--font-head); }

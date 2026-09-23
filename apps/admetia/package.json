@@ -4,7 +4,7 @@
   "description": "Build and test tooling only; the site itself runs straight from these files.",
   "scripts": {
     "build": "node tools/build.js",
-    "test": "for f in tests/*-test.js; do node \"$f\" > /dev/null || { echo \"FAILED: $f\"; exit 1; }; done && echo 'All tests passed'"
+    "test": "node tools/run-tests.js"
   },
   "devDependencies": {
     "esbuild": "0.28.2"

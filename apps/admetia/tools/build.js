@@ -32,8 +32,13 @@ const esbuild = require('esbuild');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, '_site');
 const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html'];
+/* Never published: tooling, the test suites (tests/fixtures alone is 2.6 MB),
+ * parked mockups, and documents written for this repository rather than for
+ * readers of the site. CREDITS.md does ship — it carries the photo and type
+ * attributions. */
 const SKIP = new Set(['.git', '.github', '.claude', 'node_modules', '_site', '.DS_Store',
-  'package.json', 'package-lock.json']);
+  'package.json', 'package-lock.json', 'tests', 'tools', 'design', 'docs',
+  'README.md', 'VERIFICATION.md']);
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const hash = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 10);

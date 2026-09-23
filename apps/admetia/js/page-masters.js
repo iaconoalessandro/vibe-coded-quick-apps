@@ -177,7 +177,7 @@
     return s;
   }
 
-  function showResults(answers) {
+  function showResults(answers, keepScroll) {
     lastAnswers = answers;
     var res = S.evaluate(answers, trackId);
     var s = res.score;
@@ -221,6 +221,22 @@
     });
     if (gapNote) resultsView.appendChild(gapNote);
     resultsView.appendChild(sum);
+
+    /* What-if and the filter pills sit above the explainer, so the tables
+     * can be cut down before anything else is read. */
+    var kit = window.ResultsKit ? ResultsKit.session(resultsView) : null;
+    var filters = null;
+    if (kit) {
+      var wi = kit.whatIf({
+        levers: levers(answers),
+        project: function (patch) { return project(answers, patch); },
+        onKeep: function (patch) { wiz.update(patch); showResults(wiz.answers(), true); }
+      });
+      if (wi) resultsView.appendChild(wi);
+      filters = kit.filterBar();
+      resultsView.appendChild(filters.el);
+    }
+    currentKit = kit;
 
     resultsView.appendChild(profileExplainer(res, bestFit, worstFit));
 
@@ -335,17 +351,138 @@
     other.href = 'business.html';
     other.textContent = 'Try another track';
     actions.appendChild(other);
-    var print = el('button', 'btn', 'Print or save as PDF');
+    var print = el('button', 'btn', 'Print the page');
     print.addEventListener('click', function () { window.print(); });
     actions.appendChild(print);
+    if (window.ResultsKit) {
+      actions.appendChild(ResultsKit.planButton(function () { return battlePlan(answers, res); }));
+    }
     resultsView.appendChild(actions);
 
+    if (filters) filters.refresh();
     if (chip) chip.textContent = fmt(s.total);
 
     /* Results are built after load, so the reveal observer has to be pointed
      * at the new nodes explicitly. */
     if (window.UI) UI.reveal(resultsView);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* -------------------------------------------------------------------
+   * Tiers, what-if and the battle plan
+   * ---------------------------------------------------------------- */
+
+  var currentKit = null;
+
+  function tierOf(r) {
+    if (!r.eligible) return 'out';
+    return r.band.tone === 'high' ? 'safe' : r.band.tone === 'good' ? 'target' : 'dream';
+  }
+
+  function merged(answers, patch) {
+    var a = Object.assign({}, answers);
+    Object.keys(patch).forEach(function (k) {
+      if (patch[k] === undefined) delete a[k]; else a[k] = patch[k];
+    });
+    return a;
+  }
+
+  function project(answers, patch) {
+    var res = S.evaluate(merged(answers, patch), trackId);
+    var rows = {}, comp = 0, elig = 0;
+    res.rows.forEach(function (r) {
+      rows[r.school.id] = { num: fmt(r.adjusted), verdict: r.verdict, tier: tierOf(r), value: r.adjusted };
+      if (r.eligible) { elig++; if (r.band.tone === 'good' || r.band.tone === 'high') comp++; }
+    });
+    return { rows: rows, summary: 'Profile score ' + fmt(res.score.total) + ' — Competitive or better at ' +
+      comp + ' of ' + elig + ' eligible' };
+  }
+
+  /* The test first, on the scale you answered in (Focus if you have not sat
+   * one), then the parts of the file that can still change. */
+  function levers(answers) {
+    var t = S.testInfo(answers);
+    var kind = t.submitting ? t.kind : 'focus';
+    var steps = [{ label: 'No test submitted', patch: { testStatus: 'ts_no' } }];
+    var cur = t.submitting ? (kind === 'gre' ? parseFloat(answers.greQuant) : parseFloat(answers.testScore)) : null;
+    function add(lo, hi, step, fn) { for (var v = lo; v <= hi; v += step) steps.push(fn(v)); }
+    if (kind === 'gre') {
+      add(140, 170, 1, function (v) {
+        return { label: 'GRE quant ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gre', greQuant: v } };
+      });
+    } else if (kind === 'gmat') {
+      add(500, 800, 10, function (v) {
+        return { label: 'GMAT ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gmat', testScore: v } };
+      });
+    } else {
+      add(505, 805, 10, function (v) {
+        return { label: 'GMAT Focus ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_focus', testScore: v } };
+      });
+    }
+    var start = 0;
+    if (cur !== null && !isNaN(cur)) {
+      var best = Infinity;
+      steps.forEach(function (st, i) {
+        if (st.v !== undefined && Math.abs(st.v - cur) < best) { best = Math.abs(st.v - cur); start = i; }
+      });
+    }
+    var out = [{ id: 'test', label: 'Test score', steps: steps, start: start }];
+
+    var byId = {};
+    M.steps.forEach(function (st) { st.groups.forEach(function (g) { byId[g.id] = g; }); });
+    var scoreOf = function (p) { return S.score(merged(answers, p), trackId).total; };
+    ['essays', 'internMonths', 'internQuality', 'leadership', 'international', 'ectsQuant', 'programming']
+      .forEach(function (gid) {
+        if (byId[gid] && byId[gid].type === 'radio') out.push(ResultsKit.radioLever(byId[gid], answers, scoreOf));
+      });
+    return out;
+  }
+
+  function battlePlan(answers, res) {
+    var s = res.score;
+    var eligible = res.rows.filter(function (r) { return r.eligible; });
+    var blocked = res.rows.filter(function (r) { return !r.eligible; });
+    var comp = eligible.filter(function (r) { return r.band.tone === 'good' || r.band.tone === 'high'; });
+
+    var rows = eligible.map(function (r) {
+      return { key: r.school.id, name: r.school.name, region: ResultsKit.regionLabel(r.school.region),
+        tier: tierOf(r), verdict: r.verdict.label, score: fmt(r.adjusted) + ' / ' + r.school.threshold };
+    });
+
+    var contrib = s.contributions.filter(function (c) { return c.weight > 0; });
+    var strengths = contrib.filter(function (c) { return c.value >= 0.6; })
+      .sort(function (x, y) { return y.value * y.weight - x.value * x.weight; }).slice(0, 4)
+      .map(function (c) {
+        return { label: FACTOR_NAMES[c.key], detail: Math.round(c.value * 100) + '% of its ' + fmt(c.weight) + ' points' };
+      });
+    var strong = strengths.map(function (x) { return x.label; });
+    var gaps = contrib.filter(function (c) { return c.value < 0.8 && strong.indexOf(FACTOR_NAMES[c.key]) < 0; })
+      .sort(function (x, y) { return (1 - y.value) * y.weight - (1 - x.value) * x.weight; }).slice(0, 4)
+      .map(function (c) {
+        return { label: FACTOR_NAMES[c.key], detail: fmt((1 - c.value) * c.weight) + ' of ' + fmt(c.weight) + ' points not yet earned' };
+      });
+
+    var steps = res.improvements.slice(0, 4).map(function (i) {
+      return i.groupLabel + ' → ' + i.optionLabel + ' (+' + fmt(i.gain) + ' on the track weighting)';
+    });
+    if (!s.test.submitting && res.breakEven) {
+      steps.push('Decide on a test: it only helps above roughly the ' + ordinal(res.breakEven.percentile) +
+        ' percentile — about ' + res.breakEven.gmat + ' GMAT or ' + res.breakEven.focus + ' Focus.');
+    }
+    blocked.slice(0, 3).forEach(function (r) {
+      steps.push('Ruled out at ' + r.school.name + ': ' + r.gates.failures[0].label.replace(/^./, function (c) { return c.toLowerCase(); }) + '.');
+    });
+    if (S.completeness(answers) < 100) steps.unshift('Answer the questions you skipped — a missing answer scores nothing.');
+
+    return {
+      kicker: track.full,
+      title: headline(comp.length, eligible.length, blocked.length),
+      standfirst: 'A profile score of ' + fmt(s.total) + ' on the ' + track.name.toLowerCase() +
+        ' weighting, before any school’s own emphasis. ' + blockedLine(blocked.length, S.completeness(answers)),
+      facts: [['Profile score', fmt(s.total) + ' / 100'], ['Competitive or better', comp.length + ' / ' + eligible.length],
+              ['Ruled out by a rule', String(blocked.length)], ['Answered', S.completeness(answers) + '%']],
+      rows: rows, strengths: strengths, gaps: gaps, steps: steps
+    };
   }
 
   /* -------------------------------------------------------------------
@@ -583,6 +720,8 @@
     var m = el('small', null, meta);
     m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
+    var dl = window.ResultsKit && ResultsKit.deadlineNode(sc.id);
+    if (dl) name.appendChild(dl);
 
     if (r.gates.failures.length) {
       var ul = el('ul', 'gatelist');
@@ -664,11 +803,17 @@
 
     /* The score is shown whether or not a gate blocks the school. */
     var num = el('div', 'num');
-    num.appendChild(el('b', null, fmt(r.adjusted)));
+    var b = el('b', null, fmt(r.adjusted));
+    num.appendChild(b);
     num.appendChild(document.createTextNode(' / ' + sc.threshold));
     if (window.UI && UI.meter) num.appendChild(UI.meter(r.adjusted, sc.threshold, 50, 95));
     wrap.appendChild(num);
-    wrap.appendChild(el('div', 'badge ' + r.verdict.tone, r.verdict.label));
+    var badge = el('div', 'badge ' + r.verdict.tone, r.verdict.label);
+    wrap.appendChild(badge);
+    if (currentKit) {
+      ResultsKit.tag(wrap, sc.id, sc.region, tierOf(r));
+      currentKit.register(sc.id, wrap, b, badge);
+    }
     return wrap;
   }
 

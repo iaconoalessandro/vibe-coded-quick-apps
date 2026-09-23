@@ -22,7 +22,8 @@
 
   /* A ticker symbol from a school name: a short all-capitals word if the name
    * has one (HEC, INSEAD, LSE), initials for a long name (London Business
-   * School → LBS), otherwise the first word. */
+   * School → LBS), otherwise the first word. A model entry can name its own
+   * `symbol` where the rule picks the wrong word (UC Berkeley is not "UC"). */
   function symbol(name) {
     var school = String(name).split(' — ')[0].replace(/[().,]/g, '');
     var words = school.split(/\s+/);
@@ -45,7 +46,7 @@
     var M = window.MASTERS_MODEL, I = window.IT_MODEL, B = window.MBA_MODEL;
     function add(track, rows) {
       rows.forEach(function (s) {
-        out.push({ id: s.id, sym: symbol(s.name) + '·' + TRACK_CODE[track], name: s.name, track: track, bar: s.threshold });
+        out.push({ id: s.id, sym: (s.symbol || symbol(s.name)) + '·' + TRACK_CODE[track], name: s.name, track: track, bar: s.threshold });
       });
     }
     if (M) ['mim', 'mif', 'marketing'].forEach(function (t) {

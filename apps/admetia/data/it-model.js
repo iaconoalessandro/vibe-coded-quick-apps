@@ -805,6 +805,82 @@ window.IT_MODEL = (function () {
       ]
     },
 
+    /* ---------------------------------------------------------- US, CS --- */
+    /* Four programmes read at source in September 2026 for Fall 2027 entry.
+     * None requires a computing degree and none publishes a GPA or test bar
+     * beyond Berkeley's university-wide 3.0, so the gates are thin and the
+     * decision sits in the file — which is how US departments describe their
+     * own process. MIT is not here: see EXCLUDED. */
+    {
+      id: 'stanford-mscs', name: 'Stanford — MS in Computer Science',
+      tracks: ['cs', 'dsai'], region: 'USA',
+      threshold: 86, strong: 92, regime: 'A', profile: 'research',
+      because: 'Three letters, no more and no fewer, and a two-page statement of purpose, with no test and no subject requirement. With the transcript unable to separate a field this strong, the referees and the statement carry the difference.',
+      facts: [
+        { k: 'Entry requirement', v: '"While we do not require a specific undergraduate coursework, it is important that applicants have strong quantitative and analytical skills; a Bachelor\'s degree in Computer Science is not required"', src: 'OFF' },
+        { k: 'Application', v: 'Exactly three recommendation letters; a statement of purpose of no more than two pages; unofficial transcripts; $125 fee', src: 'OFF' },
+        { k: 'Tests', v: 'The GRE is not required for MS applicants', src: 'OFF' },
+        { k: 'English', v: 'TOEFL iBT 89 minimum for School of Engineering master\'s applicants; the department may set a higher bar', src: 'OFF2' },
+        { k: 'Deadline', v: '8 December 2026 for Autumn 2027 entry; the application opened 15 September 2026 and decisions follow in March', src: 'OFF' },
+        { k: 'On the PhD', v: '"Entering the MS program is by no means a guaranteed path to a PhD at Stanford"', src: 'OFF' },
+        { k: 'Acceptance rate', v: 'Not published', src: 'NP' }
+      ],
+      gates: [
+        g('minEnglish', 'C1', 'TOEFL iBT 89 — the nearest band in this form is IELTS 6.5 / TOEFL 92', 'OFF2')
+      ]
+    },
+    {
+      id: 'cmu-mscs', symbol: 'CMU', name: 'Carnegie Mellon — MS in Computer Science',
+      tracks: ['cs'], region: 'USA',
+      threshold: 85, strong: 91, regime: 'B', profile: 'research',
+      because: 'The statement of purpose is specified as an essay on "your primary research interests", and at least two of three letters must come from faculty or recent employers. That is a department reading the file for fit.',
+      facts: [
+        { k: 'Who it is for', v: '"You don\'t need a bachelor\'s degree in computer science specifically for the program, but a technical undergraduate background will set you up for success"', src: 'OFF' },
+        { k: 'Deadlines', v: 'Early 18 November 2026, final 9 December 2026 (3 p.m. EST), for Fall 2027 entry', src: 'OFF' },
+        { k: 'Tests', v: 'The GRE is "strongly recommended" but not required; applicants without one should explain their mathematical background', src: 'OFF' },
+        { k: 'Application', v: 'Three letters, at least two from faculty or recent employers; a one- or two-page statement on research interests and objectives', src: 'OFF' },
+        { k: 'English', v: 'TOEFL, IELTS or Duolingo for F-1 and J-1 applicants who are not native speakers; no waivers, and no published minimum', src: 'OFF' },
+        { k: 'Acceptance rate', v: 'Not published per programme', src: 'NP' }
+      ],
+      gates: []
+    },
+    {
+      id: 'cmu-msml', symbol: 'CMU', name: 'Carnegie Mellon — MS in Machine Learning',
+      tracks: ['dsai'], region: 'USA',
+      threshold: 86, strong: 92, regime: 'B', profile: 'prereq',
+      because: 'The department states the mathematics its first-year courses assume — a year of probability and statistics, matrix algebra and multivariate calculus — and its admitted class averaged a 3.9 GPA and 169 GRE quant. The transcript is read against that before anything else.',
+      facts: [
+        { k: 'Prerequisites', v: 'A strong background in computer science, including complexity theory and good programming skills; at least one year of college-level probability and statistics, matrix algebra and multivariate calculus', src: 'OFF' },
+        { k: 'Degree field', v: '"An undergraduate degree in computer science is not required"', src: 'OFF' },
+        { k: 'Admitted profile', v: 'Fall 2025 admits averaged a 3.9 GPA, 169 GRE quantitative and 111 TOEFL', src: 'OFF' },
+        { k: 'Tests', v: 'The GRE was optional for Fall 2025 and 2026 entry; the Fall 2027 policy is not yet stated on the programme page', src: 'OFF' },
+        { k: 'Deadlines', v: 'Early 18 November 2026, final 9 December 2026 (3 p.m. EST), for Fall 2027 entry', src: 'OFF2' }
+      ],
+      gates: [
+        g('minModules', 3, 'Assumes probability and statistics, matrix algebra and multivariate calculus', 'OFF',
+          { modules: ['mv_prob', 'mv_linalg', 'mv_calc'] })
+      ]
+    },
+    {
+      id: 'berkeley-meng', symbol: 'BERKELEY', name: 'UC Berkeley — MEng in EECS',
+      tracks: ['cs'], region: 'USA',
+      threshold: 82, strong: 89, regime: 'A', profile: 'balanced',
+      because: 'A one-year professional master\'s with a capstone and leadership courses, for people going straight into industry, which asks for "a mixture of academic and industry letters". Nothing published points to one part of the file carrying it.',
+      facts: [
+        { k: 'Who it is for', v: 'A professional master\'s for students who plan to join the engineering profession immediately after graduating: a technical concentration, leadership courses and a capstone project, in one academic year', src: 'OFF' },
+        { k: 'Deadline', v: '6 January 2027 for Fall 2027 entry; applications are taken once a year and most admits hear by mid-April', src: 'OFF' },
+        { k: 'Tests', v: '"The EECS department no longer requires, accepts, or considers GRE scores"', src: 'OFF' },
+        { k: 'Grades', v: 'The Graduate Division requires a minimum undergraduate GPA of 3.0 on a 4.0 scale, or its equivalent', src: 'OFF2' },
+        { k: 'English', v: 'TOEFL iBT 90 or IELTS 7 for degrees from non-English-speaking universities', src: 'OFF' },
+        { k: 'Application', v: 'Three letters, ideally a mix of academic and industry; a statement of purpose and a personal history statement', src: 'OFF' },
+        { k: 'MS route', v: 'Berkeley\'s research MS is part of the MS/PhD admission and is not modelled here', src: 'CAL' }
+      ],
+      gates: [
+        g('minDegreeClass', '2:1', 'Requires a GPA of at least 3.0 on a 4.0 scale', 'OFF2'),
+        g('minEnglish', 'C1', 'TOEFL iBT 90 or IELTS 7', 'OFF')
+      ]
+    },
+
     /* ------------------------------------------------------- Conversion --- */
     {
       id: 'imperial-computing', name: 'Imperial — MSc Computing (conversion)',
@@ -906,11 +982,19 @@ window.IT_MODEL = (function () {
       src: 'CAL'
     },
     {
-      name: 'US computing master\'s',
-      why: 'Out of scope for this build. The applicant-reported evidence is an order of ' +
-        'magnitude deeper there — Carnegie Mellon alone has more reported results since 2021 ' +
-        'than every programme in this model combined — so a US track would be built on a ' +
-        'different and stronger basis rather than by extending this one.',
+      name: 'MIT — Electrical Engineering and Computer Science',
+      why: 'MIT EECS offers no terminal master\'s. Its Master of Engineering is open only to ' +
+        'MIT\'s own undergraduates, and every outside applicant is admitted into the PhD, ' +
+        'earning a master\'s on the way. There is no master\'s application to score.',
+      src: 'OFF2'
+    },
+    {
+      name: 'The rest of the US computing master\'s',
+      why: 'Stanford, Carnegie Mellon and Berkeley are modelled from their published rules. ' +
+        'The applicant-reported results used for the UK and European programmes do not yet ' +
+        'cover them — Carnegie Mellon alone has more reported results since 2021 than every ' +
+        'programme here combined — so no US programme shows applicant reports, and more ' +
+        'US schools will wait until that evidence is built properly rather than guessed at.',
       src: 'CAL'
     }
   ];

@@ -53,6 +53,21 @@ t('a maths graduate with computing credit gets a warning, not a bar',
   (()=>{const r=row(with_({degreeField:'fld_maths'}),'cs','imperial-advcomp');
         return r.verdict.label!=='Ineligible'&&r.gates.warnings.length>0;})());
 
+/* The US programmes. None requires a computing degree; the rules they do
+ * publish are a maths prerequisite at CMU's MSML and Berkeley's 3.0 floor. */
+t('a physics graduate is not barred from Stanford’s MS CS',
+  row(with_({degreeField:'fld_maths',csEcts:'ce_30'}),'cs','stanford-mscs').verdict.label!=='Ineligible');
+t('CMU MSML bars an applicant without probability and statistics',
+  row(with_({mv_prob:false}),'dsai','cmu-msml').verdict.label==='Ineligible');
+t('CMU MSML admits the same applicant with it',
+  row(strong,'dsai','cmu-msml').verdict.label!=='Ineligible');
+t('Berkeley MEng bars a GPA below 3.0',
+  row(with_({gradeBand:'gb_low'}),'cs','berkeley-meng').verdict.label==='Ineligible');
+t('Berkeley MEng takes a GPA around 3.0',
+  row(with_({gradeBand:'gb_mid'}),'cs','berkeley-meng').verdict.label!=='Ineligible');
+t('the US programmes sit among the most selective thresholds',
+  ['stanford-mscs','cmu-mscs','cmu-msml'].every(id=>M.schools.filter(x=>x.id===id)[0].threshold>=84));
+
 /* The inverting gate — the one rule here that a stronger profile makes worse. */
 t('noCsDegree blocks a computing graduate from a conversion MSc',
   row(strong,'conversion','ucl-cs-conv').verdict.label==='Ineligible');
