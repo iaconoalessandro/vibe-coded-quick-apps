@@ -20,6 +20,15 @@ window.Wizard = (function () {
     return n;
   }
 
+  /* Steps are the parts of the questionnaire, numbered like a printed form. */
+  function roman(n) {
+    return ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][n] || String(n);
+  }
+
+  /* Newspaper style: one to nine in words, 10 and up in figures. */
+  var WORDS = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  function words(n) { return WORDS[n] || String(n); }
+
   function create(cfg) {
     var model = cfg.model;
     var steps = model.steps;
@@ -285,9 +294,10 @@ window.Wizard = (function () {
       return det;
     }
 
-    function groupNode(group) {
+    function groupNode(group, index) {
       var box = el('div', 'group');
       var h = el('h3');
+      h.appendChild(el('span', 'qno', (current + 1) + '.' + (index + 1)));
       h.appendChild(document.createTextNode(group.label));
       if (group.optional) h.appendChild(el('span', 'optional-tag', 'optional'));
       box.appendChild(h);
@@ -360,13 +370,15 @@ window.Wizard = (function () {
       syncers = [];
 
       var head = el('div', 'step-head');
+      head.appendChild(el('p', 'kicker', 'Part ' + roman(current + 1) + ' of ' + roman(steps.length)));
       var title = el('h1', null, step.title);
       title.tabIndex = -1;       // focus target when moving between steps
       head.appendChild(title);
-      if (step.blurb) head.appendChild(el('p', null, step.blurb));
+      /* A drop cap only where there is enough text to wrap round it. */
+      if (step.blurb) head.appendChild(el('p', step.blurb.length > 110 ? 'dropcap' : null, step.blurb));
       mount.appendChild(head);
 
-      step.groups.forEach(function (g) { mount.appendChild(groupNode(g)); });
+      step.groups.forEach(function (g, i) { mount.appendChild(groupNode(g, i)); });
 
       skipNote = null;
       if (current === steps.length - 1) {
@@ -428,7 +440,9 @@ window.Wizard = (function () {
       if (!navEl) return;
       navEl.innerHTML = '';
       steps.forEach(function (s, i) {
-        var b = el('button', null, (i + 1) + '. ' + s.title);
+        var b = el('button');
+        b.appendChild(el('span', 'n', roman(i + 1) + '.'));
+        b.appendChild(document.createTextNode(' ' + s.title));
         b.addEventListener('click', function () { go(i); });
         navEl.appendChild(b);
       });
@@ -470,5 +484,71 @@ window.Wizard = (function () {
     return box;
   }
 
-  return { create: create, el: el, incompleteNote: incompleteNote };
+  /* The header of a calculator page: kicker, a headline with one emphasised
+   * word (`title` is [before, emphasised, after]), standfirst, and the track's
+   * photograph with its credit. */
+  function sectionHead(kicker, title, standfirst, shot) {
+    var head = el('header', 'sec-head');
+    var text = el('div', 'sec-text');
+    text.appendChild(el('p', 'kicker', kicker));
+    var h = el('h1', 'headline');
+    h.appendChild(document.createTextNode(title[0]));
+    h.appendChild(el('em', null, title[1]));
+    h.appendChild(document.createTextNode(title[2]));
+    text.appendChild(h);
+    text.appendChild(el('p', 'standfirst', standfirst));
+    head.appendChild(text);
+    if (shot) {
+      var fig = el('figure', 'photo');
+      var plate = el('span', 'plate');
+      var img = document.createElement('img');
+      img.src = shot.src;
+      img.width = shot.w; img.height = shot.h;
+      img.alt = shot.alt;
+      img.setAttribute('fetchpriority', 'high');
+      plate.appendChild(img);
+      fig.appendChild(plate);
+      var cap = el('figcaption');
+      var credit = el('a', null, 'Photograph: Pexels');
+      credit.href = 'CREDITS.md';
+      cap.appendChild(credit);
+      fig.appendChild(cap);
+      head.appendChild(fig);
+    }
+    return head;
+  }
+
+  /* The headline over a results page: a kicker, one sentence that says what
+   * happened, and a standfirst with the numbers behind it. */
+  function resultsHead(kicker, title, standfirst) {
+    var head = el('header', 'res-head reveal');
+    head.appendChild(el('p', 'kicker', kicker));
+    head.appendChild(el('h1', 'headline', title));
+    if (standfirst) head.appendChild(el('p', 'standfirst', standfirst));
+    return head;
+  }
+
+  /* Split an ordered list of result rows into runs that share a verdict, so a
+   * table can print a heading over each run. Returns null when the rows are
+   * not grouped that way — a heading would then repeat. */
+  function verdictRuns(rows, labelOf) {
+    var runs = [];
+    rows.forEach(function (r) {
+      var label = labelOf(r);
+      var last = runs[runs.length - 1];
+      if (last && last.label === label) last.rows.push(r);
+      else runs.push({ label: label, rows: [r] });
+    });
+    var seen = {};
+    for (var i = 0; i < runs.length; i++) {
+      if (seen[runs[i].label]) return null;
+      seen[runs[i].label] = true;
+    }
+    return runs;
+  }
+
+  return {
+    create: create, el: el, incompleteNote: incompleteNote,
+    words: words, sectionHead: sectionHead, resultsHead: resultsHead, verdictRuns: verdictRuns
+  };
 }());

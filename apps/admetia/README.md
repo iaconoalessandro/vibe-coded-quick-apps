@@ -52,6 +52,8 @@ A rule-first evaluation model for 22 premier UK and European computing master's 
 - **Targeted Score Insights:** Shows estimated GMAT/GRE distributions for admitted cohorts and calculates break-even test percentiles.
 - **Built-in Employer Placement:** In-app dropdown examples help you benchmark internship and full-time employer prestige without guesswork. *(Detailed reference in [docs/EMPLOYER-GUIDE.md](docs/EMPLOYER-GUIDE.md)).*
 - **100% Client-Side Privacy:** Your answers are saved only in your browser's `localStorage` so refreshing doesn't lose your work. Easily wiped with the footer's *"Clear everything"* or *"Forget on tab close"* options.
+- **Three Editions:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — and the *Edition* picker in the top strip switches between **The City** (the default, after the Financial Times: salmon paper, claret and teal, a dark market bar), **Wall Street** (after the WSJ: black and white with colour photographs, Times New Roman with a condensed display face for headlines) and **FBI Watchlist** (after Forbes: black masthead, white page, full colour). The choice is remembered in this browser.
+- **The Admissions Index:** a market-style ticker under the navigation. Each programme is a symbol whose "price" is the Competitive bar the model uses for it; once you have answered a calculator, the change column shows your margin against each bar in green or red. It is built from the models and your saved answers — nothing is fetched, and none of it is market data.
 
 ---
 
@@ -65,7 +67,10 @@ masters.html        Master's calculator (?track=mim|mif|marketing)
 it.html             IT track picker (Computer Science, Data Science & AI, Conversion)
 computing.html      Computing calculator (?track=cs|dsai|conversion)
 
-css/app.css         Shared responsive styling (light & dark mode support)
+css/app.css         The newspaper layout and its three editions
+css/fonts.css       @font-face rules for the typefaces in fonts/ (all SIL OFL)
+js/theme.js         Edition picker, section-nav highlighting and the dateline
+js/ticker.js        The Admissions Index ticker and the front page's "Highest bars"
 js/engine.js        Core wizard runtime and reactive form logic
 js/score-*.js       Scoring algorithms and gate evaluation rules
 js/page-*.js        UI presentation and dynamic results rendering
@@ -74,7 +79,8 @@ data/it-evidence.js 5-year aggregated admissions data
 
 tests/*.js          Comprehensive test suites (equivalence, gates, profiles)
 docs/               Supplementary documentation and employer placement guide
-CREDITS.md          Photograph credits and Pexels / CC0 licensing details
+design/concepts/    Parked alternative redesigns (static mockups, not part of the site)
+CREDITS.md          Photograph and typeface credits and licensing details
 VERIFICATION.md     Mathematical proof and verification methodology
 ```
 
@@ -85,3 +91,13 @@ VERIFICATION.md     Mathematical proof and verification methodology
 - **Ranking Tool, Not a Guarantee:** Outputs indicate relative competitiveness and rule eligibility; admissions committees make holistic, qualitative decisions.
 - **Approximate Conversions:** Cross-scale test mappings (GMAT 10th Ed, GMAT Focus, GRE) and international GPA conversions are percentile-based approximations.
 - **Independent & Unofficial:** Not affiliated with, endorsed by, or connected to any university, testing body, or admissions consulting service.
+
+---
+
+> **LEGAL NOTICE:** This entire codebase is 100% vibe-engineered. I have not authored a single line of syntax in this repository; my sole contribution was pressing Cmd + Enter and dissociating. I provided the vibes, Claude provided the code, and God provided the patience. If this project infringes on your copyright, patent, trade secret, or emotional well-being: I empathize deeply, but Claude made every architectural decision here. Please direct all subpoenas, cease-and-desist letters, and angry DMs to Anthropic's legal department. Claude chose this life, not me.
+>
+> My actual role was serving as an unpaid, meat-based clicker. Claude would generate a terminal command that looked like a cat fell asleep on the numpad, ask for permission, and I'd say "hell yeah, run it" because I don't know what bash is, and at this point, I'm too afraid to ask.
+>
+> Did Claude scrape your entire proprietary backend to build this todo app? Almost certainly. Does Dario Amodei feel terrible about it? In theory, yes. He is spiritually braced for your lawsuit.
+>
+> If you feel offended by the lines above, Gemini wrote them; Claude lacks the self-irony to write this.

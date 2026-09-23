@@ -224,8 +224,9 @@ grep -rnoE 'https?://...' across all .html/.css/.js/.svg
      identifier and is never fetched. No other external reference exists.
 ```
 
-The site loads no fonts, no CDN scripts and no analytics. It ships two kinds of image and
-both are on disk:
+The site loads no CDN scripts, no remotely hosted fonts and no analytics. (Since §20 it
+ships its own typefaces from `fonts/`, which are local files like everything else.) It
+ships two kinds of image and both are on disk:
 
 - **Nine photographs** in `img/photo/` — eight from Pexels under the Pexels licence, one
   from Wikimedia Commons under CC0 — all **downloaded into the project**. None is
@@ -256,6 +257,7 @@ activity and no console errors.
 - Results pages render for both calculators, including the "ineligible" section, the
   excluded-programmes section, provenance badges and the score breakdown.
 - Light and dark both render correctly; the Auto / Light / Dark toggle works and persists.
+  *(Superseded by the three-edition picker — see §20.)*
 - Counterfactual panels render on both calculators, with gain badges and honest
   "not enough on their own" footnotes where the gap cannot be closed.
 - Estimated-distribution rows render inside each school's detail panel with an
@@ -488,6 +490,76 @@ split across at least four spellings. Institution names are user-supplied, so ev
 institution is queried under each alias worth trying and the results merged.
 
 ---
+
+## 20. The newspaper redesign
+
+The whole interface was redesigned as a newspaper: masthead and section navigation on every
+page, a front page with a lead story and an index of fields, section fronts for Business and
+IT & Computing, a questionnaire with a contents column and each question's explanation set
+as a margin note, and results that open with a one-sentence headline and read as a league
+table grouped by verdict. None of it touches a number — `js/score-*.js` and `data/` are
+unchanged, and all five suites still pass (21, 23, 21, 74, and the MBA golden checks).
+
+The Auto / Light / Dark toggle is replaced by an **Edition** picker with three looks —
+The City (default), Wall Street and FBI Watchlist — stored under the same
+`admissions-calc:theme` key, so "Clear everything" still preserves it. Older stored values
+(`light`, `dark`, and the interim names `salmon`, `newsprint`, `editorial`) map to an
+edition rather than being lost. The picker is a real radio group: arrow keys move the
+choice.
+
+The City follows ft.com, measured in a browser: paper `#FFF1E5`, text `#33302E`, standfirst
+`#66605C` in sans 16/24, section labels claret `#990F3D`, links and the active nav item teal
+`#0D7680` / `#0A5E66`, quote marks oxford `#0F5499`, feature boxes `#F2DFCE`, tags `#FCD0B1`,
+a dark `#262A33` market bar with outlined changes, headlines in a display serif at weight
+~400 (Financier there, Source Serif 4 here), nav 12 px 600 uppercase.
+
+FBI Watchlist follows forbes.com, measured the same way: interface 16/24, labels 12/18
+uppercase, headlines 40/48 and 32/38.4 in a demi display serif, decks in Georgia 18/28.8,
+list numerals 18 px red `#DC0000`, links `#003891`, "trending" blue `#007AC8`, market
+up/down `#008516` / `#D8361E`.
+
+Wall Street follows the WSJ from a screenshot (wsj.com refuses automated browsers): black
+top strip, a white market line printing each value and change in green or red with an
+arrow, a blue `#0080C3` button, colour photographs, bold condensed headlines. Text stays in
+Times New Roman at the paper's 17/27, as asked.
+
+A second pass aligned each edition with the papers' published type systems. The City
+uses the FT Origami o-typography steps (56/56 and 48/48 headlines, 40/40 and 32/32 section
+heads, 28/32 story titles, 24/28 question heads, 20/24 decks, 18/28 reading text in the
+serif, 12/16 captions), 2 px corners, teal underlined links and `#96CC28` for gains on
+the market bar. Wall Street pairs Escrow-style condensed headlines (~44 px / 1.1) with
+text at 16/1.6 and a sans for the interface, standing in for Retina: nav 15 px, labels
+12 px uppercase with 0.05em tracking, true black `#000`, greys `#555` / `#E0E0E0`,
+surfaces `#F5F5F5`, blue `#0080C3`. FBI Watchlist sets text in the sans at 16/1.5 as
+Forbes does in Graphik, keeps Georgia for decks, teasers and italic pull quotes, and
+headlines at 40/48 and 32/38.4. Where a live measurement disagreed with a published
+figure, the measurement was kept.
+
+The market line sits at the top of the page in The City and Wall Street, as the FT and WSJ
+print theirs, and under the navigation in FBI Watchlist, as Forbes does; it moves when the
+edition changes.
+
+The **Admissions Index** ticker (`js/ticker.js`) prices each programme at its Competitive
+bar and, where answers are saved, shows the margin against it. Checked: 106 entries on the
+front page (7 track composites plus every programme), and with the sample Management
+profile saved the MIM composite reads −2.7 ↓ — the mean of that profile's 20 margins. It
+pauses on hover and stands still under reduced motion.
+
+Checked by rendering every page in all three editions in headless Chrome:
+
+| Check | Result |
+|---|---|
+| Front page, both section fronts, all three calculators, desktop | render in all three editions |
+| Results for Management (full profile), CS and MBA (empty profile) | headline, summary, league table, verdict dividers |
+| 390 px phone viewport, emulated as a touch device | 12 of 12 page × edition checks at scroll width 390 px; only the nav, step list and ticker scroll sideways, as intended (The City's nameplate overflowed by 14 px until given a phone size) |
+| Score dial | now draws — see below |
+| Test suites | 5/5 pass, unchanged |
+
+**The dial bug.** The results dial's coloured ring had never drawn. Its gradient stops set
+`stop-color="var(--accent)"` as a presentation attribute, which does not resolve `var()`,
+and a CSS rule then pointed the stroke at `url(#dialgrad)` while the gradient's real id was
+`dialgrad-1`, `dialgrad-2`… Either alone left the ring empty. The stops now set their colour
+in `style`, and the stray stroke rule is gone.
 
 ## Known limitations
 

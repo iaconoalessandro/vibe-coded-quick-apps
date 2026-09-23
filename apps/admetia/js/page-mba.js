@@ -55,6 +55,19 @@
     var reached = M.generalSchools.filter(function (s) { return active.base - s.points >= -2; });
     var top = M.generalSchools.filter(function (s) { return active.base - s.points >= 0; });
 
+    var n = M.generalSchools.length;
+    resultsView.appendChild(Wizard.resultsHead('Your results \u00b7 MBA',
+      reached.length
+        ? 'Competitive or better at ' + Wizard.words(reached.length) + ' of ' + Wizard.words(n) + ' schools.'
+        : 'Not yet competitive at any of the ' + Wizard.words(n) + ' schools.',
+      'A base score of ' + fmt(active.base) + ' on the ' +
+      (mode === 'published' ? 'model as published' : 'corrected model') + ', against ' +
+      Wizard.words(n) + ' schools on the shared scale. ' +
+      (top.length
+        ? Wizard.words(top.length).charAt(0).toUpperCase() + Wizard.words(top.length).slice(1) +
+          (top.length === 1 ? ' is' : ' are') + ' at or above the point requirement \u2014 the scholarship range.'
+        : 'None is yet in the scholarship range.')));
+
     var gapNote = Wizard.incompleteNote(S.completeness(answers), function () {
       resultsView.hidden = true; wizardView.hidden = false;
       wiz.go(wiz.firstMissingStep());

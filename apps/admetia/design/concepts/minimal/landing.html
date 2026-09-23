@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script>
+<style>
+body{overflow-x:hidden}.hero{position:relative;text-align:center;padding:70px 48px 30px}
+.orb{position:absolute;left:50%;top:-240px;width:900px;height:620px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,159,10,.28),rgba(240,80,110,.14) 55%,transparent 75%);filter:blur(20px);z-index:-1}
+.hero h1{font-size:104px;line-height:.95;font-weight:600;letter-spacing:-.055em;margin:28px auto 22px;max-width:11em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#ff9f0a,#f0506e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:20px;color:var(--muted);max-width:32em;margin:0 auto 44px;letter-spacing:-.01em}
+.builder{max-width:1040px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:28px;padding:36px 44px 32px;box-shadow:0 1px 2px rgba(0,0,0,.03),0 30px 80px -40px rgba(0,0,0,.25);text-align:left}
+.sent{font-size:36px;line-height:1.55;letter-spacing:-.03em;font-weight:450;color:var(--soft)}
+.tok{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600;border-bottom:3px solid var(--amber);padding:0 2px;line-height:1.15}
+.tok::after{content:"";width:9px;height:9px;border-right:2.5px solid var(--muted);border-bottom:2.5px solid var(--muted);transform:rotate(45deg) translateY(-4px);margin-left:4px}
+.brow{display:flex;align-items:center;gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.brow .sp{flex:1}.brow small{color:var(--muted);font-size:14px}
+.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;padding:34px 48px 0}
+.chips span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14px;color:var(--soft)}
+.chips span b{font:500 12px "Geist Mono";color:var(--muted);margin-left:6px}
+.prev{max-width:1100px;margin:90px auto 0;display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:center;padding:0 48px}
+.prev h2{font-size:52px;line-height:1;letter-spacing:-.045em;font-weight:600;margin:14px 0 16px}
+.prev p{color:var(--muted);font-size:17px;margin:0}
+.mini{background:var(--bg-2);border-radius:26px;padding:26px 28px}
+.mr{display:grid;grid-template-columns:160px 1fr 52px;align-items:center;gap:12px;height:30px;font-size:13.5px}
+.mr .tr{position:relative;height:100%}.mr .tr::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#d6d6d4}
+.mr .tr i{position:absolute;top:10px;height:10px;border-radius:99px}
+.mr .v{font:500 12.5px "Geist Mono";text-align:right}
+.pr{max-width:1100px;margin:90px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;padding:0 48px 60px}
+.pr div{border-top:1px solid var(--ink);padding-top:18px}
+.pr h3{font-size:22px;letter-spacing:-.03em;font-weight:600;margin:10px 0 8px}.pr p{margin:0;color:var(--muted);font-size:15px}
+</style></head><body>
+<div class="nav"><span class="wm"><i></i>Admission Chances</span><span class="sp"></span><span>Business</span><span>IT &amp; Computing</span><span>Method</span><span>Privacy</span><span class="pill">Auto</span></div>
+<section class="hero"><div class="orb"></div>
+  <span class="pill"><i></i>Private by design — runs entirely offline</span>
+  <h1>Work out where you <em>actually</em> stand.</h1>
+  <p>Hard entry rules first, then every programme scored the way it says it decides. No account. Nothing leaves this machine.</p>
+  <div class="builder">
+    <div class="sent">I'm applying for a <span class="tok">Master in Management</span> in <span class="tok">Europe &amp; the US</span>. I studied <span class="tok">Business</span>, finished in the <span class="tok">top 25%</span>, and have <span class="tok">no</span> full-time work experience.</div>
+    <div class="brow"><small>You can change any of this later. The rest is asked one step at a time.</small><span class="sp"></span><span class="btn">See my chances <span data-icon="arrow"></span></span></div>
+  </div>
+</section>
+<div class="chips"><span>MBA<b>38</b></span><span>Finance<b>16</b></span><span>Management<b>20</b></span><span>Marketing<b>8</b></span><span>Computer Science<b>10</b></span><span>Data Science &amp; AI<b>10</b></span><span>Conversion<b>5</b></span></div>
+<section class="prev"><div><span class="lbl">What you get</span><h2>A straight answer, school by school.</h2><p>Not one average: how far above or below each programme's own bar your file sits, and what would move it.</p></div>
+  <div class="mini" id="mini"></div></section>
+<section class="pr">
+  <div><span class="lbl">01</span><h3>Hard rules come first</h3><p>Fail an ECTS prerequisite, an experience cap or a test floor and the school is ineligible — not just scored low.</p></div>
+  <div><span class="lbl">02</span><h3>Every school weighs it differently</h3><p>Bocconi is close to grades and the test alone. HEC and IE read essays and interview you. Each is scored its own way.</p></div>
+  <div><span class="lbl">03</span><h3>Every number is sourced</h3><p>Tagged by origin — school page, aggregator, FOI — and flagged plainly when a school publishes nothing.</p></div>
+</section>
+<footer style="max-width:1100px;margin:0 auto;padding:34px 48px 60px;border-top:1px solid var(--line);display:flex;gap:30px;align-items:center;color:var(--muted);font-size:14.5px"><span style="flex:1">Runs entirely from local files — no network requests, no analytics. Answers stay in this browser only.</span><span class="btn l" style="padding:10px 18px;font-size:14px">Clear everything</span><span class="btn" style="padding:10px 18px;font-size:14px">Start <span data-icon="arrow"></span></span></footer>
+<script>
+var pick=[0,2,5,8,13,18];document.getElementById('mini').innerHTML=pick.map(function(i){var r=D.rows[i],d=r.s-r.t,w=Math.abs(d)/12*50;return '<div class="mr"><span>'+D.short(r.n)+'</span><span class="tr"><i style="'+(d>=0?'left:50%':'right:50%')+';width:'+w+'%;background:'+(r.tone=='good'?'#0a0a0a':r.tone=='mid'?'#ff9f0a':'#f0506e')+'"></i></span><span class="v">'+(d>=0?'+':'')+d.toFixed(1)+'</span></div>'}).join('');
+</script>
+</body></html>

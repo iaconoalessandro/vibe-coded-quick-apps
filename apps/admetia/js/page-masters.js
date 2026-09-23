@@ -53,28 +53,8 @@
   var intro = document.getElementById('intro');
   var shot = TRACK_SHOT[trackId] || TRACK_SHOT.mim;
 
-  var band = el('header', 'shot hero-band');
-  var img = document.createElement('img');
-  img.src = shot.src;
-  img.width = shot.w; img.height = shot.h;
-  img.alt = shot.alt;
-  img.setAttribute('fetchpriority', 'high');
-  band.appendChild(img);
-
-  var credit = el('a', 'shot-credit', 'Photo: Pexels');
-  credit.href = 'CREDITS.md';
-  band.appendChild(credit);
-
-  var body = el('div', 'shot-body');
-  body.appendChild(el('p', 'eyebrow dot', track.full));
-  var h = el('h1');
-  h.appendChild(document.createTextNode('How strong is your '));
-  h.appendChild(el('em', null, 'profile'));
-  h.appendChild(document.createTextNode('?'));
-  body.appendChild(h);
-  body.appendChild(el('p', null, track.blurb));
-  band.appendChild(body);
-  intro.appendChild(band);
+  intro.appendChild(Wizard.sectionHead(track.full,
+    ['How strong is your ', 'profile', '?'], track.blurb, shot));
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');
@@ -215,6 +195,13 @@
      * means the choice of school matters more than any single improvement. */
     var spread = res.rows.slice().sort(function (x, y) { return y.profileScore - x.profileScore; });
     var bestFit = spread[0], worstFit = spread[spread.length - 1];
+    var pct = S.completeness(answers);
+
+    resultsView.appendChild(Wizard.resultsHead('Your results \u00b7 ' + track.name,
+      headline(competitive.length, eligible.length, blocked.length),
+      'Your answers score ' + fmt(s.total) + ' on the ' + track.name.toLowerCase() +
+      ' weighting, and ' + fmt(worstFit.profileScore) + '\u2013' + fmt(bestFit.profileScore) +
+      ' once each school applies its own emphasis. ' + blockedLine(blocked.length, pct)));
 
     var sum = el('div', 'summary reveal');
     sum.appendChild(dialCell('Profile score', s.total,
@@ -225,7 +212,6 @@
     rangeCell.querySelector('.v').classList.add('range');
     sum.appendChild(rangeCell);
     sum.appendChild(cell('Competitive or better', String(competitive.length), 'of ' + eligible.length + ' eligible programmes'));
-    var pct = S.completeness(answers);
     sum.appendChild(cell('Ruled out by a hard rule', String(blocked.length),
       blocked.length ? 'see below' : (pct < 100 ? 'none so far — some answers missing' : 'none')));
     var gapNote = Wizard.incompleteNote(pct, function () {
@@ -259,8 +245,16 @@
       resultsView.appendChild(el('div', 'table', '')).appendChild(
         el('div', 'empty', 'Every programme in this track is blocked by a hard rule. See below.'));
     } else {
-      var t = el('div', 'table');
-      eligible.forEach(function (r) { t.appendChild(schoolRow(r, res.breakEven)); });
+      var t = el('div', 'table ranked');
+      var runs = Wizard.verdictRuns(eligible, function (r) { return r.verdict.label; });
+      (runs && runs.length > 1 ? runs : [{ rows: eligible }]).forEach(function (run) {
+        if (run.label) {
+          var d = el('div', 'table-div', run.label);
+          d.appendChild(el('span', 'n', String(run.rows.length)));
+          t.appendChild(d);
+        }
+        run.rows.forEach(function (r) { t.appendChild(schoolRow(r, res.breakEven)); });
+      });
       resultsView.appendChild(t);
     }
 
@@ -671,6 +665,7 @@
     var num = el('div', 'num');
     num.appendChild(el('b', null, fmt(r.adjusted)));
     num.appendChild(document.createTextNode(' / ' + sc.threshold));
+    if (window.UI && UI.meter) num.appendChild(UI.meter(r.adjusted, sc.threshold, 50, 95));
     wrap.appendChild(num);
     wrap.appendChild(el('div', 'badge ' + r.verdict.tone, r.verdict.label));
     return wrap;
@@ -709,6 +704,22 @@
     }
     row.appendChild(v);
     return row;
+  }
+
+  /* The results headline, in words. */
+  function headline(competitive, eligible, blocked) {
+    if (!eligible) return 'Every programme here is ruled out by a published rule.';
+    var of = Wizard.words(eligible) + (blocked ? ' eligible' : '');
+    if (!competitive) return 'Not yet competitive at any of the ' + of + '.';
+    return 'Competitive or better at ' + Wizard.words(competitive) + ' of ' + of + '.';
+  }
+  function blockedLine(blocked, pct) {
+    if (blocked) {
+      var n = Wizard.words(blocked);
+      return n.charAt(0).toUpperCase() + n.slice(1) + (blocked === 1 ? ' programme is' : ' programmes are') +
+        ' ruled out by a published requirement.';
+    }
+    return pct < 100 ? 'No hard rule rules you out on the answers so far.' : 'No hard rule rules you out.';
   }
 
   function cell(k, v, sub) {

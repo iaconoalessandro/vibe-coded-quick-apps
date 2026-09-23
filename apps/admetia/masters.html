@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Master's Chances — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
 <script src="js/theme.js"></script>
 </head>
@@ -12,43 +13,85 @@
 
 <div class="topbar">
   <div class="topbar-inner">
+    <a class="cta" href="index.html#choose">Start now — it’s free</a>
     <div class="crumbs">
-      <a href="index.html">Home</a><span class="sep">/</span>
+      <a href="index.html">Front page</a><span class="sep">/</span>
       <a href="business.html">Business</a><span class="sep">/</span>
-      <span class="here" id="crumb">Master's</span>
+      <span class="here" id="crumb">Master’s</span>
     </div>
-    <div class="score-chip"><span class="n" id="chip">0</span><span class="k">/ 100</span></div>
+    <div class="score-chip"><span class="label">Running score</span><span class="n" id="chip">0</span><span class="k">/ 100</span></div>
   </div>
 </div>
 
-<div class="shell">
+<header class="masthead compact">
+  <a class="nameplate" href="index.html">Admission Chances</a>
+  <p class="motto">An independent calculator for MBA, business and computing master’s degrees</p>
+</header>
 
-  <section id="wizard-view">
+<nav class="sections" aria-label="Calculators">
+  <div class="sections-inner">
+    <div class="sec-cluster">
+      <a class="sec-group" href="business.html" data-sec="business">Business</a>
+      <span class="sec-items">
+        <a href="mba.html" data-sec="mba">MBA</a>
+        <a href="masters.html?track=mif" data-sec="masters:mif">Finance</a>
+        <a href="masters.html?track=mim" data-sec="masters:mim">Management</a>
+        <a href="masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
+      </span>
+    </div>
+    <div class="sec-cluster">
+      <a class="sec-group" href="it.html" data-sec="it">Computing</a>
+      <span class="sec-items">
+        <a href="computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
+        <a href="computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
+        <a href="computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<main class="shell">
+
+  <section id="wizard-view" class="questionnaire">
     <div id="intro"></div>
-    <div class="stepnav" id="stepnav"></div>
-    <div class="progress"><i id="bar" style="width:0%"></i></div>
-    <div id="wizard"></div>
+    <div class="q-grid">
+      <nav class="toc" aria-label="Contents">
+        <h2 class="rubric">Contents</h2>
+        <div class="stepnav" id="stepnav"></div>
+      </nav>
+      <div class="q-main">
+        <div class="progress"><i id="bar" style="width:0%"></i></div>
+        <div id="wizard"></div>
+      </div>
+    </div>
   </section>
 
   <section id="results-view" hidden></section>
 
   <footer class="foot">
-    <p><strong>An original model, not a reproduction.</strong> No published calculator
-      exists for these programmes. The weights here are mine; the school facts are sourced
-      and tagged individually, and the score thresholds are calibration rather than anything
-      a school has published.</p>
-    <p>Runs from local files with no network access. Answers stay in this browser.</p>
+    <p><b class="rubric-in">An original model</b>No published calculator exists for these
+      programmes. The weights here are mine; the school facts are sourced and tagged individually,
+      and the score thresholds are calibration rather than anything a school has published.</p>
+    <p><b class="rubric-in">Colophon</b>Runs from local files with no network access. Answers stay
+      in this browser.</p>
   </footer>
 
-</div>
+</main>
 
 <script src="data/conversions.js"></script>
 <script src="data/masters-model.js"></script>
+<script src="data/it-model.js"></script>
+<script src="data/it-evidence.js"></script>
+<script src="data/mba-model.js"></script>
+<script src="data/mba-companies.js"></script>
 <script src="js/storage.js"></script>
 <script src="js/score-masters.js"></script>
+<script src="js/score-it.js"></script>
+<script src="js/score-mba.js"></script>
 <script src="js/engine.js"></script>
 <script src="js/page-masters.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/session.js"></script>
+<script src="js/ticker.js"></script>
 </body>
 </html>

@@ -120,10 +120,12 @@ window.UI = (function () {
       role: 'img', 'aria-label': value + ' out of 100'
     });
 
+    /* The stop colours go in style, not the stop-color attribute: presentation
+     * attributes do not resolve var(), and the ring drew nothing at all. */
     var defs = svg('defs');
     var grad = svg('linearGradient', { id: id, x1: '0', y1: '1', x2: '1', y2: '0' });
-    grad.appendChild(svg('stop', { offset: '0', 'stop-color': 'var(--accent)' }));
-    grad.appendChild(svg('stop', { offset: '1', 'stop-color': 'var(--accent-2)' }));
+    grad.appendChild(svg('stop', { offset: '0', style: 'stop-color: var(--accent)' }));
+    grad.appendChild(svg('stop', { offset: '1', style: 'stop-color: var(--accent-2)' }));
     defs.appendChild(grad);
     root.appendChild(defs);
 
@@ -161,6 +163,23 @@ window.UI = (function () {
     return root;
   }
 
+  /* A small bar for a results row: how far along a lo–hi scale `value` sits,
+   * with a tick where the school's `bar` is. Decoration beside the number,
+   * which stays the thing that is read. */
+  function meter(value, bar, lo, hi) {
+    function pos(v) { return Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100)) + '%'; }
+    var m = document.createElement('span');
+    m.className = 'meter';
+    m.setAttribute('aria-hidden', 'true');
+    var fill = document.createElement('i');
+    fill.style.width = pos(value);
+    var tick = document.createElement('b');
+    tick.style.left = pos(bar);
+    m.appendChild(fill);
+    m.appendChild(tick);
+    return m;
+  }
+
   /* Count a number up, easing out. Uses textContent on whatever node is
    * passed, so it works on both SVG <text> and ordinary elements. */
   function countTo(node, target, ms) {
@@ -183,5 +202,5 @@ window.UI = (function () {
     reveal(document);
   });
 
-  return { reveal: reveal, dial: dial, countTo: countTo, reduced: reduced };
+  return { reveal: reveal, dial: dial, meter: meter, countTo: countTo, reduced: reduced };
 }());

@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script>
+<style>
+.bento{grid-auto-rows:118px}
+.hero{grid-column:span 7;grid-row:span 4;background:var(--lilac);padding:40px}
+.hero h1{font:800 88px/1.02 "Bricolage Grotesque";letter-spacing:-.045em;margin:26px 0 20px}
+.hero h1 span{display:inline-block;background:var(--ink);color:var(--butter);padding:0 .14em .06em;border-radius:18px;transform:rotate(-2.5deg);line-height:1}
+.hero p{font-size:18px;color:#3b3560;max-width:30em;margin:0 0 26px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.75);border-radius:99px;padding:7px 14px;font-weight:600;font-size:13px}
+.chip i{width:8px;height:8px;border-radius:50%;background:#16a34a}
+.photo{grid-column:span 5;grid-row:span 4;padding:0}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .stk{position:absolute;left:20px;bottom:20px;background:#fff;border-radius:22px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.photo .stk .n{font:800 44px/1 "Bricolage Grotesque";letter-spacing:-.03em}
+.photo .stk small{display:block;color:var(--muted);font-size:13px;line-height:1.3}
+.field{grid-column:span 4;grid-row:span 3;padding:0;display:flex;flex-direction:column}
+.field img{width:100%;height:190px;object-fit:cover;display:block}
+.field .b{padding:20px 24px;flex:1;display:flex;flex-direction:column}
+.field h2{font:800 34px/1 "Bricolage Grotesque";letter-spacing:-.03em;margin:0 0 8px}
+.field p{margin:0;color:var(--soft);font-size:14.5px}
+.field .go{position:absolute;right:18px;top:18px;width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center}.field .go svg{width:22px;height:22px}
+.stat{grid-column:span 4;grid-row:span 1;display:flex;align-items:center;gap:18px;padding:20px 26px}
+.stat .big{font-size:54px}.stat span{font-weight:600;font-size:15px;line-height:1.3}
+.s1{background:var(--mint)}.s2{background:var(--butter)}.s3{background:var(--sky)}
+.feat{grid-column:span 4;grid-row:span 3;display:flex;flex-direction:column}
+.feat h3{font:800 30px/1.02 "Bricolage Grotesque";letter-spacing:-.03em;margin:auto 0 10px}
+.feat p{margin:0;font-size:14.5px;color:var(--soft)}
+.f1{background:var(--peach)}.f1 .ic{color:var(--peach-d)}
+.f2 .ic{background:var(--lilac);color:var(--lilac-d)}
+.f3{background:var(--ink);color:#fff}.f3 p{color:rgba(255,255,255,.7)}.f3 .ic{background:#2b2b33;color:var(--butter)}
+.wb{display:grid;gap:7px;margin:18px 0 0}.wb div{display:grid;grid-template-columns:90px 1fr;gap:10px;align-items:center;font-size:12.5px;font-weight:600}
+.wb i{display:block;height:12px;border-radius:99px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}.tags span{font:700 12px Inter;padding:5px 10px;border-radius:8px;background:#2b2b33}
+.cta{grid-column:span 12;grid-row:span 2;background:var(--butter);display:flex;align-items:center;gap:30px;padding:30px 40px}
+.cta h2{font:800 52px/1 "Bricolage Grotesque";letter-spacing:-.035em;margin:0;flex:1}
+</style></head><body><div class="wrap">
+<div class="nav"><div class="logo"><i data-icon="cap"></i>Admission Chances</div><span class="sp"></span><a class="on">Home</a><a>Business</a><a>IT &amp; Computing</a><a>How it works</a><a>Auto</a></div>
+<div class="bento">
+  <div class="t hero"><span class="chip"><i></i>Offline · no account · nothing leaves this machine</span><h1>Work out where you <span>actually</span> stand.</h1><p>Three calculators that check the hard entry rules first, then score you the way each school says it decides.</p><span class="btn">Start with business <span data-icon="arrow"></span></span> &nbsp;<span class="btn w">Start with IT &amp; computing</span></div>
+  <div class="t photo"><img src="../../../img/photo/hero.jpg"><div class="stk"><div class="n">70.2</div><small>Sample profile score<br>Competitive at 7 of 20</small></div></div>
+  <div class="t field" style="background:var(--sky)"><img src="../../../img/photo/business.jpg"><span class="go" data-icon="arrow"></span><div class="b"><h2>Business</h2><p>MBA, Finance, Management and Marketing. Roughly 60 programmes in Europe and the US.</p></div></div>
+  <div class="t field" style="background:var(--mint)"><img src="../../../img/photo/it.jpg"><span class="go" data-icon="arrow"></span><div class="b"><h2>IT &amp; Computing</h2><p>Computer Science, Data Science &amp; AI, and conversion master's. 22 programmes.</p></div></div>
+  <div class="t stat s1"><span class="big bri">38</span><span>MBA schools on a published points model</span></div>
+  <div class="t stat s2"><span class="big bri">43</span><span>business master's, each with its own weighting</span></div>
+  <div class="t stat s3"><span class="big bri">0</span><span>network requests. Ever.</span></div>
+  <div class="t feat f1"><span class="ic" data-icon="lock"></span><h3>Hard rules come first</h3><p>Fail an ECTS prerequisite or an experience cap and the school is ineligible — not just scored low.</p></div>
+  <div class="t feat f2"><span class="ic" data-icon="scale"></span><div class="wb"><div>Bocconi<i style="background:var(--lilac-d);width:92%"></i></div><div>HEC Paris<i style="background:#b9a8ff;width:48%"></i></div><div>IE<i style="background:#b9a8ff;width:40%"></i></div></div><h3>Every school weighs it differently</h3><p>Grades and the test are nearly everything at Bocconi; essays and interviews matter at HEC and IE.</p></div>
+  <div class="t feat f3"><span class="ic" data-icon="doc"></span><div class="tags"><span style="color:#86efac">OFF</span><span style="color:#93c5fd">OFF2</span><span style="color:#fde68a">TP</span><span style="color:#fca5a5">EST</span><span style="color:#d8b4fe">FOI</span></div><h3>Every number is sourced</h3><p>Tagged by origin — and it says plainly when a school publishes nothing at all.</p></div>
+  <div class="t cta"><h2>About 25 questions. A straight answer.</h2><span class="btn">Start now <span data-icon="arrow"></span></span></div>
+  <div class="t" style="grid-column:span 8;grid-row:span 1;display:flex;align-items:center;gap:16px;padding:20px 28px"><span class="ic" style="background:var(--mint);color:var(--mint-d)" data-icon="lock"></span><div><b>Private by design.</b> <span style="color:var(--soft)">No account, no analytics. Answers stay in this browser only so a refresh doesn't lose them.</span></div></div>
+  <div class="t" style="grid-column:span 4;grid-row:span 1;display:flex;align-items:center;justify-content:space-between;padding:20px 28px;background:var(--peach)"><b>Saved answers: 1</b><span class="btn w">Clear everything</span></div>
+</div></div></body></html>

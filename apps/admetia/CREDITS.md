@@ -1,4 +1,6 @@
-# Photograph credits
+# Credits
+
+## Photographs
 
 Every photograph in `img/photo/` is **stored in this folder**. Nothing is hot-linked, so
 the site still makes no network requests of any kind.
@@ -11,23 +13,41 @@ re-encode for the web.
 
 | File | Used for | Subject | Source |
 |---|---|---|---|
-| `hero.jpg` | Landing page hero | Students writing an exam | [Pexels 37758542](https://www.pexels.com/photo/university-students-studying-at-desks-37758542/) |
-| `scoring.jpg` | Landing "how the scoring works" band | Assessors going through a printed application file | [Pexels 8730981](https://www.pexels.com/photo/a-close-up-shot-of-people-reviewing-documents-8730981/) |
-| `picker.jpg` | Business track picker header | Students working through notes together | [Pexels 7683734](https://www.pexels.com/photo/college-students-studying-together-7683734/) |
-| `business.jpg` | Business card on the landing page | Graduation, caps in the air | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Korea_University_Business_School_graduation_-_036A0151_-_52721871687.jpg) — KUBS, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
-| `mba.jpg` | MBA card and MBA wizard header | A senior executive in front of a boardroom in session | [Pexels 7433929](https://www.pexels.com/photo/man-in-black-suit-standing-with-his-arms-crossed-7433929/) |
-| `finance.jpg` | Finance card and wizard header | A trading desk of live candlestick charts | [Pexels 38412413](https://www.pexels.com/photo/digital-stock-market-charts-on-multiple-screens-38412413/) |
-| `management.jpg` | Management card and wizard header | Consultants working through figures together | [Pexels 36765732](https://www.pexels.com/photo/professional-business-meeting-in-modern-office-36765732/) |
-| `marketing.jpg` | Marketing card and wizard header | A wall of brand billboards | [Pexels 12602144](https://www.pexels.com/photo/billboards-outside-a-building-12602144/) |
-| `it.jpg` | IT & Computing card on the landing page, and the track-picker header | Dense source code filling a monitor | [Pexels 6424583](https://www.pexels.com/photo/monitor-displaying-lines-of-code-6424583/) |
-| `cs.jpg` | Computer Science card and wizard header | Two people reading code on a wall display | [Pexels 7988747](https://www.pexels.com/photo/men-looking-at-the-code-on-the-board-7988747/) |
-| `datascience.jpg` | Data Science & AI card and wizard header | A laptop of dashboards beside printed charts | [Pexels 6248959](https://www.pexels.com/photo/photograph-of-a-paper-and-laptop-with-graphs-6248959/) |
-| `conversion.jpg` | Conversion MSc card and wizard header | Hands typing first lines of HTML and JavaScript, notebook alongside | [Pexels 12899188](https://www.pexels.com/photo/close-up-of-a-man-pointing-code-on-a-laptop-screen-12899188/) |
+| `hero.jpg` | Front-page lead photograph | Students writing an exam | [Pexels 37758542](https://www.pexels.com/photo/university-students-studying-at-desks-37758542/) |
+| `scoring.jpg` | Not currently shown (was the landing "how the scoring works" band) | Assessors going through a printed application file | [Pexels 8730981](https://www.pexels.com/photo/a-close-up-shot-of-people-reviewing-documents-8730981/) |
+| `picker.jpg` | Business section-front header | Students working through notes together | [Pexels 7683734](https://www.pexels.com/photo/college-students-studying-together-7683734/) |
+| `business.jpg` | Business entry on the front page | Graduation, caps in the air | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Korea_University_Business_School_graduation_-_036A0151_-_52721871687.jpg) — KUBS, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
+| `mba.jpg` | MBA story on the Business front, and the MBA calculator header | A senior executive in front of a boardroom in session | [Pexels 7433929](https://www.pexels.com/photo/man-in-black-suit-standing-with-his-arms-crossed-7433929/) |
+| `finance.jpg` | Finance story on the Business front, and its calculator header | A trading desk of live candlestick charts | [Pexels 38412413](https://www.pexels.com/photo/digital-stock-market-charts-on-multiple-screens-38412413/) |
+| `management.jpg` | Management story on the Business front, and its calculator header | Consultants working through figures together | [Pexels 36765732](https://www.pexels.com/photo/professional-business-meeting-in-modern-office-36765732/) |
+| `marketing.jpg` | Marketing story on the Business front, and its calculator header | A wall of brand billboards | [Pexels 12602144](https://www.pexels.com/photo/billboards-outside-a-building-12602144/) |
+| `it.jpg` | IT & Computing section-front header | Dense source code filling a monitor | [Pexels 6424583](https://www.pexels.com/photo/monitor-displaying-lines-of-code-6424583/) |
+| `cs.jpg` | Computer Science story on the IT front, and its calculator header | Two people reading code on a wall display | [Pexels 7988747](https://www.pexels.com/photo/men-looking-at-the-code-on-the-board-7988747/) |
+| `datascience.jpg` | Data Science & AI story on the IT front, and its calculator header | A laptop of dashboards beside printed charts | [Pexels 6248959](https://www.pexels.com/photo/photograph-of-a-paper-and-laptop-with-graphs-6248959/) |
+| `conversion.jpg` | Conversion story on the IT front, and its calculator header | Hands typing first lines of HTML and JavaScript, notebook alongside | [Pexels 12899188](https://www.pexels.com/photo/close-up-of-a-man-pointing-code-on-a-laptop-screen-12899188/) |
 
 The line drawings in `img/*.svg` are original to this project and carry no third-party
 rights. They are inlined into the markup as `<svg>` rather than referenced as CSS masks —
 see the "Icons" note in the README for why that distinction matters when the site is
 opened as a local file.
+
+## Typefaces
+
+Like the photographs, the fonts are **stored in `fonts/`** and served from there
+(`css/fonts.css`); nothing is loaded from a font service. All are licensed under the
+[SIL Open Font License 1.1](https://openfontlicense.org), which allows use, bundling and
+redistribution. A browser only fetches the faces the active edition needs.
+
+| Edition | Typefaces |
+|---|---|
+| The City | Source Serif 4 (Adobe), Hanken Grotesk (Hanken Design Co.) |
+| Wall Street | Noto Serif Display, condensed (Google); Times New Roman from the system |
+| FBI Watchlist | Noto Serif Display, Hanken Grotesk; Georgia from the system |
+
+The licence text and copyright notice for each family are in `fonts/`.
+
+The three editions take their proportions from real papers' sites, measured or
+matched by eye, but use none of their names, logos or proprietary typefaces.
 
 ## A note on the brand billboards
 
