@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>IT &amp; Computing — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/photo/it.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
 <script src="js/theme.js"></script>
@@ -54,16 +57,26 @@
         Germany and Sweden, scored against the entry rules each one publishes.</p>
     </div>
     <figure class="photo">
-      <span class="plate"><img src="img/photo/it.jpg" width="1200" height="800" fetchpriority="high"
-           alt="Dense, syntax-highlighted source code filling a monitor."></span>
+      <span class="plate">
+        <picture>
+          <source srcset="img/photo/it.webp" type="image/webp">
+          <img src="img/photo/it.jpg" width="1200" height="800" fetchpriority="high"
+               alt="Dense, syntax-highlighted source code filling a monitor.">
+        </picture>
+      </span>
     </figure>
   </header>
 
   <h2 class="rubric">Choose a track</h2>
   <div class="stories">
     <a class="story reveal" href="computing.html?track=cs">
-      <span class="photo"><span class="plate"><img src="img/photo/cs.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="Two people reading source code on a large wall-mounted display."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/cs.webp" type="image/webp">
+          <img src="img/photo/cs.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Two people reading source code on a large wall-mounted display.">
+        </picture>
+      </span></span>
       <h3>Computer Science</h3>
       <p>MSc Computer Science, Advanced Computing, Informatics. The most prerequisite-driven track —
         most of these audit your transcript for named modules before anyone reads the rest of the
@@ -71,16 +84,26 @@
       <span class="more">Begin →</span>
     </a>
     <a class="story reveal" href="computing.html?track=dsai">
-      <span class="photo"><span class="plate"><img src="img/photo/datascience.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="A laptop showing data dashboards, with printed charts on the desk beside it."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/datascience.webp" type="image/webp">
+          <img src="img/photo/datascience.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="A laptop showing data dashboards, with printed charts on the desk beside it.">
+        </picture>
+      </span></span>
       <h3>Data Science &amp; AI</h3>
       <p>MSc Data Science, Artificial Intelligence, Machine Learning. Selects on mathematics far
         more than the CS track does — linear algebra and probability get checked by name.</p>
       <span class="more">Begin →</span>
     </a>
     <a class="story reveal" href="computing.html?track=conversion">
-      <span class="photo"><span class="plate"><img src="img/photo/conversion.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="Hands typing beginner HTML and JavaScript on a laptop, a notebook open alongside."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/conversion.webp" type="image/webp">
+          <img src="img/photo/conversion.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Hands typing beginner HTML and JavaScript on a laptop, a notebook open alongside.">
+        </picture>
+      </span></span>
       <h3>Conversion MSc</h3>
       <p>Computing master’s built for graduates of other subjects — and at several of them, already
         holding a computing degree is what disqualifies you. A category that barely exists outside
@@ -106,18 +129,18 @@
   </footer>
 
 </main>
-<script src="data/conversions.js"></script>
-<script src="data/masters-model.js"></script>
-<script src="data/it-model.js"></script>
-<script src="data/it-evidence.js"></script>
-<script src="data/mba-model.js"></script>
-<script src="data/mba-companies.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/score-masters.js"></script>
-<script src="js/score-it.js"></script>
-<script src="js/score-mba.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/session.js"></script>
-<script src="js/ticker.js"></script>
+<script defer src="data/conversions.js"></script>
+<script defer src="data/masters-model.js"></script>
+<script defer src="data/it-model.js"></script>
+<script defer src="data/it-evidence.js"></script>
+<script defer src="data/mba-model.js"></script>
+<script defer src="data/mba-companies.js"></script>
+<script defer src="js/storage.js"></script>
+<script defer src="js/score-masters.js"></script>
+<script defer src="js/score-it.js"></script>
+<script defer src="js/score-mba.js"></script>
+<script defer src="js/ui.js"></script>
+<script defer src="js/session.js"></script>
+<script defer src="js/ticker.js"></script>
 </body>
 </html>

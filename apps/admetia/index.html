@@ -6,6 +6,9 @@
 <title>Admission Chances Calculator</title>
 <meta name="description" content="Offline admissions scoring for MBA, business master's and IT &amp; computing master's programmes. No account, no network requests.">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/photo/hero.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
 <script src="js/theme.js"></script>
@@ -55,8 +58,13 @@
         admissions model; a purpose-built model for pre-experience business master’s degrees;
         and a rule-first model for IT &amp; computing master’s in the UK and Europe.</p>
       <figure class="photo lead-photo">
-        <span class="plate"><img src="img/photo/hero.jpg" width="1800" height="1200" fetchpriority="high"
-             alt="Two university students at desks, heads down, writing an exam paper."></span>
+        <span class="plate">
+          <picture>
+            <source srcset="img/photo/hero.webp" type="image/webp">
+            <img src="img/photo/hero.jpg" width="1800" height="1200" fetchpriority="high"
+                 alt="Two university students at desks, heads down, writing an exam paper.">
+          </picture>
+        </span>
         <figcaption>Most published requirements at master’s level are pass/fail.</figcaption>
       </figure>
     </article>
@@ -68,8 +76,13 @@
         <span class="no" aria-hidden="true">01</span>
         <div>
           <h3>Business</h3>
-          <span class="photo"><span class="plate"><img src="img/photo/business.jpg" width="1200" height="800" loading="lazy" decoding="async"
-               alt="Graduating students throwing their caps in the air outside a business school."></span></span>
+          <span class="photo"><span class="plate">
+            <picture>
+              <source srcset="img/photo/business.webp" type="image/webp">
+              <img src="img/photo/business.jpg" width="1200" height="800" loading="lazy" decoding="async"
+                   alt="Graduating students throwing their caps in the air outside a business school.">
+            </picture>
+          </span></span>
           <p>MBA, Master in Finance, Master in Management and Master in Marketing. Scored against
             roughly 60 programmes in Europe and the US.</p>
           <span class="more">Begin the business calculator →</span>
@@ -143,18 +156,18 @@
   </footer>
 
 </main>
-<script src="data/conversions.js"></script>
-<script src="data/masters-model.js"></script>
-<script src="data/it-model.js"></script>
-<script src="data/it-evidence.js"></script>
-<script src="data/mba-model.js"></script>
-<script src="data/mba-companies.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/score-masters.js"></script>
-<script src="js/score-it.js"></script>
-<script src="js/score-mba.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/session.js"></script>
-<script src="js/ticker.js"></script>
+<script defer src="data/conversions.js"></script>
+<script defer src="data/masters-model.js"></script>
+<script defer src="data/it-model.js"></script>
+<script defer src="data/it-evidence.js"></script>
+<script defer src="data/mba-model.js"></script>
+<script defer src="data/mba-companies.js"></script>
+<script defer src="js/storage.js"></script>
+<script defer src="js/score-masters.js"></script>
+<script defer src="js/score-it.js"></script>
+<script defer src="js/score-mba.js"></script>
+<script defer src="js/ui.js"></script>
+<script defer src="js/session.js"></script>
+<script defer src="js/ticker.js"></script>
 </body>
 </html>

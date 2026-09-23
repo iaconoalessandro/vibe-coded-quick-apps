@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Business tracks — Admission Chances Calculator</title>
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/photo/picker.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
 <script src="js/theme.js"></script>
@@ -55,15 +58,25 @@
         application and can disqualify a master’s one.</p>
     </div>
     <figure class="photo">
-      <span class="plate"><img src="img/photo/picker.jpg" width="1800" height="1200" fetchpriority="high"
-           alt="Four students working through notes and laptops together at a campus table."></span>
+      <span class="plate">
+        <picture>
+          <source srcset="img/photo/picker.webp" type="image/webp">
+          <img src="img/photo/picker.jpg" width="1800" height="1200" fetchpriority="high"
+               alt="Four students working through notes and laptops together at a campus table.">
+        </picture>
+      </span>
     </figure>
   </header>
 
   <h2 class="rubric">Post-experience</h2>
   <a class="story story-lead reveal" href="mba.html">
-    <span class="photo"><span class="plate"><img src="img/photo/mba.jpg" width="1200" height="800" loading="lazy" decoding="async"
-         alt="A senior executive in a dark suit standing, arms folded, in front of a boardroom in session."></span></span>
+    <span class="photo"><span class="plate">
+      <picture>
+        <source srcset="img/photo/mba.webp" type="image/webp">
+        <img src="img/photo/mba.jpg" width="1200" height="800" loading="lazy" decoding="async"
+             alt="A senior executive in a dark suit standing, arms folded, in front of a boardroom in session.">
+      </picture>
+    </span></span>
     <div>
       <p class="kicker">Points-based model</p>
       <h2>MBA</h2>
@@ -76,24 +89,39 @@
   <h2 class="rubric">Pre-experience master’s</h2>
   <div class="stories">
     <a class="story reveal" href="masters.html?track=mif">
-      <span class="photo"><span class="plate"><img src="img/photo/finance.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="A trading desk of stacked monitors showing live candlestick charts."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/finance.webp" type="image/webp">
+          <img src="img/photo/finance.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="A trading desk of stacked monitors showing live candlestick charts.">
+        </picture>
+      </span></span>
       <h3>Finance</h3>
       <p>MiF, MSc Finance, MFin, MFE. Quantitative coursework is a hard prerequisite at most of
         these, not a preference.</p>
       <span class="more">Begin →</span>
     </a>
     <a class="story reveal" href="masters.html?track=mim">
-      <span class="photo"><span class="plate"><img src="img/photo/management.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="Three consultants in a meeting, going through figures on a tablet together."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/management.webp" type="image/webp">
+          <img src="img/photo/management.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="Three consultants in a meeting, going through figures on a tablet together.">
+        </picture>
+      </span></span>
       <h3>Management</h3>
       <p>MiM, MSc Management, MMS. Targeted at recent graduates; several programmes cap the work
         experience they will accept.</p>
       <span class="more">Begin →</span>
     </a>
     <a class="story reveal" href="masters.html?track=marketing">
-      <span class="photo"><span class="plate"><img src="img/photo/marketing.jpg" width="1200" height="800" loading="lazy" decoding="async"
-           alt="A street wall of brand billboards — Gucci, adidas and the NBA stacked above a storefront."></span></span>
+      <span class="photo"><span class="plate">
+        <picture>
+          <source srcset="img/photo/marketing.webp" type="image/webp">
+          <img src="img/photo/marketing.jpg" width="1200" height="800" loading="lazy" decoding="async"
+               alt="A street wall of brand billboards — Gucci, adidas and the NBA stacked above a storefront.">
+        </picture>
+      </span></span>
       <h3>Marketing</h3>
       <p>MSc Marketing and Marketing Management. Fewer programmes, and the least published
         admissions data of any track here.</p>
@@ -116,18 +144,18 @@
   </footer>
 
 </main>
-<script src="data/conversions.js"></script>
-<script src="data/masters-model.js"></script>
-<script src="data/it-model.js"></script>
-<script src="data/it-evidence.js"></script>
-<script src="data/mba-model.js"></script>
-<script src="data/mba-companies.js"></script>
-<script src="js/storage.js"></script>
-<script src="js/score-masters.js"></script>
-<script src="js/score-it.js"></script>
-<script src="js/score-mba.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/session.js"></script>
-<script src="js/ticker.js"></script>
+<script defer src="data/conversions.js"></script>
+<script defer src="data/masters-model.js"></script>
+<script defer src="data/it-model.js"></script>
+<script defer src="data/it-evidence.js"></script>
+<script defer src="data/mba-model.js"></script>
+<script defer src="data/mba-companies.js"></script>
+<script defer src="js/storage.js"></script>
+<script defer src="js/score-masters.js"></script>
+<script defer src="js/score-it.js"></script>
+<script defer src="js/score-mba.js"></script>
+<script defer src="js/ui.js"></script>
+<script defer src="js/session.js"></script>
+<script defer src="js/ticker.js"></script>
 </body>
 </html>

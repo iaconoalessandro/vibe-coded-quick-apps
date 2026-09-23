@@ -202,5 +202,11 @@ window.UI = (function () {
     reveal(document);
   });
 
+  if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    });
+  }
+
   return { reveal: reveal, dial: dial, meter: meter, countTo: countTo, reduced: reduced };
 }());

@@ -501,12 +501,19 @@ window.Wizard = (function () {
     if (shot) {
       var fig = el('figure', 'photo');
       var plate = el('span', 'plate');
+      var pic = document.createElement('picture');
+      var srcWebp = shot.src.replace(/\.jpg$/, '.webp');
+      var source = document.createElement('source');
+      source.srcset = srcWebp;
+      source.type = 'image/webp';
+      pic.appendChild(source);
       var img = document.createElement('img');
       img.src = shot.src;
       img.width = shot.w; img.height = shot.h;
       img.alt = shot.alt;
       img.setAttribute('fetchpriority', 'high');
-      plate.appendChild(img);
+      pic.appendChild(img);
+      plate.appendChild(pic);
       fig.appendChild(plate);
       head.appendChild(fig);
     }
