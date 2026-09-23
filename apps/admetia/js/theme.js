@@ -11,7 +11,7 @@
   var DEFAULT = 'city';
   var EDITIONS = [
     { id: 'city', label: 'The City', title: 'Salmon financial paper' },
-    { id: 'wallstreet', label: 'Wall Street', title: 'Black and white, Times New Roman' },
+    { id: 'wallstreet', label: 'WSJ', title: 'Wall Street — black and white, Times New Roman' },
     { id: 'watchlist', label: 'FBI Watchlist', title: 'Black masthead, white page, full colour' }
   ];
   /* Earlier names for the same three, so a stored choice survives. */
@@ -35,22 +35,61 @@
 
   function current() { return document.documentElement.getAttribute('data-theme'); }
 
+  function sync() {
+    var id = current();
+    var buttons = document.querySelectorAll('.edition button');
+    Array.prototype.forEach.call(buttons, function (b) {
+      var ed = b.getAttribute('data-ed');
+      if (!ed) return;
+      var on = ed === id;
+      b.setAttribute('aria-checked', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+  }
+
+  function choose(id) {
+    try { localStorage.setItem(KEY, id); } catch (e) { /* ignore */ }
+    apply(id);
+    sync();
+    try { document.dispatchEvent(new CustomEvent('editionchange', { detail: id })); } catch (e) { /* old browser */ }
+  }
+
   function buildPicker() {
-    var bar = document.querySelector('.topbar-inner');
+    var bar = document.querySelector('.ticker') || document.querySelector('.topbar-inner');
     if (!bar) return;
 
-    var wrap = document.createElement('div');
-    wrap.className = 'edition';
-    var label = document.createElement('span');
-    label.className = 'edition-label';
-    label.id = 'edition-label';
-    label.textContent = 'Edition';
-    wrap.appendChild(label);
+    var wrap = bar.querySelector('.edition');
+    if (wrap && wrap.querySelector('button')) {
+      sync();
+      return;
+    }
 
-    var set = document.createElement('div');
-    set.className = 'edition-set';
-    set.setAttribute('role', 'radiogroup');
-    set.setAttribute('aria-labelledby', 'edition-label');
+    var set = null;
+    if (wrap) {
+      set = wrap.querySelector('.edition-set');
+      if (!set) {
+        set = document.createElement('div');
+        set.className = 'edition-set';
+        set.setAttribute('role', 'radiogroup');
+        set.setAttribute('aria-labelledby', 'edition-label');
+        wrap.appendChild(set);
+      }
+    } else {
+      wrap = document.createElement('div');
+      wrap.className = 'edition';
+      var label = document.createElement('span');
+      label.className = 'edition-label';
+      label.id = 'edition-label';
+      label.textContent = 'Edition';
+      wrap.appendChild(label);
+
+      set = document.createElement('div');
+      set.className = 'edition-set';
+      set.setAttribute('role', 'radiogroup');
+      set.setAttribute('aria-labelledby', 'edition-label');
+      wrap.appendChild(set);
+      bar.appendChild(wrap);
+    }
 
     var buttons = EDITIONS.map(function (ed) {
       var b = document.createElement('button');
@@ -83,27 +122,10 @@
       buttons.forEach(function (b) { if (b.getAttribute('data-ed') === next) b.focus(); });
     });
 
-    function sync() {
-      var id = current();
-      buttons.forEach(function (b) {
-        var on = b.getAttribute('data-ed') === id;
-        b.setAttribute('aria-checked', on ? 'true' : 'false');
-        b.tabIndex = on ? 0 : -1;
-      });
-    }
-    function choose(id) {
-      try { localStorage.setItem(KEY, id); } catch (e) { /* ignore */ }
-      apply(id);
-      sync();
-      /* Anything laid out per edition (the market line) listens for this. */
-      try { document.dispatchEvent(new CustomEvent('editionchange', { detail: id })); } catch (e) { /* old browser */ }
-    }
-
-    wrap.appendChild(set);
+    if (!wrap.contains(set)) wrap.appendChild(set);
     sync();
-    /* Sits before the running score when there is one, otherwise at the end. */
-    var chip = bar.querySelector('.score-chip');
-    if (chip) bar.insertBefore(wrap, chip); else bar.appendChild(wrap);
+    if (!bar.contains(wrap)) bar.appendChild(wrap);
+    window.Theme = { choose: choose, sync: sync, buildPicker: buildPicker, current: current };
   }
 
   /* The section nav marks where you are: masters.html?track=mif is Finance,

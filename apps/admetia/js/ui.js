@@ -80,7 +80,7 @@ window.UI = (function () {
   /* ------------------------------------------------------------------ */
 
   function stickyBar() {
-    var bar = document.querySelector('.topbar');
+    var bar = document.querySelector('.ticker') || document.querySelector('.topbar');
     if (!bar) return;
     var ticking = false;
     function update() {

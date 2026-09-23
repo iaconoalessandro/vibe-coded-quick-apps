@@ -289,24 +289,44 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ---------- the Admissions Index ticker (js/ticker.js) ---------- */
 .ticker {
-  max-width: var(--page); margin: 0 auto; padding: 0 var(--gutter);
-  display: flex; align-items: stretch; gap: 0;
+  position: sticky; top: 0; z-index: 30;
+  width: 100%; max-width: none; margin: 0; padding: 0;
+  padding-top: env(safe-area-inset-top);
+  display: flex; align-items: stretch; justify-content: space-between;
+  height: 42px; min-height: 42px;
+  box-sizing: border-box;
   font: 600 12.5px/1 var(--font-ui);
+  background: var(--paper);
+  transition: box-shadow .2s;
 }
+.ticker.stuck { box-shadow: 0 4px 14px rgba(0, 0, 0, .35); }
+
+/* Left 25%: "put admission index" */
 .ticker-label {
-  flex: none; display: flex; align-items: center; gap: 6px; padding: 10px 14px 10px 0;
-  letter-spacing: .08em; text-transform: uppercase; color: var(--kicker); font-weight: 800; cursor: help;
+  flex: 0 0 25%; width: 25%; max-width: 25%;
+  box-sizing: border-box;
+  display: flex; align-items: center; gap: 7px;
+  padding: 0 12px 0 max(var(--gutter), env(safe-area-inset-left));
+  letter-spacing: .08em; text-transform: uppercase; font-weight: 800; cursor: help;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-bottom: 0;
 }
-.ticker-arrow { font-size: 14px; }
+.ticker-arrow { font-size: 14px; flex-shrink: 0; line-height: 1; }
+.ticker-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Center 50%: "stock sliding" in reality admission index (centered on page) */
 .ticker-view {
-  flex: 1; min-width: 0; overflow: hidden; padding: 10px 0; border-bottom: 1px solid var(--hair);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 28px, #000 calc(100% - 28px), transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 28px, #000 calc(100% - 28px), transparent);
+  flex: 0 0 50%; width: 50%; max-width: 50%;
+  box-sizing: border-box;
+  overflow: hidden; min-width: 0;
+  display: flex; align-items: center;
+  padding: 0; border-bottom: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
 }
-.ticker-label { border-bottom: 1px solid var(--hair); }
-.ticker-track { display: flex; width: max-content; animation: tick var(--dur, 150s) linear infinite; }
+.ticker-track { display: flex; width: max-content; align-items: center; animation: tick var(--dur, 150s) linear infinite; }
 .ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
-.ticker-set { display: flex; gap: 28px; padding-right: 28px; }
+.ticker-set { display: flex; align-items: center; gap: 28px; padding-right: 28px; }
 .tk { display: inline-flex; align-items: baseline; gap: 7px; white-space: nowrap; color: var(--ink); }
 .tk .sym { font-weight: 800; letter-spacing: .02em; }
 .tk .px { font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; }
@@ -315,6 +335,15 @@ a:hover { text-decoration-thickness: 2px; }
 .tk .chg.down { color: var(--down); }
 .tk.idx .sym { padding: 1px 5px; border: 1px solid currentColor; }
 @keyframes tick { to { transform: translateX(-50%); } }
+
+/* Right 25%: "edition the city, wsj, fbi watchlist" */
+.ticker .edition {
+  flex: 0 0 25%; width: 25%; max-width: 25%;
+  box-sizing: border-box;
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  padding: 0 max(var(--gutter), env(safe-area-inset-right)) 0 12px;
+  margin: 0;
+}
 
 /* ---------- front page: highest bars ---------- */
 .highest-box { margin: 26px 0 0; }
@@ -911,15 +940,39 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .shift.up, :root[data-theme="wallstreet"] .shift.down { color: var(--ink); border-color: var(--ink); }
 :root[data-theme="wallstreet"] .shift.down { border-left-style: dashed; }
 :root[data-theme="wallstreet"] .provenance { color: var(--muted); }
-:root[data-theme="wallstreet"] .ticker { max-width: none; padding: 0 var(--gutter); border-bottom: 1px solid #d6d6d6; font: 700 15px/20px var(--font-ui); }
-:root[data-theme="wallstreet"] .ticker-label { border: 0; padding: 11px 14px 11px 0; font-size: 13px; }
-:root[data-theme="wallstreet"] .ticker-view { border: 0; padding: 11px 0; }
-:root[data-theme="wallstreet"] .tk .sym { font-weight: 700; letter-spacing: 0; }
-:root[data-theme="wallstreet"] .tk.idx .sym { border: 0; padding: 0; }
-:root[data-theme="wallstreet"] .tk .px { font-weight: 700; color: #111; }
-:root[data-theme="wallstreet"] .tk.up .px { color: var(--up); }
-:root[data-theme="wallstreet"] .tk.down .px { color: var(--down); }
-:root[data-theme="wallstreet"] .tk .chg { font-weight: 400; }
+:root[data-theme="wallstreet"] .ticker {
+  background: #1c1c1c;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  font: 700 13px/18px var(--font-ui);
+}
+:root[data-theme="wallstreet"] .ticker-label {
+  display: flex !important;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+:root[data-theme="wallstreet"] .ticker-arrow { color: #0080c3; }
+:root[data-theme="wallstreet"] .ticker-view {
+  border: 0;
+  padding: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+}
+:root[data-theme="wallstreet"] .tk { color: #fff; font-size: 13.5px; }
+:root[data-theme="wallstreet"] .tk .sym { color: #fff; font-weight: 700; letter-spacing: 0; }
+:root[data-theme="wallstreet"] .tk.idx .sym { border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 1px 5px; }
+:root[data-theme="wallstreet"] .tk .px { font-weight: 500; color: #ccc; }
+:root[data-theme="wallstreet"] .tk.up .px, :root[data-theme="wallstreet"] .tk .chg.up { color: #2ecc71; }
+:root[data-theme="wallstreet"] .tk.down .px, :root[data-theme="wallstreet"] .tk .chg.down { color: #ff5252; }
+:root[data-theme="wallstreet"] .tk .chg { font-weight: 600; }
+:root[data-theme="wallstreet"] .edition-label { color: #aaa; }
+:root[data-theme="wallstreet"] .edition-set { border-color: #555; }
+:root[data-theme="wallstreet"] .edition button { color: #fff; font-size: 11.5px; text-transform: none; letter-spacing: 0; }
+:root[data-theme="wallstreet"] .edition button + button { border-left-color: #555; }
+:root[data-theme="wallstreet"] .edition button[aria-checked="true"] { background: #fff; color: #111; font-weight: 700; }
+:root[data-theme="wallstreet"] .edition button:hover:not([aria-checked="true"]) { background: rgba(255,255,255,0.1); }
 
 /* ===========================================================================
  * FBI Watchlist — the business magazine
@@ -978,12 +1031,39 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="watchlist"] .sections a.sec-group::after { color: #dc0000; }
 :root[data-theme="watchlist"] .sections a.sec-group.on { background: transparent; box-shadow: inset 0 -3px 0 #dc0000; }
 
-/* The ticker is the "Trending" line: white, under the black band. */
-:root[data-theme="watchlist"] .ticker { font: 400 14px/21px var(--font-ui); }
-:root[data-theme="watchlist"] .ticker-label { color: #007ac8; font-weight: 500; font-size: 14px; letter-spacing: 0; }
-:root[data-theme="watchlist"] .tk .sym { font-weight: 600; letter-spacing: 0; }
-:root[data-theme="watchlist"] .tk .px { color: #333; }
-:root[data-theme="watchlist"] .tk.idx .sym { border: 0; background: #171717; color: #fff; padding: 1px 6px; border-radius: 3px; }
+/* The ticker line for FBI Watchlist */
+:root[data-theme="watchlist"] .ticker {
+  background: #171717;
+  color: #fff;
+  border-bottom: 1px solid #282828;
+  font: 400 13px/18px var(--font-ui);
+}
+:root[data-theme="watchlist"] .ticker-label {
+  display: flex !important;
+  color: #007ac8;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+:root[data-theme="watchlist"] .ticker-arrow { color: #007ac8; }
+:root[data-theme="watchlist"] .ticker-view {
+  border: 0;
+  padding: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+}
+:root[data-theme="watchlist"] .tk { color: #fff; }
+:root[data-theme="watchlist"] .tk .sym { font-weight: 600; letter-spacing: 0; color: #fff; }
+:root[data-theme="watchlist"] .tk .px { color: #bbb; }
+:root[data-theme="watchlist"] .tk.up .px, :root[data-theme="watchlist"] .tk .chg.up { color: #2ecc71; }
+:root[data-theme="watchlist"] .tk.down .px, :root[data-theme="watchlist"] .tk .chg.down { color: #ff5252; }
+:root[data-theme="watchlist"] .tk.idx .sym { border: 0; background: #333; color: #fff; padding: 1px 6px; border-radius: 3px; }
+:root[data-theme="watchlist"] .edition-label { color: #888; font-size: 11px; }
+:root[data-theme="watchlist"] .edition-set { border-color: #444; }
+:root[data-theme="watchlist"] .edition button { color: #fff; font-size: 11.5px; font-weight: 500; letter-spacing: 0; }
+:root[data-theme="watchlist"] .edition button + button { border-left-color: #444; }
+:root[data-theme="watchlist"] .edition button[aria-checked="true"] { background: #fff; color: #171717; font-weight: 700; }
+:root[data-theme="watchlist"] .edition button:hover:not([aria-checked="true"]) { background: rgba(255,255,255,0.1); }
 
 /* Type. */
 :root[data-theme="watchlist"] .kicker { font: 500 12px/18px var(--font-ui); letter-spacing: 0; color: #333; }
@@ -1100,9 +1180,24 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .sections a.sec-group.on { background: #0a5e66; box-shadow: none; }
 
 /* The market bar: dark slate, white symbols, changes in outlined boxes. */
-:root[data-theme="city"] .ticker { max-width: none; padding: 0; background: #262a33; font: 700 12px/16px var(--font-ui); }
-:root[data-theme="city"] .ticker-label { padding: 10px 14px 10px max(var(--gutter), calc((100vw - var(--page)) / 2 + var(--gutter))); color: #fff; border: 0; letter-spacing: .04em; }
-:root[data-theme="city"] .ticker-view { border: 0; padding: 9px 0; }
+:root[data-theme="city"] .ticker {
+  background: #262a33;
+  color: #fff;
+  border-bottom: 1px solid #1a1d24;
+  font: 700 12px/16px var(--font-ui);
+}
+:root[data-theme="city"] .ticker-label {
+  display: flex !important;
+  color: #fff;
+  letter-spacing: .04em;
+}
+:root[data-theme="city"] .ticker-arrow { color: #fcd0b1; }
+:root[data-theme="city"] .ticker-view {
+  border: 0;
+  padding: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
+}
 :root[data-theme="city"] .ticker-set { gap: 34px; padding-right: 34px; }
 :root[data-theme="city"] .tk, :root[data-theme="city"] .tk .px { color: #fff; }
 :root[data-theme="city"] .tk .px { font-weight: 400; }
@@ -1110,6 +1205,12 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .tk .chg.up { color: #5ec897; }
 :root[data-theme="city"] .tk .chg.down { color: #ff767c; }
 :root[data-theme="city"] .tk.idx .sym { border: 0; background: #fcd0b1; color: #262a33; padding: 1px 6px; }
+:root[data-theme="city"] .edition-label { color: #9ea8b6; font-size: 11px; }
+:root[data-theme="city"] .edition-set { border-color: #444c5a; }
+:root[data-theme="city"] .edition button { color: #d1d5db; font-size: 11.5px; font-weight: 600; letter-spacing: 0; }
+:root[data-theme="city"] .edition button + button { border-left-color: #444c5a; }
+:root[data-theme="city"] .edition button[aria-checked="true"] { background: #fff; color: #262a33; font-weight: 700; }
+:root[data-theme="city"] .edition button:hover:not([aria-checked="true"]) { background: rgba(255,255,255,0.08); color: #fff; }
 
 /* Type. */
 :root[data-theme="city"] .kicker { font: 600 16px/24px var(--font-ui); letter-spacing: 0; text-transform: none; color: #990f3d; }
@@ -1300,11 +1401,6 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .index-item h3 { font: 700 22px/1.25 var(--font-ui); letter-spacing: -.005em; }
 :root[data-theme="wallstreet"] .story h2, :root[data-theme="wallstreet"] .story h3 { letter-spacing: 0; }
 :root[data-theme="wallstreet"] .highest .t { font-size: 16px; font-weight: 700; }
-:root[data-theme="wallstreet"] .ticker-label { display: none; }
-:root[data-theme="wallstreet"] .ticker-view { -webkit-mask-image: none; mask-image: none; }
-:root[data-theme="wallstreet"] .ticker-set { gap: 30px; padding-right: 30px; }
-:root[data-theme="wallstreet"] .tk { font-size: 16px; }
-:root[data-theme="wallstreet"] .tk .chg { font-weight: 500; }
 :root[data-theme="wallstreet"] .headline { font-weight: 700; letter-spacing: 0; }
 :root[data-theme="wallstreet"] .headline-2, :root[data-theme="wallstreet"] h2.section { letter-spacing: 0; }
 
@@ -1353,6 +1449,7 @@ html.no-js .reveal { opacity: 1; animation: none; }
  * ======================================================================== */
 
 @media (max-width: 1040px) {
+  .edition-label { display: none; }
   .q-grid { grid-template-columns: minmax(0, 1fr); }
   .toc { position: static; margin-bottom: 18px; }
   .toc .rubric { display: none; }
@@ -1401,9 +1498,9 @@ html.no-js .reveal { opacity: 1; animation: none; }
     min-width: 44px; min-height: 44px; margin-left: -12px; font-size: 0; text-decoration: none; color: var(--ink);
   }
   .crumbs a:last-of-type::before { content: "\2190"; font-size: 20px; line-height: 1; }
-  .edition button { min-width: 44px; min-height: 40px; justify-content: center; padding: 0; }
+  .edition button { min-width: 28px; min-height: 28px; justify-content: center; padding: 0 4px; }
   .edition .t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-  .edition .sw { width: 16px; height: 16px; }
+  .edition .sw { width: 14px; height: 14px; }
   .masthead { padding: 16px var(--gutter) 12px; }
   .motto { font-size: 16px; }
   .sections { padding: 0; }
@@ -1419,7 +1516,7 @@ html.no-js .reveal { opacity: 1; animation: none; }
   :root[data-theme="watchlist"] .cta { display: none; }
   :root[data-theme="watchlist"] .nameplate, :root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 330px); }
   :root[data-theme="wallstreet"] .nameplate, :root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 300px); }
-  .ticker { padding: 0 0 0 var(--gutter); }
+  .ticker { padding: 0; }
   .ticker-label .ticker-name { display: none; }
   .headline { font-size: clamp(36px, 10.5vw, 48px); }
   .index-item { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
@@ -1485,7 +1582,7 @@ html.no-js .reveal { opacity: 1; animation: none; }
  * ======================================================================== */
 
 @media print {
-  .topbar, .sections, .toc, .progress, .actions, .modebar .switch, .edition, .resume-bar, .privacy-box { display: none !important; }
+  .ticker, .topbar, .sections, .toc, .progress, .actions, .modebar .switch, .edition, .resume-bar, .privacy-box { display: none !important; }
   body { background: #fff !important; }
   .masthead, .sections { background: none !important; box-shadow: none !important; }
   .nameplate { color: #000 !important; background: none !important; width: auto !important; aspect-ratio: auto !important; font-size: 36px !important; line-height: 1.1 !important; }

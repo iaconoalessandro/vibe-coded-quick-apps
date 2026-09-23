@@ -122,22 +122,40 @@
     var personal = items.some(function (x) { return x.delta !== undefined; });
 
     if (!bar) {
-      bar = el('div', 'ticker');
-      bar.setAttribute('role', 'region');
-      bar.setAttribute('aria-label', 'Admissions index');
-      var label = el('div', 'ticker-label');
-      label.appendChild(el('span', 'ticker-arrow', '↗'));
-      label.appendChild(el('span', 'ticker-name', 'Admissions index'));
-      bar.appendChild(label);
-      var view = el('div', 'ticker-view');
-      track = el('div', 'ticker-track');
-      view.appendChild(track);
-      bar.appendChild(view);
+      bar = document.querySelector('.ticker');
+      if (bar) {
+        track = bar.querySelector('.ticker-track');
+        if (!track) {
+          var v = bar.querySelector('.ticker-view');
+          if (!v) {
+            v = el('div', 'ticker-view');
+            bar.appendChild(v);
+          }
+          track = el('div', 'ticker-track');
+          v.appendChild(track);
+        }
+      } else {
+        bar = el('div', 'ticker');
+        bar.setAttribute('role', 'region');
+        bar.setAttribute('aria-label', 'Admissions index');
+        var label = el('div', 'ticker-label');
+        label.appendChild(el('span', 'ticker-arrow', '↗'));
+        label.appendChild(el('span', 'ticker-name', 'Admissions index'));
+        bar.appendChild(label);
+        var view = el('div', 'ticker-view');
+        track = el('div', 'ticker-track');
+        view.appendChild(track);
+        bar.appendChild(view);
+      }
       place();
+      if (window.Theme && window.Theme.buildPicker) window.Theme.buildPicker();
     }
-    bar.querySelector('.ticker-label').title = personal
-      ? 'Price: the Competitive bar. Change: your margin against it, from your saved answers.'
-      : 'Price: the Competitive bar each programme is scored against. Answer a calculator to see your margin.';
+    var lbl = bar.querySelector('.ticker-label');
+    if (lbl) {
+      lbl.title = personal
+        ? 'Price: the Competitive bar. Change: your margin against it, from your saved answers.'
+        : 'Price: the Competitive bar each programme is scored against. Answer a calculator to see your margin.';
+    }
 
     /* Two copies, so the loop is seamless; the second is hidden from screen
      * readers, which get the first once. */
@@ -151,14 +169,12 @@
     track.style.setProperty('--dur', Math.max(60, all.length * 2.6) + 's');
   }
 
-  /* The financial papers print their market line at the very top, under the
-   * strip; the magazine prints it under the navigation. */
+  /* The market line sits at the very top of the page across all three editions. */
   function place() {
     if (!bar) return;
-    var top = document.documentElement.getAttribute('data-theme') !== 'watchlist';
-    var anchor = document.querySelector(top ? '.topbar' : '.sections');
+    var anchor = document.querySelector('.masthead');
     if (!anchor) return;
-    if (anchor.nextSibling !== bar) anchor.parentNode.insertBefore(bar, anchor.nextSibling);
+    if (bar.nextSibling !== anchor) anchor.parentNode.insertBefore(bar, anchor);
   }
   document.addEventListener('editionchange', place);
 

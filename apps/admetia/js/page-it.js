@@ -80,7 +80,7 @@
     resultsView.innerHTML = '';
     wizardView.hidden = true;
     resultsView.hidden = false;
-    chip.textContent = String(res.score.total);
+    if (chip) chip.textContent = String(res.score.total);
 
     var eligible = res.rows.filter(function (r) { return r.eligible; });
     var blocked = res.rows.filter(function (r) { return !r.eligible; });
