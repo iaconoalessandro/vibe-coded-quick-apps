@@ -41,8 +41,11 @@ redistribution. A browser only fetches the faces the active edition needs.
 | Edition | Typefaces |
 |---|---|
 | The City | Source Serif 4 (Adobe), Hanken Grotesk (Hanken Design Co.) |
-| Wall Street | Noto Serif Display, condensed (Google); Times New Roman from the system |
+| Wall Street | Roboto Serif, ultra-condensed (Commercial Type for Google); Times New Roman from the system |
 | FBI Watchlist | Noto Serif Display, Hanken Grotesk; Georgia from the system |
+
+The Wall Street and FBI Watchlist nameplates are images made from Roboto Serif and
+[Gloock](https://github.com/duartp/gloock) (OFL) respectively — see `img/wordmark/README.md`.
 
 The licence text and copyright notice for each family are in `fonts/`.
 

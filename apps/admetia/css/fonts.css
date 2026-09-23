@@ -15,6 +15,12 @@
 @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 100 900; font-display: swap;
   src: url("../fonts/hanken-grotesk.woff2") format("woff2"); }
 
-/* Headlines for Wall Street (condensed) and FBI Watchlist (a demi cut). */
+/* Wall Street: headlines, standing in for the WSJ's Escrow Condensed. A
+   static cut of Roboto Serif — ultra-condensed width, optical size 72 — with
+   only the weight left variable (400–800). */
+@font-face { font-family: "Roboto Serif Condensed"; font-style: normal; font-weight: 400 800; font-display: swap;
+  src: url("../fonts/roboto-serif-condensed.woff2") format("woff2"); }
+
+/* FBI Watchlist: headlines (a demi cut). */
 @font-face { font-family: "Noto Serif Display"; font-style: normal; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap;
   src: url("../fonts/noto-serif-display.woff2") format("woff2"); }

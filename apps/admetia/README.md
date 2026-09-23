@@ -77,6 +77,7 @@ computing.html      Computing calculator (?track=cs|dsai|conversion)
 
 css/app.css         The newspaper layout and its three editions
 css/fonts.css       @font-face rules for the typefaces in fonts/ (all SIL OFL)
+img/wordmark/       Nameplate images for the Wall Street and FBI Watchlist editions
 js/theme.js         Edition picker, section-nav highlighting and the dateline
 js/ticker.js        The Admissions Index ticker and the front page's "Highest bars"
 js/engine.js        Core wizard runtime and reactive form logic

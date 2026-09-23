@@ -535,6 +535,19 @@ Forbes does in Graphik, keeps Georgia for decks, teasers and italic pull quotes,
 headlines at 40/48 and 32/38.4. Where a live measurement disagreed with a published
 figure, the measurement was kept.
 
+**Nameplates.** Wall Street and FBI Watchlist show an image wordmark instead of live type.
+Each typeface was picked by setting the real logo's own words ("Forbes", "THE WALL STREET
+JOURNAL.") in a dozen free candidates and stacking them under the real logos at equal
+height: Gloock matched Forbes' bracketed heavy serifs; Roboto Serif at its narrowest width
+matched the WSJ's condensed Scotch capitals, including the J that drops below the line.
+Wall Street's headlines use the same Roboto Serif cut, so headline and nameplate agree, as
+they do at the WSJ. The section nav now stays on one row at every width, scrolling sideways
+when it does not fit; previously it wrapped to two lines between ~640 and ~1100 px, and on
+phones three edition rules had removed its side padding, clipping the first link at 0 px.
+Checked: scroll width equals viewport width for every edition at 1440, 1000, 800 and 390 px,
+and the first nav link sits at the 18 px gutter on phones in all nine page × edition
+combinations tested. Wall Street now loads only its own two webfonts.
+
 The market line sits at the top of the page in The City and Wall Street, as the FT and WSJ
 print theirs, and under the navigation in FBI Watchlist, as Forbes does; it moves when the
 edition changes.
