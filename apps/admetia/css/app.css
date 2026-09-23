@@ -301,26 +301,27 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .ticker.stuck { box-shadow: 0 4px 14px rgba(0, 0, 0, .35); }
 
-/* Left 25%: "put admission index" */
+/* Left: Admissions index */
 .ticker-label {
-  flex: 0 0 25%; width: 25%; max-width: 25%;
+  flex: 0 0 auto;
   box-sizing: border-box;
   display: flex; align-items: center; gap: 7px;
-  padding: 0 12px 0 max(var(--gutter), env(safe-area-inset-left));
+  padding: 0 0 0 max(var(--gutter), env(safe-area-inset-left));
   letter-spacing: .08em; text-transform: uppercase; font-weight: 800; cursor: help;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap;
   border-bottom: 0;
 }
 .ticker-arrow { font-size: 14px; flex-shrink: 0; line-height: 1; }
-.ticker-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ticker-name { white-space: nowrap; }
 
-/* Center 50%: "stock sliding" in reality admission index (centered on page) */
+/* Center: stock sliding ticker centered in the space between admission index and edition */
 .ticker-view {
-  flex: 0 0 50%; width: 50%; max-width: 50%;
+  flex: 1 1 0%;
   box-sizing: border-box;
   overflow: hidden; min-width: 0;
   display: flex; align-items: center;
   padding: 0; border-bottom: 0;
+  margin: 0 20px;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
   mask-image: linear-gradient(90deg, transparent, #000 24px, #000 calc(100% - 24px), transparent);
 }
@@ -336,12 +337,12 @@ a:hover { text-decoration-thickness: 2px; }
 .tk.idx .sym { padding: 1px 5px; border: 1px solid currentColor; }
 @keyframes tick { to { transform: translateX(-50%); } }
 
-/* Right 25%: "edition the city, wall street, fbi watchlist" */
+/* Right: edition picker */
 .ticker .edition {
-  flex: 0 0 25%; width: 25%; max-width: 25%;
+  flex: 0 0 auto;
   box-sizing: border-box;
   display: flex; align-items: center; justify-content: flex-end; gap: 8px;
-  padding: 0 max(var(--gutter), env(safe-area-inset-right)) 0 12px;
+  padding: 0 max(var(--gutter), env(safe-area-inset-right)) 0 0;
   margin: 0;
 }
 .ticker .edition button { padding: 5px 8px; gap: 6px; }
@@ -1522,6 +1523,7 @@ html.no-js .reveal { opacity: 1; animation: none; }
   :root[data-theme="wallstreet"] .nameplate, :root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 300px); }
   .ticker { padding: 0; }
   .ticker-label .ticker-name { display: none; }
+  .ticker-view { margin: 0 10px; }
   .headline { font-size: clamp(36px, 10.5vw, 48px); }
   .index-item { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
   .index-item .no { font-size: 44px; }
