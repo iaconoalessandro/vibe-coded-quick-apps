@@ -112,12 +112,12 @@
    "format": "big",
    "colour": "#004B93",
    "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
-   "lat": 58.369871,
-   "lon": 26.768715,
+   "lat": 58.369954,
+   "lon": 26.768505,
    "street": "Kalda tee",
    "housenumber": "32",
    "hours": "",
-   "osmId": "way/30223305"
+   "osmId": "node/14214281753"
   },
   {
    "name": "Maxima X",
@@ -605,8 +605,8 @@
    "format": "medium",
    "colour": "#D2001C",
    "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
-   "lat": 58.370029,
-   "lon": 26.768496,
+   "lat": 58.370072,
+   "lon": 26.768622,
    "street": "Kalda tee",
    "housenumber": "32",
    "hours": "Mo-Fr 09:00-20:00; Sa 10:00-20:00; Sa 10:00-18:00",
@@ -1021,6 +1021,23 @@
    "osmId": "node/5046583421"
   },
   {
+   "name": "Supermarket",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.369871,
+   "lon": 26.768715,
+   "street": "Kalda tee",
+   "housenumber": "32",
+   "hours": "",
+   "osmId": "way/30223305"
+  },
+  {
    "name": "Tartu Kaupmees",
    "chain": null,
    "chainLabel": "Independent",
@@ -1226,10 +1243,10 @@
   },
   "Ihaste (Pine Forest Villa Suburb)": {
    "nearestBig": {
-    "name": "Maxima X",
-    "chain": "Maxima",
-    "metres": 1992,
-    "walkMinutes": 32
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 2002,
+    "walkMinutes": 33
    },
    "nearestAny": {
     "name": "Ihaste Konsum",

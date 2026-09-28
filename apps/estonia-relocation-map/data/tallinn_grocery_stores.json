@@ -2647,8 +2647,8 @@
    "note": "Independent supermarket.",
    "lat": 59.425449,
    "lon": 24.700479,
-   "street": "",
-   "housenumber": "",
+   "street": "Mustamäe tee",
+   "housenumber": "12",
    "hours": "",
    "osmId": "node/12736926356"
   },
