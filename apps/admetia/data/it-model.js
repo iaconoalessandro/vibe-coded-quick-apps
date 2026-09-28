@@ -151,30 +151,36 @@ window.IT_MODEL = (function () {
         'your degree is the single largest thing on the file.',
       groups: [
         {
-          id: 'gradeScale', type: 'radio', label: 'Which grading scale is yours?',
-          help: 'Used only to label the bands below.',
+          id: 'gradeScale', type: 'radio', label: 'Is your degree Italian or foreign?',
+          help: 'Italian grades are asked for as your exam average; every other system as ' +
+            'your place in your cohort.',
           options: [
-            { id: 'sc_uk', label: 'UK classification (First, 2:1, 2:2)' },
-            { id: 'sc_ects', label: 'ECTS grades or a percentage' },
-            { id: 'sc_it', label: 'Italian (18–30 exams, 66–110 degree)' },
-            { id: 'sc_in', label: 'Indian percentage or CGPA' },
-            { id: 'sc_cn', label: 'Chinese 100-point average' },
-            { id: 'sc_us', label: 'US GPA out of 4.0' },
-            { id: 'sc_other', label: 'Something else' }
+            { id: 'sc_it', label: 'Italian — exams marked out of 30' },
+            { id: 'sc_foreign', label: 'Foreign — any other grading system' }
           ]
         },
         {
+          id: 'italianConverter', type: 'custom', render: 'italian', answerKey: 'itAvg',
+          label: 'Your weighted exam average',
+          showIf: { group: 'gradeScale', is: 'sc_it' },
+          help: 'The ECTS-weighted average of your exam marks, out of 30. Not the 110 degree ' +
+            'mark: the graduation committee adds discretionary points on top of it, so it ' +
+            'does not compare across universities.'
+        },
+        {
           id: 'gradeBand', type: 'radio', label: 'Where do you sit in your cohort?',
+          showIf: { group: 'gradeScale', is: 'sc_foreign' },
           help: 'Rank within your own cohort travels across borders better than a converted ' +
             'number does. Most of these programmes state a class requirement — a 2:1 or an ' +
-            'equivalent — and then quietly select well above it.',
+            'equivalent — and then quietly select well above it. The percentage and GPA ' +
+            'beside each band are only a rough guide; a UK 70% is already a First.',
           options: [
-            { id: 'gb_top5', label: 'Top ~5%', note: 'First (high) · 110 e lode · 85+ CN · 3.9+', cls: 'first', v: 1.0 },
-            { id: 'gb_top10', label: 'Top ~10%', note: 'strong First · 110 · 83 CN · 3.8', cls: 'first', v: 0.9 },
-            { id: 'gb_top25', label: 'Top ~25%', note: 'First / high 2:1 · 105–109 · 80 CN · 3.6', cls: '2:1h', v: 0.74 },
-            { id: 'gb_top50', label: 'Top ~50%', note: 'solid 2:1 · 100–104 · 75 CN · 3.3', cls: '2:1', v: 0.56 },
-            { id: 'gb_mid', label: 'Around the median', note: 'low 2:1 · 95–99 · 70 CN · 3.0', cls: '2:1', v: 0.4 },
-            { id: 'gb_low', label: 'Below the median', note: '2:2 or below · under 95 · under 3.0', cls: '2:2', v: 0.18 }
+            { id: 'gb_top5', label: 'Top ~5%', note: '90%+ · GPA 3.9+', cls: 'first', v: 1.0 },
+            { id: 'gb_top10', label: 'Top ~10%', note: '85–89% · GPA 3.8', cls: 'first', v: 0.9 },
+            { id: 'gb_top25', label: 'Top ~25%', note: '80–84% · GPA 3.6', cls: '2:1h', v: 0.74 },
+            { id: 'gb_top50', label: 'Top ~50%', note: '75–79% · GPA 3.3', cls: '2:1', v: 0.56 },
+            { id: 'gb_mid', label: 'Around the median', note: '70–74% · GPA 3.0', cls: '2:1', v: 0.4 },
+            { id: 'gb_low', label: 'Below the median', note: 'under 70% · GPA under 3.0', cls: '2:2', v: 0.18 }
           ]
         },
         {
@@ -1003,7 +1009,7 @@ window.IT_MODEL = (function () {
    * improvements. Note that the prerequisite modules are NOT here: taking a
    * discrete mathematics course before you apply is a real option, and at a
    * prerequisite-audited school it is usually the only one that helps. */
-  var FIXED_GROUPS = ['gradeScale', 'gradeBand', 'institution', 'degreeField', 'bachelorLength'];
+  var FIXED_GROUPS = ['gradeScale', 'gradeBand', 'italianConverter', 'itAvg', 'institution', 'degreeField', 'bachelorLength'];
 
   return {
     tracks: TRACKS,

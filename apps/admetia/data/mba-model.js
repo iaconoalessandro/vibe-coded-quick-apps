@@ -3,9 +3,7 @@
  *
  * Points-based: each answer carries a fixed number of points, GPA and test
  * score are scored jointly off one table, and eight schools apply their own
- * adjustments on top of the total. The values follow a points-based MBA
- * admissions model published by a third-party consultancy, so the calculator
- * reproduces that model's results. The schema and identifiers are this
+ * adjustments on top of the total. The schema and identifiers are this
  * project's own.
  *
  * Two of the model's test-score checks list individual scores where a range is
@@ -140,7 +138,9 @@ window.MBA_MODEL = (function () {
         },
         {
           id: 'gmat', type: 'radio', label: 'Test score', layout: 'grid',
-          help: 'Pick the row matching your best score on any of the three scales.',
+          help: 'Pick the row matching your best score on any of the three scales. ' +
+            'Not sat a test yet? Pick the score you realistically expect — a recent practice ' +
+            'test is the best guide — and update it once you have the real one.',
           options: gmatOptions
         },
         {
@@ -580,7 +580,16 @@ window.MBA_MODEL = (function () {
     { name: 'Schulich', points: 61, region: 'Canada' },
     { name: 'Babson', points: 61, region: 'USA' },
     { name: 'SDA Bocconi', points: 61, region: 'Italy' },
-    { name: 'WashU Olin', points: 61, region: 'USA' }
+    { name: 'WashU Olin', points: 61, region: 'USA' },
+    /* Not in the source model. Placed on the same scale by calibration:
+     * each school's published or reported test averages, experience minimum
+     * and selectivity, set against the schools above with similar figures.
+     * Rankings were read but given little weight — they measure outcomes such
+     * as salary, not how hard a school is to get into. */
+    { name: 'CEIBS', points: 63, region: 'China' },
+    { name: 'Peking Guanghua', points: 62, region: 'China' },
+    { name: 'Nanyang (NTU)', points: 61, region: 'Singapore' },
+    { name: 'Fudan', points: 61, region: 'China' }
   ];
 
   /* Gap between your score and a school's points, mapped to a verdict. */

@@ -43,6 +43,30 @@
     return T(mode === 'published' ? 'model as published' : 'corrected model');
   }
 
+  /* Back from the results to the questions. */
+  function backToAnswers() {
+    resultsView.hidden = true; wizardView.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* With nothing Competitive yet, say where you are nearest. Competitive on
+   * the shared scale starts two points under a school's requirement. */
+  function closestLine(reachedCount, base) {
+    if (reachedCount) return '';
+    var low = Math.min.apply(null, M.generalSchools.map(function (s) { return s.points; }));
+    var at = M.generalSchools.filter(function (s) { return s.points === low; });
+    var gap = fmt(low - 2 - base);
+    return (at.length > 1
+      ? T('Closest: {name} and {k} others, {n} points short of Competitive.', { name: at[0].name, k: W(at.length - 1), n: gap })
+      : T('Closest: {name}, {n} points short of Competitive.', { name: at[0].name, n: gap })) + ' ';
+  }
+
+  /* The page header is static HTML; the question count comes from the model. */
+  (function () {
+    var sf = document.querySelector('#wizard-view .sec-head .standfirst');
+    if (sf) sf.insertAdjacentElement('afterend', el('p', 'form-meta', Wizard.formMeta(M)));
+  }());
+
   function showResults(answers, keepScroll) {
     if (!keepScroll && window.Stats) Stats.event('results-mba');
     var published = S.score(answers, 'published');
@@ -66,12 +90,13 @@
       reached.length
         ? T('Competitive or better at {n} of {total} schools.', { n: W(reached.length), total: W(n) })
         : T('Not yet competitive at any of the {total} schools.', { total: W(n) }),
+      closestLine(reached.length, active.base) +
       T('A base score of {score} on the {model}, against {total} schools on the shared scale.',
         { score: fmt(active.base), model: modelName(), total: W(n) }) + ' ' +
       (top.length
         ? tn(top.length, '{N} is at or above the point requirement — the scholarship range.',
             '{N} are at or above the point requirement — the scholarship range.', { N: I18N.cap(W(top.length)) })
-        : T('None is yet in the scholarship range.'))));
+        : T('None is yet in the scholarship range.')), backToAnswers));
 
     var gapNote = Wizard.incompleteNote(S.completeness(answers), function () {
       resultsView.hidden = true; wizardView.hidden = false;
@@ -131,6 +156,21 @@
     resultsView.appendChild(section('Schools modelled individually',
       'Each recalculates from your base score using its own adjustments and thresholds.'));
 
+    /* The schools closest to Competitive without being there yet start with
+     * their advice open; every other row keeps it folded. */
+    var shortBy = M.adjustedSchools.map(function (sc) {
+      return { name: sc.name, gap: sc.competitive - active.schools[sc.id] };
+    }).concat(M.generalSchools.map(function (sc) {
+      return { name: sc.name, gap: sc.points - 2 - active.base };
+    })).filter(function (x) { return x.gap > 0; })
+      .sort(function (x, y) { return x.gap - y.gap; }).slice(0, ResultsKit.openCount())
+      .map(function (x) { return x.name; });
+    function gapFold(gap, bar, name) {
+      var more = ResultsKit.fold('How to close the gap', shortBy.indexOf(name) !== -1);
+      more.appendChild(whyBox(gap, bar, improvementList));
+      return more;
+    }
+
     var t1 = el('div', 'table');
     M.adjustedSchools.forEach(function (school) {
       var sc = active.schools[school.id];
@@ -147,9 +187,8 @@
       addDeadline(name, school.name);
 
       if (sc < school.competitive) {
-        name.appendChild(whyBox(
-          Math.round((school.competitive - sc) * 10) / 10,
-          school.competitive, improvementList));
+        name.appendChild(gapFold(Math.round((school.competitive - sc) * 10) / 10,
+          school.competitive, school.name));
       }
       r.appendChild(name);
 
@@ -167,6 +206,7 @@
       }
       t1.appendChild(r);
     });
+    resultsView.appendChild(ResultsKit.foldAll(t1));
     resultsView.appendChild(t1);
 
     /* ---- shared-scale schools ---- */
@@ -188,9 +228,8 @@
         /* "Competitive" starts at a gap of −2, so that is the bar to explain
          * against rather than the school's headline number. */
         if (gap < -2) {
-          name.appendChild(whyBox(
-            Math.round((school.points - 2 - active.base) * 10) / 10,
-            school.points - 2, improvementList));
+          name.appendChild(gapFold(Math.round((school.points - 2 - active.base) * 10) / 10,
+            school.points - 2, school.name));
         }
         r.appendChild(name);
 
@@ -207,6 +246,7 @@
         }
         t2.appendChild(r);
       });
+    resultsView.appendChild(ResultsKit.foldAll(t2));
     resultsView.appendChild(t2);
 
     /* ---- breakdown ---- */
@@ -237,10 +277,7 @@
     /* ---- actions ---- */
     var actions = el('div', 'actions');
     var back = el('button', 'btn', '← Edit answers');
-    back.addEventListener('click', function () {
-      resultsView.hidden = true; wizardView.hidden = false;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    back.addEventListener('click', backToAnswers);
     actions.appendChild(back);
     actions.appendChild(el('span', 'spacer'));
     var print = el('button', 'btn', 'Print the page');

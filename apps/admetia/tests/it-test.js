@@ -6,7 +6,7 @@ const fs=require('fs'),path=require('path'),vm=require('vm');
 const APP=path.join(__dirname,'..');
 const s={window:{},Math,console,parseFloat,parseInt,isNaN,Object,Infinity,String,Number};
 vm.createContext(s);
-for(const f of ['data/it-model.js','data/it-evidence.js','js/score-it.js'])
+for(const f of ['data/conversions.js','data/it-model.js','data/it-evidence.js','js/score-it.js'])
   vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
 const S=s.window.IT_SCORE, M=s.window.IT_MODEL;
 
@@ -46,6 +46,10 @@ t('first-class gate blocks a median applicant at Oxford',
   row(with_({gradeBand:'gb_mid'}),'cs','oxford-acs').verdict.label==='Ineligible');
 t('a top-5% applicant is not blocked at Oxford',
   row(strong,'cs','oxford-acs').verdict.label!=='Ineligible');
+t('an Italian average of 26 is held to the same first-class rule',
+  row(with_({gradeScale:'sc_it',gradeBand:undefined,itAvg:26}),'cs','oxford-acs').verdict.label==='Ineligible');
+t('   and an average of 29.2 clears it',
+  row(with_({gradeScale:'sc_it',gradeBand:undefined,itAvg:29.2}),'cs','oxford-acs').verdict.label!=='Ineligible');
 
 t('csDegreeRequired blocks a humanities graduate at Imperial',
   row(with_({degreeField:'fld_other',csEcts:'ce_0'}),'cs','imperial-advcomp').verdict.label==='Ineligible');

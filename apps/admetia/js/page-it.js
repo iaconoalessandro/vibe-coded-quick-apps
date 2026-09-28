@@ -48,7 +48,7 @@
   var shot = TRACK_SHOT[trackId] || TRACK_SHOT.cs;
 
   intro.appendChild(Wizard.sectionHead(track.full,
-    ['Do you clear the ', 'rules', '?'], track.blurb, shot));
+    ['Do you clear the ', 'rules', '?'], track.blurb, shot, Wizard.formMeta(M)));
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');
@@ -57,6 +57,7 @@
   var wiz = Wizard.create({
     key: 'it:' + trackId,
     model: M,
+    migrate: Wizard.migrateGradeScale,
     mount: '#wizard',
     nav: '#stepnav',
     progress: '#bar',
@@ -98,11 +99,12 @@
     var pct = S.completeness(a);
     resultsView.appendChild(Wizard.resultsHead(T('Your results · {track}', { track: track.name }),
       headline(competitive.length, eligible.length, blocked.length),
+      closestLine(competitive, eligible) +
       (best && worst && best !== worst
         ? T('Your answers score {score} on the track weighting, and {lo}–{hi} once each programme reads the file its own way.',
             { score: fmt(res.score.total), lo: fmt(worst.profileScore), hi: fmt(best.profileScore) })
         : T('Your answers score {score} on the track weighting.', { score: fmt(res.score.total) })) + ' ' +
-      blockedLine(blocked.length, pct)));
+      blockedLine(blocked.length, pct), backToAnswers));
 
     var grid = el('div', 'summary reveal');
     grid.appendChild(dialCell('Profile score', res.score.total, 'track weighting'));
@@ -156,6 +158,9 @@
       : 'You meet the published requirements', eligible.length));
     if (eligible.length) {
       var t1 = el('div', 'table ranked reveal');
+      /* The closest to Competitive without being there start open. */
+      var opened = eligible.filter(function (r) { return r.gap > 0; })
+        .sort(function (x, y) { return x.gap - y.gap; }).slice(0, ResultsKit.openCount());
       var runs = Wizard.verdictRuns(eligible, function (r) { return r.verdict.label; });
       (runs && runs.length > 1 ? runs : [{ rows: eligible }]).forEach(function (run) {
         if (run.label) {
@@ -163,8 +168,9 @@
           d.appendChild(el('span', 'n', String(run.rows.length)));
           t1.appendChild(d);
         }
-        run.rows.forEach(function (r) { t1.appendChild(schoolRow(r)); });
+        run.rows.forEach(function (r) { t1.appendChild(schoolRow(r, opened.indexOf(r) !== -1)); });
       });
+      resultsView.appendChild(ResultsKit.foldAll(t1));
       resultsView.appendChild(t1);
     } else {
       resultsView.appendChild(el('div', 'empty reveal',
@@ -179,7 +185,8 @@
         'are permanent, like a degree class. Others are a module you could go and take before ' +
         'the next cycle, which is worth knowing separately.', 'warn'));
       var t2 = el('div', 'table reveal');
-      blocked.forEach(function (r) { t2.appendChild(schoolRow(r)); });
+      blocked.forEach(function (r) { t2.appendChild(schoolRow(r, false)); });
+      resultsView.appendChild(ResultsKit.foldAll(t2));
       resultsView.appendChild(t2);
     }
 
@@ -211,11 +218,7 @@
     var actions = el('div', 'actions');
     var back = el('a', 'btn', '← Edit answers');
     back.href = '#';
-    back.onclick = function (e) {
-      e.preventDefault();
-      resultsView.hidden = true; wizardView.hidden = false;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    back.onclick = function (e) { e.preventDefault(); backToAnswers(); };
     actions.appendChild(back);
     var other = el('a', 'btn', 'Try another track');
     other.href = 'it.html';
@@ -333,6 +336,10 @@
     intro_.textContent = T('The same answers are worth different amounts at different programmes. ' +
       'Each one below is read the way its published process suggests it is actually read.');
     box.appendChild(intro_);
+    var more = ResultsKit.fold('How the programmes read a file differently');
+    var detail = el('div', 'more-body');
+    more.appendChild(detail);
+    box.appendChild(more);
 
     var byProfile = {};
     res.rows.forEach(function (r) {
@@ -351,7 +358,7 @@
       row.appendChild(el('p', 'prof-blurb', p.profile.blurb));
       row.appendChild(weightBars(p.emphasis, 4));
       row.appendChild(el('p', 'prof-schools', p.schools.join(' · ')));
-      box.appendChild(row);
+      detail.appendChild(row);
     });
 
     var caveat = el('p', 'prof-caveat');
@@ -359,7 +366,7 @@
       'Which programme gets which reading is my judgement of its published process, not ' +
       'something any of them state in these terms.')));
     caveat.appendChild(src('CAL'));
-    box.appendChild(caveat);
+    detail.appendChild(caveat);
     return box;
   }
 
@@ -530,7 +537,7 @@
     return row;
   }
 
-  function schoolRow(r) {
+  function schoolRow(r, open) {
     var sc = r.school;
     var wrap = el('div', 'row');
 
@@ -572,17 +579,17 @@
       name.appendChild(uw);
     }
 
-    name.appendChild(emphasisPanel(r));
-    if (r.gap > 0 || !r.eligible) name.appendChild(whyBox(r));
-
-    var det = el('details');
-    det.style.marginTop = '8px';
-    var sm = el('summary');
-    sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--muted);list-style:none';
-    sm.textContent = T('What this programme actually publishes');
-    det.appendChild(sm);
+    /* Everything below the verdict is folded: how to close the gap, how
+     * this programme reads a file, and what it publishes. */
+    var explain = r.gap > 0 || !r.eligible;
+    var more = ResultsKit.fold(explain ? 'How to close the gap, and how this programme reads a file'
+      : 'How this programme reads a file, and what it publishes', open);
+    var body = el('div', 'more-body');
+    more.appendChild(body);
+    if (explain) body.appendChild(whyBox(r));
+    body.appendChild(emphasisPanel(r));
+    body.appendChild(el('p', 'facts-head', 'What this programme actually publishes'));
     var facts = el('div', 'facts');
-    facts.style.marginTop = '8px';
     sc.facts.forEach(function (f) {
       var row = el('div', 'fact');
       row.appendChild(el('span', 'fk', f.k));
@@ -612,8 +619,8 @@
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
-    det.appendChild(facts);
-    name.appendChild(det);
+    body.appendChild(facts);
+    name.appendChild(more);
 
     wrap.appendChild(name);
 
@@ -668,6 +675,19 @@
                                      : T('Not yet competitive at any of the {total}.', v);
     return blocked ? T('Competitive or better at {n} of {total} eligible.', v)
                    : T('Competitive or better at {n} of {total}.', v);
+  }
+  /* Back from the results to the questions. */
+  function backToAnswers() {
+    resultsView.hidden = true; wizardView.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* With nothing Competitive yet, the most useful fact is where you are
+   * nearest. Empty otherwise, so it adds nothing to a good result. */
+  function closestLine(competitive, eligible) {
+    if (competitive.length || !eligible.length) return '';
+    var c = eligible.slice().sort(function (x, y) { return x.gap - y.gap; })[0];
+    return T('Closest: {name}, {n} points short of Competitive.', { name: c.school.name, n: fmt(c.gap) }) + ' ';
   }
   function blockedLine(blocked, pct) {
     if (blocked) {

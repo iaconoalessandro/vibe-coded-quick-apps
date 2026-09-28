@@ -1,9 +1,9 @@
 /* ---------------------------------------------------------------------------
  * Pre-experience business master's model (MiM / MiF / Marketing).
  *
- * This is NOT a reproduction of anything — no published tool exists for these
- * programmes. It is an original model, and it is built to be honest about the
- * fact that the underlying data is thin.
+ * An original model for pre-experience programmes, built to be transparent about
+ * where criteria and calibration come from, given that underlying public data
+ * is thin.
  *
  * Two things follow from the research and shape everything below:
  *
@@ -19,7 +19,7 @@
  *
  * Source tags: OFF  = read from the school's own page
  *              OFF2 = official school document, via a secondary summary
- *              TP   = third-party aggregator or consultancy, unverified
+ *              TP   = third-party aggregator, unverified
  *              FOI  = UK Freedom-of-Information disclosure
  *              NP   = the school publishes nothing on this
  *              CAL  = my calibration, not sourced from anyone
@@ -102,6 +102,24 @@ window.MASTERS_MODEL = (function () {
               internship: 0.5, leadership: 0.2, international: 0.35, essays: 0.1 },
       mods: { recs: 0, languages: 0.5 }
     },
+    /* Bocconi. Its MSc ranking uses the admission test, the GPA and the
+     * dossier and motivation. Bocconi publishes no MSc weights; applicants
+     * and admissions guides consistently report the ranking as 55% test and
+     * 45% GPA, so the two share their combined weight in exactly that split
+     * on every track (TP — reported, not published). The multipliers set how
+     * much of the file the pair carries between them. */
+    ranked: {
+      id: 'ranked', label: 'Ranked on test and GPA together',
+      short: 'Test 55 : GPA 45',
+      blurb: 'Applicants are ranked on the admission test and the GPA, with the ' +
+        'dossier and motivation checked alongside. Applicants and guides report the ' +
+        'split as 55% test and 45% GPA; the school itself publishes no weights for ' +
+        'its MSc programmes.',
+      mult: { academic: 1.7, test: 2.6, institution: 1.0, quant: 1.1,
+              internship: 0.5, leadership: 0.2, international: 0.35, essays: 0.3 },
+      split: { test: 55, academic: 45 },
+      mods: { recs: 0, languages: 0.5 }
+    },
     transcript: {
       id: 'transcript', label: 'Transcript-led — grades and institution',
       short: 'Grades + institution',
@@ -156,34 +174,36 @@ window.MASTERS_MODEL = (function () {
         'more weight than anything else — the opposite of an MBA application.',
       groups: [
         {
-          id: 'gradeScale', type: 'radio', label: 'Which grading scale is yours?',
-          help: 'Used to label the bands below and to offer the right converter.',
+          id: 'gradeScale', type: 'radio', label: 'Is your degree Italian or foreign?',
+          help: 'Italian grades are asked for as your exam average; every other system as ' +
+            'your place in your cohort.',
           options: [
-            { id: 'sc_it', label: 'Italian (18–30 exams, 66–110 degree)' },
-            { id: 'sc_uk', label: 'UK classification (First, 2:1, 2:2)' },
-            { id: 'sc_us', label: 'US GPA out of 4.0' },
-            { id: 'sc_ects', label: 'ECTS grades or a percentage' },
-            { id: 'sc_other', label: 'Something else' }
+            { id: 'sc_it', label: 'Italian — exams marked out of 30' },
+            { id: 'sc_foreign', label: 'Foreign — any other grading system' }
           ]
+        },
+        {
+          id: 'italianConverter', type: 'custom', render: 'italian', answerKey: 'itAvg',
+          label: 'Your weighted exam average',
+          showIf: { group: 'gradeScale', is: 'sc_it' },
+          help: 'The ECTS-weighted average of your exam marks, out of 30. Not the 110 degree ' +
+            'mark: the graduation committee adds discretionary points on top of it, so it ' +
+            'does not compare across universities.'
         },
         {
           id: 'gradeBand', type: 'radio', label: 'Where do you sit in your cohort?',
+          showIf: { group: 'gradeScale', is: 'sc_foreign' },
           help: 'Rank within your own cohort travels across borders far better than a ' +
-            'converted number does. If you are unsure, use the class-rank column.',
+            'converted number does. The percentage and GPA beside each band are only a ' +
+            'rough guide — systems differ, and a UK 70% is already a First.',
           options: [
-            { id: 'gb_top5', label: 'Top ~5%', note: '110 e lode · First (high) · 3.9+ · A+', v: 1.0 },
-            { id: 'gb_top10', label: 'Top ~10%', note: '110 · strong First · 3.8 · A', v: 0.9 },
-            { id: 'gb_top25', label: 'Top ~25%', note: '105–109 · First / high 2:1 · 3.6 · A−', v: 0.74 },
-            { id: 'gb_top50', label: 'Top ~50%', note: '100–104 · 2:1 · 3.3 · B+', v: 0.56 },
-            { id: 'gb_mid', label: 'Around the median', note: '95–99 · low 2:1 · 3.0 · B', v: 0.4 },
-            { id: 'gb_low', label: 'Below the median', note: 'under 95 · 2:2 or below · under 3.0', v: 0.2 }
+            { id: 'gb_top5', label: 'Top ~5%', note: '90%+ · GPA 3.9+', v: 1.0 },
+            { id: 'gb_top10', label: 'Top ~10%', note: '85–89% · GPA 3.8', v: 0.9 },
+            { id: 'gb_top25', label: 'Top ~25%', note: '80–84% · GPA 3.6', v: 0.74 },
+            { id: 'gb_top50', label: 'Top ~50%', note: '75–79% · GPA 3.3', v: 0.56 },
+            { id: 'gb_mid', label: 'Around the median', note: '70–74% · GPA 3.0', v: 0.4 },
+            { id: 'gb_low', label: 'Below the median', note: 'under 70% · GPA under 3.0', v: 0.2 }
           ]
-        },
-        {
-          id: 'italianConverter', type: 'custom', render: 'italian',
-          label: 'Italian grade converter', optional: true,
-          help: 'Only relevant on the Italian scale. Shows why the 110 mark and a US GPA ' +
-            'are not the same measurement.'
         },
         {
           id: 'institution', type: 'radio', label: 'Your undergraduate institution',
@@ -223,7 +243,10 @@ window.MASTERS_MODEL = (function () {
         {
           id: 'testStatus', type: 'radio', label: 'Are you submitting a test score?',
           help: 'Not submitting is genuinely neutral here — the test weight is removed and ' +
-            'the rest is rescaled. It will still disqualify you at schools that require one.',
+            'the rest is rescaled. It will still disqualify you at schools that require one. ' +
+            'Not sat it yet? Choose "Not yet" and enter the score you realistically expect — a ' +
+            'recent practice test is the best guide. Schools that require a test then stay in ' +
+            'your list instead of being ruled out.',
           options: [
             { id: 'ts_yes', label: 'Yes, I have a score' },
             { id: 'ts_no', label: 'No, I am not submitting one' },
@@ -620,7 +643,7 @@ window.MASTERS_MODEL = (function () {
       profile: 'holistic', because: 'Shortlisting on file, then a 45-minute interview.',
       test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE, TAGE MAGE or CAT.', src: 'OFF' },
       facts: [
-        { k: 'Average GMAT', v: 'None published, and no minimum set. Consultancy "competitive ranges" are estimates.', src: 'NP' },
+        { k: 'Average GMAT', v: 'None published, and no minimum set. Unofficial "competitive ranges" are estimates.', src: 'NP' },
         { k: 'Class', v: 'Average age 23, 50% women, 50+ nationalities', src: 'OFF' },
         { k: 'English', v: 'TOEIC 850 / IELTS 6.5 / TOEFL 95 / Cambridge B2 First 175', src: 'OFF' },
         { k: 'Interview', v: '45-minute videoconference after shortlisting', src: 'OFF' },
@@ -645,9 +668,10 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'bocconi-mgmt', name: 'Bocconi — MSc Management', tracks: ['mim'], region: 'Italy',
       threshold: 74, strong: 83, regime: 'B',
-      profile: 'metric', because: 'No interview and no reference letters on the standard route. GPA is named as a compulsory pillar, Bocconi may recalculate it from your transcript, and a test floor applies to everyone.',
+      profile: 'ranked', because: 'No interview and no reference letters on the standard route. GPA is named as a compulsory pillar, Bocconi may recalculate it from your transcript, and a test floor applies to everyone.',
       test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE or Bocconi\'s own online test.', src: 'OFF' },
       facts: [
+        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485 / GRE per a published combination table', src: 'OFF' },
         { k: 'Average GMAT of admits', v: 'Not published for any programme', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route, and no reference letters', src: 'OFF' },
@@ -659,9 +683,10 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'bocconi-im', name: 'Bocconi — MSc International Management', tracks: ['mim'], region: 'Italy',
       threshold: 78, strong: 86, regime: 'B',
-      profile: 'metric', because: 'The same numbers-led route as the other Bocconi programmes, with a higher test floor and a recorded video on the double-degree tracks.',
+      profile: 'ranked', because: 'The same numbers-led route as the other Bocconi programmes, with a higher test floor and a recorded video on the double-degree tracks.',
       test: { policy: 'required', note: 'Higher floor than the standard programmes.', src: 'OFF' },
       facts: [
+        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
         { k: 'Test floor', v: 'GMAT 555 for the ESSEC and Asia double-degree tracks', src: 'OFF' },
         { k: 'Conflicting figure', v: 'A third-party source states 600 for International Management. Unresolved — verify before relying on it.', src: 'TP' },
         { k: 'Interview', v: 'A recorded video is mandatory for the CEMS, Asia and ESSEC tracks', src: 'OFF' }
@@ -842,6 +867,63 @@ window.MASTERS_MODEL = (function () {
       gates: []
     },
 
+    {
+      id: 'edhec-mim', name: 'EDHEC — Master in Management', tracks: ['mim'], region: 'France',
+      threshold: 72, strong: 81, regime: 'C',
+      profile: 'holistic', because: 'A motivation letter, two recommendations and an online interview sit alongside the test, which has no published minimum.',
+      test: { policy: 'required', note: 'GMAT, GRE, TAGE MAGE or CAT. No minimum published.', src: 'OFF' },
+      facts: [
+        { k: 'Average GMAT', v: 'Not published by the school. Third-party sources say ~650.', src: 'NP' },
+        { k: 'Class', v: 'Business Management track: average age 22, 55% women', src: 'TP' },
+        { k: 'Process', v: 'CV, transcripts, motivation letter, two recommendations, then an online interview', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 92 / IELTS 6.5 / TOEIC 850 / Cambridge 175 / PTE 65', src: 'OFF' },
+        { k: 'Rounds', v: 'Rolling from October to June; places and scholarships go to earlier applicants', src: 'OFF' },
+        { k: 'Scholarships', v: 'Up to 60% of tuition; every admitted student is considered automatically', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'emlyon-mim', name: 'emlyon — Master in Management', tracks: ['mim'], region: 'France',
+      threshold: 71, strong: 80, regime: 'C',
+      profile: 'balanced', because: 'On the direct international route the file and a set of online tests decide it, with no interview.',
+      test: { policy: 'required', note: 'GMAT, GRE, TAGE MAGE or CAT — or emlyon\'s own online management test.', src: 'OFF' },
+      facts: [
+        { k: 'Average GMAT', v: 'Not published by the school. Third-party sources say ~640.', src: 'NP' },
+        { k: 'Selectivity', v: 'About one applicant in seven is admitted', src: 'TP' },
+        { k: 'Process', v: 'Application file, then online tests of 80–100 minutes; a decision in four to five weeks', src: 'OFF' },
+        { k: 'English', v: 'C1 recommended, not a hard minimum', src: 'OFF' },
+        { k: 'Tuition', v: '€22,600 a year (2027–28)', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'skema-mim', name: 'SKEMA — Master in Management', tracks: ['mim'], region: 'France',
+      threshold: 66, strong: 76, regime: 'C',
+      profile: 'holistic', because: 'A file review, then a 30-minute online interview, and no published test minimum.',
+      test: { policy: 'required', note: 'TAGE MAGE, GMAT, GRE or CAT. No minimum published.', src: 'OFF2' },
+      facts: [
+        { k: 'Average GMAT', v: 'Not published, and no minimum is set', src: 'NP' },
+        { k: 'Interview', v: 'About 30 minutes online, if the file is judged satisfactory', src: 'OFF2' },
+        { k: 'Rounds', v: 'Rolling, with a cut-off around the 15th of each month', src: 'TP' },
+        { k: 'Tuition', v: '€37,000 for the two years, plus a €500 yearly service fee', src: 'TP' }
+      ],
+      gates: []
+    },
+    {
+      id: 'esade-mim', name: 'Esade — MSc International Management', tracks: ['mim'], region: 'Spain',
+      threshold: 71, strong: 80, regime: 'C',
+      profile: 'balanced', because: 'A required test with an average the school states, read alongside two references and a conventional file.',
+      test: { policy: 'required', note: 'GMAT or GRE, or the online Esade Admissions Test included in the application fee.', src: 'OFF2' },
+      facts: [
+        { k: 'Average test scores', v: 'GMAT ~615 Focus / ~660 previous edition; GRE ~160–162', src: 'OFF2' },
+        { k: 'Background', v: 'Any degree; non-business graduates take a three-week management course first', src: 'TP' },
+        { k: 'English', v: 'TOEFL 100 / IELTS 7.0 / Cambridge CAE grade B / PTE 72', src: 'TP' },
+        { k: 'Rounds', v: 'Rolling, with staged deadlines', src: 'OFF2' },
+        { k: 'Tuition', v: 'About €37,500 (2026–27)', src: 'TP' }
+      ],
+      gates: [g('minEnglish', 'C1', 'C1 English required — TOEFL 100 / IELTS 7.0', 'TP')]
+    },
+
     /* ---------------- Finance ---------------- */
     {
       id: 'lbs-mfa', name: 'London Business School — Masters in Financial Analysis', tracks: ['mif'], region: 'UK',
@@ -914,9 +996,10 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'bocconi-fin', name: 'Bocconi — MSc Finance', tracks: ['mif'], region: 'Italy',
       threshold: 76, strong: 85, regime: 'B',
-      profile: 'metric', because: 'No interview on the standard route, a university-wide test floor, and a GPA the school may recalculate itself.',
+      profile: 'ranked', because: 'No interview on the standard route, a university-wide test floor, and a GPA the school may recalculate itself.',
       test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE or Bocconi\'s own test.', src: 'OFF' },
       facts: [
+        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485', src: 'OFF' },
         { k: 'Admitted averages', v: 'Not published', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route', src: 'OFF' },
@@ -1052,13 +1135,59 @@ window.MASTERS_MODEL = (function () {
       gates: []
     },
 
+    {
+      id: 'essec-mif', name: 'ESSEC — Master in Finance', tracks: ['mif'], region: 'France',
+      threshold: 78, strong: 86, regime: 'B',
+      profile: 'balanced', because: 'A required test and a conventional file. The programme page names no interview as a formal step.',
+      test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE, TAGE MAGE or CAT.', src: 'OFF' },
+      facts: [
+        { k: 'Average GMAT', v: 'Not published. Third-party sources say ~680, most admits 650–710.', src: 'NP' },
+        { k: 'Class', v: 'Average age 24, 30% women; 65% from economics, business or finance, 35% engineering or sciences', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 95 / IELTS 6.5 / Cambridge B2 First 175 / TOEIC 850', src: 'OFF' },
+        { k: 'Tuition', v: '€31,200 for two years, €18,720 for one', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'escp-mif', name: 'ESCP — MSc in Finance', tracks: ['mif'], region: 'France / UK',
+      threshold: 77, strong: 86, regime: 'C',
+      profile: 'holistic', because: 'An interview with the academic director and industry professionals decides it, and the programme page asks for no management test.',
+      test: { policy: 'optional', note: 'The programme page lists only English tests. A strong GMAT or GRE is reported to help.', src: 'OFF' },
+      facts: [
+        { k: 'Process', v: 'Application, eligibility review, then an interview with the academic director and industry professionals', src: 'OFF' },
+        { k: 'Campuses', v: 'Paris for the first 15 weeks, then London', src: 'OFF' },
+        { k: 'Class profile', v: 'Not published. Third-party sources say successful applicants cluster around 700.', src: 'NP' },
+        { k: 'Tuition', v: '€32,800 in total (September 2027)', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'cbs-fin', name: 'Copenhagen CBS — MSc Finance & Investments', tracks: ['mif'], region: 'Denmark',
+      threshold: 73, strong: 82, regime: 'D',
+      profile: 'transcript', because: 'No test: applicants are ranked on their undergraduate grades, with finance, quantitative methods and accounting counted most.',
+      test: { policy: 'none', note: 'No GMAT or GRE requirement.', src: 'OFF' },
+      facts: [
+        { k: 'Selectivity', v: '135 places for 779 first-priority applicants in 2026 — about 17%', src: 'OFF' },
+        { k: 'Prerequisite', v: '90 ECTS, of which 45 across six core areas (micro, organisation, marketing, quantitative methods, accounting, finance) at 5 ECTS minimum each', src: 'OFF' },
+        { k: 'Selection', v: 'An overall reading of your undergraduate grades, weighted towards finance, quantitative methods and accounting', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 94 / IELTS 7.0, or Cambridge C1 Advanced', src: 'OFF' },
+        { k: 'Tuition', v: 'Free for EU/EEA/Swiss; about €16,000 a year otherwise', src: 'TP' }
+      ],
+      gates: [
+        g('minEctsBusiness', 45, '45 ECTS across six named core business areas', 'OFF'),
+        g('minEctsQuant', 5, 'Quantitative methods is one of the six required core areas', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required — IELTS 7.0 / TOEFL 94', 'OFF')
+      ]
+    },
+
     /* ---------------- Marketing ---------------- */
     {
       id: 'bocconi-mkt', name: 'Bocconi — MSc Marketing Management', tracks: ['marketing'], region: 'Italy',
       threshold: 74, strong: 83, regime: 'B',
-      profile: 'metric', because: 'The university-wide route: a test floor, a compulsory GPA pillar, and no interview.',
+      profile: 'ranked', because: 'The university-wide route: a test floor, a compulsory GPA pillar, and no interview.',
       test: { policy: 'required', note: 'Same university-wide rules as the other MSc programmes.', src: 'OFF' },
       facts: [
+        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485', src: 'OFF' },
         { k: 'Admitted averages', v: 'Not published', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route', src: 'OFF' }
@@ -1187,6 +1316,10 @@ window.MASTERS_MODEL = (function () {
     'stgallen-sim':     { median: 690, sd: 40, basis: 'partial', from: 'conflicting third-party claims of 680 and 720' },
     'duke-mms':         { median: 660, sd: 55, basis: 'published', from: 'the published Focus middle-80% of 525–695' },
     'ross-mm':          { median: 660, sd: 45, basis: 'peer', from: 'peer US pre-experience programmes; Ross publishes no test average' },
+    'edhec-mim':        { median: 650, sd: 45, basis: 'partial', from: 'third-party reports of ~650; EDHEC publishes nothing' },
+    'emlyon-mim':       { median: 640, sd: 45, basis: 'partial', from: 'third-party reports of ~640 and a one-in-seven admit rate' },
+    'skema-mim':        { median: 610, sd: 50, basis: 'peer', from: 'peer French grandes écoles; SKEMA publishes nothing' },
+    'esade-mim':        { median: 660, sd: 45, basis: 'published', from: 'Esade\'s stated average of ~660 (~615 on Focus)' },
     'warwick-mgmt':     null,
     'manchester-mgmt':  null,
     'cbs-mgmt':         null,
@@ -1206,6 +1339,9 @@ window.MASTERS_MODEL = (function () {
     'berkeley-mfe':     { median: 735, sd: 30, basis: 'published', from: 'the published 91st-percentile average GRE Quant, converted' },
     'washu-msf':        { median: 685, sd: 35, basis: 'published', from: 'published track averages of 676, 681 and 694' },
     'vanderbilt-msf':   { median: 690, sd: 35, basis: 'partial', from: 'third-party reports of 680–730; the school withholds test data' },
+    'essec-mif':        { median: 680, sd: 40, basis: 'partial', from: 'third-party reports of ~680, with most admits at 650–710' },
+    'escp-mif':         { median: 690, sd: 45, basis: 'partial', from: 'third-party reports of successful applicants around 700; the test is optional' },
+    'cbs-fin':          null,
     'warwick-fin':      null,
     'manchester-fin':   null,
 
@@ -1226,7 +1362,7 @@ window.MASTERS_MODEL = (function () {
   /* Answers you cannot change by next cycle. Counterfactual advice must never
    * suggest these — telling someone to have gone to a better university is not
    * advice. */
-  var FIXED_GROUPS = ['gradeScale', 'gradeBand', 'italianConverter', 'institution', 'degreeField'];
+  var FIXED_GROUPS = ['gradeScale', 'gradeBand', 'italianConverter', 'itAvg', 'institution', 'degreeField'];
 
   return {
     tracks: TRACKS,

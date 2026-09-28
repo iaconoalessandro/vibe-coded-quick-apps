@@ -118,7 +118,10 @@ t('no profile is defined and then never used', unused.length === 0, unused.join(
 const r = S.evaluate(numbers, 'mif');
 const boc = r.rows.find(x => x.school.id === 'bocconi-fin');
 const hec = r.rows.find(x => x.school.id === 'hec-mif');
-t('Bocconi Finance is scored as numbers-led', boc.profile.id === 'metric');
+t('Bocconi Finance is ranked on test and GPA together', boc.profile.id === 'ranked');
+const nRanked = S.score(numbers, 'mim', null, 'ranked').total;
+t('   which also favours a numbers-only profile over an interview-led school',
+  nRanked - nHolistic > 20, nRanked + ' vs ' + nHolistic);
 t('   and a numbers-only profile beats its headline score there',
   boc.profileScore > r.score.total + 10,
   boc.profileScore + ' vs headline ' + r.score.total);

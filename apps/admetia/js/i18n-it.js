@@ -24,14 +24,14 @@ I18N.add('it', {
   '{track} — Admission Chances Calculator': '{track} — Admission Chances',
   '{track} master’s — Admission Chances Calculator': 'Master in {track} — Admission Chances',
 
-  'Free, private admissions calculators for MBA, business master\'s and computing master\'s programmes in the UK, Europe and the US. Your answers never leave your browser. In English and Italian.':
-    'Calcolatori di ammissione gratuiti e privati per MBA, master in business e master in informatica nel Regno Unito, in Europa e negli Stati Uniti. Le tue risposte non lasciano mai il browser. In inglese e in italiano.',
-  'Score your profile against MBA programmes and master\'s in Finance, Management and Marketing across the UK, Europe and the US. Free, private, in English and Italian.':
-    'Valuta il tuo profilo rispetto ai programmi MBA e ai master in finanza, management e marketing nel Regno Unito, in Europa e negli Stati Uniti. Gratuito, privato, in inglese e in italiano.',
+  'Free, private admissions calculators for MBA, business master\'s and computing master\'s programmes in the UK, Europe, the US and Asia. Your answers never leave your browser. In English and Italian.':
+    'Calcolatori di ammissione gratuiti e privati per MBA, master in business e master in informatica nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Le tue risposte non lasciano mai il browser. In inglese e in italiano.',
+  'Score your profile against MBA programmes and master\'s in Finance, Management and Marketing across the UK, Europe, the US and Asia. Free, private, in English and Italian.':
+    'Valuta il tuo profilo rispetto ai programmi MBA e ai master in finanza, management e marketing nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Gratuito, privato, in inglese e in italiano.',
   'Do you clear the rules? Computer Science, Data Science & AI and conversion master\'s in the UK, Europe and the US, checked against each programme\'s published entry rules.':
     'Rispetti i requisiti? Master in informatica, data science e IA e di conversione nel Regno Unito, in Europa e negli Stati Uniti, confrontati con le regole d\'ingresso pubblicate da ogni programma.',
-  'A points-based MBA calculator across 38 business schools: your score, your verdict at each school, and what would close the gap. Free and private.':
-    'Un calcolatore MBA a punti su 38 business school: il tuo punteggio, il verdetto per ogni scuola e cosa colmerebbe la distanza. Gratuito e privato.',
+  'A points-based MBA calculator across 42 business schools: your score, your verdict at each school, and what would close the gap. Free and private.':
+    'Un calcolatore MBA a punti su 42 business school: il tuo punteggio, il verdetto per ogni scuola e cosa colmerebbe la distanza. Gratuito e privato.',
   'Master\'s in Management, Finance and Marketing: hard entry rules first, then your score under each school\'s own weighting. Free and private.':
     'Master in management, finanza e marketing: prima i requisiti vincolanti, poi il tuo punteggio con i pesi di ogni scuola. Gratuito e privato.',
   'Computer Science, Data Science & AI and conversion master\'s: published entry rules first, then your score. Free and private.':
@@ -64,14 +64,14 @@ I18N.add('it', {
   /* Front page */
   'The calculator': 'Il calcolatore',
   'Work out where you <em>actually</em> stand.': 'Scopri dove ti trovi <em>davvero</em>.',
-  'Three calculators. A reimplementation of a published, points-based MBA admissions model; a purpose-built model for pre-experience business master’s degrees; and a rule-first model for IT &amp; computing master’s in the UK, Europe and the US.':
-    'Tre calcolatori. La ricostruzione di un modello di ammissione MBA a punti già pubblicato; un modello costruito apposta per i master in business per neolaureati; e un modello basato sulle regole per i master in informatica nel Regno Unito, in Europa e negli Stati Uniti.',
+  'Three calculators. A points-based MBA admissions model; a purpose-built model for pre-experience business master’s degrees; and a rule-first model for IT &amp; computing master’s in the UK, Europe and the US.':
+    'Tre calcolatori. Un modello di ammissione MBA a punti; un modello costruito apposta per i master in business per neolaureati; e un modello basato sulle regole per i master in informatica nel Regno Unito, in Europa e negli Stati Uniti.',
   'Two university students at desks, heads down, writing an exam paper.': 'Due studenti universitari ai banchi, a testa bassa, durante un esame scritto.',
   'Most published requirements at master’s level are pass/fail.': 'A livello di master, la maggior parte dei requisiti pubblicati è promosso/bocciato.',
   'Choose your field': 'Scegli il tuo ambito',
   'Graduating students throwing their caps in the air outside a business school.': 'Neolaureati che lanciano il tocco in aria davanti a una business school.',
-  'MBA, Master in Finance, Master in Management and Master in Marketing. Scored against roughly 60 programmes in Europe and the US.':
-    'MBA, Master in Finance, Master in Management e Master in Marketing. Valutati su circa 60 programmi in Europa e negli Stati Uniti.',
+  'MBA, Master in Finance, Master in Management and Master in Marketing. Scored against more than 90 programmes in Europe, the US and Asia.':
+    'MBA, Master in Finance, Master in Management e Master in Marketing. Valutati su oltre 90 programmi in Europa, negli Stati Uniti e in Asia.',
   'Begin the business calculator →': 'Inizia il calcolatore business →',
   'IT &amp; Computing': 'Informatica',
   'Computer Science, Data Science and AI, and conversion master’s for graduates of other subjects. Scored against the entry rules each programme publishes.':
@@ -79,8 +79,8 @@ I18N.add('it', {
   'Begin the computing calculator →': 'Inizia il calcolatore di informatica →',
   'Highest bars': 'Le soglie più alte',
   'What this is': 'Cos\'è',
-  'An independent, unofficial tool built for personal use. It is not affiliated with, endorsed by, or connected to any admissions consultancy or business school. It produces a rough estimate and cannot predict a decision.':
-    'Uno strumento indipendente e non ufficiale, nato per uso personale. Non è affiliato, approvato o collegato ad alcuna società di consulenza per le ammissioni né ad alcuna business school. Dà una stima approssimativa e non può prevedere una decisione.',
+  'An independent, unofficial tool built for personal use. It is not affiliated with, endorsed by, or connected to any university or business school. It produces a rough estimate and cannot predict a decision.':
+    'Uno strumento indipendente e non ufficiale, nato per uso personale. Non è affiliato, approvato o collegato ad alcuna università né ad alcuna business school. Dà una stima approssimativa e non può prevedere una decisione.',
   'How the scoring works': 'Come funziona il punteggio',
   'Three things this does that a generic calculator does not.': 'Tre cose che fa e che un calcolatore generico non fa.',
   'Hard rules first': 'Prima i requisiti vincolanti',
@@ -111,8 +111,8 @@ I18N.add('it', {
   'Post-experience': 'Con esperienza',
   'A senior executive in a dark suit standing, arms folded, in front of a boardroom in session.': 'Un dirigente in abito scuro, in piedi a braccia conserte, davanti a una riunione del consiglio.',
   'Points-based model': 'Modello a punti',
-  'Two or more years of work experience. Scored on a published points-based model, against 30 schools on a shared scale plus 8 modelled individually.':
-    'Due o più anni di esperienza lavorativa. Valutato con un modello a punti già pubblicato, su 30 scuole con una scala comune più 8 modellate singolarmente.',
+  'Two or more years of work experience. Scored on a points-based model, against 34 schools on a shared scale plus 8 modelled individually.':
+    'Due o più anni di esperienza lavorativa. Valutato con un modello a punti, su 34 scuole con una scala comune più 8 modellate singolarmente.',
   'Begin the MBA calculator →': 'Inizia il calcolatore MBA →',
   'Pre-experience master’s': 'Master per neolaureati',
   'A trading desk of stacked monitors showing live candlestick charts.': 'Una postazione di trading con monitor impilati che mostrano grafici a candele in tempo reale.',
@@ -125,8 +125,8 @@ I18N.add('it', {
   'A street wall of brand billboards — Gucci, adidas and the NBA stacked above a storefront.': 'Una parete di cartelloni pubblicitari in strada — Gucci, adidas e la NBA uno sopra l\'altro sopra una vetrina.',
   'MSc Marketing and Marketing Management. Fewer programmes, and the least published admissions data of any track here.':
     'MSc Marketing e Marketing Management. Meno programmi, e i dati di ammissione pubblicati più scarsi di tutti i percorsi.',
-  '<strong>A caveat that matters for the master’s tracks.</strong> Most European programmes publish no admitted-student test average at all. The figures circulating on consultancy sites are largely estimates presented as fact. This tool labels the source of every number it uses, and says plainly when a school has published nothing.':
-    '<strong>Un\'avvertenza che conta per i master.</strong> La maggior parte dei programmi europei non pubblica alcuna media dei test degli ammessi. I numeri che girano sui siti delle società di consulenza sono in gran parte stime presentate come fatti. Questo strumento indica la fonte di ogni numero che usa, e dice chiaramente quando una scuola non ha pubblicato nulla.',
+  '<strong>A caveat that matters for the master’s tracks.</strong> Most European programmes publish no admitted-student test average at all. The figures circulating on unofficial sites are largely estimates presented as fact. This tool labels the source of every number it uses, and says plainly when a school has published nothing.':
+    '<strong>Un\'avvertenza che conta per i master.</strong> La maggior parte dei programmi europei non pubblica alcuna media dei test degli ammessi. I numeri che girano sui siti non ufficiali sono in gran parte stime presentate come fatti. Questo strumento indica la fonte di ogni numero che usa, e dice chiaramente quando una scuola non ha pubblicato nulla.',
   '<b class="rubric-in">Elsewhere</b><a href="index.html">Back to the front page</a> · <a href="it.html">IT &amp; Computing</a>':
     '<b class="rubric-in">Altrove</b><a href="index.html">Torna alla prima pagina</a> · <a href="it.html">Informatica</a>',
 
@@ -154,14 +154,14 @@ I18N.add('it', {
   /* Calculator pages */
   'Post-experience · MBA': 'Con esperienza · MBA',
   'How strong is your <em>application</em>?': 'Quanto è forte la tua <em>candidatura</em>?',
-  'Scored on a published points-based model, against 30 schools on a shared scale plus 8 modelled individually.':
-    'Valutata con un modello a punti già pubblicato, su 30 scuole con una scala comune più 8 modellate singolarmente.',
+  'Scored on a points-based model, against 34 schools on a shared scale plus 8 modelled individually.':
+    'Valutata con un modello a punti, su 34 scuole con una scala comune più 8 modellate singolarmente.',
   'The base score on the published model, before any school’s own adjustments.': 'Il punteggio di base del modello pubblicato, prima delle correzioni di ogni scuola.',
-  '<b class="rubric-in">Independent and unofficial</b>This calculator reimplements a points-based scoring model published by a third-party MBA admissions consultancy and reproduces its results. It is not affiliated with or endorsed by that firm. It estimates; it does not predict.':
-    '<b class="rubric-in">Indipendente e non ufficiale</b>Questo calcolatore ricostruisce un modello a punti pubblicato da una società di consulenza per le ammissioni MBA e ne riproduce i risultati. Non è affiliato a quella società né da essa approvato. Stima; non prevede.',
+  '<b class="rubric-in">Independent and unofficial</b>This calculator uses a points-based scoring model across 42 business schools. It estimates; it does not predict.':
+    '<b class="rubric-in">Indipendente e non ufficiale</b>Questo calcolatore utilizza un modello a punti su 42 business school. Stima; non prevede.',
   'Your answers on the track weighting — evenly weighted, before any school’s own emphasis.': 'Le tue risposte con i pesi del percorso — pesi uguali, prima delle priorità di ogni scuola.',
-  '<b class="rubric-in">An original model</b>No published calculator exists for these programmes. The weights here are mine; the school facts are sourced and tagged individually, and the score thresholds are calibration rather than anything a school has published.':
-    '<b class="rubric-in">Un modello originale</b>Per questi programmi non esiste un calcolatore pubblicato. I pesi sono miei; i dati sulle scuole hanno ciascuno la propria fonte, e le soglie di punteggio sono una calibrazione, non qualcosa che una scuola abbia pubblicato.',
+  '<b class="rubric-in">An original model</b>The weights here are designed specifically for pre-experience programmes; the school facts are sourced and tagged individually, and the score thresholds are calibration rather than anything a school has published.':
+    '<b class="rubric-in">Un modello originale</b>I pesi qui sono studiati appositamente per i programmi pre-esperienza; i dati sulle scuole hanno ciascuno la propria fonte, e le soglie di punteggio sono una calibrazione, non qualcosa che una scuola abbia pubblicato.',
   'Your answers on the track weighting — evenly weighted, before any programme’s own emphasis.': 'Le tue risposte con i pesi del percorso — pesi uguali, prima delle priorità di ogni programma.',
   '<b class="rubric-in">An original model</b>The entry rules are quoted from each programme and tagged with where they came from. The weights and the score thresholds are mine — no computing programme publishes a points requirement, and unlike the business schools none publishes an admitted-student profile to anchor one against either.':
     '<b class="rubric-in">Un modello originale</b>Le regole d\'ingresso sono citate da ogni programma con la loro fonte. I pesi e le soglie di punteggio sono miei: nessun programma di informatica pubblica un requisito in punti, e a differenza delle business school nessuno pubblica nemmeno un profilo degli ammessi su cui basarne uno.',
@@ -191,6 +191,8 @@ I18N.add('it', {
   'See some examples': 'Vedi qualche esempio',
   'optional': 'facoltativo',
   'Clear this answer': 'Cancella questa risposta',
+  'or tap your answer again': 'oppure tocca di nuovo la risposta',
+  'Click your answer again to clear it': 'Clicca di nuovo sulla risposta per toglierla',
   'Part {n} of {total}': 'Parte {n} di {total}',
   '← Back': '← Indietro',
   'Reset': 'Azzera',
@@ -204,13 +206,6 @@ I18N.add('it', {
   'You have answered {pct}% of the main questions. A missing answer usually scores nothing, and an entry rule that depends on it cannot be checked — so treat these results as a rough first look.':
     'Hai risposto al {pct}% delle domande principali. Una risposta mancante di solito vale zero, e un requisito che dipende da quella non si può verificare: considera questi risultati una prima occhiata approssimativa.',
   '← Answer the rest': '← Rispondi al resto',
-  'ECTS-weighted average of your exam marks (18–30):': 'Media ponderata sui CFU dei tuoi esami (18–30):',
-  'Enter a value between 18 and 30 to see the two figures side by side.': 'Inserisci un valore tra 18 e 30 per vedere i due numeri affiancati.',
-  'Projected degree mark before committee points:': 'Voto di laurea previsto prima dei punti della commissione:',
-  'With typical discretionary points, plausibly up to': 'Con i consueti punti a discrezione, plausibilmente fino a',
-  'Transcript-average GPA equivalent:': 'GPA equivalente alla media del libretto:',
-  'These are two different measurements and only the second is comparable to a US published average. The 110 mark is not a transcript average: it starts from your weighted exam average and the graduation committee then adds discretionary points, so two identical transcripts can graduate several points apart. Do not compare 110 e lode against a figure like Duke\'s published 3.48. Bocconi states outright that it may recalculate your GPA from the transcript itself.':
-    'Sono due misure diverse e solo la seconda è confrontabile con una media americana pubblicata. Il voto su 110 non è una media del libretto: parte dalla media ponderata degli esami e poi la commissione di laurea aggiunge punti a discrezione, quindi due libretti identici possono laurearsi a diversi punti di distanza. Non confrontare un 110 e lode con un numero come il 3.48 pubblicato da Duke. La Bocconi dichiara apertamente che può ricalcolare il tuo GPA direttamente dal libretto.',
 
   /* ------------------------------------------------ saved answers, footer */
 
@@ -255,6 +250,7 @@ I18N.add('it', {
   'Europe': 'Europa',
   'US': 'USA',
   'Canada': 'Canada',
+  'Asia': 'Asia',
 
   /* Where a programme is */
   'France': 'Francia',
@@ -299,6 +295,36 @@ I18N.add('it', {
   'then {round}, {date}': 'poi {round}, {date}',
   'This cycle’s listed deadlines have passed': 'Le scadenze indicate per questo ciclo sono passate',
   'Rolling admission — earlier is better': 'Ammissione a scorrimento: prima è meglio',
+  'Average out of 30:': 'Media su 30:',
+  'Weighted exam average, out of 30': 'Media ponderata degli esami, su 30',
+  'Enter a value between 18 and 30, for example 27.4.': 'Inserisci un valore tra 18 e 30, per esempio 27.4.',
+  'US GPA equivalent, roughly:': 'Equivalente in GPA statunitense, all\'incirca:',
+  'Place in a typical Italian cohort:': 'Posizione in un tipico corso italiano:',
+  'the top ~5%': 'il ~5% migliore',
+  'the top ~10%': 'il ~10% migliore',
+  'the top ~25%': 'il ~25% migliore',
+  'the top half': 'la metà superiore',
+  'Both are indicative. The cohort estimate takes about 26/30 as the typical average, which is what AlmaLaurea\'s national figures imply; faculties differ, and engineering grades lower than economics. Some schools, Bocconi among them, recalculate your GPA from the transcript themselves.': 'Sono entrambi indicativi. La stima sul corso prende circa 26/30 come media tipica, come indicano i dati nazionali di AlmaLaurea; le facoltà sono diverse, e a ingegneria i voti sono più bassi che a economia. Alcune scuole, tra cui la Bocconi, ricalcolano da sé il GPA dal piano di studi.',
+  'around the median': 'intorno alla mediana',
+  'below the median': 'sotto la mediana',
+  'Show all details': 'Mostra tutti i dettagli',
+  'Hide all details': 'Nascondi tutti i dettagli',
+  'How to close the gap, and what this school weighs': 'Come colmare la distanza, e cosa conta per questa scuola',
+  'What this school weighs and publishes': 'Cosa conta per questa scuola e cosa pubblica',
+  'Every programme below is scored under its own weighting, because schools judge the same file differently.': 'Ogni programma qui sotto è valutato con i suoi pesi, perché le scuole giudicano lo stesso profilo in modo diverso.',
+  'How the schools weigh differently': 'Come pesano le scuole, una per una',
+  'Closest: {name}, {n} points short of Competitive.': 'Il più vicino: {name}, a {n} punti da Competitivo.',
+  'Closest: {name} and {k} others, {n} points short of Competitive.': 'I più vicini: {name} e altre {k}, a {n} punti da Competitivo.',
+  'How to close the gap': 'Come colmare la distanza',
+  'How to close the gap, and how this programme reads a file': 'Come colmare la distanza, e come questo programma legge un profilo',
+  'How this programme reads a file, and what it publishes': 'Come questo programma legge un profilo, e cosa pubblica',
+  'How the programmes read a file differently': 'Come ogni programma legge un profilo',
+  '{q} questions · about {m} minutes · your answers stay in your browser': '{q} domande · circa {m} minuti · le risposte restano nel tuo browser',
+  'Find a programme…': 'Cerca un programma…',
+  'Find a programme by name': 'Cerca un programma per nome',
+  'Order': 'Ordine',
+  'Best chance first': 'Prima le più alla portata',
+  'Next deadline first': 'Prima la scadenza più vicina',
   'Official admissions page': 'Pagina ufficiale delle ammissioni',
   'Checked {date}': 'Verificato il {date}',
   'Checked {date} · may be out of date': 'Verificato il {date} · potrebbe non essere aggiornato',
@@ -362,6 +388,7 @@ I18N.add('it', {
   'and {n} more': 'e altri {n}',
   'Not answered': 'Nessuna risposta',
   'No score yet': 'Ancora nessun punteggio',
+  'Test planned, no score yet': 'Test in programma, ancora senza punteggio',
   'No test submitted': 'Nessun test presentato',
   'GRE quant {n}': 'GRE quant {n}',
   'Test score': 'Punteggio del test',
@@ -566,6 +593,7 @@ I18N.add('it', {
   'Full-time experience': 'Esperienza a tempo pieno',
   'Languages': 'Lingue',
   'Requires a test score, and you are not submitting one': 'Richiede un punteggio al test, e tu non lo presenti',
+  'Requires a test score — you plan to sit one, so it stays in the list': 'Richiede un punteggio al test: hai in programma di farlo, quindi resta nella lista',
   'May require a test score depending on your degree': 'Può richiedere un punteggio al test in base alla tua laurea',
   'your score converts to about {gmat}': 'il tuo punteggio equivale a circa {gmat}',
   'Your answers score {score} on the {track} weighting, and {lo}–{hi} once each school applies its own emphasis.':
@@ -576,6 +604,10 @@ I18N.add('it', {
   'of {total} eligible programmes': 'su {total} programmi ammissibili',
   'Ruled out by a hard rule': 'Esclusi da un requisito vincolante',
   'see below': 'vedi sotto',
+  'You plan to sit a test but have not entered an expected score. Schools that require a test are kept in your list with a warning, and the test weight is removed from your score for now. For a truer picture, go back and enter the score you realistically expect — a recent practice test is the best guide.':
+    'Hai in programma un test ma non hai inserito il punteggio che ti aspetti. Le scuole che richiedono un test restano nella lista con un avviso, e per ora il peso del test è tolto dal tuo punteggio. Per un quadro più fedele, torna indietro e inserisci il punteggio che realisticamente ti aspetti: un test di prova recente è la guida migliore.',
+  'This uses the score you expect, not one you have sat. Treat these results as a forecast: if the real score comes in lower, come back and update it.':
+    'Qui si usa il punteggio che ti aspetti, non uno già ottenuto. Considera questi risultati una previsione: se il punteggio vero arriva più basso, torna e aggiornalo.',
   'You are not submitting a test score, so the test weight has been removed and the other factors rescaled — this is neutral, not a penalty. Schools that require a test are listed as ineligible rather than scored low.':
     'Non presenti un punteggio al test, quindi il peso del test è stato tolto e gli altri fattori riscalati: è neutro, non una penalità. Le scuole che richiedono un test risultano non ammissibili invece che con un punteggio basso.',
   'Your score sits at roughly the {pct} percentile, which converts to about {gmat} on the GMAT 10th Edition scale. Cross-scale conversion is approximate — GMAT Focus and the GMAT 10th Edition are different instruments, and many published "averages" do not say which one they mean.':
@@ -631,6 +663,9 @@ I18N.add('it', {
   'around the estimated median': 'intorno alla mediana stimata',
   'below the estimated median but inside the estimated middle 68%': 'sotto la mediana stimata ma dentro il 68% centrale stimato',
   'below the estimated middle 68%': 'sotto il 68% centrale stimato',
+  '({n} for a test score below this school’s usual range)': '({n} per un punteggio al test sotto la fascia abituale di questa scuola)',
+  'Scores this far below the range a school admits rarely get through, so {n} points come off your score here. Not submitting would avoid that at schools where the test is optional.':
+    'Punteggi così sotto la fascia che una scuola ammette passano di rado, quindi qui ti vengono tolti {n} punti. Non presentarlo lo eviterebbe nelle scuole dove il test è facoltativo.',
   'Your ~{gmat} sits {where} ({z} SD).': 'Il tuo ~{gmat} è {where} ({z} DS).',
   '{N} programme is ruled out by a published requirement.': '{N} programma ti esclude con un requisito pubblicato.',
   '{N} programmes are ruled out by a published requirement.': '{N} programmi ti escludono con un requisito pubblicato.',

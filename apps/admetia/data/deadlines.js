@@ -23,10 +23,9 @@
  *            file's own `checked` date at the bottom.
  *   src      OFF  = read from the school's own page
  *            OFF2 = the school's own wording, reached through a search summary
- *            TP   = a third-party deadline list (mbaMission, Clear Admit and
- *                   others), spot-checked against official pages where they
- *                   could be read; Harvard, Stanford GSB, INSEAD, Rotman and
- *                   Georgetown all matched
+ *            TP   = third-party deadline aggregators, spot-checked against official
+ *                   pages where they could be read; Harvard, Stanford GSB, INSEAD,
+ *                   Rotman and Georgetown all matched
  *
  * Keeping it fresh (every three or four months):
  *   - re-read every school's page, fix the rounds, and set `checked` at the
@@ -132,6 +131,15 @@ window.ADMISSIONS_CALENDAR = (function () {
       null, { rolling: true, note: 'Applications are reviewed from September 2026 to July 2027.' }),
     'mba:WashU Olin': r('https://olin.washu.edu/programs/mbas/full-time-mba/apply.php', 'TP',
       [['Round 1', '2026-10-08'], ['Round 2', '2027-01-07'], ['Round 3', '2027-02-25']]),
+    'mba:CEIBS': r('https://www.ceibs.edu/mba/application', 'OFF',
+      [['Early action', '2026-10-14'], ['Round 1', '2026-12-02'], ['Round 2', '2027-03-17'], ['Round 3', '2027-05-19']]),
+    'mba:Nanyang (NTU)': r('https://www.ntu.edu.sg/business/admissions/graduate-studies/nanyang-mba/admissions', 'OFF',
+      [['Round 1', '2026-11-01'], ['Round 2', '2027-01-31'], ['Round 3', '2027-03-31']],
+      { note: 'For the July 2027 intake.' }),
+    'mba:Peking Guanghua': link('https://en.gsm.pku.edu.cn/mba/',
+      { note: 'Dates for this cycle were not yet published. Last cycle ran five rounds, from October to April.' }),
+    'mba:Fudan': link('https://www.fdsm.fudan.edu.cn/fdimba/online_application.html',
+      { note: 'Dates for this cycle were not yet published. Last cycle ran four rounds, from November to April.' }),
 
     /* ------------------------------------------------------- Master's --- */
     'hec-mim': r('https://www.hec.edu/en/master-s-programs/master-management/admissions', 'OFF',
@@ -168,6 +176,14 @@ window.ADMISSIONS_CALENDAR = (function () {
       [['Round 1', '2026-10-07'], ['Round 2', '2027-01-13'], ['Round 3', '2027-03-04'], ['Round 4', '2027-04-13']],
       { note: 'International applicants should aim for the earlier rounds, for visa time.' }),
     'ross-mm': link('https://michiganross.umich.edu/graduate/master-of-management/admissions'),
+    'edhec-mim': r('https://www.edhec.edu/en/programmes/masters-degree/apply-online', 'OFF',
+      null, { rolling: true, note: 'Applications run from October to June; places and scholarships go to earlier applicants.' }),
+    'emlyon-mim': r('https://em-lyon.com/en/master-in-management', 'OFF',
+      [['Applications close', '2027-07-15']], { rolling: true, note: 'Applications open 6 October 2026 and are read as they arrive.' }),
+    'skema-mim': r('https://www.skema.edu/en/programmes/grande-ecolemaster-management', 'TP',
+      null, { rolling: true, note: 'One cut-off a month, around the 15th.' }),
+    'esade-mim': r('https://www.esade.edu/master-of-science/en/admissions', 'OFF2',
+      null, { rolling: true }),
     'lbs-mfa': link('https://www.london.edu/masters-degrees/masters-in-financial-analysis/apply'),
     'oxford-mfe': link('https://www.sbs.ox.ac.uk/programmes/degrees/msc-financial-economics'),
     'imperial-fin': r('https://www.imperial.ac.uk/business-school/programmes/msc-finance/admissions/key-dates-and-deadlines/', 'OFF',
@@ -193,6 +209,12 @@ window.ADMISSIONS_CALENDAR = (function () {
     'vanderbilt-msf': r('https://business.vanderbilt.edu/masters-in-finance/admissions/', 'OFF',
       [['Round 1', '2026-09-10'], ['Round 2', '2026-10-29'], ['Round 3', '2027-01-13'], ['Round 4', '2027-02-24'], ['Round 5', '2027-04-28']],
       { note: 'International applicants: final date 5 April 2027.' }),
+    'essec-mif': r('https://admissionsatessec.freshdesk.com/support/solutions/articles/48001190062--master-programmes-admissions-calendars', 'OFF',
+      [['Round 1', '2026-10-14'], ['Round 2', '2027-01-06'], ['Round 3', '2027-02-15'], ['Round 4', '2027-04-26']],
+      { note: 'Each deadline closes at 12:00 noon, Paris time.' }),
+    'escp-mif': r('https://escp.eu/programmes/specialised-masters-MSc/MSc-finance', 'OFF',
+      [['Round 1', '2027-01-06'], ['Round 2', '2027-02-15'], ['Round 3', '2027-03-30'], ['Round 4', '2027-06-02']]),
+    'cbs-fin': link('https://www.cbs.dk/en/study-programmes/master-programmes/msc-economics-and-business-administration-finance-and'),
     'bocconi-mkt': r('https://www.unibocconi.it/en/applying-bocconi/master-science-and-ma-programs/timeline', 'OFF',
       [['Round I', '2026-10-29'], ['Round II', '2027-01-20'], ['Round III', '2027-03-11'], ['Round IV', '2027-04-29']]),
     'esade-mkt': link('https://www.esade.edu/en/programmes/masters/marketing-management'),

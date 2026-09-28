@@ -60,10 +60,13 @@
   }
 
   /* Test score as an old-GMAT equivalent, so gates written in those terms can
-   * be tested against a Focus or GRE score. */
+   * be tested against a Focus or GRE score. Someone who has not sat the test
+   * yet can enter the score they expect; it is scored like a real one and
+   * flagged as an estimate. */
   function testInfo(a) {
     var status = a.testStatus;
-    if (status !== 'ts_yes') return { submitting: false, pct: null, gmat: null };
+    var planned = status === 'ts_planned';
+    if (status !== 'ts_yes' && !planned) return { submitting: false, planned: false, pct: null, gmat: null };
     var kindOpt = opt(a, 'testType');
     var kind = kindOpt ? kindOpt.kind : null;
     var raw = parseFloat(a.testScore);
@@ -77,7 +80,7 @@
     } else if (kind === 'gmat') {
       if (!isNaN(raw)) { pct = C.percentile('gmat', raw); gmat = raw; }
     }
-    return { submitting: pct !== null, pct: pct, gmat: gmat, kind: kind };
+    return { submitting: pct !== null, planned: planned, estimated: planned && pct !== null, pct: pct, gmat: gmat, kind: kind };
   }
 
   function factors(a, testPctOverride) {
@@ -103,7 +106,7 @@
     var pct = (testPctOverride === undefined || testPctOverride === null) ? t.pct : testPctOverride;
 
     return {
-      academic: val(a, 'gradeBand', 'v', 0),
+      academic: C.grade(a, opt(a, 'gradeBand')).v,
       test: pct === null ? null : Math.max(0, Math.min(1, pct / 100)),
       institution: val(a, 'institution', 'v', 0),
       quant: Math.max(0, Math.min(1, quant)),
@@ -131,6 +134,14 @@
     });
     if (after > 0) {
       Object.keys(out).forEach(function (k) { out[k] = out[k] * before / after; });
+    }
+    /* A profile can also fix how two factors share their combined weight,
+     * whatever the track's own starting weights — e.g. test 55 : GPA 45. */
+    if (prof.split) {
+      var keys = Object.keys(prof.split);
+      var pool = 0, parts = 0;
+      keys.forEach(function (k) { pool += out[k] || 0; parts += prof.split[k]; });
+      keys.forEach(function (k) { out[k] = pool * prof.split[k] / parts; });
     }
     return out;
   }
@@ -227,7 +238,13 @@
 
     /* Test policy */
     if (!t.submitting && a.testStatus !== undefined) {
-      if (school.test.policy === 'required') {
+      if (school.test.policy === 'required' && t.planned) {
+        /* Planning to sit the test keeps the school open, flagged. */
+        warnings.push({
+          label: 'Requires a test score — you plan to sit one, so it stays in the list',
+          detail: school.test.note, src: school.test.src
+        });
+      } else if (school.test.policy === 'required') {
         failures.push({
           label: 'Requires a test score, and you are not submitting one',
           detail: school.test.note, src: school.test.src
@@ -335,14 +352,37 @@
       .sort(function (x, y) { return y.gain - x.gain; });
   }
 
+  /* A score far below the range a school admits costs more than its share of
+   * the weighting says. The track weights score the test against everyone who
+   * sits it, so a 550 still earns about a third of the test's points — but at
+   * a school whose admits sit around 710 it is close to disqualifying. Past one
+   * standard deviation below the school's estimated median the deduction grows
+   * faster than linearly and is capped. It only applies where the school has
+   * an estimated distribution, and only to a score you enter: not submitting
+   * stays neutral. The curve is CAL. */
+  var RANGE = { from: 1, scale: 3, power: 1.5, cap: 12 };
+
+  function rangePenalty(gmat, est) {
+    var z = C.zAgainst(gmat, est);
+    if (z === null || z >= -RANGE.from) return { pts: 0, z: z };
+    var pts = Math.min(RANGE.cap, RANGE.scale * Math.pow(-z - RANGE.from, RANGE.power));
+    return { pts: -Math.round(pts * 10) / 10, z: z };
+  }
+
   /* Smallest test percentile that reaches `target`, or null if even a perfect
-   * score falls short. Answers "would a test get me there, and how good a one?" */
-  function minTestPercentile(a, trackId, target, profileId) {
-    if (score(a, trackId, 100, profileId).total < target) return null;
+   * score falls short. Answers "would a test get me there, and how good a one?"
+   * With a school's estimated distribution, the answer includes the deduction
+   * for landing below that school's range. */
+  function minTestPercentile(a, trackId, target, profileId, est) {
+    function at(pct) {
+      var t = score(a, trackId, pct, profileId).total;
+      return est ? t + rangePenalty(C.fromPercentile('gmat', pct), est).pts : t;
+    }
+    if (at(100) < target) return null;
     var lo = 0, hi = 100;
     for (var i = 0; i < 24; i++) {
       var mid = (lo + hi) / 2;
-      if (score(a, trackId, mid, profileId).total >= target) hi = mid; else lo = mid;
+      if (at(mid) >= target) hi = mid; else lo = mid;
     }
     var pct = Math.ceil(hi);
     return {
@@ -422,7 +462,8 @@
       var profileId = sc.profile || 'balanced';
       var pv = forProfile(profileId);
       var raw = pv.score.total;
-      var adjusted = Math.max(0, Math.min(100, raw + roundMod));
+      var range = s.test.submitting ? rangePenalty(s.test.gmat, sc.est) : { pts: 0, z: null };
+      var adjusted = Math.max(0, Math.min(100, raw + roundMod + range.pts));
       var blocked = gates.failures.length > 0;
 
       /* The score band is computed regardless of eligibility. Being blocked by
@@ -446,7 +487,7 @@
        * clear — which is the number that matters at a school that requires
        * one regardless. */
       var minTest = !s.test.submitting
-        ? minTestPercentile(a, trackId, sc.threshold - roundMod, profileId) : null;
+        ? minTestPercentile(a, trackId, sc.threshold - roundMod, profileId, sc.est) : null;
 
       /* Applying earlier only helps where the school's regime says it does. */
       var roundGain = 0;
@@ -455,6 +496,7 @@
       return {
         school: sc, adjusted: Math.round(adjusted * 10) / 10,
         roundMod: roundMod, roundGain: roundGain, regime: regime,
+        rangeMod: range.pts,
         gates: gates, eligible: !blocked,
         band: band, gap: gap, path: path, minTest: minTest,
         verdict: blocked ? { label: 'Ineligible', tone: 'gate' } : band,
@@ -487,10 +529,13 @@
     var total = 0, done = 0;
     M.steps.forEach(function (step) {
       step.groups.forEach(function (g) {
-        if (g.optional || g.type === 'checkbox' || g.type === 'custom') return;
+        /* Only questions on screen count; a custom group counts when it
+         * names the answer it stores. */
+        if (!C.shown(g, a)) return;
+        if (g.optional || g.type === 'checkbox' || (g.type === 'custom' && !g.answerKey)) return;
         total++;
-        if (g.type === 'number') { if (a[g.id] !== undefined && a[g.id] !== '') done++; }
-        else if (a[g.id]) done++;
+        var v = a[g.answerKey || g.id];
+        if (v !== undefined && v !== '' && v !== false) done++;
       });
     });
     return total ? Math.round(done / total * 100) : 0;
@@ -503,6 +548,7 @@
     evaluate: evaluate,
     completeness: completeness,
     testInfo: testInfo,
+    rangePenalty: rangePenalty,
     improvements: improvements,
     minTestPercentile: minTestPercentile
   };

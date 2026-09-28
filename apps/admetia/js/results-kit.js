@@ -55,7 +55,7 @@ window.ResultsKit = (function () {
   /* Regions and tiers                                                   */
   /* ------------------------------------------------------------------ */
 
-  var REGIONS = [['uk', 'UK'], ['eu', 'Europe'], ['us', 'US'], ['ca', 'Canada']];
+  var REGIONS = [['uk', 'UK'], ['eu', 'Europe'], ['us', 'US'], ['ca', 'Canada'], ['as', 'Asia']];
   var TIERS = [['safe', 'Safe'], ['target', 'Target'], ['dream', 'Dream']];
   var TIER_NOTE = {
     safe: 'at or above the Strong line',
@@ -65,12 +65,14 @@ window.ResultsKit = (function () {
 
   /* The models write regions as places ("UK", "France / Singapore",
    * "Europe (multi-campus)", "USA"). INSEAD's Singapore campus does not make
-   * it an Asian school for this purpose: it recruits and admits as one. */
+   * it an Asian school for this purpose: it recruits and admits as one. Only
+   * a place that starts with an Asian country counts as Asia. */
   function regionOf(place) {
     var p = String(place || '');
     if (/^UK\b/.test(p)) return 'uk';
     if (/USA|United States/.test(p)) return 'us';
     if (/Canada/.test(p)) return 'ca';
+    if (/^(China|Singapore|Hong Kong|India|Japan)\b/.test(p)) return 'as';
     return 'eu';
   }
 
@@ -212,6 +214,15 @@ window.ResultsKit = (function () {
   /* A results session: one per render of a results page                 */
   /* ------------------------------------------------------------------ */
 
+  /* The search text and the order survive a re-render of the same page (the
+   * what-if's "keep these answers" rebuilds the results). */
+  var kept = { q: '', sort: 'score' };
+
+  /* Lower-case, accents off: "Hautes Études" is found by "etudes". */
+  function norm(s) {
+    return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
   function session(root) {
     var registry = {};     // key -> { row, num, badge, base }
     var filters = null;
@@ -225,10 +236,41 @@ window.ResultsKit = (function () {
     /* ---------------------------------------------------------------- */
 
     function filterBar() {
-      var state = { region: null, tier: null };
+      var state = { region: null, tier: null, q: norm(kept.q), sort: kept.sort };
       var bar = el('div', 'filters reveal');
       bar.setAttribute('role', 'toolbar');
       bar.setAttribute('aria-label', T('Filter the programmes below'));
+
+      /* Find a programme by name, and put the lists in deadline order. */
+      var search = document.createElement('input');
+      search.type = 'search';
+      search.className = 'filter-search';
+      search.placeholder = T('Find a programme…');
+      search.setAttribute('aria-label', T('Find a programme by name'));
+      search.value = kept.q;
+      search.addEventListener('input', function () {
+        kept.q = search.value;
+        state.q = norm(search.value.trim());
+        apply();
+      });
+      bar.appendChild(search);
+
+      var sort = document.createElement('select');
+      sort.className = 'filter-sort';
+      sort.setAttribute('aria-label', T('Order'));
+      [['score', 'Best chance first'], ['deadline', 'Next deadline first']].forEach(function (o) {
+        var opt = document.createElement('option');
+        opt.value = o[0];
+        opt.textContent = T(o[1]);
+        sort.appendChild(opt);
+      });
+      sort.value = state.sort;
+      sort.addEventListener('change', function () {
+        kept.sort = state.sort = sort.value;
+        order();
+        apply();
+      });
+      bar.appendChild(sort);
 
       var pills = [];
       function pill(kind, id, label, hint) {
@@ -260,12 +302,53 @@ window.ResultsKit = (function () {
       bar.appendChild(status);
 
       function rows() { return root.querySelectorAll('.row'); }
+      /* A row's name is the first text in its name cell. */
+      function nameOf(row) {
+        if (row.dataset.name === undefined) {
+          var n = row.querySelector('.name');
+          row.dataset.name = norm(n && n.firstChild ? n.firstChild.textContent : '');
+        }
+        return row.dataset.name;
+      }
       function matches(row, region, tier) {
-        return (!region || row.dataset.region === region) && (!tier || row.dataset.tier === tier);
+        return (!region || row.dataset.region === region) && (!tier || row.dataset.tier === tier) &&
+          (!state.q || nameOf(row).indexOf(state.q) !== -1);
+      }
+
+      /* Days to the next deadline; open rolling admissions after every dated
+       * programme, and no published date at all last. */
+      function due(row) {
+        var c = calendar(row.dataset.key);
+        if (c && c.next) return c.next.days;
+        return c && c.rolling ? 1e5 : 1e6;
+      }
+
+      /* Score order is the order the page drew; deadline order sorts the
+       * rows of each table and keeps each one's rank beside it, since a
+       * running count would no longer mean anything. */
+      function order() {
+        root.querySelectorAll('.table').forEach(function (t) {
+          var kids = Array.prototype.slice.call(t.children);
+          var rs = kids.filter(function (k) { return k.classList.contains('row') && k.dataset.key; });
+          if (!rs.length) return;
+          if (!t.origOrder) {
+            t.origOrder = kids.filter(function (k) { return !k.classList.contains('filter-empty'); });
+            rs.forEach(function (r, i) { r.dataset.rank = String(i + 1); r.dataset.pos = String(i); });
+          }
+          if (state.sort === 'deadline') {
+            rs.slice().sort(function (a, b) { return due(a) - due(b) || a.dataset.pos - b.dataset.pos; })
+              .forEach(function (r) { t.appendChild(r); });
+          } else {
+            t.origOrder.forEach(function (k) { t.appendChild(k); });
+          }
+          var empty = t.querySelector(':scope > .filter-empty');
+          if (empty) t.appendChild(empty);
+        });
+        root.classList.toggle('by-deadline', state.sort === 'deadline');
       }
 
       function apply() {
-        var active = !!(state.region || state.tier);
+        var active = !!(state.region || state.tier || state.q);
         var shown = 0, total = 0;
 
         Array.prototype.forEach.call(rows(), function (row) {
@@ -288,7 +371,8 @@ window.ResultsKit = (function () {
               if (kids[j].classList.contains('row') && !kids[j].hidden) vis = true;
               j++;
             }
-            k.hidden = !vis;
+            /* Verdict headings only make sense in score order. */
+            k.hidden = !vis || state.sort === 'deadline';
           });
           kids.forEach(function (k) { if (k.classList.contains('row') && !k.hidden) any = true; });
           var empty = t.querySelector(':scope > .filter-empty');
@@ -302,13 +386,13 @@ window.ResultsKit = (function () {
         });
 
         pills.forEach(function (p) {
-          var on = p.kind === 'all' ? !active : state[p.kind] === p.id;
+          var on = p.kind === 'all' ? !(state.region || state.tier) : state[p.kind] === p.id;
           p.el.classList.toggle('on', on);
           p.el.setAttribute('aria-pressed', on ? 'true' : 'false');
           var n = 0;
           Array.prototype.forEach.call(rows(), function (row) {
             if (!row.dataset.region) return;
-            if (p.kind === 'all') n++;
+            if (p.kind === 'all') { if (matches(row, null, null)) n++; }
             else if (p.kind === 'region' && matches(row, p.id, state.tier)) n++;
             else if (p.kind === 'tier' && matches(row, state.region, p.id)) n++;
           });
@@ -327,7 +411,7 @@ window.ResultsKit = (function () {
                                     : T('{n} programmes', { n: total });
       }
 
-      filters = { el: bar, refresh: apply };
+      filters = { el: bar, refresh: function () { order(); apply(); } };
       /* Built before the rows exist; the page calls refresh() once they do. */
       return filters;
     }
@@ -753,7 +837,68 @@ window.ResultsKit = (function () {
     return b;
   }
 
+  /* ------------------------------------------------------------------ */
+  /* Folded school rows                                                  */
+  /*                                                                     */
+  /* A results table lists twenty-odd programmes, and fully expanded     */
+  /* each one ran to a phone screen or more. Every row now shows its      */
+  /* verdict, score, deadline and any rule that blocks it, and folds the  */
+  /* explanation — what the school weighs, how to close the gap, what it  */
+  /* publishes — into one toggle.                                         */
+  /* ------------------------------------------------------------------ */
+
+  function fold(label, open) {
+    var d = el('details', 'more');
+    if (open) d.open = true;
+    d.appendChild(el('summary', null, label));
+    return d;
+  }
+
+  /* How many rows start open: the closest three on a wide screen, only the
+   * closest one on a phone, where each open row runs to two screens. */
+  function openCount() {
+    return window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 1 : 3;
+  }
+
+  /* One control above a table that opens or closes every fold in it. */
+  function foldAll(table) {
+    var b = el('button', 'fold-all', 'Show all details');
+    b.type = 'button';
+    function folds() { return Array.prototype.slice.call(table.querySelectorAll('details.more')); }
+    function label() {
+      var all = folds();
+      b.textContent = T(all.length && all.every(function (d) { return d.open; }) ? 'Hide all details' : 'Show all details');
+    }
+    b.addEventListener('click', function () {
+      var open = folds().some(function (d) { return !d.open; });
+      folds().forEach(function (d) { d.open = open; });
+      label();
+    });
+    table.addEventListener('toggle', label, true);
+    return b;
+  }
+
+  /* A printed or saved page should carry everything, folded or not; the
+   * folds go back to how they were afterwards. */
+  var printOpened = [];
+  if (window.addEventListener) {
+    window.addEventListener('beforeprint', function () {
+      printOpened = Array.prototype.filter.call(document.querySelectorAll('details.more'), function (d) {
+        if (d.open) return false;
+        d.open = true;
+        return true;
+      });
+    });
+    window.addEventListener('afterprint', function () {
+      printOpened.forEach(function (d) { d.open = false; });
+      printOpened = [];
+    });
+  }
+
   return {
+    fold: fold,
+    foldAll: foldAll,
+    openCount: openCount,
     regionOf: regionOf,
     regionLabel: function (place) {
       var id = regionOf(place);

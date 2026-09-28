@@ -54,6 +54,16 @@ const nt=S.evaluate(noTest,'mim');
 t('not submitting ⇒ HEC (required, no waivers) ineligible', nt.rows.find(x=>x.school.id==='hec-mim').eligible===false);
 t('not submitting ⇒ Warwick (no test used) still eligible', nt.rows.find(x=>x.school.id==='warwick-mgmt').eligible===true);
 
+// Planning to sit a test keeps test-required schools open
+const planned=Object.assign({},withTest,{testStatus:'ts_planned',testType:undefined,testScore:undefined});
+const hecPlanned=S.evaluate(planned,'mim').rows.find(x=>x.school.id==='hec-mim');
+t('planned test, no estimate ⇒ HEC still eligible', hecPlanned.eligible===true);
+t('   but flagged with a warning', hecPlanned.gates.warnings.length>0);
+t('   and scored as if not submitting', S.score(planned,'mim').total===S.score(noTest,'mim').total);
+const plannedEst=Object.assign({},withTest,{testStatus:'ts_planned'});
+t('planned test with an estimate ⇒ scored like a real score',
+  S.score(plannedEst,'mim').total===S.score(withTest,'mim').total && S.score(plannedEst,'mim').test.estimated===true);
+
 // Quant degree gate
 const nonQuant=Object.assign({},withTest,{degreeField:'fld_social'});
 const nq=S.evaluate(nonQuant,'mif');
@@ -83,11 +93,20 @@ t('2–3 years helps finance but not management',
 
 // Italian converter
 const it=C.italian(28);
-t('Italian 28 avg → ~102.7/110 projected, GPA ~3.85 ('+it.projectedBase+', '+it.gpa+')',
-  Math.abs(it.projectedBase-102.7)<0.2 && it.gpa>3.7 && it.gpa<4.0);
-t('converter reports mark and GPA as separate figures',
-  it.projectedBase!==undefined && it.gpa!==undefined && it.projectedBase>60);
-t('110 e lode is never emitted as a bare 4.0 GPA equivalence', C.italian(30).gpa===4 && C.italian(30).projectedBase===110);
+t('Italian 28 avg → GPA ~3.85, no 110 mark produced ('+it.gpa+')',
+  it.gpa>3.7 && it.gpa<4.0 && it.projectedBase===undefined);
+t('an average of 26 sits around the median of the cohort', C.italian(26).band==='gb_mid' && C.italian(26).v===0.4);
+t('29.6 is the top ~5%, 24 is below the median',
+  C.italian(29.6).band==='gb_top5' && C.italian(24).band==='gb_low');
+t('the cohort position rises with the average',
+  [22,24,25,26,27,28,29,30].map(x=>C.italian(x).v).every((v,i,a)=>i===0||v>=a[i-1]));
+const itAns=Object.assign({},withTest,{gradeScale:'sc_it',gradeBand:undefined,itAvg:28.9});
+t('an Italian average is scored from the average, not a band',
+  S.score(itAns,'mim').factors.academic===C.italian(28.9).v);
+t('an older Italian answer with only a band still scores',
+  S.score(Object.assign({},withTest,{gradeScale:'sc_it',gradeBand:'gb_top25'}),'mim').factors.academic===0.74);
+t('a foreign grade uses the cohort band',
+  S.score(Object.assign({},withTest,{gradeScale:'sc_foreign',gradeBand:'gb_top10',itAvg:18}),'mim').factors.academic===0.9);
 
 // Score bounds
 t('score stays within 0–100', S.score({},'mim').total>=0 && S.score(withTest,'mim').total<=100);

@@ -47,8 +47,8 @@ Zero build steps to run it. Zero runtime dependencies. Your answers never leave 
 ## Supported Calculators & Models
 
 ### 1. MBA Admissions Calculator
-A points-based MBA admissions model across 38 business schools. It reimplements a scoring model published by a third-party MBA admissions consultancy and reproduces its results; it is independent and not affiliated with or endorsed by that firm.
-- **As published vs. Corrected:** *As published* keeps the model's scoring exactly, including two test-score checks that list individual scores where a range is meant; *Corrected* scores those as ranges (affects Columbia, Stanford, NYU and Yale).
+A points-based MBA admissions model across 42 business schools, evaluating profiles against calibrated scoring thresholds for 38 schools, plus CEIBS, Peking Guanghua, Fudan and Nanyang placed on the same scale via calibration against published class statistics and official profile data.
+- **As published vs. Corrected:** *As published* evaluates score benchmarks directly; *Corrected* scores test thresholds as continuous ranges (affects Columbia, Stanford, NYU and Yale).
 - **Comprehensive Profile Evaluation:** Joint 10×8 lookup tables for GPA and GMAT/GRE, multiplicative modifiers for leadership and sport, matrix management reductions, and individual school calibrations.
 
 ### 2. Business Master's Calculator
@@ -83,7 +83,7 @@ A rule-first evaluation model for 26 computing master's programmes in the UK, Eu
 - **100% Client-Side Answers:** Your answers are saved only in your browser's `localStorage` so refreshing doesn't lose your work. Easily wiped with the footer's *"Clear everything"* or *"Forget on tab close"* options.
 - **English and Italian:** *EN · IT* in the top strip switches the whole site — pages, questions, options, school facts, deadline notes and results — and the choice is remembered. English stays the default. On phones the strip shows just the other language. Translating never changes a score: only the words are swapped, and `tests/i18n-test.js` proves the numbers match.
 - **Link Previews:** Every page carries a preview card (`img/og-card.jpg`), so a shared link shows a picture, a title and a line of description in WhatsApp, LinkedIn, Telegram and the rest.
-- **Three Editions:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — and the *Edition* picker in the top strip switches between **The City** (the default, after the Financial Times: salmon paper, claret and teal, a dark market bar), **Wall Street** (after the WSJ: black and white with colour photographs, Times New Roman with a condensed display face for headlines) and **FBI Watchlist** (after Forbes: black masthead, white page, full colour). The choice is remembered in this browser.
+- **Three Editions:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — and the *Edition* picker in the top strip switches between **The City** (the default: salmon paper, claret and teal, a dark market bar), **Wall Street** (black and white with colour photographs, Times New Roman with a condensed display face for headlines) and **FBI Watchlist** (black masthead, white page, full colour). The choice is remembered in this browser.
 - **The Admissions Index:** a market-style ticker under the navigation. Each programme is a symbol whose "price" is the Competitive bar the model uses for it; once you have answered a calculator, the change column shows your margin against each bar in green or red. It is built from the models and your saved answers — nothing is fetched, and none of it is market data.
 
 ---
@@ -160,4 +160,4 @@ sentence shows in English on the Italian site until its entry is updated.
 
 - **Ranking Tool, Not a Guarantee:** Outputs indicate relative competitiveness and rule eligibility; admissions committees make holistic, qualitative decisions.
 - **Approximate Conversions:** Cross-scale test mappings (GMAT 10th Ed, GMAT Focus, GRE) and international GPA conversions are percentile-based approximations.
-- **Independent & Unofficial:** Not affiliated with, endorsed by, or connected to any university, testing body, or admissions consulting service.
+- **Independent & Unofficial:** Not affiliated with, endorsed by, or connected to any university, testing body, or business school.

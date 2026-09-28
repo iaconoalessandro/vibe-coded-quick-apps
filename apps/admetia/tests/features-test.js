@@ -44,11 +44,34 @@ const short=rmid.rows.find(x=>x.gap>0 && x.minTest);
 t('a short school reports the test score that would close the gap', !!short, 'none found');
 if(short){
   console.log('  '+short.school.name+': gap '+short.gap+', needs ~GMAT '+short.minTest.gmat+' (p'+short.minTest.percentile+')');
-  t('  that score actually reaches the threshold',
-    MS.score(mid,'mif',short.minTest.percentile).total + short.roundMod >= short.school.threshold - 0.15);
-  t('  one percentile lower does not',
-    MS.score(mid,'mif',short.minTest.percentile-2).total + short.roundMod < short.school.threshold);
+  /* Including the deduction for landing below this school's usual range. */
+  const at=pct=>MS.score(mid,'mif',pct,short.school.profile).total + short.roundMod +
+    MS.rangePenalty(C.fromPercentile('gmat',pct), short.school.est).pts;
+  t('  that score actually reaches the threshold', at(short.minTest.percentile) >= short.school.threshold - 0.15);
+  t('  one percentile lower does not', at(short.minTest.percentile-2) < short.school.threshold);
 }
+
+// --- scores far below a school's usual range ---
+const hec=MM.schools.find(x=>x.id==='hec-mim');
+t('a score inside the school\'s middle range costs nothing', MS.rangePenalty(690,hec.est).pts===0);
+t('one SD below costs little, three SDs below costs a lot',
+  MS.rangePenalty(650,hec.est).pts>-2 && MS.rangePenalty(600,hec.est).pts<-5, MS.rangePenalty(650,hec.est).pts+' / '+MS.rangePenalty(600,hec.est).pts);
+t('the deduction is capped', MS.rangePenalty(400,hec.est).pts===-12);
+const maxed={gradeScale:'sc_it',gradeBand:'gb_top5',institution:'inst_global',degreeField:'fld_quant',
+  english:'en_c2',ectsQuant:'eq_30',ectsBusiness:'eb_90',ectsAccFin:'ea_20',ma_calc:true,ma_multi:true,ma_lin:true,ma_prob:true,
+  programming:'pr_strong',internMonths:'im_more',internQuality:'iq_global',fullTime:'ft_0',leadership:'ld_nat',
+  international:'in_multi',essays:'es_strong',recs:'rc_strong',languages:'lg_3',round:'rd_first',
+  testStatus:'ts_yes',testType:'tt_gmat',testScore:550};
+const hec550=MS.evaluate(maxed,'mim').rows.find(x=>x.school.id==='hec-mim');
+t('a perfect file with a 550 is no longer Strong at HEC', hec550.verdict.label!=='Strong', hec550.verdict.label+' '+hec550.adjusted);
+const noScore=MS.evaluate(Object.assign({},maxed,{testStatus:'ts_no'}),'mim').rows.find(x=>x.school.id==='nova-imm');
+t('not submitting carries no deduction', noScore.rangeMod===0);
+
+// --- Bocconi ranks on test and GPA, 55:45 ---
+['mim','mif','marketing'].forEach(tr=>{
+  const e=MS.emphasis(tr,'ranked'), w=k=>e.find(x=>x.key===k).weight;
+  t('Bocconi '+tr+': test and GPA split 55:45', Math.abs(w('test')/(w('test')+w('academic'))-0.55)<0.01);
+});
 
 // --- ineligible schools still get a score and band ---
 const strong4y=Object.assign({},p,{fullTime:'ft_59',gradeBand:'gb_top5',institution:'inst_global',

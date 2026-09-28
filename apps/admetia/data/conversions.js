@@ -1,10 +1,10 @@
 /* ---------------------------------------------------------------------------
  * Score and grade conversions.
  *
- * The GMAT / GMAT Focus / GRE equivalences are the published table that ships
- * with the source MBA calculator. The percentile figures are approximations
- * used to put three incomparable scales on one axis — they are good enough to
- * rank a profile and are NOT official percentile ranks.
+ * The GMAT / GMAT Focus / GRE equivalences map concordant score bands.
+ * The percentile figures are approximations used to put three incomparable
+ * scales on one axis — they are good enough to rank a profile and are NOT
+ * official percentile ranks.
  * ------------------------------------------------------------------------- */
 
 window.CONVERT = (function () {
@@ -107,19 +107,36 @@ window.CONVERT = (function () {
   /* ------------------------------------------------------------------ */
   /* Italian grades                                                      */
   /*                                                                     */
-  /* The 66-110 degree mark is NOT a transcript average. It starts from  */
-  /* the ECTS-weighted average of 18-30 exam marks (x11/3), then the     */
-  /* graduation committee adds discretionary points for the thesis, time */
-  /* to completion, Erasmus and so on. Two identical transcripts can     */
-  /* graduate several points apart, so the projected mark below is a     */
-  /* floor, not a prediction — and the derived US GPA is only a rough    */
-  /* indication. Many universities recalculate GPA themselves.           */
+  /* The calculators ask Italian graduates for the ECTS-weighted average */
+  /* of their 18-30 exam marks, never the 66-110 degree mark. The degree */
+  /* mark starts from that average (x11/3) and the graduation committee  */
+  /* then adds discretionary points for the thesis, time to completion,  */
+  /* Erasmus and so on, so two identical transcripts can graduate        */
+  /* several points apart and the mark does not compare across schools.  */
+  /*                                                                     */
+  /* The average gives a rough US GPA and a place in the cohort. The     */
+  /* cohort anchors are CAL: AlmaLaurea puts the average bachelor's      */
+  /* degree mark at about 99-102/110, which after typical committee      */
+  /* points is an exam average of about 26 — the median here. Faculties  */
+  /* differ (engineering grades lower than economics), so it is a rough  */
+  /* placement. Many universities recalculate the GPA themselves.        */
   /* ------------------------------------------------------------------ */
+
+  /* Exam average -> academic factor, matching the cohort bands the
+   * foreign-grade question uses (median 0.4, top 5% 1.0). */
+  var IT_COHORT = [[30, 1.0], [29.5, 1.0], [28.8, 0.9], [27.8, 0.74], [26.8, 0.56], [26, 0.4], [24.5, 0.2], [18, 0.2]];
+  var IT_BANDS = [
+    { min: 29.5, band: 'gb_top5', cls: 'first' },
+    { min: 28.8, band: 'gb_top10', cls: 'first' },
+    { min: 27.8, band: 'gb_top25', cls: '2:1h' },
+    { min: 26.8, band: 'gb_top50', cls: '2:1' },
+    { min: 25.6, band: 'gb_mid', cls: '2:1' },
+    { min: 0, band: 'gb_low', cls: '2:2' }
+  ];
 
   function italian(weightedExamAverage) {
     var m = parseFloat(weightedExamAverage);
     if (isNaN(m) || m < 18 || m > 30) return null;
-    var projected = m * 11 / 3;                 // before committee points
     /* Exam-mark to letter mapping in common use: 27-30 A, 24-26 B, 21-23 C. */
     var gpa;
     if (m >= 29) gpa = 4.0;
@@ -127,11 +144,32 @@ window.CONVERT = (function () {
     else if (m >= 24) gpa = 3.0 + (m - 24) / 3 * 0.7;
     else if (m >= 21) gpa = 2.0 + (m - 21) / 3 * 1.0;
     else gpa = 1.0 + (m - 18) / 3 * 1.0;
+    var b = IT_BANDS.filter(function (x) { return m >= x.min; })[0];
     return {
-      projectedBase: Math.round(projected * 10) / 10,
-      projectedCeiling: Math.min(110, Math.round((projected + 8) * 10) / 10),
-      gpa: Math.round(gpa * 100) / 100
+      gpa: Math.round(gpa * 100) / 100,
+      v: Math.round(interp(IT_COHORT, m) * 1000) / 1000,
+      band: b.band,
+      cls: b.cls
     };
+  }
+
+  /* The grade a scorer should use. Italian graduates give an exam average;
+   * everyone else picks a cohort band. An Italian answer saved before the
+   * average was asked for still has a band, and that is used instead. */
+  function grade(a, bandOption) {
+    if (a.gradeScale === 'sc_it') {
+      var r = italian(a.itAvg);
+      if (r) return { v: r.v, cls: r.cls, band: r.band };
+    }
+    return bandOption
+      ? { v: bandOption.v, cls: bandOption.cls || null, band: bandOption.id }
+      : { v: 0, cls: null, band: null };
+  }
+
+  /* Whether a question is showing, given the answers so far. A group with
+   * `showIf: { group, is }` appears only when that answer is chosen. */
+  function shown(g, a) {
+    return !g.showIf || a[g.showIf.group] === g.showIf.is;
   }
 
   return {
@@ -140,6 +178,8 @@ window.CONVERT = (function () {
     zAgainst: zAgainst,
     toGmat: toGmat,
     toFocus: toFocus,
-    italian: italian
+    italian: italian,
+    grade: grade,
+    shown: shown
   };
 }());

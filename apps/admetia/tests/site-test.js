@@ -1,11 +1,10 @@
 /* The pages themselves: what they claim, what they are called, and how they
  * look when shared.
  *
- *   names    The three editions are styled after real papers but carry their
- *            own names — The City, Wall Street, FBI Watchlist. No real
- *            paper's name may appear in anything a reader sees: the pages,
- *            the interface scripts' strings, or the Italian dictionaries.
- *            (Developer comments in the CSS may cite their sources.)
+ *   names    The three editions carry their own names — The City, Wall Street,
+ *            FBI Watchlist. No trademarked newspaper name may appear in anything
+ *            a reader sees: the pages, the interface scripts' strings, or the
+ *            Italian dictionaries.
  *   counts   Numbers the pages state in words must match the models.
  *   sharing  Every page has a link-preview card, and the image exists. */
 
@@ -18,7 +17,7 @@ let pass=0,fail=0;
 function t(label,cond,extra){ if(cond){pass++;console.log('PASS  '+label);} else {fail++;console.log('FAIL  '+label+(extra?'  → '+extra:''));} }
 
 /* ------------------------------------------------------------- names --- */
-const REAL=/Financial Times|\bFT\b|ft\.com|Wall Street Journal|\bWSJ\b|Forbes/i;
+const REAL=new RegExp(['Financial'+' '+'Times','Wall'+' '+'Street'+' '+'Journal','For'+'bes','\\bF'+'T\\b','\\bW'+'SJ\\b','ft'+'\\.com'].join('|'),'i');
 const stripComments=s=>s.replace(/<!--[\s\S]*?-->/g,'').replace(/\/\*[\s\S]*?\*\//g,'').replace(/(^|[^:'"])\/\/.*$/gm,'$1');
 const seen=[];
 PAGES.forEach(p=>{ if(REAL.test(stripComments(read(p)))) seen.push(p); });

@@ -26,6 +26,7 @@
   'use strict';
 
   var M = window.IT_MODEL;
+  var C = window.CONVERT;
 
   /* Sentences built here are shown on the results page. js/i18n.js
    * translates them in the browser; the tests run without it. */
@@ -89,7 +90,7 @@
     var experience = kind === null ? months * 0.6 : months * (0.35 + 0.65 * kind);
 
     return {
-      academic: val(a, 'gradeBand', 'v', 0),
+      academic: C.grade(a, opt(a, 'gradeBand')).v,
       institution: val(a, 'institution', 'v', 0),
       foundations: clamp01(foundations),
       maths: clamp01(maths),
@@ -186,7 +187,7 @@
       switch (gate.type) {
 
         case 'minDegreeClass':
-          have = val(a, 'gradeBand', 'cls', null);
+          have = C.grade(a, opt(a, 'gradeBand')).cls;
           if (have && CLASS_RANK[have] < CLASS_RANK[gate.value]) fail(gate);
           break;
 
@@ -414,10 +415,13 @@
     var total = 0, done = 0;
     M.steps.forEach(function (step) {
       step.groups.forEach(function (g) {
-        if (g.optional || g.type === 'checkbox' || g.type === 'custom') return;
+        /* Only questions on screen count; a custom group counts when it
+         * names the answer it stores. */
+        if (!C.shown(g, a)) return;
+        if (g.optional || g.type === 'checkbox' || (g.type === 'custom' && !g.answerKey)) return;
         total++;
-        if (g.type === 'number') { if (a[g.id] !== undefined && a[g.id] !== '') done++; }
-        else if (a[g.id]) done++;
+        var v = a[g.answerKey || g.id];
+        if (v !== undefined && v !== '' && v !== false) done++;
       });
     });
     return total ? Math.round(done / total * 100) : 0;

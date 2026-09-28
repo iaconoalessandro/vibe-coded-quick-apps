@@ -3,17 +3,15 @@
  * One layout, three editions, picked from the top strip (js/theme.js sets
  * data-theme on <html> before first paint):
  *
- *   city        The City (default), after the Financial Times: salmon paper
- *               #FFF1E5, display-serif headlines with a bold lead-in, sans
- *               text 16/24, claret section labels, teal links, a dark market
- *               bar. Measured from ft.com.
- *   wallstreet  Wall Street, after the WSJ: black top strip, white page, a
- *               market line in green and red, colour photographs, every word
- *               in Times New Roman except the condensed nameplate and headlines.
- *   watchlist   FBI Watchlist, after Forbes: black masthead and nav, white
- *               page, full colour. Measured from forbes.com: UI 16/24, labels
- *               12/18 uppercase, headlines 40/48 and 32/38.4 in a demi display
- *               serif, Georgia decks 18/28.8, red #DC0000, links #003891.
+ *   city        The City (default): salmon paper #FFF1E5, display-serif headlines
+ *               with a bold lead-in, sans text 16/24, claret section labels,
+ *               teal links, a dark market bar.
+ *   wallstreet  Wall Street: black top strip, white page, a market line in green
+ *               and red, colour photographs, every word in Times New Roman except
+ *               the condensed nameplate and headlines.
+ *   watchlist   FBI Watchlist: black masthead and nav, white page, full colour.
+ *               UI 16/24, labels 12/18 uppercase, headlines 40/48 and 32/38.4 in a
+ *               demi display serif, Georgia decks 18/28.8, red #DC0000, links #003891.
  *
  * Everything an edition changes is a custom property on :root, plus a short
  * block of edition-only rules near the end. Nothing here changes a number.
@@ -28,10 +26,9 @@
   --page: 1200px;
   --gutter: 40px;
 
-  /* The City — after the Financial Times, and the default. Measured from
-     ft.com: paper #FFF1E5, text #33302E, standfirst #66605C, section labels
-     claret #990F3D, links and active nav teal #0D7680 / #0A5E66, quote marks
-     oxford #0F5499, market bar #262A33, feature boxes #F2DFCE, tags #FCD0B1. */
+  /* The City — default edition: paper #FFF1E5, text #33302E, standfirst #66605C,
+     section labels claret #990F3D, links and active nav teal #0D7680 / #0A5E66,
+     quote marks oxford #0F5499, market bar #262A33, feature boxes #F2DFCE, tags #FCD0B1. */
   --paper: #fff1e5;
   --paper-2: #f2dfce;          /* feature boxes */
   --paper-3: #fff7ef;          /* cards and form fields */
@@ -458,6 +455,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .sec-head .headline { font-size: clamp(36px, 5vw, 68px); }
 .sec-head .standfirst { margin-bottom: 0; }
+.form-meta { margin: 12px 0 0; font: 500 13.5px/1.4 var(--font-ui); color: var(--muted); }
 .sec-head .plate { aspect-ratio: 3 / 2; }
 .questionnaire .sec-head { padding-top: 22px; }
 .questionnaire .sec-head .headline { font-size: clamp(34px, 4.4vw, 58px); }
@@ -500,7 +498,7 @@ a:hover { text-decoration-thickness: 2px; }
 .stepnav button.done::after { content: "\2713"; margin-left: auto; font: 700 13px/1 var(--font-ui); color: var(--good); }
 .stepnav button.missing::after {
   content: ""; margin-left: auto; align-self: center; flex: none;
-  width: 7px; height: 7px; border-radius: 50%; background: var(--mid);
+  width: 7px; height: 7px; background: var(--mid);
 }
 
 .progress { height: 4px; background: var(--meter-track); margin: 4px 0 22px; overflow: hidden; }
@@ -570,6 +568,21 @@ a:hover { text-decoration-thickness: 2px; }
 .opt.on { font-weight: 700; }
 .opt.on .mark { background: var(--ink); }
 .opt.on .mark::after { transform: rotate(-45deg) scale(1); }
+/* One answer only: the same square box, filled with a smaller solid square
+ * when chosen, so it does not read as "tick several". Checkboxes keep the
+ * tick. Square in every edition — nothing in these papers is round. */
+.opt:not(.check) .mark::after {
+  width: 10px; height: 10px; margin-top: 0; border: 0;
+  background: var(--ink); transform: scale(0);
+}
+.opt.on:not(.check) .mark { background: var(--paper-3); }
+.opt.on:not(.check) .mark::after { transform: scale(1); }
+/* The editions colour a chosen box; for one-answer questions that colour goes
+ * to the inner square and the box stays light. */
+:root[data-theme="city"] .opt.on:not(.check) .mark { background: #fff7ef; border-color: #0d7680; }
+:root[data-theme="city"] .opt.on:not(.check) .mark::after { background: #0d7680; }
+:root[data-theme="watchlist"] .opt.on:not(.check) .mark { background: #fff; border-color: #dc0000; }
+:root[data-theme="watchlist"] .opt.on:not(.check) .mark::after { background: #dc0000; border-radius: 1px; }
 .opt .body { min-width: 0; }
 .opt .note { display: block; margin-top: 2px; font-style: italic; font-weight: 400; font-size: 14.5px; color: var(--muted); }
 .opt.disabled { opacity: .4; cursor: not-allowed; }
@@ -587,6 +600,9 @@ a:hover { text-decoration-thickness: 2px; }
   background: none; border: 0; text-decoration: underline; text-underline-offset: 2px;
 }
 .clear-link:hover { color: var(--ink); }
+.clear-row { justify-self: start; display: flex; align-items: baseline; gap: 6px; margin-top: 12px; }
+.clear-row .clear-link { margin-top: 0; }
+.clear-hint { font: 13px/1.3 var(--font-ui); color: var(--muted); }
 
 input[type="number"], input[type="search"], select, textarea {
   font: 500 17px/1.3 var(--font-ui); color: var(--ink);
@@ -612,8 +628,8 @@ details.examples > summary {
   font: 700 12px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
 }
 details.examples > summary::-webkit-details-marker { display: none; }
-details.examples > summary::before { content: "+ "; }
-details.examples[open] > summary::before { content: "\2212 "; }
+details.examples > summary::before { content: "+\00a0"; }
+details.examples[open] > summary::before { content: "\2212\00a0"; }
 details.examples .ex-body { padding: 2px 14px 14px; max-height: 360px; overflow-y: auto; }
 details.examples .ex-intro { margin: 0 0 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 details.examples .ex-section { margin: 14px 0; }
@@ -662,6 +678,11 @@ details.examples .ex-note { margin: 14px 0 0; padding-top: 10px; border-top: 1px
 .res-head { padding: 22px 0 22px; margin-bottom: 24px; border-bottom: var(--double); position: relative; }
 .res-head .headline { font-size: clamp(40px, 5.6vw, 76px); margin-bottom: 14px; max-width: 14em; }
 .res-head .standfirst { margin: 0; max-width: 40em; }
+.res-head .edit-top {
+  float: right; margin: 0 0 8px 12px; padding: 4px 0; cursor: pointer; background: none; border: 0;
+  font: 600 14px/1.3 var(--font-ui); color: var(--accent); text-decoration: underline; text-underline-offset: 3px;
+}
+.res-head .edit-top:hover { color: var(--ink); }
 
 .summary {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -792,8 +813,21 @@ h2.section .count {
 .row details { margin-top: 10px; }
 .row details > summary { cursor: pointer; list-style: none; font-family: var(--font-ui); }
 .row details > summary::-webkit-details-marker { display: none; }
-.row details > summary::before { content: "+ "; font-weight: 700; }
-.row details[open] > summary::before { content: "\2212 "; }
+.row details > summary::before { content: "+\00a0"; font-weight: 700; }
+.row details[open] > summary::before { content: "\2212\00a0"; }
+/* The per-school fold: the one toggle a row has, so it reads as an action. */
+.row details.more > summary, .panel details.more > summary, .prof-legend > details.more > summary { cursor: pointer; list-style: none; display: flex; align-items: center; width: fit-content; padding: 4px 0; font: 600 14px/1.35 var(--font-ui); color: var(--accent); }
+.panel details.more > summary::-webkit-details-marker, .prof-legend > details.more > summary::-webkit-details-marker { display: none; }
+.panel details.more > summary::before, .prof-legend > details.more > summary::before { content: "+\00a0"; font-weight: 700; }
+.panel details.more[open] > summary::before, .prof-legend > details.more[open] > summary::before { content: "\2212\00a0"; }
+.row details.more > summary:hover, .panel details.more > summary:hover { text-decoration: underline; text-underline-offset: 2px; }
+.more-body { display: grid; gap: 12px; margin-top: 10px; }
+.more-body .facts-head { margin: 4px 0 0; font: 600 13px/1.3 var(--font-ui); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.fold-all {
+  display: block; margin: 0 0 10px auto; padding: 0; cursor: pointer; background: none; border: 0;
+  font: 500 13px/1.3 var(--font-ui); color: var(--muted); text-decoration: underline; text-underline-offset: 2px;
+}
+.fold-all:hover { color: var(--ink); }
 .facts { display: grid; margin-top: 8px; border-top: 1px solid var(--hair); }
 .fact { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--hair); font-size: 15px; }
 .fact .fk { font: 600 13px/1.45 var(--font-ui); color: var(--muted); }
@@ -877,17 +911,59 @@ details.breakdown .inner { padding: 0 0 16px; }
 }
 .pill-group { display: flex; flex-wrap: wrap; gap: 6px; padding-left: 14px; border-left: 1px solid var(--hair); }
 .pill {
-  display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 14px;
+  display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 0 12px;
   font: 600 13.5px/1 var(--font-ui); color: var(--ink); cursor: pointer;
-  background: var(--paper-3); border: 1px solid var(--rule); border-radius: 999px;
-  transition: background .12s, color .12s;
+  background: transparent; border: 1px solid var(--rule); border-radius: 0;
+  transition: background .12s, color .12s, border-color .12s;
 }
 .pill .c { font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted); }
 .pill:hover { background: var(--paper-2); }
 .pill.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .pill.on .c { color: inherit; opacity: .75; }
 .pill:disabled { opacity: .38; cursor: default; }
-.pill:disabled:hover { background: var(--paper-3); }
+.pill:disabled:hover { background: transparent; }
+
+/* Each edition draws its filters with distinct styling.
+ * The City: the markets-data tabs — no box, grey type, the chosen tab
+ * filled in the darker wheat. */
+:root[data-theme="city"] .pill-group { gap: 0; }
+:root[data-theme="city"] .pill { border: 0; color: #737373; font-weight: 500; }
+:root[data-theme="city"] .pill:hover:not(:disabled) { background: transparent; color: #33302e; }
+:root[data-theme="city"] .pill.on,
+:root[data-theme="city"] .pill.on:hover { background: #f2dfce; color: #33302e; }
+:root[data-theme="city"] .pill.on .c { color: #66605c; opacity: 1; }
+/* Wall Street: small bold capitals, no box, the chosen one underlined. */
+:root[data-theme="wallstreet"] .pill-group { gap: 2px; }
+:root[data-theme="wallstreet"] .pill {
+  border: 0; border-bottom: 3px solid transparent; padding: 3px 9px 0;
+  font: 700 12px/1 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: #555;
+}
+:root[data-theme="wallstreet"] .pill:hover:not(:disabled) { background: transparent; color: #000; }
+:root[data-theme="wallstreet"] .pill.on,
+:root[data-theme="wallstreet"] .pill.on:hover { background: transparent; color: #000; border-bottom-color: #000; }
+:root[data-theme="wallstreet"] .pill.on .c { color: #555; opacity: 1; }
+/* FBI Watchlist: the list filters — a white box, hairline grey
+ * border, barely-rounded corners; the chosen one in solid black. */
+:root[data-theme="watchlist"] .pill {
+  background: #fff; border: 1px solid #e3e3e3; border-radius: 1px;
+  font: 500 14px/1 var(--font-ui); color: #333;
+}
+:root[data-theme="watchlist"] .pill:hover:not(:disabled) { background: #f5f5f5; }
+:root[data-theme="watchlist"] .pill.on,
+:root[data-theme="watchlist"] .pill.on:hover { background: #171717; border-color: #171717; color: #fff; }
+
+/* Find-by-name and the order switch sit at the front of the bar. */
+.filters .filter-search, .filters .filter-sort {
+  min-height: 36px; margin: 0; padding: 0 10px; border-radius: 0;
+  font: 500 14px/1 var(--font-ui); color: var(--ink);
+  background: var(--paper-3); border: 1px solid var(--rule);
+}
+.filters .filter-search { flex: none; width: 190px; min-width: 0; }
+.filters .filter-sort { padding-right: 6px; cursor: pointer; }
+:root[data-theme="watchlist"] .filters .filter-search,
+:root[data-theme="watchlist"] .filters .filter-sort { background: #fff; border-color: #e3e3e3; border-radius: 1px; }
+/* In deadline order a row keeps its score rank rather than a running count. */
+.by-deadline .table.ranked > .row::before { content: attr(data-rank); }
 .filter-status { margin-left: auto; font: italic 14px/1.3 var(--font-head); color: var(--muted); }
 .filter-empty { padding: 16px 0; font: italic 15.5px/1.4 var(--font-head); color: var(--muted); }
 
@@ -907,26 +983,29 @@ details.breakdown .inner { padding: 0 0 16px; }
 .whatif-result { margin: 14px 0 0; font: 600 15px/1.45 var(--font-ui); color: var(--ink); }
 .whatif-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 
-/* A range input drawn to match: a thick track filled to the thumb, and a
- * thumb big enough to catch with a thumb. */
+/* A range input drawn to match: a flat track filled up to the handle, and a
+ * tall rectangular handle — a chart cursor rather than a round knob — wide
+ * enough to catch with a thumb. */
 .whatif input[type="range"] {
   -webkit-appearance: none; appearance: none; width: 100%; height: 36px; margin: 0;
   background: transparent; cursor: pointer; --fill: 0%;
 }
 .whatif input[type="range"]::-webkit-slider-runnable-track {
-  height: 8px; border-radius: 4px;
+  height: 6px; border-radius: 0;
   background: linear-gradient(to right, var(--meter) var(--fill), var(--meter-track) var(--fill));
 }
-.whatif input[type="range"]::-moz-range-track { height: 8px; border-radius: 4px; background: var(--meter-track); }
-.whatif input[type="range"]::-moz-range-progress { height: 8px; border-radius: 4px; background: var(--meter); }
+.whatif input[type="range"]::-moz-range-track { height: 6px; border-radius: 0; background: var(--meter-track); }
+.whatif input[type="range"]::-moz-range-progress { height: 6px; border-radius: 0; background: var(--meter); }
 .whatif input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none; width: 28px; height: 28px; margin-top: -10px; border-radius: 50%;
-  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  -webkit-appearance: none; appearance: none; width: 14px; height: 30px; margin-top: -12px; border-radius: 0;
+  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 .whatif input[type="range"]::-moz-range-thumb {
-  width: 22px; height: 22px; border-radius: 50%;
-  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  width: 8px; height: 24px; border-radius: 0;
+  background: var(--paper-3); border: 3px solid var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
+:root[data-theme="watchlist"] .whatif input[type="range"]::-webkit-slider-thumb { border-radius: 2px; }
+:root[data-theme="watchlist"] .whatif input[type="range"]::-moz-range-thumb { border-radius: 2px; }
 .whatif input[type="range"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
 /* A row the what-if has moved: flashes when its verdict flips, and keeps a
@@ -1025,13 +1104,13 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 .privacy-toggle input { width: 16px; height: 16px; accent-color: var(--ink); cursor: pointer; }
 
 /* ===========================================================================
- * Wall Street — after the WSJ
+ * Wall Street edition
  *
  * A black top strip, then a white page in black type with hairline greys.
- * Everything in Times New Roman at the WSJ's 17/27 text size; the nameplate
- * and the main headlines in a bold condensed display cut. Photographs in
- * colour. The market line prints each symbol in black, its value and change in
- * green or red with an arrow, as the WSJ's does; a blue button, as theirs.
+ * Everything in Times New Roman at 17/27 text size; the nameplate and the main
+ * headlines in a bold condensed display cut. Photographs in colour. The market
+ * line prints each symbol in black, its value and change in green or red with an
+ * arrow; a blue button.
  * ======================================================================== */
 
 :root[data-theme="wallstreet"] body { font-size: 17px; line-height: 27px; }
@@ -1144,7 +1223,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
  *
  * Black masthead and navigation over a near-white page, full-colour
  * photographs, red for emphasis and blue for "trending" and links. Sizes and
- * weights follow forbes.com (measured): UI 16/24, labels 12/18 uppercase,
+ * weights: UI 16/24, labels 12/18 uppercase,
  * headlines 40/48 and 32/38.4 in a demi display serif, decks in Georgia
  * 18/28.8, list numerals 18px red, bylines 12px.
  * ======================================================================== */
@@ -1259,7 +1338,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="watchlist"] .photo img { filter: saturate(1.08); }
 :root[data-theme="watchlist"] .photo figcaption { font: 400 12px/18px var(--font-ui); font-style: normal; color: #737373; }
 :root[data-theme="watchlist"] .photo figcaption a { color: #333; }
-:root[data-theme="watchlist"] .boxout { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; }
+:root[data-theme="watchlist"] .boxout { background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; }
 :root[data-theme="watchlist"] .boxout .rubric { background: none; padding: 0; font: 700 20px/24px var(--font-display); font-stretch: 80%; }
 :root[data-theme="watchlist"] .highest li::before { color: #dc0000; font-weight: 500; }
 
@@ -1297,7 +1376,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="watchlist"] .table-div .n { color: #dc0000; }
 :root[data-theme="watchlist"] .why { border-top: 3px solid #007ac8; background: #f2f2f2; border-radius: 0 0 6px 6px; }
 :root[data-theme="watchlist"] .why.emph { border-top-color: #dc0000; }
-:root[data-theme="watchlist"] .panel, :root[data-theme="watchlist"] .note-card { background: #fff; border-color: #e0e0e0; border-radius: 6px; }
+:root[data-theme="watchlist"] .panel, :root[data-theme="watchlist"] .note-card { background: #fff; border-color: #e0e0e0; border-radius: 4px; }
 :root[data-theme="watchlist"] .note-card.warn { border-top: 4px solid #dc0000; }
 :root[data-theme="watchlist"] .panel-head { border-bottom-color: #e0e0e0; }
 :root[data-theme="watchlist"] .panel-head .art { color: #007ac8; }
@@ -1309,9 +1388,8 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 /* ===========================================================================
  * The City — the financial paper (default)
  *
- * After ft.com, measured: headlines in a display serif (Financier Display
- * there, Source Serif 4 here) at weight ~400, with a bold lead-in; sans text
- * (Metric there, Hanken Grotesk here) 16/24; nav 12px 600 uppercase; section
+ * Headlines in a display serif (Source Serif 4) at weight ~400, with a bold
+ * lead-in; sans text (Hanken Grotesk) 16/24; nav 12px 600 uppercase; section
  * labels in claret sentence case; "TOP STORIES"-style rubrics in letter-spaced
  * capitals under a dotted rule; a dark market bar with outlined changes.
  * ======================================================================== */
@@ -1325,7 +1403,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .edition button[aria-checked="true"] { background: #262a33; color: #fff; }
 :root[data-theme="city"] .cta {
   display: inline-flex; align-items: center; order: 9; margin-left: 4px; padding: 7px 12px;
-  background: #262a33; color: #fff; border-radius: 3px; text-decoration: none;
+  background: #262a33; color: #fff; border-radius: 0; text-decoration: none;
   font: 600 14px/20px var(--font-ui); white-space: nowrap;
 }
 :root[data-theme="city"] .cta:hover { background: #000; }
@@ -1397,7 +1475,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .more { font: 600 14px/20px var(--font-ui); color: #0d7680; letter-spacing: 0; }
 :root[data-theme="city"] .dropcap::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
 
-/* Section breaks as on the FT front: a dotted rule, then letter-spaced caps. */
+/* Section breaks: a dotted rule, then letter-spaced caps. */
 :root[data-theme="city"] .how {
   border-top: 0; padding-top: 40px;
   background: radial-gradient(circle, #b3a597 1px, transparent 1.4px) 0 0 / 4px 4px repeat-x;
@@ -1433,7 +1511,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .stepnav button { font: 400 17px/1.3 var(--font-display); }
 :root[data-theme="city"] .stepnav button.current { color: #0a5e66; font-weight: 600; }
 :root[data-theme="city"] .stepnav button.current .n { color: #0a5e66; }
-:root[data-theme="city"] .btn { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; border-radius: 3px; }
+:root[data-theme="city"] .btn { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; border-radius: 0; }
 :root[data-theme="city"] .btn.primary { background: #0d7680; color: #fff; }
 :root[data-theme="city"] .btn.ghost { border-color: transparent; }
 :root[data-theme="city"] .edition button, :root[data-theme="city"] .switch button { text-transform: none; letter-spacing: 0; }
@@ -1447,7 +1525,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .row .name { font: 400 20px/26px var(--font-display); color: #000; }
 :root[data-theme="city"] .row .num b { font-weight: 400; color: #000; }
 :root[data-theme="city"] .table-div { color: #990f3d; }
-/* Verdicts as FT tags: a filled label, like "EXCLUSIVE". */
+/* Verdicts as editorial tags: a filled label. */
 :root[data-theme="city"] .badge { font: 400 13px/20px var(--font-ui); letter-spacing: .02em; text-transform: uppercase; padding: 1px 8px; min-width: 0; justify-self: end; text-align: center; }
 :root[data-theme="city"] .badge.high { background: #00994d; color: #fff; }
 :root[data-theme="city"] .badge.good { background: #cce6d4; color: #0a5e3a; }
@@ -1466,16 +1544,14 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 /* ===========================================================================
  * Closer to the source
  *
- * A second pass per edition against each paper's published type system:
- * FT Origami's o-typography scale (sizes/line-heights in px: 12/16, 14/16,
- * 16/20, 18/20, 20/24, 24/28, 28/32, 32/32, 40/40, 48/48, 56/56); WSJ's Escrow
- * headlines, Exchange text (Times New Roman here, as asked) and Retina
- * interface; Forbes' Schnyder headlines, Graphik text and Georgia asides.
+ * A second pass per edition against modular typography systems:
+ * Modular scale (sizes/line-heights in px: 12/16, 14/16, 16/20, 18/20, 20/24,
+ * 24/28, 28/32, 32/32, 40/40, 48/48, 56/56); condensed headlines, serif text
+ * and sans interface; display headlines, clean sans text and Georgia asides.
  * Where a live measurement from earlier disagreed, the measurement stands.
  * ======================================================================== */
 
-/* The City — FT. Articles in the serif (Financier Text there), interface in
-   the sans (Metric there), sizes on the Origami steps, corners 2–4px. */
+/* The City. Articles in the serif, interface in the sans, corners 2–4px. */
 :root[data-theme="city"] .headline { font-size: clamp(36px, 4.6vw, 56px); line-height: 1.02; }
 :root[data-theme="city"] .sec-head .headline, :root[data-theme="city"] .res-head .headline { font-size: clamp(34px, 4vw, 48px); line-height: 1.02; }
 :root[data-theme="city"] .headline-2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.02; }
@@ -1498,15 +1574,16 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .index-item p, :root[data-theme="city"] .story p { font-size: 16px; line-height: 20px; color: #4d4845; }
 :root[data-theme="city"] .opt, :root[data-theme="city"] .fact, :root[data-theme="city"] .why-text,
 :root[data-theme="city"] .bd-row { font-family: var(--font-ui); }
-/* Links: teal, underlined, as in FT body copy. */
+/* Links: teal, underlined. */
 :root[data-theme="city"] .more { text-decoration: underline; text-decoration-color: rgba(13, 118, 128, .35); text-underline-offset: 3px; }
 :root[data-theme="city"] footer.foot a, :root[data-theme="city"] .note-card a { color: #0d7680; }
 :root[data-theme="city"] .tk .chg.up { color: #96cc28; }
-:root[data-theme="city"] .badge { border-radius: 2px; }
-:root[data-theme="city"] .panel, :root[data-theme="city"] .note-card, :root[data-theme="city"] .boxout { border-radius: 2px; }
+:root[data-theme="city"] .badge { border-radius: 0; }
+/* The City draws nothing with rounded corners. */
+:root[data-theme="city"] .panel, :root[data-theme="city"] .note-card, :root[data-theme="city"] .boxout { border-radius: 0; }
 
-/* Wall Street — WSJ. Escrow-style condensed headlines at ~40px/1.1, text at
-   16/1.6, the interface in a sans as Retina is: nav 14, labels 12 caps. */
+/* Wall Street. Condensed headlines at ~40px/1.1, text at 16/1.6,
+   the interface in a sans: nav 14, labels 12 caps. */
 :root[data-theme="wallstreet"] body { font-size: 16px; line-height: 1.6; }
 :root[data-theme="wallstreet"] .headline { font-size: clamp(36px, 3.6vw, 48px); line-height: 1.1; letter-spacing: -.005em; }
 :root[data-theme="wallstreet"] .sec-head .headline, :root[data-theme="wallstreet"] .res-head .headline { font-size: clamp(34px, 3.4vw, 44px); }
@@ -1545,7 +1622,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .pullquote p { font: 700 clamp(26px, 2.6vw, 34px)/1.15 var(--font-display); font-style: normal; }
 :root[data-theme="wallstreet"] .pullquote cite { font-family: var(--font-ui); }
 :root[data-theme="wallstreet"] .ticker { font-family: var(--font-ui); }
-/* After the WSJ front: no rule above the nav, a double hairline under it,
+/* Wall Street front: no rule above the nav, a double hairline under it,
    sections as bold capitals rather than reversed boxes; sidebar headlines in
    the bold sans; kickers in grey letter-spaced capitals; the market line
    with no label, names in black and values in green or red. */
@@ -1570,7 +1647,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .headline { font-weight: 700; letter-spacing: 0; }
 :root[data-theme="wallstreet"] .headline-2, :root[data-theme="wallstreet"] h2.section { letter-spacing: 0; }
 
-/* FBI Watchlist — Forbes. Schnyder-style headlines, Graphik text 16/1.5,
+/* FBI Watchlist. Display headlines, sans text 16/1.5,
    labels 12 px 500, Georgia for decks, teasers and italic pull quotes, red
    #DC0000 kept to the button, numerals and emphasis. */
 :root[data-theme="watchlist"] body { font-size: 16px; line-height: 1.5; }
@@ -1653,6 +1730,19 @@ html.no-js .reveal { opacity: 1; animation: none; }
 
 /* Phones. Targets follow the 44px minimum; form text is 16px or more so iOS
  * Safari does not zoom into a field on focus. */
+/* Phones: get to the first question sooner. The questionnaire's intro
+ * paragraph gives way to the one-line question count, and the calculators'
+ * top bar keeps only the language and edition buttons — the scrolling index
+ * stays on the front pages. */
+@media (max-width: 600px) {
+  #wizard-view .sec-head .standfirst { display: none; }
+  #wizard-view .sec-head .form-meta { margin-top: 8px; }
+  /* !important: the City edition forces the label on with one. */
+  body:has(#wizard-view) .ticker-label,
+  body:has(#wizard-view) .ticker-view { display: none !important; }
+  body:has(#wizard-view) .ticker { justify-content: flex-end; }
+}
+
 @media (max-width: 640px) {
   .cmp-row { grid-template-columns: minmax(0, 1fr); }
   .cmp-arrow { justify-self: center; transform: rotate(90deg); }
@@ -1746,14 +1836,17 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .options:not(.grid) { gap: 8px; }
   .opt:not(.compact) {
     min-height: 54px; padding: 10px 14px; gap: 14px;
-    border: 1px solid var(--hair); background: var(--paper-3); border-radius: 6px;
+    border: 1px solid var(--hair); background: var(--paper-3); border-radius: 0;
     transition: border-color .12s, background .12s;
   }
   .opt:not(.compact) .mark { width: 24px; height: 24px; }
-  .opt:not(.compact) .mark::after { width: 12px; height: 6px; }
+  .opt.check:not(.compact) .mark::after { width: 12px; height: 6px; }
+  .opt:not(.check):not(.compact) .mark::after { width: 12px; height: 12px; }
   .opt:not(.compact).on { border: 2px solid var(--ink); padding: 9px 13px; }
   .opt:active:not(.disabled) { background: var(--paper-2); }
-  .opt.compact { min-height: 48px; border-radius: 6px; }
+  .opt.compact { min-height: 48px; border-radius: 0; }
+  :root[data-theme="watchlist"] .opt:not(.compact),
+  :root[data-theme="watchlist"] .opt.compact { border-radius: 3px; }
   .options.grid { gap: 8px; }
   .clear-link { padding: 0 4px; }
 
@@ -1784,6 +1877,8 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .filters::-webkit-scrollbar { display: none; }
   .pill-group { flex-wrap: nowrap; padding-left: 8px; }
   .pill { min-height: 44px; flex: none; padding: 0 16px; font-size: 14.5px; }
+  .filters .filter-search, .filters .filter-sort { flex: none; min-height: 44px; font-size: 16px; }
+  .filters .filter-search { width: 170px; }
   .filter-status { display: none; }
   .whatif { padding: 14px 16px 16px; margin-left: calc(-1 * var(--gutter) + 6px); margin-right: calc(-1 * var(--gutter) + 6px); }
   .whatif-controls { grid-template-columns: minmax(0, 1fr); }

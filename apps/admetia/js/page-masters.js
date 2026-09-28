@@ -56,73 +56,18 @@
   var shot = TRACK_SHOT[trackId] || TRACK_SHOT.mim;
 
   intro.appendChild(Wizard.sectionHead(track.full,
-    ['How strong is your ', 'profile', '?'], track.blurb, shot));
+    ['How strong is your ', 'profile', '?'], track.blurb, shot, Wizard.formMeta(M)));
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');
   var chip = document.getElementById('chip');
-
-  /* ---------------------------------------------------------------------
-   * Custom group: the Italian grade converter.
-   * ------------------------------------------------------------------ */
-  window.CustomGroups = window.CustomGroups || {};
-  window.CustomGroups.italian = function (group, answers, set) {
-    var wrap = el('div', 'converter');
-    var row = el('div', 'numrow');
-    row.appendChild(el('span', null, 'ECTS-weighted average of your exam marks (18–30):'));
-    var input = document.createElement('input');
-    input.type = 'number'; input.min = 18; input.max = 30; input.step = 0.1;
-    input.value = answers.itAvg !== undefined ? answers.itAvg : '';
-    row.appendChild(input);
-    wrap.appendChild(row);
-
-    var out = el('div', 'out');
-    wrap.appendChild(out);
-
-    function draw() {
-      out.innerHTML = '';
-      var r = C.italian(input.value);
-      if (!r) {
-        out.appendChild(el('p', 'help', 'Enter a value between 18 and 30 to see the two figures side by side.'));
-        return;
-      }
-      var l1 = el('div');
-      l1.appendChild(document.createTextNode(T('Projected degree mark before committee points:') + ' '));
-      l1.appendChild(el('b', null, r.projectedBase + ' / 110'));
-      out.appendChild(l1);
-
-      var l2 = el('div');
-      l2.appendChild(document.createTextNode(T('With typical discretionary points, plausibly up to') + ' '));
-      l2.appendChild(el('b', null, r.projectedCeiling + ' / 110'));
-      out.appendChild(l2);
-
-      var l3 = el('div');
-      l3.appendChild(document.createTextNode(T('Transcript-average GPA equivalent:') + ' '));
-      l3.appendChild(el('b', null, r.gpa + ' / 4.0'));
-      out.appendChild(l3);
-
-      out.appendChild(el('p', 'help',
-        'These are two different measurements and only the second is comparable to a US ' +
-        'published average. The 110 mark is not a transcript average: it starts from your ' +
-        'weighted exam average and the graduation committee then adds discretionary points, ' +
-        'so two identical transcripts can graduate several points apart. Do not compare ' +
-        '110 e lode against a figure like Duke\'s published 3.48. Bocconi states outright ' +
-        'that it may recalculate your GPA from the transcript itself.'));
-    }
-
-    input.addEventListener('input', function () {
-      set('itAvg', input.value === '' ? undefined : parseFloat(input.value));
-      draw();
-    });
-    draw();
-    return wrap;
-  };
 
   /* ------------------------------------------------------------------ */
 
   var wiz = Wizard.create({
     key: 'masters:' + trackId,
     model: M,
+    migrate: Wizard.migrateGradeScale,
     mount: '#wizard',
     nav: '#stepnav',
     progress: '#bar',
@@ -199,9 +144,10 @@
 
     resultsView.appendChild(Wizard.resultsHead(T('Your results · {track}', { track: track.name }),
       headline(competitive.length, eligible.length, blocked.length),
+      closestLine(competitive, eligible) +
       T('Your answers score {score} on the {track} weighting, and {lo}–{hi} once each school applies its own emphasis.',
         { score: fmt(s.total), track: track.name.toLowerCase(), lo: fmt(worstFit.profileScore), hi: fmt(bestFit.profileScore) }) +
-      ' ' + blockedLine(blocked.length, pct)));
+      ' ' + blockedLine(blocked.length, pct), backToAnswers));
 
     var sum = el('div', 'summary reveal');
     sum.appendChild(dialCell('Profile score', s.total,
@@ -241,7 +187,13 @@
 
     resultsView.appendChild(profileExplainer(res, bestFit, worstFit));
 
-    if (s.testDropped) {
+    if (s.test && s.test.planned && !s.test.submitting) {
+      resultsView.appendChild(note(
+        'You plan to sit a test but have not entered an expected score. Schools that require a ' +
+        'test are kept in your list with a warning, and the test weight is removed from your ' +
+        'score for now. For a truer picture, go back and enter the score you realistically ' +
+        'expect — a recent practice test is the best guide.'));
+    } else if (s.testDropped) {
       resultsView.appendChild(note(
         'You are not submitting a test score, so the test weight has been removed and the ' +
         'other factors rescaled — this is neutral, not a penalty. Schools that require a ' +
@@ -253,6 +205,11 @@
         'Cross-scale conversion is approximate — GMAT Focus and the GMAT 10th Edition are ' +
         'different instruments, and many published "averages" do not say which one they mean.',
         { pct: ordinal(Math.round(s.test.pct)), gmat: s.test.gmat })));
+      if (s.test.estimated) {
+        resultsView.appendChild(note(
+          'This uses the score you expect, not one you have sat. Treat these results as a ' +
+          'forecast: if the real score comes in lower, come back and update it.'));
+      }
     }
 
     /* ---- eligible schools ---- */
@@ -264,6 +221,7 @@
         el('div', 'empty', 'Every programme in this track is blocked by a hard rule. See below.'));
     } else {
       var t = el('div', 'table ranked');
+      var opened = openFirst(eligible);
       var runs = Wizard.verdictRuns(eligible, function (r) { return r.verdict.label; });
       (runs && runs.length > 1 ? runs : [{ rows: eligible }]).forEach(function (run) {
         if (run.label) {
@@ -271,8 +229,9 @@
           d.appendChild(el('span', 'n', String(run.rows.length)));
           t.appendChild(d);
         }
-        run.rows.forEach(function (r) { t.appendChild(schoolRow(r, res.breakEven)); });
+        run.rows.forEach(function (r) { t.appendChild(schoolRow(r, res.breakEven, opened.indexOf(r) !== -1)); });
       });
+      resultsView.appendChild(ResultsKit.foldAll(t));
       resultsView.appendChild(t);
     }
 
@@ -286,7 +245,8 @@
         'land on score alone, so you can see whether the blocking requirement is worth ' +
         'going and satisfying.', 'warn'));
       var tb = el('div', 'table');
-      blocked.forEach(function (r) { tb.appendChild(schoolRow(r, res.breakEven)); });
+      blocked.forEach(function (r) { tb.appendChild(schoolRow(r, res.breakEven, false)); });
+      resultsView.appendChild(ResultsKit.foldAll(tb));
       resultsView.appendChild(tb);
     }
 
@@ -342,10 +302,7 @@
 
     var actions = el('div', 'actions');
     var back = el('button', 'btn', '← Edit answers');
-    back.addEventListener('click', function () {
-      resultsView.hidden = true; wizardView.hidden = false;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    back.addEventListener('click', backToAnswers);
     actions.appendChild(back);
     actions.appendChild(el('span', 'spacer'));
     var other = el('a', 'btn');
@@ -405,20 +362,24 @@
   function levers(answers) {
     var t = S.testInfo(answers);
     var kind = t.submitting ? t.kind : 'focus';
-    var steps = [{ label: 'No test submitted', patch: { testStatus: 'ts_no' } }];
+    /* Keep a planned test planned, so its schools stay open as the slider moves. */
+    var status = answers.testStatus === 'ts_planned' ? 'ts_planned' : 'ts_yes';
+    var steps = [status === 'ts_planned'
+      ? { label: 'Test planned, no score yet', patch: { testStatus: 'ts_planned', testScore: undefined, greQuant: undefined } }
+      : { label: 'No test submitted', patch: { testStatus: 'ts_no' } }];
     var cur = t.submitting ? (kind === 'gre' ? parseFloat(answers.greQuant) : parseFloat(answers.testScore)) : null;
     function add(lo, hi, step, fn) { for (var v = lo; v <= hi; v += step) steps.push(fn(v)); }
     if (kind === 'gre') {
       add(140, 170, 1, function (v) {
-        return { label: T('GRE quant {n}', { n: v }), v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gre', greQuant: v } };
+        return { label: T('GRE quant {n}', { n: v }), v: v, patch: { testStatus: status, testType: 'tt_gre', greQuant: v } };
       });
     } else if (kind === 'gmat') {
       add(500, 800, 10, function (v) {
-        return { label: 'GMAT ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_gmat', testScore: v } };
+        return { label: 'GMAT ' + v, v: v, patch: { testStatus: status, testType: 'tt_gmat', testScore: v } };
       });
     } else {
       add(505, 805, 10, function (v) {
-        return { label: 'GMAT Focus ' + v, v: v, patch: { testStatus: 'ts_yes', testType: 'tt_focus', testScore: v } };
+        return { label: 'GMAT Focus ' + v, v: v, patch: { testStatus: status, testType: 'tt_focus', testScore: v } };
       });
     }
     var start = 0;
@@ -502,6 +463,14 @@
     box.appendChild(head);
 
     var body = el('div', 'panel-body');
+    var short = el('p');
+    short.textContent = T('Every programme below is scored under its own weighting, because ' +
+      'schools judge the same file differently.');
+    body.appendChild(short);
+    var more = ResultsKit.fold('How the schools weigh differently');
+    var detail = el('div', 'more-body');
+    more.appendChild(detail);
+
     var lead = el('p');
     lead.textContent = T(
       'A track weighting says what a {track} applicant is generally ' +
@@ -511,7 +480,7 @@
       'itself, and applies a test floor to everyone — grades and the test are close to the ' +
       'whole ranking there. HEC and IE run essays, recorded answers and live interviews ' +
       'instead. So every programme below is scored under its own weighting.', { track: track.name.toLowerCase() });
-    body.appendChild(lead);
+    detail.appendChild(lead);
 
     var spread = Math.round((bestFit.profileScore - worstFit.profileScore) * 10) / 10;
     if (spread >= 4) {
@@ -551,14 +520,14 @@
         tn(names.length, '{n} programme:', '{n} programmes:') + ' ' + names.join(' · ')));
       legend.appendChild(row);
     });
-    body.appendChild(legend);
+    detail.appendChild(legend);
 
     var legend = el('p', 'prof-caveat');
     legend.textContent = T(
       'In the bars above and on every programme below: a green bar with a + means this ' +
       'school weighs that factor more heavily than the track average, and a grey bar with ' +
       'a − means it weighs it less. The number is the weight out of 100.');
-    body.appendChild(legend);
+    detail.appendChild(legend);
 
     var caveat = el('p', 'prof-caveat');
     caveat.appendChild(document.createTextNode(T(
@@ -568,8 +537,9 @@
       'marks — an evenly balanced applicant scores about the same everywhere, and only a ' +
       'lopsided one moves much.')));
     caveat.appendChild(src('CAL'));
-    body.appendChild(caveat);
+    detail.appendChild(caveat);
 
+    body.appendChild(more);
     box.appendChild(body);
     return box;
   }
@@ -713,7 +683,7 @@
     return li;
   }
 
-  function schoolRow(r, breakEven) {
+  function schoolRow(r, breakEven, open) {
     var sc = r.school;
     var wrap = el('div', 'row');
 
@@ -722,6 +692,7 @@
     var meta = T('{region} · test: {policy} · rounds: {regime}',
       { region: T(sc.region), policy: T(sc.test.policy), regime: r.regime.label.toLowerCase() });
     if (r.roundMod) meta += ' ' + T('({n} for your timing)', { n: r.roundMod });
+    if (r.rangeMod) meta += ' ' + T('({n} for a test score below this school’s usual range)', { n: r.rangeMod });
     var m = el('small', null, meta);
     m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
@@ -756,22 +727,18 @@
       name.appendChild(uw);
     }
 
-    /* What this school actually leans on, shown for every programme — it is
-     * the reason two schools give the same answers different scores. */
-    name.appendChild(emphasisPanel(r));
-
-    /* Explain anything that is not already comfortably Competitive, and
-     * explain blocked schools too. */
-    if (r.gap > 0 || !r.eligible) name.appendChild(whyBox(r, r.breakEven || breakEven));
-
-    var det = el('details');
-    det.style.marginTop = '8px';
-    var sm = el('summary');
-    sm.style.cssText = 'cursor:pointer;font-size:12.5px;color:var(--muted);list-style:none';
-    sm.textContent = T('What this school actually publishes');
-    det.appendChild(sm);
+    /* Everything below the verdict is folded: how to close the gap, what
+     * this school leans on (the reason two schools score the same answers
+     * differently), and what it publishes. */
+    var explain = r.gap > 0 || !r.eligible;
+    var more = ResultsKit.fold(explain ? 'How to close the gap, and what this school weighs'
+      : 'What this school weighs and publishes', open);
+    var body = el('div', 'more-body');
+    more.appendChild(body);
+    if (explain) body.appendChild(whyBox(r, r.breakEven || breakEven));
+    body.appendChild(emphasisPanel(r));
+    body.appendChild(el('p', 'facts-head', 'What this school actually publishes'));
     var facts = el('div', 'facts');
-    facts.style.marginTop = '8px';
     sc.facts.forEach(function (f) {
       var row = el('div', 'fact');
       row.appendChild(el('span', 'fk', f.k));
@@ -801,8 +768,8 @@
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
-    det.appendChild(facts);
-    name.appendChild(det);
+    body.appendChild(facts);
+    name.appendChild(more);
 
     wrap.appendChild(name);
 
@@ -850,6 +817,11 @@
       else where = 'below the estimated middle 68%';
       v.appendChild(el('small', 'why-note',
         T('Your ~{gmat} sits {where} ({z} SD).', { gmat: t.gmat, where: T(where), z: (z >= 0 ? '+' : '') + (Math.round(z * 100) / 100) })));
+      var pen = S.rangePenalty(t.gmat, e).pts;
+      if (pen) {
+        v.appendChild(el('small', 'why-note',
+          T('Scores this far below the range a school admits rarely get through, so {n} points come off your score here. Not submitting would avoid that at schools where the test is optional.', { n: String(-pen) })));
+      }
     }
     row.appendChild(v);
     return row;
@@ -863,6 +835,13 @@
                                      : T('Not yet competitive at any of the {total}.', v);
     return blocked ? T('Competitive or better at {n} of {total} eligible.', v)
                    : T('Competitive or better at {n} of {total}.', v);
+  }
+  /* With nothing Competitive yet, the most useful fact is where you are
+   * nearest. Empty otherwise, so it adds nothing to a good result. */
+  function closestLine(competitive, eligible) {
+    if (competitive.length || !eligible.length) return '';
+    var c = eligible.slice().sort(function (x, y) { return x.gap - y.gap; })[0];
+    return T('Closest: {name}, {n} points short of Competitive.', { name: c.school.name, n: fmt(c.gap) }) + ' ';
   }
   function blockedLine(blocked, pct) {
     if (blocked) {
@@ -892,6 +871,19 @@
     if (sub) d.appendChild(el('div', 'sub', sub));
     return d;
   }
+  /* Back from the results to the questions. */
+  function backToAnswers() {
+    resultsView.hidden = true; wizardView.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* The rows whose advice matters most start open: the closest to clearing
+   * the Competitive line without having cleared it yet. */
+  function openFirst(rows) {
+    return rows.filter(function (r) { return r.gap > 0; })
+      .sort(function (x, y) { return x.gap - y.gap; }).slice(0, ResultsKit.openCount());
+  }
+
   function section(title, sub) {
     var h = el('h2', 'section reveal');
     h.appendChild(document.createTextNode(T(title)));

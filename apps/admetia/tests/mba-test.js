@@ -68,7 +68,9 @@ G.profiles.forEach((pos, i) => {
     if (!same(G.schools.map(k => r.notes[k].map(minus)), d.notes.map(n => n.map(minus)))) fail(`profile ${i} ${mode}: notes`);
     if (!same(S.improvements(a, mode).map(x => [x.groupLabel, x.optionLabel, x.gain]), d.improvements)) fail(`profile ${i} ${mode}: improvements`);
     if (!same(M.adjustedSchools.map(s => S.verdictForSchool(r.schools[s.id], s).label), d.adjusted)) fail(`profile ${i} ${mode}: school verdicts`);
-    if (!same(M.generalSchools.map(s => S.verdictForGap(r.base - s.points).label), d.general)) fail(`profile ${i} ${mode}: shared-scale verdicts`);
+    /* The fixture froze the original 30 shared-scale schools; schools added
+     * since are appended after them and are not part of the frozen record. */
+    if (!same(M.generalSchools.slice(0, d.general.length).map(s => S.verdictForGap(r.base - s.points).label), d.general)) fail(`profile ${i} ${mode}: shared-scale verdicts`);
   }
   if (detail && S.completeness(a) !== detail.completeness) fail(`profile ${i}: completeness`);
 });

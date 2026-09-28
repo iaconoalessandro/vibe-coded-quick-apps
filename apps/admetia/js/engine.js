@@ -8,6 +8,10 @@
  *
  * Answers are a flat object: radios store answers[groupId] = optionId,
  * checkboxes store answers[optionId] = true, numbers store answers[groupId].
+ *
+ * A group with `showIf: { group, is }` appears only while that answer is
+ * chosen, and counts as a question only then. A custom group that stores an
+ * answer names it in `answerKey`, and then counts like any other question.
  * ------------------------------------------------------------------------- */
 
 window.Wizard = (function () {
@@ -39,6 +43,8 @@ window.Wizard = (function () {
     var model = cfg.model;
     var steps = model.steps;
     var answers = Object.assign({}, Store.load(cfg.key));
+    /* Answers saved under an older version of the questions. */
+    if (cfg.migrate && cfg.migrate(answers)) Store.save(cfg.key, answers);
     var current = 0;
     var furthest = 0;          // highest step index the person has moved past
     var skipNote = null;
@@ -112,13 +118,19 @@ window.Wizard = (function () {
     /* Main questions left empty: everything that is not optional, and not a
      * checkbox list (where no tick is a real answer). The same rule the
      * completeness bar uses. */
+    function shown(g) {
+      return !g.showIf || answers[g.showIf.group] === g.showIf.is;
+    }
     function isAnswered(g) {
-      if (g.type === 'number') return answers[g.id] !== undefined && answers[g.id] !== '';
-      return !!answers[g.id];
+      var k = g.answerKey || g.id;
+      if (g.type === 'number' || g.answerKey) return answers[k] !== undefined && answers[k] !== '';
+      return !!answers[k];
     }
     function missingIn(i) {
       return steps[i].groups.filter(function (g) {
-        return !g.optional && g.type !== 'checkbox' && g.type !== 'custom' && !isAnswered(g);
+        if (!shown(g) || g.optional || g.type === 'checkbox') return false;
+        if (g.type === 'custom' && !g.answerKey) return false;
+        return !isAnswered(g);
       });
     }
     function missingSteps() {
@@ -165,8 +177,20 @@ window.Wizard = (function () {
       if (v === undefined || v === null || v === '') delete answers[k];
       else answers[k] = v;
       persist();
+      syncShown();
       refreshMeta();
       if (cfg.onChange) cfg.onChange(answers);
+    }
+
+    /* Show or hide conditional questions, and number the visible ones
+     * 1.1, 1.2, … without gaps. */
+    var shownNodes = [];
+    function syncShown() {
+      var n = 0;
+      shownNodes.forEach(function (x) {
+        x.box.hidden = !shown(x.group);
+        if (!x.box.hidden) x.qno.textContent = (current + 1) + '.' + (++n);
+      });
     }
 
     /* ------------------------------------------------------------------ */
@@ -228,6 +252,29 @@ window.Wizard = (function () {
         else if (input.checked) set(group.id, opt.id);
         syncAll();
       });
+
+      /* An optional question can be cleared by choosing its answer again.
+       * A radio fires `click` exactly once per activation (pointer, label or
+       * Space) and before `change`, so `answers` still holds the previous
+       * choice here; when that is this option, the click is a second click. */
+      if (!isCheck && group.optional) {
+        var unset = function () {
+          input.checked = false;
+          set(group.id, undefined);
+          syncAll();
+        };
+        input.addEventListener('click', function () {
+          if (answers[group.id] === opt.id) unset();
+        });
+        /* Space on a radio that is already chosen fires no click at all, so
+         * the keyboard gets the same behaviour here. Cancelling the keyup
+         * stops browsers that do activate on it from re-choosing it. */
+        input.addEventListener('keyup', function (e) {
+          if (e.key !== ' ' || answers[group.id] !== opt.id) return;
+          e.preventDefault();
+          unset();
+        });
+      }
 
       syncers.push(sync);
       sync();
@@ -326,9 +373,15 @@ window.Wizard = (function () {
     function groupNode(group, index) {
       var box = el('div', 'group');
       var h = el('h3');
-      h.appendChild(el('span', 'qno', (current + 1) + '.' + (index + 1)));
+      var qno = el('span', 'qno', (current + 1) + '.' + (index + 1));
+      h.appendChild(qno);
+      shownNodes.push({ box: box, qno: qno, group: group });
       h.appendChild(document.createTextNode(group.label));
-      if (group.optional) h.appendChild(el('span', 'optional-tag', 'optional'));
+      if (group.optional) {
+        var tag = el('span', 'optional-tag', 'optional');
+        if (group.type === 'radio') tag.title = T('Click your answer again to clear it');
+        h.appendChild(tag);
+      }
       box.appendChild(h);
       if (group.help) box.appendChild(el('p', 'help', group.help));
       if (group.examples) box.appendChild(examplesNode(group.examples));
@@ -379,7 +432,11 @@ window.Wizard = (function () {
        * explicit way back to "no answer". */
       if (kind === 'radio' && group.optional) {
         var clear = el('button', 'clear-link', 'Clear this answer');
-        function syncClear() { clear.hidden = !answers[group.id]; }
+        var again = el('span', 'clear-hint', 'or tap your answer again');
+        var clearRow = el('div', 'clear-row');
+        clearRow.appendChild(clear);
+        clearRow.appendChild(again);
+        function syncClear() { clearRow.hidden = !answers[group.id]; }
         clear.addEventListener('click', function () {
           set(group.id, undefined);
           var inputs = box.querySelectorAll('input[type="radio"]');
@@ -388,7 +445,7 @@ window.Wizard = (function () {
         });
         syncers.push(syncClear);
         syncClear();
-        box.appendChild(clear);
+        box.appendChild(clearRow);
       }
       return box;
     }
@@ -397,6 +454,7 @@ window.Wizard = (function () {
       var step = steps[current];
       mount.innerHTML = '';
       syncers = [];
+      shownNodes = [];
 
       var head = el('div', 'step-head');
       head.appendChild(el('p', 'kicker', T('Part {n} of {total}', { n: roman(current + 1), total: roman(steps.length) })));
@@ -408,6 +466,7 @@ window.Wizard = (function () {
       mount.appendChild(head);
 
       step.groups.forEach(function (g, i) { mount.appendChild(groupNode(g, i)); });
+      syncShown();
 
       skipNote = null;
       if (current === steps.length - 1) {
@@ -499,6 +558,7 @@ window.Wizard = (function () {
           else answers[k] = v;
         });
         persist();
+        syncShown();
         refreshMeta();
         if (cfg.onChange) cfg.onChange(answers);
       },
@@ -536,7 +596,22 @@ window.Wizard = (function () {
   /* The header of a calculator page: kicker, a headline with one emphasised
    * word (`title` is [before, emphasised, after]), standfirst, and the track's
    * photograph with its credit. */
-  function sectionHead(kicker, title, standfirst, shot) {
+  /* "25 questions · about 5 minutes · …", counted from the model. Of a set
+   * of questions shown only for one answer (Italian or foreign grades), one
+   * is ever on screen, so each set counts once. */
+  function formMeta(model) {
+    var n = 0, sets = {};
+    model.steps.forEach(function (s) {
+      s.groups.forEach(function (g) {
+        if (!g.showIf) n++;
+        else if (!sets[g.showIf.group]) { sets[g.showIf.group] = true; n++; }
+      });
+    });
+    return T('{q} questions · about {m} minutes · your answers stay in your browser',
+      { q: n, m: Math.max(2, Math.round(n * 12 / 60)) });
+  }
+
+  function sectionHead(kicker, title, standfirst, shot, meta) {
     var head = el('header', 'sec-head');
     var text = el('div', 'sec-text');
     text.appendChild(el('p', 'kicker', kicker));
@@ -546,6 +621,7 @@ window.Wizard = (function () {
     h.appendChild(document.createTextNode(T(title[2])));
     text.appendChild(h);
     text.appendChild(el('p', 'standfirst', standfirst));
+    if (meta) text.appendChild(el('p', 'form-meta', meta));
     head.appendChild(text);
     if (shot) {
       var fig = el('figure', 'photo');
@@ -580,8 +656,16 @@ window.Wizard = (function () {
 
   /* The headline over a results page: a kicker, one sentence that says what
    * happened, and a standfirst with the numbers behind it. */
-  function resultsHead(kicker, title, standfirst) {
+  /* `onEdit`, when given, puts a way back to the questions at the top of the
+   * results, not only at the foot of a long page. */
+  function resultsHead(kicker, title, standfirst, onEdit) {
     var head = el('header', 'res-head reveal');
+    if (onEdit) {
+      var edit = el('button', 'edit-top', '← Edit answers');
+      edit.type = 'button';
+      edit.addEventListener('click', onEdit);
+      head.appendChild(edit);
+    }
     head.appendChild(el('p', 'kicker', kicker));
     head.appendChild(el('h1', 'headline', title));
     if (standfirst) head.appendChild(el('p', 'standfirst', standfirst));
@@ -607,8 +691,81 @@ window.Wizard = (function () {
     return runs;
   }
 
+  /* The grade question used to list every national system; it now asks only
+   * Italian or foreign. Any older non-Italian answer becomes "foreign", so
+   * the cohort-band answer that went with it stays on screen. */
+  function migrateGradeScale(a) {
+    if (a.gradeScale && a.gradeScale !== 'sc_it' && a.gradeScale !== 'sc_foreign') {
+      a.gradeScale = 'sc_foreign';
+      return true;
+    }
+    return false;
+  }
+
   return {
     create: create, el: el, incompleteNote: incompleteNote,
-    words: words, sectionHead: sectionHead, resultsHead: resultsHead, verdictRuns: verdictRuns
+    words: words, sectionHead: sectionHead, resultsHead: resultsHead, verdictRuns: verdictRuns,
+    migrateGradeScale: migrateGradeScale, formMeta: formMeta
   };
 }());
+
+/* ---------------------------------------------------------------------------
+ * Custom question: the Italian exam average. Stores answers.itAvg and shows
+ * what it converts to — a rough US GPA and a place in an Italian cohort,
+ * which is what the scorers use. The 110 degree mark is deliberately absent.
+ * ------------------------------------------------------------------------- */
+window.CustomGroups = window.CustomGroups || {};
+window.CustomGroups.italian = function (group, answers, set) {
+  'use strict';
+  var el = Wizard.el, T = window.I18N.t, C = window.CONVERT;
+  var BAND = {
+    gb_top5: 'the top ~5%', gb_top10: 'the top ~10%', gb_top25: 'the top ~25%',
+    gb_top50: 'the top half', gb_mid: 'around the median', gb_low: 'below the median'
+  };
+
+  var wrap = el('div', 'converter');
+  var row = el('div', 'numrow');
+  row.appendChild(el('span', null, 'Average out of 30:'));
+  var input = document.createElement('input');
+  input.type = 'number'; input.min = 18; input.max = 30; input.step = 0.01;
+  input.inputMode = 'decimal';
+  input.setAttribute('aria-label', T('Weighted exam average, out of 30'));
+  input.value = answers.itAvg !== undefined ? answers.itAvg : '';
+  row.appendChild(input);
+  wrap.appendChild(row);
+
+  var out = el('div', 'out');
+  wrap.appendChild(out);
+
+  function draw() {
+    out.innerHTML = '';
+    var r = C.italian(input.value);
+    if (!r) {
+      out.appendChild(el('p', 'help', 'Enter a value between 18 and 30, for example 27.4.'));
+      return;
+    }
+    var l1 = el('div');
+    l1.appendChild(document.createTextNode(T('US GPA equivalent, roughly:') + ' '));
+    l1.appendChild(el('b', null, r.gpa.toFixed(2) + ' / 4.0'));
+    out.appendChild(l1);
+
+    var l2 = el('div');
+    l2.appendChild(document.createTextNode(T('Place in a typical Italian cohort:') + ' '));
+    l2.appendChild(el('b', null, BAND[r.band]));
+    out.appendChild(l2);
+
+    out.appendChild(el('p', 'help',
+      'Both are indicative. The cohort estimate takes about 26/30 as the typical average, ' +
+      'which is what AlmaLaurea\'s national figures imply; faculties differ, and ' +
+      'engineering grades lower than economics. Some schools, Bocconi among them, ' +
+      'recalculate your GPA from the transcript themselves.'));
+  }
+
+  input.addEventListener('input', function () {
+    var v = parseFloat(input.value);
+    set('itAvg', isNaN(v) ? undefined : v);
+    draw();
+  });
+  draw();
+  return wrap;
+};

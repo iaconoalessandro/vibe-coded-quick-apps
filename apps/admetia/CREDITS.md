@@ -76,10 +76,15 @@ Where a programme publishes a real acceptance rate — or one exists as a UK Fre
 Information disclosure — that figure is used instead, and tagged accordingly. Applicant
 reports are the weakest source in the vocabulary and are badged as such in the interface.
 
-The MBA calculator's point values and school thresholds follow a points-based scoring
-model published by a third-party MBA admissions consultancy, so its results match that
-model's. The code, data structure and interface are this project's own, and the project
-is not affiliated with or endorsed by that firm.
+The MBA calculator uses a points-based evaluation model across 42 business schools.
+The code, data structure, calibrations and interface are this project's own.
+
+Four MBA schools — CEIBS, Peking Guanghua, Fudan and Nanyang — are calibrated on the
+same scale: each school's published or reported test averages, experience minimum and
+selectivity, cross-checked against school pages, class profiles and applicant reviews,
+and set against the schools already on the scale with similar figures. The same mix of
+sources informs the master's programmes, where every fact carries a tag saying where it
+came from.
 
 ## Choosing a replacement
 

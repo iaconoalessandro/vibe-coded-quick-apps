@@ -507,50 +507,43 @@ The City (default), Wall Street and FBI Watchlist — stored under the same
 edition rather than being lost. The picker is a real radio group: arrow keys move the
 choice.
 
-The City follows ft.com, measured in a browser: paper `#FFF1E5`, text `#33302E`, standfirst
+The City design specifications: paper `#FFF1E5`, text `#33302E`, standfirst
 `#66605C` in sans 16/24, section labels claret `#990F3D`, links and the active nav item teal
 `#0D7680` / `#0A5E66`, quote marks oxford `#0F5499`, feature boxes `#F2DFCE`, tags `#FCD0B1`,
 a dark `#262A33` market bar with outlined changes, headlines in a display serif at weight
-~400 (Financier there, Source Serif 4 here), nav 12 px 600 uppercase.
+~400 (Source Serif 4), nav 12 px 600 uppercase.
 
-FBI Watchlist follows forbes.com, measured the same way: interface 16/24, labels 12/18
+FBI Watchlist design specifications: interface 16/24, labels 12/18
 uppercase, headlines 40/48 and 32/38.4 in a demi display serif, decks in Georgia 18/28.8,
 list numerals 18 px red `#DC0000`, links `#003891`, "trending" blue `#007AC8`, market
 up/down `#008516` / `#D8361E`.
 
-Wall Street follows the WSJ from a screenshot (wsj.com refuses automated browsers): black
-top strip, a white market line printing each value and change in green or red with an
-arrow, a blue `#0080C3` button, colour photographs, bold condensed headlines. Text stays in
-Times New Roman at the paper's 17/27, as asked.
+Wall Street design specifications: black top strip, a white market line printing each value
+and change in green or red with an arrow, a blue `#0080C3` button, colour photographs,
+bold condensed headlines. Text stays in Times New Roman at 17/27.
 
-A second pass aligned each edition with the papers' published type systems. The City
-uses the FT Origami o-typography steps (56/56 and 48/48 headlines, 40/40 and 32/32 section
-heads, 28/32 story titles, 24/28 question heads, 20/24 decks, 18/28 reading text in the
-serif, 12/16 captions), 2 px corners, teal underlined links and `#96CC28` for gains on
-the market bar. Wall Street pairs Escrow-style condensed headlines (~44 px / 1.1) with
-text at 16/1.6 and a sans for the interface, standing in for Retina: nav 15 px, labels
-12 px uppercase with 0.05em tracking, true black `#000`, greys `#555` / `#E0E0E0`,
-surfaces `#F5F5F5`, blue `#0080C3`. FBI Watchlist sets text in the sans at 16/1.5 as
-Forbes does in Graphik, keeps Georgia for decks, teasers and italic pull quotes, and
-headlines at 40/48 and 32/38.4. Where a live measurement disagreed with a published
-figure, the measurement was kept.
+Typography scale pass. The City uses a classic modular typography scale (56/56 and 48/48 headlines,
+40/40 and 32/32 section heads, 28/32 story titles, 24/28 question heads, 20/24 decks, 18/28 reading
+text in the serif, 12/16 captions), 2 px corners, teal underlined links and `#96CC28` for gains on
+the market bar. Wall Street pairs condensed headlines (~44 px / 1.1) with text at 16/1.6 and a sans
+for the interface: nav 15 px, labels 12 px uppercase with 0.05em tracking, true black `#000`,
+greys `#555` / `#E0E0E0`, surfaces `#F5F5F5`, blue `#0080C3`. FBI Watchlist sets text in the sans at
+16/1.5, keeps Georgia for decks, teasers and italic pull quotes, and headlines at 40/48 and 32/38.4.
+Where a live measurement disagreed with a scale figure, the measurement was kept.
 
 **Nameplates.** Wall Street and FBI Watchlist show an image wordmark instead of live type.
-Each typeface was picked by setting the real logo's own words ("Forbes", "THE WALL STREET
-JOURNAL.") in a dozen free candidates and stacking them under the real logos at equal
-height: Gloock matched Forbes' bracketed heavy serifs; Roboto Serif at its narrowest width
-matched the WSJ's condensed Scotch capitals, including the J that drops below the line.
-Wall Street's headlines use the same Roboto Serif cut, so headline and nameplate agree, as
-they do at the WSJ. The section nav now stays on one row at every width, scrolling sideways
-when it does not fit; previously it wrapped to two lines between ~640 and ~1100 px, and on
-phones three edition rules had removed its side padding, clipping the first link at 0 px.
+Each typeface was picked to match the classic editorial aesthetic: Gloock with bracketed heavy serifs;
+Roboto Serif at its narrowest width with condensed Scotch capitals, including the J that drops below the line.
+Wall Street's headlines use the same Roboto Serif cut, so headline and nameplate agree.
+The section nav now stays on one row at every width, scrolling sideways when it does not fit;
+previously it wrapped to two lines between ~640 and ~1100 px, and on phones three edition rules
+had removed its side padding, clipping the first link at 0 px.
 Checked: scroll width equals viewport width for every edition at 1440, 1000, 800 and 390 px,
 and the first nav link sits at the 18 px gutter on phones in all nine page × edition
 combinations tested. Wall Street now loads only its own two webfonts.
 
-The market line sits at the top of the page in The City and Wall Street, as the FT and WSJ
-print theirs, and under the navigation in FBI Watchlist, as Forbes does; it moves when the
-edition changes.
+The market line sits at the top of the page in The City and Wall Street,
+and under the navigation in FBI Watchlist; it moves when the edition changes.
 
 The **Admissions Index** ticker (`js/ticker.js`) prices each programme at its Competitive
 bar and, where answers are saved, shows the margin against it. Checked: 106 entries on the
