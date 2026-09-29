@@ -23,14 +23,14 @@ const I=ctx.Intro;
 t('js/intro.js publishes its plan without touching the page',!!I&&typeof I.plan==='function');
 
 /* ------------------------------------------------------------- plan --- */
-const HERE='https://iaconoalessandro.github.io/admissions-calculator/mba.html';
+const HERE='https://iaconoalessandro.github.io/admetia/mba.html';
 const base={navType:'navigate',referrer:'',here:HERE,reduced:false,animate:true,robot:false};
 const plan=o=>I.plan(Object.assign({},base,o));
 t('a new tab, a typed address or a bookmark gets the full titles',plan({})==='full');
 t('a link from another site gets the full titles',plan({referrer:'https://www.google.com/search?q=mba'})==='full');
 t('a link from another project on the same github.io host gets the full titles',plan({referrer:'https://iaconoalessandro.github.io/other-project/'})==='full');
 t('a reload gets the fade',plan({navType:'reload'})==='fade'&&plan({navType:'reload',referrer:HERE})==='fade');
-t('the site\'s own links get nothing',plan({referrer:'https://iaconoalessandro.github.io/admissions-calculator/index.html'})==='none'&&plan({referrer:'https://iaconoalessandro.github.io/admissions-calculator/'})==='none');
+t('the site\'s own links get nothing',plan({referrer:'https://iaconoalessandro.github.io/admetia/index.html'})==='none'&&plan({referrer:'https://iaconoalessandro.github.io/admetia/'})==='none');
 t('back and forward get nothing',plan({navType:'back_forward'})==='none');
 t('reduced motion gets nothing, even on arrival or reload',plan({reduced:true})==='none'&&plan({reduced:true,navType:'reload'})==='none');
 t('no Web Animations, no titles',plan({animate:false})==='none');

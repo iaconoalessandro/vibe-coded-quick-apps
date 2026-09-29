@@ -69,7 +69,7 @@ t('the filters use the verdict badges\' words',/\['safe', 'Strong'\], \['target'
 /* ----------------------------------------------------------- sharing --- */
 PAGES.forEach(p=>{
   const h=read(p);
-  const img=/<meta property="og:image" content="https:\/\/iaconoalessandro\.github\.io\/admissions-calculator\/([^"]+)">/.exec(h);
+  const img=/<meta property="og:image" content="https:\/\/iaconoalessandro\.github\.io\/admetia\/([^"]+)">/.exec(h);
   t(p+' has a preview card (title, description, image, large-card tag)',
     /property="og:title"/.test(h)&&/property="og:description"/.test(h)&&!!img&&/name="twitter:card" content="summary_large_image"/.test(h));
   t(p+' points its card at an image that exists',!!img&&fs.existsSync(path.join(APP,img[1])),img&&img[1]);

@@ -12,7 +12,7 @@
 
 Admetia is a privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US — in **English and Italian**.
 
-**Live Site:** <https://iaconoalessandro.github.io/admissions-calculator/>
+**Live Site:** <https://iaconoalessandro.github.io/admetia/>
 
 Zero build steps to run it. Zero runtime dependencies. Your answers never leave your browser: the only request the site makes is an optional, anonymous visit count (see *Visit counting* below), and it is off until a counter address is set.
 

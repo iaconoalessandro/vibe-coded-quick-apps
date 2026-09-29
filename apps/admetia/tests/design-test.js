@@ -17,7 +17,7 @@ function t(label,cond,extra){ if(cond){pass++;console.log('PASS  '+label);} else
 
 /* -------------------------------------------------------------- 404 --- */
 const nf=read('404.html');
-t('404.html resolves links from the site\'s folder, at any depth',/<base href="' \+ \(\/\^\\\/admissions-calculator\\\/\/\.test\(location\.pathname\)/.test(nf));
+t('404.html resolves links from the site\'s folder, at any depth',/<base href="' \+ \(\/\^\\\/admetia\\\/\/\.test\(location\.pathname\)/.test(nf));
 t('404.html is kept out of search results',/<meta name="robots" content="noindex">/.test(nf));
 const links=[...nf.matchAll(/<li><a href="([^"?]+)/g)].map(m=>m[1]);
 t('404.html links to the front page and every calculator page, all of which exist',

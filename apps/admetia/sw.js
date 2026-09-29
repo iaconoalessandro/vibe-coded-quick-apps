@@ -13,8 +13,8 @@
  * ------------------------------------------------------------------------- */
 
 var VERSION = 'v4';
-var SHELL = 'admissions-shell-' + VERSION;
-var MEDIA = 'admissions-media-' + VERSION;
+var SHELL = 'admetia-shell-' + VERSION;
+var MEDIA = 'admetia-media-' + VERSION;
 
 var SHELL_FILES = [
   './',

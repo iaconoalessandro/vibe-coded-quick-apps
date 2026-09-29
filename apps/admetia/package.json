@@ -1,5 +1,5 @@
 {
-  "name": "admissions-calculator",
+  "name": "admetia",
   "private": true,
   "description": "Build and test tooling only; the site itself runs straight from these files.",
   "scripts": {

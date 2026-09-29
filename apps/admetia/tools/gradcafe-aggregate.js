@@ -98,7 +98,7 @@ function get(url) {
   return new Promise((resolve, reject) => {
     const req = https.get(url, {
       headers: {
-        'User-Agent': 'admissions-calculator research aggregator (one-time, aggregates only)',
+        'User-Agent': 'admetia research aggregator (one-time, aggregates only)',
         'Accept': 'text/html',
         'Accept-Encoding': 'gzip'
       }
