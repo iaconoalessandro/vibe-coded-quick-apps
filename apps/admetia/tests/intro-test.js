@@ -1,9 +1,10 @@
 /* The opening titles (js/intro.js).
  *
- *   plan      First visit gets the full titles, every later one the flash,
- *             and nobody who asks for reduced motion gets either.
- *   wiring    Every page loads it straight after js/theme.js, in <head>; the
- *             service worker caches it; "Clear everything" keeps its key.
+ *   plan      Arriving at the site gets the full titles; a reader already on
+ *             it (reload, back/forward, the site's own links) the flash; and
+ *             nobody who asks for reduced motion gets either.
+ *   wiring    Every page loads it straight after js/theme.js, in <head>, and
+ *             the service worker caches it.
  *   words     Three lines of four beats, in English and Italian.
  *   counts    The numbers in the corner match the models. */
 
@@ -16,27 +17,31 @@ let pass=0,fail=0;
 function t(label,cond,extra){ if(cond){pass++;console.log('PASS  '+label);} else {fail++;console.log('FAIL  '+label+(extra?'  → '+extra:''));} }
 
 /* Load it with no matchMedia: it publishes window.Intro and stops there. */
-const ctx={window:{},document:{documentElement:{}},navigator:{userAgent:''}};
+const ctx={window:{},document:{documentElement:{}},navigator:{userAgent:''},URL};
 ctx.window=ctx; vm.createContext(ctx);
 vm.runInContext(read('js/intro.js'),ctx,{filename:'js/intro.js'});
 const I=ctx.Intro;
 t('js/intro.js publishes its plan without touching the page',!!I&&typeof I.plan==='function');
 
 /* ------------------------------------------------------------- plan --- */
-const base={seen:false,reduced:false,animate:true,robot:false};
+const base={onSite:false,reduced:false,animate:true,robot:false};
 const plan=o=>I.plan(Object.assign({},base,o));
-t('a first visit gets the full titles',plan({})==='full');
-t('a later visit gets the flash',plan({seen:true})==='flash');
-t('with "every time" on, each opening of the site gets the full titles',plan({seen:true,always:true})==='full');
-t('  and the pages after it, in the same visit, the flash',plan({seen:true,always:true,inSession:true})==='flash');
-t('reduced motion gets nothing, first visit or not',plan({reduced:true})==='none'&&plan({reduced:true,seen:true})==='none');
+t('arriving at the site gets the full titles',plan({})==='full');
+t('a reader already on the site gets the flash',plan({onSite:true})==='flash');
+t('reduced motion gets nothing, arriving or not',plan({reduced:true})==='none'&&plan({reduced:true,onSite:true})==='none');
 t('no Web Animations, no titles',plan({animate:false})==='none');
 t('crawlers and automated browsers get nothing',plan({robot:true})==='none');
+const HERE='https://iaconoalessandro.github.io/admissions-calculator/mba.html';
+const on=(type,ref)=>I.onSite(type,ref,HERE);
+t('a new tab, a typed address or a bookmark counts as arriving',on('navigate','')===false);
+t('a link from another site counts as arriving',on('navigate','https://www.google.com/search?q=mba')===false);
+t('a link from another project on the same github.io host counts as arriving',on('navigate','https://iaconoalessandro.github.io/other-project/')===false);
+t('the site\'s own links count as already on the site',on('navigate','https://iaconoalessandro.github.io/admissions-calculator/index.html')===true&&on('navigate','https://iaconoalessandro.github.io/admissions-calculator/')===true);
+t('a reload counts as already on the site',on('reload','')===true);
+t('back and forward count as already on the site',on('back_forward','')===true);
 const src=read('js/intro.js');
-t('blocked storage counts as seen, so nobody gets the full titles on every page',/var seen = true, always = false, inSession = true;\s*try \{\s*seen = localStorage\.getItem\(KEY\) === '1';/.test(src));
+t('nothing about a visit is remembered: old keys are cleared, none written',/removeItem\('admissions-calc:intro-seen'\)/.test(src)&&!/setItem\(/.test(src));
 t('the flash is the nameplate alone: no colour strip',/function flash\(\) \{[^}]*landing\(ed, \.45\);\s*\}/.test(src)&&!/strip/.test(src));
-t('the key is written when the full titles start',/function full\(\) \{\s*try \{ localStorage\.setItem\(KEY, '1'\); \}/.test(src));
-
 t('The City\'s nameplate is spelled once: the typed-in letters replace the text, not follow it',
   /np\.textContent = '';\s*letters\(np, 'ADMISSION CHANCES'\)/.test(src));
 
@@ -44,11 +49,7 @@ t('The City\'s nameplate is spelled once: the typed-in letters replace the text,
 PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',
   read(p).indexOf('<script src="js/theme.js"></script>\n<script src="js/intro.js"></script>\n')>-1&&read(p).indexOf('js/intro.js')<read(p).indexOf('</head>')));
 t('sw.js caches js/intro.js',/'js\/intro\.js'/.test(read('sw.js')));
-t('"Clear everything" keeps the intro key',/PREFIX \+ 'intro-seen'/.test(read('js/session.js'))&&I.KEY==='admissions-calc:intro-seen');
-t('the footer offers "every time", kept by "Clear everything", read by the titles',
-  /'Play the full opening titles every time I open the site'/.test(read('js/session.js'))&&/INTRO_ALWAYS = PREFIX \+ 'intro-always'/.test(read('js/session.js'))&&
-  /KEEP = \[[^\]]*INTRO_ALWAYS/.test(read('js/session.js'))&&I.ALWAYS==='admissions-calc:intro-always');
-t('  in Italian too',/'Play the full opening titles every time I open the site': '/.test(read('js/i18n-it.js')));
+t('there is no footer switch for the titles',!/opening titles/.test(read('js/session.js'))&&!/intro-/.test(read('js/session.js'))&&!/opening titles/.test(read('js/i18n-it.js')));
 t('tools/build.js inlines it',/swap\('<script src="js\/intro\.js"><\/script>'/.test(read('tools/build.js')));
 
 /* ------------------------------------------------------------ words --- */

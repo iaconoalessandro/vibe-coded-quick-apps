@@ -1,9 +1,9 @@
-/* Opening titles. On a reader's first visit, from whichever page they land on,
- * the three editions cut past in kinetic type — one of three lines, picked at
- * random — and the nameplate lands in its place on the page. Every later page
- * gets a quick transition instead: the nameplate composing and landing, half
- * a second. A footer switch (js/session.js) asks for the full titles each
- * time the site is opened — still the quick one between pages of a visit.
+/* Opening titles. Whenever a reader arrives — a new tab, a typed address, a
+ * bookmark, a link from somewhere else — the three editions cut past in
+ * kinetic type (one of three lines, picked at random) and the nameplate lands
+ * in its place on the page. A reader already on the site — reloading, going
+ * back or forward, following one of its own links — gets a quick transition
+ * instead: the nameplate composing and landing, half a second.
  *
  * Runs in <head>, right after js/theme.js (which has already set the edition
  * and the language), so the overlay is up before the page first paints. The
@@ -17,15 +17,22 @@
 (function () {
   'use strict';
 
-  var KEY = 'admissions-calc:intro-seen';
-  var ALWAYS = 'admissions-calc:intro-always';
-  var SESSION = 'admissions-calc:intro-session';
-
   /* What a page load gets: 'full', 'flash' or 'none'. */
   function plan(o) {
     if (o.reduced || !o.animate || o.robot) return 'none';
-    if (!o.seen) return 'full';
-    return o.always && !o.inSession ? 'full' : 'flash';
+    return o.onSite ? 'flash' : 'full';
+  }
+
+  /* Already on the site: the load is a reload, a step back or forward, or a
+   * link followed from one of the site's own pages (same origin, same folder:
+   * other projects on the same github.io host do not count). */
+  function onSite(navType, referrer, here) {
+    if (navType === 'reload' || navType === 'back_forward') return true;
+    if (!referrer) return false;
+    try {
+      var r = new URL(referrer), h = new URL(here);
+      return r.origin === h.origin && r.pathname.indexOf(h.pathname.replace(/[^\/]*$/, '')) === 0;
+    } catch (e) { return false; }
   }
 
   /* Counts shown in the corner of the titles. tests/intro-test.js checks them
@@ -47,19 +54,22 @@
     }
   };
 
-  window.Intro = { plan: plan, KEY: KEY, ALWAYS: ALWAYS, COUNT: COUNT, TXT: TXT };
+  window.Intro = { plan: plan, onSite: onSite, COUNT: COUNT, TXT: TXT };
+
+  /* Keys from earlier versions, which remembered a first visit. */
+  try {
+    localStorage.removeItem('admissions-calc:intro-seen');
+    localStorage.removeItem('admissions-calc:intro-always');
+    sessionStorage.removeItem('admissions-calc:intro-session');
+  } catch (e) { /* storage blocked */ }
 
   var root = document.documentElement;
   if (typeof matchMedia !== 'function') return;
 
-  var seen = true, always = false, inSession = true;
-  try {
-    seen = localStorage.getItem(KEY) === '1';
-    always = localStorage.getItem(ALWAYS) === '1';
-    inSession = sessionStorage.getItem(SESSION) === '1';
-  } catch (e) { /* storage blocked: flash only */ }
+  var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  var navType = nav ? nav.type : performance.navigation && ['navigate', 'reload', 'back_forward'][performance.navigation.type];
   var mode = plan({
-    seen: seen, always: always, inSession: inSession,
+    onSite: onSite(navType, document.referrer, location.href),
     reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
     animate: typeof root.animate === 'function',
     robot: !!navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)
@@ -338,7 +348,6 @@
   var hudEd, hudLoad, hudBar;
 
   function full() {
-    try { localStorage.setItem(KEY, '1'); } catch (e) { /* ignore */ }
     var q = T.lines[Math.floor(Math.random() * T.lines.length)];
     var beats = [[500, 'w', order[0], q[0]], [500, 'w', order[1], q[1]], [520, 'w', order[2], q[2]], [760, 'r', ed, q[3]]];
     var t = 0;
@@ -448,7 +457,6 @@
       if (started) return;
       started = true;
       whenVisible(guard(function () {
-        try { sessionStorage.setItem(SESSION, '1'); } catch (e) { /* ignore */ }
         if (mode === 'full') { full(); if (skip) skip.focus({ preventScroll: true }); } else flash();
       }));
     });

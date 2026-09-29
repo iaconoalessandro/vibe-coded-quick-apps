@@ -15,18 +15,14 @@ preview server), non dal repo.
 
 | Situazione | Cosa vede |
 |---|---|
-| Primo ingresso in assoluto su quel browser, **da qualsiasi pagina** (index, business, computing, it, masters, mba) | Intro completa, ~3,3 s |
-| Tutte le visite successive, su qualsiasi pagina | Lampo, ~0,7 s |
+| **Entra nel sito**: scheda nuova, indirizzo digitato, preferito, link da un altro sito | Intro completa, ~3,3 s |
+| **È già sul sito**: ricarica, indietro/avanti, link interno del sito | Transizione veloce, ~0,5 s |
 | `prefers-reduced-motion: reduce` | Niente: la pagina appare subito |
-| Storage non disponibile (`localStorage` lancia errore) | Lampo (mai l'intro completa ripetuta a ogni pagina) |
+| Scheda aperta in background | Niente |
 | Stampa | Niente (`@media print`) |
-| Interruttore nel footer "Play the full opening titles every time I open the site" acceso | Intro completa a ogni apertura del sito; lampo tra le pagine della stessa visita |
 
-- Il ricordo è una chiave `localStorage` `admissions-calc:intro-seen`, scritta **quando
-  l'intro parte** (non quando finisce: un reload a metà dà il lampo, non la ripetizione).
-- Aggiungi la chiave alla lista `KEEP` in `js/session.js`: è un'impostazione, non una
-  risposta. "Clear everything" e "cancella alla chiusura" non devono riattivare l'intro.
-- Se l'URL ha un `#`, alla fine dell'intro la pagina deve arrivare comunque a quel punto.
+- "Già sul sito" si decide dal tipo di navigazione (`reload`, `back_forward`) o da un
+  `document.referrer` dello stesso sito (stessa origine e stessa cartella). Non si salva nulla.
 
 ## 2. Salto
 
