@@ -422,7 +422,7 @@ window.ResultsKit = (function () {
       var hint = el('p', 'filter-hint');
       hint.appendChild(el('b', null, 'Tap to filter.'));
       hint.appendChild(document.createTextNode(' ' + T('Pick a region or a verdict to narrow the lists; pick it again to undo. ' +
-        'Every verdict next to a score, marked ?, opens what it means in practice.')));
+        'Every verdict next to a score, marked +, opens what it means in practice.')));
 
       function rows() { return root.querySelectorAll('.row'); }
       /* A row's name is the first text in its name cell. */

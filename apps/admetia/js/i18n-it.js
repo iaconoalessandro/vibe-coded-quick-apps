@@ -446,7 +446,7 @@ I18N.add('it', {
   'Deadlines': 'Scadenze',
   'Filter': 'Filtra',
   'Tap to filter.': 'Tocca per filtrare.',
-  'Pick a region or a verdict to narrow the lists; pick it again to undo. Every verdict next to a score, marked ?, opens what it means in practice.': 'Scegli un’area o un verdetto per restringere le liste; sceglilo di nuovo per annullare. Ogni verdetto accanto a un punteggio, segnato con ?, apre cosa significa in pratica.',
+  'Pick a region or a verdict to narrow the lists; pick it again to undo. Every verdict next to a score, marked +, opens what it means in practice.': 'Scegli un’area o un verdetto per restringere le liste; sceglilo di nuovo per annullare. Ogni verdetto accanto a un punteggio, segnato con +, apre cosa significa in pratica.',
   'Show all': 'Mostra tutto',
   'What this verdict means': 'Cosa significa questo verdetto',
   'Read this before you rely on a number': 'Leggi questo prima di fidarti di un numero',

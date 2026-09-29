@@ -62,8 +62,8 @@ t('there is no "forget everything when I close this tab" setting any more; "Clea
 t('the filter bar is labelled (Filter, Region, Verdict), explained in a hint, and can be cleared in one press',
   /el\('span', 'pill-k', 'Filter'\)/.test(kit)&&/el\('span', 'pill-k', 'Region'\)/.test(kit)&&/el\('span', 'pill-k', 'Verdict'\)/.test(kit)&&/'Tap to filter\.'/.test(kit)&&/el\('button', 'filter-clear', 'Show all'\)/.test(kit));
 t('on a phone the filters lead the strip, ahead of the search and the order',/\.filters > \.filter-search, \.filters > \.filter-sort \{ order: 5; \}/.test(read('css/app.css')));
-t('every verdict badge is a keyboard-reachable button marked with a ?',
-  /b\.setAttribute\('role', 'button'\);\s*b\.tabIndex = 0;/.test(kit)&&/\.badge\[role="button"\]::after \{[^}]*content: "\?"/.test(read('css/app.css'))&&/e\.key === 'Enter' \|\| e\.key === ' '/.test(kit));
+t('every verdict badge is a keyboard-reachable button marked with a +',
+  /b\.setAttribute\('role', 'button'\);\s*b\.tabIndex = 0;/.test(kit)&&/\.badge\[role="button"\]::after \{[^}]*content: "\+"/.test(read('css/app.css'))&&/e\.key === 'Enter' \|\| e\.key === ' '/.test(kit));
 t('and none of it prints',/\.filter-hint, \.whatif/.test(read('css/app.css'))&&/\.has-key \.row \.badge\[role="button"\]::after, \.has-key \.dlcal-row \.badge\[role="button"\]::after \{ display: none; \}/.test(read('css/app.css')));
 
 /* --------------------------------------------------------- editions --- */
