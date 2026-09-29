@@ -1190,12 +1190,12 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="wallstreet"] .cta:hover { background: #006699; }
 :root[data-theme="wallstreet"] .masthead { padding: 20px var(--gutter) 14px; }
 :root[data-theme="wallstreet"] .nameplate {
-  display: block; margin: 0 auto; width: min(100%, 440px); aspect-ratio: 1040 / 131;
-  background: url("../img/wordmark/wall-street.png") center / contain no-repeat;
-  background-image: image-set(url("../img/wordmark/wall-street.webp") type("image/webp"), url("../img/wordmark/wall-street.png") type("image/png"));
+  display: block; margin: 0 auto; width: min(100%, 268px); aspect-ratio: 489 / 128;
+  background: url("../img/wordmark/wall-street.png?v=admetia") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/wall-street.webp?v=admetia") type("image/webp"), url("../img/wordmark/wall-street.png?v=admetia") type("image/png"));
   font-size: 0; line-height: 0; color: transparent;
 }
-:root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 340px); }
+:root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 199px); }
 :root[data-theme="wallstreet"] .motto { font-style: italic; font-size: 17px; }
 :root[data-theme="wallstreet"] .sections-inner {
   border-top: 1px solid var(--rule); border-bottom: 3px double var(--rule);
@@ -1312,12 +1312,12 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 }
 :root[data-theme="watchlist"] .masthead { padding: 6px var(--gutter) 14px; }
 :root[data-theme="watchlist"] .nameplate {
-  display: block; margin: 4px auto 0; width: min(100%, 560px); aspect-ratio: 1560 / 148;
-  background: url("../img/wordmark/fbi-watchlist.png") center / contain no-repeat;
-  background-image: image-set(url("../img/wordmark/fbi-watchlist.webp") type("image/webp"), url("../img/wordmark/fbi-watchlist.png") type("image/png"));
+  display: block; margin: 4px auto 0; width: min(100%, 303px); aspect-ratio: 688 / 150;
+  background: url("../img/wordmark/fbi-watchlist.png?v=admetia") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/fbi-watchlist.webp?v=admetia") type("image/webp"), url("../img/wordmark/fbi-watchlist.png?v=admetia") type("image/png"));
   font-size: 0; line-height: 0; color: transparent;
 }
-:root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 400px); }
+:root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 220px); }
 :root[data-theme="watchlist"] .motto { color: #bbb; font: 400 14px/21px var(--font-ui); margin-top: 8px; }
 :root[data-theme="watchlist"] .sections-inner {
   border-top: 1px solid #333; border-bottom: 0; padding-top: 12px; padding-bottom: 12px;
@@ -1840,8 +1840,8 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .sec-cluster + .sec-cluster { padding-left: 14px; }
   .sec-items { flex-wrap: nowrap; gap: 18px; }
   :root[data-theme="watchlist"] .cta { display: none; }
-  :root[data-theme="watchlist"] .nameplate, :root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 330px); }
-  :root[data-theme="wallstreet"] .nameplate, :root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 300px); }
+  :root[data-theme="watchlist"] .nameplate, :root[data-theme="watchlist"] .masthead.compact .nameplate { width: min(100%, 193px); }
+  :root[data-theme="wallstreet"] .nameplate, :root[data-theme="wallstreet"] .masthead.compact .nameplate { width: min(100%, 176px); }
   .ticker { padding: 0; }
   .ticker-label .ticker-name { display: none; }
   .ticker-view { margin: 0 10px; }

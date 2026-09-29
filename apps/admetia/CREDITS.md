@@ -15,7 +15,7 @@ re-encode for the web.
 | File | Used for | Subject | Source |
 |---|---|---|---|
 | `hero.jpg` | Front-page lead photograph | Students writing an exam | [Pexels 37758542](https://www.pexels.com/photo/university-students-studying-at-desks-37758542/) |
-| `../og-card.jpg` | The link-preview card shown when the site is shared (made from `hero.jpg`, set in the site's own typefaces) | Students writing an exam | as `hero.jpg` |
+| `../og-admetia.jpg` | The link-preview card shown when the site is shared (made from `hero.jpg`, set in the site's own typefaces) | Students writing an exam | as `hero.jpg` |
 | `scoring.jpg` | Not currently shown (was the landing "how the scoring works" band) | Assessors going through a printed application file | [Pexels 8730981](https://www.pexels.com/photo/a-close-up-shot-of-people-reviewing-documents-8730981/) |
 | `picker.jpg` | Business section-front header | Students working through notes together | [Pexels 7683734](https://www.pexels.com/photo/college-students-studying-together-7683734/) |
 | `business.jpg` | Business entry on the front page | Graduation, caps in the air | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Korea_University_Business_School_graduation_-_036A0151_-_52721871687.jpg) — KUBS, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |

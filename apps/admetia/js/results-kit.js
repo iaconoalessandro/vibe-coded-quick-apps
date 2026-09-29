@@ -729,7 +729,7 @@ window.ResultsKit = (function () {
     /* ---- page one: where you stand, and the list ---- */
     var p1 = el('div', 'plan-page');
     var mast = el('header', 'plan-mast');
-    mast.appendChild(el('span', 'plan-name', 'Admission Chances'));
+    mast.appendChild(el('span', 'plan-name', 'Admetia'));
     mast.appendChild(el('span', 'plan-date', T('Battle plan · {date}', { date: fmtDate(isoOf(now)) })));
     p1.appendChild(mast);
     p1.appendChild(el('p', 'plan-kicker', plan.kicker));

@@ -29,7 +29,7 @@
 
   var crumb = document.getElementById('crumb');
   if (crumb) crumb.textContent = track.name;
-  document.title = T('{track} — Admission Chances Calculator', { track: track.name });
+  document.title = T('{track} — Admetia', { track: track.name });
 
   /* One photograph per track, chosen for what the track actually selects on
    * rather than for a campus: computer science is people reading code, data

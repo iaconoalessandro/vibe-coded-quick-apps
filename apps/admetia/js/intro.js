@@ -46,17 +46,19 @@
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'YOU?'], ['GMAT.', 'GPA.', 'CV.', 'VERDICT.'], ['WHERE', 'DO YOU', 'ACTUALLY', 'STAND?']],
       data: COUNT.programmes + '+ business programmes · ' + COUNT.mba + ' MBA schools · ' + COUNT.computing + ' computing',
       loading: 'Loading', skip: 'Skip',
-      motto: 'An independent calculator for MBA, business and computing master’s degrees'
+      motto: 'The way in — an independent calculator for MBA, business and computing master’s degrees'
     },
     it: {
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT.', 'MEDIA.', 'CV.', 'VERDETTO.'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
       data: COUNT.programmes + '+ programmi business · ' + COUNT.mba + ' scuole MBA · ' + COUNT.computing + ' informatica',
       loading: 'Caricamento', skip: 'Salta',
-      motto: 'Un calcolatore indipendente per MBA, master in business e master in informatica'
+      motto: 'The way in — un calcolatore indipendente per MBA, master in business e master in informatica'
     }
   };
 
-  window.Intro = { plan: plan, onSite: onSite, COUNT: COUNT, TXT: TXT };
+  var NAME = 'Admetia';
+
+  window.Intro = { plan: plan, onSite: onSite, NAME: NAME, COUNT: COUNT, TXT: TXT };
 
   /* Keys from earlier versions, which remembered a first visit. */
   try {
@@ -94,14 +96,14 @@
       loud: ['#ffffff', '#111111'], rule: '#111111', kick: null, rgb: ['#0080c3', '#e10000'],
       rowsA: ['#111111', '#ffffff'], rowsB: ['#ffffff', '#111111'], mid: ['#0080c3', '#ffffff'],
       face: ['"Roboto Serif Condensed", "Times New Roman", serif', 700, '100%'], load: '700 1em "Roboto Serif Condensed"',
-      mast: 'img/wordmark/wall-street.webp', deck: ['"Times New Roman", Times, serif', 'italic', null]
+      mast: 'img/wordmark/wall-street.webp?v=admetia', ratio: 489 / 128, deck: ['"Times New Roman", Times, serif', 'italic', null]
     },
     watchlist: {
       name: 'FBI Watchlist', paper: '#fcfcfc', ink: '#171717', band: '#171717',
       loud: ['#171717', '#ffffff'], rule: '#dc0000', kick: '#ff5a4f', rgb: ['#dc0000', '#007ac8'],
       rowsA: ['#171717', '#ffffff'], rowsB: ['#fcfcfc', '#171717'], mid: ['#ffffff', '#dc0000'],
       face: ['"Noto Serif Display", Georgia, serif', 800, '75%'], load: '800 1em "Noto Serif Display"',
-      mast: 'img/wordmark/fbi-watchlist.webp', deck: ['"Hanken Grotesk", Helvetica, Arial, sans-serif', 'normal', '#bbbbbb']
+      mast: 'img/wordmark/fbi-watchlist.webp?v=admetia', ratio: 688 / 150, deck: ['"Hanken Grotesk", Helvetica, Arial, sans-serif', 'normal', '#bbbbbb']
     }
   };
 
@@ -279,17 +281,19 @@
     at(45, function () { stage.removeChild(a); var b = frame(3); at(40, function () { stage.removeChild(b); }); });
   }
 
-  function nameplate(k, parent, width) {
+  /* The page's own nameplate, as large as `width` and `height` allow. */
+  function nameplate(k, parent, width, height) {
     var e = ED[k];
     if (e.mast) {
       var img = el('img', 'intro-np', parent);
-      img.src = e.mast; img.alt = ''; img.style.width = width + 'px';
+      img.src = e.mast; img.alt = '';
+      img.style.width = Math.min(width, height * e.ratio) + 'px';
       return img;
     }
     var t = el('div', 'intro-np intro-npt', parent);
     setFace(t, ED.city);
-    t.textContent = 'ADMISSION CHANCES';
-    fit(t, width, width);
+    t.textContent = NAME.toUpperCase();
+    fit(t, width, height);
     return t;
   }
   function revealNameplate(np, k, dur) {
@@ -297,8 +301,9 @@
       A(np, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], dur, 0, 'steps(11, end)');
       return;
     }
+    var name = NAME.toUpperCase();
     np.textContent = '';
-    letters(np, 'ADMISSION CHANCES').forEach(function (s, i) { A(s, [{ opacity: 0 }, { opacity: 1 }], 50, i * dur / 17, 'linear'); });
+    letters(np, name).forEach(function (s, i) { A(s, [{ opacity: 0 }, { opacity: 1 }], 50, i * dur / name.length, 'linear'); });
   }
 
   /* The nameplate composes, then flies into the page's own nameplate while
@@ -311,7 +316,7 @@
     bg.style.background = e.band || e.paper;
     var lock = el('div', 'intro-lock', L);
     var npW = Math.min(W() * .76, H() * 1.3);
-    var np = nameplate(k, lock, npW);
+    var np = nameplate(k, lock, npW, H() * .2);
     var mo = el('div', 'intro-motto', lock, T.motto);
     mo.style.fontFamily = e.deck[0]; mo.style.fontStyle = e.deck[1];
     if (e.deck[2]) mo.style.color = e.deck[2];
@@ -364,7 +369,7 @@
     (function tick() {
       if (done) return;
       var p = Math.min(1, (performance.now() - t0) / total);
-      hudLoad.textContent = 'Admission Chances — ' + T.loading + ' ' + ('00' + Math.round(p * 100)).slice(-3) + '%';
+      hudLoad.textContent = NAME + ' — ' + T.loading + ' ' + ('00' + Math.round(p * 100)).slice(-3) + '%';
       hudBar.style.transform = 'scaleX(' + p + ')';
       if (p < 1) requestAnimationFrame(tick);
     }());
@@ -430,7 +435,7 @@
         c.style['border' + p[0][0].toUpperCase() + p[0].slice(1) + 'Width'] = '1px';
         c.style['border' + p[1][0].toUpperCase() + p[1].slice(1) + 'Width'] = '1px';
       });
-      hudLoad = el('span', 'intro-h l', hud, 'Admission Chances');
+      hudLoad = el('span', 'intro-h l', hud, NAME);
       hudLoad.style.cssText = 'top:3.3vmin;left:5.8vmin';
       hudEd = el('span', 'intro-h', hud);
       hudEd.style.cssText = 'top:3.3vmin;right:5.8vmin';

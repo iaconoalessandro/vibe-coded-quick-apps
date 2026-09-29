@@ -32,7 +32,7 @@
 
   var crumb = document.getElementById('crumb');
   if (crumb) crumb.textContent = track.name;
-  document.title = T('{track} master’s — Admission Chances Calculator', { track: track.name });
+  document.title = T('{track} master’s — Admetia', { track: track.name });
 
   /* One photograph per track, chosen for the world the programme feeds into
    * rather than for a campus: finance is a business district, management a

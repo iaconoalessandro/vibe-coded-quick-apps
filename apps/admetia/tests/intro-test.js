@@ -39,7 +39,8 @@ const src=read('js/intro.js');
 t('nothing about a visit is remembered: old keys are cleared, none written',/removeItem\('admissions-calc:intro-seen'\)/.test(src)&&!/setItem\(/.test(src));
 t('the reload fade is a plain fade: no nameplate, no movement',/function fade\(\) \{[^}]*whenParsed\(function \(\) \{ finish\(320\); \}\);\s*\}/.test(src)&&!/function flash/.test(src));
 t('The City\'s nameplate is spelled once: the typed-in letters replace the text, not follow it',
-  /np\.textContent = '';\s*letters\(np, 'ADMISSION CHANCES'\)/.test(src));
+  /np\.textContent = '';\s*letters\(np, name\)/.test(src));
+t('the titles carry the site\'s name, and the pages\' nameplate says the same',I.NAME==='Admetia'&&PAGES.every(p=>read(p).indexOf('<a class="nameplate" href="index.html">'+I.NAME+'</a>')>-1));
 
 /* ----------------------------------------------------------- wiring --- */
 PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',

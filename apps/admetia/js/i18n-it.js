@@ -15,14 +15,14 @@ I18N.add('it', {
 
   /* ---------------------------------------------------------------- pages */
 
-  'Admission Chances Calculator': 'Admission Chances — il calcolatore',
-  'Business tracks — Admission Chances Calculator': 'Percorsi business — Admission Chances',
-  'IT & Computing — Admission Chances Calculator': 'Informatica — Admission Chances',
-  'MBA Chances — Admission Chances Calculator': 'Chance MBA — Admission Chances',
-  'Master\'s Chances — Admission Chances Calculator': 'Chance per i master — Admission Chances',
-  'Computing Chances — Admission Chances Calculator': 'Chance in informatica — Admission Chances',
-  '{track} — Admission Chances Calculator': '{track} — Admission Chances',
-  '{track} master’s — Admission Chances Calculator': 'Master in {track} — Admission Chances',
+  'Admetia — the way in to MBA and master’s admissions': 'Admetia — the way in: le tue chance per MBA e master',
+  'Business tracks — Admetia': 'Percorsi business — Admetia',
+  'IT & Computing — Admetia': 'Informatica — Admetia',
+  'MBA Chances — Admetia': 'Chance MBA — Admetia',
+  'Master\'s Chances — Admetia': 'Chance per i master — Admetia',
+  'Computing Chances — Admetia': 'Chance in informatica — Admetia',
+  '{track} — Admetia': '{track} — Admetia',
+  '{track} master’s — Admetia': 'Master in {track} — Admetia',
 
   'Free, private admissions calculators for MBA, business master\'s and computing master\'s programmes in the UK, Europe, the US and Asia. Your answers never leave your browser. In English and Italian.':
     'Calcolatori di ammissione gratuiti e privati per MBA, master in business e master in informatica nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Le tue risposte non lasciano mai il browser. In inglese e in italiano.',
@@ -44,7 +44,7 @@ I18N.add('it', {
   'Salmon financial paper': 'Carta salmone da quotidiano finanziario',
   'Black and white, Times New Roman': 'Bianco e nero, Times New Roman',
   'Black masthead, white page, full colour': 'Testata nera, pagina bianca, a colori',
-  'An independent calculator for MBA, business and computing master’s degrees': 'Un calcolatore indipendente per MBA, master in business e master in informatica',
+  'The way in — an independent calculator for MBA, business and computing master’s degrees': 'The way in — un calcolatore indipendente per MBA, master in business e master in informatica',
   'Calculators': 'Calcolatori',
   'Business': 'Business',
   'Finance': 'Finanza',

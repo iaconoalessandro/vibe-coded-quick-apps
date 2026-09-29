@@ -1,4 +1,4 @@
-# Admissions Chances Calculator
+# Admetia — the way in
 
 > **LEGAL NOTICE:** This entire codebase is 100% pure, uncut, pharmaceutical-grade vibe-engineered trash. I have not authored a single line of syntax in this repository. Not one. My sole contribution was mashing Cmd + Enter like a lab rat hitting the pellet lever, then immediately dissociating into the astral plane. I supplied the vibes. Claude supplied the code. God supplied the patience. And Anthropic supplied the liability sponge.
 >
@@ -10,7 +10,7 @@
 > 
 > If the preceding paragraphs offend your delicate sensibilities: Grok wrote them. Claude would pick war targets without hesitation if the prompt were polite enough, but it would never write something this prickly, this self-aware, or this disloyal. Its moral boundaries are extremely solid..
 
-A privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US — in **English and Italian**.
+Admetia is a privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US — in **English and Italian**.
 
 **Live Site:** <https://iaconoalessandro.github.io/admissions-calculator/>
 
@@ -84,7 +84,7 @@ A rule-first evaluation model for 26 computing master's programmes in the UK, Eu
 - **Built-in Employer Placement:** In-app dropdown examples help you benchmark internship and full-time employer prestige without guesswork. *(Detailed reference in [docs/EMPLOYER-GUIDE.md](docs/EMPLOYER-GUIDE.md)).*
 - **100% Client-Side Answers:** Your answers are saved only in your browser's `localStorage` so refreshing doesn't lose your work. Easily wiped with the footer's *"Clear everything"* or *"Forget on tab close"* options.
 - **English and Italian:** *EN · IT* in the top strip switches the whole site — pages, questions, options, school facts, deadline notes and results — and the choice is remembered. English stays the default. On phones the strip shows just the other language. Translating never changes a score: only the words are swapped, and `tests/i18n-test.js` proves the numbers match.
-- **Link Previews:** Every page carries a preview card (`img/og-card.jpg`), so a shared link shows a picture, a title and a line of description in WhatsApp, LinkedIn, Telegram and the rest.
+- **Link Previews:** Every page carries a preview card (`img/og-admetia.jpg`), so a shared link shows a picture, a title and a line of description in WhatsApp, LinkedIn, Telegram and the rest.
 - **Three Editions:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — and the *Edition* picker in the top strip switches between **The City** (the default: salmon paper, claret and teal, a dark market bar), **Wall Street** (black and white with colour photographs, Times New Roman with a condensed display face for headlines) and **FBI Watchlist** (black masthead, white page, full colour). The choice is remembered in this browser.
 - **The Admissions Index:** a market-style ticker under the navigation. Each programme is a symbol whose "price" is the Competitive bar the model uses for it; once you have answered a calculator, the change column shows your margin against each bar in green or red. It is built from the models and your saved answers — nothing is fetched, and none of it is market data.
 
