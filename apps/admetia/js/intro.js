@@ -145,8 +145,11 @@
   }
   function W() { return ov.clientWidth; }
   function H() { return ov.clientHeight; }
+  /* Whole milliseconds only: with a fractional delay Chrome can end an
+   * animation a hair short of its end, and a stepped one then never reaches
+   * its last frame (a letter of the nameplate stayed invisible). */
   function A(node, kf, dur, delay, easing) {
-    return node.animate(kf, { duration: dur, delay: delay || 0, easing: easing || 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
+    return node.animate(kf, { duration: Math.round(dur), delay: Math.round(delay || 0), easing: easing || 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
   }
   /* Every timed step is guarded: an error anywhere takes the overlay down. */
   function guard(fn) {
@@ -273,7 +276,8 @@
       A(np, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], dur, 0, 'steps(11, end)');
       return;
     }
-    letters(np, 'ADMISSION CHANCES').forEach(function (s, i) { A(s, [{ opacity: 0 }, { opacity: 1 }], 1, i * dur / 17, 'steps(1)'); });
+    np.textContent = '';
+    letters(np, 'ADMISSION CHANCES').forEach(function (s, i) { A(s, [{ opacity: 0 }, { opacity: 1 }], 50, i * dur / 17, 'linear'); });
   }
 
   /* The nameplate composes, then flies into the page's own nameplate while

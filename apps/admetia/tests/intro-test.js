@@ -34,6 +34,9 @@ const src=read('js/intro.js');
 t('blocked storage counts as seen, so nobody gets the full titles on every page',/var seen = true;\s*try \{ seen = localStorage\.getItem\(KEY\) === '1'; \}/.test(src));
 t('the key is written when the full titles start',/function full\(\) \{\s*try \{ localStorage\.setItem\(KEY, '1'\); \}/.test(src));
 
+t('The City\'s nameplate is spelled once: the typed-in letters replace the text, not follow it',
+  /np\.textContent = '';\s*letters\(np, 'ADMISSION CHANCES'\)/.test(src));
+
 /* ----------------------------------------------------------- wiring --- */
 PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',
   read(p).indexOf('<script src="js/theme.js"></script>\n<script src="js/intro.js"></script>\n')>-1&&read(p).indexOf('js/intro.js')<read(p).indexOf('</head>')));

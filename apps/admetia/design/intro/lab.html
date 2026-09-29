@@ -296,7 +296,7 @@ function nameplate(k, parent, width) {
 function revealNameplate(np, k, delay = 0, dur = 320) {
   if (ED[k].mast) { A(np, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], dur, delay, 'steps(11, end)'); return; }
   const cs = letters(np, 'ADMISSION CHANCES');
-  cs.forEach((c, i) => A(c, [{ opacity: 0 }, { opacity: 1 }], 1, delay + i * (dur / 17), 'steps(1)'));
+  cs.forEach((c, i) => A(c, [{ opacity: 0 }, { opacity: 1 }], 50, Math.round(delay + i * (dur / 17)), 'linear'));
 }
 
 // ---------------------------------------------------------------- scenes
