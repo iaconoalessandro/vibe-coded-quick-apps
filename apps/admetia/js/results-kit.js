@@ -1129,10 +1129,148 @@ window.ResultsKit = (function () {
     return b;
   }
 
+  /* ------------------------------------------------------------------ */
+  /* What the verdicts mean                                              */
+  /* ------------------------------------------------------------------ */
+
+  /* Each verdict as it looks on the page, the rule behind it, and what it
+   * means in practice. The MBA model is someone else's and states rough
+   * odds for its bands; the master's and computing models are a ranking
+   * with calibrated lines, and say no percentage at all. */
+  var VERDICTS = {
+    mba: {
+      rule: 'The model’s own figure',
+      rows: [
+        ['high', 'Strong', 'Roughly 75–80%', 'Your profile is above the school’s bar, possibly with a scholarship. Likely, not certain.'],
+        ['good', 'Competitive', 'Roughly 50%', 'You look like the people they admit. A coin flip, decided by your essays, interview and application round.'],
+        ['mid', 'Between Stretch and Competitive', 'In between', 'The labels between the bands (“closer to…”, “between…”) are transition zones: read them as the nearer band.'],
+        ['low', 'Stretch', 'Roughly 10%', 'Well below the bar. It happens, but rarely.']
+      ],
+      note: 'The percentages are the model author’s own stated figures, not measured outcomes. No verdict is a guarantee: committees read the whole file — essays, interview, and who else applies that year.'
+    },
+    rules: {
+      rule: 'The rule',
+      rows: [
+        ['high', 'Strong', 'At or above the school’s Strong line', 'Comfortably above a typical admitted profile. A solid place on your list.'],
+        ['good', 'Competitive', 'At or above its Competitive line', 'In range: your essays and interview decide.'],
+        ['mid', 'Possible', 'Up to 8 points below Competitive', 'Realistic with a strong application or an improvement — each programme shows what would close the gap.'],
+        ['low', 'Stretch', 'More than 8 points below Competitive', 'Unlikely, unless something else in your file really stands out.'],
+        ['high', 'Meets the requirements', 'Programmes that admit everyone who meets their rules, until they are full', 'Apply early: timing matters more than score.', 'masters'],
+        ['gate', 'Ineligible', 'Fails a published entry rule', 'Not eligible as things stand, whatever the score. The row says which rule, and whether it can still be met.']
+      ],
+      note: 'These are a ranking, not probabilities: the lines are the model’s own calibration, because no school publishes a points requirement. No verdict is a guarantee: committees read the whole file.'
+    }
+  };
+  var LIST_ADVICE = [
+    ['2–3', 'Strong', 'your safety net'],
+    ['3–5', 'Competitive', 'the core of your list'],
+    ['1–3', 'Possible or Stretch', 'the ones you would love']
+  ];
+
+  var keyDialog = null, keyKind = null;
+  function verdictDialog(kind) {
+    if (keyDialog && keyKind === kind) return keyDialog;
+    if (keyDialog) keyDialog.remove();
+    var v = VERDICTS[kind === 'mba' ? 'mba' : 'rules'];
+    var d = el('dialog', 'vkey');
+    d.setAttribute('aria-labelledby', 'vkey-title');
+    var head = el('div', 'vkey-head');
+    head.appendChild(el('p', 'vkey-kicker', 'How to read the verdicts'));
+    var h = el('h2', null, 'What each verdict means in practice');
+    h.id = 'vkey-title';
+    head.appendChild(h);
+    var x = el('button', 'vkey-close', '×');
+    x.type = 'button';
+    x.setAttribute('aria-label', T('Close'));
+    x.addEventListener('click', function () { d.close(); });
+    head.appendChild(x);
+    d.appendChild(head);
+
+    var cols = el('div', 'vkey-row vkey-cols');
+    cols.appendChild(el('span', null, 'Verdict'));
+    cols.appendChild(el('span', null, v.rule));
+    cols.appendChild(el('span', null, 'In practice'));
+    d.appendChild(cols);
+    v.rows.forEach(function (r) {
+      if (r[4] && r[4] !== kind) return;
+      var row = el('div', 'vkey-row');
+      row.dataset.label = T(r[1]);
+      if (kind === 'mba' && r[0] === 'mid') row.dataset.mid = '1';
+      var b = el('span', 'badge ' + r[0], r[1]);
+      row.appendChild(el('div', 'vkey-v')).appendChild(b);
+      row.appendChild(el('div', 'vkey-rule', r[2]));
+      row.appendChild(el('div', 'vkey-what', r[3]));
+      d.appendChild(row);
+    });
+    d.appendChild(el('p', 'vkey-note', v.note));
+
+    var list = el('div', 'vkey-list');
+    list.appendChild(el('h3', null, 'Building your list'));
+    var ul = el('ul');
+    LIST_ADVICE.forEach(function (a) {
+      var li = el('li');
+      li.appendChild(el('b', null, a[0]));
+      li.appendChild(document.createTextNode(' ' + T(a[1]) + ' — ' + T(a[2])));
+      ul.appendChild(li);
+    });
+    list.appendChild(ul);
+    d.appendChild(list);
+
+    /* A click on the backdrop closes it, as Esc does. */
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+    document.body.appendChild(d);
+    keyDialog = d;
+    keyKind = kind;
+    return d;
+  }
+
+  /* The key's row for a badge's words: the same words; else, for the MBA
+   * model's in-between labels, the in-between row; else the verdict the
+   * words start with ("Competitive, with scholarship potential"). */
+  function keyRow(rows, label) {
+    var i;
+    for (i = 0; i < rows.length; i++) if (rows[i].dataset.label === label) return rows[i];
+    if (/^(closer|between|più vicino|tra)\b/i.test(label)) {
+      for (i = 0; i < rows.length; i++) if (rows[i].dataset.mid) return rows[i];
+    }
+    for (i = 0; i < rows.length; i++) if (label.indexOf(rows[i].dataset.label) === 0) return rows[i];
+    return null;
+  }
+
+  /* Opens the key; given a verdict's words (from a badge), marks its row. */
+  function openVerdicts(kind, label) {
+    var d = verdictDialog(kind);
+    var rows = Array.prototype.slice.call(d.querySelectorAll('.vkey-row[data-label]'));
+    var hit = label ? keyRow(rows, label) : null;
+    rows.forEach(function (r) { r.classList.toggle('on', r === hit); });
+    if (d.showModal) { if (!d.open) d.showModal(); } else d.setAttribute('open', '');
+    if (hit) hit.scrollIntoView({ block: 'nearest' });
+    if (window.Stats) Stats.event('verdict-key');
+  }
+
+  /* Every verdict badge on a results page opens the key at its own row. */
+  var badgeKeys = false;
+  function watchBadges() {
+    if (badgeKeys) return;
+    badgeKeys = true;
+    document.addEventListener('click', function (e) {
+      var b = e.target.closest && e.target.closest('.row .badge, .dlcal-row .badge');
+      if (b && current && current.kind) openVerdicts(current.kind, b.textContent.trim());
+    });
+  }
+
+  function verdictButton(kind) {
+    var b = el('button', 'jump-link vkey-btn', 'What the verdicts mean');
+    b.type = 'button';
+    b.addEventListener('click', function () { openVerdicts(kind); });
+    return b;
+  }
+
   /* Under the headline numbers: a line of buttons to each section of a
    * long results page, and the battle plan beside them, so neither sits
-   * twenty screens down a phone. `links` is [{ label, count, target }]. */
-  function jumpBar(links, build) {
+   * twenty screens down a phone. `links` is [{ label, count, target }];
+   * `kind` ('mba', 'masters' or 'it') adds the key to the verdicts. */
+  function jumpBar(links, build, kind) {
     var nav = el('nav', 'jump');
     nav.setAttribute('aria-label', T('On this page'));
     nav.appendChild(el('span', 'jump-k', 'Jump to'));
@@ -1152,7 +1290,11 @@ window.ResultsKit = (function () {
       plan.classList.add('small');
       nav.appendChild(plan);
       nav.appendChild(shareButton(build));
-      current = { nav: nav, build: build };
+      current = { nav: nav, build: build, kind: kind };
+    }
+    if (kind) {
+      nav.insertBefore(verdictButton(kind), nav.querySelector('.btn'));
+      watchBadges();
     }
     return nav;
   }

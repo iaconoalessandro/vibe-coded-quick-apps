@@ -824,6 +824,38 @@ h2.section .count {
   100% { opacity: 1; transform: none; }
 }
 
+/* ---- What the verdicts mean: a key, opened from the jump bar or any badge ---- */
+.vkey-btn { font-weight: 700; }
+.row .badge, .dlcal-row .badge { cursor: help; }
+.vkey {
+  width: min(760px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0 26px 22px; overflow: auto;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 0;
+}
+.vkey::backdrop { background: rgba(0, 0, 0, .5); }
+.vkey-head { position: sticky; top: 0; z-index: 1; margin: 0 -26px; padding: 18px 56px 12px 26px; background: var(--paper); border-bottom: var(--double); }
+.vkey-kicker { margin: 0 0 4px; font: 700 12px/1.2 var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--kicker); }
+.vkey h2 { margin: 0; font: var(--head-weight) 26px/1.15 var(--font-head); }
+.vkey-close { position: absolute; right: 14px; top: 14px; width: 38px; height: 38px; font: 400 26px/1 var(--font-ui); background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 0; cursor: pointer; }
+.vkey-row { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1.5fr); gap: 16px; align-items: start; padding: 12px 8px; border-bottom: 1px solid var(--hair); }
+.vkey-row.vkey-cols { padding-top: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--rule); font: 700 11px/1.3 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.vkey-row .badge { display: inline-block; text-align: left; min-width: 0; white-space: normal; justify-self: start; }
+.vkey-rule { font: 600 14.5px/1.4 var(--font-ui); }
+.vkey-what { font: 16.5px/1.45 var(--font-head); }
+.vkey-row.on { background: var(--paper-2); box-shadow: inset 3px 0 0 var(--accent); }
+.vkey-note { margin: 16px 0 0; font: italic 15px/1.5 var(--font-head); color: var(--muted); }
+.vkey-list { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.vkey-list h3 { margin: 0 0 6px; font: 700 12px/1.2 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; }
+.vkey-list ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.vkey-list li { padding: 10px 12px; border: 1px solid var(--hair); background: var(--paper-3); font-size: 14.5px; }
+.vkey-list b { display: block; font: var(--head-weight) 24px/1.1 var(--font-num); }
+@media (max-width: 640px) {
+  .vkey { padding: 0 16px 18px; }
+  .vkey-head { margin: 0 -16px; padding: 14px 52px 10px 16px; }
+  .vkey-row { grid-template-columns: 1fr; gap: 4px; }
+  .vkey-row.vkey-cols { display: none; }
+  .vkey-list ul { grid-template-columns: 1fr; }
+}
+
 /* ---- Deadline calendar: an earnings calendar for your applications ---- */
 .dlcal { margin: 40px 0 8px; padding-top: 14px; border-top: var(--double); }
 .dlcal-head h3 { margin: 0; font: var(--head-weight) 28px/1.15 var(--font-head); }

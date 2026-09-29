@@ -303,7 +303,7 @@
         { label: 'Shared scale', count: M.generalSchools.length, target: hShared },
         { label: 'Deadlines', count: cal && cal.count, target: cal },
         { label: 'Where your points came from', target: det }
-      ], function () { return battlePlan(answers, active, reached, top, improvementList); }), sum.nextSibling);
+      ], function () { return battlePlan(answers, active, reached, top, improvementList); }, 'mba'), sum.nextSibling);
     }
 
     if (filters) filters.refresh();

@@ -249,7 +249,7 @@
         { label: 'Ruled out', count: blocked.length, target: hBlocked, open: outList },
         { label: 'Deadlines', count: cal && cal.count, target: cal },
         { label: 'How your score was calculated', target: det }
-      ], function () { return battlePlan(a, res); }), grid.nextSibling);
+      ], function () { return battlePlan(a, res); }, 'it'), grid.nextSibling);
     }
 
     if (filters) filters.refresh();

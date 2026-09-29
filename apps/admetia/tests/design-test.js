@@ -43,6 +43,12 @@ t('printing a results page prints the plan',/addEventListener\('beforeprint'[\s\
   t(f+' has no separate "Print the page" button any more',!/Print the page/.test(src));
 });
 
+t('each calculator\'s jump bar opens the key to its verdicts',
+  /\}, 'mba'\), sum\.nextSibling\);/.test(read('js/page-mba.js'))&&/\}, 'masters'\), sum\.nextSibling\);/.test(read('js/page-masters.js'))&&/\}, 'it'\), grid\.nextSibling\);/.test(read('js/page-it.js')));
+t('the MBA key gives the model\'s own odds, and says whose they are',/'Roughly 75–80%'/.test(kit)&&/'Roughly 50%'/.test(kit)&&/'Roughly 10%'/.test(kit)&&/model author’s own stated figures, not measured outcomes/.test(kit));
+t('the master\'s and computing key gives rules, never a percentage',(function(){ const m=/rules: \{[\s\S]*?\n    \}/.exec(kit); return !!m&&!/%/.test(m[0])&&/a ranking, not probabilities/.test(m[0]); })());
+t('no verdict is sold as a certainty',!/guaranteed|certain to|100%/i.test(kit.replace(/No verdict is a guarantee/g,'').replace(/Likely, not certain/g,'')));
+
 /* --------------------------------------------------------- editions --- */
 const theme=read('js/theme.js');
 t('changing edition runs as a press run where the browser can',/document\.startViewTransition\(change\)/.test(theme)&&/::view-transition-new\(root\) \{ animation: press-in/.test(read('css/app.css')));
@@ -50,7 +56,7 @@ t('  and plainly for readers who ask for less motion',/if \(!document\.startView
 
 /* ------------------------------------------------------------ words --- */
 const it=read('js/i18n-it.js');
-['Share my shortlist','Deadline calendar','Deadlines','My shortlist','Page {n} of 2','Battle plan','Show all {n}','today','day','days',
+['What the verdicts mean','What each verdict means in practice','Building your list','Close','Share my shortlist','Deadline calendar','Deadlines','My shortlist','Page {n} of 2','Battle plan','Show all {n}','today','day','days',
  'An independent estimate from a points model — not an admission decision.','Estimates presented as fact.',
  'A self-selected sample, never an acceptance rate.'].forEach(k=>{
   t('Italian for "'+k+'"',it.indexOf("'"+k.replace(/'/g,"\\'")+"': '")>-1);
