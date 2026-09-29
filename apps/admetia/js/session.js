@@ -18,8 +18,10 @@ window.Session = (function () {
   var PREFIX = 'admissions-calc:';
   var WIPE_KEY = PREFIX + 'wipe-on-close';
   /* Settings, not answers: the edition, the language, the visit-count
-   * opt-out, whether the opening titles have played, and this switch. */
-  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', PREFIX + 'intro-seen', WIPE_KEY];
+   * opt-out, the opening titles (played yet, and whether to play them every
+   * time — js/intro.js), and this switch. */
+  var INTRO_ALWAYS = PREFIX + 'intro-always';
+  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', PREFIX + 'intro-seen', INTRO_ALWAYS, WIPE_KEY];
   function T(s, v) { return window.I18N ? I18N.t(s, v) : s; }
 
   function answerKeys() {
@@ -106,6 +108,22 @@ window.Session = (function () {
     lbl.appendChild(cb);
     lbl.appendChild(el('span', null, 'Forget everything when I close this tab'));
     box.appendChild(lbl);
+
+    /* Off: the full opening titles only on the first visit, then the quick
+     * transition. On: the full titles each time the site is opened. */
+    var introLbl = el('label', 'privacy-toggle');
+    var introCb = document.createElement('input');
+    introCb.type = 'checkbox';
+    try { introCb.checked = localStorage.getItem(INTRO_ALWAYS) === '1'; } catch (e) { /* ignore */ }
+    introCb.addEventListener('change', function () {
+      try {
+        if (introCb.checked) localStorage.setItem(INTRO_ALWAYS, '1');
+        else localStorage.removeItem(INTRO_ALWAYS);
+      } catch (e) { /* ignore */ }
+    });
+    introLbl.appendChild(introCb);
+    introLbl.appendChild(el('span', null, 'Play the full opening titles every time I open the site'));
+    box.appendChild(introLbl);
 
     function sync() {
       btn.disabled = !hasAnswers();

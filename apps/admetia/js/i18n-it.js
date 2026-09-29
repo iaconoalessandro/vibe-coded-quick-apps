@@ -216,6 +216,7 @@ I18N.add('it', {
   'Delete every saved answer, across all calculators?': 'Eliminare tutte le risposte salvate, in tutti i calcolatori?',
   'This cannot be undone.': 'Non si può annullare.',
   'Forget everything when I close this tab': 'Dimentica tutto quando chiudo questa scheda',
+  'Play the full opening titles every time I open the site': 'Mostra la sigla completa ogni volta che apro il sito',
   'Picking up where you left off — your previous answers are filled in.': 'Riprendi da dove eri rimasto: le risposte precedenti sono già inserite.',
   'Start fresh': 'Ricomincia da zero',
   'Clear your answers to this calculator and start over?': 'Cancellare le risposte a questo calcolatore e ricominciare?',

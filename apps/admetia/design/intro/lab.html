@@ -539,18 +539,12 @@ function reset() {
   document.getAnimations().forEach(a => a.cancel());
   applyRed(); stage.innerHTML = ''; buildHud(); seed = S.ver.charCodeAt(0) * 97;
 }
-// Return visit: a strip across the middle cuts through the three editions, then the
-// nameplate lands. The strip stays under a fifth of the screen so the cuts never
-// count as full-screen flashes (WCAG 2.3.1). Under 0.8 s.
+// Return visit: just the nameplate composing and landing (as on the live site).
 function playFlash() {
   reset(); hud.style.display = 'none';
-  const c = order(), fr = 70;
-  const L = layer(ED[S.ed].paper, ED[S.ed].ink);
-  const strip = $('i', '', L); strip.style.cssText = 'position:absolute;left:0;right:0;top:41cqh;height:18cqh';
-  c.forEach((k, i) => at(i * fr, () => { strip.style.background = { city: '#990f3d', ws: '#111111', fw: '#dc0000' }[k]; }));
-  at(c.length * fr, () => landing(S.ed, true));
+  landing(S.ed, true);
   document.getElementById('i-name').textContent = 'Visita di ritorno — lampo';
-  document.getElementById('i-desc').textContent = `Una striscia attraversa i colori delle tre edizioni, poi la testata sale al suo posto. ${((c.length * fr + 560 * .45 + 580 * .45) / 1000).toFixed(2)} s`;
+  document.getElementById('i-desc').textContent = 'Solo la testata che si compone e sale al suo posto. 0.5 s';
   document.getElementById('i-chips').innerHTML = '';
 }
 

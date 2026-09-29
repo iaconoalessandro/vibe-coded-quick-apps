@@ -20,6 +20,7 @@ preview server), non dal repo.
 | `prefers-reduced-motion: reduce` | Niente: la pagina appare subito |
 | Storage non disponibile (`localStorage` lancia errore) | Lampo (mai l'intro completa ripetuta a ogni pagina) |
 | Stampa | Niente (`@media print`) |
+| Interruttore nel footer "Play the full opening titles every time I open the site" acceso | Intro completa a ogni apertura del sito; lampo tra le pagine della stessa visita |
 
 - Il ricordo è una chiave `localStorage` `admissions-calc:intro-seen`, scritta **quando
   l'intro parte** (non quando finisce: un reload a metà dà il lampo, non la ripetizione).
@@ -113,11 +114,9 @@ all'80% di opacità, nel colore del testo della scena corrente.
 
 ## 5. Lampo (visite successive)
 
-Come `playFlash`: pagina già col fondo dell'edizione dell'utente, una **striscia orizzontale
-alta il 18% dello schermo** al centro che per 70 ms ciascuno diventa `#111111` (Wall Street),
-`#dc0000` (Watchlist), `#990f3d` (The City) nell'ordine delle edizioni. Poi c'è
-l'atterraggio accelerato (tempi × 0,45). Totale ≤ 0,75 s. La striscia resta sotto il 25%
-dello schermo così i cambi rapidi non contano come lampi a tutto schermo (WCAG 2.3.1).
+Solo l'atterraggio accelerato (tempi × 0,45) sul fondo dell'edizione dell'utente: la testata
+si compone e sale al suo posto. Circa 0,5 s. (La prima versione aveva una striscia colorata
+per edizione; è stata tolta perché la striscia rossa sembrava un residuo.)
 
 ## 6. Numeri veri
 

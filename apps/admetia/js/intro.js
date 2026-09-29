@@ -1,7 +1,9 @@
 /* Opening titles. On a reader's first visit, from whichever page they land on,
  * the three editions cut past in kinetic type — one of three lines, picked at
- * random — and the nameplate lands in its place on the page. Every later visit
- * gets a flash of under a second instead.
+ * random — and the nameplate lands in its place on the page. Every later page
+ * gets a quick transition instead: the nameplate composing and landing, half
+ * a second. A footer switch (js/session.js) asks for the full titles each
+ * time the site is opened — still the quick one between pages of a visit.
  *
  * Runs in <head>, right after js/theme.js (which has already set the edition
  * and the language), so the overlay is up before the page first paints. The
@@ -16,11 +18,14 @@
   'use strict';
 
   var KEY = 'admissions-calc:intro-seen';
+  var ALWAYS = 'admissions-calc:intro-always';
+  var SESSION = 'admissions-calc:intro-session';
 
-  /* What a visit gets: 'full', 'flash' or 'none'. */
+  /* What a page load gets: 'full', 'flash' or 'none'. */
   function plan(o) {
     if (o.reduced || !o.animate || o.robot) return 'none';
-    return o.seen ? 'flash' : 'full';
+    if (!o.seen) return 'full';
+    return o.always && !o.inSession ? 'full' : 'flash';
   }
 
   /* Counts shown in the corner of the titles. tests/intro-test.js checks them
@@ -42,15 +47,19 @@
     }
   };
 
-  window.Intro = { plan: plan, KEY: KEY, COUNT: COUNT, TXT: TXT };
+  window.Intro = { plan: plan, KEY: KEY, ALWAYS: ALWAYS, COUNT: COUNT, TXT: TXT };
 
   var root = document.documentElement;
   if (typeof matchMedia !== 'function') return;
 
-  var seen = true;
-  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) { /* storage blocked: flash only */ }
+  var seen = true, always = false, inSession = true;
+  try {
+    seen = localStorage.getItem(KEY) === '1';
+    always = localStorage.getItem(ALWAYS) === '1';
+    inSession = sessionStorage.getItem(SESSION) === '1';
+  } catch (e) { /* storage blocked: flash only */ }
   var mode = plan({
-    seen: seen,
+    seen: seen, always: always, inSession: inSession,
     reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
     animate: typeof root.animate === 'function',
     robot: !!navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)
@@ -66,21 +75,21 @@
       loud: ['#990f3d', '#fff1e5'], rule: null, kick: null, rgb: ['#0d7680', '#fcd0b1'],
       rowsA: ['#990f3d', '#fff1e5'], rowsB: ['#fff1e5', '#990f3d'], mid: ['#262a33', '#fff1e5'],
       face: ['"Source Serif 4", Georgia, serif', 600, '100%'], load: '600 1em "Source Serif 4"',
-      mast: null, deck: ['"Source Serif 4", Georgia, serif', 'italic', null], strip: '#990f3d'
+      mast: null, deck: ['"Source Serif 4", Georgia, serif', 'italic', null]
     },
     wallstreet: {
       name: 'Wall Street', paper: '#ffffff', ink: '#111111',
       loud: ['#ffffff', '#111111'], rule: '#111111', kick: null, rgb: ['#0080c3', '#e10000'],
       rowsA: ['#111111', '#ffffff'], rowsB: ['#ffffff', '#111111'], mid: ['#0080c3', '#ffffff'],
       face: ['"Roboto Serif Condensed", "Times New Roman", serif', 700, '100%'], load: '700 1em "Roboto Serif Condensed"',
-      mast: 'img/wordmark/wall-street.webp', deck: ['"Times New Roman", Times, serif', 'italic', null], strip: '#111111'
+      mast: 'img/wordmark/wall-street.webp', deck: ['"Times New Roman", Times, serif', 'italic', null]
     },
     watchlist: {
       name: 'FBI Watchlist', paper: '#fcfcfc', ink: '#171717', band: '#171717',
       loud: ['#171717', '#ffffff'], rule: '#dc0000', kick: '#ff5a4f', rgb: ['#dc0000', '#007ac8'],
       rowsA: ['#171717', '#ffffff'], rowsB: ['#fcfcfc', '#171717'], mid: ['#ffffff', '#dc0000'],
       face: ['"Noto Serif Display", Georgia, serif', 800, '75%'], load: '800 1em "Noto Serif Display"',
-      mast: 'img/wordmark/fbi-watchlist.webp', deck: ['"Hanken Grotesk", Helvetica, Arial, sans-serif', 'normal', '#bbbbbb'], strip: '#dc0000'
+      mast: 'img/wordmark/fbi-watchlist.webp', deck: ['"Hanken Grotesk", Helvetica, Arial, sans-serif', 'normal', '#bbbbbb']
     }
   };
 
@@ -351,18 +360,12 @@
     at(total, function () { glitch(ed); landing(ed, 1); });
   }
 
-  /* Return visits: a strip across the middle cuts through the three
-   * editions — under a fifth of the screen, so it is no full-screen flash —
-   * then the nameplate lands. About 0.7 s. */
+  /* Every other page load: just the nameplate composing and landing, on the
+   * edition's own paper. About half a second. */
   function flash() {
-    var e = ED[ed], fr = 70;
     if (hud) hud.style.display = 'none';
     if (skip) skip.style.display = 'none';
-    var L = layer(e.band || e.paper, e.band ? '#ffffff' : e.ink);
-    var strip = el('i', '', L);
-    strip.style.cssText = 'position:absolute;left:0;right:0;top:41vh;height:18vh';
-    order.forEach(function (k, i) { at(i * fr, function () { strip.style.background = ED[k].strip; }); });
-    at(order.length * fr, function () { landing(ed, .45); });
+    landing(ed, .45);
   }
 
   /* ------------------------------------------------------------ lifecycle */
@@ -445,6 +448,7 @@
       if (started) return;
       started = true;
       whenVisible(guard(function () {
+        try { sessionStorage.setItem(SESSION, '1'); } catch (e) { /* ignore */ }
         if (mode === 'full') { full(); if (skip) skip.focus({ preventScroll: true }); } else flash();
       }));
     });

@@ -27,11 +27,14 @@ const base={seen:false,reduced:false,animate:true,robot:false};
 const plan=o=>I.plan(Object.assign({},base,o));
 t('a first visit gets the full titles',plan({})==='full');
 t('a later visit gets the flash',plan({seen:true})==='flash');
+t('with "every time" on, each opening of the site gets the full titles',plan({seen:true,always:true})==='full');
+t('  and the pages after it, in the same visit, the flash',plan({seen:true,always:true,inSession:true})==='flash');
 t('reduced motion gets nothing, first visit or not',plan({reduced:true})==='none'&&plan({reduced:true,seen:true})==='none');
 t('no Web Animations, no titles',plan({animate:false})==='none');
 t('crawlers and automated browsers get nothing',plan({robot:true})==='none');
 const src=read('js/intro.js');
-t('blocked storage counts as seen, so nobody gets the full titles on every page',/var seen = true;\s*try \{ seen = localStorage\.getItem\(KEY\) === '1'; \}/.test(src));
+t('blocked storage counts as seen, so nobody gets the full titles on every page',/var seen = true, always = false, inSession = true;\s*try \{\s*seen = localStorage\.getItem\(KEY\) === '1';/.test(src));
+t('the flash is the nameplate alone: no colour strip',/function flash\(\) \{[^}]*landing\(ed, \.45\);\s*\}/.test(src)&&!/strip/.test(src));
 t('the key is written when the full titles start',/function full\(\) \{\s*try \{ localStorage\.setItem\(KEY, '1'\); \}/.test(src));
 
 t('The City\'s nameplate is spelled once: the typed-in letters replace the text, not follow it',
@@ -42,6 +45,10 @@ PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',
   read(p).indexOf('<script src="js/theme.js"></script>\n<script src="js/intro.js"></script>\n')>-1&&read(p).indexOf('js/intro.js')<read(p).indexOf('</head>')));
 t('sw.js caches js/intro.js',/'js\/intro\.js'/.test(read('sw.js')));
 t('"Clear everything" keeps the intro key',/PREFIX \+ 'intro-seen'/.test(read('js/session.js'))&&I.KEY==='admissions-calc:intro-seen');
+t('the footer offers "every time", kept by "Clear everything", read by the titles',
+  /'Play the full opening titles every time I open the site'/.test(read('js/session.js'))&&/INTRO_ALWAYS = PREFIX \+ 'intro-always'/.test(read('js/session.js'))&&
+  /KEEP = \[[^\]]*INTRO_ALWAYS/.test(read('js/session.js'))&&I.ALWAYS==='admissions-calc:intro-always');
+t('  in Italian too',/'Play the full opening titles every time I open the site': '/.test(read('js/i18n-it.js')));
 t('tools/build.js inlines it',/swap\('<script src="js\/intro\.js"><\/script>'/.test(read('tools/build.js')));
 
 /* ------------------------------------------------------------ words --- */
