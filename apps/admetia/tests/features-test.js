@@ -94,6 +94,27 @@ t('RSM: a late application only qualifies if places remain',
 t('RSM: 10–19 EC of research methods is no longer enough',
   rowOf(Object.assign({},maxed,{testScore:720,ectsQuant:'eq_19'}),'mim','rsm-mim').eligible===false);
 
+// --- programmes added 30 September 2026 ---
+{
+  const e=MS.emphasis('mif','split'), w=k=>e.find(x=>x.key===k).weight;
+  t('St. Gallen MBF: grades 30, test 30, letter 25 — the split its admission page publishes',
+    w('academic')===30 && w('test')===30 && w('essays')===25 && w('institution')===0);
+}
+const noTest=Object.assign({},maxed,{testStatus:'ts_no'});
+t('Mannheim: a missing test scores nothing rather than being rescaled away',
+  MS.score(noTest,'mim',undefined,'points').total < MS.score(maxed,'mim',95,'points').total - 25 &&
+  !MS.score(noTest,'mim',undefined,'points').testDropped);
+t('  while elsewhere not submitting still rescales',
+  MS.score(noTest,'mim',undefined,'balanced').testDropped);
+t('TUM Master in Management turns away an economics graduate',
+  rowOf(Object.assign({},maxed,{testScore:720,degreeField:'fld_econ'}),'mim','tum-mim').eligible===false &&
+  rowOf(Object.assign({},maxed,{testScore:720}),'mim','tum-mim').eligible===true);
+t('Mannheim\'s MMM is scored on both the management and the marketing tracks',
+  !!rowOf(maxed,'mim','mannheim-mmm') && !!rowOf(maxed,'marketing','mannheim-mmm'));
+t('ESCP Marketing & Creativity needs 18 months, internships included',
+  rowOf(Object.assign({},maxed,{testScore:720,internMonths:'im_12',fullTime:'ft_0'}),'marketing','escp-mkt').eligible===false &&
+  rowOf(Object.assign({},maxed,{testScore:720,internMonths:'im_more',fullTime:'ft_11'}),'marketing','escp-mkt').eligible===true);
+
 // --- ineligible schools still get a score and band ---
 const strong4y=Object.assign({},p,{fullTime:'ft_59',gradeBand:'gb_top5',institution:'inst_global',
   testStatus:'ts_yes',testType:'tt_gmat',testScore:750,ectsQuant:'eq_30',essays:'es_strong'});

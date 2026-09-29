@@ -6,7 +6,7 @@ const fs=require('fs'),path=require('path'),vm=require('vm');
 const APP=path.join(__dirname,'..');
 const s={window:{},Math,console,parseFloat,parseInt,isNaN,Object,Infinity,String,Number};
 vm.createContext(s);
-for(const f of ['data/conversions.js','data/it-model.js','data/it-evidence.js','js/score-it.js'])
+for(const f of ['data/conversions.js','data/computing-model.js','data/computing-evidence.js','js/score-computing.js'])
   vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
 const S=s.window.IT_SCORE, M=s.window.IT_MODEL;
 
@@ -215,7 +215,7 @@ if(EV){
     Object.keys(EV.schools).every(k=>M.schools.some(x=>x.id===k)),
     Object.keys(EV.schools).filter(k=>!M.schools.some(x=>x.id===k)).join(','));
 } else {
-  console.log('SKIP  evidence assertions — data/it-evidence.js not built yet');
+  console.log('SKIP  evidence assertions — data/computing-evidence.js not built yet');
 }
 
 /* ---------------------------------------------------- counterfactuals --- */

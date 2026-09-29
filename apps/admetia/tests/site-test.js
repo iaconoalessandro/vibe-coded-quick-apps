@@ -30,7 +30,7 @@ t('the editions keep their own names',/'The City'/.test(theme)&&/'Wall Street'/.
 /* ------------------------------------------------------------ counts --- */
 const s={window:{},Math,console,Object,String,Number,parseFloat,isNaN,Infinity};
 vm.createContext(s);
-['data/masters-model.js','data/it-model.js','data/mba-model.js'].forEach(f=>vm.runInContext(read(f),s,{filename:f}));
+['data/masters-model.js','data/computing-model.js','data/mba-model.js'].forEach(f=>vm.runInContext(read(f),s,{filename:f}));
 const IT=s.window.IT_MODEL, MBA=s.window.MBA_MODEL;
 const WORDS={twenty:20,thirty:30,one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9};
 const m=/(Twenty|Thirty)-?(one|two|three|four|five|six|seven|eight|nine)? programmes across/.exec(read('it.html'));
@@ -44,7 +44,7 @@ t('the MBA description states the number of schools the model scores',read('mba.
 /* ---------------------------------------------------------- journeys --- */
 /* Results sit at #results, so Back returns to the answers; the resume banner,
  * the track pickers and the front page link straight to them. */
-const pageKeys={'page-mba.js':["'mba2'"],'page-masters.js':["'masters:' + trackId"],'page-it.js':["'it:' + trackId"]};
+const pageKeys={'page-mba.js':["'mba2'"],'page-masters.js':["'masters:' + trackId"],'page-computing.js':["'it:' + trackId"]};
 Object.keys(pageKeys).forEach(f=>{
   const src=read('js/'+f);
   t(f+' puts its results in the browser history, and opens on them from #results',

@@ -6,7 +6,7 @@ const fs=require('fs'),path=require('path'),vm=require('vm');
 const APP=path.join(__dirname,'..');
 const s={window:{},Math,console,parseFloat,parseInt,isNaN,Object,Infinity,String,Number,Date,RegExp,Array,JSON};
 vm.createContext(s);
-for(const f of ['data/masters-model.js','data/it-model.js','data/mba-model.js','data/deadlines.js'])
+for(const f of ['data/masters-model.js','data/computing-model.js','data/mba-model.js','data/deadlines.js'])
   vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
 /* results-kit.js only needs Wizard.el at load time; nothing here draws. */
 s.window.Wizard={el:()=>({})};

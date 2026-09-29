@@ -69,7 +69,7 @@ shares and decision-date distributions. No applicant's own text is stored or rep
 and the collector drops it at the point of download rather than filtering it later.
 
 Their `robots.txt` permits crawling and signals `use=reference`, `ai-train=no`. Nothing
-here trains a model on it; `tools/gradcafe-aggregate.js` is rate-limited and committed so
+here trains a model on it; `tools/data-collection/gradcafe-aggregate.js` is rate-limited and committed so
 the numbers can be re-derived rather than taken on trust.
 
 Where a programme publishes a real acceptance rate — or one exists as a UK Freedom-of-

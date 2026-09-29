@@ -28,9 +28,9 @@ function sandbox(lang){
     localStorage:{getItem:k=>store[k]===undefined?null:store[k],setItem:(k,v)=>{store[k]=String(v);}}};
   s.window=s;
   vm.createContext(s);
-  const files=['js/i18n.js','js/i18n-it.js','data/conversions.js','data/masters-model.js','data/it-model.js',
-    'data/it-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js',
-    'js/score-masters.js','js/score-it.js','js/score-mba.js'];
+  const files=['js/i18n.js','js/i18n-it.js','data/conversions.js','data/masters-model.js','data/computing-model.js',
+    'data/computing-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js',
+    'js/score-masters.js','js/score-computing.js','js/score-mba.js'];
   for(const f of files) vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
   return s;
 }

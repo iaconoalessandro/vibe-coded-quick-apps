@@ -170,8 +170,9 @@
     var weights = profileWeights(trackId, prof.id);
 
     /* Not submitting a test: drop the weight and rescale the rest, rather than
-     * scoring an absent number as zero. */
-    var testDropped = f.test === null;
+     * scoring an absent number as zero — unless the school's own points table
+     * gives a missing test nothing, as Mannheim's does. */
+    var testDropped = f.test === null && !prof.testCountsZero;
     if (testDropped) {
       var freed = weights.test;
       delete weights.test;
@@ -280,6 +281,11 @@
           break;
         case 'quantDegree':
           if (a.degreeField !== undefined && val(a, 'degreeField', 'quant', false) !== true) {
+            failures.push({ label: gate.label, src: gate.src });
+          }
+          break;
+        case 'degreeFields':
+          if (a.degreeField !== undefined && gate.value.indexOf(a.degreeField) === -1) {
             failures.push({ label: gate.label, src: gate.src });
           }
           break;
@@ -438,7 +444,7 @@
     var roundIdx = val(a, 'round', 'idx', 0);
 
     /* Counterfactuals depend on the weighting, so they are computed per
-     * profile rather than once. Only six profiles exist, so cache them. */
+     * profile rather than once. Only a handful of profiles exist, so cache them. */
     var perProfile = {};
     function forProfile(pid) {
       if (!perProfile[pid]) {

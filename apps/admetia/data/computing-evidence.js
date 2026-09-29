@@ -2,7 +2,7 @@
  * Applicant-reported outcomes for the IT & Computing track.
  *
  * GENERATED FILE — do not edit by hand.
- *   node tools/gradcafe-aggregate.js fetch && node tools/gradcafe-aggregate.js build
+ *   node tools/data-collection/gradcafe-aggregate.js fetch && node tools/data-collection/gradcafe-aggregate.js build
  *
  * Source: results posted by applicants to TheGradCafe, decisions from January
  * 2021 onward. Aggregates only; no applicant's own text is reproduced here.

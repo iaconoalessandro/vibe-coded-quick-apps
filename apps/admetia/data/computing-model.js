@@ -13,7 +13,7 @@
  *  2. Almost none of them publish an admitted-student profile. There is no
  *     equivalent of a class GMAT median here, so this model carries no
  *     estimated admitted distributions at all. What it carries instead is what
- *     applicants reported about timing and outcomes — see data/it-evidence.js,
+ *     applicants reported about timing and outcomes — see data/computing-evidence.js,
  *     and read the caveat there before trusting any of it.
  *
  *  3. Entry requirements are unusually concrete: named prerequisite modules,

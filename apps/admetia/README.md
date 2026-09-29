@@ -32,7 +32,7 @@ Zero build steps to run it. Zero runtime dependencies. Your answers never leave 
   ```
   *(224 tests passing across all models, edge cases, the application calendar, the Italian translation and the pages themselves).* The runner
   (`tools/run-tests.js`) is plain Node, so it behaves the same on Windows, macOS and Linux; pass
-  `-- -v` to see every assertion. Each suite also runs on its own, e.g. `node tests/it-test.js`.
+  `-- -v` to see every assertion. Each suite also runs on its own, e.g. `node tests/computing-test.js`.
 
 - **Publish:** pushing to `main` runs `.github/workflows/pages.yml`, which tests, runs
   `npm run build` and deploys `_site/` to GitHub Pages. The build (`tools/build.js`) only
@@ -47,14 +47,14 @@ Zero build steps to run it. Zero runtime dependencies. Your answers never leave 
 ## Supported Calculators & Models
 
 ### 1. MBA Admissions Calculator
-A points-based MBA admissions model across 42 business schools, evaluating profiles against calibrated scoring thresholds for 38 schools, plus CEIBS, Peking Guanghua, Fudan and Nanyang placed on the same scale via calibration against published class statistics and official profile data.
+A points-based MBA admissions model across 43 business schools, evaluating profiles against calibrated scoring thresholds for 38 schools, plus CEIBS, Peking Guanghua, Fudan, Nanyang and Mannheim placed on the same scale via calibration against published class statistics and official profile data.
 - **As published vs. Corrected:** *As published* evaluates score benchmarks directly; *Corrected* scores test thresholds as continuous ranges (affects Columbia, Stanford, NYU and Yale).
 - **Comprehensive Profile Evaluation:** Joint 10×8 lookup tables for GPA and GMAT/GRE, multiplicative modifiers for leadership and sport, matrix management reductions, and individual school calibrations.
 
 ### 2. Business Master's Calculator
 An original multi-track model for pre-experience Master's in Management (MiM), Finance (MiF), and Marketing.
 - **Hard Eligibility Gates:** Enforces strict prerequisite barriers (e.g., degree requirements, minimum quantitative ECTS credits, C1/B2 language hurdles, and work experience caps).
-- **Institution-Specific Weightings:** Differentiates between *numbers-led* schools (e.g., Bocconi) and *holistic* reviewers (e.g., HEC Paris).
+- **Institution-Specific Weightings:** Differentiates between *numbers-led* schools (e.g., Bocconi) and *holistic* reviewers (e.g., HEC Paris). Where a school publishes its weights or a points table — St. Gallen, Mannheim, TUM — the model uses them as written.
 - **Counterfactual Guidance:** Tells you exactly which improvements (GMAT score, essays, recommendations) would close the gap for your target schools.
 
 ### 3. IT & Computing Master's Calculator
@@ -93,41 +93,63 @@ A rule-first evaluation model for 26 computing master's programmes in the UK, Eu
 ## Project Structure
 
 ```text
+Pages (they stay at the top level: GitHub Pages publishes these paths as the site's URLs)
 index.html          Landing page — Business or IT track selector
 business.html       Business track picker (MBA, Finance, Management, Marketing)
 mba.html            MBA calculator and results
 masters.html        Master's calculator (?track=mim|mif|marketing)
 it.html             IT track picker (Computer Science, Data Science & AI, Conversion)
 computing.html      Computing calculator (?track=cs|dsai|conversion)
+404.html            Page-not-found, in the site's own style
+sw.js               Service worker — keeps visited calculators working offline
+                    (it has to sit at the top to cover every page)
 
 css/app.css         The newspaper layout and its three editions
 css/fonts.css       @font-face rules for the typefaces in fonts/ (all SIL OFL)
+fonts/              The typefaces, with their licences
 img/photo/          Photographs: JPEG masters plus 480/800/1240px WebP (tools/build-images.sh)
 img/wordmark/       Nameplate images for the Wall Street and FBI Watchlist editions
-sw.js               Service worker — keeps visited calculators working offline
-js/theme.js         Edition picker, section-nav highlighting and the dateline
-js/ticker.js        The Admissions Index ticker and the front page's "Highest bars"
-js/engine.js        Core wizard runtime, reactive form logic and the running score
-js/results-kit.js   Filter pills, the what-if slider and Me now / Me after, deadline countdowns
-                    and freshness, the battle plan
-js/i18n.js          The language switch and the translation engine
-js/i18n-it.js       Italian for the pages and the interface
-data/i18n-it-models.js  Italian for the questions, options and school facts
-js/stats.js         Anonymous visit counting (off until configured)
-js/score-*.js       Scoring algorithms and gate evaluation rules
-js/page-*.js        UI presentation and dynamic results rendering
-data/*-model.js     Declarative question definitions, school profiles, and thresholds
-data/it-evidence.js 5-year aggregated admissions data
-data/deadlines.js   Official admissions links and 2026–27 deadlines, each date source-tagged
+img/                Favicon, touch icon, link-preview card and the section marks (mark-*.svg)
 
-tests/*.js          Test suites (equivalence, gates, profiles, calendar, translation, pages)
+js/ — what runs in the page
+  engine.js         Core wizard runtime, reactive form logic and the running score
+  score-*.js        Scoring and gate rules: score-mba, score-masters, score-computing
+  page-*.js         Each calculator's results page: page-mba, page-masters, page-computing
+  results-kit.js    Filter pills, the what-if slider and Me now / Me after, deadline
+                    countdowns and freshness, the battle plan
+  storage.js        Saving answers in this browser (localStorage)
+  session.js        "Clear everything", resume banners and "See your results" links
+  ui.js             Scroll reveals, the top-bar shadow and the score dial; never touches a score
+  theme.js          Edition picker, section-nav highlighting and the dateline
+  ticker.js         The Admissions Index ticker and the front page's "Highest bars"
+  intro.js          The opening titles
+  i18n.js           The language switch and the translation engine
+  i18n-it.js        Italian for the pages and the interface
+  stats.js          Anonymous visit counting (off until configured)
+
+data/ — what the calculators know
+  mba-model.js, masters-model.js, computing-model.js
+                    Questions, school profiles, gates and thresholds, per calculator
+  computing-evidence.js  5-year aggregated applicant reports for the computing track
+  conversions.js    GMAT / Focus / GRE and grade conversions
+  mba-companies.js  Employer prestige values behind the MBA's employer search
+  deadlines.js      Official admissions links and 2026–27 deadlines, each date source-tagged
+  i18n-it-models.js Italian for the questions, options, school facts and deadline notes
+
+tests/*-test.js     Test suites (equivalence, gates, profiles, calendar, translation, pages);
+                    computing-test.js covers the IT track, i18n-test.js the Italian
 tools/build.js      Packages the site into _site/ for publishing (bundled, minified, hashed)
 tools/run-tests.js  Cross-platform test runner behind `npm test`
 tools/i18n-report.js  What is missing or out of date in the Italian
-docs/               Supplementary documentation and employer placement guide
+tools/build-images.sh   WebP copies of the photographs
+tools/build-brand.py    Favicon, wordmarks, touch icon and link card (needs .venv, see the file)
+tools/data-collection/  One-off collectors behind data/computing-evidence.js — not part of
+                    the everyday workflow
+docs/EMPLOYER-GUIDE.md  The employer placement guide
+docs/VERIFICATION.md    The 28 September 2026 audit: mathematical proof and methodology
 design/concepts/    Parked alternative redesigns (static mockups, not part of the site)
+design/intro/       The lab and brief the opening titles were built from
 CREDITS.md          Photograph and typeface credits and licensing details
-VERIFICATION.md     Mathematical proof and verification methodology
 ```
 
 ---

@@ -12,7 +12,7 @@
  * activate.
  * ------------------------------------------------------------------------- */
 
-var VERSION = 'v4';
+var VERSION = 'v5';
 var SHELL = 'admetia-shell-' + VERSION;
 var MEDIA = 'admetia-media-' + VERSION;
 
@@ -21,11 +21,11 @@ var SHELL_FILES = [
   'index.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html',
   'css/fonts.css', 'css/app.css',
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
-  'data/conversions.js', 'data/masters-model.js', 'data/it-model.js',
-  'data/it-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js',
+  'data/conversions.js', 'data/masters-model.js', 'data/computing-model.js',
+  'data/computing-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js',
   'js/theme.js', 'js/intro.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',
-  'js/score-masters.js', 'js/score-it.js', 'js/score-mba.js', 'js/results-kit.js',
-  'js/page-masters.js', 'js/page-it.js', 'js/page-mba.js'
+  'js/score-masters.js', 'js/score-computing.js', 'js/score-mba.js', 'js/results-kit.js',
+  'js/page-masters.js', 'js/page-computing.js', 'js/page-mba.js'
 ];
 
 self.addEventListener('install', function (event) {

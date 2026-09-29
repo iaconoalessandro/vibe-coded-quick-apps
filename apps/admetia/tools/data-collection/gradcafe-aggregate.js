@@ -4,7 +4,7 @@
  *
  * Applicant-reported admissions outcomes are the only public source of per-programme
  * student experience for computing master's. This script turns five years of them into
- * the aggregates in data/it-evidence.js.
+ * the aggregates in data/computing-evidence.js.
  *
  * It stores counts, shares and date distributions. It never stores the free-text notes
  * applicants write, and no verbatim post reaches the repository.
@@ -13,9 +13,9 @@
  * use=reference". Aggregating for reference is within that; nothing here trains a model.
  * Requests are serialised with a delay, and pages are cached so a re-run costs nothing.
  *
- *   node tools/gradcafe-aggregate.js fetch    # download (~506 pages, ~13 min)
- *   node tools/gradcafe-aggregate.js names    # list school names by volume
- *   node tools/gradcafe-aggregate.js build    # write data/it-evidence.js
+ *   node tools/data-collection/gradcafe-aggregate.js fetch    # download (~506 pages, ~13 min)
+ *   node tools/data-collection/gradcafe-aggregate.js names    # list school names by volume
+ *   node tools/data-collection/gradcafe-aggregate.js build    # write data/computing-evidence.js
  *
  * Cache lives outside the repo; override with GRADCAFE_CACHE.
  */
@@ -27,7 +27,7 @@ const zlib = require('zlib');
 
 const CACHE = process.env.GRADCAFE_CACHE ||
   path.join(require('os').tmpdir(), 'gradcafe-cache');
-const OUT = path.join(__dirname, '..', 'data', 'it-evidence.js');
+const OUT = path.join(__dirname, '..', '..', 'data', 'computing-evidence.js');
 
 const SINCE = '2021-01-01';
 const DELAY_MS = 1500;
@@ -214,7 +214,7 @@ async function fetchAll() {
 
 function loadRows() {
   if (!fs.existsSync(CACHE)) {
-    console.error('No cache at ' + CACHE + '. Run: node tools/gradcafe-aggregate.js fetch');
+    console.error('No cache at ' + CACHE + '. Run: node tools/data-collection/gradcafe-aggregate.js fetch');
     process.exit(1);
   }
 
@@ -280,7 +280,7 @@ if (require.main === module) {
   else if (cmd === 'names') listNames();
   else if (cmd === 'build') require('./build-evidence.js').build(loadRows(), OUT);
   else {
-    console.error('usage: node tools/gradcafe-aggregate.js fetch|names|build');
+    console.error('usage: node tools/data-collection/gradcafe-aggregate.js fetch|names|build');
     process.exit(1);
   }
 }

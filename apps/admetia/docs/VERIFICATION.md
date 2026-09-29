@@ -1,12 +1,16 @@
 # Verification
 
-What was checked, how, and what the results were. Re-run any of it with:
+What was checked, how, and what the results were, as of **28 September 2026**. The counts
+below (schools, programmes, assertions) are from that audit; programmes added since — St.
+Gallen, Yale, RSM Finance, WU Quantitative Finance, Mannheim, TUM and the marketing
+programmes of 30 September — are covered by the test suites but not re-audited here. Run
+every suite with `npm test`, or the ones this audit used with:
 
 ```bash
-node tests/mba-test.js && node tests/masters-test.js && node tests/features-test.js && node tests/profiles-test.js && node tests/it-test.js
+node tests/mba-test.js && node tests/masters-test.js && node tests/features-test.js && node tests/profiles-test.js && node tests/computing-test.js
 ```
 
-Current status: **8,000/8,000 frozen MBA profiles in both modes · 7/7 MBA edge cases · 21/21 master's · 23/23 features · 21/21 profiles · 74/74 computing.**
+Status on 28 September 2026: **8,000/8,000 frozen MBA profiles in both modes · 7/7 MBA edge cases · 21/21 master's · 23/23 features · 21/21 profiles · 74/74 computing.**
 
 ---
 
@@ -332,7 +336,7 @@ Also checked:
 
 ---
 
-## 18. IT & Computing model (`tests/it-test.js`, 74/74)
+## 18. IT & Computing model (`tests/computing-test.js`, 74/74)
 
 The computing track leans on gates far more than the business ones do, so most of the
 suite is about gates firing on exactly the right profiles and no others.

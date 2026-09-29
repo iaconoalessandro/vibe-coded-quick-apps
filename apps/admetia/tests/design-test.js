@@ -37,14 +37,14 @@ t('the plan prints in the reader\'s edition: its paper edge to edge, its inks, i
   /:root\[data-theme="watchlist"\] \.plan-mast \{[^}]*background: #171717/.test(css)&&/:root\[data-theme="wallstreet"\] \.plan-name \{/.test(css));
 t('the opening titles never print, and never hide text while a face loads',/@media print\{\.intro\{display:none!important\}/.test(read('js/intro.js'))&&!/font-display:block/.test(read('js/intro.js')));
 t('printing a results page prints the plan',/addEventListener\('beforeprint'[\s\S]{0,300}planDoc\(build\(\)\)/.test(kit));
-['page-mba.js','page-masters.js','page-it.js'].forEach(f=>{
+['page-mba.js','page-masters.js','page-computing.js'].forEach(f=>{
   const src=read('js/'+f);
   t(f+' shows the deadline calendar and links to it',/var cal = kit && kit\.deadlineCalendar\(\);/.test(src)&&/\{ label: 'Deadlines', count: cal && cal\.count, target: cal \}/.test(src));
   t(f+' has no separate "Print the page" button any more',!/Print the page/.test(src));
 });
 
 t('each calculator\'s jump bar opens the key to its verdicts',
-  /\}, 'mba'\), sum\.nextSibling\);/.test(read('js/page-mba.js'))&&/\}, 'masters'\), sum\.nextSibling\);/.test(read('js/page-masters.js'))&&/\}, 'it'\), grid\.nextSibling\);/.test(read('js/page-it.js')));
+  /\}, 'mba'\), sum\.nextSibling\);/.test(read('js/page-mba.js'))&&/\}, 'masters'\), sum\.nextSibling\);/.test(read('js/page-masters.js'))&&/\}, 'it'\), grid\.nextSibling\);/.test(read('js/page-computing.js')));
 t('the MBA key gives the model\'s own odds, and says whose they are',/'Roughly 75–80%'/.test(kit)&&/'Roughly 50%'/.test(kit)&&/'Roughly 10%'/.test(kit)&&/model author’s own stated figures, not measured outcomes/.test(kit));
 t('the master\'s and computing key gives rules, never a percentage',(function(){ const m=/rules: \{[\s\S]*?\n    \}/.exec(kit); return !!m&&!/%/.test(m[0])&&/a ranking, not probabilities/.test(m[0]); })());
 t('no verdict is sold as a certainty',!/guaranteed|certain to|100%/i.test(kit.replace(/No verdict is a guarantee/g,'').replace(/Likely, not certain/g,'')));

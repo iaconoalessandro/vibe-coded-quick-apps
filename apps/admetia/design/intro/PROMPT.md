@@ -121,7 +121,7 @@ L'etichetta in basso a sinistra dice "90+ programmes · 42 MBA schools · 26 com
 "90+ programmi · 42 scuole MBA · 26 informatica".
 
 - I numeri **non vanno scritti a mano**: devono venire dagli stessi dati del sito
-  (`data/mba-model.js`, `data/masters-model.js`, `data/it-model.js`), con la stessa
+  (`data/mba-model.js`, `data/masters-model.js`, `data/computing-model.js`), con la stessa
   logica con cui la home dice "more than 90 programmes" e "42 business schools".
 - Se l'intro parte prima che quei file siano caricati (sono `defer`), aggiungi un test in
   `tests/` che fallisce se i numeri dell'intro non coincidono con i dati. Aggiorna anche

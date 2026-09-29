@@ -39,7 +39,7 @@
 
   /* Counts shown in the corner of the titles. tests/intro-test.js checks them
    * against the models, as tests/site-test.js does for the pages' own text. */
-  var COUNT = { programmes: 90, mba: 42, computing: 26 };
+  var COUNT = { programmes: 110, mba: 43, computing: 26 };
 
   var TXT = {
     en: {

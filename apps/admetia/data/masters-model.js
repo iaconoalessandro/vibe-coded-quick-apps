@@ -159,6 +159,65 @@ window.MASTERS_MODEL = (function () {
       mult: { academic: 0.85, test: 0.8, institution: 0.95, quant: 0.8,
               internship: 1.3, leadership: 1.55, international: 1.4, essays: 1.55 },
       mods: { recs: 1.4 }
+    },
+    /* St. Gallen publishes its split outright on each programme's admission
+     * page (OFF), so these two use it as written rather than a reading of
+     * the process. The Master in Banking and Finance: grades 30, test 30,
+     * extracurriculars 15, motivation letter 25. The Master in Marketing
+     * Management: grades 30, test 30, extracurriculars and work experience
+     * 40, and no letter at all. How the CV share divides between internships,
+     * leadership and time abroad is CAL. */
+    split: {
+      id: 'split', label: 'Published split — grades, test, CV and letter',
+      short: 'Grades 30 · test 30 · CV 15 · letter 25',
+      blurb: 'The school publishes its own weights: your grade average 30%, the test 30%, ' +
+        'documented extracurriculars and experience 15%, and the motivation letter 25%. ' +
+        'Nothing else is scored.',
+      mult: {},
+      fixed: { academic: 30, test: 30, internship: 7, leadership: 5, international: 3, essays: 25 },
+      mods: { recs: 0, languages: 0.5 }
+    },
+    splitCv: {
+      id: 'splitCv', label: 'Published split — grades, test and CV',
+      short: 'Grades 30 · test 30 · CV 40',
+      blurb: 'The school publishes its own weights: your grade average 30%, the test 30%, ' +
+        'and documented extracurriculars and work experience 40%. There is no letter and ' +
+        'no interview.',
+      mult: {},
+      fixed: { academic: 30, test: 30, internship: 16, leadership: 14, international: 10 },
+      mods: { recs: 0, languages: 0.5 }
+    },
+    /* Mannheim ranks every application on a published table of points
+     * (OFF): final grade up to 60, GMAT or GRE up to 60, 30 ECTS of
+     * economics, maths or statistics 32, a semester abroad 22, relevant work
+     * up to 6 — 180 in all, with no letter, no reference and no interview.
+     * A missing test is not rescaled away: it simply scores nothing, which is
+     * a third of the table. Rescaled here to 100 and rounded. */
+    points: {
+      id: 'points', label: 'Points table — grade, test and set items',
+      short: 'Grade 33 · test 33 · economics 18 · abroad 12 · work 4',
+      blurb: 'A published points table ranks every applicant: the final grade and the ' +
+        'test are worth a third each, a block of economics, maths or statistics and a ' +
+        'semester abroad most of the rest. No letter, reference or interview is read. ' +
+        'The test is optional, but without one that third of the table stays empty.',
+      mult: {},
+      fixed: { academic: 33, test: 33, quant: 18, international: 12, internship: 4 },
+      mods: { recs: 0, languages: 0 },
+      testCountsZero: true
+    },
+    /* TUM's Finance and Information Management assessment (OFF): prior
+     * modules up to 20 points, the final grade up to 15, the GMAT up to 10
+     * and a written essay up to 25 — 70 in all, with an interview only for
+     * the band between rejection and direct admission. Rescaled to 100. */
+    pointsEssay: {
+      id: 'pointsEssay', label: 'Points table with a scored essay',
+      short: 'Essay 36 · modules 29 · grade 21 · test 14',
+      blurb: 'A published points table: your prior modules, the final grade and an ' +
+        'optional GMAT, plus a written essay that is marked by the school and worth ' +
+        'more than any other single item. An interview decides the middle band.',
+      mult: {},
+      fixed: { essays: 36, quant: 29, academic: 21, test: 14 },
+      mods: { recs: 0, languages: 0 }
     }
   };
 
@@ -936,6 +995,38 @@ window.MASTERS_MODEL = (function () {
       ],
       gates: [g('minEnglish', 'C1', 'C1 English required — TOEFL 100 / IELTS 7.0', 'TP')]
     },
+    {
+      id: 'mannheim-mmm', name: 'Mannheim — Mannheim Master in Management', tracks: ['mim', 'marketing'], region: 'Germany',
+      threshold: 72, strong: 81, regime: 'D',
+      profile: 'points', because: 'Every applicant is ranked on a published table of points — grade, test, economics coursework, a semester abroad, work experience — and nothing else in the file is read.',
+      test: { policy: 'optional', note: 'Not required to apply, but worth up to 60 of the 180 ranking points. Points start at GMAT 600 / Focus 555; GRE is converted.', src: 'OFF' },
+      facts: [
+        { k: 'Ranking points', v: 'Final grade up to 60, GMAT or GRE up to 60, 30 ECTS of economics, maths or statistics (12 in economics) 32, a semester abroad 22, relevant work up to 6 — 180 in all', src: 'OFF' },
+        { k: 'Test points', v: 'Steep at the top: GMAT 600 earns 1 point, 650 earns 10, 700 earns 40 and 730 or more the full 60', src: 'OFF' },
+        { k: 'Places', v: 'About 400 a year, 80% on the German-English track and 20% on the English track. There is no minimum score — the ranking decides.', src: 'OFF' },
+        { k: 'Not read', v: 'Letters of recommendation and anything else outside the table', src: 'OFF' },
+        { k: 'Specialisations', v: 'Chosen inside the one programme, semester by semester: Marketing & Sales, Banking & Finance, Accounting & Taxation, Operations and more. This is also Mannheim\'s route into marketing.', src: 'OFF' },
+        { k: 'English track', v: 'Taught entirely in English, no German needed. More than 30% of MMM students come from abroad; C1 German is required only on the German-English track.', src: 'OFF' }
+      ],
+      gates: [
+        g('minEctsBusiness', 36, 'At least 36 ECTS of pure business administration', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required', 'OFF')
+      ]
+    },
+    {
+      id: 'tum-mim', name: 'TUM — Master in Management', tracks: ['mim'], region: 'Germany',
+      threshold: 70, strong: 80, regime: 'D',
+      profile: 'metric', because: 'A published two-stage points procedure: your grade and an optional GMAT decide stage one, and TUM\'s own admission test decides the rest. There is no essay, reference or interview.',
+      test: { policy: 'optional', note: 'Optional, and worth up to 10 extra points from the 72nd percentile. Compulsory at the 65th percentile for a first degree from China, Egypt, India, Pakistan or Bangladesh.', src: 'OFF' },
+      facts: [
+        { k: 'Who it is for', v: 'Graduates in engineering or the natural sciences. Business, economics and industrial-engineering degrees are not eligible.', src: 'OFF' },
+        { k: 'Stage 1', v: 'Eligibility 50 points, final grade up to 15 (German 1.0 = 15, 2.5 or worse = 0), GMAT up to 10. 62 or more admits directly; 49 or less is a rejection.', src: 'OFF' },
+        { k: 'Stage 2', v: 'Between 50 and 61: TUM\'s own admission test of 40–50 questions (maths, logic, problem solving, a short essay), and 80 points overall admits', src: 'OFF' },
+        { k: 'Language', v: 'Taught in English; A1 German is needed by the end of the second semester', src: 'OFF' },
+        { k: 'Campuses', v: 'Munich, and a separate intake in Heilbronn', src: 'OFF' }
+      ],
+      gates: [g('degreeFields', ['fld_quant'], 'An engineering or natural-sciences degree is required — business and economics graduates are not eligible', 'OFF')]
+    },
 
     /* ---------------- Finance ---------------- */
     {
@@ -1198,6 +1289,100 @@ window.MASTERS_MODEL = (function () {
         g('minEnglish', 'C1', 'C1 English required — IELTS 7.0 / TOEFL 94', 'OFF')
       ]
     },
+    {
+      id: 'stgallen-mbf', name: 'St. Gallen — Master in Banking and Finance', tracks: ['mif'], region: 'Switzerland',
+      threshold: 79, strong: 87, regime: 'C',
+      profile: 'split', because: 'The admission page states the weights itself: grades 30%, GMAT or GRE 30%, extracurriculars 15%, motivation letter 25%.',
+      test: { policy: 'conditional', note: 'Required unless your bachelor\'s is from a Swiss university, in which case the grade weight doubles instead. GMAT total with no superscore; for GRE only Quant counts.', src: 'OFF' },
+      facts: [
+        { k: 'Published weights', v: 'Undergraduate grade average 30%, GMAT or GRE 30%, extracurricular activities 15%, motivation letter 25%', src: 'OFF' },
+        { k: 'Rounds', v: 'Five, from October to April; each decision comes about a month after its deadline', src: 'OFF' },
+        { k: 'Prerequisite', v: 'A business or economics bachelor\'s with at least 60 ECTS in business and economics and 6 ECTS in maths or statistics', src: 'OFF' },
+        { k: 'Test minimum', v: 'None on the current admission page. Older listings quote GMAT 680 / GRE Quant 162.', src: 'TP' },
+        { k: 'English', v: 'Not tested at application; C1 is the recommended level', src: 'OFF' },
+        { k: 'Before you start', v: 'The compulsory MBF Integration Days in early September', src: 'OFF' }
+      ],
+      gates: [
+        g('minEctsBusiness', 60, 'At least 60 ECTS in business administration or economics', 'OFF'),
+        g('minEctsQuant', 5, 'At least 6 ECTS in mathematics or statistics', 'OFF')
+      ]
+    },
+    {
+      id: 'yale-mam', name: 'Yale SOM — Master\'s in Asset Management', tracks: ['mif'], region: 'USA',
+      threshold: 84, strong: 91, regime: 'D',
+      profile: 'quant', because: 'The class sits at the top of the quantitative scale — GRE Quant of 165–170 for the middle 80% — and applicants are pointed to recommended quantitative coursework.',
+      test: { policy: 'required', note: 'GMAT or GRE, with no waivers and no minimum.', src: 'OFF' },
+      facts: [
+        { k: 'Class of 2026', v: '66 students, 44% women, 77% international, 23 nationalities', src: 'OFF' },
+        { k: 'Test scores', v: 'GMAT Focus 647–715 and GRE Quant 165–170 (middle 80%). Pre-2024 GMAT takers had a median of 735.', src: 'OFF' },
+        { k: 'GPA', v: '3.72–4.0 middle 80%, US schools only', src: 'OFF' },
+        { k: 'Experience', v: 'Not required; many enter straight from college', src: 'OFF' },
+        { k: 'Application', v: 'One essay, two recommendations, recorded video and written answers, a behavioural assessment, and an interview', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'rsm-fi', name: 'RSM Rotterdam — MSc Finance & Investments', tracks: ['mif'], region: 'Netherlands',
+      threshold: 76, strong: 85, regime: 'D',
+      profile: 'metric', because: 'Applicants with a degree from outside the Netherlands are ranked on the GMAT or GRE; only the top of that ranking has its interview scored, and the final list is test plus interview.',
+      test: { policy: 'conditional', note: 'The ranking device for anyone without a Dutch degree. RSM\'s MSc minimum is GMAT 600 / Focus 565.', src: 'OFF' },
+      facts: [
+        { k: 'New for 2027', v: 'A single deadline on 31 October 2026, then a ranking: about 550 go through to the interview round and the top 375 are admitted', src: 'OFF' },
+        { k: 'Ranking', v: 'GPA for Dutch degrees, GMAT or GRE for everyone else', src: 'OFF' },
+        { k: 'Interview', v: 'A one-way online interview on your motivation and finance knowledge, scored only for the highest-ranked applicants', src: 'OFF' },
+        { k: 'Prerequisites', v: 'Relevant courses in your prior degree. Work experience and the CFA cannot make up for missing ones.', src: 'OFF' },
+        { k: 'Class', v: 'About 316 students on average, 46% international', src: 'OFF' },
+        { k: 'Tuition', v: '€2,771 EEA; €28,000 non-EEA (2027–28)', src: 'OFF' }
+      ],
+      gates: [
+        g('testMinGmat', 600, 'GMAT 600 / Focus 565 minimum', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required', 'OFF')
+      ]
+    },
+    {
+      id: 'wu-qfin', name: 'WU Vienna — MSc Quantitative Finance', tracks: ['mif'], region: 'Austria',
+      threshold: 74, strong: 83, regime: 'C',
+      profile: 'quant', because: 'A committee reads a statement of purpose that must cover your maths and statistics background, and the quantitative score is the part of the test it says it looks at.',
+      test: { policy: 'optional', note: 'Not mandatory but strongly recommended, GMAT or GRE with no preference. The quantitative score is what matters.', src: 'OFF' },
+      facts: [
+        { k: 'Prerequisite', v: 'Either 60 ECTS in business, economics or finance, or 45 ECTS in maths, statistics or computing', src: 'OFF' },
+        { k: 'Application', v: 'Statement of purpose (mandatory), letters of recommendation, optional CFA or programming certificates', src: 'OFF' },
+        { k: 'Rounds', v: 'Rolling from 1 September, with priority deadlines in October, January and March', src: 'OFF' },
+        { k: 'Class', v: '81% international, 35% women', src: 'OFF' },
+        { k: 'Selectivity', v: 'A cohort of about 68 and an acceptance rate of about 23%, as reported by a third-party programme guide', src: 'TP' },
+        { k: 'Ranking', v: '16th of 204 in the QS Masters in Finance ranking 2024', src: 'OFF' }
+      ],
+      gates: [g('minEnglish', 'C1', 'C1 English required — TOEFL 100 / IELTS 7.0', 'OFF')]
+    },
+    {
+      id: 'mannheim-mmfact', name: 'Mannheim — Master in Finance, Accounting and Taxation', tracks: ['mif'], region: 'Germany',
+      threshold: 71, strong: 80, regime: 'D',
+      profile: 'points', because: 'The same published points table as the Mannheim Master in Management: grade, test, economics coursework, a semester abroad and work experience, and nothing else.',
+      test: { policy: 'optional', note: 'Not required to apply, but worth up to 60 of the 180 ranking points. Points start at GMAT 600 / Focus 555; GRE is converted.', src: 'OFF' },
+      facts: [
+        { k: 'Ranking points', v: 'Final grade up to 60, GMAT or GRE up to 60, 30 ECTS of economics, maths or statistics (12 in economics) 32, a semester abroad 22, relevant work up to 6', src: 'OFF' },
+        { k: 'Not read', v: 'Letters, references and anything else outside the table', src: 'OFF' },
+        { k: 'Admitted averages', v: 'Not published', src: 'NP' }
+      ],
+      gates: [
+        g('minEctsBusiness', 36, 'At least 36 ECTS of pure business administration', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required', 'OFF')
+      ]
+    },
+    {
+      id: 'tum-fim', name: 'TUM — Master in Finance and Information Management', tracks: ['mif'], region: 'Germany',
+      threshold: 70, strong: 80, regime: 'D',
+      profile: 'pointsEssay', because: 'A published points procedure in which a marked essay is worth more than the grade or the test, and an interview decides the middle band.',
+      test: { policy: 'optional', note: 'Optional, with extra points from the 72nd percentile. Compulsory at the 65th percentile for a first degree from China, Egypt, India, Pakistan or Bangladesh.', src: 'OFF' },
+      facts: [
+        { k: 'Stage 1', v: 'Prior modules up to 20, final grade up to 15, GMAT up to 10, essay up to 25. 62 or more admits directly; 39 or less is a rejection.', src: 'OFF' },
+        { k: 'Stage 2', v: 'Between 40 and 61: an interview with a group discussion worth up to 25, added to modules and grade; 48 admits', src: 'OFF' },
+        { k: 'Eligible degrees', v: 'Business, economics or social sciences, industrial engineering, computer science, maths or statistics, with 5 ECTS of scientific writing', src: 'OFF' },
+        { k: 'Essay', v: 'Mandatory for everyone and marked for reasoning, finance-and-IT knowledge and English. AI use in it excludes you.', src: 'OFF' },
+        { k: 'Application windows', v: '1 January – 15 March and 16 March – 31 May', src: 'OFF' }
+      ],
+      gates: []
+    },
 
     /* ---------------- Marketing ---------------- */
     {
@@ -1290,6 +1475,138 @@ window.MASTERS_MODEL = (function () {
         { k: 'Admitted averages', v: 'Not published', src: 'NP' }
       ],
       gates: []
+    },
+    {
+      id: 'hec-mkt', name: 'HEC Paris — Master in Marketing', tracks: ['marketing'], region: 'France',
+      threshold: 77, strong: 86, regime: 'E',
+      profile: 'holistic', because: 'The HEC route: an admissibility jury reads the whole file, then pre-selected candidates face what the school calls a challenging interview.',
+      test: { policy: 'optional', note: 'Management test scores are listed as optional for this programme.', src: 'OFF' },
+      facts: [
+        { k: 'Rounds', v: 'Four, on the same dates as the rest of HEC\'s master\'s programmes', src: 'OFF' },
+        { k: 'Tracks', v: 'You apply to one of two: Consumer Goods and Luxury, or Product Management and Tech', src: 'OFF' },
+        { k: 'Class', v: '78% international students (2024 intake)', src: 'OFF' },
+        { k: 'Ranking', v: '#1 Master in Marketing, QS 2027', src: 'OFF' },
+        { k: 'Admitted averages', v: 'Not published', src: 'NP' }
+      ],
+      gates: []
+    },
+    {
+      id: 'essec-mmd', name: 'ESSEC — MSc Marketing Management & Digital', tracks: ['marketing'], region: 'Singapore',
+      threshold: 72, strong: 81, regime: 'B',
+      profile: 'holistic', because: 'Admission is a file review and an interview, and the test is optional.',
+      test: { policy: 'optional', note: 'TAGE MAGE, GMAT or GRE are optional but can add value.', src: 'OFF' },
+      facts: [
+        { k: 'Campus', v: 'ESSEC\'s Asia-Pacific campus in Singapore, one year of courses then an internship', src: 'OFF' },
+        { k: 'Class', v: 'Typically aged 21–23, straight after a bachelor\'s', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 95 / IELTS 6.5 / Cambridge 175', src: 'OFF' },
+        { k: 'Ranking', v: '#2 Master in Marketing, QS 2024', src: 'OFF' },
+        { k: 'Not to confuse with', v: 'The French-taught Mastère Spécialisé of the same name at Cergy, which is post-experience', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'escp-mkt', name: 'ESCP — MSc in Marketing & Creativity', tracks: ['marketing'], region: 'UK / France',
+      threshold: 70, strong: 80, regime: 'C',
+      profile: 'holistic', because: 'A creative essay, a motivation letter, two references and a personal interview decide it, and no management test is asked for.',
+      test: { policy: 'none', note: 'No GMAT or GRE is asked for.', src: 'OFF' },
+      facts: [
+        { k: 'Experience', v: 'At least 18 months of relevant full-time work, internships included, in sales, marketing, communications or the creative industries', src: 'OFF' },
+        { k: 'Intake', v: 'Starts in January: most of the time in London, then a term in Paris', src: 'OFF' },
+        { k: 'Class', v: '58 participants, average age 26, 2.5 years\' experience, 27 nationalities, 74% women', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 100 / IELTS 7.0 / Cambridge 185', src: 'OFF' },
+        { k: 'Tuition', v: '£28,700 for the January 2027 intake', src: 'OFF' }
+      ],
+      gates: [
+        g('minWorkMonths', 18, 'At least 18 months of relevant experience, internships included', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required — TOEFL 100 / IELTS 7.0', 'OFF')
+      ]
+    },
+    {
+      id: 'ie-mdm', name: 'IE Business School — Master in Digital Marketing', tracks: ['marketing'], region: 'Spain',
+      threshold: 68, strong: 78, regime: 'C',
+      profile: 'holistic', because: 'The IE route: recorded answers under time pressure, an entrance exam, then a personal interview with the admissions team.',
+      test: { policy: 'required', note: 'GMAT, GRE or IE\'s own ieGAT.', src: 'OFF' },
+      facts: [
+        { k: 'Process', v: 'Application, an online assessment (two video answers and one written), the entrance exam, then a personal interview', src: 'OFF' },
+        { k: 'Rounds', v: 'Rolling, with no deadline; places are limited', src: 'OFF' },
+        { k: 'Format', v: '10 months in Madrid, in English, from September', src: 'OFF' },
+        { k: 'Tuition', v: '€37,000', src: 'OFF' },
+        { k: 'Admitted averages', v: 'Not published', src: 'NP' }
+      ],
+      gates: []
+    },
+    {
+      id: 'lse-mkt', name: 'LSE — MSc Marketing', tracks: ['marketing'], region: 'UK',
+      threshold: 80, strong: 88, regime: 'C',
+      profile: 'academic', because: 'A 2:1 entry requirement, a statement of academic purpose and two academic references — read on the transcript, with no interview.',
+      test: { policy: 'conditional', note: 'Required without a UK degree; recommended for everyone, and said to enhance an application significantly.', src: 'OFF' },
+      facts: [
+        { k: 'Median GMAT', v: '720 for the 2022/23 cohort', src: 'OFF' },
+        { k: 'Entry requirement', v: '2:1 or equivalent in any discipline, with readiness for statistics and data analytics', src: 'OFF' },
+        { k: 'Application', v: 'Statement of academic purpose, two academic references and a CV', src: 'OFF' },
+        { k: 'Admissions', v: 'Rolling: the programme closes once it is full', src: 'OFF' },
+        { k: 'Experience', v: 'Not required', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'emlyon-mkt', name: 'emlyon — MSc International Marketing & Business Development', tracks: ['marketing'], region: 'France',
+      threshold: 64, strong: 74, regime: 'C',
+      profile: 'balanced', because: 'The file is read together with emlyon\'s own digital tests, and a test score is optional.',
+      test: { policy: 'optional', note: 'GMAT, GRE, TAGE MAGE or CAT are optional; a high score earns a 5–10% scholarship.', src: 'OFF' },
+      facts: [
+        { k: 'Selectivity', v: '53.1% of applicants admitted across emlyon\'s master\'s programmes for 2026', src: 'OFF' },
+        { k: 'Process', v: 'Application file, then digital tests; a decision within four to five weeks', src: 'OFF' },
+        { k: 'Rounds', v: 'Applications close early once seats fill, as they do each year', src: 'OFF' },
+        { k: 'Tuition', v: '€29,300 (2027–28), 18 months in Lyon plus time abroad', src: 'OFF' },
+        { k: 'Ranking', v: '#11 Master in Marketing, QS 2027', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'edhec-mkt', name: 'EDHEC — MSc in Marketing Management', tracks: ['marketing'], region: 'France',
+      threshold: 68, strong: 78, regime: 'C',
+      profile: 'holistic', because: 'A motivation letter, two recommendations and a recorded video interview, with the test optional.',
+      test: { policy: 'optional', note: 'GMAT, GRE, TAGE MAGE or CAT are optional and can add value.', src: 'OFF' },
+      facts: [
+        { k: 'Process', v: 'CV, transcripts, motivation letter, two recommendations, then an online video interview', src: 'OFF' },
+        { k: 'Rounds', v: 'Rolling from September to June, in rounds; seats go early', src: 'OFF' },
+        { k: 'English', v: 'TOEFL 92 / IELTS 6.5 / TOEIC 850 / Cambridge 175', src: 'OFF' },
+        { k: 'Tuition', v: '€29,900, in Lille, with a 4–6 month placement', src: 'OFF' },
+        { k: 'Ranking', v: 'Top 10 Masters in Marketing worldwide, QS', src: 'OFF' }
+      ],
+      gates: []
+    },
+    {
+      id: 'stgallen-mimm', name: 'St. Gallen — Master in Marketing Management', tracks: ['marketing'], region: 'Switzerland',
+      threshold: 76, strong: 85, regime: 'C',
+      profile: 'splitCv', because: 'The admission page states the weights itself: grades 30%, GMAT or GRE 30%, extracurriculars and work experience 40%.',
+      test: { policy: 'optional', note: 'Optional with a university bachelor\'s — without one, the grade counts double. Required with a university of applied sciences degree.', src: 'OFF' },
+      facts: [
+        { k: 'Published weights', v: 'Undergraduate grades 30%, GMAT or GRE 30%, extracurricular activities and work experience 40%', src: 'OFF' },
+        { k: 'Rounds', v: 'Three, from October to March', src: 'OFF' },
+        { k: 'Prerequisite', v: 'A business-related bachelor\'s: 90 ECTS across business, economics, law and maths with 45 in business, or at least 30 in business for a partly similar degree and extra requirements', src: 'OFF' },
+        { k: 'Before you start', v: 'The programme\'s integration week, "Bootcamp MiMM"', src: 'OFF' },
+        { k: 'Admitted averages', v: 'Not published', src: 'NP' }
+      ],
+      gates: [g('minEctsBusiness', 30, 'At least 30 ECTS in business administration', 'OFF')]
+    },
+    {
+      id: 'cbs-sam', name: 'Copenhagen CBS — MSc EBA Sales Management', tracks: ['marketing'], region: 'Denmark',
+      threshold: 68, strong: 78, regime: 'D',
+      profile: 'transcript', because: 'No test and no interview: the CBS route is the transcript against a list of required core areas.',
+      test: { policy: 'none', note: 'No GMAT or GRE requirement.', src: 'OFF' },
+      facts: [
+        { k: 'Why this one', v: 'CBS\'s English-taught master\'s in marketing and sales. It will run for the last time in 2028 under CBS\'s programme reform.', src: 'OFF' },
+        { k: 'Prerequisite', v: '90 ECTS, of which 45 across six core areas (micro, organisation, marketing, quantitative methods, accounting, finance) at 5 ECTS minimum each', src: 'OFF' },
+        { k: 'Class', v: '65 students, 62% women, average age 25.5, 48% from abroad', src: 'OFF' },
+        { k: 'English', v: 'IELTS 7.0 or TOEFL 94', src: 'OFF' }
+      ],
+      gates: [
+        g('minEctsBusiness', 45, '45 ECTS across six named core business areas', 'OFF'),
+        g('minEctsQuant', 5, 'Quantitative methods is one of the six required core areas', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required — IELTS 7.0 / TOEFL 94', 'OFF')
+      ]
     }
   ];
 
@@ -1342,6 +1659,8 @@ window.MASTERS_MODEL = (function () {
     'emlyon-mim':       { median: 640, sd: 45, basis: 'partial', from: 'third-party reports of ~640 and a one-in-seven admit rate' },
     'skema-mim':        { median: 610, sd: 50, basis: 'peer', from: 'peer French grandes écoles; SKEMA publishes nothing' },
     'esade-mim':        { median: 660, sd: 45, basis: 'published', from: 'Esade\'s stated average of ~660 (~615 on Focus)' },
+    'mannheim-mmm':     { median: 700, sd: 30, basis: 'partial', from: 'Mannheim\'s own points table, which pays almost nothing below 650 and its full 60 from 730' },
+    'tum-mim':          { median: 650, sd: 50, basis: 'partial', from: 'TUM\'s own points table, which starts paying at the 72nd percentile; most admits apply without a test' },
     'warwick-mgmt':     null,
     'manchester-mgmt':  null,
     'cbs-mgmt':         null,
@@ -1362,6 +1681,12 @@ window.MASTERS_MODEL = (function () {
     'washu-msf':        { median: 685, sd: 35, basis: 'published', from: 'published track averages of 676, 681 and 694' },
     'vanderbilt-msf':   { median: 690, sd: 35, basis: 'partial', from: 'third-party reports of 680–730; the school withholds test data' },
     'essec-mif':        { median: 680, sd: 40, basis: 'partial', from: 'third-party reports of ~680, with most admits at 650–710' },
+    'stgallen-mbf':     { median: 690, sd: 40, basis: 'partial', from: 'a GMAT 680 minimum quoted in older listings; the school publishes no average' },
+    'yale-mam':         { median: 735, sd: 30, basis: 'published', from: 'the published 735 median among pre-2024 GMAT takers and a Focus middle-80% of 647–715' },
+    'rsm-fi':           { median: 665, sd: 40, basis: 'partial', from: 'the RSM-wide 600 minimum, and a ranking on the test that only its top ~550 survive' },
+    'wu-qfin':          { median: 660, sd: 45, basis: 'peer', from: 'a ~23% admit rate reported third-party; WU publishes no average' },
+    'mannheim-mmfact':  { median: 690, sd: 30, basis: 'partial', from: 'Mannheim\'s own points table, which pays almost nothing below 650 and its full 60 from 730' },
+    'tum-fim':          { median: 670, sd: 45, basis: 'partial', from: 'TUM\'s own points table: 640 earns nothing and 710 the full 10 points' },
     'escp-mif':         { median: 690, sd: 45, basis: 'partial', from: 'third-party reports of successful applicants around 700; the test is optional' },
     'cbs-fin':          null,
     'warwick-fin':      null,
@@ -1373,6 +1698,15 @@ window.MASTERS_MODEL = (function () {
     'imperial-mkt':     { median: 645, sd: 40, basis: 'peer', from: 'Imperial\'s published averages on its sibling programmes' },
     'rsm-mkt':          { median: 640, sd: 40, basis: 'partial', from: 'the published 600 minimum' },
     'essec-mkt':        { median: 660, sd: 45, basis: 'peer', from: 'the parent ESSEC management programme' },
+    'hec-mkt':          { median: 690, sd: 45, basis: 'peer', from: 'HEC\'s published MiM median of 710, adjusted for an optional-test programme' },
+    'essec-mmd':        null,
+    'escp-mkt':         null,
+    'ie-mdm':           { median: 640, sd: 50, basis: 'peer', from: 'the IE management programme; IE publishes nothing' },
+    'lse-mkt':          { median: 720, sd: 40, basis: 'published', from: 'the programme\'s published cohort median of 720 (2022/23)' },
+    'emlyon-mkt':       null,
+    'edhec-mkt':        null,
+    'stgallen-mimm':    { median: 670, sd: 45, basis: 'peer', from: 'the sibling St. Gallen programmes; the school publishes no average' },
+    'cbs-sam':          null,
     'warwick-mkt':      null,
     'manchester-mkt':   null
   };

@@ -1,6 +1,6 @@
 'use strict';
 /*
- * build-evidence.js — turns cached applicant reports into data/it-evidence.js.
+ * build-evidence.js — turns cached applicant reports into data/computing-evidence.js.
  *
  * Two rules govern everything here, and both exist because the UK/EU sample is
  * thin:
@@ -231,7 +231,7 @@ function build(rows, outPath) {
  * Applicant-reported outcomes for the IT & Computing track.
  *
  * GENERATED FILE — do not edit by hand.
- *   node tools/gradcafe-aggregate.js fetch && node tools/gradcafe-aggregate.js build
+ *   node tools/data-collection/gradcafe-aggregate.js fetch && node tools/data-collection/gradcafe-aggregate.js build
  *
  * Source: results posted by applicants to TheGradCafe, decisions from January
  * 2021 onward. Aggregates only; no applicant's own text is reproduced here.

@@ -26,7 +26,7 @@ const vm = require('vm');
 const ROOT = path.join(__dirname, '..');
 const read = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 
-const MODELS = ['data/conversions.js', 'data/masters-model.js', 'data/it-model.js', 'data/it-evidence.js',
+const MODELS = ['data/conversions.js', 'data/masters-model.js', 'data/computing-model.js', 'data/computing-evidence.js',
   'data/mba-model.js', 'data/deadlines.js'];
 const GLOBALS = ['MASTERS_MODEL', 'IT_MODEL', 'MBA_MODEL', 'IT_EVIDENCE', 'ADMISSIONS_CALENDAR'];
 /* The same prose fields js/i18n.js translates. */

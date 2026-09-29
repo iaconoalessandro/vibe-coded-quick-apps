@@ -61,7 +61,7 @@ t('the Italian motto is the one the masthead uses',itDict.indexOf("': '"+I.TXT.i
 /* ----------------------------------------------------------- counts --- */
 const s={window:{},Math,console,Object,String,Number,parseFloat,isNaN,Infinity};
 vm.createContext(s);
-['data/masters-model.js','data/it-model.js','data/mba-model.js'].forEach(f=>vm.runInContext(read(f),s,{filename:f}));
+['data/masters-model.js','data/computing-model.js','data/mba-model.js'].forEach(f=>vm.runInContext(read(f),s,{filename:f}));
 const MBA=s.window.MBA_MODEL, IT=s.window.IT_MODEL, MS=s.window.MASTERS_MODEL;
 const mbaN=MBA.generalSchools.length+MBA.adjustedSchools.length;
 const mastersN=MS.schools.reduce((n,x)=>n+(x.tracks?x.tracks.length:1),0);

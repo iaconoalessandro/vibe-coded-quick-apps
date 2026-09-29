@@ -30,8 +30,8 @@ I18N.add('it', {
     'Valuta il tuo profilo rispetto ai programmi MBA e ai master in finanza, management e marketing nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Gratuito, privato, in inglese e in italiano.',
   'Do you clear the rules? Computer Science, Data Science & AI and conversion master\'s in the UK, Europe and the US, checked against each programme\'s published entry rules.':
     'Rispetti i requisiti? Master in informatica, data science e IA e di conversione nel Regno Unito, in Europa e negli Stati Uniti, confrontati con le regole d\'ingresso pubblicate da ogni programma.',
-  'A points-based MBA calculator across 42 business schools: your score, your verdict at each school, and what would close the gap. Free and private.':
-    'Un calcolatore MBA a punti su 42 business school: il tuo punteggio, il verdetto per ogni scuola e cosa colmerebbe la distanza. Gratuito e privato.',
+  'A points-based MBA calculator across 43 business schools: your score, your verdict at each school, and what would close the gap. Free and private.':
+    'Un calcolatore MBA a punti su 43 business school: il tuo punteggio, il verdetto per ogni scuola e cosa colmerebbe la distanza. Gratuito e privato.',
   'Master\'s in Management, Finance and Marketing: hard entry rules first, then your score under each school\'s own weighting. Free and private.':
     'Master in management, finanza e marketing: prima i requisiti vincolanti, poi il tuo punteggio con i pesi di ogni scuola. Gratuito e privato.',
   'Computer Science, Data Science & AI and conversion master\'s: published entry rules first, then your score. Free and private.':
@@ -70,8 +70,8 @@ I18N.add('it', {
   'Most published requirements at master’s level are pass/fail.': 'A livello di master, la maggior parte dei requisiti pubblicati è promosso/bocciato.',
   'Choose your field': 'Scegli il tuo ambito',
   'Graduating students throwing their caps in the air outside a business school.': 'Neolaureati che lanciano il tocco in aria davanti a una business school.',
-  'MBA, Master in Finance, Master in Management and Master in Marketing. Scored against more than 90 programmes in Europe, the US and Asia.':
-    'MBA, Master in Finance, Master in Management e Master in Marketing. Valutati su oltre 90 programmi in Europa, negli Stati Uniti e in Asia.',
+  'MBA, Master in Finance, Master in Management and Master in Marketing. Scored against more than 110 programmes in Europe, the US and Asia.':
+    'MBA, Master in Finance, Master in Management e Master in Marketing. Valutati su oltre 110 programmi in Europa, negli Stati Uniti e in Asia.',
   'Begin the business calculator →': 'Inizia il calcolatore business →',
   'IT &amp; Computing': 'Informatica',
   'Computer Science, Data Science and AI, and conversion master’s for graduates of other subjects. Scored against the entry rules each programme publishes.':
@@ -111,8 +111,8 @@ I18N.add('it', {
   'Post-experience': 'Con esperienza',
   'A senior executive in a dark suit standing, arms folded, in front of a boardroom in session.': 'Un dirigente in abito scuro, in piedi a braccia conserte, davanti a una riunione del consiglio.',
   'Points-based model': 'Modello a punti',
-  'Two or more years of work experience. Scored on a points-based model, against 34 schools on a shared scale plus 8 modelled individually.':
-    'Due o più anni di esperienza lavorativa. Valutato con un modello a punti, su 34 scuole con una scala comune più 8 modellate singolarmente.',
+  'Two or more years of work experience. Scored on a points-based model, against 35 schools on a shared scale plus 8 modelled individually.':
+    'Due o più anni di esperienza lavorativa. Valutato con un modello a punti, su 35 scuole con una scala comune più 8 modellate singolarmente.',
   'Begin the MBA calculator →': 'Inizia il calcolatore MBA →',
   'Pre-experience master’s': 'Master per neolaureati',
   'A trading desk of stacked monitors showing live candlestick charts.': 'Una postazione di trading con monitor impilati che mostrano grafici a candele in tempo reale.',
@@ -160,11 +160,11 @@ I18N.add('it', {
   /* Calculator pages */
   'Post-experience · MBA': 'Con esperienza · MBA',
   'How strong is your <em>application</em>?': 'Quanto è forte la tua <em>candidatura</em>?',
-  'Scored on a points-based model, against 34 schools on a shared scale plus 8 modelled individually.':
-    'Valutata con un modello a punti, su 34 scuole con una scala comune più 8 modellate singolarmente.',
+  'Scored on a points-based model, against 35 schools on a shared scale plus 8 modelled individually.':
+    'Valutata con un modello a punti, su 35 scuole con una scala comune più 8 modellate singolarmente.',
   'The base score on the published model, before any school’s own adjustments.': 'Il punteggio di base del modello pubblicato, prima delle correzioni di ogni scuola.',
-  '<b class="rubric-in">Independent and unofficial</b>This calculator uses a points-based scoring model across 42 business schools. It estimates; it does not predict.':
-    '<b class="rubric-in">Indipendente e non ufficiale</b>Questo calcolatore utilizza un modello a punti su 42 business school. Stima; non prevede.',
+  '<b class="rubric-in">Independent and unofficial</b>This calculator uses a points-based scoring model across 43 business schools. It estimates; it does not predict.':
+    '<b class="rubric-in">Indipendente e non ufficiale</b>Questo calcolatore utilizza un modello a punti su 43 business school. Stima; non prevede.',
   'Your answers on the track weighting — evenly weighted, before any school’s own emphasis.': 'Le tue risposte con i pesi del percorso — pesi uguali, prima delle priorità di ogni scuola.',
   '<b class="rubric-in">An original model</b>The weights here are designed specifically for pre-experience programmes; the school facts are sourced and tagged individually, and the score thresholds are calibration rather than anything a school has published.':
     '<b class="rubric-in">Un modello originale</b>I pesi qui sono studiati appositamente per i programmi pre-esperienza; i dati sulle scuole hanno ciascuno la propria fonte, e le soglie di punteggio sono una calibrazione, non qualcosa che una scuola abbia pubblicato.',
@@ -274,6 +274,7 @@ I18N.add('it', {
   /* Where a programme is */
   'France': 'Francia',
   'France / Singapore': 'Francia / Singapore',
+  'UK / France': 'Regno Unito / Francia',
   'Europe (multi-campus)': 'Europa (più sedi)',
   'Italy': 'Italia',
   'Netherlands': 'Paesi Bassi',
@@ -379,6 +380,11 @@ I18N.add('it', {
   'Deadline': 'Scadenza',
   'Funding deadline': 'Scadenza per i finanziamenti',
   'Application window closes': 'Chiusura della finestra di candidatura',
+  'First window closes': 'Chiusura della prima finestra',
+  'Second window closes': 'Chiusura della seconda finestra',
+  '1st deadline': '1ª scadenza',
+  '2nd deadline': '2ª scadenza',
+  '3rd deadline': '3ª scadenza',
   'First deadline': 'Prima scadenza',
   'Second deadline': 'Seconda scadenza',
   'Non-EU/EFTA deadline': 'Scadenza extra-UE/AELS',

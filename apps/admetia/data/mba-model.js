@@ -589,7 +589,11 @@ window.MBA_MODEL = (function () {
     { name: 'CEIBS', points: 63, region: 'China' },
     { name: 'Peking Guanghua', points: 62, region: 'China' },
     { name: 'Nanyang (NTU)', points: 61, region: 'Singapore' },
-    { name: 'Fudan', points: 61, region: 'China' }
+    { name: 'Fudan', points: 61, region: 'China' },
+    /* Mannheim sets a GMAT 600 / Focus 565 floor and a three-year experience
+     * minimum, and its class averages five years and 31 years of age — a
+     * reported median GMAT of about 670–680 puts it just below SDA Bocconi. */
+    { name: 'Mannheim Business School', points: 60, region: 'Germany' }
   ];
 
   /* Gap between your score and a school's points, mapped to a verdict. */
