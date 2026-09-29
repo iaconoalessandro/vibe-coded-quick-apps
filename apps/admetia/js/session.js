@@ -116,19 +116,27 @@ window.Session = (function () {
     foot.insertBefore(box, foot.firstChild);
   }
 
-  /* Offer a clean start when arriving at a wizard that already has answers. */
+  /* Arriving at a wizard that already has answers: offer the results they
+   * lead to, or a clean start. Speaks for this calculator only — answers
+   * saved in another one are not "filled in" here. */
   function buildResumeBanner() {
     var mount = document.getElementById('wizard');
-    if (!mount || !hasAnswers()) return;
+    var key = mount && mount.dataset.store;
+    if (!key || !storedAnswers(key)) return;
 
     var bar = el('div', 'resume-bar');
     bar.appendChild(el('span', null, 'Picking up where you left off — your previous answers are filled in.'));
 
+    var see = el('a', 'btn primary small', 'See my results →');
+    see.href = '#results';
+    see.addEventListener('click', function () { bar.remove(); });
+    bar.appendChild(see);
+
     var fresh = el('button', 'btn ghost small', 'Start fresh');
     fresh.type = 'button';
     fresh.addEventListener('click', function () {
-      if (!confirm(T('Clear every saved answer, across all calculators?'))) return;
-      clearAll();
+      if (!confirm(T('Clear your answers to this calculator and start over?'))) return;
+      try { localStorage.removeItem(PREFIX + key); } catch (e) { /* ignore */ }
       location.reload();
     });
     bar.appendChild(fresh);
@@ -141,14 +149,71 @@ window.Session = (function () {
     mount.parentNode.insertBefore(bar, mount);
   }
 
+  /* Whether one calculator's saved answers hold anything. */
+  function storedAnswers(key) {
+    try {
+      var raw = localStorage.getItem(PREFIX + key);
+      return !!raw && Object.keys(JSON.parse(raw) || {}).length > 0;
+    } catch (e) { return false; }
+  }
+
+  /* Where each calculator lives, keyed by the name its answers are saved under. */
+  var CALCS = [
+    ['mba2', 'mba.html', 'MBA'],
+    ['masters:mif', 'masters.html?track=mif', 'Finance'],
+    ['masters:mim', 'masters.html?track=mim', 'Management'],
+    ['masters:marketing', 'masters.html?track=marketing', 'Marketing'],
+    ['it:cs', 'computing.html?track=cs', 'Computer Science'],
+    ['it:dsai', 'computing.html?track=dsai', 'Data & AI'],
+    ['it:conversion', 'computing.html?track=conversion', 'Conversion']
+  ];
+  function saved() { return CALCS.filter(function (c) { return storedAnswers(c[0]); }); }
+
+  /* On the track pickers, a calculator you have already filled in opens on
+   * its results instead of on question one. */
+  function markSavedLinks() {
+    saved().forEach(function (c) {
+      document.querySelectorAll('a.story[href="' + c[1] + '"]').forEach(function (a) {
+        a.href = c[1] + '#results';
+        var more = a.querySelector('.more');
+        if (more) more.textContent = T('See your results →');
+      });
+    });
+  }
+
+  /* On the front page, under the standfirst, one link per calculator with
+   * saved answers — above the photograph, so a phone shows it at once. */
+  function buildReturnBox() {
+    var anchor = document.querySelector('.lead-story .quick-start') ||
+      document.querySelector('.lead-story .standfirst');
+    var list = saved();
+    if (!anchor || !list.length) return;
+    var box = el('div', 'return-box');
+    box.appendChild(el('h2', 'rubric', 'Your results'));
+    var ul = el('ul');
+    list.forEach(function (c) {
+      var li = el('li');
+      var a = el('a', null, c[2]);
+      a.href = c[1] + '#results';
+      li.appendChild(a);
+      li.appendChild(el('span', 'more', 'See your results →'));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    anchor.insertAdjacentElement('afterend', box);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     buildFooterControls();
     buildResumeBanner();
+    markSavedLinks();
+    buildReturnBox();
   });
 
   return {
     clearAll: clearAll,
     hasAnswers: hasAnswers,
+    storedAnswers: storedAnswers,
     wipeOnClose: wipeOnClose,
     setWipeOnClose: setWipeOnClose,
     describe: describe

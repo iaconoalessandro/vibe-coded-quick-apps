@@ -417,6 +417,24 @@ a:hover { text-decoration-thickness: 2px; }
 .index-item p { margin: 0 0 10px; font-size: 16.5px; color: var(--ink-2); }
 .index-item:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .1em; }
 
+/* Phones only: the two calculators, before the photograph. On a wide screen
+ * the index column beside the lead already offers them. */
+.quick-start { display: none; }
+@media (max-width: 900px) {
+  .quick-start { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 24px; }
+  .quick-start .btn { min-height: 48px; }
+}
+
+/* Front page, returning visitors: straight back to saved results. */
+.return-box { margin: 0 0 24px; }
+.return-box .rubric { margin-bottom: 4px; }
+.return-box ul { list-style: none; margin: 0; padding: 0; }
+.return-box li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--hair); }
+.return-box a { flex: 1; padding: 11px 0; font: 600 16px/1.3 var(--font-ui); color: var(--ink); text-decoration: none; }
+.return-box a:hover { text-decoration: underline; }
+.return-box li { position: relative; }
+.return-box a::after { content: ""; position: absolute; inset: 0; }
+
 .boxout {
   margin: 22px 0; padding: 16px 18px;
   border: 1px solid var(--rule); background: var(--paper-2);
@@ -822,6 +840,45 @@ h2.section .count {
 .panel details.more[open] > summary::before, .prof-legend > details.more[open] > summary::before { content: "\2212\00a0"; }
 .row details.more > summary:hover, .panel details.more > summary:hover { text-decoration: underline; text-underline-offset: 2px; }
 .more-body { display: grid; gap: 12px; margin-top: 10px; }
+/* A fold inside a fold (a school's published facts): quieter, and set in
+ * from the advice above it. */
+.more-body details.more { border-top: 1px solid var(--hair); padding-top: 4px; }
+.more-body details.more > summary { font-size: 13.5px; }
+.more-body details.more > .facts { margin-top: 8px; }
+.more-body > .standing { margin: 0; }
+
+/* Under the headline numbers: the sections of a long results page, and the
+ * battle plan, one tap away. Buttons, not #links — the address carries
+ * #results, and a fragment link would take the results off screen. */
+.jump {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px;
+  margin: 18px 0 0; padding: 10px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair);
+  font: 600 13.5px/1.3 var(--font-ui);
+}
+.jump-k { color: var(--muted); font-weight: 500; }
+.jump-link {
+  padding: 6px 0; border: 0; background: none; cursor: pointer; font: inherit; color: var(--accent);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+.jump-link .c { margin-left: 5px; color: var(--muted); text-decoration: none; display: inline-block; }
+.jump .btn { margin-left: auto; }
+.section { scroll-margin-top: 140px; }
+
+/* The ruled-out list, closed until asked for. */
+.out-list { margin-top: 4px; }
+.out-list > summary {
+  display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 16px;
+  list-style: none; cursor: pointer; border: 1px solid var(--ink);
+  font: 700 12.5px/1.3 var(--font-ui); letter-spacing: .07em; text-transform: uppercase; text-align: center; color: var(--ink);
+}
+.out-list > summary::-webkit-details-marker { display: none; }
+.out-list > summary:hover { background: var(--paper-2); }
+.out-list[open] > summary { margin-bottom: 12px; }
+@media (max-width: 640px) {
+  .jump-link { min-height: 44px; }
+  .jump .btn { margin-left: 0; width: 100%; }
+}
+
 .more-body .facts-head { margin: 4px 0 0; font: 600 13px/1.3 var(--font-ui); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .fold-all {
   display: block; margin: 0 0 10px auto; padding: 0; cursor: pointer; background: none; border: 0;
@@ -1017,7 +1074,7 @@ details.breakdown .inner { padding: 0 0 16px; }
 .row.moved-down .num b::after { content: "\25BC"; color: var(--low); }
 
 /* Deadlines: the next round as a countdown, and the official page. */
-.row .name > .dl {
+.row .name > .dl, .more-body > .dl {
   display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-top: 7px;
   font: 500 13.5px/1.4 var(--font-ui); letter-spacing: 0;
 }
@@ -1357,6 +1414,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="watchlist"] .stepnav button.current { color: #000; font-weight: 600; box-shadow: inset 3px 0 0 #dc0000; padding-left: 10px; }
 :root[data-theme="watchlist"] .btn { text-transform: none; letter-spacing: 0; font: 500 14px/21px var(--font-ui); border-radius: 4px; border-color: #171717; padding: 10px 18px; }
 :root[data-theme="watchlist"] .btn.primary { background: #dc0000; border-color: #dc0000; }
+:root[data-theme="watchlist"] .out-list > summary { text-transform: none; letter-spacing: 0; font: 500 14px/21px var(--font-ui); border-radius: 4px; border-color: #171717; color: #171717; }
 :root[data-theme="watchlist"] .btn.primary:hover { background: #b80000; opacity: 1; }
 :root[data-theme="watchlist"] .summary .k, :root[data-theme="watchlist"] .table-div { font: 500 12px/18px var(--font-ui); letter-spacing: .02em; }
 :root[data-theme="watchlist"] .summary .v { font-weight: 500; font-stretch: 80%; }
@@ -1513,6 +1571,7 @@ footer.foot > .privacy-box { grid-column: 1 / -1; }
 :root[data-theme="city"] .stepnav button.current .n { color: #0a5e66; }
 :root[data-theme="city"] .btn { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; border-radius: 0; }
 :root[data-theme="city"] .btn.primary { background: #0d7680; color: #fff; }
+:root[data-theme="city"] .out-list > summary { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; }
 :root[data-theme="city"] .btn.ghost { border-color: transparent; }
 :root[data-theme="city"] .edition button, :root[data-theme="city"] .switch button { text-transform: none; letter-spacing: 0; }
 :root[data-theme="city"] .summary .k, :root[data-theme="city"] .table-div { font: 600 12px/16px var(--font-ui); letter-spacing: .04em; text-transform: uppercase; }
@@ -1741,6 +1800,12 @@ html.no-js .reveal { opacity: 1; animation: none; }
   body:has(#wizard-view) .ticker-label,
   body:has(#wizard-view) .ticker-view { display: none !important; }
   body:has(#wizard-view) .ticker { justify-content: flex-end; }
+  /* With the ticker gone there is room to name the edition in use, rather
+   * than show three bare squares. */
+  body:has(#wizard-view) .edition button[aria-checked="true"] .t {
+    position: static; width: auto; height: auto; clip: auto; overflow: visible; margin-left: 5px;
+  }
+  body:has(#wizard-view) .edition button[aria-checked="true"] { padding: 0 8px; }
 }
 
 @media (max-width: 640px) {
@@ -1815,7 +1880,14 @@ html.no-js .reveal { opacity: 1; animation: none; }
   #wizard .actions .reset .long { display: none; }
 
   .res-head .headline { font-size: clamp(34px, 10vw, 46px); }
-  .summary { grid-template-columns: minmax(0, 1fr); }
+  /* The headline numbers two by two, not one tall column. */
+  .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .summary > div, .summary > div:first-child { padding: 12px 12px 14px 0; border-top: 1px solid var(--hair); }
+  .summary > div:nth-child(-n+2) { border-top: 0; }
+  .summary > div:nth-child(2n) { padding-left: 12px; border-left: 1px solid var(--hair); }
+  :root[data-theme] .summary > div .v { font-size: 34px; line-height: 1; }
+  :root[data-theme] .summary > div .v.range { font-size: 24px; line-height: 1.1; }
+  .summary .k { letter-spacing: .06em; }
   .row, .table.ranked > .row { grid-template-columns: minmax(0, 1fr) auto; }
   .table.ranked > .row::before { display: none; }
   .row .badge { grid-row: 1; grid-column: 1; justify-self: start; text-align: left; min-width: 0; }
@@ -1903,7 +1975,7 @@ html.no-js .reveal { opacity: 1; animation: none; }
  * ======================================================================== */
 
 @media print {
-  .ticker, .topbar, .sections, .toc, .progress, .actions, .modebar .switch, .edition, .resume-bar, .privacy-box { display: none !important; }
+  .ticker, .topbar, .sections, .toc, .progress, .actions, .jump, .modebar .switch, .edition, .resume-bar, .privacy-box { display: none !important; }
   body { background: #fff !important; }
   .masthead, .sections { background: none !important; box-shadow: none !important; }
   .nameplate { color: #000 !important; background: none !important; width: auto !important; aspect-ratio: auto !important; font-size: 36px !important; line-height: 1.1 !important; }

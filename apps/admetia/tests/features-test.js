@@ -67,11 +67,32 @@ t('a perfect file with a 550 is no longer Strong at HEC', hec550.verdict.label!=
 const noScore=MS.evaluate(Object.assign({},maxed,{testStatus:'ts_no'}),'mim').rows.find(x=>x.school.id==='nova-imm');
 t('not submitting carries no deduction', noScore.rangeMod===0);
 
-// --- Bocconi ranks on test and GPA, 55:45 ---
+// --- Bocconi: test 44, grades 36 (55:45), motivation 10, internships 10 ---
 ['mim','mif','marketing'].forEach(tr=>{
   const e=MS.emphasis(tr,'ranked'), w=k=>e.find(x=>x.key===k).weight;
-  t('Bocconi '+tr+': test and GPA split 55:45', Math.abs(w('test')/(w('test')+w('academic'))-0.55)<0.01);
+  t('Bocconi '+tr+': test 44, grades 36, essays 10, internships 10, nothing else',
+    w('test')===44 && w('academic')===36 && w('essays')===10 && w('internship')===10 &&
+    e.filter(x=>['test','academic','essays','internship'].indexOf(x.key)<0).every(x=>x.weight===0));
 });
+
+// --- audit fixes, September 2026 ---
+const rowOf=(a,tr,id)=>MS.evaluate(a,tr).rows.find(x=>x.school.id===id);
+const late=Object.assign({},maxed,{testScore:720,round:'rd_last'});
+t('LSE is rolling: applying late now costs points', rowOf(late,'mim','lse-mim').roundMod<0);
+t('HEC: only the final round costs points',
+  rowOf(Object.assign({},late,{round:'rd_mid'}),'mim','hec-mim').roundMod===0 && rowOf(late,'mim','hec-mim').roundMod<0);
+const gre=Object.assign({},maxed,{testType:'tt_gre',testScore:330,greQuant:168});
+t('WU Vienna rejects a GRE score', rowOf(gre,'mim','wu-simc').eligible===false);
+t('WU Vienna needs C1 English', rowOf(Object.assign({},maxed,{testScore:720,english:'en_b2'}),'mim','wu-simc').eligible===false);
+t('Nova Finance needs 12 weeks of experience',
+  rowOf(Object.assign({},maxed,{testScore:720,internMonths:'im_0',fullTime:'ft_0'}),'mif','nova-imf').eligible===false &&
+  rowOf(Object.assign({},maxed,{testScore:720,internMonths:'im_6',fullTime:'ft_0'}),'mif','nova-imf').eligible===true);
+const rsm=rowOf(Object.assign({},maxed,{testScore:620,essays:'es_weak'}),'mim','rsm-mim');
+t('RSM: meeting the requirements is the verdict', rsm.eligible && rsm.verdict.label==='Meets the requirements', rsm.verdict.label);
+t('RSM: a late application only qualifies if places remain',
+  rowOf(Object.assign({},maxed,{testScore:620,round:'rd_last'}),'mim','rsm-mim').verdict.tone==='mid');
+t('RSM: 10–19 EC of research methods is no longer enough',
+  rowOf(Object.assign({},maxed,{testScore:720,ectsQuant:'eq_19'}),'mim','rsm-mim').eligible===false);
 
 // --- ineligible schools still get a score and band ---
 const strong4y=Object.assign({},p,{fullTime:'ft_59',gradeBand:'gb_top5',institution:'inst_global',

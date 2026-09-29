@@ -77,6 +77,16 @@
     onFinish: showResults
   });
 
+  var route = Wizard.resultsRoute({
+    show: function () { showResults(wiz.answers()); },
+    hide: function () {
+      resultsView.hidden = true; wizardView.hidden = false;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    isShown: function () { return !resultsView.hidden; },
+    hasAnswers: function () { return Object.keys(wiz.answers()).length > 0; }
+  });
+
   function fmt(n) { return (Math.round(n * 10) / 10).toString(); }
 
   /* 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st (75º in Italian) */
@@ -136,9 +146,10 @@
     wizardView.hidden = true;
 
     /* Where this profile scores best and worst once each school's own
-     * weighting is applied. The spread is the interesting number: a wide one
+     * weighting is applied — the final figure each row shows, timing and
+     * range adjustments included, so the two never disagree. The spread is the interesting number: a wide one
      * means the choice of school matters more than any single improvement. */
-    var spread = res.rows.slice().sort(function (x, y) { return y.profileScore - x.profileScore; });
+    var spread = res.rows.slice().sort(function (x, y) { return y.adjusted - x.adjusted; });
     var bestFit = spread[0], worstFit = spread[spread.length - 1];
     var pct = S.completeness(answers);
 
@@ -146,14 +157,14 @@
       headline(competitive.length, eligible.length, blocked.length),
       closestLine(competitive, eligible) +
       T('Your answers score {score} on the {track} weighting, and {lo}–{hi} once each school applies its own emphasis.',
-        { score: fmt(s.total), track: track.name.toLowerCase(), lo: fmt(worstFit.profileScore), hi: fmt(bestFit.profileScore) }) +
+        { score: fmt(s.total), track: track.name.toLowerCase(), lo: fmt(worstFit.adjusted), hi: fmt(bestFit.adjusted) }) +
       ' ' + blockedLine(blocked.length, pct), backToAnswers));
 
     var sum = el('div', 'summary reveal');
     sum.appendChild(dialCell('Profile score', s.total,
       T('{track} weighting, before any school’s own emphasis', { track: track.name.toLowerCase() })));
     var rangeCell = cell('Under each school\u2019s own weighting',
-      fmt(worstFit.profileScore) + '\u2013' + fmt(bestFit.profileScore),
+      fmt(worstFit.adjusted) + '\u2013' + fmt(bestFit.adjusted),
       'the same answers, reweighted');
     rangeCell.querySelector('.v').classList.add('range');
     sum.appendChild(rangeCell);
@@ -161,8 +172,7 @@
     sum.appendChild(cell('Ruled out by a hard rule', String(blocked.length),
       blocked.length ? 'see below' : (pct < 100 ? 'none so far — some answers missing' : 'none')));
     var gapNote = Wizard.incompleteNote(pct, function () {
-      resultsView.hidden = true; wizardView.hidden = false;
-      wiz.go(wiz.firstMissingStep());
+      route.leave(function () { wiz.go(wiz.firstMissingStep()); });
     });
     if (gapNote) resultsView.appendChild(gapNote);
     var stale = window.ResultsKit && ResultsKit.staleNotice(res.rows.map(function (r) { return r.school.id; }));
@@ -213,8 +223,9 @@
     }
 
     /* ---- eligible schools ---- */
-    resultsView.appendChild(section('Programmes you are eligible for',
-      T('{n} of {total}', { n: eligible.length, total: res.rows.length })));
+    var hEligible = section('Programmes you are eligible for',
+      T('{n} of {total}', { n: eligible.length, total: res.rows.length }));
+    resultsView.appendChild(hEligible);
 
     if (!eligible.length) {
       resultsView.appendChild(el('div', 'table', '')).appendChild(
@@ -236,8 +247,10 @@
     }
 
     /* ---- blocked schools ---- */
+    var hBlocked = null, outList = null;
     if (blocked.length) {
-      resultsView.appendChild(section('Ruled out by a published requirement', blocked.length));
+      hBlocked = section('Ruled out by a published requirement', blocked.length);
+      resultsView.appendChild(hBlocked);
       resultsView.appendChild(note(
         'These are not "low chance" — they are rules that a stronger profile cannot ' +
         'compensate for. An experience cap or a missing ECTS prerequisite disqualifies ' +
@@ -246,8 +259,8 @@
         'going and satisfying.', 'warn'));
       var tb = el('div', 'table');
       blocked.forEach(function (r) { tb.appendChild(schoolRow(r, res.breakEven, false)); });
-      resultsView.appendChild(ResultsKit.foldAll(tb));
-      resultsView.appendChild(tb);
+      outList = ResultsKit.outList(blocked.length, [ResultsKit.foldAll(tb), tb]);
+      resultsView.appendChild(outList);
     }
 
     /* ---- excluded programmes ---- */
@@ -317,6 +330,14 @@
     }
     resultsView.appendChild(actions);
 
+    if (window.ResultsKit) {
+      resultsView.insertBefore(ResultsKit.jumpBar([
+        { label: 'Eligible', count: eligible.length, target: hEligible },
+        { label: 'Ruled out', count: blocked.length, target: hBlocked, open: outList },
+        { label: 'How your score was calculated', target: det }
+      ], function () { return battlePlan(answers, res); }), sum.nextSibling);
+    }
+
     if (filters) filters.refresh();
     if (chip) chip.textContent = fmt(s.total);
 
@@ -324,6 +345,7 @@
      * at the new nodes explicitly. */
     if (window.UI) UI.reveal(resultsView);
     if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+    route.shown();
   }
 
   /* -------------------------------------------------------------------
@@ -482,7 +504,7 @@
       'instead. So every programme below is scored under its own weighting.', { track: track.name.toLowerCase() });
     detail.appendChild(lead);
 
-    var spread = Math.round((bestFit.profileScore - worstFit.profileScore) * 10) / 10;
+    var spread = Math.round((bestFit.adjusted - worstFit.adjusted) * 10) / 10;
     if (spread >= 4) {
       var p2 = el('p');
       p2.textContent = T(
@@ -491,8 +513,8 @@
         'Choosing where to apply is doing more work here than any single thing you could ' +
         'change about the application.', {
           spread: fmt(spread), best: bestFit.school.name, bestProfile: bestFit.profile.short,
-          bestScore: fmt(bestFit.profileScore), worst: worstFit.school.name,
-          worstProfile: worstFit.profile.short, worstScore: fmt(worstFit.profileScore) });
+          bestScore: fmt(bestFit.adjusted), worst: worstFit.school.name,
+          worstProfile: worstFit.profile.short, worstScore: fmt(worstFit.adjusted) });
       body.appendChild(p2);
     }
 
@@ -689,15 +711,22 @@
 
     var name = el('div', 'name');
     name.appendChild(document.createTextNode(sc.name));
-    var meta = T('{region} · test: {policy} · rounds: {regime}',
-      { region: T(sc.region), policy: T(sc.test.policy), regime: r.regime.label.toLowerCase() });
-    if (r.roundMod) meta += ' ' + T('({n} for your timing)', { n: r.roundMod });
-    if (r.rangeMod) meta += ' ' + T('({n} for a test score below this school’s usual range)', { n: r.rangeMod });
+    /* A ruled-out row keeps only its country: timing and weighting are
+     * beside the point until the rule is met, and wait in the fold. */
+    var meta = T(sc.region);
+    if (r.eligible) {
+      meta = T('{region} · test: {policy}', { region: T(sc.region), policy: T(sc.test.policy) });
+      if (r.roundMod) meta += ' · ' + T('{n} for applying in a late round', { n: r.roundMod });
+      if (r.rangeMod) meta += ' ' + T('({n} for a test score below this school’s usual range)', { n: r.rangeMod });
+    }
     var m = el('small', null, meta);
-    m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
+    if (r.eligible) m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
+    /* A ruled-out row stays short — its name and the rule that blocks it.
+     * The deadline and where the score would land wait inside the fold. */
     var dl = window.ResultsKit && ResultsKit.deadlineNode(sc.id);
-    if (dl) name.appendChild(dl);
+    if (dl && r.eligible) name.appendChild(dl);
+    var stand = null;
 
     if (r.gates.failures.length) {
       var ul = el('ul', 'gatelist');
@@ -710,11 +739,10 @@
       name.appendChild(ul);
 
       /* Blocked, but say where the profile itself lands. */
-      var stand = el('p', 'standing ' + r.band.tone);
+      stand = el('p', 'standing ' + r.band.tone);
       stand.textContent = T('On score alone you would be {band} here — {score} against a threshold of {threshold}. ' +
         'The rule above is what blocks you, not your profile.',
         { band: T(r.band.label).toLowerCase(), score: fmt(r.adjusted), threshold: sc.threshold });
-      name.appendChild(stand);
     }
     if (r.gates.warnings.length) {
       var uw = el('ul', 'gatelist warn');
@@ -731,13 +759,18 @@
      * this school leans on (the reason two schools score the same answers
      * differently), and what it publishes. */
     var explain = r.gap > 0 || !r.eligible;
-    var more = ResultsKit.fold(explain ? 'How to close the gap, and what this school weighs'
+    var more = ResultsKit.fold(!r.eligible ? 'More on this school'
+      : explain ? 'How to close the gap, and what this school weighs'
       : 'What this school weighs and publishes', open);
     var body = el('div', 'more-body');
     more.appendChild(body);
+    if (stand) body.appendChild(stand);
+    if (dl && !r.eligible) body.appendChild(dl);
     if (explain) body.appendChild(whyBox(r, r.breakEven || breakEven));
     body.appendChild(emphasisPanel(r));
-    body.appendChild(el('p', 'facts-head', 'What this school actually publishes'));
+    /* The school's own facts fold again: they are reference, not advice,
+     * and open they doubled the length of every row. */
+    var pub = ResultsKit.fold('What this school actually publishes');
     var facts = el('div', 'facts');
     sc.facts.forEach(function (f) {
       var row = el('div', 'fact');
@@ -768,7 +801,8 @@
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
-    body.appendChild(facts);
+    pub.appendChild(facts);
+    body.appendChild(pub);
     name.appendChild(more);
 
     wrap.appendChild(name);
@@ -872,10 +906,7 @@
     return d;
   }
   /* Back from the results to the questions. */
-  function backToAnswers() {
-    resultsView.hidden = true; wizardView.hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  function backToAnswers() { route.leave(); }
 
   /* The rows whose advice matters most start open: the closest to clearing
    * the Competitive line without having cleared it yet. */
@@ -893,4 +924,7 @@
   function note(text, kind) {
     return el('div', 'note-card reveal' + (kind ? ' ' + kind : ''), text);
   }
+
+  /* Opened on #results (a reload, or "See your results" from another page). */
+  if (route.initial()) showResults(wiz.answers());
 }());

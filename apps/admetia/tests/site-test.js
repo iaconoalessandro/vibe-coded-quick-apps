@@ -41,6 +41,31 @@ t('and mentions the US when the model has US programmes',!usCount||/the US, scor
 const mbaN=MBA.generalSchools.length+MBA.adjustedSchools.length;
 t('the MBA description states the number of schools the model scores',read('mba.html').indexOf('across '+mbaN+' business schools')>-1,String(mbaN));
 
+/* ---------------------------------------------------------- journeys --- */
+/* Results sit at #results, so Back returns to the answers; the resume banner,
+ * the track pickers and the front page link straight to them. */
+const pageKeys={'page-mba.js':["'mba2'"],'page-masters.js':["'masters:' + trackId"],'page-it.js':["'it:' + trackId"]};
+Object.keys(pageKeys).forEach(f=>{
+  const src=read('js/'+f);
+  t(f+' puts its results in the browser history, and opens on them from #results',
+    /Wizard\.resultsRoute\(/.test(src)&&/route\.shown\(\)/.test(src)&&/route\.initial\(\)/.test(src)&&/function backToAnswers\(\) \{ route\.leave\(\); \}/.test(src));
+  t(f+' offers the jump bar and the battle plan near the top',/ResultsKit\.jumpBar\(/.test(src));
+});
+const session=read('js/session.js');
+const calcKeys=[...session.matchAll(/\['([a-z0-9:]+)', '([a-z]+\.html(?:\?track=[a-z]+)?)'/g)].map(m=>[m[1],m[2]]);
+t('every calculator is listed for "See your results" links',calcKeys.length===7,calcKeys.map(k=>k[0]).join(' '));
+calcKeys.forEach(([key,href])=>{
+  const page=href.split('?')[0], track=(href.split('=')[1]||'');
+  const ok=page==='mba.html'?key==='mba2':page==='masters.html'?key==='masters:'+track:key==='it:'+track;
+  t('  '+href+' reads the answers saved under '+key,ok);
+  if(page!=='mba.html'){
+    const picker=read(page==='masters.html'?'business.html':'it.html');
+    t('  its picker card links to '+href,picker.indexOf('class="story reveal" href="'+href+'"')>-1||picker.indexOf('href="'+href+'"')>-1);
+  }
+});
+const kit=read('js/results-kit.js');
+t('the filters use the verdict badges\' words',/\['safe', 'Strong'\], \['target', 'Competitive'\]/.test(kit)&&!/'Safe'|'Dream'/.test(kit));
+
 /* ----------------------------------------------------------- sharing --- */
 PAGES.forEach(p=>{
   const h=read(p);

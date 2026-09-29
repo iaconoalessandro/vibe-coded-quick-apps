@@ -135,13 +135,12 @@
     if (after > 0) {
       Object.keys(out).forEach(function (k) { out[k] = out[k] * before / after; });
     }
-    /* A profile can also fix how two factors share their combined weight,
-     * whatever the track's own starting weights — e.g. test 55 : GPA 45. */
-    if (prof.split) {
-      var keys = Object.keys(prof.split);
-      var pool = 0, parts = 0;
-      keys.forEach(function (k) { pool += out[k] || 0; parts += prof.split[k]; });
-      keys.forEach(function (k) { out[k] = pool * prof.split[k] / parts; });
+    /* A profile can instead state the weights outright, out of 100, where a
+     * school's own process is known well enough to say it — Bocconi ranks on
+     * the test, the grades, and a dossier-and-motivation read. Factors it
+     * leaves out count for nothing there. */
+    if (prof.fixed) {
+      Object.keys(out).forEach(function (k) { out[k] = (prof.fixed[k] || 0) * before / 100; });
     }
     return out;
   }
@@ -287,6 +286,11 @@
         case 'testMinGmat':
           if (t.submitting && t.gmat !== null && t.gmat < gate.value) {
             failures.push({ label: gate.label + ' — ' + T('your score converts to about {gmat}', { gmat: t.gmat }), src: gate.src });
+          }
+          break;
+        case 'testKinds':
+          if (t.submitting && t.kind && gate.value.indexOf(t.kind) === -1) {
+            failures.push({ label: gate.label, src: gate.src });
           }
           break;
         case 'minEnglish':
@@ -478,6 +482,17 @@
 
       var gap = Math.round((sc.threshold - adjusted) * 10) / 10;
 
+      /* A qualification-check programme (RSM's rolling MScBA route) admits
+       * everyone who meets its published requirements until it is full, so
+       * the verdict is the rules and the timing, not a ranking. The profile
+       * score still shows, but it does not decide. */
+      if (sc.qualifies && !blocked) {
+        band = roundIdx === 2
+          ? { label: 'Meets the requirements, if places remain', tone: 'mid' }
+          : { label: 'Meets the requirements', tone: 'high' };
+        gap = 0;
+      }
+
       /* What it would take to reach Competitive here — under this school's own
        * weighting, so the advice matches the school. Telling someone to
        * strengthen their essays for Bocconi would be worse than useless. */
@@ -494,6 +509,7 @@
       if (roundIdx > 0) roundGain = (regime.mods[0] || 0) - roundMod;
 
       return {
+        sortKey: sc.qualifies && !blocked ? (roundIdx === 2 ? 0 : sc.strong - sc.threshold) : adjusted - sc.threshold,
         school: sc, adjusted: Math.round(adjusted * 10) / 10,
         roundMod: roundMod, roundGain: roundGain, regime: regime,
         rangeMod: range.pts,
@@ -515,7 +531,7 @@
 
     rows.sort(function (x, y) {
       if (x.eligible !== y.eligible) return x.eligible ? -1 : 1;
-      return (y.adjusted - y.school.threshold) - (x.adjusted - x.school.threshold);
+      return y.sortKey - x.sortKey;
     });
 
     return {

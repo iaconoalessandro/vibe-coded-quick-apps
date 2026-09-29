@@ -67,6 +67,16 @@
     onFinish: showResults
   });
 
+  var route = Wizard.resultsRoute({
+    show: function () { showResults(wiz.answers()); },
+    hide: function () {
+      resultsView.hidden = true; wizardView.hidden = false;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    isShown: function () { return !resultsView.hidden; },
+    hasAnswers: function () { return Object.keys(wiz.answers()).length > 0; }
+  });
+
   function fmt(n) { return (Math.round(n * 10) / 10).toString(); }
 
   function src(tag) {
@@ -92,8 +102,8 @@
 
     var best = null, worst = null;
     res.rows.forEach(function (r) {
-      if (!best || r.profileScore > best.profileScore) best = r;
-      if (!worst || r.profileScore < worst.profileScore) worst = r;
+      if (!best || r.adjusted > best.adjusted) best = r;
+      if (!worst || r.adjusted < worst.adjusted) worst = r;
     });
 
     var pct = S.completeness(a);
@@ -102,7 +112,7 @@
       closestLine(competitive, eligible) +
       (best && worst && best !== worst
         ? T('Your answers score {score} on the track weighting, and {lo}–{hi} once each programme reads the file its own way.',
-            { score: fmt(res.score.total), lo: fmt(worst.profileScore), hi: fmt(best.profileScore) })
+            { score: fmt(res.score.total), lo: fmt(worst.adjusted), hi: fmt(best.adjusted) })
         : T('Your answers score {score} on the track weighting.', { score: fmt(res.score.total) })) + ' ' +
       blockedLine(blocked.length, pct), backToAnswers));
 
@@ -111,7 +121,7 @@
     if (best && worst && best !== worst) {
       var range = el('div');
       range.appendChild(el('div', 'k', 'Under each programme’s own weighting'));
-      range.appendChild(el('div', 'v range', fmt(worst.profileScore) + '–' + fmt(best.profileScore)));
+      range.appendChild(el('div', 'v range', fmt(worst.adjusted) + '–' + fmt(best.adjusted)));
       range.appendChild(el('div', 'sub', 'same answers, read differently'));
       grid.appendChild(range);
     }
@@ -121,8 +131,7 @@
       blocked.length ? 'a rule, not a judgement'
                      : (pct < 100 ? 'none so far — some answers missing' : 'nothing blocks you')));
     var gapNote = Wizard.incompleteNote(pct, function () {
-      resultsView.hidden = true; wizardView.hidden = false;
-      wiz.go(wiz.firstMissingStep());
+      route.leave(function () { wiz.go(wiz.firstMissingStep()); });
     });
     if (gapNote) resultsView.appendChild(gapNote);
     var stale = window.ResultsKit && ResultsKit.staleNotice(res.rows.map(function (r) { return r.school.id; }));
@@ -153,9 +162,10 @@
 
     resultsView.appendChild(profileExplainer(res));
 
-    resultsView.appendChild(section(pct < 100
+    var hEligible = section(pct < 100
       ? 'No published rule blocks you on the answers so far'
-      : 'You meet the published requirements', eligible.length));
+      : 'You meet the published requirements', eligible.length);
+    resultsView.appendChild(hEligible);
     if (eligible.length) {
       var t1 = el('div', 'table ranked reveal');
       /* The closest to Competitive without being there start open. */
@@ -178,16 +188,18 @@
         'The list below says which rule, for each one.'));
     }
 
+    var hBlocked = null, outList = null;
     if (blocked.length) {
-      resultsView.appendChild(section('Ruled out by a published requirement', blocked.length));
+      hBlocked = section('Ruled out by a published requirement', blocked.length);
+      resultsView.appendChild(hBlocked);
       resultsView.appendChild(note(
         'These are not "low chance" — they are rules the programme publishes and applies. Some ' +
         'are permanent, like a degree class. Others are a module you could go and take before ' +
         'the next cycle, which is worth knowing separately.', 'warn'));
-      var t2 = el('div', 'table reveal');
+      var t2 = el('div', 'table');
       blocked.forEach(function (r) { t2.appendChild(schoolRow(r, false)); });
-      resultsView.appendChild(ResultsKit.foldAll(t2));
-      resultsView.appendChild(t2);
+      outList = ResultsKit.outList(blocked.length, [ResultsKit.foldAll(t2), t2]);
+      resultsView.appendChild(outList);
     }
 
     if (M.excluded && M.excluded.length) {
@@ -206,7 +218,8 @@
       resultsView.appendChild(t3);
     }
 
-    resultsView.appendChild(breakdown(res));
+    var det = breakdown(res);
+    resultsView.appendChild(det);
 
     resultsView.appendChild(note(
       'The score is a ranking device, not a probability. No computing programme publishes a ' +
@@ -231,9 +244,18 @@
     }
     resultsView.appendChild(actions);
 
+    if (window.ResultsKit) {
+      resultsView.insertBefore(ResultsKit.jumpBar([
+        { label: 'Eligible', count: eligible.length, target: hEligible },
+        { label: 'Ruled out', count: blocked.length, target: hBlocked, open: outList },
+        { label: 'How your score was calculated', target: det }
+      ], function () { return battlePlan(a, res); }), grid.nextSibling);
+    }
+
     if (filters) filters.refresh();
     if (window.UI && UI.reveal) UI.reveal(resultsView);
     if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+    route.shown();
   }
 
   /* --------------------------------------------------------------------- */
@@ -543,14 +565,21 @@
 
     var name = el('div', 'name');
     name.appendChild(document.createTextNode(sc.name));
-    var meta = T(sc.region) + ' · ' + tn((sc.gates || []).length, '{n} published rule', '{n} published rules') +
-      ' · ' + r.regime.label.toLowerCase();
-    if (r.roundMod) meta += ' ' + T('({n} for your timing)', { n: r.roundMod });
+    /* A ruled-out row keeps only its country: timing and weighting are
+     * beside the point until the rule is met, and wait in the fold. */
+    var meta = T(sc.region);
+    if (r.eligible) {
+      meta = T(sc.region) + ' · ' + tn((sc.gates || []).length, '{n} published rule', '{n} published rules');
+      if (r.roundMod) meta += ' · ' + T('{n} for applying in a late round', { n: r.roundMod });
+    }
     var m = el('small', null, meta);
-    m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
+    if (r.eligible) m.appendChild(el('span', 'chip-emph ' + r.profile.id, r.profile.short));
     name.appendChild(m);
+    /* A ruled-out row stays short — its name and the rule that blocks it.
+     * The deadline and where the score would land wait inside the fold. */
     var dl = window.ResultsKit && ResultsKit.deadlineNode(sc.id);
-    if (dl) name.appendChild(dl);
+    if (dl && r.eligible) name.appendChild(dl);
+    var stand = null;
 
     if (r.gates.failures.length) {
       var ul = el('ul', 'gatelist');
@@ -562,11 +591,10 @@
       });
       name.appendChild(ul);
 
-      var stand = el('p', 'standing ' + r.band.tone);
+      stand = el('p', 'standing ' + r.band.tone);
       stand.textContent = T('On score alone you would be {band} here — {score} against a threshold of {threshold}. ' +
         'The rule above is what blocks you, not your profile.',
         { band: T(r.band.label).toLowerCase(), score: fmt(r.adjusted), threshold: sc.threshold });
-      name.appendChild(stand);
     }
     if (r.gates.warnings.length) {
       var uw = el('ul', 'gatelist warn');
@@ -582,13 +610,17 @@
     /* Everything below the verdict is folded: how to close the gap, how
      * this programme reads a file, and what it publishes. */
     var explain = r.gap > 0 || !r.eligible;
-    var more = ResultsKit.fold(explain ? 'How to close the gap, and how this programme reads a file'
+    var more = ResultsKit.fold(!r.eligible ? 'More on this programme'
+      : explain ? 'How to close the gap, and how this programme reads a file'
       : 'How this programme reads a file, and what it publishes', open);
     var body = el('div', 'more-body');
     more.appendChild(body);
+    if (stand) body.appendChild(stand);
+    if (dl && !r.eligible) body.appendChild(dl);
     if (explain) body.appendChild(whyBox(r));
     body.appendChild(emphasisPanel(r));
-    body.appendChild(el('p', 'facts-head', 'What this programme actually publishes'));
+    /* The programme's own facts fold again: reference, not advice. */
+    var pub = ResultsKit.fold('What this programme actually publishes');
     var facts = el('div', 'facts');
     sc.facts.forEach(function (f) {
       var row = el('div', 'fact');
@@ -619,7 +651,8 @@
     tv.appendChild(src('CAL'));
     thr.appendChild(tv);
     facts.appendChild(thr);
-    body.appendChild(facts);
+    pub.appendChild(facts);
+    body.appendChild(pub);
     name.appendChild(more);
 
     wrap.appendChild(name);
@@ -677,10 +710,7 @@
                    : T('Competitive or better at {n} of {total}.', v);
   }
   /* Back from the results to the questions. */
-  function backToAnswers() {
-    resultsView.hidden = true; wizardView.hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  function backToAnswers() { route.leave(); }
 
   /* With nothing Competitive yet, the most useful fact is where you are
    * nearest. Empty otherwise, so it adds nothing to a good result. */
@@ -723,4 +753,7 @@
   function note(text, kind) {
     return el('div', 'note-card reveal' + (kind ? ' ' + kind : ''), text);
   }
+
+  /* Opened on #results (a reload, or "See your results" from another page). */
+  if (route.initial()) showResults(wiz.answers());
 }());

@@ -75,14 +75,22 @@
     return Object.keys(ANSWERS).some(function (t) { return has(load(ANSWERS[t])); });
   }
 
-  /* Every programme, with your margin where you have answers for that
+  /* A margin means something only once most of a calculator is answered:
+   * one answer in, every programme would show a large red loss. */
+  var READY_PCT = 50;
+  function ready(score, a) {
+    if (!has(a)) return false;
+    try { return !score.completeness || score.completeness(a) >= READY_PCT; } catch (e) { return false; }
+  }
+
+  /* Every programme, with your margin where you have answered most of that
    * calculator and its scoring is loaded. */
   function collect() {
     var MS = window.MASTERS_SCORE, IS = window.IT_SCORE, BS = window.MBA_SCORE;
     var mine = {};
     function margins(score, track) {
       var a = load(ANSWERS[track]);
-      if (!score || !has(a)) return null;
+      if (!score || !ready(score, a)) return null;
       try {
         var m = {};
         score.evaluate(a, track).rows.forEach(function (r) { m[r.school.id] = round1(r.adjusted - r.school.threshold); });
@@ -92,7 +100,7 @@
     ['mim', 'mif', 'marketing'].forEach(function (t) { mine[t] = margins(MS, t); });
     ['cs', 'dsai', 'conversion'].forEach(function (t) { mine[t] = margins(IS, t); });
     var a = load(ANSWERS.mba), base = null;
-    if (BS && has(a)) { try { base = BS.score(a, 'published').base; } catch (e) { base = null; } }
+    if (BS && ready(BS, a)) { try { base = BS.score(a, 'published').base; } catch (e) { base = null; } }
 
     return rows().map(function (r) {
       var delta = r.track === 'mba'

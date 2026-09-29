@@ -50,6 +50,9 @@ window.Wizard = (function () {
     var skipNote = null;
 
     var mount = document.querySelector(cfg.mount);
+    /* Which saved answers this page shows — the resume banner (js/session.js)
+     * reads it to speak about this calculator only. */
+    mount.dataset.store = cfg.key;
     var navEl = document.querySelector(cfg.nav);
     var barEl = document.querySelector(cfg.progress);
     var chipEl = cfg.chip ? document.querySelector(cfg.chip) : null;
@@ -512,7 +515,17 @@ window.Wizard = (function () {
       mount.appendChild(actions);
       refreshMeta();
       centreCurrentStep();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* Moving between steps lands on the questions, not the top of the page:
+     * scrolling back above the headline and photograph put the next question
+     * below the fold every time. The strip pinned to the top is allowed for. */
+    function scrollToQuestions() {
+      var target = mount.closest('.q-grid') || mount;
+      var pinned = document.querySelector('.ticker');
+      var offset = pinned && /sticky|fixed/.test(getComputedStyle(pinned).position) ? pinned.offsetHeight : 0;
+      var y = target.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
     }
 
     /* On phones the step menu is one row that scrolls sideways; keep the
@@ -528,6 +541,7 @@ window.Wizard = (function () {
       furthest = Math.max(furthest, current);
       current = Math.max(0, Math.min(steps.length - 1, i));
       renderStep();
+      scrollToQuestions();
       var h = mount.querySelector('.step-head h1');
       if (h) h.focus({ preventScroll: true });
     }
@@ -591,6 +605,54 @@ window.Wizard = (function () {
     row.appendChild(b);
     box.appendChild(row);
     return box;
+  }
+
+  /* Results as a place in the browser's history. Showing them adds #results
+   * to the address, so a phone's Back button returns to the questions rather
+   * than leaving the calculator, and a reload — or a "See your results" link
+   * from another page — opens straight on them when there are answers.
+   *   opts.show()       draw the results
+   *   opts.hide()       put the questions back on screen
+   *   opts.isShown()    whether the results are on screen
+   *   opts.hasAnswers() whether there is anything to score */
+  function resultsRoute(opts) {
+    var HASH = '#results';
+    var pushed = false;       // there is an entry of ours to go back over
+    var after = null;         // what to do once a Back has landed
+    function onResults() { return location.hash === HASH; }
+    function sync() {
+      if (onResults()) {
+        if (!opts.isShown() && opts.hasAnswers()) { pushed = true; opts.show(); }
+      } else if (opts.isShown()) {
+        pushed = false;
+        opts.hide();
+        if (after) { var fn = after; after = null; fn(); }
+      }
+    }
+    window.addEventListener('popstate', sync);
+    window.addEventListener('hashchange', sync);
+    return {
+      /* Called whenever the results have been drawn. */
+      shown: function () {
+        if (onResults() || !window.history || !history.pushState) return;
+        history.pushState(null, '', HASH);
+        pushed = true;
+      },
+      /* Back to the questions, then `then()` if given. */
+      leave: function (then) {
+        if (onResults() && pushed) { after = then || null; history.back(); return; }
+        if (onResults() && history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+        opts.hide();
+        if (then) then();
+      },
+      /* True when the page was opened on #results with answers to score. */
+      initial: function () {
+        if (!onResults()) return false;
+        if (opts.hasAnswers()) return true;
+        if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+        return false;
+      }
+    };
   }
 
   /* The header of a calculator page: kicker, a headline with one emphasised
@@ -703,7 +765,7 @@ window.Wizard = (function () {
   }
 
   return {
-    create: create, el: el, incompleteNote: incompleteNote,
+    create: create, el: el, incompleteNote: incompleteNote, resultsRoute: resultsRoute,
     words: words, sectionHead: sectionHead, resultsHead: resultsHead, verdictRuns: verdictRuns,
     migrateGradeScale: migrateGradeScale, formMeta: formMeta
   };

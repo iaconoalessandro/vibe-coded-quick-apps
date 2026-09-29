@@ -102,22 +102,22 @@ window.MASTERS_MODEL = (function () {
               internship: 0.5, leadership: 0.2, international: 0.35, essays: 0.1 },
       mods: { recs: 0, languages: 0.5 }
     },
-    /* Bocconi. Its MSc ranking uses the admission test, the GPA and the
-     * dossier and motivation. Bocconi publishes no MSc weights; applicants
-     * and admissions guides consistently report the ranking as 55% test and
-     * 45% GPA, so the two share their combined weight in exactly that split
-     * on every track (TP — reported, not published). The multipliers set how
-     * much of the file the pair carries between them. */
+    /* Bocconi. Its MSc admission is one ranking built from three elements:
+     * the admission test, the bachelor's weighted grade average, and a
+     * "Dossier e Motivazione" read (OFF). It publishes no weights. Applicants
+     * consistently report the test and the grades doing nearly all of the
+     * work, the test slightly more (55:45 is Bocconi's own bachelor's split).
+     * So here: test and grades 80 of the 100 points in a 55:45 ratio, and the
+     * dossier — motivation and internships — the other 20. CAL. */
     ranked: {
-      id: 'ranked', label: 'Ranked on test and GPA together',
-      short: 'Test 55 : GPA 45',
-      blurb: 'Applicants are ranked on the admission test and the GPA, with the ' +
-        'dossier and motivation checked alongside. Applicants and guides report the ' +
-        'split as 55% test and 45% GPA; the school itself publishes no weights for ' +
-        'its MSc programmes.',
-      mult: { academic: 1.7, test: 2.6, institution: 1.0, quant: 1.1,
-              internship: 0.5, leadership: 0.2, international: 0.35, essays: 0.3 },
-      split: { test: 55, academic: 45 },
+      id: 'ranked', label: 'Ranked on test and GPA, with a light file read',
+      short: 'Test 44 · GPA 36 · file 20',
+      blurb: 'One ranking from the admission test, your grade average, and a read of ' +
+        'your dossier and motivation. The school publishes no weights; here the test ' +
+        'and the grades carry 80 of the 100 points, and motivation and internships ' +
+        'the other 20.',
+      mult: {},
+      fixed: { test: 44, academic: 36, essays: 10, internship: 10 },
       mods: { recs: 0, languages: 0.5 }
     },
     transcript: {
@@ -567,7 +567,10 @@ window.MASTERS_MODEL = (function () {
          note: 'Seats fill as the cycle runs. Applying late can mean the door is shut ' +
                'regardless of your profile.' },
     D: { label: 'Single deadline', mods: [0, 0, 0],
-         note: 'Everything is read after the deadline. Applying early gains you nothing.' }
+         note: 'Everything is read after the deadline. Applying early gains you nothing.' },
+    E: { label: 'Later rounds are harder', mods: [0, 0, -3],
+         note: 'Most places are given in the early rounds, so the final round is the ' +
+               'most competitive. HEC says so in as many words.' }
   };
 
   /* ----------------------------------------------------------------------- */
@@ -583,7 +586,7 @@ window.MASTERS_MODEL = (function () {
     /* ---------------- Management ---------------- */
     {
       id: 'hec-mim', name: 'HEC Paris — MiM', tracks: ['mim'], region: 'France',
-      threshold: 80, strong: 88, regime: 'A',
+      threshold: 80, strong: 88, regime: 'E',
       profile: 'holistic', because: 'Essays and a live interview sit at the centre of the route, and the school publishes a median GMAT rather than a formula.',
       test: { policy: 'required', note: 'GMAT, GRE or TAGE MAGE. No waivers.', src: 'OFF' },
       facts: [
@@ -625,10 +628,11 @@ window.MASTERS_MODEL = (function () {
     },
     {
       id: 'lse-mim', name: 'LSE — Master\'s in Management', tracks: ['mim'], region: 'UK',
-      threshold: 80, strong: 88, regime: 'D',
-      profile: 'academic', because: 'One deadline, everything read afterwards, an entry requirement stated as a 2:1, and no interview on the standard route.',
+      threshold: 80, strong: 88, regime: 'C',
+      profile: 'academic', because: 'An entry requirement stated as a 2:1, admission on the transcript, and no interview on the standard route.',
       test: { policy: 'conditional', note: 'Required unless you hold a UK degree.', src: 'OFF' },
       facts: [
+        { k: 'Admissions', v: 'Rolling: applications are read as they arrive, and the programme closes once it is full', src: 'OFF' },
         { k: 'Selectivity', v: '1,125 applications for 75 places — about 6.7%', src: 'OFF' },
         { k: 'Entry requirement', v: '2:1 or international equivalent', src: 'OFF' },
         { k: 'Experience', v: '3 months or more is ideal but not required; the 2024/25 cohort averaged about 3 months', src: 'OFF' },
@@ -671,7 +675,8 @@ window.MASTERS_MODEL = (function () {
       profile: 'ranked', because: 'No interview and no reference letters on the standard route. GPA is named as a compulsory pillar, Bocconi may recalculate it from your transcript, and a test floor applies to everyone.',
       test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE or Bocconi\'s own online test.', src: 'OFF' },
       facts: [
-        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
+        { k: 'Ranking', v: 'One admission ranking from the test result, your bachelor\'s grade average, and an evaluation of your dossier and motivation. No weights are published.', src: 'OFF' },
+        { k: 'Weighting used here', v: 'Test 44, grades 36, motivation 10, internships 10 — test and grades in the 55:45 ratio applicants report', src: 'CAL' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485 / GRE per a published combination table', src: 'OFF' },
         { k: 'Average GMAT of admits', v: 'Not published for any programme', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route, and no reference letters', src: 'OFF' },
@@ -686,7 +691,8 @@ window.MASTERS_MODEL = (function () {
       profile: 'ranked', because: 'The same numbers-led route as the other Bocconi programmes, with a higher test floor and a recorded video on the double-degree tracks.',
       test: { policy: 'required', note: 'Higher floor than the standard programmes.', src: 'OFF' },
       facts: [
-        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
+        { k: 'Ranking', v: 'One admission ranking from the test result, your bachelor\'s grade average, and an evaluation of your dossier and motivation. No weights are published.', src: 'OFF' },
+        { k: 'Weighting used here', v: 'Test 44, grades 36, motivation 10, internships 10 — test and grades in the 55:45 ratio applicants report', src: 'CAL' },
         { k: 'Test floor', v: 'GMAT 555 for the ESSEC and Asia double-degree tracks', src: 'OFF' },
         { k: 'Conflicting figure', v: 'A third-party source states 600 for International Management. Unresolved — verify before relying on it.', src: 'TP' },
         { k: 'Interview', v: 'A recorded video is mandatory for the CEMS, Asia and ESSEC tracks', src: 'OFF' }
@@ -695,19 +701,21 @@ window.MASTERS_MODEL = (function () {
     },
     {
       id: 'rsm-mim', name: 'RSM Rotterdam — MScBA Management', tracks: ['mim'], region: 'Netherlands',
+      qualifies: true,
       threshold: 72, strong: 81, regime: 'C',
       profile: 'metric', because: 'No interview, no motivation letter and no references on the standard route — a test minimum and an ECTS prerequisite do the work.',
       test: { policy: 'conditional', note: 'Mandatory unless you hold a Dutch research-university bachelor. Superscore accepted.', src: 'OFF' },
       facts: [
+        { k: 'Admission', v: 'Rolling: a complete application that meets the requirements is offered a place, until the programme is full', src: 'OFF' },
         { k: 'Test minimum', v: 'GMAT Focus 565 / GMAT 600. Below that you may apply but face extra scrutiny.', src: 'OFF' },
-        { k: 'Prerequisite', v: '20 EC research methods and statistics, of which 10 EC quantitative', src: 'TP' },
+        { k: 'Prerequisite', v: 'At least 20 EC of dedicated research methods and statistics coursework', src: 'OFF' },
         { k: 'Process', v: 'No interview, no motivation letter, no references on the standard route', src: 'TP' },
         { k: 'Capacity', v: 'Closes 15 May or at 300 applications, whichever comes first — historically months early', src: 'TP' },
         { k: 'Tuition', v: '€2,695 EU/EEA statutory; €25,800 non-EU (2026–27)', src: 'TP' }
       ],
       gates: [
         g('testMinGmat', 600, 'GMAT 600 / Focus 565 minimum', 'OFF'),
-        g('minEctsQuant', 10, '10 EC of quantitative methods required', 'TP')
+        g('minEctsQuant', 20, '20 EC of research methods and statistics required', 'OFF')
       ]
     },
     {
@@ -755,21 +763,24 @@ window.MASTERS_MODEL = (function () {
       id: 'wu-simc', name: 'WU Vienna — Strategy, Innovation & Management Control', tracks: ['mim'], region: 'Austria',
       threshold: 75, strong: 84, regime: 'C',
       profile: 'balanced', because: 'A hard GMAT floor and an ECTS prerequisite screen the file, but a motivation letter, a video interview and a group discussion decide it afterwards.',
-      test: { policy: 'required', note: 'GMAT mandatory. GRE is not accepted at all, and experience cannot waive it.', src: 'TP' },
+      test: { policy: 'required', note: 'GMAT only — GRE is not accepted, and there is no waiver.', src: 'OFF' },
       facts: [
         { k: 'Selectivity', v: 'About 600 applications for 60 places — roughly 10%', src: 'TP' },
-        { k: 'Test minimum', v: 'GMAT 600 / GMAT Focus 565', src: 'TP' },
-        { k: 'Prerequisite', v: 'A prior degree of 180 ECTS with at least 45 ECTS in business or economics', src: 'TP' },
-        { k: 'Process', v: 'Document screening, motivation letter, video interview and a group discussion', src: 'TP' }
+        { k: 'Test minimum', v: 'GMAT 600 / GMAT Focus 565', src: 'OFF' },
+        { k: 'Prerequisite', v: 'A prior degree of 180 ECTS with at least 45 ECTS in business or economics', src: 'OFF' },
+        { k: 'English', v: 'C1 — TOEFL iBT 100 / IELTS 7.0, or a degree taught in English', src: 'OFF' },
+        { k: 'Process', v: 'Document screening, motivation letter, a recorded video interview and a group discussion of about 90 minutes', src: 'OFF' }
       ],
       gates: [
-        g('testMinGmat', 600, 'GMAT 600 / Focus 565 minimum, no GRE accepted', 'TP'),
-        g('minEctsBusiness', 45, '45 ECTS of business or economics required', 'TP')
+        g('testMinGmat', 600, 'GMAT 600 / Focus 565 minimum', 'OFF'),
+        g('testKinds', ['gmat', 'focus'], 'GMAT only — a GRE score is not accepted', 'OFF'),
+        g('minEctsBusiness', 45, '45 ECTS of business or economics required', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required — TOEFL 100 / IELTS 7.0', 'OFF')
       ]
     },
     {
       id: 'cbs-mgmt', name: 'Copenhagen CBS — cand.merc. / MSc EBA', tracks: ['mim'], region: 'Denmark',
-      threshold: 70, strong: 80, regime: 'C',
+      threshold: 70, strong: 80, regime: 'D',
       profile: 'transcript', because: 'No test and no minimum GPA: a ranked comparison of transcripts against the rest of the pool.',
       test: { policy: 'none', note: 'No GMAT or GRE requirement.', src: 'TP' },
       facts: [
@@ -830,13 +841,14 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'stgallen-sim', name: 'St. Gallen — Strategy & International Management', tracks: ['mim'], region: 'Switzerland',
       threshold: 79, strong: 87, regime: 'C',
-      profile: 'academic', because: 'The school states that the average grade on your degree certificate is decisive, and that accounting knowledge must be proven or examined.',
+      profile: 'holistic', because: 'A recorded video interview is compulsory and reportedly carries the largest share of the decision, with extracurriculars and experience next; the test and grades are about a fifth each.',
       test: { policy: 'required', note: 'GMAT total, or GRE where both verbal and quant are decisive. Maximum five years old.', src: 'OFF2' },
       facts: [
         { k: 'Average GMAT', v: 'Not published. Third-party claims range from 680 to 720 and contradict each other.', src: 'NP' },
         { k: 'Entry requirement', v: 'The average grade on your degree certificate is decisive. Accounting knowledge must be proven or examined.', src: 'OFF2' },
         { k: 'Class size', v: 'About 55 admitted per cohort', src: 'TP' },
-        { k: 'Published weighting', v: 'The widely-circulated 20/20/20/10/30 split could not be confirmed on the school\'s own site. Do not rely on it.', src: 'TP' }
+        { k: 'Video interview', v: 'Compulsory: your application is only processed once the recorded interview is in', src: 'OFF2' },
+        { k: 'Reported weighting', v: 'Test 20, grades 20, extracurriculars and experience 25, video interview 35 — as consultancy guides quote the school\'s page. Not confirmed on the site itself, and an older 20/20/20/10/30 split also circulates.', src: 'TP' }
       ],
       gates: []
     },
@@ -857,9 +869,10 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'ross-mm', name: 'Michigan Ross — Master of Management', tracks: ['mim'], region: 'USA',
       threshold: 70, strong: 80, regime: 'C',
-      profile: 'metric', because: 'The test is reported to be waived outright at a 3.30 GPA, and the class averages 3.65 — the transcript is doing the work.',
-      test: { policy: 'optional', note: 'Reported to be waived at a cumulative undergraduate GPA of 3.30 or above. Third-party; worth verifying directly.', src: 'TP' },
+      profile: 'balanced', because: 'The test is waived at a 3.30 GPA, and the file is read on two short essays and a recorded video interview on leadership and fit.',
+      test: { policy: 'optional', note: 'Waived for a cumulative undergraduate GPA of 3.30 or above; the committee can still ask for a score.', src: 'OFF2' },
       facts: [
+        { k: 'Process', v: 'Two essays of 200–300 words (career motivation, community engagement) and, if invited, a recorded Kira video interview', src: 'OFF2' },
         { k: 'Average GPA', v: '3.65 (class of 2025)', src: 'TP' },
         { k: 'Class', v: '121 students, 57% women', src: 'TP' },
         { k: 'Test averages', v: 'Not published', src: 'NP' }
@@ -928,9 +941,10 @@ window.MASTERS_MODEL = (function () {
     {
       id: 'lbs-mfa', name: 'London Business School — Masters in Financial Analysis', tracks: ['mif'], region: 'UK',
       threshold: 80, strong: 88, regime: 'C',
-      profile: 'balanced', because: 'A required test with a published class average, read alongside essays and an interview.',
+      profile: 'holistic', because: 'The same LBS process as the MiM: essays the school calls vital, one reference, and an interview by invitation with an alumnus or the admissions team.',
       test: { policy: 'required', note: 'No waivers. A CFA Level 1 pass is the only accepted substitute.', src: 'OFF' },
       facts: [
+        { k: 'Process', v: 'Essays, one reference, and an interview by invitation', src: 'OFF' },
         { k: 'Average GMAT', v: '706 (2022), 702 (2023), 698 (2024)', src: 'OFF2' },
         { k: 'Entry requirement', v: 'UK First or 2:1 equivalent, or GPA of at least 3.3, in any subject', src: 'OFF' },
         { k: 'Class of 2024', v: '221 students, average age 23, 41% women, 54 nationalities, 96% international', src: 'OFF2' },
@@ -967,10 +981,11 @@ window.MASTERS_MODEL = (function () {
     },
     {
       id: 'lse-fin', name: 'LSE — MSc Finance', tracks: ['mif'], region: 'UK',
-      threshold: 82, strong: 89, regime: 'D',
-      profile: 'academic', because: 'A 2:1 in a related subject, one deadline, and commentary that most admits hold Firsts.',
+      threshold: 82, strong: 89, regime: 'C',
+      profile: 'academic', because: 'A 2:1 in a related subject, admission on the transcript, and commentary that most admits hold Firsts.',
       test: { policy: 'conditional', note: 'Required for applicants without a UK degree, with GMAT strongly preferred.', src: 'OFF2' },
       facts: [
+        { k: 'Admissions', v: 'Rolling: applications are read as they arrive, and the programme closes once it is full', src: 'OFF' },
         { k: 'Entry requirement', v: '2:1 in a related subject; commentary suggests most admits hold Firsts', src: 'TP' },
         { k: 'Test averages', v: 'Not published', src: 'NP' },
         { k: 'Sibling programme selectivity', v: 'MSc Finance & Economics took 53 of 761 applicants in 2024 — 6.9%', src: 'FOI' }
@@ -999,7 +1014,8 @@ window.MASTERS_MODEL = (function () {
       profile: 'ranked', because: 'No interview on the standard route, a university-wide test floor, and a GPA the school may recalculate itself.',
       test: { policy: 'required', note: 'GMAT, GMAT Focus, GRE or Bocconi\'s own test.', src: 'OFF' },
       facts: [
-        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
+        { k: 'Ranking', v: 'One admission ranking from the test result, your bachelor\'s grade average, and an evaluation of your dossier and motivation. No weights are published.', src: 'OFF' },
+        { k: 'Weighting used here', v: 'Test 44, grades 36, motivation 10, internships 10 — test and grades in the 55:45 ratio applicants report', src: 'CAL' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485', src: 'OFF' },
         { k: 'Admitted averages', v: 'Not published', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route', src: 'OFF' },
@@ -1009,12 +1025,12 @@ window.MASTERS_MODEL = (function () {
     },
     {
       id: 'hec-mif', name: 'HEC Paris — MSc International Finance', tracks: ['mif'], region: 'France',
-      threshold: 80, strong: 88, regime: 'C',
+      threshold: 80, strong: 88, regime: 'E',
       profile: 'holistic', because: 'The same essay-and-interview route as the rest of HEC, with no waivers on the test.',
       test: { policy: 'required', note: 'GMAT, GRE or TAGE MAGE. No waivers anywhere at HEC.', src: 'OFF' },
       facts: [
         { k: 'Admitted averages', v: 'Not published separately from the management programme', src: 'NP' },
-        { k: 'Rounds', v: 'Rolling, year-round', src: 'OFF' }
+        { k: 'Rounds', v: 'Four rounds, as for the HEC MiM. HEC advises the first three: more places, and round 4 is typically the most competitive.', src: 'OFF' }
       ],
       gates: []
     },
@@ -1041,7 +1057,10 @@ window.MASTERS_MODEL = (function () {
         { k: 'English', v: 'C1', src: 'TP' },
         { k: 'Tuition', v: '€11,900 EU/EEA, €13,000 non-EU', src: 'TP' }
       ],
-      gates: [g('minEnglish', 'C1', 'C1 English required', 'TP')]
+      gates: [
+        g('minWorkMonths', 3, 'At least 12 weeks of professional experience, internships included (volunteering does not count)', 'OFF'),
+        g('minEnglish', 'C1', 'C1 English required', 'TP')
+      ]
     },
     {
       id: 'warwick-fin', name: 'Warwick WBS — MSc Finance', tracks: ['mif'], region: 'UK',
@@ -1098,7 +1117,7 @@ window.MASTERS_MODEL = (function () {
       id: 'berkeley-mfe', name: 'Berkeley Haas — Master of Financial Engineering', tracks: ['mif'], region: 'USA',
       threshold: 86, strong: 93, regime: 'C',
       profile: 'quant', because: 'Roughly three-quarters of the class holds a quantitative-STEM degree and GRE Quant averages the 91st percentile.',
-      test: { policy: 'required', note: 'Policy not confirmed this cycle.', src: 'NP' },
+      test: { policy: 'required', note: 'GMAT or GRE required. Optional only with a PhD, or a US bachelor\'s with a GPA of 3.70 or more.', src: 'OFF' },
       facts: [
         { k: 'GRE', v: 'Quant averages the 91st percentile, verbal the 79th', src: 'OFF' },
         { k: 'Average GPA', v: '3.77 (US students)', src: 'OFF' },
@@ -1187,7 +1206,8 @@ window.MASTERS_MODEL = (function () {
       profile: 'ranked', because: 'The university-wide route: a test floor, a compulsory GPA pillar, and no interview.',
       test: { policy: 'required', note: 'Same university-wide rules as the other MSc programmes.', src: 'OFF' },
       facts: [
-        { k: 'Ranking', v: 'Reported by applicants and guides as 55% test, 45% GPA. Bocconi publishes no MSc weights.', src: 'TP' },
+        { k: 'Ranking', v: 'One admission ranking from the test result, your bachelor\'s grade average, and an evaluation of your dossier and motivation. No weights are published.', src: 'OFF' },
+        { k: 'Weighting used here', v: 'Test 44, grades 36, motivation 10, internships 10 — test and grades in the 55:45 ratio applicants report', src: 'CAL' },
         { k: 'Test floors', v: 'GMAT 500 / Focus 485', src: 'OFF' },
         { k: 'Admitted averages', v: 'Not published', src: 'NP' },
         { k: 'Interview', v: 'None on the standard route', src: 'OFF' }
@@ -1244,17 +1264,19 @@ window.MASTERS_MODEL = (function () {
     },
     {
       id: 'rsm-mkt', name: 'RSM Rotterdam — MSc Marketing Management', tracks: ['marketing'], region: 'Netherlands',
+      qualifies: true,
       threshold: 71, strong: 80, regime: 'C',
       profile: 'metric', because: 'The same numbers-led RSM route: a test minimum and a statistics prerequisite, with no interview.',
       test: { policy: 'conditional', note: 'Mandatory unless you hold a Dutch research-university bachelor.', src: 'OFF' },
       facts: [
+        { k: 'Admission', v: 'Rolling: a complete application that meets the requirements is offered a place, until the programme is full', src: 'OFF' },
         { k: 'Test minimum', v: 'GMAT Focus 565 / GMAT 600', src: 'OFF' },
-        { k: 'Prerequisite', v: 'Research methods and statistics credits, as across RSM\'s master\'s portfolio', src: 'TP' },
+        { k: 'Prerequisite', v: 'At least 20 EC of dedicated research methods and statistics coursework, as across RSM\'s master\'s portfolio', src: 'OFF' },
         { k: 'Capacity', v: 'RSM programmes close on an application cap as well as a date', src: 'TP' }
       ],
       gates: [
         g('testMinGmat', 600, 'GMAT 600 / Focus 565 minimum', 'OFF'),
-        g('minEctsQuant', 10, 'Quantitative methods credits required', 'TP')
+        g('minEctsQuant', 20, '20 EC of research methods and statistics required', 'OFF')
       ]
     },
     {

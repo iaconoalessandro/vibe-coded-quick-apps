@@ -30,6 +30,16 @@
     onFinish: showResults
   });
 
+  var route = Wizard.resultsRoute({
+    show: function () { showResults(wiz.answers()); },
+    hide: function () {
+      resultsView.hidden = true; wizardView.hidden = false;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
+    isShown: function () { return !resultsView.hidden; },
+    hasAnswers: function () { return Object.keys(wiz.answers()).length > 0; }
+  });
+
   function fmt(n) {
     return (Math.round(n * 100) / 100).toString();
   }
@@ -44,10 +54,7 @@
   }
 
   /* Back from the results to the questions. */
-  function backToAnswers() {
-    resultsView.hidden = true; wizardView.hidden = false;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  function backToAnswers() { route.leave(); }
 
   /* With nothing Competitive yet, say where you are nearest. Competitive on
    * the shared scale starts two points under a school's requirement. */
@@ -99,8 +106,7 @@
         : T('None is yet in the scholarship range.')), backToAnswers));
 
     var gapNote = Wizard.incompleteNote(S.completeness(answers), function () {
-      resultsView.hidden = true; wizardView.hidden = false;
-      wiz.go(wiz.firstMissingStep());
+      route.leave(function () { wiz.go(wiz.firstMissingStep()); });
     });
     if (gapNote) resultsView.appendChild(gapNote);
     var stale = window.ResultsKit && ResultsKit.staleNotice(allKeys());
@@ -153,8 +159,9 @@
     }
 
     /* ---- individually modelled schools ---- */
-    resultsView.appendChild(section('Schools modelled individually',
-      'Each recalculates from your base score using its own adjustments and thresholds.'));
+    var hIndividual = section('Schools modelled individually',
+      'Each recalculates from your base score using its own adjustments and thresholds.');
+    resultsView.appendChild(hIndividual);
 
     /* The schools closest to Competitive without being there yet start with
      * their advice open; every other row keeps it folded. */
@@ -210,8 +217,9 @@
     resultsView.appendChild(t1);
 
     /* ---- shared-scale schools ---- */
-    resultsView.appendChild(section('Schools on the shared scale',
-      'Your base score against each school\'s point requirement. The gap decides the verdict.'));
+    var hShared = section('Schools on the shared scale',
+      'Your base score against each school\'s point requirement. The gap decides the verdict.');
+    resultsView.appendChild(hShared);
 
     var t2 = el('div', 'table');
     M.generalSchools.slice().sort(function (a, b) { return b.points - a.points; })
@@ -290,10 +298,19 @@
     }
     resultsView.appendChild(actions);
 
+    if (window.ResultsKit) {
+      resultsView.insertBefore(ResultsKit.jumpBar([
+        { label: 'Modelled individually', count: M.adjustedSchools.length, target: hIndividual },
+        { label: 'Shared scale', count: M.generalSchools.length, target: hShared },
+        { label: 'Where your points came from', target: det }
+      ], function () { return battlePlan(answers, active, reached, top, improvementList); }), sum.nextSibling);
+    }
+
     if (filters) filters.refresh();
     if (window.UI) UI.reveal(resultsView);
     if (chip) chip.textContent = fmt(active.base);
     if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+    route.shown();
   }
 
   /* ---------------------------------------------------------------------
@@ -305,8 +322,9 @@
     return M.adjustedSchools.concat(M.generalSchools).map(function (s) { return KEY(s.name); });
   }
 
-  /* Safe at or above a school's Strong line; Target from Competitive up;
-   * Dream below it. On the shared scale Competitive starts at a gap of −2,
+  /* Tiers: 'safe' (shown as Strong) at or above a school's Strong line;
+   * 'target' (Competitive) from Competitive up; 'dream' (Below Competitive)
+   * below it. On the shared scale Competitive starts at a gap of −2,
    * the same line the headline counts from, and Strong above +1. */
   function adjustedTier(sc, school) {
     return sc >= school.strong ? 'safe' : sc >= school.competitive ? 'target' : 'dream';
@@ -469,4 +487,7 @@
   function note(text, kind) {
     return el('div', 'note-card' + (kind ? ' ' + kind : ''), text);
   }
+
+  /* Opened on #results (a reload, or "See your results" from another page). */
+  if (route.initial()) showResults(wiz.answers());
 }());

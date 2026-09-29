@@ -4,7 +4,7 @@
  * draws it and wires it up.
  *
  *   filters     Pills over the league tables — All / UK / Europe / US, and
- *               Safe / Target / Dream — so a long list can be cut to the part
+ *               Strong / Competitive / Below Competitive — so a long list can be cut to the part
  *               you care about. Rows carry data-region and data-tier.
  *   what-if     A slider (and a picker of what it moves) that re-scores your
  *               answers with some of them changed and updates every row in
@@ -56,10 +56,12 @@ window.ResultsKit = (function () {
   /* ------------------------------------------------------------------ */
 
   var REGIONS = [['uk', 'UK'], ['eu', 'Europe'], ['us', 'US'], ['ca', 'Canada'], ['as', 'Asia']];
-  var TIERS = [['safe', 'Safe'], ['target', 'Target'], ['dream', 'Dream']];
+  /* Named with the same words as the verdict badges on each programme, so
+   * a filter and the rows it keeps visibly agree. */
+  var TIERS = [['safe', 'Strong'], ['target', 'Competitive'], ['dream', 'Below Competitive']];
   var TIER_NOTE = {
     safe: 'at or above the Strong line',
-    target: 'Competitive, short of Strong',
+    target: 'at or above Competitive, short of Strong',
     dream: 'eligible, below Competitive'
   };
 
@@ -359,6 +361,13 @@ window.ResultsKit = (function () {
           if (ok && tagged) shown++;
         });
 
+        /* Searching for a programme that is ruled out opens its list. */
+        if (state.q) {
+          root.querySelectorAll('details.out-list').forEach(function (d) {
+            if (d.querySelector('.row[data-key]:not([hidden])')) d.open = true;
+          });
+        }
+
         /* A run heading with nothing under it, and a table with nothing in
          * it, say so rather than leaving a gap. */
         root.querySelectorAll('.table').forEach(function (t) {
@@ -582,7 +591,7 @@ window.ResultsKit = (function () {
         return n;
       }
 
-      var CMP_TIERS = [['safe', 'Safe'], ['target', 'Target'], ['dream', 'Dream'], ['out', 'Ruled out']];
+      var CMP_TIERS = TIERS.concat([['out', 'Ruled out']]);
 
       function card(kind, title, p, counts, other, lines) {
         var c = el('div', 'cmp-card ' + kind);
@@ -837,6 +846,32 @@ window.ResultsKit = (function () {
     return b;
   }
 
+  /* Under the headline numbers: a line of buttons to each section of a
+   * long results page, and the battle plan beside them, so neither sits
+   * twenty screens down a phone. `links` is [{ label, count, target }]. */
+  function jumpBar(links, build) {
+    var nav = el('nav', 'jump');
+    nav.setAttribute('aria-label', T('On this page'));
+    nav.appendChild(el('span', 'jump-k', 'Jump to'));
+    links.forEach(function (l) {
+      if (!l.target) return;
+      var b = el('button', 'jump-link', l.label);
+      b.type = 'button';
+      if (l.count !== undefined) b.appendChild(el('span', 'c', String(l.count)));
+      b.addEventListener('click', function () {
+        if (l.open) l.open.open = true;
+        l.target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      nav.appendChild(b);
+    });
+    if (build) {
+      var plan = planButton(build);
+      plan.classList.add('small');
+      nav.appendChild(plan);
+    }
+    return nav;
+  }
+
   /* ------------------------------------------------------------------ */
   /* Folded school rows                                                  */
   /*                                                                     */
@@ -858,6 +893,24 @@ window.ResultsKit = (function () {
    * closest one on a phone, where each open row runs to two screens. */
   function openCount() {
     return window.matchMedia && window.matchMedia('(max-width: 640px)').matches ? 1 : 3;
+  }
+
+  /* The ruled-out table, closed behind one toggle. Those programmes cannot
+   * be applied to as things stand, and open they ran to more of a phone
+   * screen than the ones that can. A search that matches one opens it. */
+  function outList(n, nodes) {
+    var d = el('details', 'more out-list');
+    var sum = el('summary');
+    function label() {
+      sum.textContent = d.open ? T('Hide the ruled-out programmes')
+        : tn(n, 'Show the programme and the rule that rules it out',
+            'Show the {n} programmes and the rule that rules out each');
+    }
+    label();
+    d.appendChild(sum);
+    nodes.forEach(function (x) { d.appendChild(x); });
+    d.addEventListener('toggle', function (e) { if (e.target === d) label(); });
+    return d;
   }
 
   /* One control above a table that opens or closes every fold in it. */
@@ -914,6 +967,8 @@ window.ResultsKit = (function () {
     radioLever: radioLever,
     battlePlan: battlePlan,
     planButton: planButton,
+    jumpBar: jumpBar,
+    outList: outList,
     fmtDate: fmtDate,
     STALE_DAYS: STALE_DAYS
   };
