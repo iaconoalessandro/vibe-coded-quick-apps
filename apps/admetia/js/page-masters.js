@@ -322,18 +322,18 @@
     other.href = 'business.html';
     other.textContent = T('Try another track');
     actions.appendChild(other);
-    var print = el('button', 'btn', 'Print the page');
-    print.addEventListener('click', function () { window.print(); });
-    actions.appendChild(print);
     if (window.ResultsKit) {
       actions.appendChild(ResultsKit.planButton(function () { return battlePlan(answers, res); }));
     }
     resultsView.appendChild(actions);
+    var cal = kit && kit.deadlineCalendar();
+    if (cal) resultsView.insertBefore(cal, actions);
 
     if (window.ResultsKit) {
       resultsView.insertBefore(ResultsKit.jumpBar([
         { label: 'Eligible', count: eligible.length, target: hEligible },
         { label: 'Ruled out', count: blocked.length, target: hBlocked, open: outList },
+        { label: 'Deadlines', count: cal && cal.count, target: cal },
         { label: 'How your score was calculated', target: det }
       ], function () { return battlePlan(answers, res); }), sum.nextSibling);
     }

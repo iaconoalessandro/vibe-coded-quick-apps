@@ -94,11 +94,41 @@
     });
   }
 
+  /* The face and nameplate each edition needs before it can be shown. */
+  var READY = {
+    city: ['600 1em "Source Serif 4"'],
+    wallstreet: ['700 1em "Roboto Serif Condensed"', 'img/wordmark/wall-street.webp?v=admetia'],
+    watchlist: ['800 1em "Noto Serif Display"', 'img/wordmark/fbi-watchlist.webp?v=admetia']
+  };
+  function ready(id) {
+    var waits = (READY[id] || []).map(function (x) {
+      if (x.indexOf('img/') === 0) {
+        return new Promise(function (ok) { var i = new Image(); i.onload = i.onerror = ok; i.src = x; });
+      }
+      return document.fonts ? document.fonts.load(x).catch(function () {}) : null;
+    });
+    return Promise.race([Promise.all(waits), new Promise(function (ok) { setTimeout(ok, 450); })]);
+  }
+
+  /* Changing edition prints the new one over the old, top to bottom, like
+   * a press run (the ::view-transition rules in css/app.css). Only on a
+   * reader's own click, and not for readers who ask for less motion. */
   function choose(id) {
     try { localStorage.setItem(KEY, id); } catch (e) { /* ignore */ }
-    apply(id);
-    sync();
-    try { document.dispatchEvent(new CustomEvent('editionchange', { detail: id })); } catch (e) { /* old browser */ }
+    function change() {
+      apply(id);
+      sync();
+      try { document.dispatchEvent(new CustomEvent('editionchange', { detail: id })); } catch (e) { /* old browser */ }
+    }
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || still || id === current()) return change();
+    ready(id).then(function () {
+      root.classList.add('press');
+      var run = document.startViewTransition(change);
+      /* A hidden tab skips the transition (the edition still changes). */
+      run.ready.catch(function () {});
+      run.finished.then(function () { root.classList.remove('press'); }, function () { root.classList.remove('press'); });
+    });
   }
 
   function buildPicker() {

@@ -288,20 +288,20 @@
     back.addEventListener('click', backToAnswers);
     actions.appendChild(back);
     actions.appendChild(el('span', 'spacer'));
-    var print = el('button', 'btn', 'Print the page');
-    print.addEventListener('click', function () { window.print(); });
-    actions.appendChild(print);
     if (window.ResultsKit) {
       actions.appendChild(ResultsKit.planButton(function () {
         return battlePlan(answers, active, reached, top, improvementList);
       }));
     }
     resultsView.appendChild(actions);
+    var cal = kit && kit.deadlineCalendar();
+    if (cal) resultsView.insertBefore(cal, actions);
 
     if (window.ResultsKit) {
       resultsView.insertBefore(ResultsKit.jumpBar([
         { label: 'Modelled individually', count: M.adjustedSchools.length, target: hIndividual },
         { label: 'Shared scale', count: M.generalSchools.length, target: hShared },
+        { label: 'Deadlines', count: cal && cal.count, target: cal },
         { label: 'Where your points came from', target: det }
       ], function () { return battlePlan(answers, active, reached, top, improvementList); }), sum.nextSibling);
     }

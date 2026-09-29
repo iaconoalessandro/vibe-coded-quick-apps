@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<!-- GitHub Pages serves this for any address that does not exist, at any
+     depth, so every link and asset is resolved from the site's own folder. -->
+<script>document.write('<base href="' + (/^\/admissions-calculator\//.test(location.pathname) ? '/admissions-calculator/' : '/') + '">');</script>
+<title>Page not found — Admetia</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Source Serif 4"; font-weight: 200 900; font-display: swap; src: url("fonts/source-serif-4-roman.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; font-display: swap; src: url("fonts/source-serif-4-italic.woff2") format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("fonts/hanken-grotesk.woff2") format("woff2"); }
+@font-face { font-family: "Roboto Serif Condensed"; font-weight: 400 800; font-display: swap; src: url("fonts/roboto-serif-condensed.woff2") format("woff2"); }
+@font-face { font-family: "Noto Serif Display"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/noto-serif-display.woff2") format("woff2"); }
+
+:root { --paper: #fff1e5; --ink: #33302e; --muted: #66605c; --accent: #990f3d; --hair: #e6d9ce; --box: #f2dfce;
+  --mast: "Source Serif 4", Georgia, serif; --mast-w: 600; --mast-case: uppercase; --head: "Source Serif 4", Georgia, serif; --ui: "Hanken Grotesk", Helvetica, Arial, sans-serif; }
+:root[data-theme="wallstreet"] { --paper: #fff; --ink: #111; --muted: #555; --accent: #111; --hair: #e0e0e0; --box: #f5f5f5;
+  --mast: "Roboto Serif Condensed", "Times New Roman", serif; --mast-w: 700; --head: "Times New Roman", Times, serif; }
+:root[data-theme="watchlist"] { --paper: #fcfcfc; --ink: #171717; --muted: #737373; --accent: #dc0000; --hair: #e0e0e0; --box: #f2f2f2;
+  --mast: "Noto Serif Display", Georgia, serif; --mast-w: 800; --mast-case: none; --head: Georgia, serif; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 var(--ui); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left)); }
+.mast { text-align: center; padding: 30px 0 14px; }
+.mast a { color: inherit; text-decoration: none; font: var(--mast-w) clamp(44px, 9vw, 92px)/1 var(--mast); text-transform: var(--mast-case); letter-spacing: .01em; }
+:root[data-theme="watchlist"] .mast-band { background: #171717; color: #fff; }
+:root[data-theme="watchlist"] .mast a { font-stretch: 75%; letter-spacing: -.02em; }
+.slogan { margin-top: 8px; font: italic 17px/1.3 var(--head); color: var(--muted); }
+:root[data-theme="watchlist"] .slogan { color: #bbb; font: 14px/1.3 var(--ui); }
+.dateline { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
+  font: 700 11.5px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; }
+.correction { margin: 44px 0 30px; padding: 22px 26px 26px; border: 1px solid var(--ink); border-top: 5px solid var(--accent); background: var(--box); }
+.kicker { margin: 0 0 8px; font: 700 12.5px/1.2 var(--ui); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }
+h1 { margin: 0 0 12px; font: 600 clamp(32px, 5.4vw, 52px)/1.06 var(--head); letter-spacing: -.01em; }
+.correction p { margin: 0; max-width: 36em; font: italic 19px/1.5 var(--head); color: var(--muted); }
+.correction p.kicker { margin: 0 0 8px; font: 700 12.5px/1.2 var(--ui); color: var(--accent); }
+h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text-transform: uppercase; }
+.sections { list-style: none; margin: 0 0 40px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); border-top: 2px solid var(--ink); }
+.sections a { display: flex; justify-content: space-between; align-items: center; min-height: 48px; padding: 10px 0; margin-right: 24px;
+  border-bottom: 1px solid var(--hair); color: var(--ink); text-decoration: none; font-weight: 600; }
+.sections a:hover { color: var(--accent); }
+.sections a::after { content: "→"; color: var(--accent); }
+.foot { padding: 18px 0 40px; border-top: 1px solid var(--ink); font: italic 15px/1.4 var(--head); color: var(--muted); }
+</style>
+<script>
+(function () {
+  var theme = 'city', lang = 'en';
+  try {
+    var t = localStorage.getItem('admissions-calc:theme');
+    if (t === 'wallstreet' || t === 'watchlist') theme = t;
+    if (localStorage.getItem('admissions-calc:lang') === 'it') lang = 'it';
+  } catch (e) { /* storage blocked */ }
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.lang = lang;
+  window.LANG404 = lang;
+}());
+</script>
+</head>
+<body>
+<header class="mast-band">
+  <div class="wrap mast">
+    <a href="index.html">Admetia</a>
+    <div class="slogan">The way in</div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="dateline"><span id="date"></span><span data-t="Correction">Correction</span></div>
+
+  <section class="correction">
+    <p class="kicker" data-t="Errata corrige">Errata corrige</p>
+    <h1 data-t="This page never went to press.">This page never went to press.</h1>
+    <p data-t="The address may be mistyped, or the page has moved. Everything Admetia prints is in one of the sections below.">The address may be mistyped, or the page has moved. Everything Admetia prints is in one of the sections below.</p>
+  </section>
+
+  <h2 data-t="Sections">Sections</h2>
+  <ul class="sections">
+    <li><a href="index.html" data-t="Front page">Front page</a></li>
+    <li><a href="mba.html">MBA</a></li>
+    <li><a href="masters.html?track=mif" data-t="Finance">Finance</a></li>
+    <li><a href="masters.html?track=mim" data-t="Management">Management</a></li>
+    <li><a href="masters.html?track=marketing">Marketing</a></li>
+    <li><a href="computing.html?track=cs" data-t="Computer Science">Computer Science</a></li>
+    <li><a href="computing.html?track=dsai" data-t="Data &amp; AI">Data &amp; AI</a></li>
+    <li><a href="computing.html?track=conversion" data-t="Conversion">Conversion</a></li>
+  </ul>
+
+  <p class="foot" data-t="Admetia — an independent calculator for MBA, business and computing master’s degrees.">Admetia — an independent calculator for MBA, business and computing master’s degrees.</p>
+</div>
+<script>
+(function () {
+  var IT = {
+    'Correction': 'Rettifica',
+    'Errata corrige': 'Errata corrige',
+    'This page never went to press.': 'Questa pagina non è mai andata in stampa.',
+    'The address may be mistyped, or the page has moved. Everything Admetia prints is in one of the sections below.':
+      'L’indirizzo potrebbe essere sbagliato, o la pagina è stata spostata. Tutto quello che Admetia pubblica è in una delle sezioni qui sotto.',
+    'Sections': 'Sezioni',
+    'Front page': 'Prima pagina',
+    'Finance': 'Finanza',
+    'Computer Science': 'Informatica',
+    'Data & AI': 'Data e IA',
+    'Conversion': 'Conversione',
+    'Admetia — an independent calculator for MBA, business and computing master’s degrees.':
+      'Admetia — un calcolatore indipendente per MBA, master in business e master in informatica.'
+  };
+  var it = window.LANG404 === 'it';
+  if (it) {
+    document.title = 'Pagina non trovata — Admetia';
+    Array.prototype.forEach.call(document.querySelectorAll('[data-t]'), function (n) {
+      var tr = IT[n.getAttribute('data-t')];
+      if (tr) n.innerHTML = tr;
+    });
+  }
+  try {
+    document.getElementById('date').textContent = new Date().toLocaleDateString(it ? 'it-IT' : 'en-GB',
+      { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  } catch (e) { /* old browser */ }
+}());
+</script>
+</body>
+</html>

@@ -236,18 +236,18 @@
     var other = el('a', 'btn', 'Try another track');
     other.href = 'it.html';
     actions.appendChild(other);
-    var print = el('button', 'btn ghost', 'Print the page');
-    print.onclick = function () { window.print(); };
-    actions.appendChild(print);
     if (window.ResultsKit) {
       actions.appendChild(ResultsKit.planButton(function () { return battlePlan(a, res); }));
     }
     resultsView.appendChild(actions);
+    var cal = kit && kit.deadlineCalendar();
+    if (cal) resultsView.insertBefore(cal, actions);
 
     if (window.ResultsKit) {
       resultsView.insertBefore(ResultsKit.jumpBar([
         { label: 'Eligible', count: eligible.length, target: hEligible },
         { label: 'Ruled out', count: blocked.length, target: hBlocked, open: outList },
+        { label: 'Deadlines', count: cal && cal.count, target: cal },
         { label: 'How your score was calculated', target: det }
       ], function () { return battlePlan(a, res); }), grid.nextSibling);
     }

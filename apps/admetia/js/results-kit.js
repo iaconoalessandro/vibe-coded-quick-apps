@@ -17,10 +17,18 @@
  *               entry was last checked, from data/deadlines.js. When the
  *               oldest check is more than STALE_DAYS old, results pages say
  *               so, loudly.
- *   battle plan A two-page printable summary — targets, strengths, gaps and a
- *               dated checklist — sent to the browser's print dialog, where
- *               "Save as PDF" makes the file. The site ships no PDF library,
- *               and the print route keeps its own typefaces.
+ *   calendar    Every programme you can still apply to, by its next closing
+ *               date, laid out like a markets page's earnings calendar.
+ *   stamps      The first time results appear in a visit, the verdicts on
+ *               screen land like ink stamps. Once only: never on a re-render.
+ *   battle plan A two-page summary — targets, strengths, gaps and a dated
+ *               checklist — set as a newspaper page and sent to the browser's
+ *               print dialog, where "Save as PDF" makes the file. Printing a
+ *               results page any other way (Ctrl+P) prints the same thing.
+ *               The site ships no PDF library, and the print route keeps its
+ *               own typefaces.
+ *   share       An image of your shortlist, drawn in the browser — nothing is
+ *               sent anywhere — for the phone's share sheet or to download.
  *
  * Tiers are the page's call, from its own model's thresholds:
  *   safe   at or above the Strong line
@@ -231,6 +239,108 @@ window.ResultsKit = (function () {
 
     function register(key, row, numEl, badgeEl, base) {
       registry[key] = { row: row, num: numEl, badge: badgeEl, base: base, shown: base };
+      if (!stamped && !stampQueued) {
+        stampQueued = true;
+        requestAnimationFrame(function () { requestAnimationFrame(stamp); });
+      }
+    }
+
+    /* The verdicts on screen land like ink stamps, a beat apart, the first
+     * time results appear in a visit. Only the first few, and only visible
+     * ones: a re-render (the what-if's "keep these answers") stays still. */
+    var stampQueued = false;
+    function stamp() {
+      if (stamped) return;
+      stamped = true;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var i = 0;
+      Object.keys(registry).forEach(function (key) {
+        var b = registry[key].badge;
+        if (i >= 10 || !b || !b.isConnected || !b.offsetWidth || b.closest('details:not([open])')) return;
+        b.style.animationDelay = (160 + i * 70) + 'ms';
+        b.classList.add('stamp');
+        b.addEventListener('animationend', function done() {
+          b.classList.remove('stamp');
+          b.style.animationDelay = '';
+          b.removeEventListener('animationend', done);
+        });
+        i++;
+      });
+    }
+
+    /* ---------------------------------------------------------------- */
+    /* Deadline calendar                                                 */
+    /* ---------------------------------------------------------------- */
+
+    /* Every programme on the page you can still apply to, by its next
+     * closing date, grouped by month like an earnings calendar. The first
+     * dozen show; the rest fold. Null when no programme has a dated round
+     * ahead. */
+    function deadlineCalendar(now) {
+      now = now || new Date();
+      var items = [];
+      Object.keys(registry).forEach(function (key) {
+        var r = registry[key], tier = r.row.dataset.tier;
+        if (!tier || tier === 'out') return;
+        var c = calendar(key, now);
+        if (!c || !c.next) return;
+        var n = r.row.querySelector('.name');
+        items.push({ name: n && n.firstChild ? n.firstChild.textContent.trim() : key,
+                     badge: r.badge, next: c.next });
+      });
+      if (!items.length) return null;
+      items.sort(function (a, b) { return a.next.days - b.next.days || (a.name < b.name ? -1 : 1); });
+
+      var sec = el('section', 'dlcal reveal');
+      sec.setAttribute('aria-label', T('Deadline calendar'));
+      var head = el('div', 'dlcal-head');
+      head.appendChild(el('h3', null, 'Deadline calendar'));
+      head.appendChild(el('p', null, 'The next closing date at every programme you can still apply to, soonest first.'));
+      sec.appendChild(head);
+
+      var loc = I.locale || 'en-GB';
+      function entry(it) {
+        var d = parse(it.next.date);
+        var li = el('li', 'dlcal-row' + (it.next.days <= 14 ? ' soon' : it.next.days <= 45 ? ' near' : ''));
+        var day = el('div', 'dlcal-day');
+        day.appendChild(el('b', null, String(d.getDate())));
+        day.appendChild(el('span', null, d.toLocaleDateString(loc, { weekday: 'short' })));
+        li.appendChild(day);
+        var what = el('div', 'dlcal-what');
+        what.appendChild(el('span', 'nm', it.name));
+        what.appendChild(el('span', 'rd', T(it.next.label)));
+        li.appendChild(what);
+        if (it.badge) li.appendChild(el('span', it.badge.className.replace(/\s*\bstamp\b/, ''), it.badge.textContent));
+        var t = el('div', 'dlcal-t');
+        t.appendChild(el('b', null, it.next.days === 0 ? T('today') : String(it.next.days)));
+        if (it.next.days) t.appendChild(el('span', null, it.next.days === 1 ? T('day') : T('days')));
+        li.appendChild(t);
+        return li;
+      }
+      function list(from, to, parent) {
+        var month = null, ul = null;
+        items.slice(from, to).forEach(function (it) {
+          var d = parse(it.next.date), m = d.getFullYear() * 12 + d.getMonth();
+          if (m !== month) {
+            month = m;
+            var label = d.toLocaleDateString(loc, { month: 'long', year: 'numeric' });
+            parent.appendChild(el('h4', 'dlcal-month', label.charAt(0).toUpperCase() + label.slice(1)));
+            ul = el('ul', 'dlcal-list');
+            parent.appendChild(ul);
+          }
+          ul.appendChild(entry(it));
+        });
+      }
+      var FIRST = 12;
+      list(0, FIRST, sec);
+      if (items.length > FIRST) {
+        var more = fold(T('Show all {n}', { n: items.length }));
+        more.classList.add('dlcal-more');
+        list(FIRST, items.length, more);
+        sec.appendChild(more);
+      }
+      sec.count = items.length;
+      return sec;
     }
 
     /* ---------------------------------------------------------------- */
@@ -687,10 +797,11 @@ window.ResultsKit = (function () {
       return box;
     }
 
-    return { register: register, filterBar: filterBar, whatIf: whatIf };
+    return { register: register, filterBar: filterBar, whatIf: whatIf, deadlineCalendar: deadlineCalendar };
   }
 
   var TIER_RANK = { out: 0, dream: 1, target: 2, safe: 3 };
+  var stamped = false;
 
   /* Helpers for building a lever out of a radio question: its options,
    * ordered by what they do to the headline score, weakest first. `scoreOf`
@@ -718,21 +829,33 @@ window.ResultsKit = (function () {
    *         rows: [{ key, name, region, tier, verdict, score }],
    *         strengths: [{ label, detail }], gaps: [{ label, detail }],
    *         steps: [string] } */
-  function battlePlan(plan) {
+  /* The plan's two pages, set as a newspaper: the nameplate between two
+   * ears, a dateline under a heavy rule, then the story. Built into the page
+   * (hidden on screen) for the print route to show. */
+  function planDoc(plan) {
     var now = new Date();
     var old = document.getElementById('battle-plan');
     if (old) old.remove();
     var doc = el('section', 'plan');
     doc.id = 'battle-plan';
     doc.setAttribute('aria-hidden', 'true');
+    var dateLong = now.toLocaleDateString(I.locale || 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    function masthead(page, into) {
+      var m = el('header', 'plan-mast');
+      m.appendChild(el('span', 'plan-ear', 'Battle plan'));
+      m.appendChild(el('span', 'plan-name', 'Admetia'));
+      m.appendChild(el('span', 'plan-ear r', 'The way in'));
+      into.appendChild(m);
+      var line = el('div', 'plan-dateline');
+      line.appendChild(el('span', null, dateLong));
+      line.appendChild(el('span', null, plan.kicker));
+      line.appendChild(el('span', null, T('Page {n} of 2', { n: page })));
+      into.appendChild(line);
+    }
 
     /* ---- page one: where you stand, and the list ---- */
     var p1 = el('div', 'plan-page');
-    var mast = el('header', 'plan-mast');
-    mast.appendChild(el('span', 'plan-name', 'Admetia'));
-    mast.appendChild(el('span', 'plan-date', T('Battle plan · {date}', { date: fmtDate(isoOf(now)) })));
-    p1.appendChild(mast);
-    p1.appendChild(el('p', 'plan-kicker', plan.kicker));
+    masthead(1, p1);
     p1.appendChild(el('h1', 'plan-title', plan.title));
     if (plan.standfirst) p1.appendChild(el('p', 'plan-stand', plan.standfirst));
 
@@ -777,6 +900,7 @@ window.ResultsKit = (function () {
 
     /* ---- page two: what to do about it ---- */
     var p2 = el('div', 'plan-page');
+    masthead(2, p2);
     p2.appendChild(el('h2', 'plan-h2', 'Your file'));
     var cols = el('div', 'plan-cols');
     [['Strengths', plan.strengths], ['Gaps worth closing', plan.gaps]].forEach(function (c) {
@@ -820,6 +944,11 @@ window.ResultsKit = (function () {
     doc.appendChild(p2);
 
     document.body.appendChild(doc);
+    return doc;
+  }
+
+  function battlePlan(plan) {
+    planDoc(plan);
     var html = document.documentElement;
     html.classList.add('print-plan');
     function done() {
@@ -831,9 +960,163 @@ window.ResultsKit = (function () {
     window.print();
   }
 
-  function isoOf(d) {
-    function p(n) { return (n < 10 ? '0' : '') + n; }
-    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+  /* The results on screen, for the print route: the page's own plan
+   * builder, while its jump bar is showing. */
+  var current = null;
+  function currentPlan() {
+    return current && current.nav.isConnected && current.nav.offsetParent !== null ? current.build : null;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Share image                                                         */
+  /* ------------------------------------------------------------------ */
+
+  /* Lines of `text` no wider than `w` in the context's current font. */
+  function wrap(ctx, text, w) {
+    var lines = [], line = '';
+    String(text).split(' ').forEach(function (word) {
+      var t = line ? line + ' ' + word : word;
+      if (line && ctx.measureText(t).width > w) { lines.push(line); line = word; } else line = t;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+  function clip(ctx, text, w) {
+    text = String(text);
+    if (ctx.measureText(text).width <= w) return text;
+    while (text.length > 1 && ctx.measureText(text + '…').width > w) text = text.slice(0, -1);
+    return text.replace(/\s+$/, '') + '…';
+  }
+
+  /* A 1080 × 1350 card of your shortlist in the edition you are reading:
+   * nameplate, what the model says, your best eight, and the line that says
+   * what this is — an estimate, not a decision. Resolves to a PNG blob. */
+  function shareImage(plan) {
+    var root = document.documentElement, css = getComputedStyle(root);
+    function v(name, dflt) { return css.getPropertyValue(name).trim() || dflt; }
+    var ed = root.getAttribute('data-theme') || 'city';
+    var paper = v('--paper', '#fff1e5'), ink = v('--ink', '#33302e'), accent = v('--accent', '#990f3d');
+    var mast = v('--font-mast', 'serif'), disp = v('--font-display', 'serif'), head = v('--font-head', 'serif'), ui = v('--font-ui', 'sans-serif');
+    var mastW = v('--mast-weight', '700'), dispW = v('--display-weight', '600');
+    var TONE = { safe: v('--high', ink), target: v('--good', ink), dream: v('--mid', ink) };
+    var stretch = ed === 'watchlist' ? 'condensed' : ed === 'wallstreet' ? 'ultra-condensed' : 'normal';
+    var W = 1080, H = 1350, X = 84;
+    var fonts = [mastW + ' 100px ' + mast, dispW + ' 60px ' + disp, '700 28px ' + ui, '600 34px ' + ui, 'italic 400 30px ' + head];
+    return Promise.all(fonts.map(function (f) { return document.fonts.load(f).catch(function () {}); })).then(function () {
+      var cv = document.createElement('canvas');
+      cv.width = W; cv.height = H;
+      var c = cv.getContext('2d');
+      function face(f, s) { c.font = f; if ('fontStretch' in c) c.fontStretch = s || 'normal'; }
+      c.fillStyle = paper;
+      c.fillRect(0, 0, W, H);
+
+      /* Nameplate and slogan; Watchlist sets them on its black band. */
+      var band = ed === 'watchlist';
+      if (band) { c.fillStyle = '#171717'; c.fillRect(0, 0, W, 250); }
+      c.textAlign = 'center';
+      c.fillStyle = band ? '#ffffff' : ink;
+      face(mastW + ' 118px ' + mast, stretch);
+      c.fillText(v('--mast-case', 'uppercase') === 'none' ? 'Admetia' : 'ADMETIA', W / 2, 172);
+      face('italic 400 30px ' + head);
+      c.fillStyle = band ? '#bbbbbb' : ink;
+      c.fillText('The way in', W / 2, 224);
+
+      /* Dateline between rules. */
+      var y = band ? 290 : 262, date = new Date().toLocaleDateString(I.locale || 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      c.fillStyle = ink;
+      c.fillRect(X, y, W - 2 * X, 5);
+      c.fillRect(X, y + 9, W - 2 * X, 1.5);
+      face('700 22px ' + ui);
+      c.textAlign = 'left';
+      c.fillText(date.toUpperCase(), X, y + 48);
+      c.textAlign = 'right';
+      c.fillText(T('My shortlist').toUpperCase(), W - X, y + 48);
+      c.fillRect(X, y + 66, W - 2 * X, 1.5);
+
+      /* Kicker and headline. */
+      c.textAlign = 'left';
+      y += 126;
+      c.fillStyle = accent;
+      face('700 26px ' + ui);
+      c.fillText(clip(c, String(plan.kicker).toUpperCase(), W - 2 * X), X, y);
+      c.fillStyle = ink;
+      face(dispW + ' 62px ' + disp, stretch === 'normal' ? 'normal' : 'semi-condensed');
+      wrap(c, plan.title, W - 2 * X).slice(0, 3).forEach(function (l) { y += 70; c.fillText(l, X, y); });
+
+      /* Three facts, as a markets strip. */
+      y += 44;
+      var facts = (plan.facts || []).slice(0, 3), fw = (W - 2 * X) / Math.max(1, facts.length);
+      c.fillRect(X, y, W - 2 * X, 2);
+      facts.forEach(function (f, i) {
+        var fx = X + i * fw + (i ? 24 : 0);
+        if (i) { c.globalAlpha = .35; c.fillRect(X + i * fw, y + 18, 1.5, 92); c.globalAlpha = 1; }
+        face(dispW + ' 50px ' + disp);
+        c.fillText(clip(c, f[1], fw - 30), fx, y + 70);
+        face('700 20px ' + ui);
+        c.globalAlpha = .7;
+        c.fillText(clip(c, T(f[0]).toUpperCase(), fw - 30), fx, y + 104);
+        c.globalAlpha = 1;
+      });
+      y += 128;
+      c.fillRect(X, y, W - 2 * X, 2);
+
+      /* The best you can apply to — as many as fit above the footer, eight at
+       * most — verdict on the right. */
+      y += 20;
+      (plan.rows || []).filter(function (r) { return r.tier !== 'out'; }).slice(0, 8).forEach(function (r) {
+        if (y + 64 + 22 > H - 172) return;
+        y += 64;
+        face('700 22px ' + ui);
+        var verdict = String(T(r.verdict)).toUpperCase(), vw = c.measureText(verdict).width;
+        c.textAlign = 'right';
+        c.fillStyle = TONE[r.tier] || accent;
+        c.fillText(verdict, W - X, y);
+        c.textAlign = 'left';
+        c.fillStyle = ink;
+        face('600 32px ' + ui);
+        c.fillText(clip(c, r.name, W - 2 * X - vw - 40), X, y);
+        c.globalAlpha = .18;
+        c.fillRect(X, y + 22, W - 2 * X, 1.5);
+        c.globalAlpha = 1;
+      });
+
+      /* What this is, and where. */
+      c.fillRect(X, H - 150, W - 2 * X, 2);
+      face('italic 400 26px ' + head);
+      wrap(c, T('An independent estimate from a points model — not an admission decision.'), W - 2 * X)
+        .slice(0, 2).forEach(function (l, i) { c.fillText(l, X, H - 104 + i * 34); });
+      face('700 20px ' + ui);
+      c.globalAlpha = .7;
+      c.fillText((location.host + location.pathname.replace(/[^\/]*$/, '')).replace(/\/$/, ''), X, H - 36);
+      c.globalAlpha = 1;
+      return new Promise(function (ok) { cv.toBlob(ok, 'image/png'); });
+    });
+  }
+
+  /* The share button: the phone's share sheet where there is one, a
+   * download everywhere else. */
+  function shareButton(build) {
+    var b = el('button', 'btn small', 'Share my shortlist');
+    b.type = 'button';
+    b.title = T('Makes an image of your shortlist in this browser — nothing is sent anywhere — to share or save.');
+    b.addEventListener('click', function () {
+      b.disabled = true;
+      shareImage(build()).then(function (blob) {
+        var file = new File([blob], 'admetia-shortlist.png', { type: 'image/png' });
+        if (window.Stats) Stats.event('share');
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          return navigator.share({ files: [file], title: 'Admetia', text: T('My shortlist on Admetia — the way in.') })
+            .catch(function () { /* closed the sheet */ });
+        }
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = file.name;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      }).then(function () { b.disabled = false; }, function () { b.disabled = false; });
+    });
+    return b;
   }
 
   /* The battle-plan button, with the one line that explains what it does. */
@@ -868,6 +1151,8 @@ window.ResultsKit = (function () {
       var plan = planButton(build);
       plan.classList.add('small');
       nav.appendChild(plan);
+      nav.appendChild(shareButton(build));
+      current = { nav: nav, build: build };
     }
     return nav;
   }
@@ -933,9 +1218,17 @@ window.ResultsKit = (function () {
 
   /* A printed or saved page should carry everything, folded or not; the
    * folds go back to how they were afterwards. */
-  var printOpened = [];
+  var printOpened = [], printedPlan = false;
   if (window.addEventListener) {
     window.addEventListener('beforeprint', function () {
+      /* Printing a results page any way at all prints the plan. */
+      var html = document.documentElement, build = currentPlan();
+      if (build && !html.classList.contains('print-plan')) {
+        planDoc(build());
+        html.classList.add('print-plan');
+        printedPlan = true;
+        return;
+      }
       printOpened = Array.prototype.filter.call(document.querySelectorAll('details.more'), function (d) {
         if (d.open) return false;
         d.open = true;
@@ -943,6 +1236,7 @@ window.ResultsKit = (function () {
       });
     });
     window.addEventListener('afterprint', function () {
+      if (printedPlan) { document.documentElement.classList.remove('print-plan'); printedPlan = false; }
       printOpened.forEach(function (d) { d.open = false; });
       printOpened = [];
     });
@@ -967,6 +1261,7 @@ window.ResultsKit = (function () {
     radioLever: radioLever,
     battlePlan: battlePlan,
     planButton: planButton,
+    shareImage: shareImage,
     jumpBar: jumpBar,
     outList: outList,
     fmtDate: fmtDate,

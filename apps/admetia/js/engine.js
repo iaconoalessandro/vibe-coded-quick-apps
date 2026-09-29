@@ -90,29 +90,45 @@ window.Wizard = (function () {
       drawSkipped();
     }
 
-    /* The running score, updated as each box is filled: the value, and for a
-     * moment after a change, by how much it moved. On phones the same figure
-     * is repeated in the Back / Next bar pinned to the bottom of the screen,
-     * because the score beside the contents has scrolled away by then. */
-    var chipShown = null, deltaTimer = null;
+    /* The running score, updated as each box is filled, and read like a
+     * price on a markets page: after a change the figure runs to its new
+     * value, turns green or red, and the move is printed beside it with an
+     * arrow. Only a change moves it — nothing ticks on its own. On phones the
+     * same figure is repeated in the Back / Next bar pinned to the bottom of
+     * the screen, because the score beside the contents has scrolled away. */
+    var chipShown = null, deltaTimer = null, rollFrame = 0;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function roll(from, to, value) {
+      cancelAnimationFrame(rollFrame);
+      var dp = (String(value).split('.')[1] || '').length, t0 = performance.now();
+      (function step(t) {
+        var p = Math.min(1, (t - t0) / 420), e = 1 - Math.pow(1 - p, 3);
+        chipEl.textContent = p < 1 ? (from + (to - from) * e).toFixed(dp) : value;
+        if (p < 1) rollFrame = requestAnimationFrame(step);
+      }(t0));
+    }
     function drawChip(value) {
-      var n = parseFloat(value);
-      var moved = chipShown !== null && !isNaN(n) && Math.abs(n - chipShown) >= 0.05
-        ? Math.round((n - chipShown) * 10) / 10 : 0;
+      var n = parseFloat(value), was = chipShown;
+      var moved = was !== null && !isNaN(n) && Math.abs(n - was) >= 0.05
+        ? Math.round((n - was) * 10) / 10 : 0;
       chipShown = isNaN(n) ? null : n;
-      chipEl.textContent = value;
+      if (moved && !still) roll(was, n, value);
+      else { cancelAnimationFrame(rollFrame); chipEl.textContent = value; }
       mount.querySelectorAll('.bar-score .n').forEach(function (b) { b.textContent = value; });
 
       var box = chipEl.parentNode;
       var delta = box.querySelector('.delta');
       if (moved && delta) {
-        delta.textContent = (moved > 0 ? '+' : '−') + Math.abs(moved);
+        delta.textContent = (moved > 0 ? '▲ +' : '▼ −') + Math.abs(moved);
         delta.className = 'delta ' + (moved > 0 ? 'up' : 'down');
-        box.classList.remove('bump');
+        box.classList.remove('bump', 'tick-up', 'tick-down');
         void box.offsetWidth;            // restart the animation
-        box.classList.add('bump');
+        box.classList.add('bump', moved > 0 ? 'tick-up' : 'tick-down');
         clearTimeout(deltaTimer);
-        deltaTimer = setTimeout(function () { delta.className = 'delta'; }, 1600);
+        deltaTimer = setTimeout(function () {
+          delta.className = 'delta';
+          box.classList.remove('tick-up', 'tick-down');
+        }, 1600);
       }
       box.setAttribute('aria-label', T('Score so far: {value}', { value: value }) + ' ' +
         ((box.querySelector('.k') || {}).textContent || ''));

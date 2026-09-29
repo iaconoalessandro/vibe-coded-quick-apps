@@ -125,8 +125,11 @@ I18N.add('it', {
   'A street wall of brand billboards — Gucci, adidas and the NBA stacked above a storefront.': 'Una parete di cartelloni pubblicitari in strada — Gucci, adidas e la NBA uno sopra l\'altro sopra una vetrina.',
   'MSc Marketing and Marketing Management. Fewer programmes, and the least published admissions data of any track here.':
     'MSc Marketing e Marketing Management. Meno programmi, e i dati di ammissione pubblicati più scarsi di tutti i percorsi.',
-  '<strong>A caveat that matters for the master’s tracks.</strong> Most European programmes publish no admitted-student test average at all. The figures circulating on unofficial sites are largely estimates presented as fact. This tool labels the source of every number it uses, and says plainly when a school has published nothing.':
-    '<strong>Un\'avvertenza che conta per i master.</strong> La maggior parte dei programmi europei non pubblica alcuna media dei test degli ammessi. I numeri che girano sui siti non ufficiali sono in gran parte stime presentate come fatti. Questo strumento indica la fonte di ogni numero che usa, e dice chiaramente quando una scuola non ha pubblicato nulla.',
+  'A caveat that matters for the master’s tracks': 'Un’avvertenza che conta per i master',
+  'Most European programmes publish no admitted-student test average at all. The figures circulating on unofficial sites are largely estimates presented as fact. This tool labels the source of every number it uses, and says plainly when a school has published nothing.':
+    'La maggior parte dei programmi europei non pubblica alcuna media dei test degli ammessi. I numeri che girano sui siti non ufficiali sono in gran parte stime presentate come fatti. Questo strumento indica la fonte di ogni numero che usa, e dice chiaramente quando una scuola non ha pubblicato nulla.',
+  'Estimates presented as fact.': 'Stime presentate come fatti.',
+  'On the numbers that circulate on unofficial sites': 'Sui numeri che girano sui siti non ufficiali',
   '<b class="rubric-in">Elsewhere</b><a href="index.html">Back to the front page</a> · <a href="it.html">IT &amp; Computing</a>':
     '<b class="rubric-in">Altrove</b><a href="index.html">Torna alla prima pagina</a> · <a href="it.html">Informatica</a>',
 
@@ -146,8 +149,11 @@ I18N.add('it', {
   'Hands typing beginner HTML and JavaScript on a laptop, a notebook open alongside.': 'Mani che scrivono HTML e JavaScript da principiante su un portatile, con un quaderno aperto accanto.',
   'Computing master’s built for graduates of other subjects — and at several of them, already holding a computing degree is what disqualifies you. A category that barely exists outside the UK.':
     'Master in informatica pensati per laureati in altre materie — e in diversi di questi, avere già una laurea in informatica è proprio ciò che ti esclude. Una categoria che quasi non esiste fuori dal Regno Unito.',
-  '<strong>Why this one is built differently.</strong> The business calculators lean on admitted class profiles. Computing programmes do not publish those — but they do publish hard entry rules, and in the UK their real acceptance rates are obtainable under Freedom of Information. So this track leads with the rules and says plainly where every number came from. Where five years of applicants have reported their own outcomes, that is shown too, labelled as what it is: a self-selected sample, never an acceptance rate.':
-    '<strong>Perché questo è costruito in modo diverso.</strong> I calcolatori business si basano sui profili delle classi ammesse. I programmi di informatica non li pubblicano, ma pubblicano requisiti d\'ingresso vincolanti, e nel Regno Unito i loro veri tassi di ammissione si possono ottenere con richieste Freedom of Information. Così questo percorso parte dalle regole e dice chiaramente da dove viene ogni numero. Dove cinque anni di candidati hanno riportato i propri esiti, sono mostrati anche quelli, etichettati per quello che sono: un campione autoselezionato, mai un tasso di ammissione.',
+  'Why this one is built differently': 'Perché questo è costruito in modo diverso',
+  'The business calculators lean on admitted class profiles. Computing programmes do not publish those — but they do publish hard entry rules, and in the UK their real acceptance rates are obtainable under Freedom of Information. So this track leads with the rules and says plainly where every number came from. Where five years of applicants have reported their own outcomes, that is shown too, labelled as what it is: a self-selected sample, never an acceptance rate.':
+    'I calcolatori business si basano sui profili delle classi ammesse. I programmi di informatica non li pubblicano, ma pubblicano requisiti d\'ingresso vincolanti, e nel Regno Unito i loro veri tassi di ammissione si possono ottenere con richieste Freedom of Information. Così questo percorso parte dalle regole e dice chiaramente da dove viene ogni numero. Dove cinque anni di candidati hanno riportato i propri esiti, sono mostrati anche quelli, etichettati per quello che sono: un campione autoselezionato, mai un tasso di ammissione.',
+  'A self-selected sample, never an acceptance rate.': 'Un campione autoselezionato, mai un tasso di ammissione.',
+  'On outcomes applicants report themselves': 'Sugli esiti riportati dai candidati stessi',
   '<b class="rubric-in">Elsewhere</b><a href="index.html">Back to the front page</a> · <a href="business.html">Business</a>':
     '<b class="rubric-in">Altrove</b><a href="index.html">Torna alla prima pagina</a> · <a href="business.html">Business</a>',
 
@@ -413,7 +419,6 @@ I18N.add('it', {
 
   /* ---------------------------------------------------- battle plan */
 
-  'Battle plan · {date}': 'Piano di battaglia · {date}',
   '({shown} of {total})': '({shown} su {total})',
   'Programme': 'Programma',
   'Region': 'Area',
@@ -432,6 +437,20 @@ I18N.add('it', {
   'An estimate from a points model, not a prediction. Verdict thresholds are the model’s own calibration; admissions committees decide holistically. Made from answers stored only in your browser.':
     'Una stima da un modello a punti, non una previsione. Le soglie dei verdetti sono una calibrazione del modello; le commissioni decidono guardando al profilo nel suo insieme. Fatto con risposte salvate solo nel tuo browser.',
   'Battle plan (PDF)': 'Piano di battaglia (PDF)',
+  'Battle plan': 'Piano di battaglia',
+  'Page {n} of 2': 'Pagina {n} di 2',
+  'Share my shortlist': 'Condividi la mia shortlist',
+  'Makes an image of your shortlist in this browser — nothing is sent anywhere — to share or save.': 'Crea un’immagine della tua shortlist in questo browser — non viene inviato nulla — da condividere o salvare.',
+  'My shortlist': 'La mia shortlist',
+  'My shortlist on Admetia — the way in.': 'La mia shortlist su Admetia — the way in.',
+  'An independent estimate from a points model — not an admission decision.': 'Una stima indipendente da un modello a punti — non una decisione di ammissione.',
+  'Deadlines': 'Scadenze',
+  'Deadline calendar': 'Calendario delle scadenze',
+  'The next closing date at every programme you can still apply to, soonest first.': 'La prossima chiusura di ogni programma a cui puoi ancora candidarti, dalla più vicina.',
+  'Show all {n}': 'Mostra tutte e {n}',
+  'today': 'oggi',
+  'day': 'giorno',
+  'days': 'giorni',
   'A two-page summary: your list by tier, your strengths and gaps, and a dated checklist. Opens the print dialog — choose “Save as PDF”.':
     'Un riepilogo di due pagine: la tua lista per fascia, punti di forza e lacune, e le cose da fare con le date. Apre la finestra di stampa: scegli "Salva come PDF".',
   'Answered': 'Risposte date',
@@ -453,7 +472,6 @@ I18N.add('it', {
   'Your results · {track}': 'I tuoi risultati · {track}',
   'Competitive or better': 'Competitivo o meglio',
   '← Edit answers': '← Modifica le risposte',
-  'Print the page': 'Stampa la pagina',
   'Try another track': 'Prova un altro percorso',
   'Total': 'Totale',
   'Nothing answered yet.': 'Ancora nessuna risposta.',
