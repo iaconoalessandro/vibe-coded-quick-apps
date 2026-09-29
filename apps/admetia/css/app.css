@@ -826,7 +826,15 @@ h2.section .count {
 
 /* ---- What the verdicts mean: a key, opened from the jump bar or any badge ---- */
 .vkey-btn { font-weight: 700; }
-.row .badge, .dlcal-row .badge { cursor: help; }
+/* Every verdict next to a score is a button; a small ? says so. */
+.has-key .row .badge[role="button"], .has-key .dlcal-row .badge[role="button"] { cursor: pointer; }
+.has-key .row .badge[role="button"]::after, .has-key .dlcal-row .badge[role="button"]::after {
+  content: "?"; display: inline-block; width: 15px; height: 15px; margin-left: 7px; vertical-align: 1px;
+  font: 700 10px/13px var(--font-ui); letter-spacing: 0; text-align: center; border: 1px solid currentColor; opacity: .75;
+}
+.has-key .row .badge[role="button"]:hover::after, .has-key .dlcal-row .badge[role="button"]:hover::after,
+.has-key .row .badge[role="button"]:focus-visible::after { opacity: 1; background: currentColor; color: var(--paper); }
+.has-key .row .badge[role="button"]:hover { text-decoration: underline; text-underline-offset: 3px; }
 .vkey {
   width: min(760px, calc(100vw - 24px)); max-height: calc(100vh - 32px); padding: 0 26px 22px; overflow: auto;
   background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-top: 4px solid var(--accent); border-radius: 0;
@@ -1070,15 +1078,21 @@ details.breakdown .inner { padding: 0 0 16px; }
 .pill.on .c { color: inherit; opacity: .75; }
 .pill:disabled { opacity: .38; cursor: default; }
 .pill:disabled:hover { background: transparent; }
+.pill-k { align-self: center; padding-right: 2px; font: 700 10.5px/1 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.pill-group > .pill-k { padding-right: 8px; }
+.filter-hint { margin: 0 0 8px; font: 15px/1.45 var(--font-head); color: var(--ink-2); }
+.filter-hint b { font-family: var(--font-ui); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--kicker); }
+.filter-clear { padding: 0; cursor: pointer; background: none; border: 0; font: inherit; font-style: normal; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.filter-clear:hover { color: var(--ink); }
 
 /* Each edition draws its filters with distinct styling.
  * The City: the markets-data tabs — no box, grey type, the chosen tab
  * filled in the darker wheat. */
 :root[data-theme="city"] .pill-group { gap: 0; }
-:root[data-theme="city"] .pill { border: 0; color: #737373; font-weight: 500; }
-:root[data-theme="city"] .pill:hover:not(:disabled) { background: transparent; color: #33302e; }
+:root[data-theme="city"] .pill { border: 0; border-bottom: 2px solid #e6d9ce; color: #737373; font-weight: 500; }
+:root[data-theme="city"] .pill:hover:not(:disabled) { background: transparent; color: #33302e; border-bottom-color: #990f3d; }
 :root[data-theme="city"] .pill.on,
-:root[data-theme="city"] .pill.on:hover { background: #f2dfce; color: #33302e; }
+:root[data-theme="city"] .pill.on:hover { background: #f2dfce; color: #33302e; border-bottom-color: #33302e; }
 :root[data-theme="city"] .pill.on .c { color: #66605c; opacity: 1; }
 /* Wall Street: small bold capitals, no box, the chosen one underlined. */
 :root[data-theme="wallstreet"] .pill-group { gap: 2px; }
@@ -1241,6 +1255,23 @@ footer.foot > p { margin: 0 0 14px; padding: 0 24px; border-left: 1px solid var(
 footer.foot > p:first-of-type { padding-left: 0; border-left: 0; }
 footer.foot > p b.rubric-in { display: block; margin-bottom: 6px; font: 700 11.5px/1.2 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
 footer.foot > .privacy-box { grid-column: 1 / -1; }
+footer.foot > .reality { grid-column: 1 / -1; margin: 0 0 22px; padding: 20px 26px 22px; border: 1px solid var(--rule); border-top: 4px solid var(--accent); background: var(--paper-2); }
+.reality-k { margin: 0 0 4px; font: 700 12px/1.2 var(--font-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--kicker); }
+.reality h2 { margin: 0 0 10px; font: var(--head-weight) 26px/1.15 var(--font-head); }
+.reality p { margin: 0; }
+.reality-lead { max-width: 46em; font: 17px/1.55 var(--font-body); color: var(--ink-2); }
+.reality-list { margin: 14px 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.reality-list li { padding: 0 22px; border-left: 1px solid var(--hair); font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.reality-list li:first-child { padding-left: 0; border-left: 0; }
+.reality-list li:last-child { padding-right: 0; }
+.reality-list strong { display: block; margin-bottom: 4px; font: 700 16px/1.3 var(--font-head); color: var(--ink); }
+.reality-close { max-width: 46em; font: italic 17px/1.5 var(--font-head); color: var(--ink); }
+@media (max-width: 800px) {
+  footer.foot > .reality { padding: 16px 16px 18px; }
+  .reality-list { grid-template-columns: 1fr; }
+  .reality-list li { padding: 10px 0; border-left: 0; border-top: 1px solid var(--hair); }
+  .reality-list li:first-child { border-top: 0; }
+}
 
 .privacy-box {
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px;
@@ -2042,6 +2073,9 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .pill { min-height: 44px; flex: none; padding: 0 16px; font-size: 14.5px; }
   .filters .filter-search, .filters .filter-sort { flex: none; min-height: 44px; font-size: 16px; }
   .filters .filter-search { width: 170px; }
+  /* The filters come first in the strip; the name search and the order
+     follow, off to the right, so what can be pressed is what is seen. */
+  .filters > .filter-search, .filters > .filter-sort { order: 5; }
   .filter-status { display: none; }
   .whatif { padding: 14px 16px 16px; margin-left: calc(-1 * var(--gutter) + 6px); margin-right: calc(-1 * var(--gutter) + 6px); }
   .whatif-controls { grid-template-columns: minmax(0, 1fr); }
@@ -2074,7 +2108,8 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .photo { display: none; }
   .panel, .note-card, .boxout, .why { box-shadow: none !important; }
   .incomplete .skip-links, .skipped { display: none; }
-  .filters, .whatif, .dl-link, .score-chip.live { display: none !important; }
+  .filters, .filter-hint, .whatif, .dl-link, .score-chip.live { display: none !important; }
+  .has-key .row .badge[role="button"]::after, .has-key .dlcal-row .badge[role="button"]::after { display: none; }
 
   /* The battle plan: when it is what is being printed, it is all that is
    * printed — two A4 pages in the edition the reader has chosen: its paper,

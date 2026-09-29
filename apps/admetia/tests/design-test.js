@@ -49,6 +49,23 @@ t('the MBA key gives the model\'s own odds, and says whose they are',/'Roughly 7
 t('the master\'s and computing key gives rules, never a percentage',(function(){ const m=/rules: \{[\s\S]*?\n    \}/.exec(kit); return !!m&&!/%/.test(m[0])&&/a ranking, not probabilities/.test(m[0]); })());
 t('no verdict is sold as a certainty',!/guaranteed|certain to|100%/i.test(kit.replace(/No verdict is a guarantee/g,'').replace(/Likely, not certain/g,'')));
 
+/* ------------------------------------------- honesty, filters, clear --- */
+['index.html','business.html','it.html','mba.html','masters.html','computing.html'].forEach(p=>{
+  const h=read(p);
+  t(p+' ends with a frank reality check: an estimate, a shifting pool, human readers',
+    /<aside class="reality"/.test(h)&&/not a guarantee/.test(h)&&/every school can change its mind/.test(h)&&/The competition shifts every intake/.test(h)&&/Human judgment beats pure math/.test(h)&&h.indexOf('class="reality"')<h.indexOf('</footer>'));
+});
+const itd=read('js/i18n-it.js');
+t('the reality check is in Italian, all five paragraphs',['A reality check on admissions','The competition shifts every intake','Criteria change constantly','Human judgment beats pure math','Treat these numbers as an orientation point'].every(k=>itd.indexOf(k)>-1));
+t('there is no "forget everything when I close this tab" setting any more; "Clear everything" stays',
+  !/Forget everything|wipeOnClose|wipe-on-close'\) === '1'|pagehide/.test(read('js/session.js'))&&/'Clear everything'/.test(read('js/session.js'))&&!/Forget everything/.test(itd));
+t('the filter bar is labelled (Filter, Region, Verdict), explained in a hint, and can be cleared in one press',
+  /el\('span', 'pill-k', 'Filter'\)/.test(kit)&&/el\('span', 'pill-k', 'Region'\)/.test(kit)&&/el\('span', 'pill-k', 'Verdict'\)/.test(kit)&&/'Tap to filter\.'/.test(kit)&&/el\('button', 'filter-clear', 'Show all'\)/.test(kit));
+t('on a phone the filters lead the strip, ahead of the search and the order',/\.filters > \.filter-search, \.filters > \.filter-sort \{ order: 5; \}/.test(read('css/app.css')));
+t('every verdict badge is a keyboard-reachable button marked with a ?',
+  /b\.setAttribute\('role', 'button'\);\s*b\.tabIndex = 0;/.test(kit)&&/\.badge\[role="button"\]::after \{[^}]*content: "\?"/.test(read('css/app.css'))&&/e\.key === 'Enter' \|\| e\.key === ' '/.test(kit));
+t('and none of it prints',/\.filter-hint, \.whatif/.test(read('css/app.css'))&&/\.has-key \.row \.badge\[role="button"\]::after, \.has-key \.dlcal-row \.badge\[role="button"\]::after \{ display: none; \}/.test(read('css/app.css')));
+
 /* --------------------------------------------------------- editions --- */
 const theme=read('js/theme.js');
 t('changing edition runs as a press run where the browser can',/document\.startViewTransition\(change\)/.test(theme)&&/::view-transition-new\(root\) \{ animation: press-in/.test(read('css/app.css')));

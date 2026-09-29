@@ -239,6 +239,7 @@ window.ResultsKit = (function () {
 
     function register(key, row, numEl, badgeEl, base) {
       registry[key] = { row: row, num: numEl, badge: badgeEl, base: base, shown: base };
+      pressable(badgeEl);
       if (!stamped && !stampQueued) {
         stampQueued = true;
         requestAnimationFrame(function () { requestAnimationFrame(stamp); });
@@ -310,7 +311,7 @@ window.ResultsKit = (function () {
         what.appendChild(el('span', 'nm', it.name));
         what.appendChild(el('span', 'rd', T(it.next.label)));
         li.appendChild(what);
-        if (it.badge) li.appendChild(el('span', it.badge.className.replace(/\s*\bstamp\b/, ''), it.badge.textContent));
+        if (it.badge) li.appendChild(pressable(el('span', it.badge.className.replace(/\s*\bstamp\b/, ''), it.badge.textContent)));
         var t = el('div', 'dlcal-t');
         t.appendChild(el('b', null, it.next.days === 0 ? T('today') : String(it.next.days)));
         if (it.next.days) t.appendChild(el('span', null, it.next.days === 1 ? T('day') : T('days')));
@@ -401,17 +402,27 @@ window.ResultsKit = (function () {
         return b;
       }
 
+      /* Labelled, so a row of words reads as a row of controls. */
+      bar.appendChild(el('span', 'pill-k', 'Filter'));
       bar.appendChild(pill('all', null, 'All'));
       var g1 = el('span', 'pill-group');
+      g1.appendChild(el('span', 'pill-k', 'Region'));
       REGIONS.forEach(function (r) { g1.appendChild(pill('region', r[0], r[1])); });
       bar.appendChild(g1);
       var g2 = el('span', 'pill-group');
+      g2.appendChild(el('span', 'pill-k', 'Verdict'));
       TIERS.forEach(function (t) { g2.appendChild(pill('tier', t[0], t[1], TIER_NOTE[t[0]])); });
       bar.appendChild(g2);
 
       var status = el('span', 'filter-status');
       status.setAttribute('aria-live', 'polite');
       bar.appendChild(status);
+
+      /* One line above the bar that says what can be pressed. */
+      var hint = el('p', 'filter-hint');
+      hint.appendChild(el('b', null, 'Tap to filter.'));
+      hint.appendChild(document.createTextNode(' ' + T('Pick a region or a verdict to narrow the lists; pick it again to undo. ' +
+        'Every verdict next to a score, marked ?, opens what it means in practice.')));
 
       function rows() { return root.querySelectorAll('.row'); }
       /* A row's name is the first text in its name cell. */
@@ -528,9 +539,23 @@ window.ResultsKit = (function () {
 
         status.textContent = active ? T('Showing {shown} of {total}', { shown: shown, total: total })
                                     : T('{n} programmes', { n: total });
+        if (active) {
+          status.appendChild(document.createTextNode(' · '));
+          var clear = el('button', 'filter-clear', 'Show all');
+          clear.type = 'button';
+          clear.addEventListener('click', function () {
+            state.region = null; state.tier = null; state.q = ''; kept.q = ''; search.value = '';
+            apply();
+          });
+          status.appendChild(clear);
+        }
       }
 
-      filters = { el: bar, refresh: function () { order(); apply(); } };
+      filters = { el: bar, refresh: function () {
+        if (!hint.parentNode && bar.parentNode) bar.parentNode.insertBefore(hint, bar);
+        order();
+        apply();
+      } };
       /* Built before the rows exist; the page calls refresh() once they do. */
       return filters;
     }
@@ -1167,7 +1192,17 @@ window.ResultsKit = (function () {
     ['1–3', 'Possible or Stretch', 'the ones you would love']
   ];
 
-  var keyDialog = null, keyKind = null;
+  /* A verdict badge is a button: it opens the key at its own row. */
+  function pressable(b) {
+    if (b) {
+      b.setAttribute('role', 'button');
+      b.tabIndex = 0;
+      b.title = T('What this verdict means');
+    }
+    return b;
+  }
+
+  var keyDialog = null, keyKind = null, badgeKind = null;
   function verdictDialog(kind) {
     if (keyDialog && keyKind === kind) return keyDialog;
     if (keyDialog) keyDialog.remove();
@@ -1253,10 +1288,12 @@ window.ResultsKit = (function () {
   function watchBadges() {
     if (badgeKeys) return;
     badgeKeys = true;
-    document.addEventListener('click', function (e) {
+    function open(e) {
       var b = e.target.closest && e.target.closest('.row .badge, .dlcal-row .badge');
-      if (b && current && current.kind) openVerdicts(current.kind, b.textContent.trim());
-    });
+      if (b && badgeKind) { e.preventDefault(); openVerdicts(badgeKind, b.textContent.trim()); }
+    }
+    document.addEventListener('click', open);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') open(e); });
   }
 
   function verdictButton(kind) {
@@ -1294,6 +1331,8 @@ window.ResultsKit = (function () {
     }
     if (kind) {
       nav.insertBefore(verdictButton(kind), nav.querySelector('.btn'));
+      badgeKind = kind;
+      document.documentElement.classList.add('has-key');
       watchBadges();
     }
     return nav;

@@ -1,25 +1,21 @@
 /* ---------------------------------------------------------------------------
  * Saved-answer controls.
  *
- * Three ways to get rid of your data:
+ * Two ways to get rid of your data:
  *   1. "Clear everything" in the footer, on any page — wipes every calculator.
  *   2. A banner on the wizards offering a fresh start when saved answers exist.
- *   3. An opt-in setting that wipes everything when you close the tab.
  *
- * A browser will not let a page put its own interface in front of you on close
- * — the only thing available is a generic "leave site?" dialog with text the
- * page cannot control. So rather than nagging with that, the close-time option
- * is a switch you set once and it then just happens.
+ * (A third, wiping everything when the tab closes, was removed: one clear
+ * button is easier to understand than a setting that acts on its own.)
  * ------------------------------------------------------------------------- */
 
 window.Session = (function () {
   'use strict';
 
   var PREFIX = 'admissions-calc:';
-  var WIPE_KEY = PREFIX + 'wipe-on-close';
   /* Settings, not answers: the edition, the language, the visit-count
-   * opt-out, and this switch. */
-  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', WIPE_KEY];
+   * opt-out. */
+  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count'];
   function T(s, v) { return window.I18N ? I18N.t(s, v) : s; }
 
   function answerKeys() {
@@ -41,22 +37,9 @@ window.Session = (function () {
     });
   }
 
-  function wipeOnClose() {
-    try { return localStorage.getItem(WIPE_KEY) === '1'; } catch (e) { return false; }
-  }
-  function setWipeOnClose(on) {
-    try {
-      if (on) localStorage.setItem(WIPE_KEY, '1');
-      else localStorage.removeItem(WIPE_KEY);
-    } catch (e) { /* ignore */ }
-  }
-
-  /* pagehide fires on close, navigation away and tab discard, and unlike
-   * beforeunload it is reliable on mobile Safari. */
-  window.addEventListener('pagehide', function (e) {
-    if (e.persisted) return;          // going into the back/forward cache, not closing
-    if (wipeOnClose()) clearAll();
-  });
+  /* The old "forget when I close this tab" switch is gone; drop the setting
+   * it left behind so nothing keeps a dead flag. */
+  try { localStorage.removeItem(PREFIX + 'wipe-on-close'); } catch (e) { /* ignore */ }
 
   function describe() {
     var n = answerKeys().length;
@@ -97,15 +80,6 @@ window.Session = (function () {
     });
     row.appendChild(btn);
     box.appendChild(row);
-
-    var lbl = el('label', 'privacy-toggle');
-    var cb = document.createElement('input');
-    cb.type = 'checkbox';
-    cb.checked = wipeOnClose();
-    cb.addEventListener('change', function () { setWipeOnClose(cb.checked); });
-    lbl.appendChild(cb);
-    lbl.appendChild(el('span', null, 'Forget everything when I close this tab'));
-    box.appendChild(lbl);
 
     function sync() {
       btn.disabled = !hasAnswers();
@@ -214,8 +188,6 @@ window.Session = (function () {
     clearAll: clearAll,
     hasAnswers: hasAnswers,
     storedAnswers: storedAnswers,
-    wipeOnClose: wipeOnClose,
-    setWipeOnClose: setWipeOnClose,
     describe: describe
   };
 }());
