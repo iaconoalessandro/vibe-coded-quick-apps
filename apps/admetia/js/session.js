@@ -18,8 +18,8 @@ window.Session = (function () {
   var PREFIX = 'admissions-calc:';
   var WIPE_KEY = PREFIX + 'wipe-on-close';
   /* Settings, not answers: the edition, the language, the visit-count
-   * opt-out, and this switch. */
-  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', WIPE_KEY];
+   * opt-out, whether the opening titles have played, and this switch. */
+  var KEEP = [PREFIX + 'theme', PREFIX + 'lang', PREFIX + 'no-count', PREFIX + 'intro-seen', WIPE_KEY];
   function T(s, v) { return window.I18N ? I18N.t(s, v) : s; }
 
   function answerKeys() {

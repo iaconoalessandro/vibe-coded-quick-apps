@@ -12,7 +12,7 @@
  * activate.
  * ------------------------------------------------------------------------- */
 
-var VERSION = 'v3';
+var VERSION = 'v4';
 var SHELL = 'admissions-shell-' + VERSION;
 var MEDIA = 'admissions-media-' + VERSION;
 
@@ -23,7 +23,7 @@ var SHELL_FILES = [
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
   'data/conversions.js', 'data/masters-model.js', 'data/it-model.js',
   'data/it-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js',
-  'js/theme.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',
+  'js/theme.js', 'js/intro.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',
   'js/score-masters.js', 'js/score-it.js', 'js/score-mba.js', 'js/results-kit.js',
   'js/page-masters.js', 'js/page-it.js', 'js/page-mba.js'
 ];

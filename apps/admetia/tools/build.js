@@ -6,8 +6,8 @@
  *
  *   - Each page's scripts become one minified bundle, and fonts.css + app.css
  *     one minified stylesheet: two requests where there were up to seventeen.
- *   - js/theme.js is inlined in <head> (it has to run before first paint
- *     anyway) and the favicon becomes a data: URI.
+ *   - js/theme.js and js/intro.js are inlined in <head> (both have to run
+ *     before first paint anyway) and the favicon becomes a data: URI.
  *   - The front pages (index, business, it) drop the ~200 KB of models and
  *     scoring. Their ticker gets its programme list precomputed here, and
  *     loads the models on its own only when there are saved answers to score.
@@ -94,7 +94,8 @@ function build() {
     { loader: 'css', minify: true, charset: 'utf8', legalComments: 'none' }).code;
   const cssPath = emit('css', 'app', 'css', css);
 
-  const themeJs = minifyJs(read('js/theme.js'), 'js/theme.js').trim().replace(/<\/script/gi, '<\\/script');
+  const inline = (f) => minifyJs(read(f), f).trim().replace(/<\/script/gi, '<\\/script');
+  const themeJs = inline('js/theme.js'), introJs = inline('js/intro.js');
   const favicon = 'data:image/svg+xml,' + encodeURIComponent(read('img/favicon.svg').replace(/\s*\n\s*/g, ''));
 
   /* The models bundle, in the order the calculator pages load them. */
@@ -124,6 +125,7 @@ function build() {
     };
     swap('href="img/favicon.svg"', `href="${favicon}"`);
     swap('<script src="js/theme.js"></script>', `<script>${themeJs}</script>`);
+    swap('<script src="js/intro.js"></script>', `<script>${introJs}</script>`);
     swap('<link rel="stylesheet" href="css/fonts.css">\n<link rel="stylesheet" href="css/app.css">',
       `<link rel="stylesheet" href="${cssPath}">`);
     html = html.replace(/(<script defer src="[^"]+"><\/script>\n?)+/, `<script defer src="${js}"></script>\n`);
