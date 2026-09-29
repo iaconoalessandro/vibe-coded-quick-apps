@@ -2045,43 +2045,73 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .filters, .whatif, .dl-link, .score-chip.live { display: none !important; }
 
   /* The battle plan: when it is what is being printed, it is all that is
-   * printed — two A4 pages, set plainly. */
+   * printed — two A4 pages in the edition the reader has chosen: its paper,
+   * its inks, its typefaces and its nameplate. */
   html.print-plan body > *:not(.plan) { display: none !important; }
-  html.print-plan .plan { display: block; color: #000; font: 10.5pt/1.4 var(--font-body); }
-  html.print-plan .plan * { color: #000; }
+  html.print-plan, html.print-plan body { background: var(--paper) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html.print-plan .plan { display: block; color: var(--ink); font: 10.5pt/1.4 var(--font-body); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
 @page { size: A4; margin: 14mm 14mm 16mm; }
+/* The plan runs edge to edge, so its paper colour reaches the sheet's edge;
+   each page sets its own margins inside. */
+.plan { page: plan; }
+@page plan { size: A4; margin: 0; }
+.plan-page { box-sizing: border-box; min-height: 296mm; padding: 13mm 14mm 14mm; background: var(--paper); }
 .plan-page + .plan-page { break-before: page; page-break-before: always; }
-.plan-mast { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12pt; padding-bottom: 5pt; }
-.plan-name { font: var(--mast-weight) 34pt/1 var(--font-mast); text-transform: var(--mast-case); letter-spacing: var(--mast-track); }
-.plan-ear { justify-self: start; padding: 3pt 6pt; border: .75pt solid #000; font: 700 7.5pt/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; }
+.plan-mast { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12pt; padding-bottom: 6pt; }
+.plan-name { font: var(--mast-weight) 34pt/1 var(--font-mast); text-transform: var(--mast-case); letter-spacing: var(--mast-track); color: var(--ink); }
+.plan-ear { justify-self: start; padding: 3pt 6pt; border: .75pt solid var(--rule); font: 700 7.5pt/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; }
 .plan-ear.r { justify-self: end; border: 0; padding: 0; font: italic 10pt/1.2 var(--font-head); letter-spacing: 0; text-transform: none; }
 .plan-dateline {
   display: flex; justify-content: space-between; gap: 10pt; margin-bottom: 10pt; padding: 3pt 0 3pt;
-  border-top: 3pt double #000; border-bottom: .75pt solid #000;
+  border-top: 3pt double var(--rule); border-bottom: .75pt solid var(--rule);
   font: 700 7.5pt/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase;
 }
-.plan-title { margin: 0 0 4pt; font: 700 26pt/1.08 var(--font-head); letter-spacing: -.01em; }
-.plan-stand { margin: 0 0 8pt; font: italic 10.5pt/1.4 var(--font-head); }
-.plan-facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: .75pt solid #000; border-bottom: .75pt solid #000; margin-bottom: 8pt; }
-.plan-facts > div { padding: 5pt 8pt 6pt 0; }
-.plan-facts > div + div { padding-left: 8pt; border-left: .5pt solid #999; }
+.plan-title { margin: 0 0 4pt; font: var(--display-weight) 26pt/1.08 var(--font-display); font-stretch: var(--display-stretch); letter-spacing: -.01em; }
+.plan-stand { margin: 0 0 8pt; font: italic 10.5pt/1.4 var(--font-head); color: var(--ink-2); }
+.plan-facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: .75pt solid var(--rule); border-bottom: .75pt solid var(--rule); margin-bottom: 8pt; background: var(--paper-2); }
+.plan-facts > div { padding: 5pt 8pt 6pt; }
+.plan-facts > div + div { border-left: .5pt solid var(--hair); }
 .plan-facts b { display: block; font: 700 15pt/1.1 var(--font-num); }
-.plan-facts span { font: 600 7.5pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
-.plan-h { margin: 9pt 0 3pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
-.plan-more { font-weight: 500; letter-spacing: 0; text-transform: none; }
+.plan-facts span { font: 600 7.5pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.plan-h { margin: 10pt 0 3pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--kicker); }
+.plan-more { font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--muted); }
 .plan-table { width: 100%; border-collapse: collapse; font: 9pt/1.3 var(--font-ui); }
-.plan-table th { text-align: left; font: 700 7pt/1.2 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; border-bottom: .75pt solid #000; padding: 2pt 4pt 2pt 0; }
-.plan-table td { padding: 2.5pt 4pt 2.5pt 0; border-bottom: .5pt solid #bbb; vertical-align: top; }
+.plan-table th { text-align: left; font: 700 7pt/1.2 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; border-bottom: .75pt solid var(--rule); padding: 2pt 4pt 2pt 0; color: var(--muted); }
+.plan-table td { padding: 2.5pt 4pt 2.5pt 0; border-bottom: .5pt solid var(--hair); vertical-align: top; }
 .plan-table td.nm { font-weight: 600; width: 34%; }
 .plan-table td.sc { white-space: nowrap; font-variant-numeric: tabular-nums; }
-.plan-h2 { margin: 0 0 6pt; padding-bottom: 3pt; border-bottom: 2pt solid #000; font: 700 15pt/1.1 var(--font-head); }
+.plan-table td.v { font-weight: 700; }
+.plan-table td.v.safe { color: var(--high); }
+.plan-table td.v.target { color: var(--good); }
+.plan-table td.v.dream { color: var(--mid); }
+.plan-h2 { margin: 0 0 6pt; padding-bottom: 3pt; border-bottom: 2pt solid var(--rule); font: var(--display-weight) 15pt/1.1 var(--font-display); font-stretch: var(--display-stretch); }
 .plan-h2 + .plan-cols, .plan-cols + .plan-h2 { margin-top: 12pt; }
 .plan-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16pt; }
-.plan-cols h3 { margin: 0 0 4pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.plan-cols > div + div { padding-left: 16pt; border-left: .5pt solid var(--hair); }
+.plan-cols h3 { margin: 0 0 4pt; font: 700 9pt/1.2 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--kicker); }
 .plan-cols ul { margin: 0; padding-left: 12pt; }
 .plan-cols li { margin-bottom: 3pt; }
 .plan-check { list-style: none; margin: 0; padding: 0; }
-.plan-check li { position: relative; padding: 4pt 0 4pt 18pt; border-bottom: .5pt solid #bbb; }
-.plan-check li::before { content: ""; position: absolute; left: 0; top: 5pt; width: 9pt; height: 9pt; border: 1pt solid #000; }
-.plan-foot { margin-top: 12pt; font: italic 8.5pt/1.4 var(--font-head); }
+.plan-check li { position: relative; padding: 4pt 0 4pt 18pt; border-bottom: .5pt solid var(--hair); }
+.plan-check li::before { content: ""; position: absolute; left: 0; top: 5pt; width: 9pt; height: 9pt; border: 1pt solid var(--rule); background: var(--paper-3); }
+.plan-foot { margin-top: 12pt; font: italic 8.5pt/1.4 var(--font-head); color: var(--muted); }
+
+/* Wall Street and FBI Watchlist print their own nameplates, and Watchlist
+   runs its black masthead band across the top of each page. */
+:root[data-theme="wallstreet"] .plan-name,
+:root[data-theme="watchlist"] .plan-name { display: block; height: 34pt; font-size: 0; color: transparent; }
+:root[data-theme="wallstreet"] .plan-name {
+  aspect-ratio: 489 / 128;
+  background: url("../img/wordmark/wall-street.png?v=admetia") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/wall-street.webp?v=admetia") type("image/webp"), url("../img/wordmark/wall-street.png?v=admetia") type("image/png"));
+}
+:root[data-theme="watchlist"] .plan-name {
+  aspect-ratio: 688 / 150;
+  background: url("../img/wordmark/fbi-watchlist.png?v=admetia") center / contain no-repeat;
+  background-image: image-set(url("../img/wordmark/fbi-watchlist.webp?v=admetia") type("image/webp"), url("../img/wordmark/fbi-watchlist.png?v=admetia") type("image/png"));
+}
+:root[data-theme="watchlist"] .plan-mast { margin: -13mm -14mm 0; padding: 9mm 14mm 7mm; background: #171717; color: #fff; }
+:root[data-theme="watchlist"] .plan-mast .plan-ear { border-color: #fff; }
+:root[data-theme="watchlist"] .plan-mast .plan-ear.r { color: #bbb; }
+:root[data-theme="watchlist"] .plan-dateline { border-top: 0; margin-top: 0; }

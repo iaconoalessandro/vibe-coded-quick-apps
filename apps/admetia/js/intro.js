@@ -115,9 +115,11 @@
   var RISE = 'cubic-bezier(.2,.9,.1,1)', SWEEP = 'cubic-bezier(.6,0,.2,1)', MOVE = 'cubic-bezier(.75,0,.2,1)';
 
   /* The faces are declared here as well as in css/fonts.css, which has not
-   * loaded yet, so they can start downloading now. Same URLs: one fetch. */
+   * loaded yet, so they can start downloading now. Same URLs: one fetch.
+   * Swap, not block, and the whole sheet goes when the titles do: a second,
+   * blocking declaration of a face left text invisible when printed. */
   var face = function (fam, file, extra) {
-    return '@font-face{font-family:"' + fam + '";font-style:normal;' + extra + 'font-display:block;src:url(fonts/' + file + '.woff2) format("woff2")}';
+    return '@font-face{font-family:"' + fam + '";font-style:normal;' + extra + 'font-display:swap;src:url(fonts/' + file + '.woff2) format("woff2")}';
   };
   var CSS = [
     face('Source Serif 4', 'source-serif-4-roman', 'font-weight:200 900;'),
@@ -125,6 +127,7 @@
     face('Roboto Serif Condensed', 'roboto-serif-condensed', 'font-weight:400 800;'),
     face('Noto Serif Display', 'noto-serif-display', 'font-weight:100 900;font-stretch:62.5% 100%;'),
     'html.intro-on{overflow:hidden}',
+    '@media print{.intro{display:none!important}html.intro-on{overflow:visible}}',
     '.intro{position:fixed;inset:0;z-index:2147483000;overflow:hidden;visibility:visible!important;cursor:pointer;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}',
     '.intro *{box-sizing:border-box}',
     '.intro-l,.intro-bg{position:absolute;inset:0}',
@@ -157,7 +160,7 @@
   ].join('\n');
 
   /* ------------------------------------------------------------ helpers --- */
-  var ov, stage, hud, skip, done = false, timers = [];
+  var ov, stage, hud, skip, style, done = false, timers = [];
 
   function el(tag, cls, parent, text) {
     var e = document.createElement(tag);
@@ -404,6 +407,7 @@
     done = true;
     timers.forEach(clearTimeout);
     if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+    if (style && style.parentNode) style.parentNode.removeChild(style);
     root.classList.remove('intro-on');
     if (document.body) document.body.inert = false;
     document.removeEventListener('keydown', onKey, true);
@@ -419,7 +423,7 @@
   function onKey() { finish(150); }
 
   try {
-    var style = el('style', '', document.head || root);
+    style = el('style', '', document.head || root);
     style.textContent = CSS;
     ov = el('div', 'intro');
     stage = el('div', '', ov);

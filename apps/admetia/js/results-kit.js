@@ -887,7 +887,7 @@ window.ResultsKit = (function () {
         tr.appendChild(el('td', 'nm', r.name));
         tr.appendChild(el('td', null, r.region));
         tr.appendChild(el('td', 'sc', r.score));
-        tr.appendChild(el('td', null, r.verdict));
+        tr.appendChild(el('td', 'v ' + r.tier, r.verdict));
         var c = calendar(r.key, now);
         tr.appendChild(el('td', null, !c ? '—'
           : c.next ? T(c.next.label) + ', ' + fmtDate(c.next.date) + ' (' + inDays(c.next.days) + ')'

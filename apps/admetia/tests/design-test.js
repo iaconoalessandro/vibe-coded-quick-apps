@@ -30,6 +30,12 @@ t('verdicts stamp once per visit, and not under reduced motion',/var stamped = f
 t('the share image says what it is: an estimate, not a decision',/'An independent estimate from a points model — not an admission decision\.'/.test(kit));
 t('the share image is made in the browser, never uploaded',/cv\.toBlob\(/.test(kit)&&!/fetch\(|XMLHttpRequest|sendBeacon/.test(kit));
 t('the plan is set as a newspaper page under the site\'s name',/el\('span', 'plan-name', 'Admetia'\)/.test(kit)&&/'plan-dateline'/.test(kit));
+const css=read('css/app.css');
+t('the plan prints in the reader\'s edition: its paper edge to edge, its inks, its nameplate',
+  /html\.print-plan \.plan \{ display: block; color: var\(--ink\);/.test(css)&&!/html\.print-plan \.plan \* \{ color: #000/.test(css)&&
+  /@page plan \{ size: A4; margin: 0; \}/.test(css)&&/print-color-adjust: exact/.test(css)&&
+  /:root\[data-theme="watchlist"\] \.plan-mast \{[^}]*background: #171717/.test(css)&&/:root\[data-theme="wallstreet"\] \.plan-name \{/.test(css));
+t('the opening titles never print, and never hide text while a face loads',/@media print\{\.intro\{display:none!important\}/.test(read('js/intro.js'))&&!/font-display:block/.test(read('js/intro.js')));
 t('printing a results page prints the plan',/addEventListener\('beforeprint'[\s\S]{0,300}planDoc\(build\(\)\)/.test(kit));
 ['page-mba.js','page-masters.js','page-it.js'].forEach(f=>{
   const src=read('js/'+f);
