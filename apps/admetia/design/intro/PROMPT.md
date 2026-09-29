@@ -41,7 +41,7 @@ La lingua segue `admissions-calc:lang` (EN di default).
 | EN | IT |
 |---|---|
 | INSEAD? / LBS? / BOCCONI? / YOU? | INSEAD? / LBS? / BOCCONI? / E TU? |
-| GMAT. / GPA. / CV. / VERDICT. | GMAT. / MEDIA. / CV. / VERDETTO. |
+| GMAT / GPA / CV / VERDICT | GMAT / MEDIA / CV / VERDETTO |
 | WHERE / DO YOU / ACTUALLY / STAND? | A CHE / PUNTO / SEI / DAVVERO? |
 
 Le prime tre parole sono i tre tagli a tutto schermo; la quarta è la parola delle righe.

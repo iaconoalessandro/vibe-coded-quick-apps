@@ -43,13 +43,13 @@
 
   var TXT = {
     en: {
-      lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'YOU?'], ['GMAT.', 'GPA.', 'CV.', 'VERDICT.'], ['WHERE', 'DO YOU', 'ACTUALLY', 'STAND?']],
+      lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'YOU?'], ['GMAT', 'GPA', 'CV', 'VERDICT'], ['WHERE', 'DO YOU', 'ACTUALLY', 'STAND?']],
       data: COUNT.programmes + '+ business programmes · ' + COUNT.mba + ' MBA schools · ' + COUNT.computing + ' computing',
       loading: 'Loading', skip: 'Skip',
       motto: 'The way in — an independent calculator for MBA, business and computing master’s degrees'
     },
     it: {
-      lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT.', 'MEDIA.', 'CV.', 'VERDETTO.'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
+      lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT', 'MEDIA', 'CV', 'VERDETTO'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
       data: COUNT.programmes + '+ programmi business · ' + COUNT.mba + ' scuole MBA · ' + COUNT.computing + ' informatica',
       loading: 'Caricamento', skip: 'Salta',
       motto: 'The way in — un calcolatore indipendente per MBA, master in business e master in informatica'
