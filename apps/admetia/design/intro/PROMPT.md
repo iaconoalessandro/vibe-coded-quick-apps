@@ -16,13 +16,14 @@ preview server), non dal repo.
 | Situazione | Cosa vede |
 |---|---|
 | **Entra nel sito**: scheda nuova, indirizzo digitato, preferito, link da un altro sito | Intro completa, ~3,3 s |
-| **È già sul sito**: ricarica, indietro/avanti, link interno del sito | Transizione veloce, ~0,5 s |
+| **Ricarica** la pagina | Dissolvenza dal colore della carta, 0,32 s, nessun movimento |
+| **Si muove nel sito**: link interni, indietro/avanti | Niente |
 | `prefers-reduced-motion: reduce` | Niente: la pagina appare subito |
 | Scheda aperta in background | Niente |
 | Stampa | Niente (`@media print`) |
 
-- "Già sul sito" si decide dal tipo di navigazione (`reload`, `back_forward`) o da un
-  `document.referrer` dello stesso sito (stessa origine e stessa cartella). Non si salva nulla.
+- Si decide dal tipo di navigazione (`reload`, `back_forward`) e dal `document.referrer`
+  (stessa origine e stessa cartella = già sul sito). Non si salva nulla.
 
 ## 2. Salto
 
@@ -108,11 +109,11 @@ all'80% di opacità, nel colore del testo della scena corrente.
   una linea di avanzamento.
 - Su schermo verticale si nascondono le etichette di sinistra.
 
-## 5. Lampo (visite successive)
+## 5. Ricarica
 
-Solo l'atterraggio accelerato (tempi × 0,45) sul fondo dell'edizione dell'utente: la testata
-si compone e sale al suo posto. Circa 0,5 s. (La prima versione aveva una striscia colorata
-per edizione; è stata tolta perché la striscia rossa sembrava un residuo.)
+Solo una dissolvenza: l'overlay parte col colore della carta dell'edizione e sfuma in 320 ms
+quando la pagina è pronta. Nessuna testata, nessun movimento. (Versioni precedenti: una
+striscia colorata, poi la testata che saliva; tolte perché ripetute stancavano.)
 
 ## 6. Numeri veri
 

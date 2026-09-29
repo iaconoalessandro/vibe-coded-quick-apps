@@ -1,9 +1,10 @@
 /* Opening titles. Whenever a reader arrives — a new tab, a typed address, a
  * bookmark, a link from somewhere else — the three editions cut past in
  * kinetic type (one of three lines, picked at random) and the nameplate lands
- * in its place on the page. A reader already on the site — reloading, going
- * back or forward, following one of its own links — gets a quick transition
- * instead: the nameplate composing and landing, half a second.
+ * in its place on the page. A reload gets only a soft fade: the page comes up
+ * from its own paper in a third of a second, with no movement. Moving around
+ * the site — its own links, back and forward — gets nothing at all: a
+ * transition on every click is noise.
  *
  * Runs in <head>, right after js/theme.js (which has already set the edition
  * and the language), so the overlay is up before the page first paints. The
@@ -17,10 +18,11 @@
 (function () {
   'use strict';
 
-  /* What a page load gets: 'full', 'flash' or 'none'. */
+  /* What a page load gets: 'full', 'fade' or 'none'. */
   function plan(o) {
     if (o.reduced || !o.animate || o.robot) return 'none';
-    return o.onSite ? 'flash' : 'full';
+    if (o.navType === 'reload') return 'fade';
+    return onSite(o.navType, o.referrer, o.here) ? 'none' : 'full';
   }
 
   /* Already on the site: the load is a reload, a step back or forward, or a
@@ -69,7 +71,7 @@
   var nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
   var navType = nav ? nav.type : performance.navigation && ['navigate', 'reload', 'back_forward'][performance.navigation.type];
   var mode = plan({
-    onSite: onSite(navType, document.referrer, location.href),
+    navType: navType, referrer: document.referrer, here: location.href,
     reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
     animate: typeof root.animate === 'function',
     robot: !!navigator.webdriver || /bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)
@@ -369,12 +371,12 @@
     at(total, function () { glitch(ed); landing(ed, 1); });
   }
 
-  /* Every other page load: just the nameplate composing and landing, on the
-   * edition's own paper. About half a second. */
-  function flash() {
+  /* A reload: the page fades up from its own paper once it is there. No
+   * movement, so reloading again and again stays calm. */
+  function fade() {
     if (hud) hud.style.display = 'none';
     if (skip) skip.style.display = 'none';
-    landing(ed, .45);
+    whenParsed(function () { finish(320); });
   }
 
   /* ------------------------------------------------------------ lifecycle */
@@ -418,7 +420,7 @@
     stage = el('div', '', ov);
     stage.setAttribute('aria-hidden', 'true');
     stage.style.cssText = 'position:absolute;inset:0';
-    ov.style.background = mode === 'full' ? ED[order[0]].loud[0] : (ED[ed].band || ED[ed].paper);
+    ov.style.background = mode === 'full' ? ED[order[0]].loud[0] : ED[ed].paper;
     if (mode === 'full') {
       hud = el('div', 'intro-hud', stage);
       hud.style.color = ED[order[0]].loud[1];
@@ -449,18 +451,17 @@
     setTimeout(function () { if (!done) teardown(); }, 8000);
 
     /* Wait for the faces, but not for long: if they are not in within 0.7 s
-     * the first visit gets the flash, and keeps the full titles for later. */
-    var wanted = mode === 'full' ? order.map(function (k) { return ED[k].load; }).concat('600 1em "Hanken Grotesk"')
-      : ed === 'city' ? [ED.city.load] : [];
+     * the page just fades in. */
+    var wanted = mode === 'full' ? order.map(function (k) { return ED[k].load; }).concat('600 1em "Hanken Grotesk"') : [];
     var started = false;
     var go = guard(function () {
       if (started) return;
       started = true;
       whenVisible(guard(function () {
-        if (mode === 'full') { full(); if (skip) skip.focus({ preventScroll: true }); } else flash();
+        if (mode === 'full') { full(); if (skip) skip.focus({ preventScroll: true }); } else fade();
       }));
     });
-    var cap = setTimeout(guard(function () { if (mode === 'full') mode = 'flash'; go(); }), mode === 'full' ? 700 : 400);
+    var cap = setTimeout(guard(function () { mode = 'fade'; go(); }), 700);
     timers.push(cap);
     if (document.fonts && wanted.length) {
       Promise.all(wanted.map(function (f) { return document.fonts.load(f); }))

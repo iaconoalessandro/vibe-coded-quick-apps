@@ -1,8 +1,7 @@
 /* The opening titles (js/intro.js).
  *
- *   plan      Arriving at the site gets the full titles; a reader already on
- *             it (reload, back/forward, the site's own links) the flash; and
- *             nobody who asks for reduced motion gets either.
+ *   plan      Arriving at the site gets the full titles, a reload a plain
+ *             fade, moving around the site nothing; reduced motion nothing.
  *   wiring    Every page loads it straight after js/theme.js, in <head>, and
  *             the service worker caches it.
  *   words     Three lines of four beats, in English and Italian.
@@ -24,24 +23,21 @@ const I=ctx.Intro;
 t('js/intro.js publishes its plan without touching the page',!!I&&typeof I.plan==='function');
 
 /* ------------------------------------------------------------- plan --- */
-const base={onSite:false,reduced:false,animate:true,robot:false};
+const HERE='https://iaconoalessandro.github.io/admissions-calculator/mba.html';
+const base={navType:'navigate',referrer:'',here:HERE,reduced:false,animate:true,robot:false};
 const plan=o=>I.plan(Object.assign({},base,o));
-t('arriving at the site gets the full titles',plan({})==='full');
-t('a reader already on the site gets the flash',plan({onSite:true})==='flash');
-t('reduced motion gets nothing, arriving or not',plan({reduced:true})==='none'&&plan({reduced:true,onSite:true})==='none');
+t('a new tab, a typed address or a bookmark gets the full titles',plan({})==='full');
+t('a link from another site gets the full titles',plan({referrer:'https://www.google.com/search?q=mba'})==='full');
+t('a link from another project on the same github.io host gets the full titles',plan({referrer:'https://iaconoalessandro.github.io/other-project/'})==='full');
+t('a reload gets the fade',plan({navType:'reload'})==='fade'&&plan({navType:'reload',referrer:HERE})==='fade');
+t('the site\'s own links get nothing',plan({referrer:'https://iaconoalessandro.github.io/admissions-calculator/index.html'})==='none'&&plan({referrer:'https://iaconoalessandro.github.io/admissions-calculator/'})==='none');
+t('back and forward get nothing',plan({navType:'back_forward'})==='none');
+t('reduced motion gets nothing, even on arrival or reload',plan({reduced:true})==='none'&&plan({reduced:true,navType:'reload'})==='none');
 t('no Web Animations, no titles',plan({animate:false})==='none');
 t('crawlers and automated browsers get nothing',plan({robot:true})==='none');
-const HERE='https://iaconoalessandro.github.io/admissions-calculator/mba.html';
-const on=(type,ref)=>I.onSite(type,ref,HERE);
-t('a new tab, a typed address or a bookmark counts as arriving',on('navigate','')===false);
-t('a link from another site counts as arriving',on('navigate','https://www.google.com/search?q=mba')===false);
-t('a link from another project on the same github.io host counts as arriving',on('navigate','https://iaconoalessandro.github.io/other-project/')===false);
-t('the site\'s own links count as already on the site',on('navigate','https://iaconoalessandro.github.io/admissions-calculator/index.html')===true&&on('navigate','https://iaconoalessandro.github.io/admissions-calculator/')===true);
-t('a reload counts as already on the site',on('reload','')===true);
-t('back and forward count as already on the site',on('back_forward','')===true);
 const src=read('js/intro.js');
 t('nothing about a visit is remembered: old keys are cleared, none written',/removeItem\('admissions-calc:intro-seen'\)/.test(src)&&!/setItem\(/.test(src));
-t('the flash is the nameplate alone: no colour strip',/function flash\(\) \{[^}]*landing\(ed, \.45\);\s*\}/.test(src)&&!/strip/.test(src));
+t('the reload fade is a plain fade: no nameplate, no movement',/function fade\(\) \{[^}]*whenParsed\(function \(\) \{ finish\(320\); \}\);\s*\}/.test(src)&&!/function flash/.test(src));
 t('The City\'s nameplate is spelled once: the typed-in letters replace the text, not follow it',
   /np\.textContent = '';\s*letters\(np, 'ADMISSION CHANCES'\)/.test(src));
 
