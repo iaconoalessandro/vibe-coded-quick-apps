@@ -116,7 +116,7 @@
    "lon": 26.768505,
    "street": "Kalda tee",
    "housenumber": "32",
-   "hours": "",
+   "hours": "Mo-Su,PH 08:00-22:00",
    "osmId": "node/14214281753"
   },
   {
@@ -762,7 +762,7 @@
    "lon": 26.76647,
    "street": "Kalda tee",
    "housenumber": "43",
-   "hours": "Mo-Su 09:00-22:00",
+   "hours": "Mo-Su 08:00-22:00",
    "osmId": "node/6793189036"
   },
   {
@@ -885,6 +885,23 @@
    "osmId": "way/30241696"
   },
   {
+   "name": "A1000 Annelinn",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.370315,
+   "lon": 26.763819,
+   "street": "Kalda tee",
+   "housenumber": "39",
+   "hours": "Mo-Su 09:00-21:00",
+   "osmId": "node/14051426401"
+  },
+  {
    "name": "A1000 Market",
    "chain": null,
    "chainLabel": "Independent",
@@ -983,7 +1000,7 @@
    "lon": 26.727549,
    "street": "Riia",
    "housenumber": "1",
-   "hours": "",
+   "hours": "Mo-Sa 09:00-22:00; Su 10:00-20:00",
    "osmId": "node/6900879170"
   },
   {
@@ -1036,6 +1053,23 @@
    "housenumber": "32",
    "hours": "",
    "osmId": "way/30223305"
+  },
+  {
+   "name": "Supermarket",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.370316,
+   "lon": 26.763819,
+   "street": "Kalda tee",
+   "housenumber": "39",
+   "hours": "",
+   "osmId": "way/1242239832"
   },
   {
    "name": "Tartu Kaupmees",
@@ -1305,9 +1339,9 @@
     "walkMinutes": 7
    },
    "nearestAny": {
-    "name": "Selver",
-    "chain": "Selver",
-    "metres": 424,
+    "name": "A1000 Annelinn",
+    "chain": "Independent",
+    "metres": 417,
     "walkMinutes": 7
    }
   },
