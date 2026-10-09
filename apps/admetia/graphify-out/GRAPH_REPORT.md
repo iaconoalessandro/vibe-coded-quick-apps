@@ -6,12 +6,12 @@
 - Unclassified: 14 file(s) not represented in the graph (top: .css 6, .woff2 5, (none) 2)
 
 ## Summary
-- 7624 nodes · 8869 edges · 644 communities (475 shown, 169 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 189 edges (avg confidence: 0.87)
+- 7624 nodes · 8870 edges · 644 communities (475 shown, 169 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 190 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1ff9e946`
+- Built from commit: `6f9d7bc5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -509,22 +509,22 @@
 4. `create()` - 23 edges
 5. `1. Registro dei Punti Aperti (Open Questions)` - 23 edges
 6. `renderResults()` - 22 edges
-7. `data()` - 22 edges
-8. `buildWorld()` - 22 edges
+7. `buildWorld()` - 22 edges
+8. `data()` - 22 edges
 9. `route()` - 21 edges
 10. `Origin-country playbooks for EU (non-Italian) students` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `4. UNDERREPRESENTED` --references--> `programmes()`  [INFERRED]
-  docs/launch-audit/2-atlas-nordics-cee-south.md → js/ticker.js
-- `Rules (read first)` --references--> `data()`  [INFERRED]
-  docs/HIRING-SCHEMA.md → tools/build-brand.py
-- `3. SUPERFICIAL or too generic` --references--> `data()`  [INFERRED]
-  docs/launch-audit/3-atlas-outside-europe.md → tools/build-brand.py
-- `0.3 Rules every new piece must follow (the site's method)` --references--> `data()`  [INFERRED]
-  docs/PLANNING-INTELLIGENCE-SPEC.md → tools/build-brand.py
-- `1.3 Data and sources` --references--> `data()`  [INFERRED]
-  docs/PLANNING-INTELLIGENCE-SPEC.md → tools/build-brand.py
+- `5.3 Data and sources` --references--> `adjacentPaths()`  [INFERRED]
+  docs/PLANNING-INTELLIGENCE-SPEC.md → js/page-map.js
+- `Executive summary` --references--> `route()`  [INFERRED]
+  docs/launch-audit/4-immigration-europe.md → js/page-map.js
+- `Per-country scorecard (non-EU student unless stated)` --references--> `route()`  [INFERRED]
+  docs/launch-audit/4-immigration-europe.md → js/page-map.js
+- `Modifica 2: `data/atlas/at.js`` --references--> `route()`  [INFERRED]
+  research/visas_immigration/_changelog/austria_2026-10-05.md → js/page-map.js
+- `Modifica 2: `data/atlas/de.js`` --references--> `route()`  [INFERRED]
+  research/visas_immigration/_changelog/germany_2026-10-05.md → js/page-map.js
 
 ## Import Cycles
 - None detected.
@@ -2439,7 +2439,7 @@ Cohesion: 0.67
 Nodes (3): A. Inquadramento Giuridico del Dottorato in Svizzera, B. Regime dei Permessi e Procedura, Caso 7: Master e Dottorato (PhD / Post-doc Salariati)
 
 ## Knowledge Gaps
-- **4866 isolated node(s):** `1. Explore`, `2. Generator`, `3. Site integration`, `4. Checks (tests/careers-test.js)`, `5. Visual review` (+4861 more)
+- **4866 isolated node(s):** `name`, `private`, `description`, `build`, `test` (+4861 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5362 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **169 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -2447,16 +2447,16 @@ Nodes (3): A. Inquadramento Giuridico del Dottorato in Svizzera, B. Regime dei P
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **What connects `1. Explore`, `2. Generator`, `3. Site integration` to the rest of the system?**
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **What connects `name`, `private`, `description` to the rest of the system?**
   _4866 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `results-kit.js` be split into smaller, more focused modules?**
   _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
 - **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `United Arab Emirates (P34)`, `P39 Spain (data/atlas/es.js)`, `P58 Malta (data/atlas/mt.js)`, `P56 Greece (data/atlas/gr.js)`, `build-brand.py`, `Verification round 5b (3 October 2026)`, `1. How hiring actually works there`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `What to add to each entry file`, `United States (P60)`, `P44 Ireland (data/atlas/ie.js)`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Should `intro.js` be split into smaller, more focused modules?**
   _Cohesion score 0.1011764705882353 - nodes in this community are weakly interconnected._
-- **Why does `Computing calculator page` connect `Business tracks picker page` to `results-kit.js`, `intro.js`, `Atlas progress checklist`, `theme.js`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
+- **Why does `f()` connect `f` to `intro.js`, `careers-test.js`, `masters-test.js`, `atlas-test.js`, `features-test.js`, `programmes-test.js`, `i18n-test.js`, `profiles-test.js`, `deadlines-test.js`, `ref_fs`, `site-test.js`, `visas-sources.js`, `mba-test.js`, `intro-test.js`, `atlas-life.js`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Should `create` be split into smaller, more focused modules?**
   _Cohesion score 0.1076923076923077 - nodes in this community are weakly interconnected._
