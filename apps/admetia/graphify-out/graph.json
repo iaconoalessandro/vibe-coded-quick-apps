@@ -187650,18 +187650,6 @@
       "weight": 1.0
     },
     {
-      "source": "js_page_programmes_update",
-      "target": "js_engine_create_shown",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "js/page-programmes.js",
-      "source_location": "L568",
-      "weight": 1.0
-    },
-    {
       "source": "js_results_kit_battleplan",
       "target": "js_results_kit_battleplan_done",
       "relation": "indirect_call",
@@ -191904,5 +191892,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "e3f7141ac5de609e4bc852c097ddbda06f9d2d95"
+  "built_at_commit": "1ff9e946810ca403cfcc7c725e86bb09a6df92c0"
 }

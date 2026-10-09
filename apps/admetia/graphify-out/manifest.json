@@ -499,8 +499,8 @@
   },
   "tests/fixtures/mba-golden.json": {
     "mtime": 1789305605.6794183,
-    "seen": 1791561808.277086,
-    "ast_hash": "",
+    "seen": 1791572228.2022772,
+    "ast_hash": "6a5c4c44f650dd9f5f9e822ebec6ac05",
     "semantic_hash": ""
   },
   "tests/i18n-test.js": {
@@ -4122,9 +4122,9 @@
     "semantic_hash": ""
   },
   "careers/data/careers.json": {
-    "mtime": 1791564129.3467264,
-    "seen": 1791564134.512175,
-    "ast_hash": "",
+    "mtime": 1791572173.2357266,
+    "seen": 1791572228.202198,
+    "ast_hash": "1802d0d3e1a16b3f44f2ca91a0240a97",
     "semantic_hash": ""
   },
   "careers/data/search-index.json": {
