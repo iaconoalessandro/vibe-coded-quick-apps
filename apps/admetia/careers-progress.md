@@ -36,6 +36,11 @@ Branch `career-explorer` (not pushed). Generator: `npm run careers` (tools/build
 ## 5. Visual review
 - [x] Careers home, one field page, one long role page at desktop and 375px; fixes applied
 
+## 6. Career Compass (docs/CAREER-COMPASS.md)
+- [x] Plan, competitor review, plan v2
+- [x] Tags for 124 roles, quoted research passages, generator, page, scoring, questionnaire and results
+- [x] Italian interface, 17 checks in tests/careers-test.js, visual review (desktop, 375px, two editions, both languages)
+
 ## Status (9 October 2026)
 All stages done; see careers/BUILD_NOTES.md for judgements and the unresolved-exit log. Not pushed, main untouched, not deployed.
 

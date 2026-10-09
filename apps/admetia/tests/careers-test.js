@@ -10,7 +10,10 @@
  *   requests    nothing is loaded from another host
  *   weight      no page is heavier than the limit below
  *   sitemap     lists every page, old and new
- *   nav         every page carries the Careers link */
+ *   nav         every page carries the Careers link
+ *   compass     the Career Compass's data is current, every role is tagged,
+ *               every quoted passage was found, every interface string has
+ *               Italian, and the scoring behaves on known profiles */
 'use strict';
 const fs = require('fs'), path = require('path');
 const APP = path.join(__dirname, '..');
@@ -107,7 +110,7 @@ t('no template section is empty', emptyS.length === 0, emptyS.slice(0, 5).join('
 t('every role page carries its source’s words (within 1%)', words.length === 0, words.slice(0, 5).join(' | '));
 
 /* ---------------------------------------------------------------- links --- */
-const ROOT_PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html'];
+const ROOT_PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html', 'programmes.html'];
 const idCache = new Map();
 function ids(file) {
   if (!idCache.has(file)) idCache.set(file, new Set([...read(file).matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
@@ -147,8 +150,11 @@ for (const file of htmlFiles) {
   for (const m of html.matchAll(/<link\b[^>]*>/gi)) if (!/rel="canonical"/.test(m[0]) && /href="(https?:)?\/\//.test(m[0])) external.push(`${file}: ${m[0].slice(0, 60)}`);
   if (/@import|url\(\s*['"]?(https?:)?\/\//.test(html)) external.push(`${file}: css url`);
 }
-const js = read('careers/assets/careers.js'), css = read('careers/assets/careers.css');
-if (/(fetch|XMLHttpRequest|import)\s*\(\s*['"`]https?:/.test(js) || /https?:\/\//.test(js.replace(/\/\*[\s\S]*?\*\//g, ''))) external.push('careers.js');
+const css = read('careers/assets/careers.css');
+for (const f of ['careers.js', 'compass.js', 'compass-core.js']) {
+  const js = read('careers/assets/' + f);
+  if (/(fetch|XMLHttpRequest|import)\s*\(\s*['"`]https?:/.test(js) || /https?:\/\//.test(js.replace(/\/\*[\s\S]*?\*\//g, ''))) external.push(f);
+}
 if (/url\(|@import/.test(css)) external.push('careers.css');
 t('nothing is loaded from another host', external.length === 0, external.slice(0, 5).join(' | '));
 
@@ -180,6 +186,55 @@ t('every explorer page has exactly one h1', h1.length === 0, h1.slice(0, 3).join
 
 const enOnly = htmlFiles.filter((f) => !/<p class="cx-en-note" lang="it">/.test(read(f)));
 t('every explorer page tells Italian readers the research is in English', enOnly.length === 0, enOnly.slice(0, 3).join(', '));
+
+/* -------------------------------------------------------------- compass --- */
+const { compassData } = require('../tools/build-careers');
+t('the Career Compass data matches a fresh build (run npm run careers)', read('careers/data/compass-data.js') === compassData(data, site));
+t('the Career Compass data stays under 200 KB', fs.statSync(path.join(APP, 'careers/data/compass-data.js')).size <= 200 * 1024);
+const box = {};
+require('vm').runInNewContext(read('careers/data/compass-data.js'), { window: box });
+const CD = box.COMPASS_DATA;
+const K = require('../careers/assets/compass-core');
+t('every role family has compass tags', CD.roles.length === data.roles.length && CD.roles.every((r) => r.a.length && r.o.length));
+t('every compass role link and calculator link resolves', CD.roles.every((r) => fs.existsSync(path.join(APP, 'careers', r.u)) &&
+  r.calc.every((c) => fs.existsSync(path.join(APP, 'careers', c.href.split('?')[0])))));
+t('the 15 myths, the cross-career rows and the quoted passages were all found', Object.keys(CD.myths).length === 15 &&
+  Object.values(CD.df).every((r) => r.cells.door && r.cells.language) && Object.values(CD.quotes).every((q) => q.html.length > 40) &&
+  Object.values(CD.sectors).every((x) => x.items.every((h) => h.length > 40)));
+{
+  const src = read('js/i18n-it.js');
+  const sb = { I18N: { add: (l, d) => { sb.dict = d; } } };
+  require('vm').runInNewContext(src, sb);
+  const ui = [...read('careers/assets/compass.js').matchAll(/\bT\('((?:[^'\\]|\\.)*)'/g)].map((m) => m[1].replace(/\\'/g, "'"));
+  const lack = [...new Set(ui)].filter((k) => sb.dict[k] === undefined);
+  t(`every Career Compass interface string has Italian (${new Set(ui).size})`, lack.length === 0, lack.slice(0, 4).join(' | '));
+}
+const fieldOf = (id) => CD.roles.find((r) => r.id === id).f;
+const PERSONA = {
+  builder: { bg: ['CS'], stage: 'final', act: ['build', 'data'], avoid: 'sell', people: 2, quant: 5, hours: 50, prio: ['balance'] },
+  banker: { bg: ['Fin'], stage: 'master', act: ['deals', 'invest', 'quant'], people: 4, quant: 3, hours: 75, stress: 5, diff: 5, prio: ['pay'], org: ['bank'] },
+  calm: { act: ['data', 'operate'], hours: 40, stress: 2 },
+  noGerman: { bg: ['Mkt'], cit: 'eu', langs: ['en', 'it'], where: ['dach'], act: ['create', 'sell'], people: 4, quant: 2 },
+  nonEU: { cit: 'other', where: ['fr'], act: ['operate', 'people', 'research'], org: ['public'] },
+  worker: { stage: 'work', act: ['deals', 'invest'] }
+};
+const res = Object.fromEntries(Object.entries(PERSONA).map(([k, a]) => [k, K.results(CD, a)]));
+const techFields = ['computer-science', 'data-analytics', 'artificial-intelligence', 'data-science', 'logistics-supply-chain', 'marketing'];
+t('compass: a CS graduate who likes building and data gets technical roles, and no sales role', res.builder.now.every((x) => techFields.includes(fieldOf(x.id))) && !res.builder.now.some((x) => x.id === 'marketing/3.8'));
+t('compass: a finance student who likes deals gets M&A in the top five and private equity under "later"', res.banker.now.slice(0, 5).some((x) => x.id === 'finance/P1-3.1') && res.banker.later.some((x) => x.id === 'finance/P3-3.4'));
+t('compass: someone who accepts 40 hours gets no 60-hour role in the list', res.calm.now.every((x) => CD.roles.find((r) => r.id === x.id).s.h[0] < 60));
+t('compass: no German and a DACH target flags the brand-manager language rule', K.results(CD, PERSONA.noGerman).all.find((x) => x.id === 'marketing/3.1').why.some((w) => w.k === 'lang'));
+t('compass: a non-EU citizen sees the citizenship condition on public-sector management', res.nonEU.all.find((x) => x.id === 'management/3.6').why.some((w) => w.k === 'cit' && w.strong));
+t('compass: PhD-gated roles are never listed as open now', Object.values(res).every((r) => r.now.every((x) => CD.roles.find((y) => y.id === x.id).gate !== 'phd')));
+t('compass: experience-gated roles open up for someone already working', res.worker.now.some((x) => CD.roles.find((y) => y.id === x.id).gate === 'exp'));
+t('compass: every "door still open" is easier to enter than the role it stands in for', Object.values(res).every((r) => r.alternatives.every((a) => {
+  const from = CD.roles.find((x) => x.id === a.from), to = CD.roles.find((x) => x.id === a.to);
+  return to.s.d[1] <= 3 && from.s.d[0] >= 4;
+})));
+const disliked = res.banker.now[0].id;
+t('compass: a role marked "not for me" leaves the list', !K.results(CD, { ...PERSONA.banker, disliked: [disliked] }).now.some((x) => x.id === disliked));
+t('compass: no answers still gives eight roles, the same every time', K.results(CD, {}).now.length === 8 && JSON.stringify(K.results(CD, {}).now) === JSON.stringify(K.results(CD, {}).now));
+t('compass: every score is between 0 and 100', Object.values(res).every((r) => r.all.every((x) => x.score >= 0 && x.score <= 100)));
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

@@ -1389,5 +1389,873 @@ I18N.add('it', {
   '{n} of {max} chosen. Untick a role in the table, or remove it here.':
     '{n} su {max} scelti. Togli la spunta nella tabella, o rimuovilo qui.',
   'Remove':
-    'Rimuovi'
+    'Rimuovi',
+
+  /* ------------------------------------------------- Career Compass */
+  /* careers/compass.html and careers/assets/compass.js; the quoted
+   * research stays in English (translate="no"). */
+  'Door zero':
+    'Porta zero',
+  'I don’t know yet':
+    'Non lo so ancora',
+  'Answer 8 to 17 questions about what you studied, what you would enjoy doing and how you want to work. The Career Compass ranks the role families against your answers and shows why, what stands in the way, and a door that is still open.':
+    'Rispondi a 8-17 domande su che cosa hai studiato, che cosa ti piacerebbe fare e come vuoi lavorare. La Bussola delle carriere ordina le famiglie di ruoli in base alle tue risposte e mostra perché, che cosa si mette di traverso e una porta ancora aperta.',
+  'Take the Career Compass':
+    'Usa la Bussola delle carriere',
+  'Compass':
+    'Bussola',
+  'Career Compass · for when you have not decided yet':
+    'Bussola delle carriere · per quando non hai ancora deciso',
+  'Career Compass':
+    'Bussola delle carriere',
+  'A short questionnaire that ranks all 124 role families in the Career Explorer against what you studied, what you would enjoy doing and how you want to work, and shows the reasons, the obstacles and the research behind each one.':
+    'Un breve questionario che ordina tutte le 124 famiglie di ruoli di Esplora le carriere in base a che cosa hai studiato, che cosa ti piacerebbe fare e come vuoi lavorare, e mostra per ciascuna le ragioni, gli ostacoli e la ricerca su cui si basa.',
+  'You have answers saved in this browser.':
+    'Hai delle risposte salvate in questo browser.',
+  'Pick up where you left off':
+    'Riprendi da dove eri rimasto',
+  'Clear them':
+    'Cancellale',
+  'Quick':
+    'Rapida',
+  '8 questions, about 2 minutes: your degree, your stage, the work you would enjoy, and how you want to work.':
+    '8 domande, circa 2 minuti: la tua laurea, a che punto sei, il lavoro che ti piacerebbe e come vuoi lavorare.',
+  'Start the quick version':
+    'Inizia la versione rapida',
+  'Full':
+    'Completa',
+  '17 questions, about 6 minutes. Adds citizenship, languages and where you want to work, pressure and competition, employers, sectors, more study and AI.':
+    '17 domande, circa 6 minuti. Aggiunge cittadinanza, lingue e dove vuoi lavorare, pressione e concorrenza, datori di lavoro, settori, altri studi e intelligenza artificiale.',
+  'Start the full version':
+    'Inizia la versione completa',
+  'The Career Compass needs JavaScript. Without it, start from':
+    'La Bussola delle carriere richiede JavaScript. Senza, parti da',
+  'what you studied':
+    'che cosa hai studiato',
+  'compare every role':
+    'confronta tutti i ruoli',
+  'What you get':
+    'Che cosa ottieni',
+  'Three fields and eight role families that fit now, plus those that fit later, after a PhD or a first job elsewhere.':
+    'Tre settori e otto famiglie di ruoli adatte adesso, più quelle adatte più avanti, dopo un dottorato o un primo lavoro altrove.',
+  'For each role, the answers that moved it up or down, its scores, and the research’s own lines on the main door, language, visas, AI and whether a master’s helps.':
+    'Per ogni ruolo, le risposte che lo hanno fatto salire o scendere, i suoi punteggi e le righe della ricerca su porta d’ingresso principale, lingua, visti, IA e utilità di un master.',
+  'A door that is still open for every hard-to-enter role, and what would change your list.':
+    'Una porta ancora aperta per ogni ruolo difficile da raggiungere, e che cosa cambierebbe la tua lista.',
+  'The myths and constraints your answers run into, quoted from the research.':
+    'I miti e i vincoli in cui si imbattono le tue risposte, citati dalla ricerca.',
+  'What it is not':
+    'Che cosa non è',
+  'Not a personality test: no types, no labels, nothing said about you that you did not say.':
+    'Non è un test di personalità: niente tipi, niente etichette, nulla su di te che tu non abbia detto.',
+  'Not a prediction. Interest tests predict job satisfaction only weakly; the results end with cheap ways to test a career for real.':
+    'Non è una previsione. I test sugli interessi prevedono la soddisfazione sul lavoro solo debolmente; i risultati si chiudono con modi economici per mettere alla prova una carriera dal vero.',
+  'Not advice. Every figure is dated and approximate, with its source on the role pages.':
+    'Non è una consulenza. Ogni cifra è datata e approssimativa, con la fonte nelle pagine dei ruoli.',
+  'Your answers':
+    'Le tue risposte',
+  'Scored in this browser. Nothing is sent anywhere, and there is no account.':
+    'Calcolate in questo browser. Non viene inviato nulla e non serve un account.',
+  'Saved in this browser so you can come back; “Start again” clears them.':
+    'Salvate in questo browser perché tu possa tornarci; «Ricomincia» le cancella.',
+  'A share link carries them after the “#” in the address, which browsers do not send to servers.':
+    'Un link da condividere le porta dopo il «#» nell’indirizzo, che i browser non inviano ai server.',
+  'Career Compass — Career Explorer — Admetia':
+    'Bussola delle carriere — Esplora le carriere — Admetia',
+  'A short questionnaire for undecided students: ranks 124 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.':
+    'Un breve questionario per chi non ha ancora deciso: ordina 124 famiglie di ruoli per laureati in base a laurea, interessi e vincoli, e mostra perché, che cosa si mette di traverso e che cosa verificare dopo.',
+  'Mostly solo work':
+    'Lavoro quasi sempre da solo',
+  'Mostly solo, with some teamwork':
+    'Per lo più da solo, con un po’ di lavoro di squadra',
+  'Regular team and stakeholder contact':
+    'Contatto regolare con il team e gli interlocutori',
+  'A lot of client or team contact':
+    'Molto contatto con clienti o team',
+  'The job is mainly relationships and persuasion':
+    'Il lavoro è soprattutto relazioni e persuasione',
+  'Basic numeracy':
+    'Calcolo di base',
+  'Comfortable with spreadsheets':
+    'A mio agio con i fogli di calcolo',
+  'Solid spreadsheets, modelling or statistics, some scripting':
+    'Fogli di calcolo solidi, modelli o statistica, un po’ di programmazione',
+  'Strong statistics or programming':
+    'Statistica o programmazione avanzate',
+  'Advanced maths, statistics or programming is the job':
+    'Matematica, statistica o programmazione avanzate sono il lavoro',
+  'Low, predictable deadlines':
+    'Bassa, scadenze prevedibili',
+  'Occasional crunch':
+    'Picchi occasionali',
+  'Regular deadlines and steady pressure':
+    'Scadenze regolari e pressione costante',
+  'Frequent high-stakes pressure':
+    'Pressione frequente su decisioni importanti',
+  'Sustained extreme pressure':
+    'Pressione estrema e prolungata',
+  'Many openings, open to most graduates':
+    'Molte posizioni, aperte alla maggior parte dei laureati',
+  'Some competition':
+    'Un po’ di concorrenza',
+  'Competitive: needs a relevant internship or skills':
+    'Competitivo: serve uno stage o competenze pertinenti',
+  'Very competitive':
+    'Molto competitivo',
+  'Extremely selective: low single-digit acceptance rates':
+    'Estremamente selettivo: tassi di ammissione di pochi punti percentuali',
+  'Build software and systems':
+    'Costruire software e sistemi',
+  'back ends, apps, data pipelines':
+    'back end, app, pipeline di dati',
+  'Analyse data to answer business questions':
+    'Analizzare dati per rispondere a domande di business',
+  'SQL, dashboards, experiments':
+    'SQL, dashboard, esperimenti',
+  'Build models with maths, statistics or code':
+    'Costruire modelli con matematica, statistica o codice',
+  'pricing, forecasting, machine learning':
+    'prezzi, previsioni, machine learning',
+  'Protect systems and investigate incidents':
+    'Proteggere sistemi e indagare sugli incidenti',
+  'security monitoring, forensics':
+    'monitoraggio della sicurezza, informatica forense',
+  'Advise clients on their problems':
+    'Consigliare i clienti sui loro problemi',
+  'consulting, advisory work':
+    'consulenza, advisory',
+  'Negotiate, structure and close deals':
+    'Negoziare, strutturare e chiudere operazioni',
+  'M&A, financing, buying':
+    'M&A, finanziamenti, acquisti',
+  'Judge markets and pick investments':
+    'Valutare i mercati e scegliere investimenti',
+  'trading, asset management':
+    'trading, gestione patrimoniale',
+  'Persuade, sell and win customers':
+    'Convincere, vendere e conquistare clienti',
+  'sales, client relationships':
+    'vendite, relazioni con i clienti',
+  'Create brands, products and campaigns':
+    'Creare marchi, prodotti e campagne',
+  'marketing, product design':
+    'marketing, progettazione di prodotto',
+  'Plan operations and make things run':
+    'Pianificare le operazioni e far funzionare le cose',
+  'supply chains, projects, programmes':
+    'supply chain, progetti, programmi',
+  'Check, audit and report numbers or rules':
+    'Controllare, verificare e rendicontare numeri o regole',
+  'audit, controlling, compliance':
+    'revisione, controllo di gestione, compliance',
+  'Research and write about economies, markets or policy':
+    'Studiare e scrivere di economie, mercati o politiche pubbliche',
+  'economics, research, policy':
+    'economia, ricerca, politiche pubbliche',
+  'Lead and develop people':
+    'Guidare e far crescere le persone',
+  'HR, managing teams':
+    'risorse umane, gestione di team',
+  'What did you study, or are you studying?':
+    'Che cosa hai studiato, o stai studiando?',
+  'Up to two, for a double degree.':
+    'Fino a due, per un doppio titolo.',
+  'The research rates eleven degree backgrounds as a strong, possible or stretch fit for every role (research/branches/index.md, section 3). Other degrees are not rated, so they do not move your scores.':
+    'La ricerca classifica undici percorsi di laurea come adatti, possibili o una forzatura per ogni ruolo (research/branches/index.md, sezione 3). Le altre lauree non sono classificate, quindi non spostano i tuoi punteggi.',
+  'Engineering, maths or physics':
+    'Ingegneria, matematica o fisica',
+  'Natural or life sciences':
+    'Scienze naturali o della vita',
+  'Humanities, law or social sciences':
+    'Lettere, giurisprudenza o scienze sociali',
+  'Something else':
+    'Altro',
+  'Where are you now?':
+    'A che punto sei?',
+  'Graduate schemes and pre-experience master’s count their windows from your graduation date, so the right next step depends on where you are (decisions/decision-framework.md).':
+    'I programmi per neolaureati e i master pre-esperienza contano le loro finestre dalla data di laurea, quindi il passo giusto dipende da dove sei (decisions/decision-framework.md).',
+  'Bachelor’s, first or second year':
+    'Triennale, primo o secondo anno',
+  'Bachelor’s, final year':
+    'Triennale, ultimo anno',
+  'In a master’s':
+    'Durante un master o una magistrale',
+  'Graduated less than two years ago':
+    'Laureato da meno di due anni',
+  'Working, two years or more':
+    'Lavoro da due anni o più',
+  'Your citizenship':
+    'La tua cittadinanza',
+  'Citizenship and languages prune more options than anything else: since Brexit an EU citizen needs a UK visa like anyone else (decisions/decision-framework.md, step 0).':
+    'Cittadinanza e lingue tagliano più opzioni di qualunque altra cosa: dopo la Brexit un cittadino UE ha bisogno di un visto per il Regno Unito come chiunque altro (decisions/decision-framework.md, passo 0).',
+  'EU, EEA or Swiss':
+    'UE, SEE o Svizzera',
+  'United Kingdom':
+    'Regno Unito',
+  'United States':
+    'Stati Uniti',
+  'Another country':
+    'Un altro paese',
+  'Languages you speak at B2/C1 or better':
+    'Lingue che parli a livello B2/C1 o superiore',
+  'Only 2–3% of German job postings waive German, and German-speaking strategy consulting treats fluent German as mandatory (decisions/decision-framework.md).':
+    'Solo il 2-3% degli annunci di lavoro tedeschi rinuncia al tedesco, e la consulenza strategica di lingua tedesca considera obbligatorio un tedesco fluente (decisions/decision-framework.md).',
+  'German':
+    'Tedesco',
+  'French':
+    'Francese',
+  'Italian':
+    'Italiano',
+  'Spanish':
+    'Spagnolo',
+  'Portuguese':
+    'Portoghese',
+  'Dutch':
+    'Olandese',
+  'A Nordic language':
+    'Una lingua nordica',
+  'Where would you like to start working?':
+    'Dove vorresti iniziare a lavorare?',
+  'Up to three.':
+    'Fino a tre.',
+  'The research’s advice is to choose the country you want to work in first, then study there or in a school that feeds it (decisions/decision-framework.md, step 2).':
+    'Il consiglio della ricerca è scegliere prima il paese in cui vuoi lavorare, poi studiare lì o in una scuola che vi porta (decisions/decision-framework.md, passo 2).',
+  'Germany, Austria or Switzerland':
+    'Germania, Austria o Svizzera',
+  'Belgium, Netherlands or Luxembourg':
+    'Belgio, Paesi Bassi o Lussemburgo',
+  'Nordic countries':
+    'Paesi nordici',
+  'Spain or Portugal':
+    'Spagna o Portogallo',
+  'The Gulf or Asia':
+    'Golfo o Asia',
+  'Open, or I don’t know yet':
+    'Aperto, o non lo so ancora',
+  'Which of these would you most enjoy spending your days on?':
+    'A quali di queste attività ti piacerebbe di più dedicare le giornate?',
+  'Pick up to four. This counts most.':
+    'Scegline fino a quattro. È la domanda che conta di più.',
+  'Interest is the best starting point for a shortlist; skills and credentials decide whether you can get in, and the later questions cover those.':
+    'L’interesse è il miglior punto di partenza per una rosa di opzioni; competenze e titoli decidono se riesci a entrare, e le domande successive se ne occupano.',
+  'And one you would rather avoid?':
+    'E una che preferiresti evitare?',
+  'A role whose core is something you would rather avoid moves down the list; it is never removed.':
+    'Un ruolo il cui nucleo è qualcosa che preferiresti evitare scende nella lista; non viene mai tolto.',
+  'Nothing in particular':
+    'Niente in particolare',
+  'How much of the job should be about people?':
+    'Quanto del lavoro dovrebbe riguardare le persone?',
+  'The research scores every role from 1 (mostly solo) to 5 (the job is mainly relationships, persuasion and client work).':
+    'La ricerca dà a ogni ruolo un punteggio da 1 (quasi sempre da solo) a 5 (il lavoro è soprattutto relazioni, persuasione e clienti).',
+  'How technical should it be?':
+    'Quanto dovrebbe essere tecnico?',
+  'Scored 1 (basic numeracy) to 5 (advanced maths, statistics or programming is the core of the job). A role more technical than you want costs more than one less technical.':
+    'Punteggio da 1 (calcolo di base) a 5 (matematica, statistica o programmazione avanzate sono il cuore del lavoro). Un ruolo più tecnico di quanto vorresti pesa più di uno meno tecnico.',
+  'What working week would you accept for the first three years?':
+    'Quale settimana lavorativa accetteresti per i primi tre anni?',
+  'Hours are the researchers’ estimates from practitioner accounts; no systematic hours survey by role exists (research/branches/index.md, section 6).':
+    'Le ore sono stime dei ricercatori basate su resoconti di chi fa il lavoro; non esiste un’indagine sistematica sulle ore per ruolo (research/branches/index.md, sezione 6).',
+  'About 40 hours':
+    'Circa 40 ore',
+  'About 50 hours':
+    'Circa 50 ore',
+  'About 60 hours':
+    'Circa 60 ore',
+  '70 hours or more':
+    '70 ore o più',
+  'The most pressure you would accept':
+    'La pressione massima che accetteresti',
+  'Only roles above what you accept lose points; a calmer role never does.':
+    'Perdono punti solo i ruoli sopra quello che accetti; un ruolo più tranquillo mai.',
+  'How competitive a door are you ready to try?':
+    'Quanto è competitiva la porta che sei pronto a tentare?',
+  'Entry difficulty is scored 1 to 5. A hard door is not a reason to skip a role: the results pair each one with a door that is still open.':
+    'La difficoltà d’ingresso va da 1 a 5. Una porta difficile non è un motivo per scartare un ruolo: i risultati affiancano a ciascuna una porta ancora aperta.',
+  'What matters most to you?':
+    'Che cosa conta di più per te?',
+  'Pick two.':
+    'Scegline due.',
+  'Pay, upside, exits and stability are our reading of each role’s research page, on a three-step scale; time for a life outside work comes from the role’s hours and stress scores.':
+    'Stipendio, margini di crescita, sbocchi e stabilità sono la nostra lettura della pagina di ricerca di ogni ruolo, su una scala a tre gradini; il tempo per una vita fuori dal lavoro deriva dai punteggi di ore e stress del ruolo.',
+  'A high starting salary':
+    'Uno stipendio d’ingresso alto',
+  'High pay in the long run':
+    'Uno stipendio alto nel lungo periodo',
+  'Time for a life outside work':
+    'Tempo per una vita fuori dal lavoro',
+  'Learning, and options to move later':
+    'Imparare, e opzioni per cambiare più avanti',
+  'A stable way in':
+    'Un ingresso stabile',
+  'Public impact or a mission':
+    'Impatto pubblico o una missione',
+  'Making things: creative work':
+    'Creare: lavoro creativo',
+  'More study you would consider':
+    'Altri studi che prenderesti in considerazione',
+  'Some roles are rarely a first job without a PhD; others train you for a qualification on the job.':
+    'Alcuni ruoli sono raramente un primo lavoro senza dottorato; altri ti preparano a un’abilitazione professionale mentre lavori.',
+  'A master’s':
+    'Un master o una magistrale',
+  'A PhD':
+    'Un dottorato',
+  'A professional qualification (ACA/ACCA, CPA, CFA)':
+    'Un’abilitazione professionale (ACA/ACCA, CPA, CFA)',
+  'No more study':
+    'Nessun altro studio',
+  'What kind of employer would you enjoy?':
+    'Che tipo di datore di lavoro ti piacerebbe?',
+  'Up to two.':
+    'Fino a due.',
+  'Each field’s report compares its employer types (banks, consultancies, companies, public bodies); each role is tagged with where it mostly sits.':
+    'Il rapporto di ogni settore confronta i suoi tipi di datore di lavoro (banche, società di consulenza, aziende, enti pubblici); ogni ruolo è etichettato con il luogo dove si trova più spesso.',
+  'A bank, fund or financial firm':
+    'Una banca, un fondo o una società finanziaria',
+  'A consulting or professional-services firm':
+    'Una società di consulenza o di servizi professionali',
+  'A large company':
+    'Una grande azienda',
+  'A tech company':
+    'Un’azienda tecnologica',
+  'A startup':
+    'Una startup',
+  'The public sector or an international organisation':
+    'Il settore pubblico o un’organizzazione internazionale',
+  'An agency or boutique':
+    'Un’agenzia o una boutique',
+  'A university or research lab':
+    'Un’università o un laboratorio di ricerca',
+  'No preference':
+    'Nessuna preferenza',
+  'Any sectors that attract you?':
+    'Ci sono settori che ti attirano?',
+  'Optional.':
+    'Facoltativo.',
+  'Sector research that is not in the role pages: pharma, luxury, commodities, industry and defence, public policy, tech business, and a few smaller sectors (research/careers/).':
+    'Ricerca di settore che non è nelle pagine dei ruoli: farmaceutico, lusso, materie prime, industria e difesa, politiche pubbliche, business tecnologico e qualche settore più piccolo (research/careers/).',
+  'Pharma and health':
+    'Farmaceutico e sanità',
+  'Luxury and fashion':
+    'Lusso e moda',
+  'Energy and commodities':
+    'Energia e materie prime',
+  'Industry, automotive and defence':
+    'Industria, automotive e difesa',
+  'Public sector and EU institutions':
+    'Settore pubblico e istituzioni UE',
+  'Tech and startups':
+    'Tecnologia e startup',
+  'Sports and gaming':
+    'Sport e videogiochi',
+  'Real estate':
+    'Immobiliare',
+  'Sustainability and climate':
+    'Sostenibilità e clima',
+  'How much does AI pressure on junior hiring worry you?':
+    'Quanto ti preoccupa la pressione dell’IA sulle assunzioni junior?',
+  'Junior hiring is falling in the most AI-exposed jobs, not wages, and not yet whole professions (evidence/trends.md).':
+    'Nei lavori più esposti all’IA calano le assunzioni junior, non gli stipendi, e non ancora intere professioni (evidence/trends.md).',
+  'Not much':
+    'Poco',
+  'Somewhat':
+    'Abbastanza',
+  'A lot':
+    'Molto',
+  'Where you start':
+    'Da dove parti',
+  'Constraints first: they prune more options than preferences do.':
+    'Prima i vincoli: tagliano più opzioni delle preferenze.',
+  'What you would enjoy doing':
+    'Che cosa ti piacerebbe fare',
+  'The activities behind each job, not the job titles.':
+    'Le attività dietro ogni lavoro, non i titoli.',
+  'How you want to work':
+    'Come vuoi lavorare',
+  'People, technical depth, hours, pressure and competition, on the research’s own scales.':
+    'Persone, profondità tecnica, ore, pressione e concorrenza, sulle scale della ricerca.',
+  'What matters, and what next':
+    'Che cosa conta, e poi',
+  'Motives, more study, employers and sectors.':
+    'Motivazioni, altri studi, datori di lavoro e settori.',
+  '{n} of {max} chosen':
+    '{n} su {max} scelti',
+  'You would need a visa or a sponsoring employer in: {places}.':
+    'Ti servirebbe un visto o un datore di lavoro che faccia da sponsor in: {places}.',
+  'Since Brexit an EU citizen needs a UK visa, and from 1 January 2027 the Graduate visa lasts 18 months.':
+    'Dopo la Brexit un cittadino UE ha bisogno di un visto per il Regno Unito, e dal 1° gennaio 2027 il Graduate visa dura 18 mesi.',
+  'No working language yet for: {places}. Roles where the local language is usually required will say so and move down.':
+    'Non hai ancora una lingua di lavoro per: {places}. I ruoli in cui di solito serve la lingua locale lo diranno e scenderanno.',
+  'Progress':
+    'Avanzamento',
+  'Quick version':
+    'Versione rapida',
+  'Full version':
+    'Versione completa',
+  'Back to the start':
+    'Torna all’inizio',
+  'Back':
+    'Indietro',
+  'See my shortlist':
+    'Vedi la mia rosa',
+  'Next':
+    'Avanti',
+  'Every question can be skipped; a skipped answer counts as neutral.':
+    'Ogni domanda si può saltare; una risposta saltata conta come neutra.',
+  'Strong match':
+    'Molto adatto',
+  'Good match':
+    'Adatto',
+  'Worth a look':
+    'Da guardare',
+  'Weak match':
+    'Poco adatto',
+  'about 40':
+    'circa 40',
+  'about 50':
+    'circa 50',
+  'about 60':
+    'circa 60',
+  '70 or more':
+    '70 o più',
+  'You picked: {list}':
+    'Hai scelto: {list}',
+  'None of the activities you picked is a main part of this role':
+    'Nessuna delle attività che hai scelto è una parte importante di questo ruolo',
+  'Its core is something you would rather avoid: {a}':
+    'Il suo nucleo è qualcosa che preferiresti evitare: {a}',
+  'Part of it is something you would rather avoid: {a}':
+    'In parte è qualcosa che preferiresti evitare: {a}',
+  'People/communication {r}/5; you said {y}/5':
+    'Persone/comunicazione {r}/5; hai detto {y}/5',
+  'Quantitative/technical {r}/5; you said {y}/5':
+    'Quantitativo/tecnico {r}/5; hai detto {y}/5',
+  'Typical week {r} hours; you would accept {y}':
+    'Settimana tipo {r} ore; ne accetteresti {y}',
+  'Stress {r}/5; your limit is {y}/5':
+    'Stress {r}/5; il tuo limite è {y}/5',
+  'Entry difficulty {r}/5; you said up to {y}/5':
+    'Difficoltà d’ingresso {r}/5; hai detto fino a {y}/5',
+  '{bg} is a standard feeder (strong fit)':
+    '{bg} è un percorso di provenienza tipico (adatto)',
+  '{bg} is hired regularly with extra preparation (possible fit)':
+    '{bg} viene assunto regolarmente con preparazione in più (possibile)',
+  '{bg} is a stretch: it needs a deliberate route':
+    '{bg} è una forzatura: serve un percorso mirato',
+  'Scores high on what you said matters: {p}':
+    'Punteggio alto su ciò che hai detto che conta: {p}',
+  'Scores low on what you said matters: {p}':
+    'Punteggio basso su ciò che hai detto che conta: {p}',
+  'Mostly at the kind of employer you chose: {o}':
+    'Per lo più presso il tipo di datore di lavoro che hai scelto: {o}',
+  'The local language is usually required where you want to work':
+    'Dove vuoi lavorare di solito serve la lingua locale',
+  'Employers of this kind rarely sponsor visas, and every place you chose would need one':
+    'I datori di lavoro di questo tipo fanno raramente da sponsor per i visti, e ogni luogo che hai scelto ne richiederebbe uno',
+  'Many posts require citizenship of the country or of the EU':
+    'Molti posti richiedono la cittadinanza del paese o dell’UE',
+  'Some posts require citizenship of the country':
+    'Alcuni posti richiedono la cittadinanza del paese',
+  'In a sector you chose: {s}':
+    'In un settore che hai scelto: {s}',
+  'Junior work here is among the most exposed to AI':
+    'Qui il lavoro junior è tra i più esposti all’IA',
+  'Some junior work here is exposed to AI':
+    'Qui una parte del lavoro junior è esposta all’IA',
+  'Trains you for a professional qualification on the job, which you said you would consider':
+    'Ti prepara a un’abilitazione professionale mentre lavori, che hai detto di considerare',
+  'Needs a PhD, which you said you would consider':
+    'Richiede un dottorato, che hai detto di considerare',
+  'Rarely open without a PhD':
+    'Raramente accessibile senza dottorato',
+  'Close to a role you marked “interested”':
+    'Simile a un ruolo che hai segnato «mi interessa»',
+  'Close to a role you marked “not for me”':
+    'Simile a un ruolo che hai segnato «non fa per me»',
+  'Hours':
+    'Ore',
+  'From the cross-career table, row':
+    'Dalla tabella di confronto tra carriere, riga',
+  'Main door':
+    'Porta d’ingresso principale',
+  'Language need':
+    'Lingua necessaria',
+  'Visa-friendliness':
+    'Facilità con i visti',
+  'AI exposure of junior work':
+    'Esposizione all’IA del lavoro junior',
+  'Does a master’s help?':
+    'Un master aiuta?',
+  'Does a master’s change the outcome?':
+    'Un master cambia il risultato?',
+  'Without a master’s':
+    'Senza master',
+  'What a master’s adds':
+    'Che cosa aggiunge un master',
+  'Entry pay (approx.)':
+    'Stipendio d’ingresso (approssimativo)',
+  'What the research says about this kind of job':
+    'Che cosa dice la ricerca su questo tipo di lavoro',
+  'Interested ✓':
+    'Mi interessa ✓',
+  'Interested':
+    'Mi interessa',
+  'Not for me':
+    'Non fa per me',
+  'List re-ranked: roles like this one moved up.':
+    'Lista riordinata: i ruoli simili a questo sono saliti.',
+  'Removed, and roles like it moved down. “Undo” is under “Your answers”.':
+    'Tolto, e i ruoli simili sono scesi. «Annulla» è in «Le tue risposte».',
+  'Career Compass · your shortlist':
+    'Bussola delle carriere · la tua rosa',
+  'Fields and roles that fit your answers':
+    'Settori e ruoli adatti alle tue risposte',
+  'A starting point for exploring, not a verdict. Each role shows the answers that moved it and the research behind it; the best test of a career is still talking to people who do it and trying the work.':
+    'Un punto di partenza per esplorare, non un verdetto. Ogni ruolo mostra le risposte che lo hanno spostato e la ricerca dietro; la prova migliore di una carriera resta parlare con chi la fa e provare il lavoro.',
+  'Compass {v} · research of {d} · {mode} · {n} of {total} questions answered':
+    'Bussola {v} · ricerca del {d} · {mode} · {n} domande su {total} con risposta',
+  'quick version':
+    'versione rapida',
+  'full version':
+    'versione completa',
+  'Change my answers':
+    'Cambia le risposte',
+  'Answer the full version':
+    'Rispondi alla versione completa',
+  'Copy a link to these results':
+    'Copia un link a questi risultati',
+  'Link copied':
+    'Link copiato',
+  'Copy this link':
+    'Copia questo link',
+  'Print':
+    'Stampa',
+  'Start again':
+    'Ricomincia',
+  'The link holds your answers in the address after “#”, which browsers do not send to any server. Anyone you give it to can read them.':
+    'Il link contiene le tue risposte nell’indirizzo dopo il «#», che i browser non inviano a nessun server. Chiunque lo riceva può leggerle.',
+  'You skipped most questions, or the activities question, so the list below is close to arbitrary. Answer at least the activities you would enjoy.':
+    'Hai saltato la maggior parte delle domande, o quella sulle attività, quindi la lista qui sotto è quasi arbitraria. Rispondi almeno sulle attività che ti piacerebbero.',
+  'Scores are out of 100: 75 and above is a strong match, 60–74 good, 45–59 worth a look. They compare roles with each other for your answers; they are not a probability of getting in or of liking the job.':
+    'I punteggi sono su 100: da 75 in su molto adatto, 60-74 adatto, 45-59 da guardare. Confrontano i ruoli tra loro per le tue risposte; non sono una probabilità di entrare o di trovarti bene.',
+  'Three fields to explore first':
+    'Tre settori da esplorare per primi',
+  'Each field is scored by its three best roles for your answers.':
+    'Ogni settore ha il punteggio dei suoi tre ruoli migliori per le tue risposte.',
+  'Field {n}':
+    'Settore {n}',
+  'Roles that fit now':
+    'Ruoli adatti adesso',
+  'Open to someone at your stage. Ranked by fit; the reasons are your own answers set against the research’s scores. Mark roles “interested” or “not for me” to re-rank the list by how alike the roles are.':
+    'Aperti a chi è al tuo punto. Ordinati per adattamento; le ragioni sono le tue risposte confrontate con i punteggi della ricerca. Segna i ruoli «mi interessa» o «non fa per me» per riordinare la lista in base a quanto i ruoli si somigliano.',
+  'Later, after more preparation':
+    'Più avanti, dopo altra preparazione',
+  'These fit your answers but are rarely a first job: they need a PhD, or most people arrive from another job first.':
+    'Sono adatti alle tue risposte ma raramente sono un primo lavoro: richiedono un dottorato, o quasi tutti ci arrivano da un altro lavoro.',
+  'Doors still open':
+    'Porte ancora aperte',
+  'If you aim for':
+    'Se punti a',
+  'entry {r}/5':
+    'ingresso {r}/5',
+  'fit {n}':
+    'adattamento {n}',
+  'the research names it as a route in: its exits lead there.':
+    'la ricerca lo indica come via d’ingresso: i suoi sbocchi portano lì.',
+  'same core activity, easier to enter.':
+    'stessa attività principale, più facile da raggiungere.',
+  'What would change your list':
+    'Che cosa cambierebbe la tua lista',
+  'The answers that hold roles back, and the role each one holds back most.':
+    'Le risposte che frenano dei ruoli, e il ruolo che ciascuna frena di più.',
+  'If you accepted 70+ hour weeks':
+    'Se accettassi settimane da 70 ore e oltre',
+  'If you accepted sustained high pressure':
+    'Se accettassi una pressione alta e prolungata',
+  'If you tried the most selective doors':
+    'Se tentassi le porte più selettive',
+  'If you did not rule out the activity you would rather avoid':
+    'Se non escludessi l’attività che preferiresti evitare',
+  'If you spoke the local language where you want to work':
+    'Se parlassi la lingua locale dove vuoi lavorare',
+  'would rank {n} (now {was}).':
+    'sarebbe al {n}º posto (ora {was}º).',
+  'would rank {n}.':
+    'sarebbe al {n}º posto.',
+  'Things to be alert for':
+    'A che cosa fare attenzione',
+  'Triggered by your answers. Quoted from the research, with the file each passage comes from.':
+    'Fatti emergere dalle tue risposte. Citati dalla ricerca, con il file da cui viene ogni passo.',
+  'Myth {n} of 15, ranked by damage':
+    'Mito {n} di 15, in ordine di danno',
+  'Sector notes':
+    'Note di settore',
+  'From the sector research, which the role pages do not cover. Quoted from each file’s bottom line.':
+    'Dalla ricerca di settore, che le pagine dei ruoli non coprono. Citate dalla sintesi di ogni file.',
+  'Test it before you commit':
+    'Mettilo alla prova prima di impegnarti',
+  'Career tests predict little on their own. Three cheap checks for your top roles, in the next month:':
+    'Da soli i test di orientamento prevedono poco. Tre verifiche economiche per i tuoi ruoli migliori, nel prossimo mese:',
+  'Talk to two people who do each job.':
+    'Parla con due persone che fanno ciascun lavoro.',
+  'Alumni and second-degree contacts answer more often than strangers. Ask what a second-year does that a tool cannot, and last year’s average and peak weekly hours.':
+    'Ex alunni e contatti di secondo grado rispondono più spesso degli sconosciuti. Chiedi che cosa fa al secondo anno una persona che uno strumento non sa fare, e le ore settimanali medie e di picco dell’anno scorso.',
+  'Read the way in, then try a piece of the work.':
+    'Leggi come si entra, poi prova un pezzo del lavoro.',
+  'Each role page has “How to enter” and “Honest downsides”: ':
+    'Ogni pagina di ruolo ha «How to enter» e «Honest downsides»: ',
+  'A short task (a model, a dashboard, a campaign brief, a small program) tells you more than any quiz.':
+    'Un breve compito (un modello, una dashboard, un brief di campagna, un piccolo programma) ti dice più di qualunque questionario.',
+  'Check the door and its date.':
+    'Verifica la porta e la sua data.',
+  'Internships are the hiring channel, and their windows close early. Missing one costs a year.':
+    'Gli stage sono il canale di assunzione, e le loro finestre chiudono presto. Perderne una costa un anno.',
+  'The research’s rules behind these checks':
+    'Le regole della ricerca dietro queste verifiche',
+  'Next steps on this site':
+    'Prossimi passi su questo sito',
+  'How hiring works in 46 countries, and the route most used for your path':
+    'Come si assume in 46 paesi, e la via più usata per il tuo percorso',
+  'The Atlas: cities, employers and visas by country':
+    'L’Atlante: città, datori di lavoro e visti per paese',
+  'Compare every role side by side':
+    'Confronta tutti i ruoli fianco a fianco',
+  'Visas and languages':
+    'Visti e lingue',
+  'For where you are now':
+    'Per dove sei adesso',
+  'If you are weighing a master’s':
+    'Se stai valutando un master',
+  'AI and junior hiring':
+    'IA e assunzioni junior',
+  'How this works, your answers, and its limits':
+    'Come funziona, le tue risposte e i suoi limiti',
+  'The score':
+    'Il punteggio',
+  'Your activities against what each role mostly is; a role’s core activity counts most.':
+    'Le tue attività confrontate con ciò che ogni ruolo è soprattutto; l’attività principale del ruolo conta di più.',
+  'People and technical depth against the role’s 1–5 scores; hours and pressure only when the role asks more than you accept.':
+    'Persone e profondità tecnica confrontate con i punteggi 1-5 del ruolo; ore e pressione solo quando il ruolo chiede più di quanto accetti.',
+  'What you studied':
+    'Che cosa hai studiato',
+  'Strong, possible or stretch, from the research’s background matrix.':
+    'Adatto, possibile o forzatura, dalla matrice dei percorsi della ricerca.',
+  'What matters to you':
+    'Che cosa conta per te',
+  'Your two motives against the role’s pay, upside, exits, stability, mission or creative work.':
+    'Le tue due motivazioni confrontate con stipendio, crescita, sbocchi, stabilità, missione o lavoro creativo del ruolo.',
+  'How competitive a door':
+    'Quanto è competitiva la porta',
+  'Entry difficulty against the competition you are ready for.':
+    'La difficoltà d’ingresso confrontata con la concorrenza che sei pronto ad affrontare.',
+  'Kind of employer':
+    'Tipo di datore di lavoro',
+  'Where the role mostly sits.':
+    'Dove si trova più spesso il ruolo.',
+  'Then, each shown on the role: +4 for a sector you chose; up to −8 where the local language is usually required and you lack it; −5 for employers that rarely sponsor visas when every place you chose needs one; −6 where citizenship conditions are common and you are not an EU citizen; up to −6 for AI exposure if it worries you; −4 for PhD-gated roles unless you would consider a PhD; up to ±12 for roles like the ones you marked.':
+    'Poi, ognuno mostrato sul ruolo: +4 per un settore che hai scelto; fino a −8 dove di solito serve la lingua locale e non ce l’hai; −5 per datori di lavoro che fanno raramente da sponsor per i visti quando ogni luogo che hai scelto ne richiede uno; −6 dove sono comuni requisiti di cittadinanza e non sei cittadino UE; fino a −6 per l’esposizione all’IA se ti preoccupa; −4 per i ruoli che richiedono un dottorato, a meno che tu non lo consideri; fino a ±12 per i ruoli simili a quelli che hai segnato.',
+  'What is research and what is our reading':
+    'Che cosa è ricerca e che cosa è una nostra lettura',
+  'Hours, stress, people, quant, entry difficulty, background fit and pay come from the thirteen branch reports (research/branches/index.md). Every quoted passage comes from the file named under it. What each role mostly involves, the kind of employer, relative pay, upside, exits, stability, AI exposure and language need are our reading of each role’s research page, made once for all 124 roles and listed in tools/careers/compass.js.':
+    'Ore, stress, persone, aspetto quantitativo, difficoltà d’ingresso, adattamento del percorso e stipendio vengono dai tredici rapporti di settore (research/branches/index.md). Ogni passo citato viene dal file indicato sotto. Che cosa comporta soprattutto ogni ruolo, il tipo di datore di lavoro, stipendio relativo, crescita, sbocchi, stabilità, esposizione all’IA e lingua necessaria sono una nostra lettura della pagina di ricerca di ogni ruolo, fatta una volta per tutti i 124 ruoli ed elencata in tools/careers/compass.js.',
+  'Limits':
+    'Limiti',
+  'This is not a psychometric test and has not been validated against anyone’s later satisfaction. Interest inventories in general predict job satisfaction only weakly.':
+    'Non è un test psicometrico e non è stato convalidato rispetto alla soddisfazione successiva di nessuno. In generale gli inventari di interessi prevedono la soddisfazione sul lavoro solo debolmente.',
+  'Hours and stress are the researchers’ estimates from practitioner accounts, not a survey.':
+    'Ore e stress sono stime dei ricercatori basate su resoconti di chi fa il lavoro, non un’indagine.',
+  'Your answers are a snapshot. Take it again when your plans change.':
+    'Le tue risposte sono un’istantanea. Rifallo quando cambiano i tuoi piani.',
+  'Nothing here is advice; check the role pages and their sources before relying on a number.':
+    'Niente di tutto questo è una consulenza; controlla le pagine dei ruoli e le loro fonti prima di fidarti di una cifra.',
+  'Skipped':
+    'Saltata',
+  'Roles you marked':
+    'Ruoli che hai segnato',
+  'Undo':
+    'Annulla',
+
+  /* --------------------------------------------- Programme Directory */
+  /* programmes.html, js/page-programmes.js and the picked-programme notes
+   * in js/results-kit.js. */
+  'Programme Directory — Admetia':
+    'Elenco dei programmi — Admetia',
+  'Every programme the Admetia calculators score — 136 MBA, business and computing master’s programmes in the UK, Europe, the US and Asia — with published requirements, experience caps, test policy, fees and this cycle’s deadlines. Filter and compare without a questionnaire. Free and private.':
+    'Tutti i programmi valutati dai calcolatori di Admetia — 136 MBA e master in business e informatica nel Regno Unito, in Europa, negli Stati Uniti e in Asia — con requisiti pubblicati, limiti di esperienza, politica sui test, rette e scadenze di questo ciclo. Filtra e confronta senza questionario. Gratuito e privato.',
+  'Directory desk · every programme the calculators score':
+    'Elenco · tutti i programmi valutati dai calcolatori',
+  'Programme Directory':
+    'Elenco dei programmi',
+  'All 136 programmes behind the three calculators — 67 business master’s, 26 computing master’s and 43 MBAs — with what each one publishes about who it takes: test policy, experience caps, the credits and degrees it requires, its fee where our research has one, and this cycle’s deadlines. Filter and compare without answering a single question; when one looks right, test your chances in one click.':
+    'Tutti i 136 programmi dietro i tre calcolatori — 67 master in business, 26 master in informatica e 43 MBA — con quello che ciascuno pubblica su chi ammette: politica sui test, limiti di esperienza, crediti e lauree richiesti, la retta quando la nostra ricerca ce l’ha, e le scadenze di questo ciclo. Filtra e confronta senza rispondere a nessuna domanda; quando uno ti sembra giusto, verifica le tue possibilità con un clic.',
+  'Not sure which kind of job the programme should lead to? The <a href="careers/compass.html">Career Compass</a> ranks 124 graduate roles against what you studied and what you would enjoy doing.':
+    'Non sai a quale lavoro dovrebbe portare il programma? La <a href="careers/compass.html">Bussola delle carriere</a> ordina 124 ruoli per laureati in base a che cosa hai studiato e che cosa ti piacerebbe fare.',
+  'Read this before you rely on the directory':
+    'Leggi qui prima di fidarti dell’elenco',
+  'A reality check on bars, fees and dates':
+    'Un bagno di realtà su soglie, rette e date',
+  'Every requirement here is what the school publishes, tagged with where it was read. Three things are ours, and are labelled as such:':
+    'Ogni requisito qui è quello che la scuola pubblica, con l’indicazione di dove è stato letto. Tre cose sono nostre, e sono indicate come tali:',
+  '<strong>“Our bar” is calibration.</strong> No school publishes a points requirement. The number is the calculator’s own threshold, shown with its rank in the track so you can see how the models order programmes — not an admission rate.':
+    '<strong>«La nostra soglia» è una calibrazione.</strong> Nessuna scuola pubblica un punteggio richiesto. Il numero è la soglia del calcolatore, mostrata con la sua posizione nel percorso perché tu veda come i modelli ordinano i programmi — non è un tasso di ammissione.',
+  '<strong>Fees are never converted.</strong> They are copied in the school’s currency from our research, for the intake shown. The fee bands compare the number in its own currency (a semester counts twice), so a £ and a € fee in the same band can differ by a fifth. Programmes without a fee in the research say “Not in our data”.':
+    '<strong>Le rette non vengono mai convertite.</strong> Sono copiate nella valuta della scuola dalla nostra ricerca, per l’intake indicato. Le fasce di retta confrontano il numero nella sua valuta (un semestre conta doppio), quindi una retta in £ e una in € nella stessa fascia possono differire di un quinto. I programmi senza retta nella ricerca indicano «Non nei nostri dati».',
+  '<strong>Deadlines move.</strong> Every date was read on the school’s own page on the day shown beside it. Confirm on the official admissions page before you plan around one.':
+    '<strong>Le scadenze si spostano.</strong> Ogni data è stata letta sulla pagina della scuola nel giorno indicato accanto. Verificala sulla pagina ufficiale delle ammissioni prima di organizzarti.',
+  'Nothing you choose on this page leaves your browser. Your filters live in the address after “#”, so you can bookmark or share a list.':
+    'Niente di ciò che scegli in questa pagina lascia il tuo browser. I tuoi filtri stanno nell’indirizzo dopo il «#», così puoi salvare o condividere una lista.',
+  'Or browse first: the <a href="programmes.html">Programme Directory</a> filters all 136 programmes by track, region, fee, test, experience and prerequisites, with no questions asked.':
+    'Oppure guarda prima: l’<a href="programmes.html">Elenco dei programmi</a> filtra tutti i 136 programmi per percorso, area, retta, test, esperienza e prerequisiti, senza domande.',
+  'Want to look before you answer? The <a href="programmes.html">Programme Directory</a> lists all 136 programmes with what each one requires, its fee and its deadlines, and opens any of them here in one click.':
+    'Vuoi guardare prima di rispondere? L’<a href="programmes.html">Elenco dei programmi</a> riporta tutti i 136 programmi con i requisiti, la retta e le scadenze di ciascuno, e li apre qui con un clic.',
+  'a year':
+    'l’anno',
+  'a semester':
+    'a semestre',
+  'Free':
+    'Gratuito',
+  'Free or under 2,000':
+    'Gratuito o sotto i 2.000',
+  'Under 20,000':
+    'Sotto i 20.000',
+  '40,000 or more':
+    '40.000 o più',
+  'Not in our data':
+    'Non nei nostri dati',
+  'Track':
+    'Percorso',
+  'Fee':
+    'Retta',
+  'Business master’s only: the computing and MBA models do not record test policy.':
+    'Solo master in business: i modelli di informatica e MBA non registrano la politica sui test.',
+  'Required':
+    'Obbligatorio',
+  'Required unless':
+    'Obbligatorio salvo eccezioni',
+  'Optional':
+    'Facoltativo',
+  'Not used':
+    'Non usato',
+  'Published minimum score':
+    'Punteggio minimo pubblicato',
+  'Experience':
+    'Esperienza',
+  'Takes fresh graduates':
+    'Accetta neolaureati',
+  'Caps experience':
+    'Limita l’esperienza',
+  'Needs experience':
+    'Richiede esperienza',
+  'Prerequisites':
+    'Prerequisiti',
+  'Maths or quant credits':
+    'Crediti di matematica o quantitativi',
+  'Business credits':
+    'Crediti di business',
+  'A specific degree':
+    'Una laurea specifica',
+  'A minimum degree class':
+    'Un voto di laurea minimo',
+  'Only if you did not study computing':
+    'Solo se non hai studiato informatica',
+  'No hard prerequisite':
+    'Nessun prerequisito vincolante',
+  'Within 60 days':
+    'Entro 60 giorni',
+  'A dated round still ahead':
+    'Una scadenza datata ancora da venire',
+  'Filter the programmes':
+    'Filtra i programmi',
+  'Find a school, city or requirement…':
+    'Cerca una scuola, una città o un requisito…',
+  'Find a programme':
+    'Cerca un programma',
+  'A to Z':
+    'Dalla A alla Z',
+  'Highest bar first':
+    'Prima la soglia più alta',
+  'Lowest fee first':
+    'Prima la retta più bassa',
+  'Fees shown for':
+    'Rette mostrate per',
+  'Fees for EU/EEA citizens':
+    'Rette per cittadini UE/SEE',
+  'Fees for everyone else':
+    'Rette per tutti gli altri',
+  'Clear all filters':
+    'Togli tutti i filtri',
+  'Not recorded in the MBA model':
+    'Non registrato nel modello MBA',
+  'Not recorded in the computing model':
+    'Non registrato nel modello di informatica',
+  'Required unless…':
+    'Obbligatorio salvo…',
+  'Post-experience: MBA classes average 5–6 years':
+    'Post-esperienza: le classi MBA hanno in media 5-6 anni',
+  'No published rule':
+    'Nessuna regola pubblicata',
+  'non-EU fee':
+    'retta extra-UE',
+  'EU/EEA fee':
+    'retta UE/SEE',
+  'Competitive at {n} on the MBA points scale · {r} highest of {of} MBAs':
+    'Competitivo a {n} sulla scala a punti MBA · {r} più alta di {of} MBA',
+  '{n} on the MBA points scale · {r} highest of {of} MBAs':
+    '{n} sulla scala a punti MBA · {r} più alta di {of} MBA',
+  '{n} on our 0–100 scale · {r} highest of {of} {track} programmes':
+    '{n} sulla nostra scala 0-100 · {r} più alta di {of} programmi di {track}',
+  'Requirements':
+    'Requisiti',
+  'No hard prerequisite published':
+    'Nessun prerequisito vincolante pubblicato',
+  'Our bar':
+    'La nostra soglia',
+  'What the school publishes, and how it selects':
+    'Che cosa pubblica la scuola, e come seleziona',
+  'How it selects':
+    'Come seleziona',
+  'Rounds':
+    'Turni',
+  'Fee for EU/EEA citizens':
+    'Retta per cittadini UE/SEE',
+  'everyone else':
+    'tutti gli altri',
+  'the calculator’s own fact':
+    'dato del calcolatore',
+  'Test my chances · {track}':
+    'Verifica le mie possibilità · {track}',
+  'Test my chances':
+    'Verifica le mie possibilità',
+  'Place':
+    'Luogo',
+  'No dated round ahead':
+    'Nessuna scadenza datata in arrivo',
+  '{n} programme of {total}':
+    '{n} programma su {total}',
+  '{n} programmes of {total}':
+    '{n} programmi su {total}',
+  'No programme matches every filter. Untick one, or clear them all.':
+    'Nessun programma soddisfa tutti i filtri. Togline uno, o toglili tutti.',
+  'Show {n} more':
+    'Mostrane altri {n}',
+  'Testing your chances at {name}.':
+    'Stai verificando le tue possibilità per {name}.',
+  'Answer the questions as usual: the results open at this programme, with every other one in the track below it.':
+    'Rispondi alle domande come sempre: i risultati si aprono su questo programma, con tutti gli altri del percorso sotto.',
+  'See it with the answers saved here':
+    'Guardalo con le risposte salvate qui',
+  'Back to the programme directory':
+    'Torna all’elenco dei programmi',
+  'Your programme: {name}.':
+    'Il tuo programma: {name}.',
+  'It is not scored on this page.':
+    'Non è valutato in questa pagina.',
+  'A published requirement rules it out for your answers; its row says which.':
+    'Un requisito pubblicato lo esclude per le tue risposte; la sua riga dice quale.',
+  'Its row is marked below, with its verdict and what it weighs.':
+    'La sua riga è segnata qui sotto, con il verdetto e ciò che pesa.',
+  'Jump to it':
+    'Vai alla riga',
+  'Every programme the calculators score, filtered by what you studied and where you want to work':
+    'Tutti i programmi valutati dai calcolatori, filtrati per i tuoi ruoli e per dove vuoi lavorare'
 });

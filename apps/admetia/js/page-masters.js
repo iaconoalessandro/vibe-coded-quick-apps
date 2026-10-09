@@ -346,6 +346,7 @@
     if (window.UI) UI.reveal(resultsView);
     if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
     route.shown();
+    ResultsKit.pickedResults(resultsView, pick);
   }
 
   /* -------------------------------------------------------------------
@@ -924,6 +925,16 @@
   function note(text, kind) {
     return el('div', 'note-card reveal' + (kind ? ' ' + kind : ''), text);
   }
+
+  /* Opened from the programme directory with ?school=<id>. */
+  var pick = ResultsKit.picked(function (id) {
+    var sc = M.schools.filter(function (x) { return x.id === id && x.tracks.indexOf(trackId) > -1; })[0];
+    return sc && sc.name;
+  });
+  ResultsKit.pickedBanner(wizardView, pick, {
+    hasAnswers: function () { return Object.keys(wiz.answers()).length > 0; },
+    show: function () { showResults(wiz.answers()); }
+  });
 
   /* Opened on #results (a reload, or "See your results" from another page). */
   if (route.initial()) showResults(wiz.answers());

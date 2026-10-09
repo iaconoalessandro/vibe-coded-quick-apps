@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "js/i18n-it.js": {
-    "mtime": 1791563942.6406217,
-    "seen": 1791564061.807379,
-    "ast_hash": "b6fd69c10f83df60d32cb71aec8743d5",
+    "mtime": 1791571849.6954446,
+    "seen": 1791571990.691712,
+    "ast_hash": "e58937cb71fd7ae4148f328b086d5036",
     "semantic_hash": ""
   },
   "js/i18n.js": {
@@ -372,10 +372,10 @@
     "semantic_hash": "07a6c1efa887a59694496c09539866d7"
   },
   "js/page-computing.js": {
-    "mtime": 1790712556.333904,
-    "seen": 1791019684.367894,
-    "ast_hash": "173a06be4814b3e7e8863b66033b5595",
-    "semantic_hash": "173a06be4814b3e7e8863b66033b5595"
+    "mtime": 1791571330.7989864,
+    "seen": 1791571990.691745,
+    "ast_hash": "25c517808256d53fd23d5b3e8eb91091",
+    "semantic_hash": ""
   },
   "js/page-map.js": {
     "mtime": 1791531691.9396627,
@@ -384,22 +384,22 @@
     "semantic_hash": ""
   },
   "js/page-masters.js": {
-    "mtime": 1790712556.3336778,
-    "seen": 1791019684.3678951,
-    "ast_hash": "751f06c965b2eecd6c36400a58d61218",
-    "semantic_hash": "751f06c965b2eecd6c36400a58d61218"
+    "mtime": 1791571330.798826,
+    "seen": 1791571990.691778,
+    "ast_hash": "dcac300c794a7aee37b5c80e71db1854",
+    "semantic_hash": ""
   },
   "js/page-mba.js": {
-    "mtime": 1790712556.3334134,
-    "seen": 1791019684.3678951,
-    "ast_hash": "c33e822c12141a00193c775ab2ba3648",
-    "semantic_hash": "c33e822c12141a00193c775ab2ba3648"
+    "mtime": 1791571330.7991362,
+    "seen": 1791571990.6917791,
+    "ast_hash": "238f76550463152ae16ca665b9eda06b",
+    "semantic_hash": ""
   },
   "js/results-kit.js": {
-    "mtime": 1790713941.0718362,
-    "seen": 1791019684.3678951,
-    "ast_hash": "4e8b88fe07057c9e56f8e2f717fdc42e",
-    "semantic_hash": "4e8b88fe07057c9e56f8e2f717fdc42e"
+    "mtime": 1791571614.3759875,
+    "seen": 1791571990.69178,
+    "ast_hash": "6449b88df23c9322046af29b5d5376c5",
+    "semantic_hash": ""
   },
   "js/score-computing.js": {
     "mtime": 1790599090.8443007,
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "sw.js": {
-    "mtime": 1791445362.0230303,
-    "seen": 1791466281.2229319,
-    "ast_hash": "2b2a0ceffd8b0b4e9486ec6588d44377",
+    "mtime": 1791571487.2458293,
+    "seen": 1791571990.692065,
+    "ast_hash": "a3e008217a0480ede1952ceba96ef287",
     "semantic_hash": ""
   },
   "tests/atlas-test.js": {
@@ -500,7 +500,7 @@
   "tests/fixtures/mba-golden.json": {
     "mtime": 1789305605.6794183,
     "seen": 1791561808.277086,
-    "ast_hash": "6a5c4c44f650dd9f5f9e822ebec6ac05",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "tests/i18n-test.js": {
@@ -558,9 +558,9 @@
     "semantic_hash": "88d6ec91816b9602730d3013609a085d"
   },
   "tools/build.js": {
-    "mtime": 1791563724.9001958,
-    "seen": 1791564061.8073962,
-    "ast_hash": "0d3eb5ac41efe0c1cb620df91ecc0138",
+    "mtime": 1791571525.1320474,
+    "seen": 1791571990.69236,
+    "ast_hash": "af06813cbe00c80885b2645a27e9faef",
     "semantic_hash": ""
   },
   "tools/data-collection/build-evidence.js": {
@@ -594,10 +594,10 @@
     "semantic_hash": "59d78f5e7fea0f30be1fe84059b65d5b"
   },
   "404.html": {
-    "mtime": 1790959478.7182565,
-    "seen": 1791019684.3679051,
-    "ast_hash": "00130c2317175b9ebbacf1dc92379fd9",
-    "semantic_hash": "00130c2317175b9ebbacf1dc92379fd9"
+    "mtime": 1791571525.13297,
+    "seen": 1791571990.6926332,
+    "ast_hash": "6445f2d9427249908687807be5170277",
+    "semantic_hash": ""
   },
   "CREDITS.md": {
     "mtime": 1790981392.7415705,
@@ -606,20 +606,20 @@
     "semantic_hash": "684a719c461eb7f0eb3aedf4be0685c1"
   },
   "README.md": {
-    "mtime": 1791497665.2841864,
-    "seen": 1791500424.0610318,
-    "ast_hash": "e44bcae3ca6f3b59f837b45108c42df6",
+    "mtime": 1791571985.3106544,
+    "seen": 1791571990.692672,
+    "ast_hash": "3822bafb353f43161fad419fd7fa5eb5",
     "semantic_hash": ""
   },
   "business.html": {
-    "mtime": 1791562910.4877472,
-    "seen": 1791564061.807403,
-    "ast_hash": "14a6311852825b9e20fe52161cc0e984",
+    "mtime": 1791571767.6277893,
+    "seen": 1791571990.692673,
+    "ast_hash": "d1bfe01acdf75cff0e4f6cd140820f1e",
     "semantic_hash": ""
   },
   "computing.html": {
-    "mtime": 1791562910.490068,
-    "seen": 1791564061.80745,
+    "mtime": 1791571748.414554,
+    "seen": 1791571990.6927512,
     "ast_hash": "362e1f8f08794106e27725fc7bbb1a79",
     "semantic_hash": ""
   },
@@ -768,32 +768,32 @@
     "semantic_hash": "beca3eba3b0c0e3192edd866566d2c12"
   },
   "index.html": {
-    "mtime": 1791562910.4875655,
-    "seen": 1791564061.807465,
-    "ast_hash": "5e6e60047ef93686a0d369b1f2931e93",
+    "mtime": 1791571767.6280303,
+    "seen": 1791571990.6934242,
+    "ast_hash": "c259035ee08cb4f7e2f6501e3fc00f05",
     "semantic_hash": ""
   },
   "it.html": {
-    "mtime": 1791562910.4879494,
-    "seen": 1791564061.807465,
-    "ast_hash": "b22163eeca6394badc898f0b033420a3",
+    "mtime": 1791571767.6279318,
+    "seen": 1791571990.6934242,
+    "ast_hash": "948ab49152ed8d0d14bb564e5a1b3da5",
     "semantic_hash": ""
   },
   "map.html": {
-    "mtime": 1791562917.4700902,
-    "seen": 1791564061.807466,
+    "mtime": 1791571748.4147704,
+    "seen": 1791571990.693425,
     "ast_hash": "1560b1c398c604c194f2844dd319927c",
     "semantic_hash": ""
   },
   "masters.html": {
-    "mtime": 1791562910.489513,
-    "seen": 1791564061.807466,
+    "mtime": 1791571748.414337,
+    "seen": 1791571990.693425,
     "ast_hash": "394cc1b3b12a77b6cc78c7f829083cfd",
     "semantic_hash": ""
   },
   "mba.html": {
-    "mtime": 1791562910.4886472,
-    "seen": 1791564061.807466,
+    "mtime": 1791571748.4140222,
+    "seen": 1791571990.693426,
     "ast_hash": "13041c297119c6950874b9b65a622993",
     "semantic_hash": ""
   },
@@ -3846,8 +3846,8 @@
     "semantic_hash": ""
   },
   "hiring.html": {
-    "mtime": 1791562917.4702194,
-    "seen": 1791564061.807464,
+    "mtime": 1791571748.4151137,
+    "seen": 1791571990.6933708,
     "ast_hash": "e45c3ff2af3a8c0503a8274964a49b36",
     "semantic_hash": ""
   },
@@ -4124,25 +4124,25 @@
   "careers/data/careers.json": {
     "mtime": 1791564129.3467264,
     "seen": 1791564134.512175,
-    "ast_hash": "1802d0d3e1a16b3f44f2ca91a0240a97",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "careers/data/search-index.json": {
-    "mtime": 1791564129.4448483,
-    "seen": 1791564134.512177,
+    "mtime": 1791572173.3390422,
+    "seen": 1791572196.712478,
     "ast_hash": "dee760175b334c3e373b54648f0501cb",
     "semantic_hash": ""
   },
   "tests/careers-test.js": {
-    "mtime": 1791563965.9880311,
-    "seen": 1791564061.807389,
-    "ast_hash": "289767da830b0e26237c005390ac1b0d",
+    "mtime": 1791571487.2468522,
+    "seen": 1791571990.692084,
+    "ast_hash": "4f91d458eb24a9fb0b755467b022f1f3",
     "semantic_hash": ""
   },
   "tools/build-careers.js": {
-    "mtime": 1791563227.9568605,
-    "seen": 1791564061.807395,
-    "ast_hash": "deea27431a522a58fd851d0f0b9dadc7",
+    "mtime": 1791571487.2464128,
+    "seen": 1791571990.692344,
+    "ast_hash": "72415339158fc9bbbcb91f3043022a9c",
     "semantic_hash": ""
   },
   "tools/careers/config.js": {
@@ -4176,939 +4176,999 @@
     "semantic_hash": ""
   },
   "tools/careers/render.js": {
-    "mtime": 1791564098.1746428,
-    "seen": 1791564134.512265,
-    "ast_hash": "6bec0d65a66e3ae18b0d21e5c3831966",
+    "mtime": 1791568274.5341632,
+    "seen": 1791568766.173716,
+    "ast_hash": "2d305801716e2a97eedc926b9039c53d",
     "semantic_hash": ""
   },
   "careers-progress.md": {
-    "mtime": 1791564128.9690804,
-    "seen": 1791564134.5122712,
-    "ast_hash": "316d36ad9eb00b3699e8474f61124b1e",
+    "mtime": 1791568754.6964335,
+    "seen": 1791568766.173913,
+    "ast_hash": "d739d4e884c8c98a0b0039c1f83ad10c",
     "semantic_hash": ""
   },
   "careers/BUILD_NOTES.md": {
-    "mtime": 1791564129.445789,
-    "seen": 1791564134.5122712,
-    "ast_hash": "6aa324586d46d5c67e107bc8192a1f58",
+    "mtime": 1791572173.348989,
+    "seen": 1791572196.716758,
+    "ast_hash": "4c222c0297bb622c5c85e402aa2db15c",
     "semantic_hash": ""
   },
   "careers/backgrounds/accounting.html": {
-    "mtime": 1791564129.4263506,
-    "seen": 1791564134.512272,
-    "ast_hash": "8554048d39dd27edefb2798525b0f712",
+    "mtime": 1791572173.3204603,
+    "seen": 1791572196.716759,
+    "ast_hash": "a07e5d9fbcf52100684bee5b5a2498fa",
     "semantic_hash": ""
   },
   "careers/backgrounds/artificial-intelligence.html": {
-    "mtime": 1791564129.4273996,
-    "seen": 1791564134.512272,
-    "ast_hash": "7971990736d95acf9a70a789f9187137",
+    "mtime": 1791572173.3216379,
+    "seen": 1791572196.716759,
+    "ast_hash": "b3cd2b0255afd41ff931604730252d0b",
     "semantic_hash": ""
   },
   "careers/backgrounds/computer-science.html": {
-    "mtime": 1791564129.4269576,
-    "seen": 1791564134.512272,
-    "ast_hash": "7c076447717c2a5b436fea664ed5ccb4",
+    "mtime": 1791572173.3211694,
+    "seen": 1791572196.7167602,
+    "ast_hash": "3aec8e41a17a960c582c41a580e86687",
     "semantic_hash": ""
   },
   "careers/backgrounds/cybersecurity.html": {
-    "mtime": 1791564129.4271374,
-    "seen": 1791564134.5122728,
-    "ast_hash": "7bab58b1ba4e2532b090ed8fee3ce7b2",
+    "mtime": 1791572173.3213196,
+    "seen": 1791572196.7167602,
+    "ast_hash": "786d747f2d229bf0df7b84a498de7aac",
     "semantic_hash": ""
   },
   "careers/backgrounds/data-analytics.html": {
-    "mtime": 1791564129.426622,
-    "seen": 1791564134.5122728,
-    "ast_hash": "8342d07cc7369f8ce30da97a6112528d",
+    "mtime": 1791572173.320833,
+    "seen": 1791572196.716761,
+    "ast_hash": "89cbb8ebbc350a10ae46d7d71447aa91",
     "semantic_hash": ""
   },
   "careers/backgrounds/data-science.html": {
-    "mtime": 1791564129.4272668,
-    "seen": 1791564134.5122728,
-    "ast_hash": "36d43ebf575a94de181b2cbc43a16bba",
+    "mtime": 1791572173.3214679,
+    "seen": 1791572196.716761,
+    "ast_hash": "a2c869ce8a528f1f6c25ed62a87d9c08",
     "semantic_hash": ""
   },
   "careers/backgrounds/economics.html": {
-    "mtime": 1791564129.4267826,
-    "seen": 1791564134.512274,
-    "ast_hash": "d28b95c2648fb107cc364ae1b48f225d",
+    "mtime": 1791572173.3210044,
+    "seen": 1791572196.716762,
+    "ast_hash": "f98d853c8adf387f6a5854bc60c5b7e3",
     "semantic_hash": ""
   },
   "careers/backgrounds/finance.html": {
-    "mtime": 1791564129.426209,
-    "seen": 1791564134.512274,
-    "ast_hash": "1b90c6eed036f24f3896b82ea8536a7e",
+    "mtime": 1791572173.3202677,
+    "seen": 1791572196.716762,
+    "ast_hash": "5eb9118d829a1e1ebcc3f8558e888a2e",
     "semantic_hash": ""
   },
   "careers/backgrounds/logistics-and-supply-chain.html": {
-    "mtime": 1791564129.4260619,
-    "seen": 1791564134.512275,
-    "ast_hash": "35fd2e9454287b02087f96bc10e38bcd",
+    "mtime": 1791572173.320094,
+    "seen": 1791572196.7167628,
+    "ast_hash": "001b51f9a090119847f48cb0950a5508",
     "semantic_hash": ""
   },
   "careers/backgrounds/management.html": {
-    "mtime": 1791564129.4258919,
-    "seen": 1791564134.512275,
-    "ast_hash": "33730e6c866c1d0dad2b2446db8c6266",
+    "mtime": 1791572173.3198974,
+    "seen": 1791572196.7167628,
+    "ast_hash": "fda268b3f7ed5e10543402ed71fd1dd6",
     "semantic_hash": ""
   },
   "careers/backgrounds/marketing.html": {
-    "mtime": 1791564129.4264872,
-    "seen": 1791564134.512275,
-    "ast_hash": "4cffff64c7d1dcca84649f8ca093c024",
+    "mtime": 1791572173.3206236,
+    "seen": 1791572196.716764,
+    "ast_hash": "5d6c00aa2079649655f67624e26c37db",
     "semantic_hash": ""
   },
   "careers/compare.html": {
-    "mtime": 1791564129.442651,
-    "seen": 1791564134.512276,
-    "ast_hash": "c18733f86297ba416c045641814116f4",
+    "mtime": 1791572173.3361235,
+    "seen": 1791572196.716764,
+    "ast_hash": "b4fb58d23374adb9463c39999150ccc7",
     "semantic_hash": ""
   },
   "careers/fields/accounting.html": {
-    "mtime": 1791564129.4286885,
-    "seen": 1791564134.512276,
-    "ast_hash": "9d01675d2f1ff23e56e1e09cd894aec6",
+    "mtime": 1791572173.322899,
+    "seen": 1791572196.7167659,
+    "ast_hash": "53ee31d47968ab55c0168b64fe342c35",
     "semantic_hash": ""
   },
   "careers/fields/artificial-intelligence.html": {
-    "mtime": 1791564129.4279778,
-    "seen": 1791564134.512277,
-    "ast_hash": "1c89f5c19a21c5a967938aabc7738bc5",
+    "mtime": 1791572173.3222394,
+    "seen": 1791572196.7167659,
+    "ast_hash": "5fc7c2273af166a7ce7a080831f119f0",
     "semantic_hash": ""
   },
   "careers/fields/computer-science.html": {
-    "mtime": 1791564129.4278326,
-    "seen": 1791564134.512277,
-    "ast_hash": "c6a766d850e751e2bd44598f8d1bd2ad",
+    "mtime": 1791572173.3221047,
+    "seen": 1791572196.716767,
+    "ast_hash": "fd4ae9b0f21b4411c7fc631627f4af70",
     "semantic_hash": ""
   },
   "careers/fields/cybersecurity.html": {
-    "mtime": 1791564129.4282894,
-    "seen": 1791564134.512277,
-    "ast_hash": "2ac8b33eb093822da7ae27437e326b85",
+    "mtime": 1791572173.3225334,
+    "seen": 1791572196.716767,
+    "ast_hash": "a52a3d6f8fb5b8a8d216a474eb758b6d",
     "semantic_hash": ""
   },
   "careers/fields/data-analytics.html": {
-    "mtime": 1791564129.4281645,
-    "seen": 1791564134.512278,
-    "ast_hash": "f3331238a704ab587a6904dd2e4466aa",
+    "mtime": 1791572173.3224275,
+    "seen": 1791572196.716768,
+    "ast_hash": "ff14ee0e1efff816f4ad4dc0a73690a9",
     "semantic_hash": ""
   },
   "careers/fields/data-science.html": {
-    "mtime": 1791564129.4280827,
-    "seen": 1791564134.512278,
-    "ast_hash": "68a21c5bf09a15f219eebc7470b1975a",
+    "mtime": 1791572173.3223383,
+    "seen": 1791572196.716768,
+    "ast_hash": "ca56b2d04a7de6698fe2a83d52af5704",
     "semantic_hash": ""
   },
   "careers/fields/economics.html": {
-    "mtime": 1791564129.4288661,
-    "seen": 1791564134.512278,
-    "ast_hash": "ebafaec89ef95803e2af4cb6b8957fbc",
+    "mtime": 1791572173.3230922,
+    "seen": 1791572196.716769,
+    "ast_hash": "94748f884e7b2b5c0077535c0356d8c7",
     "semantic_hash": ""
   },
   "careers/fields/finance.html": {
-    "mtime": 1791564129.4276588,
-    "seen": 1791564134.512279,
-    "ast_hash": "b82ce7cf5a3904c69d8a495a6465f008",
+    "mtime": 1791572173.3219337,
+    "seen": 1791572196.71677,
+    "ast_hash": "fead5dd586269826e8129d64993556fc",
     "semantic_hash": ""
   },
   "careers/fields/logistics-supply-chain.html": {
-    "mtime": 1791564129.4285107,
-    "seen": 1791564134.512279,
-    "ast_hash": "8785e9bb9be37d4e6bdb3a20431fb1b9",
+    "mtime": 1791572173.3227403,
+    "seen": 1791572196.71677,
+    "ast_hash": "4b12490cf57e985801807a126db0fd93",
     "semantic_hash": ""
   },
   "careers/fields/management-consulting.html": {
-    "mtime": 1791564129.42899,
-    "seen": 1791564134.512279,
-    "ast_hash": "8f76c1440359a8b8f456ddfc95ce05ed",
+    "mtime": 1791572173.3231971,
+    "seen": 1791572196.71677,
+    "ast_hash": "a147cf43bf07bf9bd28b7c5f4c758a0b",
     "semantic_hash": ""
   },
   "careers/fields/management.html": {
-    "mtime": 1791564129.4283965,
-    "seen": 1791564134.51228,
-    "ast_hash": "df896d20663974672f423ab288391b01",
+    "mtime": 1791572173.3226295,
+    "seen": 1791572196.7167711,
+    "ast_hash": "0562af798d52dca8ba9cee24f6895ce1",
     "semantic_hash": ""
   },
   "careers/fields/marketing.html": {
-    "mtime": 1791564129.428778,
-    "seen": 1791564134.51228,
-    "ast_hash": "2017183fcea2c8b17006c11da7ad5b0b",
+    "mtime": 1791572173.323006,
+    "seen": 1791572196.7167711,
+    "ast_hash": "14e8372a50e2410b18d4bd0851c7647a",
     "semantic_hash": ""
   },
   "careers/fields/product-management-startups.html": {
-    "mtime": 1791564129.4290948,
-    "seen": 1791564134.51228,
-    "ast_hash": "3ad85986c20634d0742931f0970c1c60",
+    "mtime": 1791572173.3233144,
+    "seen": 1791572196.716772,
+    "ast_hash": "87d3968a24fbc7d801bcf2333b1b8b0c",
     "semantic_hash": ""
   },
   "careers/index.html": {
-    "mtime": 1791564129.4255817,
-    "seen": 1791564134.5122812,
-    "ast_hash": "0c1ca426c13833f9890e729d0517c563",
+    "mtime": 1791572173.3195548,
+    "seen": 1791572196.716772,
+    "ast_hash": "d3699312d5c8aedcd28a34b3e996d105",
     "semantic_hash": ""
   },
   "careers/italy-pay.html": {
-    "mtime": 1791564129.4430134,
-    "seen": 1791564134.5122812,
-    "ast_hash": "9bae0dce2172c52f3db969e515a80907",
+    "mtime": 1791572173.3368576,
+    "seen": 1791572196.716773,
+    "ast_hash": "cee4e5e8a60c8c918d3578b2f7da636f",
     "semantic_hash": ""
   },
   "careers/roles/academic-economist-and-pre-doctoral-research-assistant.html": {
-    "mtime": 1791564129.441469,
-    "seen": 1791564134.5122821,
-    "ast_hash": "2a19c09e833d8276490824ab0f0cddff",
+    "mtime": 1791572173.3349638,
+    "seen": 1791572196.716774,
+    "ast_hash": "c477b5481653fcc9476c7424444cbb9b",
     "semantic_hash": ""
   },
   "careers/roles/agency-roles.html": {
-    "mtime": 1791564129.440731,
-    "seen": 1791564134.5122821,
-    "ast_hash": "ceb72d4d61b605facbc5499c8a69dcc8",
+    "mtime": 1791572173.3342073,
+    "seen": 1791572196.716774,
+    "ast_hash": "022c61ac36ceaac0a36950fa87a51fae",
     "semantic_hash": ""
   },
   "careers/roles/ai-data-specialist-ai-trainer-annotation-and-human.html": {
-    "mtime": 1791564129.434034,
-    "seen": 1791564134.5122828,
-    "ast_hash": "b84561bf58ae9b1f91905b6083c1fc57",
+    "mtime": 1791572173.3279896,
+    "seen": 1791572196.716775,
+    "ast_hash": "09a60694bec9096118a4e4373cd54d11",
     "semantic_hash": ""
   },
   "careers/roles/ai-engineer-llm-application-engineer.html": {
-    "mtime": 1791564129.4337845,
-    "seen": 1791564134.5122828,
-    "ast_hash": "22e4d01a909d5548388e8f546cc5fc14",
+    "mtime": 1791572173.3277276,
+    "seen": 1791572196.716775,
+    "ast_hash": "69003601f296c7ecf204e4c7fca70912",
     "semantic_hash": ""
   },
   "careers/roles/ai-governance-policy-and-responsible-ai-specialist.html": {
-    "mtime": 1791564129.4345245,
-    "seen": 1791564134.5122828,
-    "ast_hash": "c50a0a414711e6bda6d023527efd340a",
+    "mtime": 1791572173.328545,
+    "seen": 1791572196.716776,
+    "ast_hash": "7249ae8f6abcca17ded3eaf98f322be2",
     "semantic_hash": ""
   },
   "careers/roles/ai-product-manager.html": {
-    "mtime": 1791564129.4345977,
-    "seen": 1791564134.5122838,
-    "ast_hash": "56e90ee4d34a2502d21207016e95d5d9",
+    "mtime": 1791572173.3286521,
+    "seen": 1791572196.7167768,
+    "ast_hash": "1e34a8503b38189d98c4895bbf46e87e",
     "semantic_hash": ""
   },
   "careers/roles/ai-research-scientist.html": {
-    "mtime": 1791564129.4341109,
-    "seen": 1791564134.5122838,
-    "ast_hash": "b24fd433b1b4808c008cf16e9c3e1060",
+    "mtime": 1791572173.3281026,
+    "seen": 1791572196.7167768,
+    "ast_hash": "ea5c8a8ce40402498e29d5242f3759a4",
     "semantic_hash": ""
   },
   "careers/roles/ai-safety-alignment-interpretability-and-evaluations-red-teaming.html": {
-    "mtime": 1791564129.4343283,
-    "seen": 1791564134.512285,
-    "ast_hash": "50f930dcb431b7ad93c48a90ed1bbf31",
+    "mtime": 1791572173.328314,
+    "seen": 1791572196.716778,
+    "ast_hash": "b29834cdac43906b018d6f11f154338b",
     "semantic_hash": ""
   },
   "careers/roles/analytics-consultant.html": {
-    "mtime": 1791564129.4363372,
-    "seen": 1791564134.512285,
-    "ast_hash": "109b72181f738c42f262aa2549b56c39",
+    "mtime": 1791572173.3301754,
+    "seen": 1791572196.716779,
+    "ast_hash": "ae55e4d833a3bc0a4c37800a47ccdd46",
     "semantic_hash": ""
   },
   "careers/roles/analytics-engineer.html": {
-    "mtime": 1791564129.4357815,
-    "seen": 1791564134.512285,
-    "ast_hash": "c2df98123ea3e7d6a6ce003b82123cf1",
+    "mtime": 1791572173.3296337,
+    "seen": 1791572196.716779,
+    "ast_hash": "50d7c3e3ecbe1c222c31b6b691ddd0fe",
     "semantic_hash": ""
   },
   "careers/roles/application-security-product-security-engineer.html": {
-    "mtime": 1791564129.436944,
-    "seen": 1791564134.512286,
-    "ast_hash": "8f6eb1b44219d1313f087fdf5fde532e",
+    "mtime": 1791572173.330988,
+    "seen": 1791572196.71678,
+    "ast_hash": "890e674db47cf8ea9d2e7fbfa961b45b",
     "semantic_hash": ""
   },
   "careers/roles/applied-scientist-research-data-scientist.html": {
-    "mtime": 1791564129.4353714,
-    "seen": 1791564134.512286,
-    "ast_hash": "3f84cee985341cc31ebf8969d1d985c3",
+    "mtime": 1791572173.3292687,
+    "seen": 1791572196.71678,
+    "ast_hash": "bb98fd03d0ece46409bd9f34127d297c",
     "semantic_hash": ""
   },
   "careers/roles/asset-management-client-and-distribution-roles.html": {
-    "mtime": 1791564129.4306087,
-    "seen": 1791564134.512287,
-    "ast_hash": "59c892e5909815f76b6e0c86653f062c",
+    "mtime": 1791572173.3248205,
+    "seen": 1791572196.7167811,
+    "ast_hash": "64b7571168ee2920a70a0e595c30b224",
     "semantic_hash": ""
   },
   "careers/roles/asset-management-investment-roles-long-only.html": {
-    "mtime": 1791564129.43047,
-    "seen": 1791564134.512287,
-    "ast_hash": "1e4d07babd4216dcf8c914e64cf4073c",
+    "mtime": 1791572173.3247144,
+    "seen": 1791572196.7167811,
+    "ast_hash": "fa738a78031acdf8ba2c467287435fc1",
     "semantic_hash": ""
   },
   "careers/roles/associate-rotational-product-manager.html": {
-    "mtime": 1791564129.44208,
-    "seen": 1791564134.512287,
-    "ast_hash": "f2208ddb20bad88c67c0a53a3a9f2725",
+    "mtime": 1791572173.335528,
+    "seen": 1791572196.716782,
+    "ast_hash": "d80eb0301cc5d9446174422fa9e9ccfb",
     "semantic_hash": ""
   },
   "careers/roles/backend-software-engineer.html": {
-    "mtime": 1791564129.4324517,
-    "seen": 1791564134.512287,
-    "ast_hash": "dc5ee0fef8d35460b8309b9df0f98f38",
+    "mtime": 1791572173.3264465,
+    "seen": 1791572196.716782,
+    "ast_hash": "ab3e43bdf7ebc23c1291582f812f4186",
     "semantic_hash": ""
   },
   "careers/roles/bank-quant-strats-desk-quant-pricing-and-xva.html": {
-    "mtime": 1791564129.4320436,
-    "seen": 1791564134.512288,
-    "ast_hash": "87c0ecb57d99308ca267f7f01a830327",
+    "mtime": 1791572173.326074,
+    "seen": 1791572196.716783,
+    "ast_hash": "0665f56b155a3ea83370b26ecd2ec31c",
     "semantic_hash": ""
   },
   "careers/roles/bi-developer-bi-analyst.html": {
-    "mtime": 1791564129.43569,
-    "seen": 1791564134.512288,
-    "ast_hash": "d10ff3603e0531d54c44470ab45f82a6",
+    "mtime": 1791572173.3295345,
+    "seen": 1791572196.716783,
+    "ast_hash": "93306c195826315a2590d424d8528833",
     "semantic_hash": ""
   },
   "careers/roles/brand-manager.html": {
-    "mtime": 1791564129.4400651,
-    "seen": 1791564134.512289,
-    "ast_hash": "92ba37789d3e9a38765bc17cc3b5d764",
+    "mtime": 1791572173.333648,
+    "seen": 1791572196.7167842,
+    "ast_hash": "dabe2d75d687f0cdb853182d62a535a8",
     "semantic_hash": ""
   },
   "careers/roles/buyer-procurement-specialist-category-manager.html": {
-    "mtime": 1791564129.4381258,
-    "seen": 1791564134.512289,
-    "ast_hash": "dd595f06867f915774c3e5aa24f61863",
+    "mtime": 1791572173.332306,
+    "seen": 1791572196.7167842,
+    "ast_hash": "a97488a33c2a83ead8579105055e2de3",
     "semantic_hash": ""
   },
   "careers/roles/central-bank-economist.html": {
-    "mtime": 1791564129.4408956,
-    "seen": 1791564134.512289,
-    "ast_hash": "d741e11b0810bf4a0decdb5ac92cc318",
+    "mtime": 1791572173.334455,
+    "seen": 1791572196.716785,
+    "ast_hash": "b6b88b9ff3d289da76e519adf757e473",
     "semantic_hash": ""
   },
   "careers/roles/cloud-engineer-cloud-solutions-architect.html": {
-    "mtime": 1791564129.4331634,
-    "seen": 1791564134.51229,
-    "ast_hash": "f8cc80c8b4ed1e1d658f379ee24a1852",
+    "mtime": 1791572173.327138,
+    "seen": 1791572196.716785,
+    "ast_hash": "64e1ca9f498fe20c9b0152415a17b992",
     "semantic_hash": ""
   },
   "careers/roles/compliance-and-financial-crime.html": {
-    "mtime": 1791564129.4319367,
-    "seen": 1791564134.51229,
-    "ast_hash": "d058aa0dfc77806132010863f6732fd2",
+    "mtime": 1791572173.3259847,
+    "seen": 1791572196.716786,
+    "ast_hash": "20a969147ed9aca1a2b134607562a48e",
     "semantic_hash": ""
   },
   "careers/roles/computer-science-researcher.html": {
-    "mtime": 1791564129.4335983,
-    "seen": 1791564134.51229,
-    "ast_hash": "e699a46830ea4abbe5a036e376300ebd",
+    "mtime": 1791572173.327568,
+    "seen": 1791572196.716786,
+    "ast_hash": "2f505a582597b76f2d161fbb9e7adcc9",
     "semantic_hash": ""
   },
   "careers/roles/computer-vision-robotics-edge-ai-engineer.html": {
-    "mtime": 1791564129.4339607,
-    "seen": 1791564134.512291,
-    "ast_hash": "cdf41e712a5d16d15fe8908a40631fbc",
+    "mtime": 1791572173.327883,
+    "seen": 1791572196.716786,
+    "ast_hash": "7c0f02a02464afdeaea94feb23b91ef2",
     "semantic_hash": ""
   },
   "careers/roles/content-social-and-community-marketer.html": {
-    "mtime": 1791564129.4402397,
-    "seen": 1791564134.512291,
-    "ast_hash": "7e6acc49a6e9ce0e7a8695de86c0975a",
+    "mtime": 1791572173.33383,
+    "seen": 1791572196.7167869,
+    "ast_hash": "7e5ef0c08fa2cf3c0bcd82f95d26bdb0",
     "semantic_hash": ""
   },
   "careers/roles/corporate-and-transaction-banking.html": {
-    "mtime": 1791564129.4296434,
-    "seen": 1791564134.5122921,
-    "ast_hash": "45a3666525a24ce6e2a061b2f14c45eb",
+    "mtime": 1791572173.3238773,
+    "seen": 1791572196.716788,
+    "ast_hash": "e803bc9f2e5805ca928920551bb5fc69",
     "semantic_hash": ""
   },
   "careers/roles/corporate-development.html": {
-    "mtime": 1791564129.431738,
-    "seen": 1791564134.5122921,
-    "ast_hash": "0585418b45aca66a052e94c5a1ecc306",
+    "mtime": 1791572173.3257742,
+    "seen": 1791572196.716789,
+    "ast_hash": "d533e089157b26ce51a6ae0f5410ce30",
     "semantic_hash": ""
   },
   "careers/roles/corporate-strategy-and-business-development.html": {
-    "mtime": 1791564129.4379282,
-    "seen": 1791564134.512293,
-    "ast_hash": "f7a2b755664dbb1ecb26c51154539e60",
+    "mtime": 1791572173.332114,
+    "seen": 1791572196.716789,
+    "ast_hash": "d1d1278b0973e8e486eaa4e1bd8dd455",
     "semantic_hash": ""
   },
   "careers/roles/corporate-treasury-analyst.html": {
-    "mtime": 1791564129.4316359,
-    "seen": 1791564134.512293,
-    "ast_hash": "951552d3e72d01ee6aceb195a276e09b",
+    "mtime": 1791572173.325666,
+    "seen": 1791572196.716789,
+    "ast_hash": "5c893cedf1cabecce4a952f4a7431ec0",
     "semantic_hash": ""
   },
   "careers/roles/crm-lifecycle-marketing-specialist.html": {
-    "mtime": 1791564129.4404452,
-    "seen": 1791564134.512293,
-    "ast_hash": "214bf69b8cd5cf021d8de9008b89579b",
+    "mtime": 1791572173.3340282,
+    "seen": 1791572196.71679,
+    "ast_hash": "ea8f177c8d97d14f2ce3f8535bbd26a8",
     "semantic_hash": ""
   },
   "careers/roles/data-analyst-business-analyst.html": {
-    "mtime": 1791564129.4355738,
-    "seen": 1791564134.5122938,
-    "ast_hash": "cfd9e5da5cc41291b686ac740e19c140",
+    "mtime": 1791572173.3294377,
+    "seen": 1791572196.71679,
+    "ast_hash": "8eb57fc41be360dc5a187cfe1fee752e",
     "semantic_hash": ""
   },
   "careers/roles/data-engineer.html": {
-    "mtime": 1791564129.4333618,
-    "seen": 1791564134.5122938,
-    "ast_hash": "c36d4849ddf0ce06794651528421fa98",
+    "mtime": 1791572173.3272855,
+    "seen": 1791572196.7167912,
+    "ast_hash": "af1e46e1d7f3acb7333e3987d899342f",
     "semantic_hash": ""
   },
   "careers/roles/data-governance-data-quality-and-data-steward-roles.html": {
-    "mtime": 1791564129.4362013,
-    "seen": 1791564134.5122938,
-    "ast_hash": "8354e5507eb3e1b0d2f4be665de4f52f",
+    "mtime": 1791572173.3300872,
+    "seen": 1791572196.7167912,
+    "ast_hash": "31dbea318a370f7c7986763bcb78c153",
     "semantic_hash": ""
   },
   "careers/roles/data-science-consultant.html": {
-    "mtime": 1791564129.4354658,
-    "seen": 1791564134.512295,
-    "ast_hash": "c790999f724cc99a3cc08ef784ff7573",
+    "mtime": 1791572173.3293617,
+    "seen": 1791572196.716792,
+    "ast_hash": "ee4671d0cb7dea061bc89a5d8340e8ce",
     "semantic_hash": ""
   },
   "careers/roles/data-scientist-in-banking-and-insurance.html": {
-    "mtime": 1791564129.4352741,
-    "seen": 1791564134.512295,
-    "ast_hash": "ea1f623d935a3e11560acda2b935721a",
+    "mtime": 1791572173.3291688,
+    "seen": 1791572196.716792,
+    "ast_hash": "e3c11e2f0b53f4f5ea3b9ba0b93c0506",
     "semantic_hash": ""
   },
   "careers/roles/debt-capital-markets-and-leveraged-finance.html": {
-    "mtime": 1791564129.4294438,
-    "seen": 1791564134.512296,
-    "ast_hash": "fd69637525ddc2827e4c9fdec20b4f02",
+    "mtime": 1791572173.3237047,
+    "seen": 1791572196.716793,
+    "ast_hash": "edeb8e5c0bf01f86bbd0738279242f0a",
     "semantic_hash": ""
   },
   "careers/roles/decision-scientist-operations-research-analyst.html": {
-    "mtime": 1791564129.4350712,
-    "seen": 1791564134.512296,
-    "ast_hash": "e44b096fef34b3348fa231d497092d8f",
+    "mtime": 1791572173.3289669,
+    "seen": 1791572196.716793,
+    "ast_hash": "cbe1d12467c322d51674383344f74100",
     "semantic_hash": ""
   },
   "careers/roles/demand-supply-planner-and-s-and-op-analyst.html": {
-    "mtime": 1791564129.4382272,
-    "seen": 1791564134.512296,
-    "ast_hash": "f2860ad2b382cf9f04a13770f050a0bd",
+    "mtime": 1791572173.3323975,
+    "seen": 1791572196.716794,
+    "ast_hash": "3d4ce4a07123008c85f6bc1126b25370",
     "semantic_hash": ""
   },
   "careers/roles/devops-site-reliability-platform-engineer.html": {
-    "mtime": 1791564129.4330761,
-    "seen": 1791564134.512297,
-    "ast_hash": "8c5239e257c80f821d2010ffeabf7f59",
+    "mtime": 1791572173.3270526,
+    "seen": 1791572196.716795,
+    "ast_hash": "15aa173384ed280a4aff26b5bb3e68b4",
     "semantic_hash": ""
   },
   "careers/roles/digital-performance-marketing-specialist.html": {
-    "mtime": 1791564129.440159,
-    "seen": 1791564134.512297,
-    "ast_hash": "30345815ffdbf49ab3d91c909cf9af2a",
+    "mtime": 1791572173.333744,
+    "seen": 1791572196.716795,
+    "ast_hash": "a58b96f9a86f4c318a142b27dc5ee6ac",
     "semantic_hash": ""
   },
   "careers/roles/discretionary-trader-pm-at-a-hedge-fund-or.html": {
-    "mtime": 1791564129.4303637,
-    "seen": 1791564134.5122979,
-    "ast_hash": "dc2da3150c0fd6eb847bae842b2bd428",
+    "mtime": 1791572173.3245735,
+    "seen": 1791572196.716796,
+    "ast_hash": "6992c0068fe7003027f0d29aa47588a1",
     "semantic_hash": ""
   },
   "careers/roles/economic-consultant.html": {
-    "mtime": 1791564129.4412024,
-    "seen": 1791564134.5122979,
-    "ast_hash": "b0d95c99bb298b42970f8ff6f783ef0b",
+    "mtime": 1791572173.3347178,
+    "seen": 1791572196.716796,
+    "ast_hash": "135e5c84dda8d0cc1e72151e2e1cecc5",
     "semantic_hash": ""
   },
   "careers/roles/economist-at-an-international-organisation.html": {
-    "mtime": 1791564129.4410045,
-    "seen": 1791564134.5122979,
-    "ast_hash": "0deaa078e38f3766f3272ec054fd6a9b",
+    "mtime": 1791572173.334543,
+    "seen": 1791572196.7167969,
+    "ast_hash": "54db0ccebb6a9865f44ce9a9bee9da96",
     "semantic_hash": ""
   },
   "careers/roles/embedded-firmware-systems-engineer.html": {
-    "mtime": 1791564129.4332695,
-    "seen": 1791564134.512299,
-    "ast_hash": "2f196b532a05e40c091a8192d2cc2ae6",
+    "mtime": 1791572173.3272083,
+    "seen": 1791572196.7167969,
+    "ast_hash": "788b04c9cc18bb5394b347e9a3792f2a",
     "semantic_hash": ""
   },
   "careers/roles/enterprise-applications-consultant-and-it-systems-administrator-support.html": {
-    "mtime": 1791564129.4334495,
-    "seen": 1791564134.512299,
-    "ast_hash": "7296281aa7cac8d0d80033815b2a2b6e",
+    "mtime": 1791572173.3273737,
+    "seen": 1791572196.716798,
+    "ast_hash": "aa3f684feaac0dee57b2242de15d9e6f",
     "semantic_hash": ""
   },
   "careers/roles/equity-capital-markets.html": {
-    "mtime": 1791564129.4293206,
-    "seen": 1791564134.5123,
-    "ast_hash": "af11037d754e08fd3c369e2af3e848cf",
+    "mtime": 1791572173.323613,
+    "seen": 1791572196.716798,
+    "ast_hash": "f5ec193db434bc3f20219d461436943c",
     "semantic_hash": ""
   },
   "careers/roles/external-auditor.html": {
-    "mtime": 1791564129.4393947,
-    "seen": 1791564134.5123,
-    "ast_hash": "fe6c7a2a3f4091b4d4f8dd056fa48f39",
+    "mtime": 1791572173.3330052,
+    "seen": 1791572196.716799,
+    "ast_hash": "4121d142136ad93b99fe2298760db977",
     "semantic_hash": ""
   },
   "careers/roles/financial-accountant-financial-controller.html": {
-    "mtime": 1791564129.4396024,
-    "seen": 1791564134.5123,
-    "ast_hash": "08b87120f527f60665e6712d4474a4f5",
+    "mtime": 1791572173.3331828,
+    "seen": 1791572196.7168,
+    "ast_hash": "6656d4e6b3e881eb4cace72e0625b030",
     "semantic_hash": ""
   },
   "careers/roles/fintech-business-roles.html": {
-    "mtime": 1791564129.432368,
-    "seen": 1791564134.512301,
-    "ast_hash": "5d8400322793c80cd446cc8ef2f75196",
+    "mtime": 1791572173.3263443,
+    "seen": 1791572196.7168,
+    "ast_hash": "e8480b4c6cd25bc67550bdd35e679c44",
     "semantic_hash": ""
   },
   "careers/roles/forensic-accountant.html": {
-    "mtime": 1791564129.4398627,
-    "seen": 1791564134.512301,
-    "ast_hash": "822a3c147be614123b323620f9c83c2a",
+    "mtime": 1791572173.3334455,
+    "seen": 1791572196.716801,
+    "ast_hash": "69db489a9f2c0bae170f15737617a841",
     "semantic_hash": ""
   },
   "careers/roles/forward-deployed-engineer-ai-solutions-engineer-ai-consultant.html": {
-    "mtime": 1791564129.4344316,
-    "seen": 1791564134.512301,
-    "ast_hash": "27cb6bb2d34008ccc868826a9aa1e2e8",
+    "mtime": 1791572173.3284373,
+    "seen": 1791572196.716801,
+    "ast_hash": "63ec951c569c4ab75e2dd9881c2aab9d",
     "semantic_hash": ""
   },
   "careers/roles/founder-entrepreneur.html": {
-    "mtime": 1791564129.4423268,
-    "seen": 1791564134.5123022,
-    "ast_hash": "f71049f1bf93aae9b6313d2502a0c15a",
+    "mtime": 1791572173.335772,
+    "seen": 1791572196.716801,
+    "ast_hash": "53fb0bfebb6b00cfd701617b97553818",
     "semantic_hash": ""
   },
   "careers/roles/fp-and-a-corporate-finance-analyst.html": {
-    "mtime": 1791564129.4315348,
-    "seen": 1791564134.5123022,
-    "ast_hash": "ddb33d0a6004b4e30d3e13556791b800",
+    "mtime": 1791572173.3255756,
+    "seen": 1791572196.7168021,
+    "ast_hash": "2053b22bf6c0b0ca3d84ed18ce8d2e2f",
     "semantic_hash": ""
   },
   "careers/roles/frontend-engineer.html": {
-    "mtime": 1791564129.432547,
-    "seen": 1791564134.512303,
-    "ast_hash": "08dac97520e34415513854f11759b774",
+    "mtime": 1791572173.3265436,
+    "seen": 1791572196.716803,
+    "ast_hash": "b34de6d054778ef4852aa323874f107f",
     "semantic_hash": ""
   },
   "careers/roles/full-stack-engineer.html": {
-    "mtime": 1791564129.432647,
-    "seen": 1791564134.512303,
-    "ast_hash": "0372e5abc122fb25ca0f62a0bf371562",
+    "mtime": 1791572173.3266313,
+    "seen": 1791572196.716803,
+    "ast_hash": "1a76c613cc08755a21854e93ed6e0c20",
     "semantic_hash": ""
   },
   "careers/roles/game-developer.html": {
-    "mtime": 1791564129.4328277,
-    "seen": 1791564134.512303,
-    "ast_hash": "944cf86186c127c824dca0de8c66aa96",
+    "mtime": 1791572173.326773,
+    "seen": 1791572196.716803,
+    "ast_hash": "a7d74686baf0f7941ea702e528cd8892",
     "semantic_hash": ""
   },
   "careers/roles/government-economist-official-statistician.html": {
-    "mtime": 1791564129.4411066,
-    "seen": 1791564134.512304,
-    "ast_hash": "9f451fe3fda3fee7414841cd85df5682",
+    "mtime": 1791572173.3346407,
+    "seen": 1791572196.716804,
+    "ast_hash": "6805a490dbc7a533d04cb412a8d41ce0",
     "semantic_hash": ""
   },
   "careers/roles/grc-analyst-security-auditor-privacy-specialist.html": {
-    "mtime": 1791564129.4372435,
-    "seen": 1791564134.512304,
-    "ast_hash": "26226d9e0de9d6719d1e9d2e8564aafa",
+    "mtime": 1791572173.3313313,
+    "seen": 1791572196.716804,
+    "ast_hash": "171dbd27a2a4e3dac2b896fad7079edc",
     "semantic_hash": ""
   },
   "careers/roles/hedge-fund-analyst-portfolio-manager.html": {
-    "mtime": 1791564129.4307904,
-    "seen": 1791564134.512304,
-    "ast_hash": "48068347c94f2194234724f140662442",
+    "mtime": 1791572173.3249154,
+    "seen": 1791572196.7168052,
+    "ast_hash": "b1c2d1441afe690956974eda8c63afac",
     "semantic_hash": ""
   },
   "careers/roles/hr-people-professional.html": {
-    "mtime": 1791564129.4378283,
-    "seen": 1791564134.5123048,
-    "ast_hash": "4b1e053246f4fadea2eee1b0cdaa33af",
+    "mtime": 1791572173.332014,
+    "seen": 1791572196.7168052,
+    "ast_hash": "178d820f6698f4d76f962c7923052b58",
     "semantic_hash": ""
   },
   "careers/roles/incident-responder-digital-forensics.html": {
-    "mtime": 1791564129.4366198,
-    "seen": 1791564134.5123048,
-    "ast_hash": "db3e41f2b8b098ba0f27d0977008f9fd",
+    "mtime": 1791572173.3304417,
+    "seen": 1791572196.716806,
+    "ast_hash": "d8e46c3f9bc27fcc09d24fec099a8173",
     "semantic_hash": ""
   },
   "careers/roles/index.html": {
-    "mtime": 1791564129.442472,
-    "seen": 1791564134.5123048,
-    "ast_hash": "6c0f873e10bb21fc4d14b158fd69c075",
+    "mtime": 1791572173.3359244,
+    "seen": 1791572196.716806,
+    "ast_hash": "077b22b7009459e87045f53cfc59ca05",
     "semantic_hash": ""
   },
   "careers/roles/institutional-salesperson.html": {
-    "mtime": 1791564129.429962,
-    "seen": 1791564134.512306,
-    "ast_hash": "d72e9eafc546771c37bb037a920c28d8",
+    "mtime": 1791572173.3241694,
+    "seen": 1791572196.716807,
+    "ast_hash": "8553a8fe6b308eafec55da3b9a1190b0",
     "semantic_hash": ""
   },
   "careers/roles/internal-auditor.html": {
-    "mtime": 1791564129.43978,
-    "seen": 1791564134.512306,
-    "ast_hash": "02644de672f37c2af2a3c2a3c9835488",
+    "mtime": 1791572173.3333611,
+    "seen": 1791572196.716807,
+    "ast_hash": "1b0c2337ab7f1a0edbc21b6c8dc0342c",
     "semantic_hash": ""
   },
   "careers/roles/internal-strategy-corporate-transformation-in-house-consulting.html": {
-    "mtime": 1791564129.441938,
-    "seen": 1791564134.512307,
-    "ast_hash": "2165f6ce56004f3f6adcfdf8008980df",
+    "mtime": 1791572173.3353944,
+    "seen": 1791572196.716807,
+    "ast_hash": "0e90ac6cb85adde9928373729bf040d9",
     "semantic_hash": ""
   },
   "careers/roles/investment-professional-at-an-institutional-allocator.html": {
-    "mtime": 1791564129.431313,
-    "seen": 1791564134.512307,
-    "ast_hash": "ca906a575f02032a676fd82451318e99",
+    "mtime": 1791572173.3254004,
+    "seen": 1791572196.7168078,
+    "ast_hash": "2e21a84d8ca97da7d064347dd75c6293",
     "semantic_hash": ""
   },
   "careers/roles/logistics-and-transport-coordinator-manager.html": {
-    "mtime": 1791564129.4383242,
-    "seen": 1791564134.512307,
-    "ast_hash": "dfe03db51731c1dc0ce9ba5137f9b899",
+    "mtime": 1791572173.3325,
+    "seen": 1791572196.7168078,
+    "ast_hash": "4ed846cb7cefebe61db593a39de815d9",
     "semantic_hash": ""
   },
   "careers/roles/m-and-a-and-industry-coverage-banker.html": {
-    "mtime": 1791564129.4292197,
-    "seen": 1791564134.512308,
-    "ast_hash": "0da0fb6b83f280c0f4cfd138fa0ed3c4",
+    "mtime": 1791572173.3234973,
+    "seen": 1791572196.716809,
+    "ast_hash": "a7673e699b7cd6aa408aeeca00d377d6",
     "semantic_hash": ""
   },
   "careers/roles/machine-learning-engineer.html": {
-    "mtime": 1791564129.4336855,
-    "seen": 1791564134.512308,
-    "ast_hash": "c048506df735dd961e4193c01f320531",
+    "mtime": 1791572173.327647,
+    "seen": 1791572196.716809,
+    "ast_hash": "2a7fd8cf89750d59a8f11cc5d4a71a3b",
     "semantic_hash": ""
   },
   "careers/roles/machine-learning-modeling-data-scientist.html": {
-    "mtime": 1791564129.4349668,
-    "seen": 1791564134.512308,
-    "ast_hash": "4c2fd1de84c37c0f90efafc2bcc2fdb3",
+    "mtime": 1791572173.3288689,
+    "seen": 1791572196.71681,
+    "ast_hash": "38916d90e9ec7d49c954ac20bd64ccf3",
     "semantic_hash": ""
   },
   "careers/roles/management-accountant-controller.html": {
-    "mtime": 1791564129.4396977,
-    "seen": 1791564134.512309,
-    "ast_hash": "a58b3daab5d3666f7141e369fc910325",
+    "mtime": 1791572173.3332782,
+    "seen": 1791572196.71681,
+    "ast_hash": "469dbb3b877c66845703a7edcd1b8917",
     "semantic_hash": ""
   },
   "careers/roles/management-operations-transformation-consultant-at-big-4-accenture.html": {
-    "mtime": 1791564129.44166,
-    "seen": 1791564134.512309,
-    "ast_hash": "0fa4a466e6634e5bb7cda3ed90402d78",
+    "mtime": 1791572173.335149,
+    "seen": 1791572196.716811,
+    "ast_hash": "2ada26db2138cb326b4a603874ab6d1f",
     "semantic_hash": ""
   },
   "careers/roles/management-trainee-graduate-leadership-programme-to-general-manager.html": {
-    "mtime": 1791564129.4375353,
-    "seen": 1791564134.512309,
-    "ast_hash": "0d2d2d136cdfe3d4ab54f1f12fdb2f7a",
+    "mtime": 1791572173.3316672,
+    "seen": 1791572196.716814,
+    "ast_hash": "22033e040381c946e8465eb0f33e7f28",
     "semantic_hash": ""
   },
   "careers/roles/market-research-consumer-insights-analyst.html": {
-    "mtime": 1791564129.4406416,
-    "seen": 1791564134.51231,
-    "ast_hash": "170c6f183f474e04743c5456cb31deb2",
+    "mtime": 1791572173.3341181,
+    "seen": 1791572196.716815,
+    "ast_hash": "190dfba8f716d0f7519a983c1de5664a",
     "semantic_hash": ""
   },
   "careers/roles/marketing-digital-and-product-analyst.html": {
-    "mtime": 1791564129.4358838,
-    "seen": 1791564134.51231,
-    "ast_hash": "93e8ff8a6de7120bde0f0d2a49eef38a",
+    "mtime": 1791572173.3297129,
+    "seen": 1791572196.716815,
+    "ast_hash": "6669adef0f67cce8001e754f4bc22dea",
     "semantic_hash": ""
   },
   "careers/roles/mlops-ml-platform-ai-infrastructure-engineer.html": {
-    "mtime": 1791564129.4338746,
-    "seen": 1791564134.512311,
-    "ast_hash": "5766480d5bbf41b2cf73f5cc098e11d0",
+    "mtime": 1791572173.3278031,
+    "seen": 1791572196.716816,
+    "ast_hash": "b2ec357727c4bb011efe305df51f107b",
     "semantic_hash": ""
   },
   "careers/roles/mobile-engineer.html": {
-    "mtime": 1791564129.4327419,
-    "seen": 1791564134.512311,
-    "ast_hash": "570933c97ade6ebc11f33cfca2d60368",
+    "mtime": 1791572173.3266985,
+    "seen": 1791572196.716816,
+    "ast_hash": "0dc199ead9288a4a78b28bafbb2b8a35",
     "semantic_hash": ""
   },
   "careers/roles/operations-and-supply-chain-analyst.html": {
-    "mtime": 1791564129.4359763,
-    "seen": 1791564134.512311,
-    "ast_hash": "194e88c5b09820da3ad327ad69adaa10",
+    "mtime": 1791572173.329834,
+    "seen": 1791572196.716817,
+    "ast_hash": "ce18522735040593bbf25f68ea929c1f",
     "semantic_hash": ""
   },
   "careers/roles/operations-manager.html": {
-    "mtime": 1791564129.437636,
-    "seen": 1791564134.5123122,
-    "ast_hash": "0033d329a01cbc4adb4c3174cefa882e",
+    "mtime": 1791572173.331772,
+    "seen": 1791572196.716817,
+    "ast_hash": "b1d5a4993bd28ddbf310dfae524ad39e",
     "semantic_hash": ""
   },
   "careers/roles/ot-ics-security-specialist.html": {
-    "mtime": 1791564129.437342,
-    "seen": 1791564134.5123122,
-    "ast_hash": "6f91af6803cac03eaea5927fec1351aa",
+    "mtime": 1791572173.331435,
+    "seen": 1791572196.7168179,
+    "ast_hash": "92d9d6fb3ca06c5496b05fb80b760fee",
     "semantic_hash": ""
   },
   "careers/roles/penetration-tester-red-teamer-offensive-security.html": {
-    "mtime": 1791564129.4368463,
-    "seen": 1791564134.5123131,
-    "ast_hash": "c99ffba75838b0f3e904e22c058b09ca",
+    "mtime": 1791572173.330645,
+    "seen": 1791572196.7168179,
+    "ast_hash": "1bb3504a43e97683fe4ccd7e64143854",
     "semantic_hash": ""
   },
   "careers/roles/people-hr-analyst.html": {
-    "mtime": 1791564129.4360693,
-    "seen": 1791564134.5123131,
-    "ast_hash": "89bd5689e1ee1b89352010ea4b1403a1",
+    "mtime": 1791572173.3299644,
+    "seen": 1791572196.716819,
+    "ast_hash": "ef700757b196e51d60dcd087cf4084e2",
     "semantic_hash": ""
   },
   "careers/roles/private-banker-wealth-manager.html": {
-    "mtime": 1791564129.4314203,
-    "seen": 1791564134.5123131,
-    "ast_hash": "a4ee5545f90a59312b91d7740cb0df97",
+    "mtime": 1791572173.3254857,
+    "seen": 1791572196.716819,
+    "ast_hash": "827c590870d7c4c60abfad6296def25b",
     "semantic_hash": ""
   },
   "careers/roles/private-credit-analyst-associate.html": {
-    "mtime": 1791564129.4311867,
-    "seen": 1791564134.512314,
-    "ast_hash": "1dbe060803383b190dbc0488df29890f",
+    "mtime": 1791572173.325247,
+    "seen": 1791572196.71682,
+    "ast_hash": "f3fef96dd717c1d7f3b53cc85c391ce7",
     "semantic_hash": ""
   },
   "careers/roles/private-equity-associate-to-partner.html": {
-    "mtime": 1791564129.430926,
-    "seen": 1791564134.512314,
-    "ast_hash": "89f0e0a0ac096929a6aef9821e03a80f",
+    "mtime": 1791572173.325015,
+    "seen": 1791572196.71682,
+    "ast_hash": "471fd472081a850ab4cacd4b9f617260",
     "semantic_hash": ""
   },
   "careers/roles/product-experimentation-data-scientist.html": {
-    "mtime": 1791564129.434862,
-    "seen": 1791564134.5123148,
-    "ast_hash": "5446c9c643b7773788fb6ce3beaee529",
+    "mtime": 1791572173.3287675,
+    "seen": 1791572196.716821,
+    "ast_hash": "370ba1d254fcd67c2586c8438bece0f8",
     "semantic_hash": ""
   },
   "careers/roles/product-manager.html": {
-    "mtime": 1791564129.442007,
-    "seen": 1791564134.5123148,
-    "ast_hash": "d8eed24733012d0ed24d4badd7ba7250",
+    "mtime": 1791572173.3354666,
+    "seen": 1791572196.716821,
+    "ast_hash": "2f567a971c9d4136c05197f4ab01cacb",
     "semantic_hash": ""
   },
   "careers/roles/product-marketing-manager.html": {
-    "mtime": 1791564129.4403267,
-    "seen": 1791564134.5123148,
-    "ast_hash": "eb65d7c4cffb9541ac8774412d1b1c39",
+    "mtime": 1791572173.333933,
+    "seen": 1791572196.716822,
+    "ast_hash": "1bdc471acada1f490e42dc43402310ba",
     "semantic_hash": ""
   },
   "careers/roles/project-programme-manager.html": {
-    "mtime": 1791564129.4377277,
-    "seen": 1791564134.512316,
-    "ast_hash": "96cac15c09d0ff2eace726d3065c22aa",
+    "mtime": 1791572173.331901,
+    "seen": 1791572196.716823,
+    "ast_hash": "f2d49c3a8e59fe9f389a5e938cb69ebd",
     "semantic_hash": ""
   },
   "careers/roles/public-sector-and-non-profit-manager.html": {
-    "mtime": 1791564129.4380243,
-    "seen": 1791564134.512316,
-    "ast_hash": "9f948d9d49e77091094fcb1fc11169e7",
+    "mtime": 1791572173.3322036,
+    "seen": 1791572196.716823,
+    "ast_hash": "be2ce044376970149312889158f01942",
     "semantic_hash": ""
   },
   "careers/roles/qa-test-automation-engineer-sdet.html": {
-    "mtime": 1791564129.4329176,
-    "seen": 1791564134.512317,
-    "ast_hash": "a5450d99135093e2cde82e2f5c2a512a",
+    "mtime": 1791572173.32684,
+    "seen": 1791572196.716824,
+    "ast_hash": "4d6098e00a44d54645ae6d8aafbc4ca6",
     "semantic_hash": ""
   },
   "careers/roles/quant-developer-trading-systems-engineer.html": {
-    "mtime": 1791564129.4322722,
-    "seen": 1791564134.512317,
-    "ast_hash": "6299869d31074e5eb600ce16d85c59ba",
+    "mtime": 1791572173.3262484,
+    "seen": 1791572196.716824,
+    "ast_hash": "c30d09899dbcaf3f7546fec48abdb30f",
     "semantic_hash": ""
   },
   "careers/roles/quantitative-researcher-and-quantitative-trader.html": {
-    "mtime": 1791564129.4321697,
-    "seen": 1791564134.512317,
-    "ast_hash": "d21ae8a4c219eb626d140fb0ec5a15fd",
+    "mtime": 1791572173.3261657,
+    "seen": 1791572196.716825,
+    "ast_hash": "3db96bdab6a2a770e2109495c9e94967",
     "semantic_hash": ""
   },
   "careers/roles/research-engineer.html": {
-    "mtime": 1791564129.4342213,
-    "seen": 1791564134.512318,
-    "ast_hash": "adbbbcf39dcc2d47164f33b4783df018",
+    "mtime": 1791572173.3282008,
+    "seen": 1791572196.716825,
+    "ast_hash": "92e42b424d1ca40ba718a3804ef427a3",
     "semantic_hash": ""
   },
   "careers/roles/restructuring.html": {
-    "mtime": 1791564129.4295409,
-    "seen": 1791564134.512318,
-    "ast_hash": "14d016b316ebe15817dff8dc2c0252da",
+    "mtime": 1791572173.3237913,
+    "seen": 1791572196.7168262,
+    "ast_hash": "6240b64406ed4ff13c5fd021b3980b1e",
     "semantic_hash": ""
   },
   "careers/roles/risk-management-at-banks-insurers-and-asset-managers.html": {
-    "mtime": 1791564129.4318347,
-    "seen": 1791564134.512319,
-    "ast_hash": "114cd1d44b4caa07f5b18fa45aa17ead",
+    "mtime": 1791572173.3258846,
+    "seen": 1791572196.7168262,
+    "ast_hash": "ae862b9388f1f2fc824bfafae346cd16",
     "semantic_hash": ""
   },
   "careers/roles/sales-and-business-development.html": {
-    "mtime": 1791564129.4408154,
-    "seen": 1791564134.512319,
-    "ast_hash": "5c5f347b6d4897a87b140aba880f7f59",
+    "mtime": 1791572173.3342824,
+    "seen": 1791572196.716827,
+    "ast_hash": "4f09d6fe36216dbd6269152341717a55",
     "semantic_hash": ""
   },
   "careers/roles/security-architect.html": {
-    "mtime": 1791564129.437153,
-    "seen": 1791564134.51232,
-    "ast_hash": "71e301950ab986f5c27b4aa0a2cf5e2f",
+    "mtime": 1791572173.3312173,
+    "seen": 1791572196.716827,
+    "ast_hash": "a1d50de2864fa2d7002b68cfac0ee0e1",
     "semantic_hash": ""
   },
   "careers/roles/security-consultant-and-the-path-to-ciso.html": {
-    "mtime": 1791564129.4374356,
-    "seen": 1791564134.51232,
-    "ast_hash": "953a68ec850ee7c7430248691881e022",
+    "mtime": 1791572173.3315473,
+    "seen": 1791572196.716827,
+    "ast_hash": "d3c89642a3e576056b0591c95d9368bc",
     "semantic_hash": ""
   },
   "careers/roles/security-engineer-cloud-security-engineer-iam-engineer.html": {
-    "mtime": 1791564129.4370587,
-    "seen": 1791564134.51232,
-    "ast_hash": "d089307d5a386ce45fe8f5f6ce6cd145",
+    "mtime": 1791572173.3311026,
+    "seen": 1791572196.7168279,
+    "ast_hash": "143ada22f6ee5c19830fba90215b1664",
     "semantic_hash": ""
   },
   "careers/roles/sell-side-equity-research-analyst.html": {
-    "mtime": 1791564129.4301732,
-    "seen": 1791564134.512321,
-    "ast_hash": "c1580af9117fb82e2f4fff9b6cef1f9c",
+    "mtime": 1791572173.3243563,
+    "seen": 1791572196.7168279,
+    "ast_hash": "3204bf2f4af869e6882a38b76ed46f7d",
     "semantic_hash": ""
   },
   "careers/roles/shipping-and-maritime-roles.html": {
-    "mtime": 1791564129.4384987,
-    "seen": 1791564134.512321,
-    "ast_hash": "ecb0136d2b89f4fcb886a2019830b003",
+    "mtime": 1791572173.3327193,
+    "seen": 1791572196.7168288,
+    "ast_hash": "344b6fca7ad6940835fb00fe862a1118",
     "semantic_hash": ""
   },
   "careers/roles/soc-analyst.html": {
-    "mtime": 1791564129.4365013,
-    "seen": 1791564134.512321,
-    "ast_hash": "a76b2028287af0ce81b1f0c028b607c6",
+    "mtime": 1791572173.3303292,
+    "seen": 1791572196.7168288,
+    "ast_hash": "fe4116e9a2e51afa763ff89b3409a833",
     "semantic_hash": ""
   },
   "careers/roles/solutions-engineer-sales-engineer-developer-advocate.html": {
-    "mtime": 1791564129.432993,
-    "seen": 1791564134.512322,
-    "ast_hash": "3e1c6cbe3bc81611832048f77cb1355c",
+    "mtime": 1791572173.3269506,
+    "seen": 1791572196.71683,
+    "ast_hash": "a41e725fec246843cdd274cd99f3a2de",
     "semantic_hash": ""
   },
   "careers/roles/specialist-boutique-consultant.html": {
-    "mtime": 1791564129.4417632,
-    "seen": 1791564134.512322,
-    "ast_hash": "6002ae629d57894968f0cdf5f51794ed",
+    "mtime": 1791572173.3352318,
+    "seen": 1791572196.71683,
+    "ast_hash": "060cefbf008295f0724caba68c032d18",
     "semantic_hash": ""
   },
   "careers/roles/startup-operator-founder-s-associate-chief-of-staff.html": {
-    "mtime": 1791564129.442239,
-    "seen": 1791564134.512322,
-    "ast_hash": "70850aa04e29c5bc4e09274e8861e2be",
+    "mtime": 1791572173.335702,
+    "seen": 1791572196.716831,
+    "ast_hash": "52d67e66e981a6b0031e65d84764ed9c",
     "semantic_hash": ""
   },
   "careers/roles/statistician-biostatistician.html": {
-    "mtime": 1791564129.435174,
-    "seen": 1791564134.5123231,
-    "ast_hash": "fcbdcf29cfc7eaa971f5f812c32fcc82",
+    "mtime": 1791572173.3290691,
+    "seen": 1791572196.716831,
+    "ast_hash": "347414dbc34e368e86e48e888359b585",
     "semantic_hash": ""
   },
   "careers/roles/strategy-consultant-analyst-associate-to-partner.html": {
-    "mtime": 1791564129.4415793,
-    "seen": 1791564134.5123231,
-    "ast_hash": "09c8cc6cb57e405e79d31b10956cc7e5",
+    "mtime": 1791572173.3350596,
+    "seen": 1791572196.716832,
+    "ast_hash": "04c55bcced2eba96bd2132be5e4284cb",
     "semantic_hash": ""
   },
   "careers/roles/structurer.html": {
-    "mtime": 1791564129.4300764,
-    "seen": 1791564134.512324,
-    "ast_hash": "778f8b78a5731e87da3f6c139edeab4b",
+    "mtime": 1791572173.324265,
+    "seen": 1791572196.716832,
+    "ast_hash": "83a5ad6b223f2bcc7764fc660ef29edb",
     "semantic_hash": ""
   },
   "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html": {
-    "mtime": 1791564129.438584,
-    "seen": 1791564134.512324,
-    "ast_hash": "00eeb708c223dca205a9fe01174781ac",
+    "mtime": 1791572173.3328097,
+    "seen": 1791572196.716832,
+    "ast_hash": "2a846f3b07d5b0cab0d3e09db3ef9da9",
     "semantic_hash": ""
   },
   "careers/roles/supply-chain-consultant.html": {
-    "mtime": 1791564129.4392595,
-    "seen": 1791564134.512324,
-    "ast_hash": "f0199ebccd50aac9af93f7cffc5f2619",
+    "mtime": 1791572173.3329048,
+    "seen": 1791572196.716833,
+    "ast_hash": "2254fecc664d1cba747aaf349522e2d0",
     "semantic_hash": ""
   },
   "careers/roles/sustainability-reporting-esg-assurance-specialist.html": {
-    "mtime": 1791564129.4399633,
-    "seen": 1791564134.512325,
-    "ast_hash": "fdaa4631e6505087dca125dc348f8d25",
+    "mtime": 1791572173.3335495,
+    "seen": 1791572196.716834,
+    "ast_hash": "aefff2f7b2b162860b8502a4444bdfcc",
     "semantic_hash": ""
   },
   "careers/roles/tax-advisor-tax-accountant.html": {
-    "mtime": 1791564129.439501,
-    "seen": 1791564134.512325,
-    "ast_hash": "0ccf031bae7a341cc2de15c55948230f",
+    "mtime": 1791572173.3330932,
+    "seen": 1791572196.716834,
+    "ast_hash": "910cd99a6da833a0fbcc384f1ac1bec7",
     "semantic_hash": ""
   },
   "careers/roles/tech-sector-economist.html": {
-    "mtime": 1791564129.4413073,
-    "seen": 1791564134.512326,
-    "ast_hash": "80a84e02f42cb4edaa8bf45f5bf0e732",
+    "mtime": 1791572173.3348043,
+    "seen": 1791572196.716835,
+    "ast_hash": "1f4c9c361cfa853da82d898b231f1f37",
     "semantic_hash": ""
   },
   "careers/roles/technical-programme-manager-and-product-operations.html": {
-    "mtime": 1791564129.4421532,
-    "seen": 1791564134.512326,
-    "ast_hash": "1639e7dc31416c66dc319509a33dcb8d",
+    "mtime": 1791572173.3356123,
+    "seen": 1791572196.716835,
+    "ast_hash": "a8da3ce17df3af128f81d77cc0b92e93",
     "semantic_hash": ""
   },
   "careers/roles/technology-and-digital-consultant.html": {
-    "mtime": 1791564129.4418578,
-    "seen": 1791564134.512326,
-    "ast_hash": "92ab4c03c1e5badcaec6fb04d25e91dd",
+    "mtime": 1791572173.3353107,
+    "seen": 1791572196.7168362,
+    "ast_hash": "77bfb87283360522c469d38ce484d5a2",
     "semantic_hash": ""
   },
   "careers/roles/technology-consultant-at-an-it-consultancy-system-integrator.html": {
-    "mtime": 1791564129.4335237,
-    "seen": 1791564134.512327,
-    "ast_hash": "209a71e7311292307ac84348b83897d3",
+    "mtime": 1791572173.327472,
+    "seen": 1791572196.7168362,
+    "ast_hash": "4b08679a281255eca4bd2425c806bdd8",
     "semantic_hash": ""
   },
   "careers/roles/think-tank-policy-researcher.html": {
-    "mtime": 1791564129.441386,
-    "seen": 1791564134.512327,
-    "ast_hash": "5181f06382d3d0a033782e7a2b81db50",
+    "mtime": 1791572173.3348854,
+    "seen": 1791572196.7168362,
+    "ast_hash": "3cb5088a94e97a7dab3c5a84be60e235",
     "semantic_hash": ""
   },
   "careers/roles/threat-intelligence-analyst.html": {
-    "mtime": 1791564129.4367263,
-    "seen": 1791564134.512328,
-    "ast_hash": "d448ba3f4b6aff9a83ec3231308f559b",
+    "mtime": 1791572173.3305416,
+    "seen": 1791572196.7168372,
+    "ast_hash": "ca83b5938aee1dd125a886a02850847a",
     "semantic_hash": ""
   },
   "careers/roles/trader-analyst-at-a-physical-commodity-trading-house.html": {
-    "mtime": 1791564129.4302738,
-    "seen": 1791564134.512328,
-    "ast_hash": "a9281ac88c5c0f13db3008a90ff6495f",
+    "mtime": 1791572173.3244555,
+    "seen": 1791572196.7168372,
+    "ast_hash": "39d86410a9ffdb274bed0e9faaab60dd",
     "semantic_hash": ""
   },
   "careers/roles/trader-at-a-bank.html": {
-    "mtime": 1791564129.4298527,
-    "seen": 1791564134.512328,
-    "ast_hash": "e383619d99c8a86ed04f5392f950471d",
+    "mtime": 1791572173.32406,
+    "seen": 1791572196.716838,
+    "ast_hash": "00c49a8a1a56a1d14e9bdc2e749c9869",
     "semantic_hash": ""
   },
   "careers/roles/transaction-services-valuation-corporate-finance-advisory-at-big.html": {
-    "mtime": 1791564129.4297388,
-    "seen": 1791564134.5123289,
-    "ast_hash": "7dae69b63ed79fd0807000e857f9d50d",
+    "mtime": 1791572173.3239567,
+    "seen": 1791572196.716838,
+    "ast_hash": "68904b45b66621d3c9707fefedde8e4a",
     "semantic_hash": ""
   },
   "careers/roles/venture-capital-analyst-associate-to-partner.html": {
-    "mtime": 1791564129.431073,
-    "seen": 1791564134.5123289,
-    "ast_hash": "7c5fa078440b135dc741a0792816ce9e",
+    "mtime": 1791572173.325135,
+    "seen": 1791572196.7168388,
+    "ast_hash": "d8a9e4c864e860076df5812ef457e9c6",
     "semantic_hash": ""
   },
   "careers/roles/warehouse-distribution-operations-manager.html": {
-    "mtime": 1791564129.4384162,
-    "seen": 1791564134.51233,
-    "ast_hash": "bfa84c385a296d543fff70921b954ee6",
+    "mtime": 1791572173.3325934,
+    "seen": 1791572196.7168388,
+    "ast_hash": "a06f31b741f73bbddb805d436b7192bf",
     "semantic_hash": ""
   },
   "careers/sources.html": {
-    "mtime": 1791564129.4428916,
-    "seen": 1791564134.51233,
-    "ast_hash": "80a1d8a2ae1ed14fb7ac315c52766b38",
+    "mtime": 1791572173.3367248,
+    "seen": 1791572196.71684,
+    "ast_hash": "e1c6991142a4e351538208569d745840",
+    "semantic_hash": ""
+  },
+  "careers/assets/compass-core.js": {
+    "mtime": 1791568002.5833397,
+    "seen": 1791568766.170125,
+    "ast_hash": "77b365522817089875f4a634554b59e6",
+    "semantic_hash": ""
+  },
+  "careers/assets/compass.js": {
+    "mtime": 1791571767.6284225,
+    "seen": 1791571990.688991,
+    "ast_hash": "e8d274446f45ad0a464f349bff5d7377",
+    "semantic_hash": ""
+  },
+  "careers/data/compass-data.js": {
+    "mtime": 1791572173.3480277,
+    "seen": 1791572196.712477,
+    "ast_hash": "e026be5081b4131e779a8a25d988aecc",
+    "semantic_hash": ""
+  },
+  "tools/careers/compass.js": {
+    "mtime": 1791567993.6469297,
+    "seen": 1791568766.17363,
+    "ast_hash": "b510f30cc5f36a917bd5357317b62b0a",
+    "semantic_hash": ""
+  },
+  "careers/compass.html": {
+    "mtime": 1791572173.337032,
+    "seen": 1791572196.716765,
+    "ast_hash": "d28f6c86357e8ab9cfc1681d00196731",
+    "semantic_hash": ""
+  },
+  "docs/CAREER-COMPASS.md": {
+    "mtime": 1791568754.6961112,
+    "seen": 1791568766.1742651,
+    "ast_hash": "e14d7783e91d6e3c040aafa147d1b066",
+    "semantic_hash": ""
+  },
+  "data/programme-fees.js": {
+    "mtime": 1791571949.4071903,
+    "seen": 1791571990.691653,
+    "ast_hash": "51b5f21624ec8defc32b6553e1bf06ab",
+    "semantic_hash": ""
+  },
+  "js/page-programmes.js": {
+    "mtime": 1791571949.407046,
+    "seen": 1791571990.6917791,
+    "ast_hash": "e3c6d5cfde9df0a5f389f74c832c3914",
+    "semantic_hash": ""
+  },
+  "tests/programmes-test.js": {
+    "mtime": 1791571901.040691,
+    "seen": 1791571990.692236,
+    "ast_hash": "793f926f9cc669838f4422e0454ddf07",
+    "semantic_hash": ""
+  },
+  "programmes.html": {
+    "mtime": 1791571748.415306,
+    "seen": 1791571990.693426,
+    "ast_hash": "39fe98a12103607c2dfb51127b85f063",
     "semantic_hash": ""
   }
 }

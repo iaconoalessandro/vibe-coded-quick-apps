@@ -31,7 +31,7 @@ const esbuild = require('esbuild');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, '_site');
-const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html'];
+const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'programmes.html', 'map.html', 'hiring.html'];
 /* Never published: tooling, the test suites (tests/fixtures alone is 2.6 MB),
  * parked mockups, and documents written for this repository rather than for
  * readers of the site, and local environment files (the Python virtualenv

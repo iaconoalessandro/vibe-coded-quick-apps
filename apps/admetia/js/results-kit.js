@@ -1379,6 +1379,90 @@ window.ResultsKit = (function () {
     return d;
   }
 
+  /* ------------------------------------------------------------------ */
+  /* A programme picked in the directory (programmes.html)               */
+  /* ------------------------------------------------------------------ */
+
+  /* "Test my chances" in the directory opens a calculator with ?school=<key>
+   * (a model id, or mba:<name>). `name(key)` returns the programme's name
+   * when this calculator scores it, so a stale or foreign key is ignored. */
+  function picked(name) {
+    var key = null;
+    try { key = new URLSearchParams(location.search).get('school'); } catch (e) { return null; }
+    if (!key) return null;
+    var n = name(key);
+    return n ? { key: key, name: n } : null;
+  }
+
+  /* Above the questions: which programme the reader came to test, and a way
+   * straight to the results when this browser already holds answers. */
+  function pickedBanner(view, p, opts) {
+    if (!p || !view) return null;
+    var box = el('div', 'note-card picked-card');
+    box.setAttribute('role', 'status');
+    box.appendChild(el('strong', null, T('Testing your chances at {name}.', { name: p.name })));
+    box.appendChild(document.createTextNode(' ' + T('Answer the questions as usual: the results open at this programme, with every other one in the track below it.')));
+    var row = el('span', 'picked-actions');
+    if (opts && opts.hasAnswers && opts.hasAnswers()) {
+      var b = el('button', 'btn small primary', T('See it with the answers saved here'));
+      b.type = 'button';
+      b.addEventListener('click', opts.show);
+      row.appendChild(b);
+    }
+    var a = el('a', 'picked-back', T('Back to the programme directory'));
+    a.href = 'programmes.html';
+    row.appendChild(a);
+    box.appendChild(row);
+    /* Below the page's own headline, just above the questions. */
+    var grid = view.querySelector('.q-grid');
+    if (grid && grid.parentNode === view) view.insertBefore(box, grid);
+    else view.insertBefore(box, view.firstChild);
+    return box;
+  }
+
+  /* On the results: open the picked programme's row, mark it, and put a line
+   * at the top that jumps to it. A row in the ruled-out list opens that list
+   * first, so the rule that blocks it is in view. */
+  function pickedResults(view, p) {
+    if (!p || !view) return null;
+    var row = null;
+    Array.prototype.forEach.call(view.querySelectorAll('[data-key]'), function (r) {
+      if (!row && r.dataset.key === p.key) row = r;
+    });
+    var box = el('div', 'note-card picked-card');
+    box.appendChild(el('strong', null, T('Your programme: {name}.', { name: p.name })));
+    if (!row) {
+      box.appendChild(document.createTextNode(' ' + T('It is not scored on this page.')));
+    } else {
+      row.classList.add('picked');
+      var out = row.closest && row.closest('details.out-list');
+      box.appendChild(document.createTextNode(' ' + (out
+        ? T('A published requirement rules it out for your answers; its row says which.')
+        : T('Its row is marked below, with its verdict and what it weighs.'))));
+      var b = el('button', 'btn small', T('Jump to it'));
+      b.type = 'button';
+      b.addEventListener('click', function () {
+        if (out) out.open = true;
+        var more = row.querySelector('details.more');
+        if (more) more.open = true;
+        row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      var actions = el('span', 'picked-actions');
+      actions.appendChild(b);
+      var a = el('a', 'picked-back', T('Back to the programme directory'));
+      a.href = 'programmes.html';
+      actions.appendChild(a);
+      box.appendChild(actions);
+      if (out) out.open = true;
+      var more = row.querySelector('details.more');
+      if (more) more.open = true;
+    }
+    var head = view.querySelector('.results-head, header');
+    if (head && head.parentNode === view) view.insertBefore(box, head.nextSibling);
+    else view.insertBefore(box, view.firstChild);
+    return box;
+  }
+
   /* One control above a table that opens or closes every fold in it. */
   function foldAll(table) {
     var b = el('button', 'fold-all', 'Show all details');
@@ -1446,6 +1530,9 @@ window.ResultsKit = (function () {
     jumpBar: jumpBar,
     outList: outList,
     fmtDate: fmtDate,
+    picked: picked,
+    pickedBanner: pickedBanner,
+    pickedResults: pickedResults,
     STALE_DAYS: STALE_DAYS
   };
 }());

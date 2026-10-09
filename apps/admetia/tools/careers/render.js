@@ -51,7 +51,7 @@ function site(ROOT, data) {
    * "css/app.css", "masters.html?track=mif") and made relative per page. */
   const U = {
     home: 'careers/index.html', roles: 'careers/roles/index.html', compare: 'careers/compare.html',
-    sources: 'careers/sources.html', italy: 'careers/italy-pay.html',
+    sources: 'careers/sources.html', italy: 'careers/italy-pay.html', compass: 'careers/compass.html',
     field: (s) => `careers/fields/${s}.html`, role: (id) => `careers/roles/${roleById.get(id).slug}.html`,
     bg: (s) => `careers/backgrounds/${s}.html`
   };
@@ -103,7 +103,7 @@ function site(ROOT, data) {
       page.crumbs.map((c, i) => i === page.crumbs.length - 1
         ? `<li><span aria-current="page">${c.name ? nm(c.label) : ui(c.label)}</span></li>`
         : `<li><a href="${r(c.href)}">${c.name ? nm(c.label) : ui(c.label)}</a></li>`).join('') + '</ol></nav>' : '';
-    const local = [['Explorer', U.home], ['By background', U.home + '#backgrounds'], ['By field', U.home + '#fields'],
+    const local = [['Explorer', U.home], ['Compass', U.compass], ['By background', U.home + '#backgrounds'], ['By field', U.home + '#fields'],
       ['All roles', U.roles], ['Compare', U.compare], ['Sources', U.sources]]
       .map(([l, h]) => `<a href="${r(h)}"${h === from ? ' aria-current="page"' : ''}>${ui(l)}</a>`).join('');
     const title = page.title === 'Career Explorer' ? 'Career Explorer — Admetia' : `${page.title} — Career Explorer — Admetia`;
@@ -164,7 +164,7 @@ ${footer(from)}
 <script defer src="${r('js/i18n-it.js')}"></script>
 <script defer src="${r('js/stats.js')}"></script>
 <script defer src="${r('careers/assets/careers.js')}"></script>
-</body>
+${(page.scripts || []).map((s) => `<script defer src="${r(s)}"></script>`).join('\n')}${page.scripts ? '\n' : ''}</body>
 </html>
 `;
   }
@@ -264,6 +264,13 @@ ${entries.map(([id, text]) => `<li><a href="#${id}">${text}</a></li>`).join('\n'
     <p class="form-meta">${uiRaw(`Or browse <a href="${rel(from, U.roles)}">every role</a>, or <a href="${rel(from, U.compare)}">compare them side by side</a>.`)}</p>
   </div>
 </header>
+
+<aside class="cx-compass-band" aria-labelledby="compass-door">
+  <p class="kicker">${ui('Door zero')}</p>
+  <h2 id="compass-door" class="cx-door-h">${ui('I don’t know yet')}</h2>
+  <p>${ui('Answer 8 to 17 questions about what you studied, what you would enjoy doing and how you want to work. The Career Compass ranks the role families against your answers and shows why, what stands in the way, and a door that is still open.')}</p>
+  <p><a class="btn primary" href="${rel(from, U.compass)}">${ui('Take the Career Compass')}</a></p>
+</aside>
 
 <div class="stories cx-doors">
   <section class="story-col" id="backgrounds" aria-labelledby="door-1">
@@ -665,6 +672,67 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
       description: 'Italian gross pay (RAL) by field and role family from recruiter guides, contract tables and postings, with source, year and confidence for every row.', body });
   }());
 
+  /* Career Compass: a static introduction (and a way round for readers
+   * without scripts); careers/assets/compass.js draws the questionnaire and
+   * the results into it from careers/data/compass-data.js. */
+  (function compassPage() {
+    const from = U.compass;
+    const body = `<header class="cx-head">
+  <p class="kicker">${ui('Career Compass · for when you have not decided yet')}</p>
+  <h1 class="headline cx-h1">${ui('Career Compass')}</h1>
+  <p class="standfirst">${ui('A short questionnaire that ranks all 124 role families in the Career Explorer against what you studied, what you would enjoy doing and how you want to work, and shows the reasons, the obstacles and the research behind each one.')}</p>
+</header>
+<div class="cc-app" data-cc-app>
+<div class="cc-intro" data-cc-intro>
+  <div class="cc-resume resume-bar" data-cc-resume hidden><span>${ui('You have answers saved in this browser.')}</span><button type="button" class="btn small primary" data-cc-resume-go>${ui('Pick up where you left off')}</button><button type="button" class="btn small ghost" data-cc-resume-clear>${ui('Clear them')}</button></div>
+  <div class="cc-modes">
+    <div class="cc-mode">
+      <h2 class="cx-door-h">${ui('Quick')}</h2>
+      <p>${ui('8 questions, about 2 minutes: your degree, your stage, the work you would enjoy, and how you want to work.')}</p>
+      <button type="button" class="btn primary" data-cc-start="quick" hidden>${ui('Start the quick version')}</button>
+    </div>
+    <div class="cc-mode">
+      <h2 class="cx-door-h">${ui('Full')}</h2>
+      <p>${ui('17 questions, about 6 minutes. Adds citizenship, languages and where you want to work, pressure and competition, employers, sectors, more study and AI.')}</p>
+      <button type="button" class="btn primary" data-cc-start="full" hidden>${ui('Start the full version')}</button>
+    </div>
+  </div>
+  <noscript><p class="cc-warn">${uiRaw('The Career Compass needs JavaScript. Without it, start from <a href="' + rel(from, U.home) + '#backgrounds">what you studied</a> or <a href="' + rel(from, U.compare) + '">compare every role</a>.')}</p></noscript>
+  <div class="stories cc-promise">
+    <section class="story-col">
+      <h2 class="rubric">${ui('What you get')}</h2>
+      <ul>
+        <li>${ui('Three fields and eight role families that fit now, plus those that fit later, after a PhD or a first job elsewhere.')}</li>
+        <li>${ui('For each role, the answers that moved it up or down, its scores, and the research’s own lines on the main door, language, visas, AI and whether a master’s helps.')}</li>
+        <li>${ui('A door that is still open for every hard-to-enter role, and what would change your list.')}</li>
+        <li>${ui('The myths and constraints your answers run into, quoted from the research.')}</li>
+      </ul>
+    </section>
+    <section class="story-col">
+      <h2 class="rubric">${ui('What it is not')}</h2>
+      <ul>
+        <li>${ui('Not a personality test: no types, no labels, nothing said about you that you did not say.')}</li>
+        <li>${ui('Not a prediction. Interest tests predict job satisfaction only weakly; the results end with cheap ways to test a career for real.')}</li>
+        <li>${ui('Not advice. Every figure is dated and approximate, with its source on the role pages.')}</li>
+      </ul>
+    </section>
+    <section class="story-col">
+      <h2 class="rubric">${ui('Your answers')}</h2>
+      <ul>
+        <li>${ui('Scored in this browser. Nothing is sent anywhere, and there is no account.')}</li>
+        <li>${ui('Saved in this browser so you can come back; “Start again” clears them.')}</li>
+        <li>${ui('A share link carries them after the “#” in the address, which browsers do not send to servers.')}</li>
+      </ul>
+    </section>
+  </div>
+</div>
+<div class="cc-stage" data-cc-stage hidden></div>
+</div>`;
+    add({ path: from, title: 'Career Compass', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Compass' }],
+      scripts: ['careers/data/compass-data.js', 'careers/assets/compass-core.js', 'careers/assets/compass.js'],
+      description: 'A short questionnaire for undecided students: ranks 124 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.', body });
+  }());
+
   function searchIndex() {
     const clip = (s, n) => { s = P.stripMd(s).replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n) : s; };
     return data.roles.map((r) => ({
@@ -684,7 +752,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
     return [...used].map(norm).filter((k) => /[a-z]{3}/.test(k) && s.dict[k] === undefined && s.dict[k.replace(/&/g, '&amp;')] === undefined);
   }
 
-  return { pages: () => pages, searchIndex, missingIt, used };
+  return { pages: () => pages, searchIndex, missingIt, used, U, rel };
 }
 
 module.exports = { site };

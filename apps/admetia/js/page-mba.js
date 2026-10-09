@@ -311,6 +311,7 @@
     if (chip) chip.textContent = fmt(active.base);
     if (!keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
     route.shown();
+    ResultsKit.pickedResults(resultsView, pick);
   }
 
   /* ---------------------------------------------------------------------
@@ -487,6 +488,16 @@
   function note(text, kind) {
     return el('div', 'note-card' + (kind ? ' ' + kind : ''), text);
   }
+
+  /* Opened from the programme directory with ?school=mba:<name>. */
+  var pick = ResultsKit.picked(function (key) {
+    var name = key.replace(/^mba:/, '');
+    return key.indexOf('mba:') === 0 && M.adjustedSchools.concat(M.generalSchools).some(function (s) { return s.name === name; }) ? name : null;
+  });
+  ResultsKit.pickedBanner(wizardView, pick, {
+    hasAnswers: function () { return Object.keys(wiz.answers()).length > 0; },
+    show: function () { showResults(wiz.answers()); }
+  });
 
   /* Opened on #results (a reload, or "See your results" from another page). */
   if (route.initial()) showResults(wiz.answers());
