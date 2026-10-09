@@ -276,6 +276,14 @@ a:hover { text-decoration-thickness: 2px; }
 .sections-inner { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; justify-content: safe center; }
 .sections-inner::-webkit-scrollbar { display: none; }
 .sec-cluster { flex: none; }
+/* Four sections (Business, Computing, Atlas, Careers): tighter spacing, and
+   the row may run 40px past the text column on each side, so all four fit
+   in one row on a 1280px screen in every edition. Narrower screens scroll
+   as before. */
+.sections { max-width: calc(var(--page) + 80px); }
+.sections-inner { column-gap: 16px; }
+.sec-cluster { padding: 0 16px; column-gap: 12px; }
+.sec-items { column-gap: 16px; }
 .sections a.sec-group {
   display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px;
   background: var(--ink); color: var(--paper); font-weight: 800; text-decoration: none;

@@ -40,6 +40,14 @@
     wallstreet: ['roboto-serif-condensed', 'hanken-grotesk'],
     watchlist: ['noto-serif-display', 'hanken-grotesk']
   };
+  /* Pages in a subfolder (careers/) load this file by src; the fonts sit
+   * beside js/, so resolve them from the script's own address. Inlined in a
+   * root page by tools/build.js, there is no src and fonts/ is right. */
+  var ROOT = '';
+  try {
+    var src = document.currentScript && document.currentScript.src;
+    if (src) ROOT = new URL('../', src).href;
+  } catch (e) { /* old browser: relative paths */ }
   function preloadFonts(id) {
     /* Once sw.js controls the page the fonts come from its cache at once, and
      * a preload would only fetch each one a second time. */
@@ -50,7 +58,7 @@
       l.as = 'font';
       l.type = 'font/woff2';
       l.crossOrigin = 'anonymous';
-      l.href = 'fonts/' + f + '.woff2';
+      l.href = ROOT + 'fonts/' + f + '.woff2';
       document.head.appendChild(l);
     });
   }

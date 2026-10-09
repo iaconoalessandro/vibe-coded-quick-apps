@@ -1025,5 +1025,369 @@ I18N.add('it', {
   '<b class="rubric-in">Map data</b>Country shapes from Natural Earth (public domain), drawn as Italy recognises boundaries; no position on any boundary is implied. Simplified for the screen, so coastlines and borders are approximate.':
     '<b class="rubric-in">Dati cartografici</b>Forme dei paesi da Natural Earth (pubblico dominio), disegnate secondo i confini riconosciuti dall’Italia; non si intende prendere posizione su alcun confine. Semplificate per lo schermo, quindi coste e confini sono approssimativi.',
   '<b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.':
-    '<b class="rubric-in">Colophon</b>Le tue scelte non lasciano mai questo browser. Le visite sono contate in forma anonima — quale pagina, mai quale paese.'
+    '<b class="rubric-in">Colophon</b>Le tue scelte non lasciano mai questo browser. Le visite sono contate in forma anonima — quale pagina, mai quale paese.',
+
+  /* ------------------------------------------------- Career Explorer */
+  /* The interface around the research (careers/); the research itself
+   * stays in English and carries translate="no". */
+  'Careers':
+    'Carriere',
+  'Which kind of role, though? The <a href="careers/index.html">Career Explorer</a> sets out what each one involves, what it pays and how people get in.':
+    'Ma quale ruolo? <a href="careers/index.html">Esplora le carriere</a> spiega che cosa comporta ciascuno, quanto paga e come si entra.',
+  'Still deciding which job to aim for? The <a href="careers/index.html">Career Explorer</a> sets out what each role involves, what it pays and how people get in.':
+    'Non hai ancora deciso a quale lavoro puntare? <a href="careers/index.html">Esplora le carriere</a> spiega che cosa comporta ogni ruolo, quanto paga e come si entra.',
+  'Careers desk · what the jobs are, and the way in':
+    'Pagina carriere · che cosa sono i lavori, e come si entra',
+  'Career Explorer':
+    'Esplora le carriere',
+  'role families in':
+    'famiglie di ruoli in',
+  'fields: what the work is like, what it pays, how hard it is to get in and which degrees lead there. Start from what you studied, from a field, or from the job you want.':
+    'settori: com’è il lavoro, quanto paga, quanto è difficile entrare e quali lauree ci portano. Parti da ciò che hai studiato, da un settore o dal lavoro che vuoi.',
+  'Search every role':
+    'Cerca tra tutti i ruoli',
+  'e.g. private equity, SOC analyst, brand manager':
+    'es. private equity, SOC analyst, brand manager',
+  'Or browse':
+    'Oppure sfoglia',
+  'every role':
+    'tutti i ruoli',
+  ', or':
+    ', oppure',
+  'compare them side by side':
+    'confrontali fianco a fianco',
+  'Door one':
+    'Prima porta',
+  'I know what I studied':
+    'So che cosa ho studiato',
+  'Pick your background. You will see every field and role family it leads to, grouped by how well it fits.':
+    'Scegli il tuo percorso di studi. Vedrai ogni settore e famiglia di ruoli a cui porta, raggruppati per quanto si adatta.',
+  'Door two':
+    'Seconda porta',
+  'I know the field':
+    'Conosco il settore',
+  'Open a field for its map of areas and sectors, its role families with their scores, the employers and the backgrounds that fit.':
+    'Apri un settore per vederne le aree, le famiglie di ruoli con i loro punteggi, i datori di lavoro e i percorsi di studi adatti.',
+  'Door three':
+    'Terza porta',
+  'I know where I want to end up':
+    'So dove voglio arrivare',
+  'Find the role you want and read how people get there: the degrees, the programmes, the timeline and the exits.':
+    'Trova il ruolo che vuoi e leggi come ci si arriva: le lauree, i programmi, i tempi e le uscite.',
+  'All role families, searchable':
+    'Tutte le famiglie di ruoli, con ricerca',
+  'Compare roles: hours, stress, pay, entry':
+    'Confronta i ruoli: ore, stress, stipendio, ingresso',
+  'Italy pay add-on':
+    'Appendice sugli stipendi in Italia',
+  'Sources, scales and gaps':
+    'Fonti, scale e lacune',
+  'The thirteen fields':
+    'I tredici settori',
+  'Field':
+    'Settore',
+  'Depth':
+    'Profondità',
+  'Role families':
+    'Famiglie di ruoli',
+  'What it is':
+    'Che cos’è',
+  'Explorer':
+    'Esplora',
+  'By background':
+    'Per studi',
+  'By field':
+    'Per settore',
+  'All roles':
+    'Tutti i ruoli',
+  'Career Explorer — Admetia':
+    'Esplora le carriere — Admetia',
+  'What 124 graduate jobs in 13 fields are really like: the work, hours, stress, pay by region, the way in and the exits. Start from your degree, a field or the job you want.':
+    'Come sono davvero 124 lavori per laureati in 13 settori: il lavoro, le ore, lo stress, lo stipendio per area, come si entra e le uscite. Parti dalla tua laurea, da un settore o dal lavoro che vuoi.',
+  'Skip to content':
+    'Vai al contenuto',
+  'Career Explorer sections':
+    'Sezioni di Esplora le carriere',
+  'Read this before you rely on the explorer':
+    'Leggi prima di fidarti di queste pagine',
+  'A reality check on pay, hours and tiers':
+    'Una verifica su stipendi, ore e classifiche',
+  'Every figure here is dated and approximate, copied from the research with its source and year. Pay is in local currency and never converted. Tier lists reflect industry consensus and practitioner perception, not objective fact. Three limits apply to almost every page:':
+    'Ogni cifra qui è datata e approssimativa, copiata dalla ricerca con la sua fonte e il suo anno. Gli stipendi sono in valuta locale e mai convertiti. Le classifiche dei datori di lavoro riflettono il consenso del settore e la percezione di chi ci lavora, non fatti oggettivi. Tre limiti valgono per quasi ogni pagina:',
+  'The full list of gaps, the rating scales and the researchers’ assumptions are on the':
+    'L’elenco completo delle lacune, le scale di valutazione e le ipotesi dei ricercatori sono nella',
+  'sources page':
+    'pagina delle fonti',
+  'The research':
+    'La ricerca',
+  'Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.':
+    'Tredici rapporti di settore e un’appendice sugli stipendi in Italia, ricercati il 9 ottobre 2026 per Admetia. Niente in queste pagine è una consulenza: controlla le fonti prima di fidarti di una cifra.',
+  'Strong fit':
+    'Adatto',
+  'role families':
+    'famiglie di ruoli',
+  'role family':
+    'famiglia di ruoli',
+  'Fields rated strong overall':
+    'Settori con valutazione complessiva «adatto»',
+  'Field rating':
+    'Valutazione del settore',
+  'Role families rated strong':
+    'Famiglie di ruoli valutate «adatto»',
+  'rating':
+    'valutazione',
+  'People/communication':
+    'Persone/comunicazione',
+  'People':
+    'Persone',
+  'Quantitative/technical':
+    'Quantitativo/tecnico',
+  'Quant':
+    'Quant.',
+  'Stress':
+    'Stress',
+  'Entry difficulty':
+    'Difficoltà di ingresso',
+  'Entry':
+    'Ingresso',
+  'Possible fit':
+    'Possibile',
+  'Fields rated possible overall':
+    'Settori con valutazione complessiva «possibile»',
+  'Role families rated possible':
+    'Famiglie di ruoli valutate «possibile»',
+  'Fields rated stretch overall':
+    'Settori con valutazione complessiva «difficile»',
+  'Role families rated stretch':
+    'Famiglie di ruoli valutate «difficile»',
+  'No field is rated strong overall for this background.':
+    'Nessun settore ha valutazione complessiva «adatto» per questi studi.',
+  'No field is rated possible overall for this background.':
+    'Nessun settore ha valutazione complessiva «possibile» per questi studi.',
+  'No field is rated stretch overall for this background.':
+    'Nessun settore ha valutazione complessiva «difficile» per questi studi.',
+  'No role family is rated strong for this background.':
+    'Nessuna famiglia di ruoli è valutata «adatto» per questi studi.',
+  'No role family is rated possible for this background.':
+    'Nessuna famiglia di ruoli è valutata «possibile» per questi studi.',
+  'No role family is rated stretch for this background.':
+    'Nessuna famiglia di ruoli è valutata «difficile» per questi studi.',
+  'If you studied':
+    'Se hai studiato',
+  'Every field and role family in the research, grouped by how well this background fits. A strong fit means the background is a standard feeder, not that entry is easy: check each role’s entry difficulty.':
+    'Ogni settore e famiglia di ruoli della ricerca, raggruppati per quanto questi studi si adattano. «Adatto» significa che questi studi sono un canale d’ingresso abituale, non che entrare sia facile: controlla la difficoltà di ingresso di ogni ruolo.',
+  'Ratings: the background fit matrix in the research index (section 3), one letter per role family; reasons: section 5 of each field’s report. See also':
+    'Valutazioni: la matrice di adattamento nell’indice della ricerca (sezione 3), una lettera per famiglia di ruoli; motivazioni: sezione 5 del rapporto di ogni settore. Vedi anche',
+  'the whole matrix':
+    'la matrice completa',
+  'Other backgrounds':
+    'Altri studi',
+  'Next background':
+    'Studi successivi',
+  'Previous background':
+    'Studi precedenti',
+  'Breadcrumb':
+    'Percorso',
+  'Role families and their scores':
+    'Famiglie di ruoli e punteggi',
+  '(from the research index; 1-5 scales on the sources page)':
+    '(dall’indice della ricerca; scale da 1 a 5 nella pagina delle fonti)',
+  'Hours/week (peak)':
+    'Ore/settimana (picco)',
+  'Italy pay (add-on)':
+    'Stipendi in Italia (appendice)',
+  'Verify before relying':
+    'Verifica prima di fidarti',
+  'Parts of this field to check first':
+    'Parti di questo settore da verificare prima',
+  'Parts of this page to check first':
+    'Parti di questa pagina da verificare prima',
+  'Italian pay: what is still missing':
+    'Stipendi in Italia: che cosa manca ancora',
+  'The research index lists these as gaps or low-confidence areas to check against primary sources. Quoted from index.md, section 6 (full list on the':
+    'L’indice della ricerca le elenca come lacune o aree poco affidabili da verificare sulle fonti primarie. Citazione da index.md, sezione 6 (elenco completo nella',
+  'Each background’s full list of roles:':
+    'L’elenco completo dei ruoli per ogni percorso di studi:',
+  'From the Italy pay addendum (compiled 9 October 2026), which fills Italian gaps across all thirteen reports. How to read RAL, net pay and the 13th month:':
+    'Dall’appendice sugli stipendi in Italia (compilata il 9 ottobre 2026), che colma le lacune italiane dei tredici rapporti. Come leggere RAL, netto e tredicesima:',
+  'Other fields':
+    'Altri settori',
+  'Next field':
+    'Settore successivo',
+  'Previous field':
+    'Settore precedente',
+  'At a glance':
+    'In breve',
+  'Hours a week, typical (peak)':
+    'Ore a settimana, tipiche (picco)',
+  'Entry pay: US / UK / Italy (approx.)':
+    'Stipendio d’ingresso: USA / Regno Unito / Italia (indicativo)',
+  'How to get there':
+    'Come arrivarci',
+  'From the cross-field comparison in the research index; scales on the':
+    'Dal confronto tra settori nell’indice della ricerca; scale nella',
+  '. “n.r.d.” means no reliable data found.':
+    '. «n.r.d.» significa che non sono stati trovati dati affidabili.',
+  'Where this role connects':
+    'Dove porta questo ruolo',
+  'Roles named in its exit opportunities':
+    'Ruoli citati tra le sue uscite',
+  'named as':
+    'citato come',
+  'Roles whose exits lead here':
+    'Ruoli le cui uscite portano qui',
+  'No other role family names this one in its exits.':
+    'Nessun’altra famiglia di ruoli cita questa tra le sue uscite.',
+  'Other roles in':
+    'Altri ruoli in',
+  'Similar scores in other fields':
+    'Punteggi simili in altri settori',
+  'The closest matches on the four 1-5 scores (people, quant, stress, entry difficulty). A similar profile, not the same work.':
+    'I più vicini sui quattro punteggi da 1 a 5 (persone, quantitativo, stress, difficoltà di ingresso). Un profilo simile, non lo stesso lavoro.',
+  'Which backgrounds fit':
+    'Quali studi sono adatti',
+  'From the background fit matrix in the research index. The reasons are on each background’s page and in section 5 of the field’s report:':
+    'Dalla matrice di adattamento nell’indice della ricerca. Le motivazioni sono nella pagina di ogni percorso di studi e nella sezione 5 del rapporto del settore:',
+  'Master’s calculators on this site':
+    'Calcolatori per i master su questo sito',
+  'Master in Finance calculator':
+    'Calcolatore Master in Finance',
+  'Master in Management calculator':
+    'Calcolatore Master in Management',
+  'Marketing master’s calculator':
+    'Calcolatore master in Marketing',
+  'Computer Science master’s calculator':
+    'Calcolatore master in Informatica',
+  'Data Science & AI master’s calculator':
+    'Calcolatore master in Data Science e IA',
+  'Conversion master’s calculator (if you studied something else)':
+    'Calcolatore master di conversione (se hai studiato altro)',
+  'MBA calculator':
+    'Calcolatore MBA',
+  'All roles in':
+    'Tutti i ruoli in',
+  'next':
+    'successivo',
+  'previous':
+    'precedente',
+  'Rows from the Italy pay addendum (9 October 2026) that match this role. The match is the editors’; each row keeps the add-on’s own label, source and confidence. All rows for the field:':
+    'Righe dell’appendice sugli stipendi in Italia (9 ottobre 2026) che corrispondono a questo ruolo. L’abbinamento è della redazione; ogni riga conserva l’etichetta, la fonte e l’affidabilità dell’appendice. Tutte le righe del settore:',
+  '; how to read Italian pay:':
+    '; come leggere gli stipendi italiani:',
+  'Other roles in this field':
+    'Altri ruoli di questo settore',
+  'Back to':
+    'Torna a',
+  'Next role':
+    'Ruolo successivo',
+  'Previous role':
+    'Ruolo precedente',
+  'The Italy pay add-on has no row for this role family. The Italian figures the report itself found, if any, are under the pay section above.':
+    'L’appendice sugli stipendi in Italia non ha righe per questa famiglia di ruoli. Le cifre italiane trovate dal rapporto, se ci sono, sono nella sezione sullo stipendio più sopra.',
+  'None of the exits above names another role family exactly. Read them in full, or browse the related roles below.':
+    'Nessuna delle uscite qui sopra nomina esattamente un’altra famiglia di ruoli. Leggile per intero, o sfoglia i ruoli collegati qui sotto.',
+  'From the add-on’s table for':
+    'Dalla tabella dell’appendice per',
+  'All role families':
+    'Tutte le famiglie di ruoli',
+  'Every role in the research. Search by job title, employer or skill, or narrow the list by field and scores, then open a role for how to get there.':
+    'Ogni ruolo della ricerca. Cerca per nome del lavoro, datore di lavoro o competenza, oppure restringi l’elenco per settore e punteggi, poi apri un ruolo per vedere come arrivarci.',
+  'Filter roles':
+    'Filtra i ruoli',
+  'Search':
+    'Cerca',
+  'Job title, employer or skill':
+    'Lavoro, datore di lavoro o competenza',
+  'All fields':
+    'Tutti i settori',
+  'Entry difficulty at most':
+    'Difficoltà di ingresso al massimo',
+  'Stress at most':
+    'Stress al massimo',
+  'Leans':
+    'Tende a',
+  'Either way':
+    'Indifferente',
+  'More quantitative than people':
+    'Più numeri che persone',
+  'More people than quantitative':
+    'Più persone che numeri',
+  'Even':
+    'In equilibrio',
+  'No role matches these filters.':
+    'Nessun ruolo corrisponde a questi filtri.',
+  'All role families — Career Explorer — Admetia':
+    'Tutte le famiglie di ruoli — Esplora le carriere — Admetia',
+  'Search and filter all 124 role families by field, entry difficulty, stress and profile.':
+    'Cerca e filtra tutte le 124 famiglie di ruoli per settore, difficoltà di ingresso, stress e profilo.',
+  'Compare roles':
+    'Confronta i ruoli',
+  'Hours, stress, how much of the job is people or numbers, entry pay and how hard it is to get in, for every role family. Sort a column, filter, or tick up to three roles to set them side by side.':
+    'Ore, stress, quanto il lavoro è fatto di persone o di numeri, stipendio d’ingresso e difficoltà di ingresso, per ogni famiglia di ruoli. Ordina una colonna, filtra, o spunta fino a tre ruoli per metterli fianco a fianco.',
+  'Filter the table':
+    'Filtra la tabella',
+  'Role name':
+    'Nome del ruolo',
+  'Side by side':
+    'Fianco a fianco',
+  'Tick up to three roles in the table.':
+    'Spunta fino a tre ruoli nella tabella.',
+  'All role families compared':
+    'Tutte le famiglie di ruoli a confronto',
+  'Entry pay cannot be sorted: the research gives it in local currency, base or total, by city and year, and does not convert it. Scores sort on the lowest figure given (“3-4” as 3, “4 (5 at top boutiques)” as 4); hours on the first (“75-85 (100-120)” as 75). Scales:':
+    'Lo stipendio d’ingresso non si può ordinare: la ricerca lo riporta in valuta locale, base o totale, per città e anno, e non lo converte. I punteggi si ordinano sulla cifra più bassa indicata («3-4» vale 3, «4 (5 at top boutiques)» vale 4); le ore sulla prima («75-85 (100-120)» vale 75). Scale:',
+  'Compare roles — Career Explorer — Admetia':
+    'Confronta i ruoli — Esplora le carriere — Admetia',
+  'Sort and filter every role family by hours, stress, people vs quantitative work, entry pay and entry difficulty; set up to three side by side.':
+    'Ordina e filtra ogni famiglia di ruoli per ore, stress, lavoro con le persone o con i numeri, stipendio d’ingresso e difficoltà di ingresso; mettine fino a tre fianco a fianco.',
+  'How the research was done, the scales every score uses, what the researchers assumed, what is still uncertain, and every source each report cites.':
+    'Come è stata fatta la ricerca, le scale di ogni punteggio, che cosa hanno ipotizzato i ricercatori, che cosa è ancora incerto, e ogni fonte citata da ciascun rapporto.',
+  'About the research':
+    'La ricerca',
+  'Shared scales and conventions':
+    'Scale e convenzioni comuni',
+  'Background fit matrix':
+    'Matrice di adattamento per studi',
+  'Assumptions made':
+    'Ipotesi adottate',
+  'Gaps and low-confidence areas':
+    'Lacune e aree poco affidabili',
+  'Gaps and low-confidence areas to verify':
+    'Lacune e aree poco affidabili da verificare',
+  'Sources by report':
+    'Fonti per rapporto',
+  'Italian pay has its own page:':
+    'Gli stipendi italiani hanno una pagina a parte:',
+  'Role-family ratings are on each background’s page:':
+    'Le valutazioni per famiglia di ruoli sono nella pagina di ogni percorso di studi:',
+  'Open the field':
+    'Apri il settore',
+  'Sources, scales and gaps — Career Explorer — Admetia':
+    'Fonti, scale e lacune — Esplora le carriere — Admetia',
+  'The sources behind every Career Explorer page, the 1-5 rating scales, the researchers’ assumptions and the list of gaps to verify.':
+    'Le fonti dietro ogni pagina di Esplora le carriere, le scale di valutazione da 1 a 5, le ipotesi dei ricercatori e l’elenco delle lacune da verificare.',
+  'Italian pay, field by field':
+    'Stipendi in Italia, settore per settore',
+  'How to read Italian pay':
+    'Come leggere gli stipendi italiani',
+  'Pay by field and role family':
+    'Stipendi per settore e famiglia di ruoli',
+  'Graduate outcome benchmarks':
+    'Dati di riferimento sugli sbocchi dei laureati',
+  'Italy pay':
+    'Stipendi in Italia',
+  'Italy pay add-on — Career Explorer — Admetia':
+    'Appendice sugli stipendi in Italia — Esplora le carriere — Admetia',
+  'Italian gross pay (RAL) by field and role family from recruiter guides, contract tables and postings, with source, year and confidence for every row.':
+    'Stipendi lordi italiani (RAL) per settore e famiglia di ruoli da guide dei recruiter, tabelle contrattuali e annunci, con fonte, anno e affidabilità per ogni riga.',
+  '{n} of {total} role families shown':
+    '{n} famiglie di ruoli su {total}',
+  'No role matches “{q}”.':
+    'Nessun ruolo corrisponde a «{q}».',
+  'Search could not load here. Every role is listed on the All roles page.':
+    'La ricerca non si è caricata. Ogni ruolo è elencato nella pagina Tutti i ruoli.',
+  '{n} of {max} chosen. Untick a role in the table, or remove it here.':
+    '{n} su {max} scelti. Togli la spunta nella tabella, o rimuovilo qui.',
+  'Remove':
+    'Rimuovi'
 });
