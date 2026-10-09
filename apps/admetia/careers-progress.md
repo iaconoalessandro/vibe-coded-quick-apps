@@ -12,26 +12,31 @@ Branch `career-explorer` (not pushed). Generator: `npm run careers` (tools/build
 - [x] Report survey: 3 label formats, 10 template labels, summary tables 7 columns, matrices in index 3.2
 
 ## 2. Generator
-- [ ] Parser → careers/data/careers.json (fails loudly on any missing section/role)
-- [ ] Italy add-on row → role mapping (tools/careers/italy-map.json), unmapped rows logged
-- [ ] Markdown renderer (subset used by the reports)
-- [ ] Templates: home, 11 backgrounds, 13 fields, roles index, 124 roles, compare, sources
-- [ ] Cross-links: branch, prev/next, related, exits (exact match), reached-from, backgrounds, calculators (tracks verified)
-- [ ] Search index JSON + vanilla JS search/filter/compare
+- [x] Parser → careers/data/careers.json (fails loudly on any missing section/role)
+- [x] Italy add-on row → role mapping (tools/careers/italy-map.json), unmapped rows logged
+- [x] Markdown renderer (subset used by the reports)
+- [x] Templates: home, 11 backgrounds, 13 fields, roles index, 124 roles, compare, sources
+- [x] Cross-links: branch, prev/next, related, exits (exact match), reached-from, backgrounds, calculators (tracks verified)
+- [x] Search index JSON + vanilla JS search/filter/compare
 
 ## 3. Site integration
-- [ ] "Careers" in global nav of every existing page
-- [ ] sitemap.xml
-- [ ] One-line cross-link from Hiring and Atlas
-- [ ] Italian chrome strings + "this section is in English" notice
+- [x] "Careers" in global nav of every existing page
+- [x] sitemap.xml
+- [x] One-line cross-link from Hiring and Atlas
+- [x] Italian chrome strings + "this section is in English" notice
 
 ## 4. Checks (tests/careers-test.js)
-- [ ] Page counts = parsed counts
-- [ ] Internal links and anchors resolve
-- [ ] All template sections non-empty on every role page
-- [ ] Word count per role page within tolerance of source
-- [ ] No external requests; page weights; sitemap lists new pages
-- [ ] Existing test suites still pass
+- [x] Page counts = parsed counts
+- [x] Internal links and anchors resolve
+- [x] All template sections non-empty on every role page
+- [x] Word count per role page within tolerance of source
+- [x] No external requests; page weights; sitemap lists new pages
+- [x] Existing test suites still pass
 
 ## 5. Visual review
-- [ ] Careers home, one field page, one long role page at desktop and 375px; fixes applied
+- [x] Careers home, one field page, one long role page at desktop and 375px; fixes applied
+
+## Status (9 October 2026)
+All stages done; see careers/BUILD_NOTES.md for judgements and the unresolved-exit log. Not pushed, main untouched, not deployed.
+
+Fixes made after looking at the first build: nav row overflow (Careers was invisible), scores table too wide (stacked pips; labelled rows on phones), search result links missing a slash, tables capped at the text measure, score labels overflowing at 375px, i18n keys that varied per page (restructured into constant fragments).

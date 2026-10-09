@@ -369,7 +369,7 @@ ${sections}
 <caption id="scores">${ui('Role families and their scores')} <span>${ui('(from the research index; 1-5 scales on the sources page)')}</span></caption>
 <thead><tr><th scope="col">${ui('Role family')}</th><th scope="col">${ui('Hours/week (peak)')}</th><th scope="col">${ui('Stress')}</th><th scope="col">${ui('People')}</th><th scope="col">${ui('Quant')}</th><th scope="col">${ui('Entry difficulty')}</th></tr></thead>
 <tbody>
-${f.roles.map((id) => { const r = roleById.get(id); return `<tr><th scope="row">${roleLink(from, id)}</th><td translate="no" lang="en">${mdInline(from, r.compare.hours)}</td>${['stress', 'people', 'quant', 'difficulty'].map((k) => `<td>${pips(r.scores[k])} <span translate="no" lang="en">${mdInline(from, r.compare[k])}</span></td>`).join('')}</tr>`; }).join('\n')}
+${f.roles.map((id) => { const r = roleById.get(id); const tl = (l) => `<span class="cx-tl" aria-hidden="true">${ui(l)}</span>`; return `<tr><th scope="row">${roleLink(from, id)}</th><td>${tl('Hours/week (peak)')}<span translate="no" lang="en">${mdInline(from, r.compare.hours)}</span></td>${['stress', 'people', 'quant', 'difficulty'].map((k) => `<td>${tl({ stress: 'Stress', people: 'People', quant: 'Quant', difficulty: 'Entry difficulty' }[k])}${pips(r.scores[k])} <span translate="no" lang="en">${mdInline(from, r.compare[k])}</span></td>`).join('')}</tr>`; }).join('\n')}
 </tbody></table></div>`;
 
     let s3 = '';
@@ -626,7 +626,7 @@ ${toc([['about', ui('About the research')], ['scales', ui('Shared scales and con
 <section id="assumptions" class="cx-sec"><h2>${ui('Assumptions made')}</h2><div class="cx-prose" translate="no" lang="en">${md(from, data.index.assumptions)}</div></section>
 <section id="gaps" class="cx-sec"><h2>${ui('Gaps and low-confidence areas to verify')}</h2><div class="cx-prose" translate="no" lang="en">${md(from, data.gaps.map((g) => g.md).join('\n'))}</div></section>
 <section id="reports" class="cx-sec"><h2>${ui('Sources by report')}</h2>
-${data.fields.map((f) => `<details class="cx-srcfold" id="src-${f.slug}"><summary><span translate="no" lang="en">${esc(f.name)}</span></summary><div class="cx-prose cx-sources" translate="no" lang="en">${md(from, f.sections[6], { headingId: hid, headingShift: 1 })}</div><p class="cx-note"><a href="${rel(from, U.field(f.slug))}"><span>${ui('Open the field')}</span> ${nm(f.name)}</a></p></details>`).join('\n')}
+${data.fields.map((f) => `<details class="cx-srcfold" id="src-${f.slug}"><summary><span translate="no" lang="en">${esc(f.name)}</span></summary><div class="cx-prose cx-sources" translate="no" lang="en">${md(from, f.sections[6], { headingId: hid })}</div><p class="cx-note"><a href="${rel(from, U.field(f.slug))}"><span>${ui('Open the field')}</span> ${nm(f.name)}</a></p></details>`).join('\n')}
 </section>
 </div></div>`;
     add({ path: from, title: 'Sources, scales and gaps', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Sources' }],

@@ -13,7 +13,7 @@ How the Career Explorer (`careers/`) is built, and every judgement the build mak
 - The 13 merged reports in `research/branches/reports/<branch>.md`. The `-part-N` files are not read: `index.md` says the merged files were assembled from them by script, and the merged files carry every part's sections with a `P1-`/`P2-` prefix.
 - `research/branches/index.md` for the branch list, the shared scales, the background matrices (3.1 and 3.2), the comparison table (section 4), the assumptions (5) and the gaps (6).
 - `research/branches/reports/italy-pay-addendum.md` for Italian pay.
-- `research/careers/` (the older, Europe-first library) is **not** used: index.md says it served only as leads for the researchers. The Atlas's country files cite it; there is no other overlap with Hiring or the Atlas.
+- `research/careers/` (the older, Europe-first library) is **not** used: index.md says it served only as leads for the researchers. The Atlas's country files cite it. Hiring's "Role family" filter uses the Atlas's own broad categories, not the 124 role families here, so the two are linked by one line on each page rather than merged.
 
 ## Assumptions and judgements
 
