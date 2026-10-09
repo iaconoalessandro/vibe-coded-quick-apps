@@ -1,0 +1,219 @@
+# Career Explorer: build notes
+
+How the Career Explorer (`careers/`) is built, and every judgement the build makes that the research does not. The block at the end is rewritten by the generator on every run.
+
+## Re-running
+
+- `npm run careers` parses `research/branches/` and rewrites `careers/` (pages, `data/careers.json`, `data/search-index.json`), `sitemap.xml` and the generated block below. It stops with the file and role named if anything does not fit the template.
+- `npm test` includes `tests/careers-test.js`: the committed pages must equal a fresh build, every link and anchor must resolve, every role page must carry all ten template sections and its source's word count (within 1%), nothing may load from another host, and the sitemap must list every page.
+- Preview: `python3 -m http.server` from the repo root, then open `/careers/`. The search box needs http (it fetches `careers/data/search-index.json`); every other page works from `file://` too.
+
+## Sources used
+
+- The 13 merged reports in `research/branches/reports/<branch>.md`. The `-part-N` files are not read: `index.md` says the merged files were assembled from them by script, and the merged files carry every part's sections with a `P1-`/`P2-` prefix.
+- `research/branches/index.md` for the branch list, the shared scales, the background matrices (3.1 and 3.2), the comparison table (section 4), the assumptions (5) and the gaps (6).
+- `research/branches/reports/italy-pay-addendum.md` for Italian pay.
+- `research/careers/` (the older, Europe-first library) is **not** used: index.md says it served only as leads for the researchers. The Atlas's country files cite it; there is no other overlap with Hiring or the Atlas.
+
+## Assumptions and judgements
+
+1. **Generator language.** Node, like `tools/build.js` and the test suite. No dependencies: a small markdown renderer (`tools/careers/md.js`) covers exactly what the reports use (headings, paragraphs, nested lists, pipe tables, rules, bold/italic/code, links, bare URLs). A test compares rendered words with source words for every role.
+2. **Template labels.** The reports spell the ten labels three ways (`**Label.**`, `**Label:**`, `- **Label**:`). The parser accepts all three, keeps the label text exactly as written (so qualifiers such as "(alphabetical within each tier)" stay), and fails if any label is missing, repeated or out of order. One role (Computer Science P2-3.5) has a sentence before its first label; it is printed as the role's preamble.
+3. **What goes where.** Each role family's ten sections appear only on its role page. Everything else in section 3 of a report (part introductions, the role family summary table) stays on the field page, together with sections 1, 2, 4, 5 and 6 and the report's preface notes. Nothing is summarised; long pages get a contents list instead.
+4. **At a glance** uses the role's row in index.md section 4 (hours, stress, people, quant, entry pay US/UK/Italy, entry difficulty), printed verbatim. The squares are drawn from the lowest and highest 1-5 figure in a cell ("4 (5 at top boutiques)" fills 4 and half-fills the fifth; "DCM 3; LevFin 3-4" draws 3-4); the cell's own text is always printed beside them.
+5. **Italy add-on mapping.** The add-on's rows are named by role, not by role-family number, so `tools/careers/italy-map.json` maps each row to role families. This is an editorial judgement; each role page shows the add-on's own row label, source, year and confidence, plus the branch's notes, and links to the full table. Proxy rows are mapped where the add-on itself names them as the proxy (e.g. the VC row's "PE and VC not separated" also goes to private equity). Rows that fit no single role stay on the field page only (listed below). Every row must be listed in the map or the build stops.
+6. **Exit links.** A role is linked from another role's exits only on an exact whole-phrase match of one of its names, derived mechanically from its heading (rules in `tools/careers/links.js`). Names shared by two roles are not linked (listed below). "PhD" is not treated as an acronym, and "data science" (the field, from "Data science consultant") is excluded. Every exit item that matches nothing is listed below.
+7. **Related roles.** Two kinds, both labelled on the page: the other roles in the same field, and the four roles in other fields with the closest scores on people, quant, stress and entry difficulty (Euclidean distance on range mid-points; ties broken by hours). The second is a similarity of profile, not of work, and the page says so.
+8. **Background pages.** Grouping uses the S/P/X letters in index.md 3.1 (fields) and 3.2 (role families). The one-line reasons come from section 5(a) of each report: the field-level table, or the part-level table for roles in a multi-part branch. Where the report's own rating word differs in case ("strong" vs "Strong") it is printed as written.
+9. **Calculator links.** Only where a matching calculator exists, checked at build time against `js/theme.js`'s track list and the pages on disk: Finance and Accounting → MiF; Management, Consulting, Logistics → MiM (+ MBA for Management and Consulting); Marketing → Marketing; Computer Science and Cybersecurity → CS (+ Conversion); Data Science, AI, Data Analytics → DS&AI (+ Conversion); PM & Startups → MiM + CS. Economics has none, except economic consulting (MiF). Per-role exceptions are in `tools/careers/config.js`.
+10. **"Verify before relying".** Items 1, 3, 4, 7, 8, 9 and 10 of index.md section 6 are quoted on the pages they touch (`config.js` GAPS): named roles and fields, roles whose own text mentions a flagged event (Hormuz, IEEPA, Omnicom–IPG, CSRD/Omnibus, NIS2/CMMC, AI Act, Volcker, private credit stress), every role whose "How to enter" cites a month and year (programme dates), and every role whose tier list says "general knowledge", "verify" or "unverified". Items 2, 5 and 6 touch nearly every role, so they are quoted in the footer of every explorer page. The full list is on the sources page.
+11. **Language.** The research stays in English and is marked `translate="no" lang="en"`, so the Italian edition never machine-translates it. Only the interface was translated (entries added to `js/i18n-it.js`); Italian readers see a short notice that the section is in English. Names of fields, backgrounds and roles stay in English on both sides.
+12. **Newspaper names.** The site's own test bans real newspaper names from the pages it checks. Some reports cite such papers as sources; those citations are kept verbatim (content integrity), and the explorer pages are not part of that test.
+13. **No ticker.** Explorer pages keep the top strip (edition and language pickers) but not the moving Admissions index: its links are written for root-level pages, and it would load ~200 KB of models on every page. The intro animation (`js/intro.js`) is also left off these reading pages.
+
+## Changes to existing files
+
+- **Section nav** on all 8 pages: a fourth cluster, "Careers". The row was already full (Wall Street used 1116 of 1120 px, and "Hiring" was partly clipped in every edition at 1280 px), so `css/app.css` tightens the cluster spacing and lets the nav row run 40 px past the text column on each side. All four clusters now fit at 1280 px in all three editions; narrower screens scroll as before.
+- **Hiring and Atlas**: one line under each standfirst linking to the explorer (with Italian).
+- **js/theme.js**: font preloads resolve from the script's own address, so pages in a subfolder do not request `careers/fonts/...`. Root pages are unchanged (inlined by the build, they fall back to the old relative path).
+- **js/i18n-it.js**: a Career Explorer block of interface strings.
+- **tools/build.js**: does not publish `careers/BUILD_NOTES.md` or `careers/data/careers.json` (neither is used by a page).
+- **sitemap.xml** did not exist; it is now generated and lists every page.
+- **package.json**: `npm run careers`.
+
+<!-- generated:start -->
+## Generated by `npm run careers` (do not edit this block)
+
+- Role families: 124; fields: 13; backgrounds: 11.
+- Exit links resolved: 173; roles with none: 36.
+
+### Exit names shared by more than one role (not linked)
+
+- data-analytics/3.5: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- management/3.1: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- management/3.2: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- logistics-supply-chain/3.1: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- logistics-supply-chain/3.2: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- logistics-supply-chain/3.3: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+- logistics-supply-chain/3.4: "supply chain" could be logistics-supply-chain/3.6 or logistics-supply-chain/3.7
+
+### Italy add-on rows shown on the field page only (no single role)
+
+- Artificial Intelligence: Head of data science
+- Management: Typical new graduates
+- Management: Early-career RAL by university
+
+### Roles with no Italy add-on row
+
+- Equity capital markets (ECM) (finance/P1-3.2)
+- Debt capital markets and leveraged finance (DCM/LevFin) (finance/P1-3.3)
+- Transaction services / valuation / corporate finance advisory at Big 4 and boutiques (finance/P1-3.6)
+- Sell-side equity research analyst (and credit research) (finance/P2-3.4)
+- Discretionary trader/PM at a hedge fund or macro fund (finance/P2-3.6)
+- Asset management client and distribution roles (sales, client portfolio manager/investment specialist, product) (finance/P3-3.2)
+- FP&A / corporate finance analyst (to CFO track) (finance/P4-3.1)
+- Game developer (programmer roles at studios) (computer-science/P1-3.5)
+- QA / test automation engineer / SDET (computer-science/P1-3.6)
+- Cloud engineer / cloud solutions architect (computer-science/P2-3.2)
+- Embedded / firmware / systems engineer (computer-science/P2-3.3)
+- AI research scientist (industry and academia) (artificial-intelligence/P2-3.1)
+- Data science consultant (data-science/3.7)
+- People/HR analyst (data-analytics/3.6)
+- Data governance, data quality and data steward roles (data-analytics/3.7)
+- Analytics consultant (data-analytics/3.8)
+- Security architect (mid-career destination) (cybersecurity/3.7)
+- Public-sector and non-profit manager (shorter) (management/3.6)
+- Supply chain consultant (shorter) (logistics-supply-chain/3.7)
+- Market research / consumer insights analyst (marketing/3.6)
+- Agency roles (account management, strategy/planning, media planning and buying) (marketing/3.7)
+- Tech-sector economist (economics/3.5)
+
+### Exit items with no matching role family
+
+Each "After N years" list, split at commas and semicolons outside brackets. An item is listed here when it contains none of the role names (see tools/careers/links.js for how names are derived).
+
+- **M&A and industry/coverage banker (analyst to MD) (finance/P1-3.1)**: “growth equity and venture”; “top MBA programmes”; “partner at a boutique”; “entrepreneur/search fund”; “staying on the MD track”
+- **Equity capital markets (ECM) (finance/P1-3.2)**: “equity buy side where the market knowledge is valued”; “growth equity”; “investor relations”; “lateral to M&A/coverage”; “buy-side investment roles”; “exchange/listing roles”
+- **Debt capital markets and leveraged finance (DCM/LevFin) (finance/P1-3.3)**: “CLO managers”; “fixed-income asset managers”; “corporate treasurer/CFO tracks”; “sponsor-side finance”
+- **Restructuring (finance/P1-3.4)**: “distressed or special-situations PE”; “M&A or coverage groups”; “turnaround consulting”; “in-house at distressed investors”
+- **Corporate and transaction banking (finance/P1-3.5)**: “coverage or capital-markets roles in the same bank”; “credit risk”; “leveraged finance at the same bank”; “fintech and payments companies”; “head of a corporate banking team”; “corporate CFO/treasurer”; “chief risk roles”; “senior fintech roles”
+- **Transaction services / valuation / corporate finance advisory at Big 4 and boutiques (finance/P1-3.6)**: “investment banking at middle-market or boutique banks”; “other advisory roles”; “transaction advisory at PE-backed businesses”; “staying for partner”
+- **Trader at a bank (market-making) (finance/P2-3.1)**: “another bank desk”; “an electronic market maker”; “buy-side trading”; “MBA or a master's in finance”; “risk or strategy”; “head of desk”; “asset management”; “commodity house”; “fintech/electronic trading firm”
+- **Institutional salesperson (by product) (finance/P2-3.2)**: “another bank”; “a sales role at an electronic platform or broker”; “buy-side relationship role”; “head of sales”; “a client-facing role at an exchange or data provider”
+- **Structurer (finance/P2-3.3)**: “trading”; “sales”; “quant roles at banks”; “insurance product teams”; “private bank product teams”; “product control”; “fintech/robo-advice product design”; “asset management product development”
+- **Sell-side equity research analyst (and credit research) (finance/P2-3.4)**: “the buy side”; “consulting”; “senior analyst at a long/short fund”; “head of research”; “CIO roles”; “corporate IR/strategy”
+- **Trader/analyst at a physical commodity trading house or energy trading arm (finance/P2-3.5)**: “move to another house”; “a major's trading arm”; “a bank's commodities desk”; “a producer/refiner commercial role”; “risk/finance roles”; “head a book or desk at a trading house”; “run a commodity fund”; “move to a producer or utility as commercial director”; “start a trading business”
+- **Discretionary trader/PM at a hedge fund or macro fund (finance/P2-3.6)**: “another fund”; “a different strategy”; “the sell side”; “a prop firm or long-only manager”; “run your own fund”; “family office CIO”; “senior PM at larger multi-manager”; “asset management or advisory”; “leave finance”
+- **Asset management investment roles (research analyst to portfolio manager), long-only (finance/P3-3.1)**: “another asset manager”; “equity research at a bank”; “MBA”; “corporate strategy/IR”; “PM or CIO elsewhere”; “family office or allocator CIO”; “investor relations at listed companies”; “start your own fund”
+- **Asset management client and distribution roles (sales, client portfolio manager/investment specialist, product) (finance/P3-3.2)**: “product or sales at another manager”; “fund selector roles at banks”; “fintech sales”; “head of distribution”; “chief commercial officer”; “move into alternatives fundraising”; “consulting to managers”
+- **Hedge fund analyst / portfolio manager (with strategy notes, especially pod platforms) (finance/P3-3.3)**: “move between funds”; “go to long-only asset managers”; “PE/growth equity”; “a corporate role”; “business school”; “start your own fund”; “family-office CIO”; “allocator”; “operating roles”; “a long-only PM role”
+- **Private equity associate to partner (finance/P3-3.4)**: “MBA”; “move to a bigger or different fund”; “growth equity”; “venture”; “portfolio company operating roles”; “partner at the same or another fund”; “start a fund or independent sponsor”; “CFO or CEO of a portfolio company”; “family office”
+- **Venture capital analyst/associate to partner (finance/P3-3.5)**: “start-up operating roles”; “growth equity”; “PE”; “a founder role”; “partner or GP at another fund”; “founder”; “CVC head”; “family office”
+- **Private credit analyst/associate (finance/P3-3.6)**: “another credit fund”; “PE”; “bank leveraged finance”; “partner”; “head of a strategy”; “CIO of an insurer's credit book”; “CFO/treasury roles”; “start own lending platform”
+- **Investment professional at an institutional allocator (pension, insurer, sovereign wealth fund, endowment, fund of funds) (finance/P3-3.7)**: “PE/VC fund investor-relations or fund-of-funds roles”; “asset-manager distribution”; “private markets managers”; “MBA”; “CIO roles at endowments”; “family offices”; “insurers”; “senior roles at managers”; “moving to a PE firm's fundraising team”
+- **Private banker / wealth manager (finance/P3-3.8)**: “another private bank”; “family office”; “asset management client roles”; “wealth tech”; “head of a desk or region”; “family office head”; “move to fund distribution”
+- **FP&A / corporate finance analyst (to CFO track) (finance/P4-3.1)**: “another corporate”; “MBA”; “a move into corp dev or consulting”; “divisional CFO”; “investor relations”
+- **Corporate treasury analyst (finance/P4-3.2)**: “bank roles”; “treasury at a bigger company”; “consulting”; “group treasurer”; “CFO of a mid-sized company”; “treasury advisory/technology”
+- **Corporate development (in-house M&A) (finance/P4-3.3)**: “another corporate”; “PE or growth-equity roles”; “MBA”; “head of corp dev”; “CFO”; “business-unit head”
+- **Risk management (market, credit, operational, liquidity) at banks, insurers and asset managers (finance/P4-3.4)**: “front-office roles are possible but hard”; “other risk functions”; “regulators”; “consulting”; “fintech risk teams”; “head of risk at a smaller bank”; “insurer or asset manager”; “regulator”; “business-embedded risk roles”
+- **Compliance and financial crime (AML/KYC, sanctions) (finance/P4-3.5)**: “Big Four financial-crime advisory”; “fintech and crypto compliance teams”; “regulators”; “risk roles”; “legal paths”; “head of compliance/MLRO”; “regulator”; “consulting partner track”; “RegTech vendors”
+- **Bank quant: strats / desk quant, pricing and XVA, model validation (finance/P4-3.6)**: “fintech or big-tech data/ML”; “to quant risk”; “head of quant desk”; “buy-side researcher/PM”; “CRO/CTO roles”; “regulators' model teams”
+- **Quantitative researcher and quantitative trader (quant funds and prop trading firms) (finance/P4-3.7)**: “PhD return”; “startups”; “head of research”; “founding a fund”; “venture/AI start-up founders”; “early retirement”
+- **Quant developer / trading-systems engineer (finance/P4-3.8)**: “another trading firm”; “big tech”; “head of engineering”; “CTO at a fund”; “founding a trading startup or fintech”
+- **Fintech business roles (strategy/bizops, product, risk/credit, partnerships) (finance/P4-3.9)**: “bigger fintech”; “banks' digital/innovation units”; “big tech product roles”; “consulting”; “VC/growth-equity analyst roles”; “founder”; “country head”; “CFO/COO/CPO at a startup”; “VC partner”
+- **Backend software engineer (computer-science/P1-3.1)**: “a move from IT services to a product company”; “into AI/ML engineering with additional learning”; “staff/principal engineer”; “engineering management”; “architect”; “founding or joining a startup as an early engineer”; “consulting”
+- **Frontend engineer (computer-science/P1-3.2)**: “full-stack”; “mobile”; “design engineering”; “product-minded roles”; “staff/principal engineer”; “engineering manager”; “UX engineering lead”; “freelance consulting”
+- **Full-stack engineer (especially at startups and agencies) (computer-science/P1-3.3)**: “specialise in backend or frontend at a bigger employer”; “join another startup at a higher level”; “founder”; “CTO”; “staff engineer”; “engineering manager”; “independent consultant”
+- **Mobile engineer (computer-science/P1-3.4)**: “full-stack”; “cross-platform specialist”; “backend”; “staff/principal engineer”; “engineering manager”; “head of mobile”; “technical founder of an app business”
+- **Game developer (programmer roles at studios) (computer-science/P1-3.5)**: “backend or real-time systems”; “mobile”; “simulation and defence”; “automotive HMI”; “film/VFX tooling”; “fintech”; “technical director”; “engine specialist”; “graphics engineer at a hardware or big tech firm”; “founding an indie studio”
+- **QA / test automation engineer / SDET (computer-science/P1-3.6)**: “developer”; “release engineer”; “test architect”; “engineering productivity lead”; “quality manager”; “consultant”
+- **Solutions engineer / sales engineer / developer advocate (computer-science/P1-3.7)**: “customer success leadership”; “account executive”; “return to engineering”; “head of solutions”; “sales leadership”; “product/field CTO”; “founding a startup”
+- **DevOps / site reliability / platform engineer (computer-science/P2-3.1)**: “backend/product engineering”; “staff/principal engineer”; “architect”; “engineering management”; “CTO at a small company”; “technical consulting or pre-sales at a cloud/monitoring vendor”; “independent contracting”
+- **Cloud engineer / cloud solutions architect (computer-science/P2-3.2)**: “technical consulting”; “enterprise or chief architect”; “CTO/head of infrastructure”; “partner-side roles in cloud consultancies”; “pre-sales leadership”; “vendor roles”
+- **Embedded / firmware / systems engineer (computer-science/P2-3.3)**: “robotics”; “IoT”; “medical devices”; “aerospace/defence”; “semiconductor application engineering”; “into cloud/IoT backend roles”; “system architect”; “product owner for hardware products”; “technical sales/field application engineering”; “management”; “start-up CTO”
+- **Data engineer (computer-science/P2-3.4)**: “data architecture”; “data architect”; “head of data platform”; “engineering management”; “consulting principal”; “CTO-track at a data-led company”
+- **Enterprise applications consultant (SAP, Salesforce, ServiceNow, etc.) and IT systems administrator/support (computer-science/P2-3.5)**: “project management”; “solution architect”; “practice lead”; “IT manager/head of infrastructure”; “independent consultant”; “vendor roles”
+- **Technology consultant at an IT consultancy / system integrator (computer-science/P2-3.6)**: “client-side IT/business-systems roles”; “pre-sales at vendors”; “head of IT/transformation at a client”; “vendor leadership”; “independent consulting”; “continued up the partner track”
+- **Computer science researcher (PhD, industry research lab, academic career) (computer-science/P2-3.7)**: “software engineering”; “quant research”; “consulting”; “start-ups”; “public research institutes”; “research lead”; “professor”; “head of an AI/product group”; “CTO or founder”; “policy and standards roles”
+- **Machine learning engineer (artificial-intelligence/P1-3.1)**: “AI/LLM engineer roles at startups”; “data science”; “a move from enterprise to big tech”; “a master's/PhD”; “a startup”; “staff/principal engineer”; “engineering manager or director of ML”; “chief-of-staff or founder paths”; “quant-fund ML roles”; “venture/technical product roles”
+- **AI engineer / LLM application engineer (artificial-intelligence/P1-3.2)**: “ML engineer or platform roles”; “product engineering”; “a startup”; “staff/principal”; “head of AI or CTO at a small company”; “founder”
+- **MLOps / ML platform / AI infrastructure engineer (including inference and GPU performance) (artificial-intelligence/P1-3.3)**: “generalist backend/SRE roles”; “ML engineer”; “cloud architect”; “specialist inference teams at labs”; “staff/principal infrastructure engineer”; “engineering director”; “solutions architect at a chip or cloud vendor”
+- **Computer vision / robotics / edge AI engineer (artificial-intelligence/P1-3.4)**: “general ML engineer”; “embedded/robotics software”; “autonomy and simulation”; “drone/defence tech”; “medical-imaging AI”; “perception lead”; “head of autonomy/robotics”; “CTO at a robotics or vision startup”; “technical roles in industrial AI”
+- **AI data specialist / AI trainer / annotation and human-feedback work (artificial-intelligence/P1-3.5)**: “data operations or quality roles”; “evaluation specialist”; “content/domain jobs”; “a return to one's original profession”; “head of data operations at a vendor”; “data-quality or evaluation lead”; “product roles in data platforms”; “entry to an engineering path if technical skills were developed meanwhile”
+- **AI research scientist (industry and academia) (artificial-intelligence/P2-3.1)**: “another lab”; “a startup”; “applied-research roles at big tech”; “quantitative finance”; “research director”; “chief scientist or founder at an AI startup”; “professor”; “government advisor”
+- **Research engineer (artificial-intelligence/P2-3.2)**: “ML infrastructure roles at big tech”; “AI startups”; “HPC/quant firms”; “head of infrastructure”; “founding engineer”; “CTO at an AI startup”; “staff engineer at a cloud/GPU company”
+- **AI safety, alignment, interpretability and evaluations / red-teaming researcher (artificial-intelligence/P2-3.3)**: “mainstream ML research”; “safeguards or trust-and-safety roles at labs”; “AI security startups”; “government institutes”; “head of safety/evaluations at a lab or institute”; “founder of an evaluation or security startup”; “senior government advisor”; “policy leadership”
+- **Forward-deployed engineer / AI solutions engineer / AI consultant (artificial-intelligence/P2-3.4)**: “product engineering”; “startup founding engineer”; “consulting”; “solutions-architect roles at cloud providers”; “head of customer engineering”; “chief technology officer at an AI startup”; “partner-track consulting”; “founder”
+- **AI governance, policy and responsible-AI specialist (artificial-intelligence/P2-3.5)**: “privacy”; “compliance and risk roles”; “tech-policy jobs at platforms”; “consultancy”; “law firm”; “chief privacy/AI officer”; “head of policy at a lab or regulator”; “partner at a firm”; “senior official”; “NGO leadership”
+- **AI product manager (artificial-intelligence/P2-3.6)**: “PM roles in other tech companies”; “startup product leads”; “head of product”; “founder”
+- **Product / experimentation data scientist (data-science/3.1)**: “ML/AI roles at the same firm”; “growth/strategy at start-ups”; “other tech employers”; “head of analytics/data science”; “chief-of-staff or strategy roles”; “startup founder”; “consulting”
+- **Machine-learning / modeling data scientist (data-science/3.2)**: “ML engineer”; “data scientist at a larger employer”; “product analytics”; “quant research”; “lead/head of data science”; “ML engineering management”; “consulting”; “founder”
+- **Decision scientist / operations research analyst (data-science/3.3)**: “supply-chain planning and analytics”; “data science”; “consulting”; “software vendors of planning tools”; “head of supply-chain analytics”; “product owner of an optimisation product”; “consulting partner track”; “operations leadership”
+- **Statistician / biostatistician (data-science/3.4)**: “another CRO or pharma company”; “regulatory agencies”; “health-data science”; “real-world evidence”; “clinical data science”; “head of biostatistics”; “clinical development leadership”; “HEOR or market-access modelling”; “consultancy”; “regulator”
+- **Data scientist in banking and insurance (credit, fraud, pricing) (data-science/3.5)**: “fintech or big-tech risk teams”; “consulting”; “credit strategy”; “other lenders”; “chief risk officer track”; “head of data science”; “fintech leadership”
+- **Applied scientist / research data scientist (PhD-track) (data-science/3.6)**: “research scientist at other labs”; “ML engineering”; “startups”; “AI labs”; “principal scientist”; “head of science”; “academia”; “startup CTO or founder”; “quant research”
+- **Data science consultant (data-science/3.7)**: “in-house data science at a client”; “product or strategy roles”; “ML engineering”; “PhD”; “head of analytics or Chief Data Officer”; “partner”; “startup leadership”
+- **Data analyst / business analyst (generalist, in-house) (data-analytics/3.1)**: “product/marketing analyst”; “data scientist”; “consulting”; “analytics manager/head of analytics”; “strategy and operations”; “finance business partner”; “chief-of-staff style roles”
+- **BI developer / BI analyst (data-analytics/3.2)**: “Power Platform/low-code developer”; “product owner”; “BI/analytics architect”; “head of BI”; “enterprise data architect”; “pre-sales/solutions consultant at a vendor”; “independent contractor”
+- **Analytics engineer (data-analytics/3.3)**: “senior analyst/product analyst with strong data skills”; “data platform roles”; “head of data”; “solutions architect”; “vendor roles”
+- **Marketing, digital and product analyst (data-analytics/3.4)**: “data scientist”; “growth marketing”; “CRM/lifecycle manager”; “head of marketing analytics or growth”; “product director”; “consultant”
+- **Operations and supply-chain analyst (data-analytics/3.5)**: “demand/supply planner”; “procurement analyst”; “logistics consultant”; “process improvement”; “BI/analytics”; “operations consulting”; “S&OP head”; “vendor roles”
+- **People/HR analyst (data-analytics/3.6)**: “HR business partner”; “compensation analyst”; “HRIS analyst”; “head of people analytics”; “reward lead”; “HR transformation”; “workforce planning”; “consulting at HR/people-analytics advisors”
+- **Data governance, data quality and data steward roles (data-analytics/3.7)**: “privacy/compliance analyst”; “data product owner”; “risk data roles”; “Chief Data Office director”; “data protection officer”; “data risk lead”; “consulting”
+- **Analytics consultant (data-analytics/3.8)**: “in-house senior analyst”; “BI/analytics lead”; “data product owner”; “vendor pre-sales”; “MBA/master's”; “head of analytics or chief data officer roles at clients”; “product/strategy leaders”; “independent consultant”; “partner”
+- **SOC analyst (tier 1-3) (cybersecurity/3.1)**: “detection engineering”; “pentest”; “MSSP to in-house”; “SOC manager/head of security operations”; “product/solutions roles at vendors”; “consulting manager”; “CISO track via risk/operations”
+- **Incident responder / digital forensics (DFIR) (cybersecurity/3.2)**: “detection engineering”; “cyber insurance”; “government/law enforcement”; “head of security operations”; “CISO”; “vendor leadership roles”; “expert-witness consulting”; “independent consulting”
+- **Threat intelligence analyst (cybersecurity/3.3)**: “red-team”; “detection engineering”; “risk and fraud intelligence”; “head of intel”; “security strategy or risk roles”; “government policy advisory”; “consulting leadership”
+- **Penetration tester / red teamer / offensive security (cybersecurity/3.4)**: “AppSec engineer”; “red team in a bank or tech firm”; “vulnerability researcher”; “bug bounty full-time”; “security consulting director”; “startup founder”; “CISO route”
+- **Application security / product security engineer (incl. DevSecOps) (cybersecurity/3.5)**: “vendor product roles”; “pentest”; “CISO at software company”; “startup founder”
+- **Security engineer / cloud security engineer / IAM engineer (cybersecurity/3.6)**: “detection engineering”; “platform/DevSecOps”; “vendor roles”; “consulting”; “CISO”
+- **Security architect (mid-career destination) (cybersecurity/3.7)**: “consulting principal”; “CTO-side architecture”; “vendor field CTO”; “CISO”; “chief architect”; “independent consultant”
+- **GRC analyst / security auditor / privacy specialist (cybersecurity/3.8)**: “security consulting”; “third-party risk”; “privacy counsel roles”; “product compliance”; “CISO”; “chief risk/compliance officer”; “head of assurance”; “independent consultant/auditor”
+- **OT/ICS security specialist (shorter) (cybersecurity/3.9)**: “OT consulting”; “vendors”; “critical-infrastructure regulators”; “head of industrial cybersecurity”; “CISO in industrial firms”; “regulators”
+- **Security consultant (Big 4, specialist consultancies, MSSPs) and the path to CISO (cybersecurity/3.10)**: “industry security roles”; “specialised consulting”; “CISO or deputy CISO”; “partner”; “vendor leadership”; “board advisory”; “independent vCISO”
+- **Management trainee / graduate leadership programme (rotational) → general manager (management/3.1)**: “a specialist role inside the same group”; “an operations or commercial role at a competitor”; “an MBA/MSc”; “head of a function”; “plant or business unit”; “general-manager roles in smaller companies”; “private-equity operating-partner or portfolio-company management roles”; “entrepreneurship”
+- **Operations manager (manufacturing, retail, services) (management/3.2)**: “continuous improvement or quality roles”; “procurement”; “project management”; “an MBA”; “plant manager or operations director in a smaller firm”; “consulting operations practice”; “COO of an SME”; “entrepreneurship in a family business”
+- **Project / programme manager (management/3.3)**: “product or operations roles”; “consulting associate”; “change management”; “programme director”; “head of transformation”; “COO-track roles”; “independent contracting”; “consulting”
+- **HR / people professional (HRBP, talent acquisition, L&D, reward) (management/3.4)**: “another HR specialism”; “recruitment agency”; “people analytics”; “operations or project roles”; “HR director”; “reward or talent consultancy”; “in-house leadership in smaller firms”; “independent HR consulting”; “employee relations/legal-adjacent roles with further study”
+- **Corporate strategy and business development (in-house) (management/3.5)**: “commercial roles”; “product”; “a business-unit role”; “MBA”; “join the consulting firm you used to buy from”; “general-manager or P&L ownership of a division”; “CSO”; “start-up founder”; “PE/VC”
+- **Public-sector and non-profit manager (shorter) (management/3.6)**: “another ministry”; “consultancy”; “regulators”; “think tanks”; “large corporates' public affairs”; “head of unit/director”; “consulting in the public sector”; “social enterprises”
+- **Buyer / procurement specialist / category manager (logistics-supply-chain/3.1)**: “planning”; “supplier quality”; “project procurement”; “procurement at a larger or better-known firm”; “head of procurement”; “consulting”; “private-equity operating partner roles at the senior end”; “moving into commercial/contract management”
+- **Demand / supply planner and S&OP analyst (logistics-supply-chain/3.2)**: “procurement”; “logistics”; “project roles”; “planning-systems roles”; “specialist planning at another industry”; “S&OP/IBP transformation lead”; “planning-software vendor roles”
+- **Logistics and transport coordinator/manager (incl. freight forwarding and customs) (logistics-supply-chain/3.3)**: “procurement”; “planning”; “carrier sales”; “customs brokerage”; “branch/country manager at a forwarder”; “trade-compliance director”; “consulting”; “founding your own forwarding agency”
+- **Warehouse / distribution operations manager (logistics-supply-chain/3.4)**: “continuous improvement”; “planning”; “transport management”; “retail operations”; “regional operations director”; “consulting”; “operations lead in start-ups or quick-commerce”
+- **Shipping and maritime roles (chartering, ship broking, liner operations) (logistics-supply-chain/3.5)**: “another broker desk”; “shipowner operations”; “trading house chartering desks”; “port agency”; “head of chartering at a shipowner or trader”; “establishing a brokerage”; “shipping finance”; “liner commercial management”
+- **Supply chain analyst / supply chain systems specialist (logistics-supply-chain/3.6)**: “planning or procurement”; “ERP consultant”; “planning-software vendor solution architect”
+- **Supply chain consultant (shorter) (logistics-supply-chain/3.7)**: “MBA”; “private-equity operations partner”; “partner track”
+- **External auditor (associate → partner) (accounting/3.1)**: “finance director”; “corporate controller”; “CFO of mid-size companies”; “regulator or standard-setter roles”; “stay for partner”
+- **Tax advisor / tax accountant (accounting/3.2)**: “in-house tax at multinationals”; “boutique tax firms”; “law-firm tax teams”; “tax authority roles”; “head of tax at a corporate”; “partner at a Big 4/mid-tier/boutique”; “tax director at a PE-backed group”; “independent adviser”
+- **Financial accountant / financial controller (in industry) (accounting/3.3)**: “senior accountant”; “analyst roles”; “shared-service team lead”; “audit or tax if you want advisory work”; “group reporting manager”; “CFO track at mid-size companies”; “finance transformation lead”; “ERP implementation roles”
+- **Management accountant / controller (controlling, cost and performance) (accounting/3.4)**: “business finance partner”; “corporate strategy”; “commercial finance”; “consulting”; “head of controlling”; “finance director”; “divisional CFO”
+- **Internal auditor (accounting/3.5)**: “financial control”; “SOX compliance”; “risk and compliance”; “operations finance”; “chief audit executive”; “head of risk or compliance”; “finance director”; “operations roles”
+- **Forensic accountant (shorter) (accounting/3.6)**: “compliance”; “financial crime teams in banks”; “litigation support”; “head of investigations”; “chief compliance officer”; “expert witness practice”; “law-enforcement/regulator roles”
+- **Sustainability reporting / ESG assurance specialist (shorter) (accounting/3.7)**: “ESG data roles”; “investor relations”; “standard-setting support”; “CFO-office sustainability lead”; “partner in assurance or advisory”
+- **Brand manager (marketing/3.1)**: “another FMCG or luxury firm”; “retail e-commerce”; “start-up growth roles”; “consulting”; “marketing director elsewhere”; “CMO at a mid-sized firm”; “founder of a consumer brand”; “move into strategy”
+- **Digital / performance marketing specialist (marketing/3.2)**: “in-house growth or e-commerce teams”; “product or CRM roles”; “marketing analytics”; “head of growth”; “e-commerce director”; “agency leadership”; “consulting in digital”; “founder”
+- **Content, social and community marketer (marketing/3.3)**: “PR/communications”; “brand teams”; “agency account roles”; “head of content”; “brand director”; “editor”; “founder or freelance creator”
+- **Product marketing manager (tech/B2B) (marketing/3.4)**: “growth marketing”; “sales enablement”; “customer success”; “VP marketing”; “head of product”; “start-up founder”
+- **CRM / lifecycle marketing specialist (marketing/3.5)**: “e-commerce”; “analytics”; “product growth”; “head of customer/retention”; “e-commerce director”; “CMO in direct-to-consumer firms”; “martech consulting”
+- **Market research / consumer insights analyst (marketing/3.6)**: “in-house insights”; “brand/marketing”; “data analytics”; “consulting”; “head of insights”; “strategy/planning”; “CRM/analytics director”; “consultancy partner”
+- **Agency roles (account management, strategy/planning, media planning and buying) (marketing/3.7)**: “client-side marketing”; “another agency”; “media owner”; “consulting”; “marketing director client-side”; “head of agency”; “consultancy partner”; “founder”
+- **Sales and business development (SDR/BDR to account executive; key account manager) (marketing/3.8)**: “AE”; “customer success”; “sales operations”; “recruitment”; “marketing”; “sales director”; “VP”; “founder”; “partnership/strategy leadership”
+- **Central bank economist (research and policy tracks) (economics/3.1)**: “PhD programmes”; “government or consulting”; “bank chief-economist roles”; “academia”; “tech”
+- **Economist at an international organisation (IMF/World Bank/OECD/development banks) (economics/3.2)**: “PhD”; “ministries”; “consulting”; “senior posts in governments”; “regional banks”; “private-sector chief economist roles”; “academia”
+- **Government economist / official statistician (economics/3.3)**: “PhD”; “regulator”; “consulting”; “consulting”; “think tanks”; “bank economist roles”; “senior civil service”
+- **Economic consultant (competition, litigation, regulation) (economics/3.4)**: “top economics PhD programmes”; “competition authorities”; “law”; “corporate strategy”; “big-tech antitrust and regulatory teams”; “regulators”; “academia”
+- **Tech-sector economist (economics/3.5)**: “other tech”; “consulting”; “tenure-track academia”; “chief economist”; “product/strategy leadership”; “startup founding”; “antitrust expert roles”
+- **Think-tank / policy researcher (economics/3.6)**: “PhD”; “government”; “consulting”; “senior civil service”; “politics/advisory”; “media”; “academia”
+- **Academic economist and pre-doctoral research assistant (economics/3.7)**: “industry”; “IOs”; “policy roles”; “consulting affiliate work”
+- **Strategy consultant (MBB and tier-2), analyst/associate to partner (management-consulting/3.1)**: “MBA”; “corporate strategy and business-development roles”; “tech product/strategy and operations”; “startups and venture-backed scale-ups”; “private-equity operating partner”; “start-up COO/CEO”; “founder roles”
+- **Management / operations / transformation consultant at Big 4, Accenture and similar (management-consulting/3.2)**: “move to corporate roles”; “switch to another Big 4 line”; “join a tier-2 strategy firm”; “start an MBA”; “join a vendor/software company”; “senior manager/director roles in corporates”; “transformation director or COO in a mid-sized company”; “partner”; “independent consulting/freelance”
+- **Specialist / boutique consultant (sector or function specialists) (management-consulting/3.3)**: “move into the industry you advised”; “larger strategy firms or a business school”; “director or VP roles in the sector”; “partner at the boutique”; “an operating role in a PE-owned company”
+- **Technology and digital consultant (business-side) (management-consulting/3.4)**: “software vendors”; “another consulting practice”; “a data/AI role”; “head of digital transformation”; “CIO/CTO office roles”; “product leadership”; “partner at a technology consultancy”
+- **Internal strategy / corporate transformation / in-house consulting (management-consulting/3.5)**: “business-unit roles”; “product or marketing management”; “move to a consulting firm”; “CSO”; “COO”; “startup executive”; “private-equity operating roles”
+- **Product manager (including growth and platform/technical PM) (product-management-startups/3.1)**: “a bigger PM role”; “growth or strategy roles”; “a startup”; “Head of Product or CPO at a smaller company”; “founder”; “product consulting/fractional PM”
+- **Associate / rotational product manager (entry programmes) (product-management-startups/3.2)**: “PM roles at scale-ups”; “startup head-of-product or founder's-associate roles”; “MBA”; “same as 3.1”; “with APM alumni often over-represented among startup founders and CPOs”
+- **Technical programme manager and product operations (product-management-startups/3.3)**: “PM”; “operations roles”; “Director of Programme/Operations”; “VP Operations”
+- **Startup operator: founder's associate, chief of staff, bizops / strategy & operations (product-management-startups/3.4)**: “PM”; “product ops”; “strategy roles at bigger tech firms”; “VC associate roles”; “consulting”; “a second startup”; “COO/GM”; “operating partner at a VC fund”; “founder”
+- **Founder / entrepreneur (product-management-startups/3.5)**: “senior PM or product/strategy roles”; “VC platform or associate roles”; “"acqui-hire" employment at a larger firm”; “a second venture”; “continued CEO”; “operating partner or investor roles”; “serial founder”; “angel investing”
+<!-- generated:end -->
