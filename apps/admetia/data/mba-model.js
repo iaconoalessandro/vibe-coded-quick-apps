@@ -15,13 +15,14 @@
 window.MBA_MODEL = (function () {
   'use strict';
 
-  /* GMAT / GMAT Focus / GRE equivalences. Note the 770-790 rows all map to a
-   * Focus 805 ceiling, and 650-670 all map to 615 — the table is coarse at
-   * both ends. */
+  /* GMAT / GMAT Focus / GRE equivalences. The Focus column follows GMAC's
+   * concordance table (published Aug 2026), which links each 10th-edition score
+   * to a range of Focus scores; one value from that range is shown. 650-670
+   * all map to 615, so the table is coarse there. */
   var CONVERSION = [
     { id: 'gm_790', gmat: 790, focus: 805, gre: 338 },
-    { id: 'gm_780', gmat: 780, focus: 805, gre: 336 },
-    { id: 'gm_770', gmat: 770, focus: 805, gre: 335 },
+    { id: 'gm_780', gmat: 780, focus: 775, gre: 336 },
+    { id: 'gm_770', gmat: 770, focus: 745, gre: 335 },
     { id: 'gm_760', gmat: 760, focus: 715, gre: 334 },
     { id: 'gm_750', gmat: 750, focus: 715, gre: 333 },
     { id: 'gm_740', gmat: 740, focus: 695, gre: 332 },

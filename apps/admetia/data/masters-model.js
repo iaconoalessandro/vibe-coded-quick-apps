@@ -323,8 +323,8 @@ window.MASTERS_MODEL = (function () {
         {
           id: 'testScore', type: 'number', label: 'Total score', optional: true,
           min: 130, max: 805, step: 5,
-          help: 'GMAT Focus 205–805, GMAT 10th Edition 200–800. For the GRE, put your total ' +
-            'here and your quant score below.'
+          help: 'GMAT Focus 205–805, GMAT 10th Edition 200–800. For the GRE, the calculator ' +
+            'scores your quant result only, entered below; a total here is kept but not scored.'
         },
         {
           id: 'greQuant', type: 'number', label: 'GRE quantitative score', optional: true,

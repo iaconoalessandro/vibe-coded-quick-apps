@@ -41,11 +41,19 @@ window.Session = (function () {
    * it left behind so nothing keeps a dead flag. */
   try { localStorage.removeItem(PREFIX + 'wipe-on-close'); } catch (e) { /* ignore */ }
 
+  /* The Atlas keeps one thing, the passport chosen there. It is not a
+   * calculator's answers, so it is named on its own, but "Clear everything"
+   * removes it with the rest. */
+  var ATLAS = PREFIX + 'atlas';
+
   function describe() {
-    var n = answerKeys().length;
-    if (!n) return T('Nothing saved.');
-    return n === 1 ? T('One calculator has saved answers.')
+    var keys = answerKeys();
+    var atlas = keys.indexOf(ATLAS) > -1;
+    var n = keys.length - (atlas ? 1 : 0);
+    var out = !n ? '' : n === 1 ? T('One calculator has saved answers.')
                    : T('{n} calculators have saved answers.', { n: n });
+    if (atlas) out += (out ? ' ' : '') + T('Your Atlas passport is saved.');
+    return out || T('Nothing saved.');
   }
 
   /* ------------------------------------------------------------------ */
@@ -75,8 +83,9 @@ window.Session = (function () {
       clearAll();
       status.textContent = describe();
       sync();
-      /* If a wizard is on screen it is now showing stale answers, so reload. */
-      if (document.getElementById('wizard')) location.reload();
+      /* If a wizard or the Atlas is on screen it is now showing stale
+       * answers, so reload. */
+      if (document.getElementById('wizard') || document.getElementById('atlas-world')) location.reload();
     });
     row.appendChild(btn);
     box.appendChild(row);

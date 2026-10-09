@@ -1,0 +1,202 @@
+{
+ "JP": {
+  "recentGrad": {
+   "v": 98.0,
+   "year": 2026,
+   "def": "Share of university graduates in employment as of 1 April after graduating in March 2026 (national new-graduate employment survey, university graduates).",
+   "src": "https://english.adnkronos.com/2026/05/22/japans-new-univ-graduate-employment-rate-holds-at-98-pct/",
+   "by": "MEXT/MHLW new-graduate employment survey, as reported by Jiji Press (22 May 2026)",
+   "defIt": "Quota dei laureati universitari occupati al 1º aprile dopo la laurea di marzo 2026 (indagine nazionale sull’occupazione dei neolaureati, MEXT e MHLW)",
+   "group": "national"
+  },
+  "foreignGrad": {
+   "v": 39.2,
+   "year": 2024,
+   "def": "Share of international undergraduate (daigaku gakubu) students who graduated in FY2024 (Apr 2024 - Mar 2025) and took a job in Japan, out of all 16,749 graduating international undergraduates (6,406 people); those who returned home or went elsewhere are in the denominator, so this is not an employment rate of job-seekers.",
+   "defIt": "Quota di studenti internazionali laureati (livello università, triennale/quadriennale) nell'anno fiscale 2024 (apr. 2024 - mar. 2025) che hanno trovato lavoro in Giappone, sul totale di 16.749 laureati internazionali (6.406 persone); chi è tornato in patria o è andato altrove è nel denominatore, quindi non è un tasso di occupazione dei soli in cerca di lavoro.",
+   "src": "https://www.studyinjapan.go.jp/ja/_mt/2026/05/data2024s.pdf",
+   "by": "JASSO (Japan Student Services Organization), 2024 Survey on Post-Graduation Destinations of International Students, published May 2026",
+   "group": "national"
+  },
+  "gradUnemp": {
+   "v": 2.0,
+   "year": 2024,
+   "def": "Unemployment rate of people whose highest education is university or graduate school (大学・大学院卒), 2024 annual average from the Statistics Bureau of Japan Labour Force Survey (detailed tabulation), as tabulated by JILPT (all-education average 2.5%; the rate is JILPT's published table value, computed by JILPT from the survey's unemployed and employed counts by education).",
+   "defIt": "Tasso di disoccupazione di chi ha come titolo più alto università o dottorato/master (大学・大学院卒), media annua 2024 dall'Indagine sulle forze di lavoro dell'Ufficio statistico del Giappone (tabulazione dettagliata), come riportato nella tabella JILPT (media di tutti i titoli 2,5%; il tasso è il valore della tabella JILPT, da essa calcolato dai conteggi di disoccupati e occupati per titolo di studio dell'indagine).",
+   "src": "https://www.jil.go.jp/kokunai/statistics/kako/2025/documents/useful2025_07_p54_118.pdf",
+   "by": "JILPT, Useful Labor Statistics 2025, Table 7-4 (学歴別失業率), based on Statistics Bureau of Japan, Labour Force Survey detailed tabulation",
+   "group": "national"
+  }
+ },
+ "SG": {
+  "recentGrad": {
+   "v": 83.4,
+   "year": 2025,
+   "def": "Share of recent graduates from the six autonomous universities who landed a job within six months of final exams (survey as of 1 Nov 2025); the source does not state the denominator.",
+   "src": "https://vulcanpost.com/909817/graduate-employment-singapore-2025/",
+   "by": "MOE and six autonomous universities, joint Graduate Employment Survey 2025 (as reported by Vulcan Post)",
+   "defIt": "Quota dei neolaureati delle sei università autonome che hanno trovato lavoro entro sei mesi dagli ultimi esami (indagine congiunta GES 2025; il denominatore non è indicato)",
+   "group": "national"
+  }
+ },
+ "US": {
+  "overqual": {
+   "v": 42,
+   "year": 2026,
+   "def": "Share of recent graduates (aged 22-27, bachelor's degree or higher) working in jobs that typically do not require a college degree (underemployment), 2026 Q2; the base includes graduate-degree holders.",
+   "src": "https://www.newyorkfed.org/research/college-labor-market",
+   "by": "New York Fed, Labor Market for Recent College Graduates (2026:Q2 highlights)",
+   "defIt": "Quota dei neolaureati (22-27 anni, laurea triennale o superiore) che lavorano in impieghi per cui di solito non serve una laurea, secondo trimestre 2026",
+   "group": "national"
+  },
+  "returnOffer": {
+   "v": 63.1,
+   "year": 2025,
+   "def": "Share of 2024-25 interns hired full-time by their internship employer (conversion rate), from NACE's 2026 Internship & Co-op Survey.",
+   "src": "https://www.naceweb.org/talent-acquisition/internships/intern-conversion-rate-hits-highest-mark-in-five-years",
+   "by": "NACE 2026 Internship & Co-op Survey",
+   "defIt": "Quota dei tirocinanti 2024-25 assunti a tempo pieno dall’azienda del tirocinio (indagine NACE 2026)",
+   "group": "national"
+  }
+ },
+ "KR": {
+  "foreignGrad": {
+   "v": 33.4,
+   "year": 2024,
+   "def": "Share of eligible international graduates (4,993 of 14,966) who found jobs in Korea as of 31 December of the reference year, per the article's stated reference date ('Dec. 31 last year').",
+   "src": "https://www.koreatimes.co.kr/southkorea/k-universities/20251230/foreign-graduate-employment-tops-30-for-first-time",
+   "by": "Ministry of Education with KEDI, as reported by The Korea Times (30 Dec 2025)",
+   "defIt": "Quota dei laureati stranieri idonei (4.993 su 14.966) che hanno trovato lavoro in Corea al 31 dicembre dell’anno di riferimento",
+   "group": "national"
+  },
+  "recentGrad": {
+   "v": 62.8,
+   "year": 2024,
+   "def": "Employment rate of 2024 four-year-university (ilban daehak) graduates of Aug 2023 and Feb 2024, as at 31 Dec 2024: employed (health-insurance/tax-linked data, incl. overseas, self-employed and freelance) divided by graduates excluding those who went on to further study, military, unable to work and international students; all higher-education levels together 69.5%.",
+   "defIt": "Tasso di occupazione dei laureati 2024 delle università quadriennali (ilban daehak), diplomati ad agosto 2023 e febbraio 2024, al 31 dic. 2024: occupati (da dati assicurazione sanitaria/fiscali, inclusi estero, autonomi e freelance) sul totale dei laureati esclusi proseguimento degli studi, servizio militare, inabili al lavoro e studenti stranieri; tutti i livelli dell'istruzione superiore insieme 69,5%.",
+   "src": "https://www.heraldk.com/article/2025122913000061963",
+   "by": "Korea Ministry of Education with Ministry of Data and Statistics and KEDI, 2024 Higher Education Graduates Employment Statistics (released 30 Dec 2025), as reported by The Korea Herald; overall figure also on https://www.index.go.kr/unify/idx-info.do?idxCd=1551",
+   "group": "national"
+  },
+  "timeToJob": {
+   "v": 11.2,
+   "year": 2026,
+   "def": "Average months from leaving school to first job, for 15-29 year-olds whose first job after graduation was wage employment (all education levels, not graduates only), May 2026 youth supplement to the Economically Active Population Survey; 11.3 months in May 2025.",
+   "defIt": "Mesi medi dal termine degli studi al primo lavoro, per i 15-29enni il cui primo lavoro dopo il titolo è stato dipendente (tutti i livelli di istruzione, non solo laureati), supplemento giovani di maggio 2026 all'indagine sulla popolazione attiva; 11,3 mesi a maggio 2025.",
+   "src": "https://www.newsis.com/view/NISX20260723_0003720080",
+   "by": "Korea National Data Office (formerly Statistics Korea), May 2026 Economically Active Population Survey youth supplement, released 23 July 2026, as reported by Newsis",
+   "group": "national"
+  }
+ },
+ "TW": {
+  "gradUnemp": {
+   "v": 4.5,
+   "year": 2026,
+   "def": "Unemployment rate of people holding a university degree, all ages, for July 2026 (monthly DGBAS labour force release).",
+   "src": "https://focustaiwan.tw/business/202608240019",
+   "by": "DGBAS monthly labour force / manpower survey, as reported by Focus Taiwan",
+   "defIt": "Tasso di disoccupazione di chi ha una laurea universitaria, tutte le età, luglio 2026 (rilevazione mensile DGBAS)",
+   "group": "national"
+  },
+  "youthUnemp": {
+   "v": 11.7,
+   "year": 2026,
+   "def": "Unemployment rate for ages 15-24, August 2026 (monthly DGBAS labour force release).",
+   "src": "https://focustaiwan.tw/business/202609220021",
+   "by": "DGBAS monthly labour force / manpower survey, as reported by Focus Taiwan",
+   "defIt": "Tasso di disoccupazione di chi ha 15-24 anni, agosto 2026 (rilevazione mensile DGBAS)",
+   "group": "national"
+  },
+  "timeToJob": {
+   "v": 1.5,
+   "year": 2019,
+   "def": "Average months to find the first job for bachelor's graduates of academic year 107 (2018/19) who were insured under labor, public-servant or farmer insurance at some point between graduation and end of April 2019 (administrative data; excludes graduates never insured, e.g. self-employed, abroad, studying).",
+   "defIt": "Mesi medi per trovare il primo lavoro dei laureati triennali dell'anno accademico 107 (2018/19) che risultano iscritti a un'assicurazione lavoro, pubblica o agricola tra la laurea e fine aprile 2019 (dati amministrativi; esclusi i mai assicurati, ad es. autonomi, all'estero, in studio).",
+   "src": "https://www.mol.gov.tw/1607/1632/1640/44579/",
+   "by": "Ministry of Labor (Taiwan) Statistics Dept, '近5年大專畢業生就業狀況及薪資行情' (released 2019-08-28)",
+   "group": "national"
+  }
+ },
+ "CA": {
+  "recentGrad": {
+   "v": 91.9,
+   "year": 2023,
+   "def": "Employment rate in 2023 of Canadian bachelor's graduates of the class of 2020, three years after graduating (National Graduates Survey); 91.0% across all credential levels.",
+   "defIt": "Tasso di occupazione nel 2023 dei laureati canadesi di primo livello della classe 2020, tre anni dopo il titolo (National Graduates Survey); 91,0% su tutti i livelli di titolo.",
+   "src": "https://www150.statcan.gc.ca/n1/daily-quotidien/250205/dq250205b-eng.htm",
+   "by": "Statistics Canada, The Daily 5 Feb 2025, International student graduates' labour market early outcomes (2023 National Graduates Survey)",
+   "group": "national"
+  },
+  "foreignGrad": {
+   "v": 84.5,
+   "year": 2023,
+   "def": "Employment rate in 2023 of international-student bachelor's graduates of the class of 2020 who stayed in Canada and did not continue studying, three years after graduation; 88.6% across all credential levels (Canadian graduates 91.0%).",
+   "defIt": "Tasso di occupazione nel 2023 dei laureati triennali internazionali della classe 2020 rimasti in Canada e non proseguiti negli studi, tre anni dopo il titolo; 88,6% su tutti i livelli (laureati canadesi 91,0%).",
+   "src": "https://www150.statcan.gc.ca/n1/daily-quotidien/250205/dq250205b-eng.htm",
+   "by": "Statistics Canada, The Daily 5 Feb 2025, International student graduates' labour market early outcomes (2023 National Graduates Survey)",
+   "group": "national"
+  }
+ },
+ "AU": {
+  "recentGrad": {
+   "v": 89.2,
+   "year": 2025,
+   "def": "Domestic undergraduate graduates in paid work for at least one hour a week (overall employment rate), as a share of those available for work, surveyed 4-6 months after completing the course (Nov 2024 to May 2025 collection); full-time-only rate is 75.4%.",
+   "defIt": "Laureati triennali/di primo livello nazionali (domestici) con un lavoro retribuito di almeno un'ora a settimana (tasso di occupazione complessivo), in percentuale di chi è disponibile al lavoro, intervistati 4-6 mesi dopo il titolo (raccolta nov. 2024 - mag. 2025); il tasso di solo tempo pieno è 75,4%.",
+   "src": "https://qilt.edu.au/docs/default-source/default-document-library/gos_2025_national_report_tables.zip?sfvrsn=643ae941_1",
+   "by": "QILT / Social Research Centre for Australian Dept of Education, 2025 Graduate Outcomes Survey National Report Tables (OVERALL_ALL_ALL_2Y_HEPTYPE)",
+   "group": "national"
+  },
+  "foreignGrad": {
+   "v": 70.7,
+   "year": 2025,
+   "def": "International (non-citizen) undergraduate graduates of Australian institutions in paid work at least one hour a week (overall employment rate), as a share of those available for work, 4-6 months after completion; full-time-only rate is 50.8%.",
+   "defIt": "Laureati triennali internazionali di istituzioni australiane con un lavoro retribuito di almeno un'ora a settimana (tasso di occupazione complessivo), in percentuale di chi è disponibile al lavoro, 4-6 mesi dopo il titolo; il tasso di solo tempo pieno è 50,8%.",
+   "src": "https://qilt.edu.au/docs/default-source/default-document-library/gos_2025_international_report_tables.zip?sfvrsn=5e0b873_1",
+   "by": "QILT / Social Research Centre, 2025 GOS International Report Tables (OVERALL_ALL_ALL_3Y)",
+   "group": "national"
+  }
+ },
+ "MY": {
+  "recentGrad": {
+   "v": 93.0,
+   "year": 2024,
+   "def": "Malaysian-citizen bachelor's graduates of the 2024 cohort (public and private HEIs, polytechnics, etc.; 111,530 employed of 119,894) in the Graduate Tracer Study: employed as a share of those in the labour force (employed plus job-seekers); graduates in further study, skills training or awaiting placement are excluded (definition revised in 2024 to match DOSM/ILO). Citizens only; taken shortly after graduation, exact months not stated.",
+   "defIt": "Laureati triennali cittadini malesi della coorte 2024 (università pubbliche e private, politecnici, ecc.; 111.530 occupati su 119.894) nel Graduate Tracer Study: occupati in percentuale di chi è nella forza lavoro (occupati più in cerca di lavoro); esclusi chi prosegue gli studi, fa formazione o attende l'assegnazione (definizione rivista nel 2024 in linea con DOSM/ILO). Solo cittadini; rilevazione poco dopo la laurea, mesi esatti non indicati.",
+   "src": "https://mohe.gov.my/en/download/statistics/2024-4/1708-bab-7-tracer-study-2024-pdf/file",
+   "by": "Ministry of Higher Education Malaysia, Statistik Pendidikan Tinggi 2024, Chapter 7 Tracer Study, Table 7.5",
+   "group": "national"
+  },
+  "overqual": {
+   "v": 32.2,
+   "year": 2024,
+   "def": "Graduate skill-related underemployment rate: employed graduates (diploma and degree holders, highest qualification from a programme of at least two years, all ages) working in jobs below their qualification level; 1.60 million persons; 66.0% among those aged 24 and under.",
+   "defIt": "Tasso di sottoccupazione per competenze dei laureati: occupati diplomati e laureati (titolo di studio più alto, programma di almeno due anni, tutte le età) in lavori inferiori al proprio livello di qualifica; 1,60 milioni di persone; 66,0% tra gli under 25.",
+   "src": "https://www.dosm.gov.my/uploads/release-content/file_20260401145140.pdf",
+   "by": "Department of Statistics Malaysia (DOSM), Graduates Statistics 2024 (released 31 Oct 2025)",
+   "group": "national"
+  }
+ },
+ "NZ": {
+  "gradUnemp": {
+   "v": 3.1,
+   "year": 2026,
+   "def": "Unemployment rate (share of the labour force) of people whose highest qualification is a bachelor degree or level 7 qualification, Stats NZ Household Labour Force Survey, June 2026 quarter (postgraduate/honours or higher: 3.0%; Stats NZ publishes the two groups separately).",
+   "defIt": "Tasso di disoccupazione (quota della forza lavoro) delle persone con titolo massimo di laurea triennale o qualifica di livello 7, indagine Stats NZ sulle forze di lavoro delle famiglie, trimestre giugno 2026 (post-laurea/honours o superiore: 3,0%; Stats NZ pubblica i due gruppi separatamente).",
+   "src": "https://figure.nz/chart/qw2LqNPRh59zfkKP-iccvvyVKDSjLuRoy",
+   "by": "Stats NZ, Household Labour Force Survey: Labour Force Status by Highest Qualification by Sex (Quarterly), June 2026, released 5 Aug 2026 (viewed via Figure.NZ)",
+   "group": "national"
+  }
+ },
+ "OM": {
+  "gradUnemp": {
+   "v": 6.0,
+   "year": 2025,
+   "def": "NCSI 'job seekers rate' for people whose education is a bachelor's degree, 2025 column of Table 20 of the NCSI Monthly Statistical Bulletin (national total 3.1% in that column; higher diploma 8.3%, master's/PhD 0.7%; the table does not state the nationality base, the rate is the job-seeker rate rather than an ILO unemployment rate).",
+   "defIt": "'Tasso di persone in cerca di lavoro' NCSI per chi ha una laurea triennale (bachelor), colonna 2025 della Tabella 20 del Monthly Statistical Bulletin NCSI (totale nazionale 3,1% nella stessa colonna; diploma superiore 8,3%, master/dottorato 0,7%; la tabella non indica la nazionalità di base, ed è il tasso di job seekers, non un tasso di disoccupazione ILO).",
+   "src": "https://api.ncsi.gov.om/uploads/pdfs/monthly_statistical_bulletin__september_2026_1790489778.pdf",
+   "by": "National Centre for Statistics and Information (NCSI), Oman, Monthly Statistical Bulletin September 2026, Table 20 'Jobs Seekers Rate by Governorates, Age Group and Education Status'",
+   "group": "national"
+  }
+ }
+}

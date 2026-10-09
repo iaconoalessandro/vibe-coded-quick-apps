@@ -193,7 +193,7 @@ I18N.add('it', {
   'You can see results now, but they will be less accurate.': 'Puoi vedere i risultati già ora, ma saranno meno precisi.',
   'Go to {n}. {title}': 'Vai a {n}. {title}',
   'Search employers…': 'Cerca un datore di lavoro…',
-  'No match. Employers outside the published list score 0 here.': 'Nessun risultato. I datori di lavoro fuori dall\'elenco pubblicato qui valgono 0.',
+  'Not in this list. Find the closest peer under “See some examples” and type its value (0 to 4) in the box.': 'Non è in questo elenco. Trova il caso più simile in “Vedi qualche esempio” e scrivi il suo valore (da 0 a 4) nella casella.',
   'See some examples': 'Vedi qualche esempio',
   'optional': 'facoltativo',
   'Clear this answer': 'Cancella questa risposta',
@@ -757,5 +757,273 @@ I18N.add('it', {
   '{N} programme is ruled out by a published requirement.': '{N} programma ti esclude con un requisito pubblicato.',
   '{N} programmes are ruled out by a published requirement.': '{N} programmi ti escludono con un requisito pubblicato.',
   'No hard rule rules you out on the answers so far.': 'Con le risposte date finora nessun requisito vincolante ti esclude.',
-  'No hard rule rules you out.': 'Nessun requisito vincolante ti esclude.'
+  'No hard rule rules you out.': 'Nessun requisito vincolante ti esclude.',
+
+  /* ---------------------------------------------------------------- Atlas (map.html, js/page-map.js) --- */
+  'Atlas': 'Atlante',
+  'Atlas — Admetia': 'Atlante — Admetia',
+  '{country} — Atlas — Admetia': '{country} — Atlante — Admetia',
+  'Your passport': 'Il tuo passaporto',
+  'Remembered in this browser only. “Clear everything” removes it.': 'Ricordato solo in questo browser. «Cancella tutto» lo rimuove.',
+  'Not chosen yet: routes are shown for an EU passport until you pick one.': 'Non ancora scelto: finché non ne scegli uno, i percorsi sono mostrati per un passaporto UE.',
+  'Map': 'Mappa',
+  'World map of the countries the Atlas covers': 'Mappa del mondo con i paesi trattati dall’Atlante',
+  'Covered: tap or press Enter for a summary': 'Trattato: tocca o premi Invio per una sintesi',
+  'Not covered (hatched)': 'Non trattato (tratteggiato)',
+  'Small country or city-state': 'Piccolo paese o città-stato',
+  'Loading…': 'Caricamento…',
+  'This country’s page could not be loaded. Check your connection and try again.': 'Non è stato possibile caricare la pagina di questo paese. Controlla la connessione e riprova.',
+  'and {n} more on the country page': 'e altri {n} nella pagina del paese',
+  'read {date}': 'letto il {date}',
+  '← Back to the map': '← Torna alla mappa',
+  'Outside Europe': 'Fuori dall’Europa',
+  'Checked {date}': 'Verificato il {date}',
+  'Showing: {p} passport': 'Passaporto mostrato: {p}',
+  'This is your own country, so there is no route to describe. Pick another passport to see how others get here.':
+    'Questo è il tuo paese, quindi non c’è un percorso da descrivere. Scegli un altro passaporto per vedere come ci arrivano gli altri.',
+  'Outside Admetia’s scope': 'Fuori dall’ambito di Admetia',
+  'Admetia covers routes into, out of and within Europe. A route from a non-European passport to a country outside Europe is not one of them, so there is no content for it here.':
+    'Admetia tratta i percorsi verso, dall’Europa e al suo interno. Un percorso da un passaporto non europeo verso un paese fuori dall’Europa non rientra tra questi, quindi qui non ci sono contenuti.',
+  'The hubs and the roles above still describe the job market.': 'I poli e i ruoli qui sopra descrivono comunque il mercato del lavoro.',
+  'Working there': 'Lavorarci',
+  'First weeks': 'Le prime settimane',
+  'in the order most people do them': 'nell’ordine in cui li fa la maggior parte delle persone',
+  'Official advice and restrictions': 'Avvisi ufficiali e restrizioni',
+  'Hubs': 'Poli',
+  'The hub': 'Il polo',
+  '{n} hubs: tap one for what it hires for': '{n} poli: toccane uno per vedere per cosa assume',
+  'Research behind this page': 'La ricerca dietro questa pagina',
+  'Briefs in the research library': 'Dossier nella biblioteca di ricerca',
+  'Not verified yet': 'Non ancora verificato',
+  'Verification log: {p} in research/verification/claims-to-verify.md.': 'Registro di verifica: {p} in research/verification/claims-to-verify.md.',
+  'Pick a hub': 'Scegli un polo',
+  'Colour by': 'Colora per', 'Plain': 'Nessun colore',
+  'GDP per head': 'PIL pro capite', 'GDP per head, PPP (international dollars)': 'PIL pro capite, a parità di potere d’acquisto (dollari internazionali)',
+  'Economy size': 'Dimensione dell’economia', 'GDP, current prices (US dollars)': 'PIL a prezzi correnti (dollari USA)',
+  'Unemployment': 'Disoccupazione', 'Unemployment rate (% of the labour force)': 'Tasso di disoccupazione (% della forza lavoro)',
+  'Growth': 'Crescita', 'Real GDP growth (% a year)': 'Crescita del PIL reale (% annuo)',
+  'no IMF figure': 'nessun dato FMI',
+  '{source}, {year} figures, partly estimates. Five classes of about nine countries each.':
+    '{source}, dati {year}, in parte stime. Cinque classi di circa nove paesi ciascuna.',
+  '{n} of {total}, highest first': '{n}° su {total}, dal più alto',
+  '{source}, {year} figures, partly estimates; ranks among the 46 Atlas countries.':
+    '{source}, dati {year}, in parte stime; posizioni tra i 46 paesi dell’Atlante.',
+  'Key figures': 'Dati chiave', 'where it sits among the 46': 'dove si colloca tra i 46',
+  'Hubs compared': 'I poli a confronto', '{n} hubs side by side': '{n} poli fianco a fianco',
+  'Mostly business and finance roles': 'Soprattutto ruoli di business e finanza',
+  'Mostly computing and data roles': 'Soprattutto ruoli di informatica e dati',
+  'Both, equally': 'Entrambi, in egual misura', 'No family rated yet': 'Nessuna famiglia ancora valutata',
+  'Bigger square, more residents': 'Quadrato più grande, più abitanti',
+  'What each hub hires for': 'Per cosa assume ogni polo',
+  'Darker means more demand; a blank cell is not rated.': 'Più scuro significa più domanda; una cella vuota non è valutata.',
+  'No family is rated in any hub yet.': 'Nessuna famiglia è ancora valutata in alcun polo.',
+  'Hub': 'Polo', 'not rated': 'non valutato', 'Not rated': 'Non valutato',
+  'Not rated in any hub: {list}': 'Non valutate in alcun polo: {list}',
+  'How far each hub’s pull reaches': 'Fin dove arriva l’attrazione di ogni polo',
+  'Standing out of 5: in the country, in the region and in the world.': 'Posizione su 5: nel paese, nella regione e nel mondo.',
+  'Judgements from cited rankings and statistics, never measurements: 5 leading, 4 among the top five, 3 a recognised secondary centre, 2 minor, 1 negligible at that scale. The sources are in each hub’s detail.':
+    'Giudizi basati su classifiche e statistiche citate, mai misurazioni: 5 al vertice, 4 tra i primi cinque, 3 un centro secondario riconosciuto, 2 minore, 1 trascurabile a quella scala. Le fonti sono nella scheda di ogni polo.',
+  'Residents': 'Abitanti',
+  'Output of the area in a year: the volume of business done there.': 'Il prodotto dell’area in un anno: il volume d’affari che vi si genera.',
+  'Pay and rent': 'Stipendio e affitto',
+  'Average gross monthly pay against the monthly rent of a one-bedroom flat, in the same currency.':
+    'Retribuzione media mensile lorda a confronto con l’affitto mensile di un bilocale, nella stessa valuta.',
+  'no figure': 'nessun dato', 'rent {p}% of pay': 'affitto {p}% dello stipendio',
+  'The share is an author calculation on gross pay; on take-home pay it is higher.':
+    'La quota è un calcolo dell’autore sullo stipendio lordo; sul netto è più alta.',
+  'median': 'mediana', 'mean': 'media', 'Standing': 'Posizione',
+  'Sources': 'Fonti', 'Figures': 'Dati',
+  'Visas and permits': 'Visti e permessi',
+  'Advice': 'Avvisi', 'Compare': 'Confronto', 'Visas': 'Visti', 'Research': 'Ricerca',
+  'Section {n} of {total}': 'Sezione {n} di {total}',
+  'Life there': 'Vivere lì',
+  'each line says whether it is about the whole country or each city': 'ogni riga dice se riguarda tutto il paese o ciascuna città',
+  'City figures are read at each hub’s city centre; country figures are national averages. Each topic comes from one source for all 46 countries, so pages compare; office culture is the exception, because no single source covers it, so each country cites its own pages.':
+    'I dati per città sono letti al centro di ciascun polo; quelli per paese sono medie nazionali. Ogni tema viene da una sola fonte per tutti i 46 paesi, così le pagine si possono confrontare; la cultura d’ufficio fa eccezione, perché nessuna fonte unica la copre, quindi ogni paese cita le proprie pagine.',
+  'By city': 'Per città', 'Whole country': 'Tutto il paese', 'City': 'Città', 'no figure in this source': 'nessun dato in questa fonte',
+  'Climate': 'Clima', 'Coldest month': 'Mese più freddo', 'Warmest month': 'Mese più caldo', 'Rain a year': 'Pioggia annua',
+  'Cloud cover': 'Copertura nuvolosa', '{m}: {t} °C': '{m}: {t} °C', '{n} mm': '{n} mm',
+  'Daylight': 'Luce del giorno', 'Shortest day': 'Giorno più corto', 'Longest day': 'Giorno più lungo', '{h} h {m} min': '{h} h {m} min',
+  'Air quality': 'Qualità dell’aria', 'Fine particles (PM2.5)': 'Polveri sottili (PM2,5)', 'Against the WHO guideline': 'Rispetto alla soglia OMS',
+  '{n} µg/m³': '{n} µg/m³', '{n} × the guideline': '{n} × la soglia',
+  'Time zone': 'Fuso orario',
+  'All {n} hubs': 'Tutti i {n} poli', '{u} all year': '{u} tutto l’anno', '{a} in January and {b} in July': '{a} a gennaio e {b} a luglio',
+  '{a} h ahead of Central European Time in January and {b} h in July': '{a} h avanti rispetto all’ora dell’Europa centrale a gennaio e {b} h a luglio',
+  '{a} h behind Central European Time in January and {b} h in July': '{a} h indietro rispetto all’ora dell’Europa centrale a gennaio e {b} h a luglio', 'January': 'Gennaio', 'July': 'Luglio', 'same as Central European Time': 'come l’ora dell’Europa centrale',
+  '{n} h ahead of Central European Time': '{n} h avanti rispetto all’ora dell’Europa centrale',
+  '{n} h behind Central European Time': '{n} h indietro rispetto all’ora dell’Europa centrale',
+  'English': 'Inglese', 'EF city score': 'Punteggio EF della città',
+  'Whole country: EF English Proficiency Index {y} score {s} ({b}), {r} in the world.':
+    'Tutto il paese: EF English Proficiency Index {y}, punteggio {s} ({b}), {r} al mondo.',
+  'very high': 'molto alto', 'high': 'alto', 'moderate': 'moderato', 'low': 'basso', 'very low': 'molto basso',
+  'EF publishes no score for this country’s hub cities.': 'EF non pubblica punteggi per le città dei poli di questo paese.',
+  'Whole country: EF does not rank countries where English is the main language, so it publishes no score here.':
+    'Tutto il paese: EF non classifica i paesi in cui l’inglese è la lingua principale, quindi qui non pubblica un punteggio.',
+  'Whole country: EF publishes no English proficiency score for this country.':
+    'Tutto il paese: EF non pubblica un punteggio di conoscenza dell’inglese per questo paese.',
+  'Prices': 'Prezzi', 'Price level {v} (US = 100) in {y}: {rank} of the {of} countries.':
+    'Livello dei prezzi {v} (Stati Uniti = 100) nel {y}: {rank} dei {of} paesi.',
+  'Safety': 'Sicurezza', '{v} intentional homicides per 100,000 people in {y}: {rank} of the {of} countries with a figure.':
+    '{v} omicidi volontari ogni 100.000 abitanti nel {y}: {rank} dei {of} paesi con un dato.',
+  'No figure for this country in the UNODC series the World Bank publishes.': 'Nessun dato per questo paese nella serie UNODC pubblicata dalla Banca mondiale.',
+  'Working hours': 'Orario di lavoro', 'People in work put in {v} hours a week on average in {y}: {rank} of the {of} countries with a figure.':
+    'Chi lavora fa in media {v} ore a settimana nel {y}: {rank} dei {of} paesi con un dato.',
+  'highest': 'più alto', 'lowest': 'più basso', 'shortest': 'più breve',
+  'the highest': 'il più alto', 'the lowest': 'il più basso', 'the shortest': 'il più breve',
+  'No figure for this country in ILOSTAT.': 'Nessun dato per questo paese in ILOSTAT.',
+  'Office culture': 'Cultura d’ufficio', 'Swiss German': 'Tedesco svizzero',
+  'By law, at least {n} paid days of annual leave a year, plus {m} public holidays.': 'Per legge almeno {n} giorni di ferie retribuite all’anno, più {m} festività pubbliche.',
+  'By law, at least {n} paid days of annual leave a year.': 'Per legge almeno {n} giorni di ferie retribuite all’anno.',
+  '{m} public holidays a year.': '{m} festività pubbliche all’anno.',
+  'There is no national legal minimum of paid annual leave for private employers: it is set by the contract.': 'Non esiste un minimo nazionale di ferie retribuite per i datori di lavoro privati: lo stabilisce il contratto.',
+  'Leave and holiday counts are legal minimums for a full-time job on a five-day week: contracts, regions and years of service often add days. The sentences on the working day and office style are what business guides report, not rules: workplaces differ.':
+    'I giorni di ferie e di festività sono i minimi di legge per un lavoro a tempo pieno su cinque giorni: contratti, regioni e anzianità spesso ne aggiungono. Le frasi sulla giornata di lavoro e sullo stile d’ufficio riportano ciò che dicono le guide per chi fa affari, non regole: i luoghi di lavoro cambiano.',
+  'Not researched yet for this country.': 'Non ancora ricercato per questo paese.',
+  'Language in daily life': 'Lingua nella vita quotidiana', '{l} (spoken by about {p}%)': '{l} (parlato da circa il {p}%)',
+  'Official languages: {list}.': 'Lingue ufficiali: {list}.', 'Official language: {list}.': 'Lingua ufficiale: {list}.',
+  'Official in some regions: {list}.': 'Ufficiale in alcune regioni: {list}.',
+  'Shares are Unicode CLDR’s estimates of how many people speak each language. Many workplaces run in another language: see English below and Working there.':
+    'Le quote sono stime di Unicode CLDR su quante persone parlano ciascuna lingua. Molti luoghi di lavoro usano un’altra lingua: vedi Inglese qui sotto e Lavorarci.',
+  'Essential health services reach {v} on the UHC service coverage index (0–100, {y}): {rank} of the {of} countries.':
+    'I servizi sanitari essenziali arrivano a {v} sull’indice di copertura dei servizi UHC (0–100, {y}): {rank} dei {of} paesi.',
+  '{d} doctors and {b} hospital beds per 1,000 people ({y}).': '{d} medici e {b} posti letto in ospedale ogni 1.000 abitanti ({y}).',
+  '{d} doctors per 1,000 people ({y}).': '{d} medici ogni 1.000 abitanti ({y}).',
+  '{b} hospital beds per 1,000 people ({y}).': '{b} posti letto in ospedale ogni 1.000 abitanti ({y}).',
+  'The chance of dying between 30 and 70 from heart disease, cancer, diabetes or chronic lung disease is {v}% ({y}): {rank} of the {of} countries.':
+    'La probabilità di morire tra i 30 e i 70 anni per malattie del cuore, tumori, diabete o malattie polmonari croniche è del {v}% ({y}): {rank} dei {of} paesi.',
+  'These describe the health system as a whole, not any one hospital or doctor. Whether a newcomer can join the public scheme is covered under First weeks, health cover.':
+    'Descrivono il sistema sanitario nel suo insieme, non un singolo ospedale o medico. Se un nuovo arrivato può iscriversi al servizio pubblico è spiegato in Le prime settimane, copertura sanitaria.',
+  'Health care': 'Sanità', 'Patients pay {v}% of health spending out of their own pocket ({y}).':
+    'I pazienti pagano di tasca propria il {v}% della spesa sanitaria ({y}).',
+  'How locals come across': 'Come appaiono le persone del posto',
+  'Foreign residents surveyed by InterNations in {y} rank locals’ friendliness {n} of {of} destinations: {third}.':
+    'Gli stranieri residenti intervistati da InterNations nel {y} collocano la cordialità delle persone del posto al {n} posto su {of} destinazioni: {third}.',
+  'among the friendliest third': 'nel terzo più cordiale', 'in the middle third': 'nel terzo intermedio', 'among the least friendly third': 'nel terzo meno cordiale',
+  'Making local friends: {a} of {of}. Feeling welcome and at home: {b} of {of}.':
+    'Fare amicizia con le persone del posto: {a} su {of}. Sentirsi accolti e a casa: {b} su {of}.',
+  'How foreign residents who answered the survey see locals, not a measure of a people: experiences vary by city, group and person.':
+    'È come gli stranieri residenti che hanno risposto al sondaggio vedono le persone del posto, non una misura di un popolo: le esperienze variano per città, gruppo e persona.',
+  'Not among the {of} destinations InterNations ranked in {y}.': 'Non è tra le {of} destinazioni classificate da InterNations nel {y}.',
+  'Crime recorded by the police': 'Reati registrati dalla polizia', 'England and Wales': 'Inghilterra e Galles',
+  'Serious assault': 'Aggressioni gravi', 'Robbery': 'Rapine', 'Theft': 'Furti', 'Burglary': 'Furti in abitazione',
+  '{what}: {v} per 100,000 people in {y}': '{what}: {v} ogni 100.000 abitanti nel {y}',
+  'up {n}% since {y}': '+{n}% dal {y}', 'down {n}% since {y}': '−{n}% dal {y}', 'unchanged since {y}': 'invariato dal {y}',
+  'Each country defines and records these offences differently, and people report crime more readily in some places than others: compare a country with itself over time, not countries with each other. The homicide rate above is the most comparable measure.':
+    'Ogni paese definisce e registra questi reati in modo diverso, e in alcuni luoghi si denuncia più facilmente che in altri: confronta un paese con sé stesso nel tempo, non i paesi tra loro. Il tasso di omicidi qui sopra è la misura più confrontabile.',
+  'No recent figure for this country in UNODC’s crime statistics.': 'Nessun dato recente per questo paese nelle statistiche sui reati dell’UNODC.',
+  'Life expectancy at birth is {v} years ({y}).': 'La speranza di vita alla nascita è di {v} anni ({y}).',
+  'No figure for this country in the World Bank’s health series.': 'Nessun dato per questo paese nelle serie sanitarie della Banca mondiale.',
+  'The first-weeks research for this country could not be loaded. Check your connection and try again.':
+    'Non è stato possibile caricare la ricerca sulle prime settimane per questo paese. Controlla la connessione e riprova.',
+  'This is your own country, so there are no first steps to describe. Pick another passport to see what newcomers do.':
+    'Questo è il tuo paese, quindi non ci sono primi passi da descrivere. Scegli un altro passaporto per vedere cosa fa chi arriva.',
+  'Outside Admetia’s scope for this passport, as in Visas and permits above.':
+    'Fuori dall’ambito di Admetia per questo passaporto, come in Visti e permessi qui sopra.',
+  'Not covered by Admetia’s research for this passport yet.':
+    'La ricerca di Admetia non copre ancora questo passaggio per questo passaporto.',
+  'Visa regulations, legal limits, financial thresholds, and bilateral agreements change continuously: treat this as an indicative overview and always confirm current requirements on official sources before applying.':
+    'Normative sui visti, limiti di legge, soglie economiche e accordi bilaterali cambiano continuamente: considera questo un quadro indicativo e verifica sempre i requisiti vigenti sulle fonti ufficiali prima di fare domanda.',
+  'This research is past its review date ({date}): rules and figures may have changed since.':
+    'Questa ricerca ha superato la data di revisione ({date}): regole e importi potrebbero essere cambiati.',
+  'The visa research for this country could not be loaded. Check your connection and try again.':
+    'Non è stato possibile caricare la ricerca sui visti per questo paese. Controlla la connessione e riprova.',
+  'You move freely': 'Ti sposti liberamente', 'Watch out:': 'Attenzione:',
+  'Traps people fall into': 'Le trappole più comuni', 'Not settled yet': 'Ancora da chiarire',
+  'What the research could not confirm, or saw changing, when it was checked.':
+    'Ciò che la ricerca non ha potuto confermare, o ha visto cambiare, al momento della verifica.',
+  'Admetia’s visa research has no route for this passport here yet.':
+    'La ricerca di Admetia sui visti non ha ancora un percorso per questo passaporto qui.',
+  'Visas and permits: the full research, in Italian, with every case, trap and open question:':
+    'Visti e permessi: la ricerca completa, con ogni caso, trappola e questione aperta:',
+  'How hiring works in 46 countries': 'Come si viene assunti in 46 paesi', 'How hiring works in 46 countries — Admetia': 'Come si viene assunti in 46 paesi — Admetia',
+  'How hiring works — Admetia': 'Come si viene assunti — Admetia',
+  'Foreign desk · the way in, country by country': 'Esteri · la via d’ingresso, paese per paese',
+  'The same questions asked of every country: what is the real way into a job, is a master’s expected, which language do employers need, what do they ask of an application, and how do graduates fare. Compare them below, or tell the planner where you are and what you want, and see the route most people take.':
+    'Le stesse domande per ogni paese: qual è la vera via d’ingresso nel lavoro, serve una magistrale, quale lingua chiedono i datori di lavoro, che cosa si aspettano da una candidatura e come se la cavano i laureati. Confrontali qui sotto, oppure di’ al pianificatore dove sei e che cosa vuoi, e guarda la strada che segue la maggior parte delle persone.',
+  'This country is not in Eurostat’s survey. Graduate and youth unemployment are the ILO’s modelled estimates, the same definition for every country outside Eurostat; any other figure has its own definition and year. Do not set either beside a Eurostat country’s.':
+    'Questo paese non è nell’indagine Eurostat. La disoccupazione dei laureati e quella giovanile sono stime modellate dell’ILO, con la stessa definizione per tutti i paesi fuori da Eurostat; ogni altro dato ha una definizione e un anno propri. Non confrontare né gli uni né gli altri con un paese Eurostat.',
+  'Plan your route': 'Pianifica la tua strada', 'Choose a country': 'Scegli un paese', 'Country': 'Paese',
+  'Where you are now': 'Dove sei adesso', 'Still studying': 'Sto ancora studiando', 'Just graduated, or about to': 'Appena laureato, o quasi', 'Already working': 'Lavoro già',
+  'What you want': 'Che cosa vuoi', 'Role family': 'Famiglia di ruoli', 'Any': 'Qualsiasi',
+  'Pick a country to see the route most people take there for what you want to do, what it needs, and when it opens.':
+    'Scegli un paese per vedere la strada che segue la maggior parte delle persone, ciò che serve e quando si apre.',
+  'This country’s hiring research could not be loaded.': 'Non è stato possibile caricare la ricerca sulle assunzioni di questo paese.',
+  'The route most used': 'La strada più usata', 'What it needs': 'Che cosa serve', 'When it opens': 'Quando si apre',
+  'number {n} of {m} routes here': 'numero {n} di {m} strade qui', 'Also used:': 'Si usa anche:',
+  'No route here is marked as specific to this path; this is the most common route overall.': 'Nessuna strada qui è indicata come specifica per questo percorso; questa è la più comune in generale.',
+  'No dates found for this country and role family. See its page for the full picture.': 'Nessuna data trovata per questo paese e questa famiglia di ruoli. Vedi la sua pagina per il quadro completo.',
+  'Open {country}’s page': 'Apri la pagina di {country}', 'Sources': 'Fonti',
+  'Compare the countries': 'Confronta i paesi', 'A route in use': 'Una strada in uso',
+  '{n} of {m} countries': '{n} paesi su {m}', 'No country matches all of these. Loosen one filter.': 'Nessun paese corrisponde a tutti questi criteri. Allenta un filtro.',
+  'Most-used route': 'Strada più usata', 'Where this route ranks': 'Posizione di questa strada', 'Language': 'Lingua', 'Recent graduates in work': 'Neolaureati che lavorano',
+  '† This country is not in Eurostat’s survey: its figure has its own definition (hover for it), so do not compare it with the others. The Eurostat figure is the employment rate of graduates aged 20-34 who finished 1 to 3 years ago.':
+    '† Questo paese non è nell’indagine Eurostat: il suo dato ha una definizione propria (passaci sopra il mouse), quindi non confrontarlo con gli altri. Il dato Eurostat è il tasso di occupazione dei laureati di 20-34 anni che hanno finito da 1 a 3 anni fa.',
+  'Open a country for the evidence behind every cell, its sources and the dates it was read.': 'Apri un paese per le prove dietro ogni cella, le fonti e le date di lettura.',
+  'Compare all 46 countries': 'Confronta tutti i 46 paesi', 'Plan your route in this country': 'Pianifica la tua strada in questo paese',
+  'How hiring works': 'Come si viene assunti', 'Hiring': 'Assunzioni',
+  'There are many ways into a first job. This is the one most graduates here actually take, and it is rarely “apply on LinkedIn from abroad and hope”.':
+    'Le strade per un primo lavoro sono tante. Questa è quella che la maggior parte dei laureati qui segue davvero, e raramente è “candidarsi su LinkedIn dall’estero e sperare”.',
+  'This research is past its review date ({date}): hiring habits may have changed since.':
+    'Questa ricerca ha superato la data di revisione ({date}): le abitudini di assunzione potrebbero essere cambiate.',
+  'Most people get in through': 'Quasi tutti entrano attraverso',
+  'When the economy turns': 'Quando l’economia gira', 'Where a field works differently': 'Dove un settore funziona diversamente',
+  'Schools and people that open doors': 'Scuole e persone che aprono porte', 'Where students meet employers': 'Dove studenti e aziende si incontrano',
+  'How to apply': 'Come candidarsi',
+  'No field-specific account found for: {list}. The general route above applies as far as the research knows.':
+    'Nessun resoconto specifico trovato per: {list}. Per quanto ne sa la ricerca, vale la strada generale descritta sopra.',
+  'Admetia’s own reading of how hiring works here; no single source was read for it':
+    'Lettura di Admetia di come si assume qui; non è stata letta una fonte specifica',
+  'Our reading': 'Nostra lettura', 'as of {date}': 'aggiornata al {date}',
+  '{n} sources, numbered in the order the page cites them': '{n} fonti, numerate nell’ordine in cui la pagina le cita',
+  'Source {n}': 'Fonte {n}', 'Sources {a} to {b}': 'Fonti da {a} a {b}', 'Back to the text': 'Torna al testo',
+  'Zoom in': 'Ingrandisci',
+  'Zoom out': 'Riduci',
+  'Reset the map': 'Ripristina la mappa',
+  'Why it is a hub': 'Perché è un polo',
+  'Sectors present': 'Settori presenti',
+  'Named employers and ecosystems': 'Datori di lavoro ed ecosistemi citati',
+  'Demand by role family': 'Domanda per famiglia di ruoli',
+  'Inside finance': 'Dentro la finanza',
+  'Adjacent paths': 'Percorsi affini',
+  'Calculator programmes here': 'Programmi del calcolatore qui',
+  'Family': 'Famiglia',
+  'Level': 'Livello',
+  'Based on': 'Fonti',
+  'Not rated, no source found: {list}': 'Non valutato, nessuna fonte trovata: {list}',
+  'Major sectors': 'Settori principali',
+  'Main hub': 'Polo principale',
+  'Main hubs': 'Poli principali',
+  'Most-requested roles': 'Ruoli più richiesti',
+  'Not rated: no source read puts any family at strong or dominant in this country.': 'Non valutati: nessuna fonte letta colloca una famiglia a livello forte o dominante in questo paese.',
+  'Open the country page →': 'Apri la pagina del paese →',
+  'Routes there on your passport are outside Admetia’s scope; the hubs above still apply.':
+    'I percorsi con il tuo passaporto sono fuori dall’ambito di Admetia; i poli qui sopra restano validi.',
+  'Data': 'Dati',
+  'Employer-stated': 'Dichiarato dal datore di lavoro',
+  'Practitioner consensus': 'Consenso degli esperti',
+  'Anecdotal': 'Aneddotico',
+  'Your Atlas passport is saved.': 'Il passaporto dell’Atlante è salvato.',
+
+  'A world map of where graduates are hired, in and out of Europe: hubs, the roles each one hires for, and how to get there on your passport. Free and private.':
+    'Una mappa del mondo di dove si assumono i laureati, verso l’Europa e dall’Europa: i poli, i ruoli per cui assume ciascuno e come arrivarci con il tuo passaporto. Gratuita e privata.',
+  'Foreign desk · in, out and across Europe': 'Esteri · verso, dall’Europa e al suo interno',
+  'Where the work is': 'Dove si trova il lavoro',
+  'A country hires in many sectors, but each hub concentrates on a few kinds of role. Pick a country for what its hubs hire for, then open its page for how to get there on your passport.':
+    'Un paese assume in molti settori, ma ogni polo si concentra su pochi tipi di ruolo. Scegli un paese per vedere per cosa assumono i suoi poli, poi apri la sua pagina per sapere come arrivarci con il tuo passaporto.',
+  'Read this before you rely on the map': 'Leggi qui prima di fidarti della mappa',
+  'A reality check on hubs and rules': 'Un bagno di realtà su poli e regole',
+  'The Atlas is an informed starting point, not advice. Every rating is a judgement from the sources it cites, and every rule was read on the date shown beside it.':
+    'L’Atlante è un punto di partenza informato, non una consulenza. Ogni valutazione è un giudizio basato sulle fonti che cita, e ogni regola è stata letta nella data indicata accanto.',
+  '<strong>Demand levels are judgements.</strong> Dominant, strong, present and marginal summarise named employers, official statistics and specialist reports. None of them is a count of vacancies, and where nothing could be sourced the page says “not rated”.':
+    '<strong>I livelli di domanda sono giudizi.</strong> Dominante, forte, presente e marginale riassumono datori di lavoro citati, statistiche ufficiali e rapporti specialistici. Nessuno è un conteggio dei posti vacanti, e dove non è stato possibile trovare una fonte la pagina scrive «non valutato».',
+  '<strong>Immigration rules change without notice.</strong> Salary floors reset every January, quotas every year, and some routes close overnight. Check the official page linked beside each rule before you apply for anything.':
+    '<strong>Le regole sull’immigrazione cambiano senza preavviso.</strong> Le soglie salariali si aggiornano ogni gennaio, le quote ogni anno, e alcuni percorsi chiudono dall’oggi al domani. Controlla la pagina ufficiale indicata accanto a ogni regola prima di presentare qualsiasi domanda.',
+  '<strong>Your case is not the average case.</strong> Nationality, degree, age and employer all change which route applies. This page gives general information about published routes for a passport group, not immigration advice about your own case; in the UK, advice on an individual’s case may only be given by regulated advisers. For a decision with legal or tax consequences, ask an immigration lawyer or a tax adviser.':
+    '<strong>Il tuo caso non è il caso medio.</strong> Cittadinanza, laurea, età e datore di lavoro cambiano il percorso applicabile. Questa pagina dà informazioni generali sui percorsi pubblicati per un gruppo di passaporti, non una consulenza di immigrazione sul tuo caso; nel Regno Unito la consulenza sul caso individuale può essere data solo da consulenti regolamentati. Per una decisione con conseguenze legali o fiscali, chiedi a un avvocato esperto di immigrazione o a un consulente fiscale.',
+  'Nothing you choose on this page leaves your browser. The passport you pick is remembered here only, and “Clear everything” removes it.':
+    'Nulla di ciò che scegli in questa pagina lascia il tuo browser. Il passaporto che scegli è ricordato solo qui, e «Cancella tutto» lo rimuove.',
+  '<b class="rubric-in">Map data</b>Country shapes from Natural Earth (public domain), drawn as Italy recognises boundaries; no position on any boundary is implied. Simplified for the screen, so coastlines and borders are approximate.':
+    '<b class="rubric-in">Dati cartografici</b>Forme dei paesi da Natural Earth (pubblico dominio), disegnate secondo i confini riconosciuti dall’Italia; non si intende prendere posizione su alcun confine. Semplificate per lo schermo, quindi coste e confini sono approssimativi.',
+  '<b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.':
+    '<b class="rubric-in">Colophon</b>Le tue scelte non lasciano mai questo browser. Le visite sono contate in forma anonima — quale pagina, mai quale paese.'
 });

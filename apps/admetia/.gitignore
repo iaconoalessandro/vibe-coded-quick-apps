@@ -4,3 +4,14 @@ node_modules/
 _site/
 tools/.brand-cache/
 .venv/
+tools/.atlas-cache/
+
+# tools/atlas-life.js response cache
+.cache/
+
+# graphify cache, cost, and daily backups
+graphify-out/cache/
+graphify-out/cost.json
+graphify-out/20*
+graphify-out/*.lock
+graphify-out/.*.lock

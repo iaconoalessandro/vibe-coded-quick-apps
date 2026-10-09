@@ -86,6 +86,8 @@ and set against the schools already on the scale with similar figures. The same 
 sources informs the master's programmes, where every fact carries a tag saying where it
 came from.
 
+The Atlas's country shapes (`data/atlas/geo.js`) are derived from **[Natural Earth](https://www.naturalearthdata.com)** 1:10m Admin 0 countries, in its Italian point-of-view edition, which is in the public domain ([terms of use](https://www.naturalearthdata.com/about/terms-of-use/)). `tools/atlas-geo.js` simplifies and re-encodes them; no position on any boundary is implied beyond what that edition draws. Everything else in the Atlas — the claims, ratings and routes — cites its own source, page by page.
+
 ## Choosing a replacement
 
 Each image has to be recognisable as its subject **at a glance and at card size**. That is

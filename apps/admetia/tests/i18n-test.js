@@ -90,5 +90,74 @@ for(let pick=0;pick<6;pick++){
 }
 t('every score is the same in Italian as in English ('+n+' profile × track runs)',same);
 
+/* ------------------------------------------------------------ the Atlas --- */
+/* Every sentence in a country record has Italian, in the same file; the
+ * Italian keeps every number the English has; no entry is left over from
+ * edited English; and translating never changes a rating, an id or a
+ * coordinate — the Atlas's equivalent of a score. */
+function atlasLoad(lang){
+  const store={'admissions-calc:lang':lang};
+  const s={console,Math,Object,String,Number,Array,JSON,Date,RegExp,
+    localStorage:{getItem:k=>store[k]===undefined?null:store[k],setItem:()=>{}}};
+  s.window=s;
+  vm.createContext(s);
+  vm.runInContext(fs.readFileSync(path.join(APP,'js/i18n.js'),'utf8'),s);
+  vm.runInContext(fs.readFileSync(path.join(APP,'data/atlas/index.js'),'utf8'),s);
+  return s;
+}
+const atlasFiles=fs.readdirSync(path.join(APP,'data/atlas')).filter(f=>/^[a-z]{2}\.js$/.test(f));
+const AEN=atlasLoad('en'), AIT=atlasLoad('it');
+atlasFiles.forEach(f=>{ const src=fs.readFileSync(path.join(APP,'data/atlas',f),'utf8'); try{ vm.runInContext(src,AEN); vm.runInContext(src,AIT); }catch(e){ console.log('FAIL  Atlas: '+f+' does not run → '+e.message); } });
+
+function prose(rec){
+  const out=[];
+  const add=s=>{ if(typeof s==='string'&&s) out.push(s); };
+  add(rec.summary); (rec.sectors||[]).forEach(add); (rec.gaps||[]).forEach(add);
+  (rec.briefs||[]).forEach(b=>add(b[1]));
+  (rec.hubs||[]).forEach(h=>{ add(h.knownFor); (h.sectors||[]).forEach(add); (h.employers||[]).forEach(e=>{ add(e.note); add(e.t); }); });
+  Object.values(rec.route||{}).forEach(r=>Array.isArray(r)&&r.forEach(it=>add(it.k)));
+  (rec.work||[]).forEach(it=>add(it.k)); (rec.arrival||[]).forEach(it=>add(it.k));
+  Object.values(rec.claims||{}).forEach(c=>add(c.t));
+  return out;
+}
+/* Digits, with thousands and decimal separators dropped, so 50,700 and
+ * 50.700 (or 45,934.20 and 45.934,20) count as the same number. */
+const nums=s=>(String(s).match(/\d{1,3}(?:[., ]\d{3})+(?:[.,]\d+)?|\d+(?:[.,]\d+)?/g)||[]).map(n=>n.replace(/[., ]/g,'')).sort().join(' ');
+/* The shared vocabulary (country names, families, levels) lives in index.js. */
+const atlasIndexDict={};
+(function(){ const c={console,window:null,I18N:{add:(l,d)=>{ if(l==='it') Object.assign(atlasIndexDict,d); }}}; c.window=c; vm.createContext(c);
+  vm.runInContext(fs.readFileSync(path.join(APP,'data/atlas/index.js'),'utf8'),c); }());
+let atlasMissing=[], atlasNums=[], atlasStale=[];
+/* ATLAS_ONLY=ee,lt limits the three lists below to those records and prints them in full. */
+const ONLY=(process.env.ATLAS_ONLY||'').split(',').filter(Boolean).map(x=>x.trim().toLowerCase()+'.js');
+atlasFiles.forEach(f=>{
+  if(ONLY.length&&ONLY.indexOf(f)<0) return;
+  const dict={};
+  const c={console,window:null,ATLAS:{add:()=>{}},I18N:{add:(l,d)=>{ if(l==='it') Object.assign(dict,d); }}};
+  c.window=c; vm.createContext(c);
+  try{ vm.runInContext(fs.readFileSync(path.join(APP,'data/atlas',f),'utf8'),c); }catch(e){ return; }
+  const rec=AEN.ATLAS.records[f.slice(0,2).toUpperCase()];
+  if(!rec) return;
+  const ps=prose(rec), shared=IT.I18N;
+  ps.forEach(s=>{
+    const it=dict[s]!==undefined?dict[s]:atlasIndexDict[s];
+    if(it===undefined) atlasMissing.push(f+': '+s.slice(0,60));
+    else if(nums(s)!==nums(it)) atlasNums.push(f+': '+s.slice(0,50)+' ['+nums(s)+' vs '+nums(it)+']');
+  });
+  const set=new Set(ps);
+  Object.keys(dict).forEach(k=>{ if(!set.has(k)) atlasStale.push(f+': '+k.slice(0,60)); });
+});
+t('Atlas: every sentence in every country record has Italian ('+atlasFiles.length+' records)',atlasMissing.length===0,atlasMissing.length+': '+atlasMissing.slice(0,ONLY.length?1e6:40).join(' | '));
+t('Atlas: the Italian keeps every number the English has',atlasNums.length===0,atlasNums.slice(0,ONLY.length?1e6:3).join(' | '));
+t('Atlas: no Italian entry is left over from edited English',atlasStale.length===0,atlasStale.slice(0,ONLY.length?1e6:3).join(' | '));
+const idx=[...AEN.ATLAS.countries.map(c=>c.name),...AEN.ATLAS.views.map(v=>v.label),...AEN.ATLAS.roles.map(r=>r.name),
+  ...AEN.ATLAS.financeRoles.map(r=>r.name),...AEN.ATLAS.levels.map(l=>l.name),...AEN.ATLAS.levels.map(l=>l.note),
+  ...AEN.ATLAS.passports.map(p=>p.label),AEN.ATLAS.adjacentBasis.t,
+  ...AEN.ATLAS.scales.map(x=>x.name),...AEN.ATLAS.steps.map(x=>x.name),...(AEN.ATLAS.arrivalSteps||[]).map(x=>x.name),...AEN.ATLAS.metrics.map(x=>x.name),...AEN.ATLAS.areas.map(x=>x.name)];
+const idxMissing=idx.filter(s=>AIT.I18N.t(s)===s&&!/^(Malta|Austria|Estonia|Romania|Bulgaria|Canada|Russia|Oman|Qatar|Kuwait|Malaysia|Singapore|Vietnam|Taiwan|Australia|Hong Kong|Business|Management|Marketing|Analytics|IT|Software|Investment banking|Asset management|Private equity|Venture capital|Risk management)$/.test(s));
+t('Atlas: country names, views, role families, levels and passports have Italian',idxMissing.length===0,idxMissing.join(' | '));
+const shape=(A)=>JSON.stringify(Object.values(A.ATLAS.records).map(r=>[r.id,r.roles,r.hubs.map(h=>[h.id,h.lat,h.lon,h.demand,h.finance||null,(h.programmes||[]).map(p=>p.id),h.standing||null,h.metrics||null])]));
+t('Atlas: ratings, ids and coordinates are identical in both languages',shape(AEN)===shape(AIT)&&atlasFiles.length>0);
+
 console.log('\n'+pass+' passed, '+fail+' failed');
 process.exit(fail?1:0);

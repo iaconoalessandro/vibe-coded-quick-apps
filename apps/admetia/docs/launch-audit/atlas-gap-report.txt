@@ -1,0 +1,202 @@
+hubs=200 completely-unrated(white)=34 no-computing-rating=95
+hubs rated per family: {"business":70,"finance":105,"economics":3,"accounting":18,"management":25,"marketing":15,"logistics":30,"analytics":0,"it":80,"software":65,"datasci":11,"ai":12,"cs":7,"bigdata":0}
+AT	Linz	rated 0/14	
+AU	Perth	rated 0/14	
+AU	Adelaide	rated 0/14	
+AU	Canberra	rated 0/14	
+BG	Varna	rated 0/14	
+CH	Bern	rated 0/14	
+CH	St. Gallen	rated 0/14	
+CH	Lucerne	rated 0/14	
+CN	Suzhou	rated 0/14	
+CN	Wuhan	rated 0/14	
+CN	Chongqing	rated 0/14	
+CN	Chengdu	rated 0/14	
+DK	Odense	rated 0/14	
+FR	Strasbourg	rated 0/14	
+FR	Grenoble	rated 0/14	
+GB	Oxford	rated 0/14	
+JP	Osaka	rated 0/14	
+JP	Yokohama	rated 0/14	
+JP	Fukuoka	rated 0/14	
+JP	Kyoto	rated 0/14	
+KR	Incheon (Songdo)	rated 0/14	
+NL	The Hague	rated 0/14	
+NO	Trondheim	rated 0/14	
+PL	Gdańsk (Tricity)	rated 0/14	
+PL	Poznań	rated 0/14	
+PL	Łódź	rated 0/14	
+RU	Moscow	rated 0/14	
+RU	St Petersburg	rated 0/14	
+SE	Uppsala	rated 0/14	
+TH	Chonburi and the Eastern Economic Corridor	rated 0/14	
+TR	Bursa	rated 0/14	
+TW	Hsinchu	rated 0/14	
+TW	Taichung	rated 0/14	
+US	Austin	rated 0/14	
+AT	Graz	rated 1/14	software=present
+AT	Salzburg	rated 1/14	business=present
+AU	Melbourne	rated 1/14	finance=present
+AU	Brisbane	rated 1/14	finance=present
+BE	Antwerp	rated 1/14	logistics=strong
+BE	Liège	rated 1/14	logistics=present
+BE	Leuven	rated 1/14	cs=present
+BG	Plovdiv	rated 1/14	it=strong
+CA	Calgary	rated 1/14	business=strong
+CA	Ottawa	rated 1/14	software=present
+CH	Geneva and Lausanne	rated 1/14	finance=present
+CH	Zug	rated 1/14	finance=present
+CH	Lugano	rated 1/14	finance=strong
+DE	Wolfsburg	rated 1/14	management=present
+DE	Cologne	rated 1/14	finance=strong
+DE	Ruhr (Essen, Dortmund)	rated 1/14	business=strong
+DE	Leipzig	rated 1/14	management=present
+DK	Aalborg	rated 1/14	it=strong
+ES	Seville	rated 1/14	business=present
+ES	Málaga	rated 1/14	finance=present
+ES	Zaragoza	rated 1/14	business=present
+FI	Tampere	rated 1/14	it=strong
+FI	Turku	rated 1/14	it=strong
+FR	Bordeaux	rated 1/14	finance=strong
+FR	Nantes	rated 1/14	it=strong
+GB	Edinburgh	rated 1/14	finance=strong
+GB	Cambridge	rated 1/14	cs=strong
+GB	Glasgow	rated 1/14	finance=strong
+GB	Cardiff	rated 1/14	finance=present
+GB	Liverpool	rated 1/14	logistics=present
+GB	Newcastle	rated 1/14	software=present
+IL	Jerusalem	rated 1/14	software=strong
+IT	Naples	rated 1/14	business=present
+IT	Genoa	rated 1/14	business=present
+JP	Nagoya	rated 1/14	logistics=strong
+KR	Busan	rated 1/14	logistics=dominant
+KW	Kuwait City	rated 1/14	finance=present
+LT	Kaunas	rated 1/14	it=strong
+MY	Kuala Lumpur	rated 1/14	finance=strong
+MY	Penang (George Town)	rated 1/14	it=present
+MY	Johor Bahru	rated 1/14	it=strong
+NL	Rotterdam and Delft	rated 1/14	logistics=dominant
+NO	Stavanger	rated 1/14	business=present
+NZ	Christchurch	rated 1/14	it=present
+OM	Muscat	rated 1/14	finance=present
+OM	Sohar	rated 1/14	logistics=strong
+QA	Doha	rated 1/14	finance=strong
+SA	Jeddah	rated 1/14	logistics=present
+SA	Dammam and Dhahran	rated 1/14	business=present
+TH	Bangkok	rated 1/14	finance=present
+TR	Ankara	rated 1/14	finance=strong
+TR	Izmir	rated 1/14	finance=strong
+TW	Taipei	rated 1/14	finance=dominant
+VN	Ho Chi Minh City	rated 1/14	business=present
+VN	Hai Phong	rated 1/14	logistics=strong
+VN	Da Nang	rated 1/14	it=present
+BE	Ghent	rated 2/14	finance=strong it=strong
+CH	Zurich	rated 2/14	finance=dominant software=present
+CH	Basel	rated 2/14	finance=present logistics=strong
+CN	Guangzhou	rated 2/14	finance=strong logistics=strong
+CN	Hangzhou	rated 2/14	it=strong software=strong
+DE	Frankfurt am Main	rated 2/14	finance=dominant economics=strong
+DE	Düsseldorf	rated 2/14	business=strong marketing=present
+DE	Hanover	rated 2/14	business=present finance=present
+DE	Bonn	rated 2/14	business=present it=present
+ES	Bilbao	rated 2/14	business=present finance=strong
+FR	Toulouse	rated 2/14	management=present it=strong
+FR	Sophia Antipolis	rated 2/14	software=present ai=present
+FR	Lyon	rated 2/14	finance=strong it=strong
+FR	Marseille	rated 2/14	finance=strong logistics=strong
+IE	Cork	rated 2/14	finance=strong it=strong
+IL	Tel Aviv	rated 2/14	finance=present software=dominant
+IL	Haifa	rated 2/14	logistics=present cs=present
+IT	Bologna and the Motor Valley	rated 2/14	business=present finance=present
+IT	Padua and Venice (Veneto)	rated 2/14	business=present finance=present
+IT	Florence (Tuscany)	rated 2/14	business=present marketing=present
+JP	Tokyo	rated 2/14	business=strong finance=dominant
+KR	Seoul	rated 2/14	business=strong finance=strong
+KR	Seongnam (Pangyo)	rated 2/14	it=strong software=strong
+LU	Luxembourg City	rated 2/14	finance=dominant economics=present
+NL	Eindhoven (Brainport)	rated 2/14	software=present cs=present
+NL	Utrecht	rated 2/14	finance=strong it=strong
+NO	Bergen	rated 2/14	finance=strong it=strong
+NZ	Auckland	rated 2/14	finance=dominant it=strong
+NZ	Wellington	rated 2/14	it=present software=present
+PL	Wrocław	rated 2/14	business=strong it=strong
+PL	Katowice (Upper Silesia)	rated 2/14	finance=strong it=strong
+RO	Iași	rated 2/14	it=strong software=present
+RO	Timișoara	rated 2/14	it=present software=present
+SA	Riyadh	rated 2/14	business=strong finance=strong
+SE	Malmö	rated 2/14	finance=strong it=strong
+TR	Istanbul	rated 2/14	finance=dominant software=strong
+US	Houston	rated 2/14	business=strong logistics=present
+US	Miami	rated 2/14	finance=strong accounting=present
+US	Charlotte	rated 2/14	business=present finance=strong
+AE	Abu Dhabi	rated 3/14	finance=strong software=present ai=strong
+AT	Vienna	rated 3/14	business=strong finance=present management=present
+BG	Sofia	rated 3/14	finance=dominant it=dominant software=dominant
+CN	Shanghai	rated 3/14	finance=strong logistics=strong it=strong
+CZ	Brno	rated 3/14	finance=strong it=strong software=strong
+CZ	Ostrava	rated 3/14	finance=strong it=strong software=present
+DE	Hamburg	rated 3/14	business=present logistics=dominant it=strong
+DE	Stuttgart	rated 3/14	business=strong management=strong software=present
+DE	Rhine-Neckar (Walldorf, Mannheim)	rated 3/14	business=present it=present software=present
+DE	Nuremberg–Herzogenaurach	rated 3/14	business=strong accounting=present marketing=strong
+DE	Dresden	rated 3/14	it=strong software=strong cs=strong
+DE	Karlsruhe	rated 3/14	it=strong software=present cs=present
+DK	Aarhus	rated 3/14	business=present finance=strong it=strong
+EE	Tartu	rated 3/14	software=present ai=present cs=present
+ES	Valencia	rated 3/14	business=present finance=present logistics=present
+FR	Lille	rated 3/14	business=strong finance=strong it=strong
+HK	Hong Kong	rated 3/14	finance=dominant logistics=strong it=present
+IS	Reykjavík	rated 3/14	finance=strong it=present software=present
+IT	Rome	rated 3/14	business=present finance=strong it=strong
+IT	Turin	rated 3/14	business=present finance=strong it=strong
+MT	Valletta and the harbour towns	rated 3/14	finance=dominant accounting=present it=strong
+NL	Amsterdam	rated 3/14	business=strong finance=strong it=strong
+NO	Oslo	rated 3/14	finance=dominant it=dominant software=dominant
+PL	Kraków	rated 3/14	business=dominant finance=strong it=strong
+PT	Porto	rated 3/14	business=present finance=strong it=strong
+RO	Cluj-Napoca	rated 3/14	finance=strong it=strong software=strong
+SE	Gothenburg	rated 3/14	finance=strong management=strong it=strong
+VN	Hanoi	rated 3/14	finance=present it=present software=present
+AU	Sydney	rated 4/14	business=strong finance=dominant it=strong software=strong
+BE	Brussels	rated 4/14	finance=strong economics=present management=present it=strong
+CA	Toronto	rated 4/14	business=strong finance=dominant it=strong software=strong
+CA	Vancouver	rated 4/14	business=present finance=strong it=strong software=strong
+CN	Beijing	rated 4/14	finance=strong it=strong software=strong ai=dominant
+CZ	Prague	rated 4/14	business=present finance=dominant it=dominant software=dominant
+DE	Berlin	rated 4/14	business=present it=strong software=dominant ai=strong
+EE	Tallinn	rated 4/14	business=strong finance=strong it=dominant software=dominant
+ES	Madrid	rated 4/14	business=dominant finance=dominant it=dominant software=strong
+ES	Barcelona	rated 4/14	business=present finance=present it=strong software=strong
+FI	Helsinki	rated 4/14	finance=dominant management=present it=dominant software=dominant
+GB	Birmingham	rated 4/14	business=strong finance=present accounting=strong management=strong
+GR	Thessaloniki	rated 4/14	finance=strong logistics=present it=strong software=present
+IE	Dublin	rated 4/14	business=strong finance=dominant accounting=present it=dominant
+LT	Vilnius	rated 4/14	business=present finance=dominant it=dominant software=dominant
+PL	Warsaw	rated 4/14	business=dominant finance=dominant it=dominant software=dominant
+RO	Bucharest	rated 4/14	finance=dominant accounting=present it=dominant software=dominant
+SE	Stockholm	rated 4/14	finance=dominant management=strong it=dominant software=dominant
+SG	Singapore	rated 4/14	finance=dominant logistics=dominant it=dominant software=strong
+US	Seattle	rated 4/14	business=present marketing=present software=strong datasci=present
+US	Philadelphia	rated 4/14	business=present finance=present accounting=present datasci=present
+CA	Montreal	rated 5/14	business=present finance=strong it=strong software=strong ai=strong
+CN	Shenzhen	rated 5/14	finance=strong logistics=strong it=strong software=strong ai=strong
+DE	Munich	rated 5/14	business=dominant finance=strong management=strong it=strong software=strong
+DK	Copenhagen	rated 5/14	business=strong finance=dominant logistics=present it=dominant software=dominant
+GB	Leeds	rated 5/14	business=strong finance=strong management=strong it=strong software=strong
+GB	Bristol	rated 5/14	finance=present accounting=strong marketing=strong it=strong software=strong
+GR	Athens and Piraeus	rated 5/14	business=strong finance=dominant accounting=present logistics=strong it=dominant
+PT	Lisbon	rated 5/14	business=strong finance=dominant management=present it=dominant software=present
+US	San Jose and Silicon Valley	rated 5/14	business=strong it=strong software=dominant datasci=present ai=strong
+AE	Dubai	rated 6/14	business=present finance=dominant logistics=strong it=strong software=strong ai=present
+FR	Paris	rated 6/14	business=dominant finance=dominant management=strong it=dominant software=strong ai=strong
+IT	Milan	rated 6/14	business=strong finance=dominant management=present marketing=present it=dominant software=present
+GB	London	rated 7/14	business=strong finance=dominant accounting=strong management=strong it=strong software=strong ai=strong
+GB	Manchester	rated 7/14	business=strong finance=strong accounting=strong management=strong marketing=present it=strong software=strong
+US	Boston	rated 7/14	business=present finance=strong accounting=present management=present marketing=present software=present datasci=present
+US	San Francisco	rated 7/14	business=present finance=strong management=present marketing=present software=strong datasci=present ai=dominant
+US	New York	rated 8/14	business=dominant finance=dominant accounting=strong management=strong marketing=strong logistics=present software=strong datasci=strong
+US	Chicago	rated 8/14	business=strong finance=strong accounting=present management=strong marketing=present logistics=strong software=present datasci=present
+US	Los Angeles	rated 8/14	business=present finance=strong accounting=strong management=strong marketing=strong logistics=strong software=present datasci=present
+US	Dallas	rated 8/14	business=strong finance=present accounting=present management=present marketing=present logistics=present software=strong datasci=present
+US	Washington, DC	rated 8/14	business=strong finance=present accounting=present management=strong marketing=present logistics=present software=strong datasci=present
+US	Atlanta	rated 8/14	business=strong finance=present accounting=present management=present marketing=present logistics=present software=present datasci=present

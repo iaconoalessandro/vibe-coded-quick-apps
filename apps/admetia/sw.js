@@ -1,5 +1,8 @@
 /* ---------------------------------------------------------------------------
- * Service worker: keeps the calculators working offline once visited.
+ * Service worker: keeps the calculators and the Atlas working offline once
+ * visited. The Atlas's country records (data/atlas/<id>.js), visa files
+ * (data/atlas/visas/<id>.js) and hiring files (data/atlas/entry/<id>.js) are
+ * not in the shell: each is cached the first time a reader opens that country.
  *
  * - Pages, scripts, styles and models are network-first: a new deploy shows
  *   up on the next load, and the cached copy is only used when offline.
@@ -12,20 +15,21 @@
  * activate.
  * ------------------------------------------------------------------------- */
 
-var VERSION = 'v5';
+var VERSION = 'v6';
 var SHELL = 'admetia-shell-' + VERSION;
 var MEDIA = 'admetia-media-' + VERSION;
 
 var SHELL_FILES = [
   './',
-  'index.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html',
+  'index.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html', 'map.html', 'hiring.html',
   'css/fonts.css', 'css/app.css',
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
   'data/conversions.js', 'data/masters-model.js', 'data/computing-model.js',
   'data/computing-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js',
   'js/theme.js', 'js/intro.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',
   'js/score-masters.js', 'js/score-computing.js', 'js/score-mba.js', 'js/results-kit.js',
-  'js/page-masters.js', 'js/page-computing.js', 'js/page-mba.js'
+  'js/page-masters.js', 'js/page-computing.js', 'js/page-mba.js',
+  'data/atlas/index.js', 'data/atlas/geo.js', 'data/atlas/stats.js', 'data/atlas/life.js', 'data/atlas/outcomes.js', 'data/atlas/culture.js', 'js/page-map.js', 'js/page-hiring.js'
 ];
 
 self.addEventListener('install', function (event) {

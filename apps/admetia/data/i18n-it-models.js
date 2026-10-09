@@ -59,7 +59,7 @@
     "GMAT Focus Edition": "GMAT Focus Edition",
     "GMAT 10th Edition": "GMAT 10th Edition",
     "Total score": "Punteggio totale",
-    "GMAT Focus 205–805, GMAT 10th Edition 200–800. For the GRE, put your total here and your quant score below.": "GMAT Focus 205–805, GMAT 10th Edition 200–800. Per il GRE, inserisci qui il totale e sotto il punteggio quantitativo.",
+    "GMAT Focus 205–805, GMAT 10th Edition 200–800. For the GRE, the calculator scores your quant result only, entered below; a total here is kept but not scored.": "GMAT Focus 205–805, GMAT 10th Edition 200–800. Per il GRE il calcolatore valuta solo il punteggio quantitativo, da inserire sotto; un totale inserito qui viene conservato ma non conta.",
     "GRE quantitative score": "Punteggio quantitativo GRE",
     "Only needed for the GRE. Several finance programmes look at quant alone — Stockholm requires at least 155 and sets no verbal minimum.": "Serve solo per il GRE. Diversi master in finanza guardano solo la parte quantitativa: Stoccolma richiede almeno 155 e non fissa un minimo per la parte verbale.",
     "English": "Inglese",

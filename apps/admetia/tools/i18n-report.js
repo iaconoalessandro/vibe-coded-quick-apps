@@ -32,16 +32,25 @@ const GLOBALS = ['MASTERS_MODEL', 'IT_MODEL', 'MBA_MODEL', 'IT_EVIDENCE', 'ADMIS
 /* The same prose fields js/i18n.js translates. */
 const ALLOW = new Set(['label', 'blurb', 'help', 'note', 'because', 'v', 'k', 'why', 'intro', 'heading', 'detail',
   'title', 'short', 'full', 'from', 'window', 'source', 'unit', 'name', 'items']);
-const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html'];
+const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html'];
 
-function dictionary() {
+function dictionary(files) {
   const dict = {};
   const ctx = { console };
   ctx.window = ctx;
   ctx.I18N = { lang: 'it', add: (l, d) => Object.assign(dict, d), localize: () => {} };
+  ctx.ATLAS = { add: () => {} };
   vm.createContext(ctx);
-  for (const f of ['js/i18n-it.js', 'data/i18n-it-models.js']) vm.runInContext(read(f), ctx, { filename: f });
+  for (const f of files || ['js/i18n-it.js', 'data/i18n-it-models.js']) vm.runInContext(read(f), ctx, { filename: f });
   return dict;
+}
+
+/* The Atlas carries its Italian beside its English, one file per country
+ * (data/atlas/). Those entries are checked here for broken placeholders and
+ * tags; whether every sentence has one is tests/atlas-test.js's job. */
+function atlasFiles() {
+  return fs.readdirSync(path.join(ROOT, 'data/atlas')).filter((f) => f.endsWith('.js') && f !== 'geo.js')
+    .map((f) => 'data/atlas/' + f);
 }
 
 /* Prose in the models, field by field, as js/i18n.js would see it. */
@@ -148,8 +157,10 @@ function check() {
 
   const missing = [...models.keys()].filter((s) => dict[s] === undefined);
   const stale = Object.keys(dict).filter((k) => !models.has(k) && !scripts.has(k) && !extra.has(k) && html.indexOf(k) === -1);
-  const broken = Object.keys(dict).filter((k) => placeholders(k) !== placeholders(dict[k]) || tags(k) !== tags(dict[k]));
-  return { dict, models, missing, stale, broken };
+  const atlas = dictionary(atlasFiles());
+  const all = Object.assign({}, atlas, dict);
+  const broken = Object.keys(all).filter((k) => placeholders(k) !== placeholders(all[k]) || tags(k) !== tags(all[k]));
+  return { dict, atlas, models, missing, stale, broken };
 }
 
 module.exports = { check };

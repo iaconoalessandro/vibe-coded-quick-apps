@@ -1,0 +1,4118 @@
+{
+  "data/atlas/ae.js": {
+    "mtime": 1791497715.0513518,
+    "seen": 1791500424.058182,
+    "ast_hash": "f560e200d6072790436f872d239387ad",
+    "semantic_hash": ""
+  },
+  "data/atlas/at.js": {
+    "mtime": 1791462306.142848,
+    "seen": 1791466281.218546,
+    "ast_hash": "cde041262d3f82c0527d464fa65fbb59",
+    "semantic_hash": ""
+  },
+  "data/atlas/au.js": {
+    "mtime": 1791463096.2438095,
+    "seen": 1791466281.218549,
+    "ast_hash": "06605f3cf724dacfcd9947b3a5c8e8df",
+    "semantic_hash": ""
+  },
+  "data/atlas/be.js": {
+    "mtime": 1791463418.2121253,
+    "seen": 1791466281.21855,
+    "ast_hash": "32e7ae0b0abe9fa67f48b48cb6f7895c",
+    "semantic_hash": ""
+  },
+  "data/atlas/bg.js": {
+    "mtime": 1791463685.8524628,
+    "seen": 1791466281.2185512,
+    "ast_hash": "fa8bbc41fa35f66da86f1861b4152d47",
+    "semantic_hash": ""
+  },
+  "data/atlas/ca.js": {
+    "mtime": 1791462171.2560642,
+    "seen": 1791466281.218552,
+    "ast_hash": "f5793f586dde066e1508338fbcddad51",
+    "semantic_hash": ""
+  },
+  "data/atlas/ch.js": {
+    "mtime": 1791462863.5166044,
+    "seen": 1791466281.21856,
+    "ast_hash": "4d881053c7fde3c7ab8fe3c6e195ba7a",
+    "semantic_hash": ""
+  },
+  "data/atlas/cn.js": {
+    "mtime": 1791461555.1697745,
+    "seen": 1791466281.218561,
+    "ast_hash": "23718f87b13c8965d71c1367825764da",
+    "semantic_hash": ""
+  },
+  "data/atlas/cz.js": {
+    "mtime": 1791480663.9714427,
+    "seen": 1791500424.05837,
+    "ast_hash": "4de4dc2f60f5faa6f364e58c0fa705a8",
+    "semantic_hash": ""
+  },
+  "data/atlas/de.js": {
+    "mtime": 1791445849.0468338,
+    "seen": 1791466281.218646,
+    "ast_hash": "0a08344ef266636df622200ce51e1402",
+    "semantic_hash": ""
+  },
+  "data/atlas/dk.js": {
+    "mtime": 1791445827.5200822,
+    "seen": 1791466281.218647,
+    "ast_hash": "b7a382c8e434aebee04a01bb32415e09",
+    "semantic_hash": ""
+  },
+  "data/atlas/ee.js": {
+    "mtime": 1791445665.3120003,
+    "seen": 1791466281.218648,
+    "ast_hash": "bff30c887a6b33cb4d58630d20fb2c6c",
+    "semantic_hash": ""
+  },
+  "data/atlas/es.js": {
+    "mtime": 1791480587.2542193,
+    "seen": 1791500424.05888,
+    "ast_hash": "727caf0612d250265b2c5f7f0fba95aa",
+    "semantic_hash": ""
+  },
+  "data/atlas/fi.js": {
+    "mtime": 1791463474.2386103,
+    "seen": 1791466281.219425,
+    "ast_hash": "5367c2cc990ecea0e53cb24ee432c104",
+    "semantic_hash": ""
+  },
+  "data/atlas/fr.js": {
+    "mtime": 1791463442.0640104,
+    "seen": 1791466281.2194262,
+    "ast_hash": "7f2dd05dd2407f311f8134a063d4af26",
+    "semantic_hash": ""
+  },
+  "data/atlas/gb.js": {
+    "mtime": 1791445837.167462,
+    "seen": 1791466281.219427,
+    "ast_hash": "1edceb392e13e6a0ddbc726a1b201a11",
+    "semantic_hash": ""
+  },
+  "data/atlas/geo.js": {
+    "mtime": 1791114878.5284064,
+    "seen": 1791114982.6455958,
+    "ast_hash": "cf15a8595ae82c90319db6b4ca7e9b91",
+    "semantic_hash": "cf15a8595ae82c90319db6b4ca7e9b91"
+  },
+  "data/atlas/gr.js": {
+    "mtime": 1791481108.1158679,
+    "seen": 1791500424.058951,
+    "ast_hash": "e4b1f96e86e5e0e0b87fd3a6c85f81ed",
+    "semantic_hash": ""
+  },
+  "data/atlas/hk.js": {
+    "mtime": 1791483976.312322,
+    "seen": 1791500424.0589519,
+    "ast_hash": "31fb4a504b79a45629364408f7eb11a8",
+    "semantic_hash": ""
+  },
+  "data/atlas/ie.js": {
+    "mtime": 1791463418.2115295,
+    "seen": 1791466281.2195299,
+    "ast_hash": "2d5246252c248f6054a6a34d60a7ac60",
+    "semantic_hash": ""
+  },
+  "data/atlas/il.js": {
+    "mtime": 1791498477.7194102,
+    "seen": 1791500424.058969,
+    "ast_hash": "1caf60cd7c49c7f06683ade71e0aa9bb",
+    "semantic_hash": ""
+  },
+  "data/atlas/index.js": {
+    "mtime": 1791461555.2240179,
+    "seen": 1791466281.2195652,
+    "ast_hash": "6e4bcf83a076080fdd118825a3556306",
+    "semantic_hash": ""
+  },
+  "data/atlas/is.js": {
+    "mtime": 1791480640.2550778,
+    "seen": 1791500424.058987,
+    "ast_hash": "194e172e44ff8ccd0beb1081e878568f",
+    "semantic_hash": ""
+  },
+  "data/atlas/it.js": {
+    "mtime": 1791463654.8015594,
+    "seen": 1791466281.219599,
+    "ast_hash": "6c1dcd9402e0a9b6a15b866e0dff511a",
+    "semantic_hash": ""
+  },
+  "data/atlas/jp.js": {
+    "mtime": 1791482665.8409195,
+    "seen": 1791500424.059005,
+    "ast_hash": "8686027a63de946a1ed58531829c5c27",
+    "semantic_hash": ""
+  },
+  "data/atlas/kr.js": {
+    "mtime": 1791483164.0085754,
+    "seen": 1791500424.059005,
+    "ast_hash": "71b781105e69a7ecf994a5939f4a3906",
+    "semantic_hash": ""
+  },
+  "data/atlas/kw.js": {
+    "mtime": 1791497862.8723848,
+    "seen": 1791500424.059006,
+    "ast_hash": "7e617294d7f5355ed925eb9b6eee2822",
+    "semantic_hash": ""
+  },
+  "data/atlas/lt.js": {
+    "mtime": 1791481961.7906263,
+    "seen": 1791500424.0590239,
+    "ast_hash": "fbdb83a9e6227df9665fcb3b9559a936",
+    "semantic_hash": ""
+  },
+  "data/atlas/lu.js": {
+    "mtime": 1791463365.940973,
+    "seen": 1791466281.2197719,
+    "ast_hash": "fe44b076a0ecbcd04fd3e0a201045f4d",
+    "semantic_hash": ""
+  },
+  "data/atlas/mt.js": {
+    "mtime": 1791445664.4561675,
+    "seen": 1791466281.2197728,
+    "ast_hash": "fb853bccb24b401d7a4c2842fcc31afe",
+    "semantic_hash": ""
+  },
+  "data/atlas/my.js": {
+    "mtime": 1791483620.4203005,
+    "seen": 1791500424.059059,
+    "ast_hash": "ea57d4007ea695f101d13142c8cc63cb",
+    "semantic_hash": ""
+  },
+  "data/atlas/nl.js": {
+    "mtime": 1791463418.2124138,
+    "seen": 1791466281.219808,
+    "ast_hash": "f68399b6db4138c9616be84ecf39936a",
+    "semantic_hash": ""
+  },
+  "data/atlas/no.js": {
+    "mtime": 1791463148.2387109,
+    "seen": 1791466281.219809,
+    "ast_hash": "f6b0fd72a1f071fb1d24a9eb0ba1e7b6",
+    "semantic_hash": ""
+  },
+  "data/atlas/nz.js": {
+    "mtime": 1791482743.8746316,
+    "seen": 1791500424.0590951,
+    "ast_hash": "06f5b5ebb9e8a53374fc8c0ef0a504cd",
+    "semantic_hash": ""
+  },
+  "data/atlas/om.js": {
+    "mtime": 1791499019.8918002,
+    "seen": 1791500424.059096,
+    "ast_hash": "ece89e74eff8ed96ba46299afe031c97",
+    "semantic_hash": ""
+  },
+  "data/atlas/pl.js": {
+    "mtime": 1791481452.4875555,
+    "seen": 1791500424.059096,
+    "ast_hash": "f394f7673537fcc64a846420b20f7ecb",
+    "semantic_hash": ""
+  },
+  "data/atlas/pt.js": {
+    "mtime": 1791462271.3663344,
+    "seen": 1791466281.219912,
+    "ast_hash": "af5b8594d08b8579b75c527838d6a19d",
+    "semantic_hash": ""
+  },
+  "data/atlas/qa.js": {
+    "mtime": 1791484458.0184002,
+    "seen": 1791500424.059114,
+    "ast_hash": "2d73df3fea140496b41afbed114fb9ef",
+    "semantic_hash": ""
+  },
+  "data/atlas/ro.js": {
+    "mtime": 1791445678.1093004,
+    "seen": 1791466281.219947,
+    "ast_hash": "1daa8b2f7368b8a004af699106562eff",
+    "semantic_hash": ""
+  },
+  "data/atlas/ru.js": {
+    "mtime": 1791482160.882088,
+    "seen": 1791500424.0591319,
+    "ast_hash": "e25f3e8f4eada617fdd90ee25269af7a",
+    "semantic_hash": ""
+  },
+  "data/atlas/sa.js": {
+    "mtime": 1791498523.4405851,
+    "seen": 1791500424.0591319,
+    "ast_hash": "cb7e20fc38159ed40038c5c5d01c2098",
+    "semantic_hash": ""
+  },
+  "data/atlas/se.js": {
+    "mtime": 1791462784.4250987,
+    "seen": 1791466281.220014,
+    "ast_hash": "f971bbdf026f7ef402837d14bfc7ffe6",
+    "semantic_hash": ""
+  },
+  "data/atlas/sg.js": {
+    "mtime": 1791483620.4196296,
+    "seen": 1791500424.059149,
+    "ast_hash": "3d25c4ebd8fc6781d4635b3bcef19c69",
+    "semantic_hash": ""
+  },
+  "data/atlas/th.js": {
+    "mtime": 1791483938.7391095,
+    "seen": 1791500424.059171,
+    "ast_hash": "b484cbcf4785df3701f8dc2fb122f0b5",
+    "semantic_hash": ""
+  },
+  "data/atlas/tr.js": {
+    "mtime": 1791481835.470322,
+    "seen": 1791500424.059171,
+    "ast_hash": "ee54a1801d715f3e1ddd6b326fb9b73a",
+    "semantic_hash": ""
+  },
+  "data/atlas/tw.js": {
+    "mtime": 1791483540.6304307,
+    "seen": 1791500424.0591722,
+    "ast_hash": "6c42f5d0235bab29085411da0f83fc22",
+    "semantic_hash": ""
+  },
+  "data/atlas/us.js": {
+    "mtime": 1791463418.2129006,
+    "seen": 1791466281.220181,
+    "ast_hash": "ec529a36419c5f6bc0f906b07eb470bf",
+    "semantic_hash": ""
+  },
+  "data/atlas/vn.js": {
+    "mtime": 1791484633.4416137,
+    "seen": 1791500424.0600598,
+    "ast_hash": "c82bb806d1ee0fed193f6c0c32ad68d2",
+    "semantic_hash": ""
+  },
+  "data/computing-evidence.js": {
+    "mtime": 1790721216.9850097,
+    "seen": 1791019684.36789,
+    "ast_hash": "bdae708f95b9ee5b5088bba957bad9b2",
+    "semantic_hash": "bdae708f95b9ee5b5088bba957bad9b2"
+  },
+  "data/computing-model.js": {
+    "mtime": 1790721216.9911714,
+    "seen": 1791019684.3678908,
+    "ast_hash": "1ee5a03973225c49c5856f235ec4eb03",
+    "semantic_hash": "1ee5a03973225c49c5856f235ec4eb03"
+  },
+  "data/conversions.js": {
+    "mtime": 1791116977.906813,
+    "seen": 1791117186.482118,
+    "ast_hash": "6b1afa925a3dbd233e56e7131f51b210",
+    "semantic_hash": ""
+  },
+  "data/deadlines.js": {
+    "mtime": 1790720635.5863614,
+    "seen": 1791019684.3678908,
+    "ast_hash": "7c364fb0c80173ab5b3a0e60ff928a33",
+    "semantic_hash": "7c364fb0c80173ab5b3a0e60ff928a33"
+  },
+  "data/i18n-it-models.js": {
+    "mtime": 1791116977.907674,
+    "seen": 1791117186.482134,
+    "ast_hash": "625677154bcde8624d6f0cca8fa4a734",
+    "semantic_hash": ""
+  },
+  "data/masters-model.js": {
+    "mtime": 1791116977.9072425,
+    "seen": 1791117186.482135,
+    "ast_hash": "6e9d1f27b100602d580d8fe504efd559",
+    "semantic_hash": ""
+  },
+  "data/mba-companies.js": {
+    "mtime": 1791118121.8937895,
+    "seen": 1791152607.307334,
+    "ast_hash": "253ac744c2467e0424588fae0cd19146",
+    "semantic_hash": ""
+  },
+  "data/mba-model.js": {
+    "mtime": 1791116977.9065144,
+    "seen": 1791117186.4821508,
+    "ast_hash": "bf1961fe091a1c34d41207d781cbff4c",
+    "semantic_hash": ""
+  },
+  "design/concepts/data.js": {
+    "mtime": 1790108361.008108,
+    "seen": 1791019684.367892,
+    "ast_hash": "4978d949f2033fdc5fbee78ecb52b4fa",
+    "semantic_hash": "4978d949f2033fdc5fbee78ecb52b4fa"
+  },
+  "design/concepts/workspace/sidebar.js": {
+    "mtime": 1790108371.0158873,
+    "seen": 1791019684.367893,
+    "ast_hash": "c8bdb137a15d463d96607caf1e40d2d7",
+    "semantic_hash": "c8bdb137a15d463d96607caf1e40d2d7"
+  },
+  "js/engine.js": {
+    "mtime": 1791116977.905733,
+    "seen": 1791117186.482189,
+    "ast_hash": "51f399931a97292172513f09affdef5c",
+    "semantic_hash": ""
+  },
+  "js/i18n-it.js": {
+    "mtime": 1791445476.098107,
+    "seen": 1791466281.222375,
+    "ast_hash": "06de6cd11887044e2dcea3a6cf617a2a",
+    "semantic_hash": ""
+  },
+  "js/i18n.js": {
+    "mtime": 1790202017.3199105,
+    "seen": 1791019684.367894,
+    "ast_hash": "179e3228c69b6a1556d2bcc881541910",
+    "semantic_hash": "179e3228c69b6a1556d2bcc881541910"
+  },
+  "js/intro.js": {
+    "mtime": 1790720635.5872774,
+    "seen": 1791019684.367894,
+    "ast_hash": "07a6c1efa887a59694496c09539866d7",
+    "semantic_hash": "07a6c1efa887a59694496c09539866d7"
+  },
+  "js/page-computing.js": {
+    "mtime": 1790712556.333904,
+    "seen": 1791019684.367894,
+    "ast_hash": "173a06be4814b3e7e8863b66033b5595",
+    "semantic_hash": "173a06be4814b3e7e8863b66033b5595"
+  },
+  "js/page-map.js": {
+    "mtime": 1791531691.9396627,
+    "seen": 1791531740.19831,
+    "ast_hash": "3b07870eca8756a912e4d2781341f568",
+    "semantic_hash": ""
+  },
+  "js/page-masters.js": {
+    "mtime": 1790712556.3336778,
+    "seen": 1791019684.3678951,
+    "ast_hash": "751f06c965b2eecd6c36400a58d61218",
+    "semantic_hash": "751f06c965b2eecd6c36400a58d61218"
+  },
+  "js/page-mba.js": {
+    "mtime": 1790712556.3334134,
+    "seen": 1791019684.3678951,
+    "ast_hash": "c33e822c12141a00193c775ab2ba3648",
+    "semantic_hash": "c33e822c12141a00193c775ab2ba3648"
+  },
+  "js/results-kit.js": {
+    "mtime": 1790713941.0718362,
+    "seen": 1791019684.3678951,
+    "ast_hash": "4e8b88fe07057c9e56f8e2f717fdc42e",
+    "semantic_hash": "4e8b88fe07057c9e56f8e2f717fdc42e"
+  },
+  "js/score-computing.js": {
+    "mtime": 1790599090.8443007,
+    "seen": 1791019684.367896,
+    "ast_hash": "90a30d963312f0b4023facf175157215",
+    "semantic_hash": "90a30d963312f0b4023facf175157215"
+  },
+  "js/score-masters.js": {
+    "mtime": 1790720635.5874062,
+    "seen": 1791019684.367896,
+    "ast_hash": "c72e16fc2c3d99f7456997c1faf8be40",
+    "semantic_hash": "c72e16fc2c3d99f7456997c1faf8be40"
+  },
+  "js/score-mba.js": {
+    "mtime": 1790201111.1823964,
+    "seen": 1791019684.367896,
+    "ast_hash": "c3c1b2dd9b172629a040c42ce6b76b8a",
+    "semantic_hash": "c3c1b2dd9b172629a040c42ce6b76b8a"
+  },
+  "js/session.js": {
+    "mtime": 1790959486.7549527,
+    "seen": 1791019684.367897,
+    "ast_hash": "f85bbd3a6335c1d8d06a30d40ec64056",
+    "semantic_hash": "f85bbd3a6335c1d8d06a30d40ec64056"
+  },
+  "js/stats.js": {
+    "mtime": 1790200940.1677885,
+    "seen": 1791019684.367897,
+    "ast_hash": "bf98b98a510b946325463c2783db493b",
+    "semantic_hash": "bf98b98a510b946325463c2783db493b"
+  },
+  "js/storage.js": {
+    "mtime": 1788703187.7701163,
+    "seen": 1791019684.367897,
+    "ast_hash": "4fddd35a3bee019764d83e1d931f3062",
+    "semantic_hash": "4fddd35a3bee019764d83e1d931f3062"
+  },
+  "js/theme.js": {
+    "mtime": 1790711229.0867217,
+    "seen": 1791019684.367897,
+    "ast_hash": "b4ffd69a40bd66849df0c782c4010be0",
+    "semantic_hash": "b4ffd69a40bd66849df0c782c4010be0"
+  },
+  "js/ticker.js": {
+    "mtime": 1790697216.2278852,
+    "seen": 1791019684.3678982,
+    "ast_hash": "f9891552c39723b1f2657826f3cd20d8",
+    "semantic_hash": "f9891552c39723b1f2657826f3cd20d8"
+  },
+  "js/ui.js": {
+    "mtime": 1790200908.2843108,
+    "seen": 1791019684.3678982,
+    "ast_hash": "8a44fd525c12fe45935298236c0bee40",
+    "semantic_hash": "8a44fd525c12fe45935298236c0bee40"
+  },
+  "package.json": {
+    "mtime": 1790718481.131234,
+    "seen": 1791019684.3678982,
+    "ast_hash": "5b54444e14d81df2830f187ad774f2e2",
+    "semantic_hash": "5b54444e14d81df2830f187ad774f2e2"
+  },
+  "sw.js": {
+    "mtime": 1791445362.0230303,
+    "seen": 1791466281.2229319,
+    "ast_hash": "2b2a0ceffd8b0b4e9486ec6588d44377",
+    "semantic_hash": ""
+  },
+  "tests/atlas-test.js": {
+    "mtime": 1791461570.3897085,
+    "seen": 1791466281.222933,
+    "ast_hash": "7db0d6b80ffca389646bb46d875a24fa",
+    "semantic_hash": ""
+  },
+  "tests/computing-test.js": {
+    "mtime": 1790721217.0270174,
+    "seen": 1791019684.367899,
+    "ast_hash": "46f31fda27ef68f572397ecbf2a53251",
+    "semantic_hash": "46f31fda27ef68f572397ecbf2a53251"
+  },
+  "tests/deadlines-test.js": {
+    "mtime": 1790721217.0296605,
+    "seen": 1791019684.367899,
+    "ast_hash": "43713539c9d25c9e69afbf61d6c4752b",
+    "semantic_hash": "43713539c9d25c9e69afbf61d6c4752b"
+  },
+  "tests/design-test.js": {
+    "mtime": 1790721217.032133,
+    "seen": 1791019684.3679,
+    "ast_hash": "e9b6aa83093fe3ad048417845f227080",
+    "semantic_hash": "e9b6aa83093fe3ad048417845f227080"
+  },
+  "tests/features-test.js": {
+    "mtime": 1790720813.0151122,
+    "seen": 1791019684.3679,
+    "ast_hash": "557ae074ec4afb04b0cefcb94e01cfbc",
+    "semantic_hash": "557ae074ec4afb04b0cefcb94e01cfbc"
+  },
+  "tests/fixtures/mba-golden.json": {
+    "mtime": 1789305605.6794183,
+    "seen": 1791561808.277086,
+    "ast_hash": "6a5c4c44f650dd9f5f9e822ebec6ac05",
+    "semantic_hash": ""
+  },
+  "tests/i18n-test.js": {
+    "mtime": 1791385669.6118555,
+    "seen": 1791387413.708283,
+    "ast_hash": "a3e7816fbc26858d4ad4801284a3b6a7",
+    "semantic_hash": ""
+  },
+  "tests/intro-test.js": {
+    "mtime": 1790721217.069923,
+    "seen": 1791019684.3679008,
+    "ast_hash": "04e9b6c2288bbff79b592d66e3f3d461",
+    "semantic_hash": "04e9b6c2288bbff79b592d66e3f3d461"
+  },
+  "tests/masters-test.js": {
+    "mtime": 1790599175.3292716,
+    "seen": 1791019684.3679008,
+    "ast_hash": "ddccad923766d45287999a56876207c0",
+    "semantic_hash": "ddccad923766d45287999a56876207c0"
+  },
+  "tests/mba-test.js": {
+    "mtime": 1790598710.7424195,
+    "seen": 1791019684.367902,
+    "ast_hash": "abd3af850006a09e517b2b597bb4265d",
+    "semantic_hash": "abd3af850006a09e517b2b597bb4265d"
+  },
+  "tests/profiles-test.js": {
+    "mtime": 1790598710.7426944,
+    "seen": 1791019684.367902,
+    "ast_hash": "2a5322316ab2aae05f68a74e5f612eca",
+    "semantic_hash": "2a5322316ab2aae05f68a74e5f612eca"
+  },
+  "tests/site-test.js": {
+    "mtime": 1790721217.0723195,
+    "seen": 1791019684.367902,
+    "ast_hash": "72583fd2e1ab60a68c0a0787d65e8b76",
+    "semantic_hash": "72583fd2e1ab60a68c0a0787d65e8b76"
+  },
+  "tools/atlas-geo.js": {
+    "mtime": 1790959681.4378536,
+    "seen": 1791019684.367903,
+    "ast_hash": "fa42149bf66f0d2d4f052b2559b152cd",
+    "semantic_hash": "fa42149bf66f0d2d4f052b2559b152cd"
+  },
+  "tools/build-brand.py": {
+    "mtime": 1790708986.0140405,
+    "seen": 1791019684.367903,
+    "ast_hash": "040c02548d05b94be035ce7734b0cf3c",
+    "semantic_hash": "040c02548d05b94be035ce7734b0cf3c"
+  },
+  "tools/build-images.sh": {
+    "mtime": 1790165710.8469415,
+    "seen": 1791019684.367903,
+    "ast_hash": "88d6ec91816b9602730d3013609a085d",
+    "semantic_hash": "88d6ec91816b9602730d3013609a085d"
+  },
+  "tools/build.js": {
+    "mtime": 1791484069.0945492,
+    "seen": 1791500424.0608509,
+    "ast_hash": "b6c2c54646abbe3c0e081792a5fe6f80",
+    "semantic_hash": ""
+  },
+  "tools/data-collection/build-evidence.js": {
+    "mtime": 1790721217.0748413,
+    "seen": 1791019684.367904,
+    "ast_hash": "af00dfc89c1229a4e0db825bae0b5dbc",
+    "semantic_hash": "af00dfc89c1229a4e0db825bae0b5dbc"
+  },
+  "tools/data-collection/gradcafe-aggregate.js": {
+    "mtime": 1790721217.0822587,
+    "seen": 1791019684.367904,
+    "ast_hash": "7cd08cffe02aa6eb1297fc7cf4840922",
+    "semantic_hash": "7cd08cffe02aa6eb1297fc7cf4840922"
+  },
+  "tools/i18n-report.js": {
+    "mtime": 1790959527.166223,
+    "seen": 1791019684.367904,
+    "ast_hash": "77c64cc373fa675ef919ac21accb6221",
+    "semantic_hash": "77c64cc373fa675ef919ac21accb6221"
+  },
+  "tools/run-tests.js": {
+    "mtime": 1790177380.0314164,
+    "seen": 1791019684.367904,
+    "ast_hash": "c7bf6efc79c7ff1dffd2204ac1228f20",
+    "semantic_hash": "c7bf6efc79c7ff1dffd2204ac1228f20"
+  },
+  ".github/workflows/pages.yml": {
+    "mtime": 1790167315.88884,
+    "seen": 1791019684.3679051,
+    "ast_hash": "59d78f5e7fea0f30be1fe84059b65d5b",
+    "semantic_hash": "59d78f5e7fea0f30be1fe84059b65d5b"
+  },
+  "404.html": {
+    "mtime": 1790959478.7182565,
+    "seen": 1791019684.3679051,
+    "ast_hash": "00130c2317175b9ebbacf1dc92379fd9",
+    "semantic_hash": "00130c2317175b9ebbacf1dc92379fd9"
+  },
+  "CREDITS.md": {
+    "mtime": 1790981392.7415705,
+    "seen": 1791019684.3679051,
+    "ast_hash": "684a719c461eb7f0eb3aedf4be0685c1",
+    "semantic_hash": "684a719c461eb7f0eb3aedf4be0685c1"
+  },
+  "README.md": {
+    "mtime": 1791497665.2841864,
+    "seen": 1791500424.0610318,
+    "ast_hash": "e44bcae3ca6f3b59f837b45108c42df6",
+    "semantic_hash": ""
+  },
+  "business.html": {
+    "mtime": 1791445302.1472816,
+    "seen": 1791466281.223806,
+    "ast_hash": "c28309c495e14c2fb6ada927fe2a1b3c",
+    "semantic_hash": ""
+  },
+  "computing.html": {
+    "mtime": 1791445302.146541,
+    "seen": 1791466281.2238069,
+    "ast_hash": "7d0555fa1f3c475dda9b51db83468420",
+    "semantic_hash": ""
+  },
+  "design/concepts/README.md": {
+    "mtime": 1790108381.6182444,
+    "seen": 1791019684.367906,
+    "ast_hash": "4c8c8cc700dd3b2a17a4ef74ac3d010c",
+    "semantic_hash": "4c8c8cc700dd3b2a17a4ef74ac3d010c"
+  },
+  "design/concepts/bento/landing.html": {
+    "mtime": 1790108371.0020807,
+    "seen": 1791019684.367907,
+    "ast_hash": "07b3aa1bda3a1c11e0ee0bef12378309",
+    "semantic_hash": "07b3aa1bda3a1c11e0ee0bef12378309"
+  },
+  "design/concepts/bento/results.html": {
+    "mtime": 1790108371.005366,
+    "seen": 1791019684.367907,
+    "ast_hash": "04ee39b5c657d0b9922db335ff2dde6f",
+    "semantic_hash": "04ee39b5c657d0b9922db335ff2dde6f"
+  },
+  "design/concepts/bento/wizard.html": {
+    "mtime": 1790108371.0037143,
+    "seen": 1791019684.367907,
+    "ast_hash": "c757090925db02d0af600aade1fd1db1",
+    "semantic_hash": "c757090925db02d0af600aade1fd1db1"
+  },
+  "design/concepts/minimal/landing.html": {
+    "mtime": 1790108371.0100112,
+    "seen": 1791019684.367907,
+    "ast_hash": "a11ca3f6359ef6977b59d21aa71913ff",
+    "semantic_hash": "a11ca3f6359ef6977b59d21aa71913ff"
+  },
+  "design/concepts/minimal/results.html": {
+    "mtime": 1790108371.0129483,
+    "seen": 1791019684.367908,
+    "ast_hash": "ab6399393e4778d3d77371cec6ecb56a",
+    "semantic_hash": "ab6399393e4778d3d77371cec6ecb56a"
+  },
+  "design/concepts/minimal/wizard.html": {
+    "mtime": 1790108371.0113444,
+    "seen": 1791019684.367908,
+    "ast_hash": "3b68163b8d1c3f3e6fcf614f4e57a0a4",
+    "semantic_hash": "3b68163b8d1c3f3e6fcf614f4e57a0a4"
+  },
+  "design/concepts/workspace/landing.html": {
+    "mtime": 1790108370.9932387,
+    "seen": 1791019684.367908,
+    "ast_hash": "a179c8c975c5ec8c725ccdd4534f5516",
+    "semantic_hash": "a179c8c975c5ec8c725ccdd4534f5516"
+  },
+  "design/concepts/workspace/results.html": {
+    "mtime": 1790108370.9969866,
+    "seen": 1791019684.3679092,
+    "ast_hash": "e1d134d0e51c57aa8c6b0f53f609d15f",
+    "semantic_hash": "e1d134d0e51c57aa8c6b0f53f609d15f"
+  },
+  "design/concepts/workspace/wizard.html": {
+    "mtime": 1790108370.9951518,
+    "seen": 1791019684.3679092,
+    "ast_hash": "c38add5481c7b359a68d05c5732c0d18",
+    "semantic_hash": "c38add5481c7b359a68d05c5732c0d18"
+  },
+  "design/intro/PROMPT.md": {
+    "mtime": 1790721217.0083628,
+    "seen": 1791019684.3679092,
+    "ast_hash": "a2c7ba58f72e79562ec4cd3732c83828",
+    "semantic_hash": "a2c7ba58f72e79562ec4cd3732c83828"
+  },
+  "design/intro/lab.html": {
+    "mtime": 1790709752.8832936,
+    "seen": 1791019684.3679092,
+    "ast_hash": "5ddf4a2fd1e273d1ca997170caf1f831",
+    "semantic_hash": "5ddf4a2fd1e273d1ca997170caf1f831"
+  },
+  "docs/ATLAS-PROGRESS.md": {
+    "mtime": 1791497665.2845838,
+    "seen": 1791500424.0612931,
+    "ast_hash": "07fe42442c1deac4793f749afaf9207d",
+    "semantic_hash": ""
+  },
+  "docs/EMPLOYER-GUIDE.md": {
+    "mtime": 1791118140.8371923,
+    "seen": 1791152607.30959,
+    "ast_hash": "cfa75d1ee91f3d9d6cdd48b914e1c953",
+    "semantic_hash": ""
+  },
+  "docs/GAP-ANALYSIS.md": {
+    "mtime": 1791341325.9435158,
+    "seen": 1791341489.77453,
+    "ast_hash": "0255944437d0fdb120dcf54c54b64c87",
+    "semantic_hash": ""
+  },
+  "docs/VERIFICATION.md": {
+    "mtime": 1790721241.0379994,
+    "seen": 1791019684.3679109,
+    "ast_hash": "9fb96031721892e209da052710c06181",
+    "semantic_hash": "9fb96031721892e209da052710c06181"
+  },
+  "fonts/OFL-hanken-grotesk.txt": {
+    "mtime": 1790148363.26051,
+    "seen": 1791019684.3679109,
+    "ast_hash": "8fb6a35e1929536b061899c8e8e5de32",
+    "semantic_hash": "8fb6a35e1929536b061899c8e8e5de32"
+  },
+  "fonts/OFL-noto-serif-display.txt": {
+    "mtime": 1790148363.8040652,
+    "seen": 1791019684.3679109,
+    "ast_hash": "6536de90aa507e8786e54037026bbc81",
+    "semantic_hash": "6536de90aa507e8786e54037026bbc81"
+  },
+  "fonts/OFL-roboto-serif.txt": {
+    "mtime": 1790149427.640936,
+    "seen": 1791019684.3679109,
+    "ast_hash": "49fef5e375ba4a6a63cf5e66fbfe0707",
+    "semantic_hash": "49fef5e375ba4a6a63cf5e66fbfe0707"
+  },
+  "fonts/OFL-source-serif-4.txt": {
+    "mtime": 1790148362.9841535,
+    "seen": 1791019684.367912,
+    "ast_hash": "69db1861e4e8ea4e83fcefd4baeb9e7c",
+    "semantic_hash": "69db1861e4e8ea4e83fcefd4baeb9e7c"
+  },
+  "fonts/README.md": {
+    "mtime": 1790606575.5925899,
+    "seen": 1791019684.367912,
+    "ast_hash": "8e1e4239a53925d52a7b57fafdaffc8a",
+    "semantic_hash": "8e1e4239a53925d52a7b57fafdaffc8a"
+  },
+  "img/wordmark/OFL-gloock.txt": {
+    "mtime": 1790149428.0359793,
+    "seen": 1791019684.367912,
+    "ast_hash": "4488ac38a33b87996e77da1c91b43691",
+    "semantic_hash": "4488ac38a33b87996e77da1c91b43691"
+  },
+  "img/wordmark/OFL-roboto-serif.txt": {
+    "mtime": 1790149441.4684715,
+    "seen": 1791019684.367913,
+    "ast_hash": "49fef5e375ba4a6a63cf5e66fbfe0707",
+    "semantic_hash": "49fef5e375ba4a6a63cf5e66fbfe0707"
+  },
+  "img/wordmark/README.md": {
+    "mtime": 1790708929.3102794,
+    "seen": 1791019684.367913,
+    "ast_hash": "beca3eba3b0c0e3192edd866566d2c12",
+    "semantic_hash": "beca3eba3b0c0e3192edd866566d2c12"
+  },
+  "index.html": {
+    "mtime": 1791445302.1455977,
+    "seen": 1791466281.2254431,
+    "ast_hash": "6662c10d0727257db5e2eff273c76f8d",
+    "semantic_hash": ""
+  },
+  "it.html": {
+    "mtime": 1791445302.146988,
+    "seen": 1791466281.225444,
+    "ast_hash": "23126ae2b184a5126a58fb709eea58ee",
+    "semantic_hash": ""
+  },
+  "map.html": {
+    "mtime": 1791445302.144749,
+    "seen": 1791466281.225445,
+    "ast_hash": "5571412b9e9a4994416e65c0cdaa8769",
+    "semantic_hash": ""
+  },
+  "masters.html": {
+    "mtime": 1791445302.1460962,
+    "seen": 1791466281.225446,
+    "ast_hash": "85741812271d027050112575cc9fb952",
+    "semantic_hash": ""
+  },
+  "mba.html": {
+    "mtime": 1791445302.1474721,
+    "seen": 1791466281.225447,
+    "ast_hash": "497b92a322f566207a387f69debbd798",
+    "semantic_hash": ""
+  },
+  "research/README.md": {
+    "mtime": 1791114938.3636165,
+    "seen": 1791114982.646817,
+    "ast_hash": "4cf6a624f172ec9496e17e2fc9ed0f49",
+    "semantic_hash": ""
+  },
+  "research/glossary.md": {
+    "mtime": 1791341217.8454518,
+    "seen": 1791341489.776149,
+    "ast_hash": "4a7e7794be026430a9d19308695b3023",
+    "semantic_hash": ""
+  },
+  "research/it/README.md": {
+    "mtime": 1791035323.8239167,
+    "seen": 1791114982.6468449,
+    "ast_hash": "515b01c7e35397bdedc822b833256e8c",
+    "semantic_hash": ""
+  },
+  "research/it/decision-framework.md": {
+    "mtime": 1791035288.4443648,
+    "seen": 1791114982.6468449,
+    "ast_hash": "a724b310159ab29c9391c6b4c8e51c7b",
+    "semantic_hash": ""
+  },
+  "research/it/how-numbers-mislead.md": {
+    "mtime": 1791035288.4473546,
+    "seen": 1791114982.646846,
+    "ast_hash": "f312d81e2a1e9c05bf8b98bae84a8552",
+    "semantic_hash": ""
+  },
+  "data/atlas/stats.js": {
+    "mtime": 1791114878.5687451,
+    "seen": 1791114982.6456058,
+    "ast_hash": "4768ad2da91612fc17f9c5a57e9590bb",
+    "semantic_hash": ""
+  },
+  "tools/atlas-stats.js": {
+    "mtime": 1791035489.8624094,
+    "seen": 1791114982.646216,
+    "ast_hash": "a3048b649a362e4a95abd58aed5ded60",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1791062684.6436305,
+    "seen": 1791114982.646359,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": ""
+  },
+  "research/_working/atlas-expansion-brief.md": {
+    "mtime": 1791035435.9272795,
+    "seen": 1791114982.646817,
+    "ast_hash": "09417dfe67c703b263ec2ec76b7c6661",
+    "semantic_hash": ""
+  },
+  "research/_working/brief-for-researchers.md": {
+    "mtime": 1791035266.6400871,
+    "seen": 1791114982.6468182,
+    "ast_hash": "1ff849bb9e72f6da53a7a156b6a839d4",
+    "semantic_hash": ""
+  },
+  "research/_working/progress.md": {
+    "mtime": 1791035266.6431713,
+    "seen": 1791114982.6468182,
+    "ast_hash": "b00cd096df588221ec83361b99a7ecb1",
+    "semantic_hash": ""
+  },
+  "research/careers/accounting-and-corporate.md": {
+    "mtime": 1791035266.6489034,
+    "seen": 1791114982.6468182,
+    "ast_hash": "54fb6c96bd5c0bbd260e720acc59c1e5",
+    "semantic_hash": ""
+  },
+  "research/careers/commodities-and-energy.md": {
+    "mtime": 1791035266.6545458,
+    "seen": 1791114982.646819,
+    "ast_hash": "d5c42d09141821d1c8d4f521042e5ced",
+    "semantic_hash": ""
+  },
+  "research/careers/consulting.md": {
+    "mtime": 1791118169.289449,
+    "seen": 1791152607.310354,
+    "ast_hash": "8b7a984975569846f1ed1fa52557c6b7",
+    "semantic_hash": ""
+  },
+  "research/careers/economic-consulting-real-estate-and-sustainability.md": {
+    "mtime": 1791118318.3320732,
+    "seen": 1791152607.310356,
+    "ast_hash": "385b072cab7edbf473058c8bdd7dd821",
+    "semantic_hash": ""
+  },
+  "research/careers/finance.md": {
+    "mtime": 1791118212.440693,
+    "seen": 1791152607.310357,
+    "ast_hash": "e85db49b4f526300ad662be6b94e7e40",
+    "semantic_hash": ""
+  },
+  "research/careers/healthcare-and-pharma.md": {
+    "mtime": 1791035266.6704676,
+    "seen": 1791114982.646821,
+    "ast_hash": "f1c2887a2979a264f9378da8bc3f315f",
+    "semantic_hash": ""
+  },
+  "research/careers/industrial-automotive-defence.md": {
+    "mtime": 1791035266.6775858,
+    "seen": 1791114982.646821,
+    "ast_hash": "62738fa7396a930fadca910c1ac02e2c",
+    "semantic_hash": ""
+  },
+  "research/careers/luxury-and-fashion.md": {
+    "mtime": 1791035266.6818922,
+    "seen": 1791114982.646821,
+    "ast_hash": "d4c84c4b38f44d3cb37b40c3322ca893",
+    "semantic_hash": ""
+  },
+  "research/careers/marketing.md": {
+    "mtime": 1791035266.6870923,
+    "seen": 1791114982.646822,
+    "ast_hash": "deeffa82fb131b02b02223be48fcf54f",
+    "semantic_hash": ""
+  },
+  "research/careers/public-policy-and-academia.md": {
+    "mtime": 1791035266.6932614,
+    "seen": 1791114982.646822,
+    "ast_hash": "cc63a2d1121135fc48bf35a4e7a02bb4",
+    "semantic_hash": ""
+  },
+  "research/careers/tech-business-and-startups.md": {
+    "mtime": 1791118229.0015717,
+    "seen": 1791152607.3105369,
+    "ast_hash": "1125e36ecc69a4e5192d771570ddde40",
+    "semantic_hash": ""
+  },
+  "research/careers/tech-data-and-ai.md": {
+    "mtime": 1791118240.9890575,
+    "seen": 1791152607.310538,
+    "ast_hash": "b208affef63dfddf655938059577d28a",
+    "semantic_hash": ""
+  },
+  "research/countries/ae-united-arab-emirates.md": {
+    "mtime": 1791297860.5768957,
+    "seen": 1791302603.338156,
+    "ast_hash": "d84000874bd47f3db105c323495bd253",
+    "semantic_hash": ""
+  },
+  "research/countries/at-austria.md": {
+    "mtime": 1791213213.212593,
+    "seen": 1791302603.338156,
+    "ast_hash": "14d49d72c1150a3adaff4c5ad0a085c5",
+    "semantic_hash": ""
+  },
+  "research/countries/au-australia.md": {
+    "mtime": 1791319560.2722342,
+    "seen": 1791341182.297583,
+    "ast_hash": "0f29ce233411a1c456fd90d514e8914e",
+    "semantic_hash": ""
+  },
+  "research/countries/be-belgium.md": {
+    "mtime": 1791205670.8051414,
+    "seen": 1791302603.3381739,
+    "ast_hash": "710d935ffdce1eb9051ffef0960f5623",
+    "semantic_hash": ""
+  },
+  "research/countries/bg-bulgaria.md": {
+    "mtime": 1791271012.6800847,
+    "seen": 1791302603.3381739,
+    "ast_hash": "592d9996f2671bd61b37925f80292742",
+    "semantic_hash": ""
+  },
+  "research/countries/ca-canada.md": {
+    "mtime": 1791321512.8451836,
+    "seen": 1791341182.297618,
+    "ast_hash": "253b8f66826ba8728fa2de68e9830b8b",
+    "semantic_hash": ""
+  },
+  "research/countries/ch-switzerland.md": {
+    "mtime": 1791211222.3229983,
+    "seen": 1791302603.338191,
+    "ast_hash": "1f35afb3ba6d6b77831f1ac189379a03",
+    "semantic_hash": ""
+  },
+  "research/countries/cn-china.md": {
+    "mtime": 1791317581.644086,
+    "seen": 1791341182.2976372,
+    "ast_hash": "4bff28871f260c210b73ac0be08b6018",
+    "semantic_hash": ""
+  },
+  "research/countries/cz-czech-republic.md": {
+    "mtime": 1791292904.1685135,
+    "seen": 1791302603.338209,
+    "ast_hash": "d149043b6a15c7834c850a6f19aa2704",
+    "semantic_hash": ""
+  },
+  "research/countries/de-germany.md": {
+    "mtime": 1791221766.032679,
+    "seen": 1791302603.33821,
+    "ast_hash": "5fb8aca8ba65bb69b1082fdad3a9ee1b",
+    "semantic_hash": ""
+  },
+  "research/countries/dk-denmark.md": {
+    "mtime": 1791206724.3429747,
+    "seen": 1791302603.33821,
+    "ast_hash": "508e2cbbe5d1db1cbcbb596552eefc0b",
+    "semantic_hash": ""
+  },
+  "research/countries/ee-estonia.md": {
+    "mtime": 1791233947.1159575,
+    "seen": 1791302603.33821,
+    "ast_hash": "18bdc557697d887b8846a2be13b7a67e",
+    "semantic_hash": ""
+  },
+  "research/countries/es-spain.md": {
+    "mtime": 1791203586.4150662,
+    "seen": 1791302603.338211,
+    "ast_hash": "b7c0906f9c16d9b9ba2f9b9a68a102bd",
+    "semantic_hash": ""
+  },
+  "research/countries/fi-finland.md": {
+    "mtime": 1791292502.0554514,
+    "seen": 1791302603.338211,
+    "ast_hash": "def56294b1dcc6ac7c730d877c98b0f5",
+    "semantic_hash": ""
+  },
+  "research/countries/fr-france.md": {
+    "mtime": 1791195676.4172227,
+    "seen": 1791302603.338212,
+    "ast_hash": "c51083cffc5347cde1b26bddaaca9c1c",
+    "semantic_hash": ""
+  },
+  "research/countries/gb-united-kingdom.md": {
+    "mtime": 1791204908.668493,
+    "seen": 1791302603.338212,
+    "ast_hash": "4813e446e97b5e01a5323daedaccc552",
+    "semantic_hash": ""
+  },
+  "research/countries/gr-greece.md": {
+    "mtime": 1791271030.0096183,
+    "seen": 1791302603.338212,
+    "ast_hash": "73718e2863682a0d736448935e80515a",
+    "semantic_hash": ""
+  },
+  "research/countries/hk-hong-kong.md": {
+    "mtime": 1791320858.4993985,
+    "seen": 1791341182.297788,
+    "ast_hash": "839965e9619afb923fd5c48387de4c43",
+    "semantic_hash": ""
+  },
+  "research/countries/ie-ireland.md": {
+    "mtime": 1791292372.1989884,
+    "seen": 1791302603.3382301,
+    "ast_hash": "f6bc31e2ce8e2903877d198bf8a08341",
+    "semantic_hash": ""
+  },
+  "research/countries/il-israel.md": {
+    "mtime": 1791279162.0091288,
+    "seen": 1791302603.3382301,
+    "ast_hash": "eeb4beb3e0e8015b5b2951c9defa69ea",
+    "semantic_hash": ""
+  },
+  "research/countries/is-iceland.md": {
+    "mtime": 1791204028.846616,
+    "seen": 1791302603.338231,
+    "ast_hash": "71ac963d6cd85cf3fae1e9ef6909d3b8",
+    "semantic_hash": ""
+  },
+  "research/countries/it-italy.md": {
+    "mtime": 1791195393.4292402,
+    "seen": 1791302603.338231,
+    "ast_hash": "b7736e538a9c05c62e31f684de7ba05b",
+    "semantic_hash": ""
+  },
+  "research/countries/jp-japan.md": {
+    "mtime": 1791319483.4627106,
+    "seen": 1791341182.297857,
+    "ast_hash": "5b55f0783e8ce5a1997cb2904a60e7bc",
+    "semantic_hash": ""
+  },
+  "research/countries/kr-south-korea.md": {
+    "mtime": 1791318301.7778625,
+    "seen": 1791341182.297858,
+    "ast_hash": "79e6c475e5601e8b1d29a695bbf4b676",
+    "semantic_hash": ""
+  },
+  "research/countries/kw-kuwait.md": {
+    "mtime": 1791296960.0720959,
+    "seen": 1791302603.3382661,
+    "ast_hash": "9794f1feb0f533f40d573645622a7c76",
+    "semantic_hash": ""
+  },
+  "research/countries/lt-lithuania.md": {
+    "mtime": 1791233745.250249,
+    "seen": 1791302603.3382668,
+    "ast_hash": "bc8cd25f9e3e7f5ed6aadb1be9b356c0",
+    "semantic_hash": ""
+  },
+  "research/countries/lu-luxembourg.md": {
+    "mtime": 1791212362.0535333,
+    "seen": 1791302603.3382668,
+    "ast_hash": "f1d98aa843bcefe732a2b57320187711",
+    "semantic_hash": ""
+  },
+  "research/countries/mt-malta.md": {
+    "mtime": 1791270937.1197534,
+    "seen": 1791302603.3382678,
+    "ast_hash": "59514035894790200d4612e02b0df004",
+    "semantic_hash": ""
+  },
+  "research/countries/my-malaysia.md": {
+    "mtime": 1791299446.4912329,
+    "seen": 1791302603.3382678,
+    "ast_hash": "33dfd991e2d72d59f23e28f1ef0c4e3d",
+    "semantic_hash": ""
+  },
+  "research/countries/nl-netherlands.md": {
+    "mtime": 1791211375.5917466,
+    "seen": 1791302603.3382678,
+    "ast_hash": "9e279ca9d554594604d90dee1d8ffc08",
+    "semantic_hash": ""
+  },
+  "research/countries/no-norway.md": {
+    "mtime": 1791232094.8728473,
+    "seen": 1791302603.338269,
+    "ast_hash": "688b24ec358261d38a742ce4ebf9cc0f",
+    "semantic_hash": ""
+  },
+  "research/countries/nz-new-zealand.md": {
+    "mtime": 1791319711.8344088,
+    "seen": 1791341182.2979789,
+    "ast_hash": "040da19c8d9322cd7c1fbda8738baff0",
+    "semantic_hash": ""
+  },
+  "research/countries/om-oman.md": {
+    "mtime": 1791297839.6569827,
+    "seen": 1791302603.338287,
+    "ast_hash": "595ae43e0c06c46c60619866de6d7670",
+    "semantic_hash": ""
+  },
+  "research/countries/pl-poland.md": {
+    "mtime": 1791293230.66432,
+    "seen": 1791302603.338288,
+    "ast_hash": "16f69bcb09305d298e1795669172361f",
+    "semantic_hash": ""
+  },
+  "research/countries/pt-portugal.md": {
+    "mtime": 1791197034.3792002,
+    "seen": 1791302603.338288,
+    "ast_hash": "019ab7f3fca9e2c9da25a3bba6436e8e",
+    "semantic_hash": ""
+  },
+  "research/countries/qa-qatar.md": {
+    "mtime": 1791297031.6444306,
+    "seen": 1791302603.338288,
+    "ast_hash": "23dd12c1239a7e230e687a853fa45508",
+    "semantic_hash": ""
+  },
+  "research/countries/ro-romania.md": {
+    "mtime": 1791283128.4459581,
+    "seen": 1791302603.3382888,
+    "ast_hash": "be244b1a63ec2728abe73f2cfebd635a",
+    "semantic_hash": ""
+  },
+  "research/countries/ru-russia.md": {
+    "mtime": 1791293299.0437894,
+    "seen": 1791302603.3382888,
+    "ast_hash": "0bd4b6d23f6d0344d79b4684b2b5366f",
+    "semantic_hash": ""
+  },
+  "research/countries/sa-saudi-arabia.md": {
+    "mtime": 1791279155.327519,
+    "seen": 1791302603.33829,
+    "ast_hash": "b58843d97246593df26d72beeb777330",
+    "semantic_hash": ""
+  },
+  "research/countries/se-sweden.md": {
+    "mtime": 1791221910.5053825,
+    "seen": 1791302603.33829,
+    "ast_hash": "a7de7e3dac528886e60d9fee5cc12756",
+    "semantic_hash": ""
+  },
+  "research/countries/sg-singapore.md": {
+    "mtime": 1791035906.0739212,
+    "seen": 1791114982.646836,
+    "ast_hash": "25840cb39791b20d30bbdc3975f07530",
+    "semantic_hash": ""
+  },
+  "research/countries/th-thailand.md": {
+    "mtime": 1791280476.812951,
+    "seen": 1791302603.338306,
+    "ast_hash": "a1940f676a03b5c2ed0938af161ae873",
+    "semantic_hash": ""
+  },
+  "research/countries/tr-turkey.md": {
+    "mtime": 1791272250.8640661,
+    "seen": 1791302603.338306,
+    "ast_hash": "f068cabb12921989618f4e7c09f11af3",
+    "semantic_hash": ""
+  },
+  "research/countries/tw-taiwan.md": {
+    "mtime": 1791317615.080306,
+    "seen": 1791341182.29816,
+    "ast_hash": "56ed6f906b25d1815cddd0e464242aff",
+    "semantic_hash": ""
+  },
+  "research/countries/us-united-states.md": {
+    "mtime": 1791341224.8432257,
+    "seen": 1791341489.775872,
+    "ast_hash": "cf8110488653f59e5e01d361d6ecd33e",
+    "semantic_hash": ""
+  },
+  "research/countries/vn-vietnam.md": {
+    "mtime": 1791317416.7695847,
+    "seen": 1791341182.298177,
+    "ast_hash": "30898984aacf525c3bed0af39027c357",
+    "semantic_hash": ""
+  },
+  "research/decisions/decision-framework.md": {
+    "mtime": 1791195500.329407,
+    "seen": 1791302603.338353,
+    "ast_hash": "6d4fdcbaea4075036c83141770877690",
+    "semantic_hash": ""
+  },
+  "research/decisions/long-horizon-careers.md": {
+    "mtime": 1791035266.714696,
+    "seen": 1791114982.6468391,
+    "ast_hash": "ff80c43cdad1064049a35d1dc272f512",
+    "semantic_hash": ""
+  },
+  "research/decisions/mba-and-career-switchers.md": {
+    "mtime": 1791117101.70843,
+    "seen": 1791117186.484401,
+    "ast_hash": "9de5f962b62f30f943ffbf6f73ac78d1",
+    "semantic_hash": ""
+  },
+  "research/decisions/programme-choice.md": {
+    "mtime": 1791114622.9766538,
+    "seen": 1791114982.6468391,
+    "ast_hash": "25a26214b013db2996c19658c3e5a829",
+    "semantic_hash": ""
+  },
+  "research/decisions/school-types-and-accreditation.md": {
+    "mtime": 1791117101.7086153,
+    "seen": 1791117186.484419,
+    "ast_hash": "e0baa5b895b6b1222db9bd59f2464c5c",
+    "semantic_hash": ""
+  },
+  "research/decisions/should-you-do-a-masters.md": {
+    "mtime": 1791035266.7347996,
+    "seen": 1791114982.64684,
+    "ast_hash": "fbc56db897346652609c32945cc11045",
+    "semantic_hash": ""
+  },
+  "research/decisions/timing-and-sequencing.md": {
+    "mtime": 1791035266.7396212,
+    "seen": 1791114982.64684,
+    "ast_hash": "15672166ffee38f7825ca528ea3d8825",
+    "semantic_hash": ""
+  },
+  "research/evidence/base-rates-and-failure-modes.md": {
+    "mtime": 1791035266.7479684,
+    "seen": 1791114982.646841,
+    "ast_hash": "e02ffb33440330f0d84c3f317a612496",
+    "semantic_hash": ""
+  },
+  "research/evidence/how-numbers-mislead.md": {
+    "mtime": 1791114611.82819,
+    "seen": 1791114982.646841,
+    "ast_hash": "313dc63d96e4e2c255e37c8e3c397546",
+    "semantic_hash": ""
+  },
+  "research/evidence/hypotheses.md": {
+    "mtime": 1791341217.8465846,
+    "seen": 1791341489.776036,
+    "ast_hash": "66773502cf3e7e35ef9095c07070ec69",
+    "semantic_hash": ""
+  },
+  "research/evidence/mid-tier-school-outcomes.md": {
+    "mtime": 1791035266.7603667,
+    "seen": 1791114982.646841,
+    "ast_hash": "f06e148aedc349d85f7cdc60bd09d44b",
+    "semantic_hash": ""
+  },
+  "research/evidence/ranking-methodologies.md": {
+    "mtime": 1791114611.8277092,
+    "seen": 1791114982.646842,
+    "ast_hash": "609b6669c3645d6595b8b499a4843d26",
+    "semantic_hash": ""
+  },
+  "research/evidence/trends.md": {
+    "mtime": 1791341217.8460317,
+    "seen": 1791341489.7760682,
+    "ast_hash": "7d2411140a7448e952449f98031c67bb",
+    "semantic_hash": ""
+  },
+  "research/getting-in/admissions.md": {
+    "mtime": 1791116996.3053765,
+    "seen": 1791117186.484559,
+    "ast_hash": "d2d87a6140cb2b8718af9da52120909c",
+    "semantic_hash": ""
+  },
+  "research/getting-in/applications-and-interviews.md": {
+    "mtime": 1791117128.1050446,
+    "seen": 1791117186.4845598,
+    "ast_hash": "54a12f3555ddcf8aad96dcf536f65fcf",
+    "semantic_hash": ""
+  },
+  "research/getting-in/breaking-in.md": {
+    "mtime": 1791035266.7813244,
+    "seen": 1791114982.646843,
+    "ast_hash": "92a78c235ccf4910601b040233b9d1e1",
+    "semantic_hash": ""
+  },
+  "research/getting-in/employer-pipelines.md": {
+    "mtime": 1791118361.2693763,
+    "seen": 1791152607.313233,
+    "ast_hash": "7d683bfaecbd049373ecaa014d4ff312",
+    "semantic_hash": ""
+  },
+  "research/getting-in/recruiting-calendar.md": {
+    "mtime": 1791118398.7156725,
+    "seen": 1791152607.3132339,
+    "ast_hash": "5e37f784abe6435ec4e7f23b3f74cbc5",
+    "semantic_hash": ""
+  },
+  "research/money/costs-and-funding.md": {
+    "mtime": 1791117117.5270293,
+    "seen": 1791117186.484684,
+    "ast_hash": "02a5f364f6e8b6bc7aefbee2b3e12062",
+    "semantic_hash": ""
+  },
+  "research/money/salaries-and-roi.md": {
+    "mtime": 1791117049.411178,
+    "seen": 1791117186.484684,
+    "ast_hash": "d37abbe2fccb47fbe07ae1e28f44f7f6",
+    "semantic_hash": ""
+  },
+  "research/money/scholarships.md": {
+    "mtime": 1791035266.8307805,
+    "seen": 1791114982.646846,
+    "ast_hash": "e00c3590bd3795ed8a6aa93b4a78b096",
+    "semantic_hash": ""
+  },
+  "research/places/beyond-europe.md": {
+    "mtime": 1791341203.49554,
+    "seen": 1791341489.7762449,
+    "ast_hash": "1eb05b5c3ae60dda305265ea53ca5397",
+    "semantic_hash": ""
+  },
+  "research/places/countries-and-cities.md": {
+    "mtime": 1791114596.3529387,
+    "seen": 1791114982.646847,
+    "ast_hash": "b80a470e2274cf8037c660c88459320d",
+    "semantic_hash": ""
+  },
+  "research/places/gulf-and-central-eastern-europe.md": {
+    "mtime": 1791297873.427309,
+    "seen": 1791302603.3387678,
+    "ast_hash": "0f7a399cda52fe6c1529378494c30793",
+    "semantic_hash": ""
+  },
+  "research/places/iberia-and-nordics.md": {
+    "mtime": 1791292496.259733,
+    "seen": 1791302603.3387678,
+    "ast_hash": "b26330bf85e4c7a7542f27008c1f9112",
+    "semantic_hash": ""
+  },
+  "research/places/italy-playbook.md": {
+    "mtime": 1791195496.4946764,
+    "seen": 1791302603.338769,
+    "ast_hash": "ab704ae5d4b0e5b11c7d2555857f2e05",
+    "semantic_hash": ""
+  },
+  "research/places/origin-countries-eu.md": {
+    "mtime": 1791035266.8650093,
+    "seen": 1791114982.646848,
+    "ast_hash": "df03b66c00b8bcfc84a9f09b45e1420a",
+    "semantic_hash": ""
+  },
+  "research/places/origin-countries-non-eu.md": {
+    "mtime": 1791035266.8715067,
+    "seen": 1791114982.646849,
+    "ast_hash": "9d7d7f20f0c77efd88dc67871be4214f",
+    "semantic_hash": ""
+  },
+  "research/places/student-logistics.md": {
+    "mtime": 1791195668.782857,
+    "seen": 1791302603.3388002,
+    "ast_hash": "cf69cee4dd2db85aa73e8b58a2d0aec7",
+    "semantic_hash": ""
+  },
+  "research/places/visas-and-work-rights.md": {
+    "mtime": 1791341160.9125078,
+    "seen": 1791341182.298721,
+    "ast_hash": "3c9798c79d5cb8d55f63656d22f3fcea",
+    "semantic_hash": ""
+  },
+  "research/product/competitors.md": {
+    "mtime": 1791035266.8866289,
+    "seen": 1791114982.646849,
+    "ast_hash": "7e3fca3afc0fb3625be01c3db589d266",
+    "semantic_hash": ""
+  },
+  "research/product/gemini-comparison.md": {
+    "mtime": 1791035266.8888636,
+    "seen": 1791114982.64685,
+    "ast_hash": "20d6740e62ec399b54405e3042f60943",
+    "semantic_hash": ""
+  },
+  "research/product/landscape-map.md": {
+    "mtime": 1791035266.8911605,
+    "seen": 1791114982.64685,
+    "ast_hash": "7064b7abc0586ff9d651353c6cb4ef06",
+    "semantic_hash": ""
+  },
+  "research/product/product-map.md": {
+    "mtime": 1791035266.8948288,
+    "seen": 1791114982.64685,
+    "ast_hash": "4fec15a503b28fcee5bab1357d53e910",
+    "semantic_hash": ""
+  },
+  "research/verification/claims-to-verify.md": {
+    "mtime": 1791341290.8497639,
+    "seen": 1791341489.776473,
+    "ast_hash": "17289e26ebe32159d2f432f0feb97dac",
+    "semantic_hash": ""
+  },
+  "research/verification/freshness-register.md": {
+    "mtime": 1791341290.8482888,
+    "seen": 1791341489.776473,
+    "ast_hash": "e32f57ecc3c274d8aa2d8dcb846b0100",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3a.md": {
+    "mtime": 1791035266.915662,
+    "seen": 1791114982.646851,
+    "ast_hash": "fc6c248f80b70acb079401234b60f06a",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3b.md": {
+    "mtime": 1791341301.396014,
+    "seen": 1791341489.776545,
+    "ast_hash": "675c0cff265edf019a932dbf71c75c40",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3c.md": {
+    "mtime": 1791035266.928837,
+    "seen": 1791114982.646852,
+    "ast_hash": "ec83538ce50c4b277b4cfb28441caff1",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3d.md": {
+    "mtime": 1791035266.9322045,
+    "seen": 1791114982.646852,
+    "ast_hash": "427da23afa0477312b16d88e4378829d",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3e.md": {
+    "mtime": 1791035266.9364135,
+    "seen": 1791114982.646852,
+    "ast_hash": "11671541feeb13d818f9b304e3ce797c",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3f.md": {
+    "mtime": 1791035266.939169,
+    "seen": 1791114982.6468532,
+    "ast_hash": "ee52a077284d786e0eaebba67d4f86ea",
+    "semantic_hash": ""
+  },
+  "research/verification/round-3g.md": {
+    "mtime": 1791341301.396206,
+    "seen": 1791341489.7766132,
+    "ast_hash": "a9816af8eacc1267f0492f89a9c0eca7",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4a.md": {
+    "mtime": 1791035266.946163,
+    "seen": 1791114982.6468532,
+    "ast_hash": "de9e9b395568c8595552cb3f48e0e3c3",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4b.md": {
+    "mtime": 1791035266.9483726,
+    "seen": 1791114982.646854,
+    "ast_hash": "4285c370ecc80cd8f782d669bcad7c30",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4c.md": {
+    "mtime": 1791035266.9500306,
+    "seen": 1791114982.646854,
+    "ast_hash": "20cd873d77ee903d8950e7b75265dce5",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4d.md": {
+    "mtime": 1791035266.9516423,
+    "seen": 1791114982.646854,
+    "ast_hash": "48b3a24b1d369d4d1f9906bcaaaa5082",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4e.md": {
+    "mtime": 1791271050.0077715,
+    "seen": 1791302603.339052,
+    "ast_hash": "84afcb2719adea9722ff9ecb05d8b87b",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4f.md": {
+    "mtime": 1791341306.0517964,
+    "seen": 1791341489.7767,
+    "ast_hash": "9cfe288de19238f7129be7b330f660fc",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4g.md": {
+    "mtime": 1791035266.957195,
+    "seen": 1791114982.6468549,
+    "ast_hash": "f722d2f5b8360e5bea4e1e0fcb91abde",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4h.md": {
+    "mtime": 1791035266.9589026,
+    "seen": 1791114982.6468549,
+    "ast_hash": "e414050dc32ceaa139fdd94dae8f2ba0",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4i.md": {
+    "mtime": 1791035266.960531,
+    "seen": 1791114982.6468558,
+    "ast_hash": "33e1e61669ffa18bac0f27b96f5dbdae",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4j.md": {
+    "mtime": 1791035266.9617522,
+    "seen": 1791114982.6468558,
+    "ast_hash": "8277bc02e893ebfa834792584c3d2d8b",
+    "semantic_hash": ""
+  },
+  "research/verification/round-4k.md": {
+    "mtime": 1791035266.9651873,
+    "seen": 1791114982.6468558,
+    "ast_hash": "73697fddc807162c490416353fc4877a",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5a.md": {
+    "mtime": 1791062208.9437041,
+    "seen": 1791114982.646857,
+    "ast_hash": "a0df08c7bb3fbe246223e8f0794a8d73",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5b.md": {
+    "mtime": 1791107776.6463225,
+    "seen": 1791114982.646857,
+    "ast_hash": "cbd152baea9832bd8d23d4a72d3e3749",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5c.md": {
+    "mtime": 1791108079.47125,
+    "seen": 1791114982.646857,
+    "ast_hash": "850672c86b9a76b3722bdbdf094b62fc",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5d.md": {
+    "mtime": 1791061888.9344375,
+    "seen": 1791114982.646858,
+    "ast_hash": "6b022518a9f126cb31879e67f59d75bb",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5e.md": {
+    "mtime": 1791108816.0859082,
+    "seen": 1791114982.646858,
+    "ast_hash": "c1c69d43998dfa7850b08d3b236455ac",
+    "semantic_hash": ""
+  },
+  "research/verification/round-5f.md": {
+    "mtime": 1791108967.2579215,
+    "seen": 1791114982.646858,
+    "ast_hash": "38b2fb6e9bca3487f5883816023c812c",
+    "semantic_hash": ""
+  },
+  "research/verification/round-6a-external-audit.md": {
+    "mtime": 1791117182.9812334,
+    "seen": 1791117186.485295,
+    "ast_hash": "450619bf93206488bc043995238ae1d7",
+    "semantic_hash": ""
+  },
+  "design/concepts/bento/board.jpg": {
+    "mtime": 1790108371.0068917,
+    "seen": 1791114982.646859,
+    "ast_hash": "8c547bb6f990f30c8c7479f004cd64e1",
+    "semantic_hash": ""
+  },
+  "design/concepts/minimal/board.jpg": {
+    "mtime": 1790108371.014498,
+    "seen": 1791114982.646859,
+    "ast_hash": "54171c84e3aa10f16b7a4ea3ad384096",
+    "semantic_hash": ""
+  },
+  "design/concepts/workspace/board.jpg": {
+    "mtime": 1790108370.9986305,
+    "seen": 1791114982.646859,
+    "ast_hash": "12bf5768d2ba3c8070d22ad7476386e6",
+    "semantic_hash": ""
+  },
+  "img/apple-touch-icon.png": {
+    "mtime": 1790708938.3472412,
+    "seen": 1791114982.646859,
+    "ast_hash": "028ba96e0ce3b2cc27b3360eb98e9736",
+    "semantic_hash": ""
+  },
+  "img/favicon.svg": {
+    "mtime": 1790708938.3470693,
+    "seen": 1791114982.6468601,
+    "ast_hash": "8eda47f73afaff5da49f305754a96325",
+    "semantic_hash": ""
+  },
+  "img/mark-finance.svg": {
+    "mtime": 1788779176.881135,
+    "seen": 1791114982.6468601,
+    "ast_hash": "68fab477b20847a0929e47a5ec207fd8",
+    "semantic_hash": ""
+  },
+  "img/mark-gate.svg": {
+    "mtime": 1788779176.8930218,
+    "seen": 1791114982.6468601,
+    "ast_hash": "40aa356dbb99c944dfb231b47604edb7",
+    "semantic_hash": ""
+  },
+  "img/mark-it.svg": {
+    "mtime": 1788779176.8908157,
+    "seen": 1791114982.646861,
+    "ast_hash": "a4c2cbad3d3c0ce3ddfdd2aad7337edb",
+    "semantic_hash": ""
+  },
+  "img/mark-management.svg": {
+    "mtime": 1788779176.883737,
+    "seen": 1791114982.646861,
+    "ast_hash": "8e4e1afa59e1554029eda478f462e13d",
+    "semantic_hash": ""
+  },
+  "img/mark-marketing.svg": {
+    "mtime": 1788779176.8862932,
+    "seen": 1791114982.646861,
+    "ast_hash": "6e8747728456b73f2ec0d323c8f4341e",
+    "semantic_hash": ""
+  },
+  "img/mark-mba.svg": {
+    "mtime": 1788779176.8886192,
+    "seen": 1791114982.646862,
+    "ast_hash": "11ac32efbd81b46b993266e6850852f9",
+    "semantic_hash": ""
+  },
+  "img/mark-scale.svg": {
+    "mtime": 1788779176.8949335,
+    "seen": 1791114982.646862,
+    "ast_hash": "1c4e858a939a556acc603a22ec6d4fc6",
+    "semantic_hash": ""
+  },
+  "img/mark-source.svg": {
+    "mtime": 1788779176.896728,
+    "seen": 1791114982.646862,
+    "ast_hash": "6edc416cc59ed68ced54378c9b340b2a",
+    "semantic_hash": ""
+  },
+  "img/og-admetia.jpg": {
+    "mtime": 1790708938.3474789,
+    "seen": 1791114982.646862,
+    "ast_hash": "5b3e54b2cfec45ddb7c256cec2841bd2",
+    "semantic_hash": ""
+  },
+  "img/photo/business-1240.webp": {
+    "mtime": 1790708938.5791254,
+    "seen": 1791114982.6468632,
+    "ast_hash": "24212751650d6fb428ecdb58a3c6fc99",
+    "semantic_hash": ""
+  },
+  "img/photo/business-480.webp": {
+    "mtime": 1790708938.4101112,
+    "seen": 1791114982.6468632,
+    "ast_hash": "eb485fb252ae77a96a779acf2e92cae0",
+    "semantic_hash": ""
+  },
+  "img/photo/business-800.webp": {
+    "mtime": 1790708938.4697545,
+    "seen": 1791114982.6468632,
+    "ast_hash": "aa996865ae9acd4d1fc3480dc49a27ed",
+    "semantic_hash": ""
+  },
+  "img/photo/business.jpg": {
+    "mtime": 1788781195.4259584,
+    "seen": 1791114982.646864,
+    "ast_hash": "1d19525b7145075bd49cca3586332637",
+    "semantic_hash": ""
+  },
+  "img/photo/conversion-1240.webp": {
+    "mtime": 1790708938.7490137,
+    "seen": 1791114982.646864,
+    "ast_hash": "a6ff6fe64ce993e30eb27f6f093e407f",
+    "semantic_hash": ""
+  },
+  "img/photo/conversion-480.webp": {
+    "mtime": 1790708938.615007,
+    "seen": 1791114982.646864,
+    "ast_hash": "330690b99cf8410bd7d5641e20829509",
+    "semantic_hash": ""
+  },
+  "img/photo/conversion-800.webp": {
+    "mtime": 1790708938.661659,
+    "seen": 1791114982.646864,
+    "ast_hash": "726c8fc760cf729977f3546c5a5036af",
+    "semantic_hash": ""
+  },
+  "img/photo/conversion.jpg": {
+    "mtime": 1789216004.4681015,
+    "seen": 1791114982.646865,
+    "ast_hash": "bc4d8d44f7783fc36f9aa2c3756225f5",
+    "semantic_hash": ""
+  },
+  "img/photo/cs-1240.webp": {
+    "mtime": 1790708938.9124055,
+    "seen": 1791114982.646865,
+    "ast_hash": "c794fe2045f702a5bc58605f1a9877ba",
+    "semantic_hash": ""
+  },
+  "img/photo/cs-480.webp": {
+    "mtime": 1790708938.785313,
+    "seen": 1791114982.646865,
+    "ast_hash": "850d1df520f07a97657512eb5460d5c8",
+    "semantic_hash": ""
+  },
+  "img/photo/cs-800.webp": {
+    "mtime": 1790708938.8301802,
+    "seen": 1791114982.6468658,
+    "ast_hash": "3dbc522f49022e5ea4de32c5dd78140a",
+    "semantic_hash": ""
+  },
+  "img/photo/cs.jpg": {
+    "mtime": 1789215986.9353192,
+    "seen": 1791114982.6468658,
+    "ast_hash": "9def88925732e2c76872a1e69b5a7499",
+    "semantic_hash": ""
+  },
+  "img/photo/datascience-1240.webp": {
+    "mtime": 1790708938.9946375,
+    "seen": 1791114982.6468658,
+    "ast_hash": "c65cbf33a934e2869b2e814f97ef08e1",
+    "semantic_hash": ""
+  },
+  "img/photo/datascience-480.webp": {
+    "mtime": 1790708938.9424736,
+    "seen": 1791114982.646867,
+    "ast_hash": "0d3a8c5a98d63c0be2158e4b346ca6bb",
+    "semantic_hash": ""
+  },
+  "img/photo/datascience-800.webp": {
+    "mtime": 1790708938.9688199,
+    "seen": 1791114982.646867,
+    "ast_hash": "c65cbf33a934e2869b2e814f97ef08e1",
+    "semantic_hash": ""
+  },
+  "img/photo/datascience.jpg": {
+    "mtime": 1789216987.2754283,
+    "seen": 1791114982.646867,
+    "ast_hash": "fe93081999e8edb08c2f505a6c624844",
+    "semantic_hash": ""
+  },
+  "img/photo/finance-1240.webp": {
+    "mtime": 1790708939.157018,
+    "seen": 1791114982.646868,
+    "ast_hash": "d2f81051980d53b4cc75e78afc7215ae",
+    "semantic_hash": ""
+  },
+  "img/photo/finance-480.webp": {
+    "mtime": 1790708939.029105,
+    "seen": 1791114982.646868,
+    "ast_hash": "45ff7225589e7adf2288a5e90d8d411f",
+    "semantic_hash": ""
+  },
+  "img/photo/finance-800.webp": {
+    "mtime": 1790708939.0692291,
+    "seen": 1791114982.646868,
+    "ast_hash": "0246246e768e6cf12d41f6ac8ffe58fa",
+    "semantic_hash": ""
+  },
+  "img/photo/finance.jpg": {
+    "mtime": 1788781195.2598083,
+    "seen": 1791114982.646869,
+    "ast_hash": "515b71555c1efd5f11aaad71036e0bcc",
+    "semantic_hash": ""
+  },
+  "img/photo/hero-1240.webp": {
+    "mtime": 1790708939.3325543,
+    "seen": 1791114982.646869,
+    "ast_hash": "44d70e695e8d20e2d7a4d5bfa70d581e",
+    "semantic_hash": ""
+  },
+  "img/photo/hero-480.webp": {
+    "mtime": 1790708939.1970866,
+    "seen": 1791114982.646869,
+    "ast_hash": "03b73d4c5d584bc8a6b1b0fbbe96354e",
+    "semantic_hash": ""
+  },
+  "img/photo/hero-800.webp": {
+    "mtime": 1790708939.2436683,
+    "seen": 1791114982.64687,
+    "ast_hash": "031aca6d49c03c1e1f79457385cbf6b6",
+    "semantic_hash": ""
+  },
+  "img/photo/hero.jpg": {
+    "mtime": 1788781195.0152633,
+    "seen": 1791114982.64687,
+    "ast_hash": "bfd0423d175fdc97b288f51f71350df1",
+    "semantic_hash": ""
+  },
+  "img/photo/it-1240.webp": {
+    "mtime": 1790708939.495171,
+    "seen": 1791114982.64687,
+    "ast_hash": "54323f662ef99c96b5d41ca4be18fdee",
+    "semantic_hash": ""
+  },
+  "img/photo/it-480.webp": {
+    "mtime": 1790708939.3714516,
+    "seen": 1791114982.646871,
+    "ast_hash": "3ef14c6cadc1a130cdfbbea5b895f85b",
+    "semantic_hash": ""
+  },
+  "img/photo/it-800.webp": {
+    "mtime": 1790708939.4162567,
+    "seen": 1791114982.646871,
+    "ast_hash": "cb4ed1e9207be1b68d98505b4d0c82fb",
+    "semantic_hash": ""
+  },
+  "img/photo/it.jpg": {
+    "mtime": 1788781195.4042957,
+    "seen": 1791114982.646871,
+    "ast_hash": "dfeaab24482bedf8f66b13132a3bbc43",
+    "semantic_hash": ""
+  },
+  "img/photo/management-1240.webp": {
+    "mtime": 1790708939.6605487,
+    "seen": 1791114982.646872,
+    "ast_hash": "42f9133bded93bc46c0911f8258ee14f",
+    "semantic_hash": ""
+  },
+  "img/photo/management-480.webp": {
+    "mtime": 1790708939.5273218,
+    "seen": 1791114982.646872,
+    "ast_hash": "e590f56be727981559d849d189e6bdfb",
+    "semantic_hash": ""
+  },
+  "img/photo/management-800.webp": {
+    "mtime": 1790708939.564518,
+    "seen": 1791114982.646872,
+    "ast_hash": "f7f6e0e69709b6e6311e055c793cd141",
+    "semantic_hash": ""
+  },
+  "img/photo/management.jpg": {
+    "mtime": 1788781195.3084002,
+    "seen": 1791114982.646872,
+    "ast_hash": "b15521bf2893f1da6180cecc9973d1df",
+    "semantic_hash": ""
+  },
+  "img/photo/marketing-1240.webp": {
+    "mtime": 1790708939.9248388,
+    "seen": 1791114982.646873,
+    "ast_hash": "d37bcf62df18828e691dc9b8616d82e2",
+    "semantic_hash": ""
+  },
+  "img/photo/marketing-480.webp": {
+    "mtime": 1790708939.7175512,
+    "seen": 1791114982.646873,
+    "ast_hash": "561df4991339771dcdc829dbac378daf",
+    "semantic_hash": ""
+  },
+  "img/photo/marketing-800.webp": {
+    "mtime": 1790708939.7868207,
+    "seen": 1791114982.6468742,
+    "ast_hash": "0b2bc3aef26eadb42d2cd739cbfedeb0",
+    "semantic_hash": ""
+  },
+  "img/photo/marketing.jpg": {
+    "mtime": 1788781195.35883,
+    "seen": 1791114982.6468742,
+    "ast_hash": "2c2040c201a812490608b63f9b26b51e",
+    "semantic_hash": ""
+  },
+  "img/photo/mba-1240.webp": {
+    "mtime": 1790708950.2942538,
+    "seen": 1791114982.6468742,
+    "ast_hash": "b3fc85193148bbefbae258491e546f94",
+    "semantic_hash": ""
+  },
+  "img/photo/mba-480.webp": {
+    "mtime": 1790708950.2944126,
+    "seen": 1791114982.6468742,
+    "ast_hash": "0d88af918ca9ebc9acf6907bb4ea7325",
+    "semantic_hash": ""
+  },
+  "img/photo/mba-800.webp": {
+    "mtime": 1790708950.2945342,
+    "seen": 1791114982.646875,
+    "ast_hash": "9d20bcdc92412d128247aba0ba2821d5",
+    "semantic_hash": ""
+  },
+  "img/photo/mba.jpg": {
+    "mtime": 1790165710.8425763,
+    "seen": 1791114982.646875,
+    "ast_hash": "89f93fdcfe60d22a06478d132bf7cc89",
+    "semantic_hash": ""
+  },
+  "img/photo/picker-1240.webp": {
+    "mtime": 1790708940.326958,
+    "seen": 1791114982.646875,
+    "ast_hash": "007d8100c330a79e13646544ff909287",
+    "semantic_hash": ""
+  },
+  "img/photo/picker-480.webp": {
+    "mtime": 1790708940.1471636,
+    "seen": 1791114982.6468759,
+    "ast_hash": "cc8e50c8306853268631d4f1ac75087a",
+    "semantic_hash": ""
+  },
+  "img/photo/picker-800.webp": {
+    "mtime": 1790708940.2121282,
+    "seen": 1791114982.6468759,
+    "ast_hash": "3020c1215f81dd302c9ab72bf5cf3d70",
+    "semantic_hash": ""
+  },
+  "img/photo/picker.jpg": {
+    "mtime": 1788781195.1579924,
+    "seen": 1791114982.6468759,
+    "ast_hash": "7f13ca2e83b69e8080d7e628118595d1",
+    "semantic_hash": ""
+  },
+  "img/photo/scoring-1240.webp": {
+    "mtime": 1790708940.4981575,
+    "seen": 1791114982.6468768,
+    "ast_hash": "c7189fc4b08f5f5c7f10ecaa692a6402",
+    "semantic_hash": ""
+  },
+  "img/photo/scoring-480.webp": {
+    "mtime": 1790708940.3667161,
+    "seen": 1791114982.6468768,
+    "ast_hash": "999aeb86af9df115ccdf35b704ec5d33",
+    "semantic_hash": ""
+  },
+  "img/photo/scoring-800.webp": {
+    "mtime": 1790708940.412308,
+    "seen": 1791114982.6468768,
+    "ast_hash": "51408d22ae323056c2dbe09ab4323d5d",
+    "semantic_hash": ""
+  },
+  "img/photo/scoring.jpg": {
+    "mtime": 1788781195.0888188,
+    "seen": 1791114982.646878,
+    "ast_hash": "766672166b48826f7fb922b7ef68aa37",
+    "semantic_hash": ""
+  },
+  "img/wordmark/fbi-watchlist.png": {
+    "mtime": 1790708938.3478038,
+    "seen": 1791114982.646878,
+    "ast_hash": "0a939e9d916d22e8a3297d01eebd4eda",
+    "semantic_hash": ""
+  },
+  "img/wordmark/fbi-watchlist.webp": {
+    "mtime": 1790708941.2664826,
+    "seen": 1791114982.646878,
+    "ast_hash": "4b401c4b625d802f3e410e2101bea883",
+    "semantic_hash": ""
+  },
+  "img/wordmark/wall-street.png": {
+    "mtime": 1790708938.3476517,
+    "seen": 1791114982.646878,
+    "ast_hash": "a05d27b27c094f64ad4dee18ba14d56c",
+    "semantic_hash": ""
+  },
+  "img/wordmark/wall-street.webp": {
+    "mtime": 1790708941.7861652,
+    "seen": 1791114982.646879,
+    "ast_hash": "096dd93edbd4209b1dee2e8fba64afd9",
+    "semantic_hash": ""
+  },
+  "research/verification/round-6b-strategic-admissions-audit.md": {
+    "mtime": 1791118128.5354922,
+    "seen": 1791152607.315017,
+    "ast_hash": "1e6e4964b0b353f3406a965e9fe8a387",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/1-atlas-western-europe.md": {
+    "mtime": 1791181142.5934732,
+    "seen": 1791193691.801037,
+    "ast_hash": "9be2c9db6381a0f831df03c43a413a66",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/2-atlas-nordics-cee-south.md": {
+    "mtime": 1791181142.5939353,
+    "seen": 1791193691.80104,
+    "ast_hash": "ef9eb9380a37396c7f5e421de20e7f18",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/3-atlas-outside-europe.md": {
+    "mtime": 1791181142.5943007,
+    "seen": 1791193691.8010418,
+    "ast_hash": "941a4ba4afae6a28eb7264fd742d96f6",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/4-immigration-europe.md": {
+    "mtime": 1791292509.138252,
+    "seen": 1791302603.3376288,
+    "ast_hash": "a7b424e180e6e6d6c4c60e6d6730eb41",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/5-immigration-outside-europe.md": {
+    "mtime": 1791341315.2008858,
+    "seen": 1791341489.774621,
+    "ast_hash": "d7dc9f222114c69a674d5fb24f90450d",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/6-admissions-money-calculators.md": {
+    "mtime": 1791181142.5953224,
+    "seen": 1791193691.8010461,
+    "ast_hash": "00c25ab7d2f294feffac312c23fac04e",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/7-computing-careers-decisions-site.md": {
+    "mtime": 1791181142.5956557,
+    "seen": 1791193691.801047,
+    "ast_hash": "e88a5ddff205cc184e8120e7c95540f5",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/README.md": {
+    "mtime": 1791341315.2005467,
+    "seen": 1791341489.77466,
+    "ast_hash": "73d702620e9ec2f27dbdc7583b918894",
+    "semantic_hash": ""
+  },
+  "docs/launch-audit/atlas-gap-report.txt": {
+    "mtime": 1791181142.59619,
+    "seen": 1791193691.801049,
+    "ast_hash": "5bf8f6131b5ed6d3a68562c9856d76ec",
+    "semantic_hash": ""
+  },
+  "research/verification/austria-immigration-fact-check-2026.md": {
+    "mtime": 1791212917.3615818,
+    "seen": 1791302603.338864,
+    "ast_hash": "57c491e2888730240132cbf02c06bb2c",
+    "semantic_hash": ""
+  },
+  "research/verification/greece-immigration-practical-reality-2026.md": {
+    "mtime": 1791270783.4127598,
+    "seen": 1791302603.338881,
+    "ast_hash": "e5e761fd61799c6e94f48f16d5dfadbd",
+    "semantic_hash": ""
+  },
+  "research/verification/norway-immigration-fact-check-2026.md": {
+    "mtime": 1791221415.5551143,
+    "seen": 1791302603.338882,
+    "ast_hash": "01d1cf05e00b512632ef4e090a71cbe9",
+    "semantic_hash": ""
+  },
+  "research/verification/romania-immigration-red-team-report-2026.md": {
+    "mtime": 1791233382.842576,
+    "seen": 1791302603.338884,
+    "ast_hash": "7b4f631d8bf09b6c740a7f07e4c9ccc1",
+    "semantic_hash": ""
+  },
+  "research/verification/russia-immigration-red-team-report-2026.md": {
+    "mtime": 1791293042.6931162,
+    "seen": 1791302603.339301,
+    "ast_hash": "8e332c0a9c54d78e6b825b688bde6384",
+    "semantic_hash": ""
+  },
+  "research/verification/china-immigration-practical-reality-2026.md": {
+    "mtime": 1791317218.037904,
+    "seen": 1791341182.298816,
+    "ast_hash": "dcf2c1651582ba3d319de03c17f0c71b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/README.md": {
+    "mtime": 1791367541.2972198,
+    "seen": 1791369190.464782,
+    "ast_hash": "94151e35c3d2d046a9eaf31593cae7a1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/australia_2026-10-05.md": {
+    "mtime": 1791319603.725132,
+    "seen": 1791369190.464784,
+    "ast_hash": "d20cb9e45b52ec3304afe3ba4c6d3e8c",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/austria_2026-10-05.md": {
+    "mtime": 1791213158.728766,
+    "seen": 1791369190.4647849,
+    "ast_hash": "7bb755b43fb3dfcaa08f453bb50da03d",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/belgium_2026-10-05.md": {
+    "mtime": 1791205596.7666686,
+    "seen": 1791369190.4647858,
+    "ast_hash": "a584f6384ab69d409090805bca833ed4",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/bulgaria_2026-10-06.md": {
+    "mtime": 1791271034.3795624,
+    "seen": 1791369190.4647858,
+    "ast_hash": "2b62ccd64a418ab1d2a81797b1191af6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/canada_2026-10-05.md": {
+    "mtime": 1791321435.3243754,
+    "seen": 1791369190.464787,
+    "ast_hash": "7e12795b2e8a007da9d22ed747706180",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/china_2026-10-05.md": {
+    "mtime": 1791317469.4974504,
+    "seen": 1791369190.464788,
+    "ast_hash": "3c84dc693b43e7f9ba3e743faeabe27f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/czech_republic_2026-10-06.md": {
+    "mtime": 1791292842.894583,
+    "seen": 1791369190.464788,
+    "ast_hash": "69ba74462026dedb472db7e96198dc51",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/denmark_2026-10-05.md": {
+    "mtime": 1791206638.2600439,
+    "seen": 1791369190.464789,
+    "ast_hash": "769ce91f349f995cfa37637cec02dead",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/estonia_2026-10-05.md": {
+    "mtime": 1791233881.4937866,
+    "seen": 1791369190.46479,
+    "ast_hash": "4fef38bf666ca8b50b226039dce7626d",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/finland_2026-10-05.md": {
+    "mtime": 1791292471.0635676,
+    "seen": 1791369190.46479,
+    "ast_hash": "f043f8dac07b67b87559c1843e48ed92",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/france_2026-10-05.md": {
+    "mtime": 1791195616.8655071,
+    "seen": 1791369190.464791,
+    "ast_hash": "4fe4aae1c17894580f65e754a1aec63e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/germany_2026-10-05.md": {
+    "mtime": 1791221573.6011636,
+    "seen": 1791369190.464792,
+    "ast_hash": "0bade3ab228c9bc30f99e4989aab271b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/greece_2026-10-05.md": {
+    "mtime": 1791270934.4830956,
+    "seen": 1791369190.4647932,
+    "ast_hash": "7471f166515c58842b3cf49c6ac2ce9e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/hong_kong_2026-10-05.md": {
+    "mtime": 1791320795.1803517,
+    "seen": 1791369190.4647942,
+    "ast_hash": "88b5fd909077db7e1af5cdbb8a2a37ad",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/iceland_2026-10-05.md": {
+    "mtime": 1791204052.549023,
+    "seen": 1791369190.4647942,
+    "ast_hash": "1451798c1f8e07bfb974c521518b9789",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/ireland_2026-10-05.md": {
+    "mtime": 1791292307.7531645,
+    "seen": 1791369190.4647949,
+    "ast_hash": "52a6cb008b21d3af369dfbc13ad4bd27",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/israel_2026-10-05.md": {
+    "mtime": 1791278833.0222363,
+    "seen": 1791369190.4647958,
+    "ast_hash": "c297af11995a4219319094231feb1015",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/italy_2026-10-05.md": {
+    "mtime": 1791195505.7306025,
+    "seen": 1791369190.464797,
+    "ast_hash": "7280141208c791dbd95a38b4fe3a30d5",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/japan_2026-10-05.md": {
+    "mtime": 1791319350.597684,
+    "seen": 1791369190.464798,
+    "ast_hash": "e8063ee9a1649c795f19a18a02d0d7a3",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/kuwait_2026-10-05.md": {
+    "mtime": 1791296873.0264647,
+    "seen": 1791369190.464798,
+    "ast_hash": "24e6b48ec5e97a5e6005a11fc91be11c",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/lithuania_2026-10-05.md": {
+    "mtime": 1791233658.822918,
+    "seen": 1791369190.464799,
+    "ast_hash": "307fd2faa836102e067269bd12f0c20f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/luxembourg_2026-10-05.md": {
+    "mtime": 1791212260.2748034,
+    "seen": 1791369190.464799,
+    "ast_hash": "8892bf2439d438cb72f9364402bca2e2",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/malaysia_2026-10-05.md": {
+    "mtime": 1791299350.2324085,
+    "seen": 1791369190.4648,
+    "ast_hash": "76a8709246e9933ce89568196ecf5932",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/malta_2026-10-05.md": {
+    "mtime": 1791270944.2191622,
+    "seen": 1791369190.464801,
+    "ast_hash": "0a8abef614fdd92fcc605ff5d8507074",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/netherlands_2026-10-05.md": {
+    "mtime": 1791211383.0521634,
+    "seen": 1791369190.464802,
+    "ast_hash": "8642e6eb3b81dcabbd1683a809e6b431",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/new_zealand_2026-10-05.md": {
+    "mtime": 1791319679.0001233,
+    "seen": 1791369190.464803,
+    "ast_hash": "066f0478739c8808b66d0c18c62cbe8b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/norway_2026-10-05.md": {
+    "mtime": 1791221919.0688944,
+    "seen": 1791369190.464803,
+    "ast_hash": "2bf1323415f6be7475fd074d5b3ea6bd",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/oman_2026-10-05.md": {
+    "mtime": 1791297857.9148262,
+    "seen": 1791369190.4648042,
+    "ast_hash": "945f5e64add4159e1776351d782a4d26",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/poland_2026-10-05.md": {
+    "mtime": 1791293254.133759,
+    "seen": 1791369190.4648051,
+    "ast_hash": "c271bd375b2d6a70be87e2208f7366f6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/portugal_2026-10-05.md": {
+    "mtime": 1791197085.325328,
+    "seen": 1791369190.4648058,
+    "ast_hash": "6bd9ea0c865a9adae4ed6398ca6a2715",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/qatar_2026-10-05.md": {
+    "mtime": 1791297000.8349333,
+    "seen": 1791369190.4648058,
+    "ast_hash": "398461d409b48107f81c2413a14f2ffb",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/review-fixes_2026-10-06.md": {
+    "mtime": 1791310771.223159,
+    "seen": 1791369190.4648068,
+    "ast_hash": "1bf1edc2d9cec7e2731698d48387c79f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/romania_2026-10-05.md": {
+    "mtime": 1791270509.5570807,
+    "seen": 1791369190.464808,
+    "ast_hash": "81fc00a63d2a133450a87409275c7c89",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/romania_2026-10-06.md": {
+    "mtime": 1791283088.335002,
+    "seen": 1791369190.464808,
+    "ast_hash": "57141daac8d5eb0df8f808e9fcf74ad0",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/russia_2026-10-05.md": {
+    "mtime": 1791293277.6592107,
+    "seen": 1791369190.464809,
+    "ast_hash": "0ca6344a8bbe33386954cb2556f8c54e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/saudi_arabia_2026-10-05.md": {
+    "mtime": 1791279122.2645602,
+    "seen": 1791369190.46481,
+    "ast_hash": "afce727113822c0debeccaac157af4cd",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/singapore_2026-10-05.md": {
+    "mtime": 1791317347.794837,
+    "seen": 1791369190.464811,
+    "ast_hash": "b21a21144fbf4cc4d91ab8e900f6f2b1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/south_korea_2026-10-05.md": {
+    "mtime": 1791318226.6452131,
+    "seen": 1791369190.464812,
+    "ast_hash": "95c894de37b4c12c64b46957b418fedf",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/spain_2026-10-05.md": {
+    "mtime": 1791203772.7117624,
+    "seen": 1791369190.464812,
+    "ast_hash": "ebcf4b376af283fd0379b3822dd2d5ee",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/sweden_2026-10-05.md": {
+    "mtime": 1791221747.674779,
+    "seen": 1791369190.464813,
+    "ast_hash": "eba9987456fa684cb041ec752403d510",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/switzerland_2026-10-05.md": {
+    "mtime": 1791211136.112899,
+    "seen": 1791369190.4648142,
+    "ast_hash": "69ad2bf2ef8a3874206e468d02efc472",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/taiwan_2026-10-05.md": {
+    "mtime": 1791317571.0591817,
+    "seen": 1791369190.4648142,
+    "ast_hash": "da483a83032b86a47974a76267fa8173",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/thailand_2026-10-05.md": {
+    "mtime": 1791280369.9962626,
+    "seen": 1791369190.4648151,
+    "ast_hash": "fdfe0b68a324442d2dba356b649157fb",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/turkey_2026-10-05.md": {
+    "mtime": 1791272312.1807363,
+    "seen": 1791369190.4648151,
+    "ast_hash": "38fff5581937f123d03dff158440ef3b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/uae_2026-10-05.md": {
+    "mtime": 1791297591.164667,
+    "seen": 1791369190.464816,
+    "ast_hash": "ea80d7a2806909798c87a8fba6fcf464",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/united_kingdom_2026-10-05.md": {
+    "mtime": 1791204920.509922,
+    "seen": 1791369190.4648168,
+    "ast_hash": "c6cc23c1b2f1904bb96d20e906118c01",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/united_states_2026-10-07.md": {
+    "mtime": 1791367546.717032,
+    "seen": 1791369190.464818,
+    "ast_hash": "578338b1bc82fb204de43aad486be12b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_changelog/vietnam_2026-10-05.md": {
+    "mtime": 1791317310.6516204,
+    "seen": 1791369190.464818,
+    "ast_hash": "5dc83f7a925d7fb8a82723e6d5bee234",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_review/REVIEW-2026-10-05.md": {
+    "mtime": 1791208285.6289961,
+    "seen": 1791369190.464819,
+    "ast_hash": "3013f68c4a56bec47991413a654bc5db",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_review/REVIEW-2026-10-06.md": {
+    "mtime": 1791310771.2193258,
+    "seen": 1791369190.46482,
+    "ast_hash": "605d9a4017f84ac1b5d6204275f80db7",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_review/REVIEW-2026-10-07-US.md": {
+    "mtime": 1791365966.703097,
+    "seen": 1791369190.46482,
+    "ast_hash": "2cc8ff62dda4d694606425d92709cf25",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_review/US-TRIAGE-2026-10-07.md": {
+    "mtime": 1791324152.3006723,
+    "seen": 1791369190.464821,
+    "ast_hash": "869a8efbfb2afa35f0adffd6a142c843",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/_template/country_template.md": {
+    "mtime": 1791195193.0616512,
+    "seen": 1791369190.464822,
+    "ast_hash": "51f1532ef8eb9604e83b229eb95c6dc0",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/australia/australia_open_questions.md": {
+    "mtime": 1791319354.556539,
+    "seen": 1791369190.464822,
+    "ast_hash": "e8130fdfebc61fdcf8102d8f307fb9b6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/australia/australia_sources.md": {
+    "mtime": 1791319339.8109105,
+    "seen": 1791369190.464823,
+    "ast_hash": "4137d2aad1c27b1f741295c6da15c75a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/australia/australia_visas_immigration_guide.md": {
+    "mtime": 1791319460.823555,
+    "seen": 1791369190.464823,
+    "ast_hash": "f7cd9bb02ad7e22ce0be985c67a4dce8",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/austria/austria_open_questions.md": {
+    "mtime": 1791303704.2976444,
+    "seen": 1791369190.464824,
+    "ast_hash": "71e22d35f2a3a3b5b3fa2bf95c4a02ab",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/austria/austria_sources.md": {
+    "mtime": 1791303704.2972872,
+    "seen": 1791369190.4648252,
+    "ast_hash": "da3ffb35c9c7b9e054f5a3be59789ed8",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/austria/austria_visas_immigration_guide.md": {
+    "mtime": 1791303692.55925,
+    "seen": 1791369190.4648252,
+    "ast_hash": "2e4d9bf3603d4d5b308e44b00344ff59",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/belgium/belgium_open_questions.md": {
+    "mtime": 1791205481.0986464,
+    "seen": 1791369190.464826,
+    "ast_hash": "0ef504b3b692cc3a9c501d3ee9b421f6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/belgium/belgium_sources.md": {
+    "mtime": 1791310448.440597,
+    "seen": 1791369190.4648268,
+    "ast_hash": "88a616befb5c796ef64c7e2f3485256f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/belgium/belgium_visas_immigration_guide.md": {
+    "mtime": 1791310448.4402664,
+    "seen": 1791369190.4648268,
+    "ast_hash": "feff4ddf2e0e81a7609682f8b8c7b197",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/bulgaria/bulgaria_open_questions.md": {
+    "mtime": 1791303593.5420418,
+    "seen": 1791369190.464828,
+    "ast_hash": "eb1df6602f5749743c95d3fe2388fcf1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/bulgaria/bulgaria_sources.md": {
+    "mtime": 1791270910.7088337,
+    "seen": 1791369190.464829,
+    "ast_hash": "90ab89c4aa1c8a3e02db66261a9c6857",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/bulgaria/bulgaria_visas_immigration_guide.md": {
+    "mtime": 1791303593.541662,
+    "seen": 1791369190.46483,
+    "ast_hash": "e6d32ae16b8cdb2b75a75bb795ce783e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/canada/canada_open_questions.md": {
+    "mtime": 1791321284.0577753,
+    "seen": 1791369190.46483,
+    "ast_hash": "b20b6dda98d6fdce71a1bc0327d48b7f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/canada/canada_sources.md": {
+    "mtime": 1791321266.2822473,
+    "seen": 1791369190.4648309,
+    "ast_hash": "c318851d248e9653fc897e5a8cabe964",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/canada/canada_visas_immigration_guide.md": {
+    "mtime": 1791321381.6769583,
+    "seen": 1791369190.464832,
+    "ast_hash": "06cb0adbb25c8dc39717ab9f7577c0cb",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/china/china_open_questions.md": {
+    "mtime": 1791317370.2990646,
+    "seen": 1791369190.464832,
+    "ast_hash": "0ade2a07ae1a664afbdf66e6d689f795",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/china/china_sources.md": {
+    "mtime": 1791317361.1372917,
+    "seen": 1791369190.464833,
+    "ast_hash": "9f1c922a1469dfe68c5ecddadfaf9805",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/china/china_visas_immigration_guide.md": {
+    "mtime": 1791317407.4861472,
+    "seen": 1791369190.464834,
+    "ast_hash": "cdd57c90794a9f73403a205627abb508",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/czech_republic/czech_republic_open_questions.md": {
+    "mtime": 1791310688.250193,
+    "seen": 1791369190.464834,
+    "ast_hash": "4294119427c72e803e674c500dc876f1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/czech_republic/czech_republic_sources.md": {
+    "mtime": 1791292779.1487746,
+    "seen": 1791369190.4648352,
+    "ast_hash": "3502457bb349ee5f7c672117a81f4c85",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/czech_republic/czech_republic_visas_immigration_guide.md": {
+    "mtime": 1791310688.2496564,
+    "seen": 1791369190.4648361,
+    "ast_hash": "9161e18b62496c831482e613b99dfc33",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/denmark/denmark_open_questions.md": {
+    "mtime": 1791302390.0207741,
+    "seen": 1791369190.4648361,
+    "ast_hash": "fb26ddf89900a5ec8edf430120ff5a1b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/denmark/denmark_sources.md": {
+    "mtime": 1791310456.2321146,
+    "seen": 1791369190.464837,
+    "ast_hash": "92e485f6a63cab72f807135ff0f40cb6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/denmark/denmark_visas_immigration_guide.md": {
+    "mtime": 1791310456.2315478,
+    "seen": 1791369190.4648378,
+    "ast_hash": "2e3191e45a047e9a3cd3151d8eee8148",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/estonia/estonia_open_questions.md": {
+    "mtime": 1791233822.8700671,
+    "seen": 1791369190.4648378,
+    "ast_hash": "daa73ef681f600a38c1467c7cfbd57f4",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/estonia/estonia_sources.md": {
+    "mtime": 1791233811.598772,
+    "seen": 1791369190.464839,
+    "ast_hash": "8fdb6f7255864ac9d70a547b9d69298f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/estonia/estonia_visas_immigration_guide.md": {
+    "mtime": 1791233868.8165443,
+    "seen": 1791369190.46484,
+    "ast_hash": "8a3224a3f23a49b587633d6d961f45a5",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/finland/finland_open_questions.md": {
+    "mtime": 1791292405.459755,
+    "seen": 1791369190.46484,
+    "ast_hash": "b3ef39fa11628686ccfc622ef10d10ed",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/finland/finland_sources.md": {
+    "mtime": 1791292396.9681842,
+    "seen": 1791369190.464841,
+    "ast_hash": "5faecf30c1d476abdef3a8f83319875d",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/finland/finland_visas_immigration_guide.md": {
+    "mtime": 1791292441.9864182,
+    "seen": 1791369190.464842,
+    "ast_hash": "6754d155c2990221aa3c95bb0ca7d0c6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/france/france_open_questions.md": {
+    "mtime": 1791303689.53027,
+    "seen": 1791369190.464842,
+    "ast_hash": "3570caca557b99511c54bf26a1eaaf68",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/france/france_sources.md": {
+    "mtime": 1791195553.2140956,
+    "seen": 1791369190.464843,
+    "ast_hash": "f48f69b28d8201e32931b68e4f928fc1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/france/france_visas_immigration_guide.md": {
+    "mtime": 1791303689.5300283,
+    "seen": 1791369190.464844,
+    "ast_hash": "f21c2c71c20af90fb0e30d20c520432f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/germany/germany_open_questions.md": {
+    "mtime": 1791221432.4860275,
+    "seen": 1791369190.464845,
+    "ast_hash": "2199132f777ce00ab54828417187a2c7",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/germany/germany_sources.md": {
+    "mtime": 1791221413.7844536,
+    "seen": 1791369190.464845,
+    "ast_hash": "a9cb23c018daa2ddf7b57c3fc13b0589",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/germany/germany_visas_immigration_guide.md": {
+    "mtime": 1791221555.4519114,
+    "seen": 1791369190.4648461,
+    "ast_hash": "65b27d7002686319e5f0de3afc6a659f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/greece/greece_open_questions.md": {
+    "mtime": 1791270894.02612,
+    "seen": 1791369190.464847,
+    "ast_hash": "6753b7e9a17b29cff674b01d6d233d0d",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/greece/greece_sources.md": {
+    "mtime": 1791270886.584449,
+    "seen": 1791369190.464847,
+    "ast_hash": "ac5ed1ad3db67626313826e5ce287a40",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/greece/greece_visas_immigration_guide.md": {
+    "mtime": 1791270926.053896,
+    "seen": 1791369190.4648478,
+    "ast_hash": "b9d947bacae20298cba7e455628718d9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/hong_kong/hong_kong_open_questions.md": {
+    "mtime": 1791320635.3047113,
+    "seen": 1791369190.464849,
+    "ast_hash": "f938d634e5172e109c3e13c4ab0511a4",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/hong_kong/hong_kong_sources.md": {
+    "mtime": 1791320617.2588952,
+    "seen": 1791369190.46485,
+    "ast_hash": "4d3d44f722ecab4a802d704126e665ca",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/hong_kong/hong_kong_visas_immigration_guide.md": {
+    "mtime": 1791320736.7004857,
+    "seen": 1791369190.464851,
+    "ast_hash": "fe42e277565b2f0dd4cbadd23d51317b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/iceland/iceland_open_questions.md": {
+    "mtime": 1791303626.1427217,
+    "seen": 1791369190.464851,
+    "ast_hash": "3403ea237053c2d97f99eb8369dfb7e2",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/iceland/iceland_sources.md": {
+    "mtime": 1791303626.1424344,
+    "seen": 1791369190.4648519,
+    "ast_hash": "f66b1f3e9ae11d2948d9a84cd6bc4758",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/iceland/iceland_visas_immigration_guide.md": {
+    "mtime": 1791303626.1426208,
+    "seen": 1791369190.464853,
+    "ast_hash": "fa92062f008b2c9f19345ebeee4a143f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/ireland/ireland_open_questions.md": {
+    "mtime": 1791292242.8034701,
+    "seen": 1791369190.464853,
+    "ast_hash": "fc1611be2b762fd7bbc7b8160d723ebb",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/ireland/ireland_sources.md": {
+    "mtime": 1791310456.2328424,
+    "seen": 1791369190.464854,
+    "ast_hash": "f3742dfe87a07caa6470f496e8cb9679",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/ireland/ireland_visas_immigration_guide.md": {
+    "mtime": 1791302354.0439537,
+    "seen": 1791369190.464855,
+    "ast_hash": "4f008ed03cc938ccb1d57268c6f476e5",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/israel/israel_open_questions.md": {
+    "mtime": 1791302423.6087623,
+    "seen": 1791369190.4648561,
+    "ast_hash": "be21b2468a822c7477a9f8a573b4bdeb",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/israel/israel_sources.md": {
+    "mtime": 1791278647.417311,
+    "seen": 1791369190.4648561,
+    "ast_hash": "a3451bb72dbaa9889479c358762f689f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/israel/israel_visas_immigration_guide.md": {
+    "mtime": 1791302423.6083963,
+    "seen": 1791369190.464857,
+    "ast_hash": "d9d9ab19830a86c7684fbf3c9ddbb7a1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/italy/italy_open_questions.md": {
+    "mtime": 1791303613.7506607,
+    "seen": 1791369190.464858,
+    "ast_hash": "33e8f6935dcb62645c18f2de0c7175da",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/italy/italy_sources.md": {
+    "mtime": 1791303609.8117843,
+    "seen": 1791369190.464858,
+    "ast_hash": "a5c0f9112479042aadb9658957bb5ee9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/italy/italy_visas_immigration_guide.md": {
+    "mtime": 1791303609.8113036,
+    "seen": 1791369190.4648588,
+    "ast_hash": "830a8f12809439e72aebc2cd1fd5c4b6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/japan/japan_open_questions.md": {
+    "mtime": 1791319229.5527356,
+    "seen": 1791369190.46486,
+    "ast_hash": "84db6ae1dd639a6e4932aea8b04ea143",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/japan/japan_sources.md": {
+    "mtime": 1791319194.6278343,
+    "seen": 1791369190.46486,
+    "ast_hash": "c9559698952e7b4cf1a0153f09aa8573",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/japan/japan_visas_immigration_guide.md": {
+    "mtime": 1791319325.9262512,
+    "seen": 1791369190.464861,
+    "ast_hash": "3440d0f6814ba225127f644051fa5f4a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/kuwait/kuwait_open_questions.md": {
+    "mtime": 1791296737.656659,
+    "seen": 1791369190.4648619,
+    "ast_hash": "1bac2cb8227ec102a805817f6ba19ac5",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/kuwait/kuwait_sources.md": {
+    "mtime": 1791296719.537363,
+    "seen": 1791369190.4648619,
+    "ast_hash": "80b197a71b502e114508d43788944d75",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/kuwait/kuwait_visas_immigration_guide.md": {
+    "mtime": 1791296840.960171,
+    "seen": 1791369190.464863,
+    "ast_hash": "30d382f12f149c539aab7beec5bec08e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/lithuania/lithuania_open_questions.md": {
+    "mtime": 1791233594.5955763,
+    "seen": 1791369190.464864,
+    "ast_hash": "4e76be2f02015175b0d72aaaf8da3fa9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/lithuania/lithuania_sources.md": {
+    "mtime": 1791302364.473503,
+    "seen": 1791369190.464864,
+    "ast_hash": "b10edabb3b8d4c8bb3eb87d4305974ce",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/lithuania/lithuania_visas_immigration_guide.md": {
+    "mtime": 1791302358.9411416,
+    "seen": 1791369190.464865,
+    "ast_hash": "4fb76b79138ac860a9dc07f175bc7782",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/luxembourg/luxembourg_open_questions.md": {
+    "mtime": 1791212208.5788915,
+    "seen": 1791369190.4648662,
+    "ast_hash": "78e84dbdc878ae542062480010b60cd6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/luxembourg/luxembourg_sources.md": {
+    "mtime": 1791212198.0065284,
+    "seen": 1791369190.4648662,
+    "ast_hash": "c5275d14b770f76e6967f538455542b9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/luxembourg/luxembourg_visas_immigration_guide.md": {
+    "mtime": 1791212251.6750052,
+    "seen": 1791369190.464867,
+    "ast_hash": "fa9a53f7e9e27b507f327ef794665071",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malaysia/malaysia_open_questions.md": {
+    "mtime": 1791299236.1162167,
+    "seen": 1791369190.464868,
+    "ast_hash": "7161520ab1939a1f58f24a2bf5b060f0",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malaysia/malaysia_sources.md": {
+    "mtime": 1791299205.7651508,
+    "seen": 1791369190.464868,
+    "ast_hash": "ee7f896fac636edf3b60859d733f7e93",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malaysia/malaysia_visas_immigration_guide.md": {
+    "mtime": 1791299325.319576,
+    "seen": 1791369190.464869,
+    "ast_hash": "121c1b725845f2c61c6a65b2ef0a7c6a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malta/malta_open_questions.md": {
+    "mtime": 1791270853.5834377,
+    "seen": 1791369190.46487,
+    "ast_hash": "c5eb36fc8ce36a03eaeb20f889becca2",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malta/malta_sources.md": {
+    "mtime": 1791270845.0173597,
+    "seen": 1791369190.46487,
+    "ast_hash": "ea0ea9e92e4f8880e096769e077621ef",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/malta/malta_visas_immigration_guide.md": {
+    "mtime": 1791270893.3692205,
+    "seen": 1791369190.464871,
+    "ast_hash": "43d6ed75699f098f56cc8a8d721f27a9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/netherlands/netherlands_open_questions.md": {
+    "mtime": 1791211279.7028232,
+    "seen": 1791369190.464872,
+    "ast_hash": "c308311a896e5e171d5417d6b72c026e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/netherlands/netherlands_sources.md": {
+    "mtime": 1791211267.6818497,
+    "seen": 1791369190.464872,
+    "ast_hash": "d0a927a7f95de4521839161718329e99",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/netherlands/netherlands_visas_immigration_guide.md": {
+    "mtime": 1791211335.537532,
+    "seen": 1791369190.464873,
+    "ast_hash": "728a7685626ffed2465d2f6ae6f3c397",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/new_zealand/new_zealand_open_questions.md": {
+    "mtime": 1791319521.4841826,
+    "seen": 1791369190.464874,
+    "ast_hash": "29e406c57341320ec9294451aa0654d4",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/new_zealand/new_zealand_sources.md": {
+    "mtime": 1791319498.6892734,
+    "seen": 1791369190.464874,
+    "ast_hash": "6712caccc884df8db30f9d9ef9b36548",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/new_zealand/new_zealand_visas_immigration_guide.md": {
+    "mtime": 1791319644.9299006,
+    "seen": 1791369190.464875,
+    "ast_hash": "709bef8ffe10a4cab5f08f1f5c25461a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/norway/norway_open_questions.md": {
+    "mtime": 1791221804.5769165,
+    "seen": 1791369190.464876,
+    "ast_hash": "eec4573bd158d08d76837b8e48cabb3c",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/norway/norway_sources.md": {
+    "mtime": 1791221788.1950183,
+    "seen": 1791369190.464876,
+    "ast_hash": "1cb5c66e5866804321c9b4f175c83158",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/norway/norway_visas_immigration_guide.md": {
+    "mtime": 1791221893.9777112,
+    "seen": 1791369190.4648771,
+    "ast_hash": "f2b2e4e2662e708bded29f6081af018e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/oman/oman_open_questions.md": {
+    "mtime": 1791297450.8951886,
+    "seen": 1791369190.464878,
+    "ast_hash": "f38d27eb45426502b0cea0d2ecc88c7f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/oman/oman_sources.md": {
+    "mtime": 1791297430.4812076,
+    "seen": 1791369190.464879,
+    "ast_hash": "ac19d00a2b50d4fe27128736e67bbc4b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/oman/oman_visas_immigration_guide.md": {
+    "mtime": 1791297552.8791983,
+    "seen": 1791369190.464879,
+    "ast_hash": "12788b1100d997babd7f8a9e29ace06b",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/poland/poland_open_questions.md": {
+    "mtime": 1791292966.8292158,
+    "seen": 1791369190.4648802,
+    "ast_hash": "8e56b91c7c9baf69d142e52e0922b8b4",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/poland/poland_sources.md": {
+    "mtime": 1791293179.3160923,
+    "seen": 1791369190.464881,
+    "ast_hash": "85677aca83a060b02ad946c614ba6450",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/poland/poland_visas_immigration_guide.md": {
+    "mtime": 1791293017.2342374,
+    "seen": 1791369190.464881,
+    "ast_hash": "0dd0a10111e58411864e42aca477b9a1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/portugal/portugal_open_questions.md": {
+    "mtime": 1791303609.8107016,
+    "seen": 1791369190.464882,
+    "ast_hash": "a2f67dbcbe01fbf536e60041fbb07b89",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/portugal/portugal_sources.md": {
+    "mtime": 1791303609.8102129,
+    "seen": 1791369190.4648829,
+    "ast_hash": "b494df6645fbbc549ab0fe5699fbe35e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/portugal/portugal_visas_immigration_guide.md": {
+    "mtime": 1791303528.731317,
+    "seen": 1791369190.4648829,
+    "ast_hash": "37127037f02c2d1ae944a1680c22ed52",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/qatar/qatar_open_questions.md": {
+    "mtime": 1791296805.8865702,
+    "seen": 1791369190.464884,
+    "ast_hash": "f32739b80d3d8b5f580beadb90f07d97",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/qatar/qatar_sources.md": {
+    "mtime": 1791296776.2682457,
+    "seen": 1791369190.464885,
+    "ast_hash": "50c3c01f6b95620ab10ac069c2ef3b38",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/qatar/qatar_visas_immigration_guide.md": {
+    "mtime": 1791296913.3478487,
+    "seen": 1791369190.464885,
+    "ast_hash": "fffc99345c0cdc3933b0ff928575f8fd",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/romania/romania_open_questions.md": {
+    "mtime": 1791282936.7145934,
+    "seen": 1791369190.464886,
+    "ast_hash": "2a9947acc40f76da502406f20f9da922",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/romania/romania_sources.md": {
+    "mtime": 1791282931.3898122,
+    "seen": 1791369190.4648871,
+    "ast_hash": "23ab3e94c3d524a662cc4914d1007c80",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/romania/romania_visas_immigration_guide.md": {
+    "mtime": 1791283072.3765993,
+    "seen": 1791369190.4648871,
+    "ast_hash": "6070170b70cf8ec6ce7ebf554e5d717f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/russia/russia_open_questions.md": {
+    "mtime": 1791303689.5293806,
+    "seen": 1791369190.464888,
+    "ast_hash": "c977a516e60d3febeb45135934232fe7",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/russia/russia_sources.md": {
+    "mtime": 1791303689.5292566,
+    "seen": 1791369190.464889,
+    "ast_hash": "9b462a1822089b450de1c9f2e758f02e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/russia/russia_visas_immigration_guide.md": {
+    "mtime": 1791303689.5290985,
+    "seen": 1791369190.464889,
+    "ast_hash": "7a9749706e1f8ddc0afc906c2c7924f9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/saudi_arabia/saudi_arabia_open_questions.md": {
+    "mtime": 1791278916.9936867,
+    "seen": 1791369190.46489,
+    "ast_hash": "d4c604f5d1c9e25d3f46b95646341f43",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/saudi_arabia/saudi_arabia_sources.md": {
+    "mtime": 1791278891.7579858,
+    "seen": 1791369190.464891,
+    "ast_hash": "44cbad39c81bdeb13932ef2295ec4a30",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/saudi_arabia/saudi_arabia_visas_immigration_guide.md": {
+    "mtime": 1791279013.8509657,
+    "seen": 1791369190.464891,
+    "ast_hash": "09735383037afbddde282f4e1c345546",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/singapore/singapore_open_questions.md": {
+    "mtime": 1791317313.6185203,
+    "seen": 1791369190.464892,
+    "ast_hash": "a429b47e02669f8cf03bd21158ca363f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/singapore/singapore_sources.md": {
+    "mtime": 1791317303.7693899,
+    "seen": 1791369190.4648929,
+    "ast_hash": "0b18b9bad1be68b9e5b9ca9dc716734e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/singapore/singapore_visas_immigration_guide.md": {
+    "mtime": 1791317339.374742,
+    "seen": 1791369190.4648929,
+    "ast_hash": "6ea32c8e3fbed20f27748a03b54bd726",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/south_korea/south_korea_open_questions.md": {
+    "mtime": 1791318174.2912147,
+    "seen": 1791369190.464894,
+    "ast_hash": "96ef1c6ea9c172def5b34c2c60edfa83",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/south_korea/south_korea_sources.md": {
+    "mtime": 1791318161.1824677,
+    "seen": 1791369190.464895,
+    "ast_hash": "531bd75a0b340d65e8dbcedd25936ec9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/south_korea/south_korea_visas_immigration_guide.md": {
+    "mtime": 1791318217.9419348,
+    "seen": 1791369190.464895,
+    "ast_hash": "cc0d922ed8dc309482f4522460625f0a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/spain/spain_open_questions.md": {
+    "mtime": 1791203277.4079514,
+    "seen": 1791369190.464896,
+    "ast_hash": "e57cb0dc74a21db07793752934effb7a",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/spain/spain_sources.md": {
+    "mtime": 1791203254.6015978,
+    "seen": 1791369190.464897,
+    "ast_hash": "458ccffa8db371e2956a4a8c3a14a248",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/spain/spain_visas_immigration_guide.md": {
+    "mtime": 1791203382.143447,
+    "seen": 1791369190.464897,
+    "ast_hash": "103565405eb4988c0c088e4192849fc9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/sweden/sweden_open_questions.md": {
+    "mtime": 1791221597.4759653,
+    "seen": 1791369190.464898,
+    "ast_hash": "4bc3f5878aa2b2255f0624ac2498b5f2",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/sweden/sweden_sources.md": {
+    "mtime": 1791221561.8951652,
+    "seen": 1791369190.464899,
+    "ast_hash": "f08ad8c37d7f876a008ce39dc55933c1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/sweden/sweden_visas_immigration_guide.md": {
+    "mtime": 1791310552.465255,
+    "seen": 1791369190.464899,
+    "ast_hash": "ea1bb8e234486da5a7a50636772c726c",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/switzerland/switzerland_open_questions.md": {
+    "mtime": 1791211072.22501,
+    "seen": 1791369190.4649,
+    "ast_hash": "71f8e77e914aea1619a78e59b8d8c2ca",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/switzerland/switzerland_sources.md": {
+    "mtime": 1791211062.2845018,
+    "seen": 1791369190.4649012,
+    "ast_hash": "cb292a33228dda992f5570cbfe873759",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/switzerland/switzerland_visas_immigration_guide.md": {
+    "mtime": 1791211127.8354993,
+    "seen": 1791369190.4649012,
+    "ast_hash": "e87b99e899b644aca8433c709cf84c8e",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/taiwan/taiwan_open_questions.md": {
+    "mtime": 1791317492.064174,
+    "seen": 1791369190.464902,
+    "ast_hash": "9b7a159077b83e0e2b96d27a592d8e89",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/taiwan/taiwan_sources.md": {
+    "mtime": 1791317478.2294896,
+    "seen": 1791369190.4649029,
+    "ast_hash": "e25317ffcd87ef643db95c432ac6ec67",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/taiwan/taiwan_visas_immigration_guide.md": {
+    "mtime": 1791317540.8902135,
+    "seen": 1791369190.4649038,
+    "ast_hash": "da35c6fb1849c3ec1943d49a13534fa9",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/thailand/thailand_open_questions.md": {
+    "mtime": 1791280286.456068,
+    "seen": 1791369190.4649038,
+    "ast_hash": "c28621d7d1d389d37bbcd45d0f592d30",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/thailand/thailand_sources.md": {
+    "mtime": 1791280263.6624277,
+    "seen": 1791369190.464905,
+    "ast_hash": "8da74d7c6469b56d2d5af31112954206",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/thailand/thailand_visas_immigration_guide.md": {
+    "mtime": 1791280356.1251154,
+    "seen": 1791369190.464905,
+    "ast_hash": "59ffaf9c57d4fd675db2f6158f332464",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/turkey/turkey_open_questions.md": {
+    "mtime": 1791272068.8455188,
+    "seen": 1791369190.464906,
+    "ast_hash": "9df81fea64aa934a9a6c6dd156f69872",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/turkey/turkey_sources.md": {
+    "mtime": 1791272059.3126383,
+    "seen": 1791369190.464907,
+    "ast_hash": "fc2a83db0eed049c496bbe42c8899eb6",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/turkey/turkey_visas_immigration_guide.md": {
+    "mtime": 1791272107.9095826,
+    "seen": 1791369190.4649081,
+    "ast_hash": "aab80215768ae34426b0b63ff719f6c2",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/uae/uae_open_questions.md": {
+    "mtime": 1791297457.7442548,
+    "seen": 1791369190.464915,
+    "ast_hash": "b7d6113130e69a0a8a775bcde0626f1f",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/uae/uae_sources.md": {
+    "mtime": 1791297422.4432974,
+    "seen": 1791369190.464916,
+    "ast_hash": "77ab3dbaa69ce7a9636674c44c75febe",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/uae/uae_visas_immigration_guide.md": {
+    "mtime": 1791297567.1091666,
+    "seen": 1791369190.464916,
+    "ast_hash": "e099fe473051d657f9c4e41dd8deafbc",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_kingdom/united_kingdom_open_questions.md": {
+    "mtime": 1791303636.1195982,
+    "seen": 1791369190.464917,
+    "ast_hash": "554be79bc50f02d61907e47de87841d5",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_kingdom/united_kingdom_sources.md": {
+    "mtime": 1791303636.1184804,
+    "seen": 1791369190.464918,
+    "ast_hash": "96817ee62161d12ff3f2b247b9f541af",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_kingdom/united_kingdom_visas_immigration_guide.md": {
+    "mtime": 1791303636.1191537,
+    "seen": 1791369190.464919,
+    "ast_hash": "acff0d7f90e28866f4f873a55ebb8de0",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_states/united_states_open_questions.md": {
+    "mtime": 1791367482.124385,
+    "seen": 1791369190.464919,
+    "ast_hash": "7377a08c688483adae491e07c6a4eee7",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_states/united_states_sources.md": {
+    "mtime": 1791367204.6432893,
+    "seen": 1791369190.46492,
+    "ast_hash": "4bab9577e96626eb167e1e58750f76fc",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/united_states/united_states_visas_immigration_guide.md": {
+    "mtime": 1791367355.7604678,
+    "seen": 1791369190.46492,
+    "ast_hash": "264e6c8022057d7ed1f1dd9fec4c64c1",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/vietnam/vietnam_open_questions.md": {
+    "mtime": 1791317263.1394036,
+    "seen": 1791369190.464921,
+    "ast_hash": "afe7280883ecf02b15bb2b753c71e052",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/vietnam/vietnam_sources.md": {
+    "mtime": 1791317252.5488837,
+    "seen": 1791369190.4649222,
+    "ast_hash": "05acd1a84eb3a85f0b305addd8d32037",
+    "semantic_hash": ""
+  },
+  "research/visas_immigration/vietnam/vietnam_visas_immigration_guide.md": {
+    "mtime": 1791317300.3937438,
+    "seen": 1791369190.4649222,
+    "ast_hash": "714047c88f939498f1592986db0b053e",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ae.js": {
+    "mtime": 1791387226.6420238,
+    "seen": 1791387413.7077918,
+    "ast_hash": "e068fb398115d90b6053cc5aab397cd9",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/at.js": {
+    "mtime": 1791386014.6655014,
+    "seen": 1791387413.707793,
+    "ast_hash": "92f6fb41f88fda4de5faa62f72bf385c",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/au.js": {
+    "mtime": 1791386982.719898,
+    "seen": 1791387413.707794,
+    "ast_hash": "df50a0c68c4867e1215f218baa5584dc",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/be.js": {
+    "mtime": 1791386068.70676,
+    "seen": 1791387413.707794,
+    "ast_hash": "979c71d93860420183db798bb466f1d6",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/bg.js": {
+    "mtime": 1791386116.0166008,
+    "seen": 1791387413.707795,
+    "ast_hash": "d1daf2f79d7dceaa0eed935d34830f4f",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ca.js": {
+    "mtime": 1791386957.1652334,
+    "seen": 1791387413.707795,
+    "ast_hash": "9645aa5bfa15f54b0f03b7355a8d471e",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ch.js": {
+    "mtime": 1791386840.477396,
+    "seen": 1791387413.7077959,
+    "ast_hash": "56d090539c418235d1ce01e8a321e58b",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/cn.js": {
+    "mtime": 1791387115.0120387,
+    "seen": 1791387413.7077959,
+    "ast_hash": "ddf80780cb6188a69ba6c7ed7f02b4c7",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/cz.js": {
+    "mtime": 1791386159.6369264,
+    "seen": 1791387413.7077959,
+    "ast_hash": "b13a908d6bb0b11de4246bb2d54d7e9b",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/de.js": {
+    "mtime": 1791385932.1766765,
+    "seen": 1791387413.707797,
+    "ast_hash": "3c1f9eb8b513e1ae29c8c2159f676ad3",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/dk.js": {
+    "mtime": 1791386188.7607238,
+    "seen": 1791387413.707798,
+    "ast_hash": "9fe1a6b17d2ea8b369e0afaa4294e563",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ee.js": {
+    "mtime": 1791386228.2786105,
+    "seen": 1791387413.707798,
+    "ast_hash": "e21833ce9246501719021cf8ccad42fc",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/es.js": {
+    "mtime": 1791386266.025489,
+    "seen": 1791387413.707798,
+    "ast_hash": "07958594ced8d53069e9714bebb8e9c0",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/fi.js": {
+    "mtime": 1791386298.4741244,
+    "seen": 1791387413.707799,
+    "ast_hash": "4a47f06e7ec9bdc912bf30d0b47a4b2b",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/fr.js": {
+    "mtime": 1791386342.5528343,
+    "seen": 1791387413.707799,
+    "ast_hash": "0fe8ac369bd8c7cb5f4c17b55137ff65",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/gb.js": {
+    "mtime": 1791386372.3121448,
+    "seen": 1791387413.707799,
+    "ast_hash": "b4e4cd0316976b3af596051608decf26",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/gr.js": {
+    "mtime": 1791386407.2991126,
+    "seen": 1791387413.7078001,
+    "ast_hash": "7bf520c2b52d5112d76dff796c8a4630",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/hk.js": {
+    "mtime": 1791387093.7789629,
+    "seen": 1791387413.7078001,
+    "ast_hash": "567a231ef27e30293f2aee1aadafb28e",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ie.js": {
+    "mtime": 1791386436.3063712,
+    "seen": 1791387413.7078001,
+    "ast_hash": "45c24b27d16cdf045b85b1f304dba7cc",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/il.js": {
+    "mtime": 1791387316.308667,
+    "seen": 1791387413.707801,
+    "ast_hash": "ea094874e872da0cad3aa51128c8489f",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/is.js": {
+    "mtime": 1791386472.96897,
+    "seen": 1791387413.707801,
+    "ast_hash": "727426405e0f457efa280073336ac850",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/it.js": {
+    "mtime": 1791386512.8038986,
+    "seen": 1791387413.707802,
+    "ast_hash": "aeaffe2557538dab4fba9bc53ff8e27c",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/jp.js": {
+    "mtime": 1791387027.5766416,
+    "seen": 1791387413.707802,
+    "ast_hash": "51b6a5251a6dfb959ac5d2bf6d4b74f2",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/kr.js": {
+    "mtime": 1791387048.1620092,
+    "seen": 1791387413.707802,
+    "ast_hash": "99449787716b13b6fe9152cc89d7f0d2",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/kw.js": {
+    "mtime": 1791387316.2240257,
+    "seen": 1791387413.7078028,
+    "ast_hash": "2993770b1c3689a9f08a588a0354ec46",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/lt.js": {
+    "mtime": 1791386537.8009999,
+    "seen": 1791387413.7078028,
+    "ast_hash": "2625dd543372053a60fabb380f1faa1f",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/lu.js": {
+    "mtime": 1791386581.9248893,
+    "seen": 1791387413.7078028,
+    "ast_hash": "5adec4d075277d106b791fa7a940068d",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/mt.js": {
+    "mtime": 1791386610.9708254,
+    "seen": 1791387413.707804,
+    "ast_hash": "57d37e54a1c30b4e52faed989cb008cb",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/my.js": {
+    "mtime": 1791387202.3719225,
+    "seen": 1791387413.707804,
+    "ast_hash": "9c360e802ad1b1f0505fcd910104e4a3",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/nl.js": {
+    "mtime": 1791386661.0311592,
+    "seen": 1791387413.707804,
+    "ast_hash": "a4991a36b2b8fe55843b4a694aefac55",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/no.js": {
+    "mtime": 1791386693.2400913,
+    "seen": 1791387413.707805,
+    "ast_hash": "02d0b86db7c89980034989b6411218d9",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/nz.js": {
+    "mtime": 1791387001.171287,
+    "seen": 1791387413.707805,
+    "ast_hash": "31914983739ef73b8de82cbc42f5cfaa",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/om.js": {
+    "mtime": 1791387316.2656252,
+    "seen": 1791387413.7078059,
+    "ast_hash": "bfd4f12c72ff79eb032d74f39d1267a1",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/pl.js": {
+    "mtime": 1791386725.4756656,
+    "seen": 1791387413.7078059,
+    "ast_hash": "e03600615b3478ee57bc8e00f51a5fd4",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/pt.js": {
+    "mtime": 1791386753.7170303,
+    "seen": 1791387413.7078059,
+    "ast_hash": "0e6f69baabec92090fae80ca1932bf87",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/qa.js": {
+    "mtime": 1791387316.1806502,
+    "seen": 1791387413.707807,
+    "ast_hash": "b8d95047de37e39f16edbea26917955a",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ro.js": {
+    "mtime": 1791386778.7146888,
+    "seen": 1791387413.707807,
+    "ast_hash": "31096d459b9310e6758e82e5e9663991",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/ru.js": {
+    "mtime": 1791386863.609247,
+    "seen": 1791387413.707807,
+    "ast_hash": "04a8a9dd79d5f62b63e06b576072684e",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/sa.js": {
+    "mtime": 1791387260.8772883,
+    "seen": 1791387413.707808,
+    "ast_hash": "add588c1b6e41f58a4e86bb40d4bbf39",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/se.js": {
+    "mtime": 1791386813.8860912,
+    "seen": 1791387413.707808,
+    "ast_hash": "548c1413540cc611eb7851816d3e1ca8",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/sg.js": {
+    "mtime": 1791387073.5491824,
+    "seen": 1791387413.707808,
+    "ast_hash": "a4b48cbe3f786e27a43883d466373ac3",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/th.js": {
+    "mtime": 1791387182.501986,
+    "seen": 1791387413.707809,
+    "ast_hash": "0f8581d386557659eb219757081fa83c",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/tr.js": {
+    "mtime": 1791386888.3262367,
+    "seen": 1791387413.707809,
+    "ast_hash": "a37feae9faa906cc209393fff3334445",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/tw.js": {
+    "mtime": 1791387134.2919145,
+    "seen": 1791387413.707809,
+    "ast_hash": "db065f03eaeb7a5e9cc64c4b4e7de03d",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/us.js": {
+    "mtime": 1791386912.3737845,
+    "seen": 1791387413.7078102,
+    "ast_hash": "4a15940c2b7cd317248fb7637e471014",
+    "semantic_hash": ""
+  },
+  "data/atlas/visas/vn.js": {
+    "mtime": 1791387158.612653,
+    "seen": 1791387413.7078102,
+    "ast_hash": "072a0e34f982b269caa33c52882c042f",
+    "semantic_hash": ""
+  },
+  "tools/visas-sources.js": {
+    "mtime": 1791369981.925658,
+    "seen": 1791374288.051457,
+    "ast_hash": "2a2aa51b934bc0064aef5ac6e345f5e4",
+    "semantic_hash": ""
+  },
+  "data/atlas/life.js": {
+    "mtime": 1791443459.1994584,
+    "seen": 1791443542.227875,
+    "ast_hash": "d265514413868ebf5e03716c017d4e63",
+    "semantic_hash": ""
+  },
+  "tools/atlas-life.js": {
+    "mtime": 1791443452.1837494,
+    "seen": 1791443542.231562,
+    "ast_hash": "308568e5d1e09d1d0bb45ab961971806",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ae.js": {
+    "mtime": 1791497735.299076,
+    "seen": 1791500424.0584252,
+    "ast_hash": "b6f54f36128858931aaa6cbfd451eb44",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/at.js": {
+    "mtime": 1791530006.2144241,
+    "seen": 1791531139.745918,
+    "ast_hash": "12d25b9057abe20ef618a16226bd9686",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/au.js": {
+    "mtime": 1791463069.929611,
+    "seen": 1791466281.218652,
+    "ast_hash": "4d48f77a4254c82365cc7dd245956736",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/be.js": {
+    "mtime": 1791530890.0133445,
+    "seen": 1791531139.745965,
+    "ast_hash": "31cf28ac4782c7e1502eeff799d2b1cd",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/bg.js": {
+    "mtime": 1791463685.851864,
+    "seen": 1791466281.218654,
+    "ast_hash": "73863fe66a2da2ee9f4de38bd29cbba9",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ca.js": {
+    "mtime": 1791462148.2325287,
+    "seen": 1791466281.2186549,
+    "ast_hash": "79de8cf4a86881e74ba00bc308ed00bf",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ch.js": {
+    "mtime": 1791462863.5161643,
+    "seen": 1791466281.218657,
+    "ast_hash": "97576b58d3fac97442e688454ee2aa80",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/cn.js": {
+    "mtime": 1791530720.0708442,
+    "seen": 1791531139.746092,
+    "ast_hash": "91e7a8317fa725ebd2bfee8684b41309",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/cz.js": {
+    "mtime": 1791481113.728475,
+    "seen": 1791500424.058563,
+    "ast_hash": "d70445e6e8508413887eee14ce1dc86f",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/de.js": {
+    "mtime": 1791530928.7612765,
+    "seen": 1791531139.746133,
+    "ast_hash": "c859b641dda2999a2ba975d34e64d998",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/dk.js": {
+    "mtime": 1791529857.9627159,
+    "seen": 1791531139.746135,
+    "ast_hash": "bd4b1752835cf854b95880fb4f1d8bf5",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ee.js": {
+    "mtime": 1791530602.3034966,
+    "seen": 1791531139.7461371,
+    "ast_hash": "a4839938d3078d3c3a1042e5f94fd35e",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/es.js": {
+    "mtime": 1791480554.4527705,
+    "seen": 1791500424.058621,
+    "ast_hash": "b6744a93c1082e2e1f8d4c7bdaf028c3",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/fi.js": {
+    "mtime": 1791463474.2379732,
+    "seen": 1791466281.218747,
+    "ast_hash": "858fbcdf636da2c6346a0084e628db79",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/fr.js": {
+    "mtime": 1791530368.645745,
+    "seen": 1791531139.746227,
+    "ast_hash": "534b0d527a87e0aac19872876d77e8d7",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/gb.js": {
+    "mtime": 1791530046.896551,
+    "seen": 1791531139.746228,
+    "ast_hash": "cce3cc328a40374bf55df307e9c96843",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/gr.js": {
+    "mtime": 1791530081.220599,
+    "seen": 1791531139.746229,
+    "ast_hash": "0ec181fc3b8b0f9d3cb5b9e738d8ace9",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/hk.js": {
+    "mtime": 1791483981.388133,
+    "seen": 1791500424.058679,
+    "ast_hash": "83a9a91332df3556ad9422f758506b90",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ie.js": {
+    "mtime": 1791463418.2118623,
+    "seen": 1791466281.2188249,
+    "ast_hash": "a2c11ee9d268df70dc84ade77a9af448",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/il.js": {
+    "mtime": 1791529857.9606385,
+    "seen": 1791531139.7463071,
+    "ast_hash": "a35db73752d14e8527d3ccb5853fad41",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/is.js": {
+    "mtime": 1791463904.2850819,
+    "seen": 1791466281.218863,
+    "ast_hash": "21a2e98de489d47d42af1a6fb593a971",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/it.js": {
+    "mtime": 1791530006.1706333,
+    "seen": 1791531139.746351,
+    "ast_hash": "a81367125b75088b533f5a939eef64a2",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/jp.js": {
+    "mtime": 1791530570.3701453,
+    "seen": 1791531139.746353,
+    "ast_hash": "b2cd022a80e6915c009bdf4bee15ac7d",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/kr.js": {
+    "mtime": 1791483148.2266533,
+    "seen": 1791500424.0587368,
+    "ast_hash": "e36784ea6fd39c265e31c3f8ecc8dfdd",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/kw.js": {
+    "mtime": 1791497849.7743819,
+    "seen": 1791500424.058738,
+    "ast_hash": "c97434ddc5fdc073e582d3aec461ce2a",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/lt.js": {
+    "mtime": 1791530526.5456924,
+    "seen": 1791531139.7464352,
+    "ast_hash": "58d22aea5869aaca05683d9c0505afde",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/lu.js": {
+    "mtime": 1791463344.510442,
+    "seen": 1791466281.218976,
+    "ast_hash": "59251d17aaa45f167450285f6fcdacac",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/mt.js": {
+    "mtime": 1791445698.0014772,
+    "seen": 1791466281.218977,
+    "ast_hash": "5f019db656f2f67951d3626c44a7438f",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/my.js": {
+    "mtime": 1791529857.9396882,
+    "seen": 1791531139.7465239,
+    "ast_hash": "9da9ff78d48d04c0218b4d8924821f64",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/nl.js": {
+    "mtime": 1791530851.0290024,
+    "seen": 1791531139.7465248,
+    "ast_hash": "71ea9763e03770b925771468eebf8354",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/no.js": {
+    "mtime": 1791463166.96296,
+    "seen": 1791466281.219015,
+    "ast_hash": "96fa0df66ac30a9b80f44a81e9a68b50",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/nz.js": {
+    "mtime": 1791482732.7040696,
+    "seen": 1791500424.0587971,
+    "ast_hash": "23c254957cc66480a3bfe76fac16000a",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/om.js": {
+    "mtime": 1791499002.6667387,
+    "seen": 1791500424.0587971,
+    "ast_hash": "cf3ccc7f1e33775d294649eca3796dc1",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/pl.js": {
+    "mtime": 1791481441.6186748,
+    "seen": 1791500424.058798,
+    "ast_hash": "cc675e4260f485a5c656acfe08c3a8b3",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/pt.js": {
+    "mtime": 1791462261.7348907,
+    "seen": 1791466281.219129,
+    "ast_hash": "8b64c5bd517c0c47e6c99295eaed41ba",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/qa.js": {
+    "mtime": 1791529857.9465673,
+    "seen": 1791531139.7467442,
+    "ast_hash": "4516b6fa90b033bf160d16bb2f76d730",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ro.js": {
+    "mtime": 1791445678.1089616,
+    "seen": 1791466281.219167,
+    "ast_hash": "9d7b1dcc892c41e82337b20c13797aae",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/ru.js": {
+    "mtime": 1791482146.8319654,
+    "seen": 1791500424.058837,
+    "ast_hash": "1a668ba8b74b3f4b73a359f4ca3e014f",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/sa.js": {
+    "mtime": 1791499002.667166,
+    "seen": 1791500424.0588381,
+    "ast_hash": "1aaf5e23e0c8c49b26f7aa2cb5f4579e",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/se.js": {
+    "mtime": 1791529857.9488916,
+    "seen": 1791531139.746866,
+    "ast_hash": "f3964def96c73f1835d41257aaaf782b",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/sg.js": {
+    "mtime": 1791483101.457173,
+    "seen": 1791500424.058858,
+    "ast_hash": "a59d583c7bdd073335266646ba17ec53",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/th.js": {
+    "mtime": 1791483926.7164643,
+    "seen": 1791500424.058859,
+    "ast_hash": "c8469e80d1b8c4c4c452301dc953410e",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/tr.js": {
+    "mtime": 1791530997.5206754,
+    "seen": 1791531139.7469518,
+    "ast_hash": "abada1c11b6f29283705b4065b13ab0a",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/tw.js": {
+    "mtime": 1791483540.6237195,
+    "seen": 1791500424.05886,
+    "ast_hash": "7a92817b7a5b960f0ba925959d868bd1",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/us.js": {
+    "mtime": 1791529857.9533794,
+    "seen": 1791531139.746996,
+    "ast_hash": "41de20e3579a230fc94e4023c9df555c",
+    "semantic_hash": ""
+  },
+  "data/atlas/entry/vn.js": {
+    "mtime": 1791484658.6862915,
+    "seen": 1791500424.058879,
+    "ast_hash": "e510b41db2b9a1b4f6c2495a3104d2c7",
+    "semantic_hash": ""
+  },
+  "data/atlas/culture.js": {
+    "mtime": 1791443233.9753988,
+    "seen": 1791443247.553527,
+    "ast_hash": "17879b43f631a11e4afccca7f91ec8b6",
+    "semantic_hash": ""
+  },
+  "research/verification/round-6c-life-there.md": {
+    "mtime": 1791443473.7656424,
+    "seen": 1791443542.238297,
+    "ast_hash": "f7b383ff979ceb26d7d0afe5b394463c",
+    "semantic_hash": ""
+  },
+  "data/atlas/outcomes.js": {
+    "mtime": 1791530916.1538558,
+    "seen": 1791531139.7479901,
+    "ast_hash": "4b5c150adb529e73bcbe42dd7caad404",
+    "semantic_hash": ""
+  },
+  "js/page-hiring.js": {
+    "mtime": 1791445362.0225012,
+    "seen": 1791466281.2224798,
+    "ast_hash": "131e65ad9fcbdd5f1cf4e19ec323acb0",
+    "semantic_hash": ""
+  },
+  "research/outcomes/researched.json": {
+    "mtime": 1791530914.8669114,
+    "seen": 1791531139.751376,
+    "ast_hash": "783754ed1ab2fd365d3423f9ab6489ba",
+    "semantic_hash": ""
+  },
+  "tools/atlas-outcomes.js": {
+    "mtime": 1791445420.8419511,
+    "seen": 1791466281.2233531,
+    "ast_hash": "fcfdb9634d34f6a41bd8a25c8d0b8680",
+    "semantic_hash": ""
+  },
+  "tools/hiring-check.js": {
+    "mtime": 1791445144.8399436,
+    "seen": 1791466281.223536,
+    "ast_hash": "d8212eaba87d4723b0584eda431bd654",
+    "semantic_hash": ""
+  },
+  "docs/HIRING-SCHEMA.md": {
+    "mtime": 1791461570.4325516,
+    "seen": 1791466281.22451,
+    "ast_hash": "765b9b380ee4756c74850df71e7a5fac",
+    "semantic_hash": ""
+  },
+  "docs/PLANNING-INTELLIGENCE-SPEC.md": {
+    "mtime": 1791444019.4120445,
+    "seen": 1791466281.224511,
+    "ast_hash": "abf0429344c4aafa1f9e5b234d449c8b",
+    "semantic_hash": ""
+  },
+  "hiring.html": {
+    "mtime": 1791445302.1424015,
+    "seen": 1791466281.225329,
+    "ast_hash": "bdfaffef12ef4934ce28358e7b9bb475",
+    "semantic_hash": ""
+  },
+  "docs/HIRING-LINKS.md": {
+    "mtime": 1791531129.8551104,
+    "seen": 1791531139.7530189,
+    "ast_hash": "e2b9d9543f63d63c8e4be6178240eb7a",
+    "semantic_hash": ""
+  },
+  "research/branches/tools/assemble.py": {
+    "mtime": 1791538360.6019654,
+    "seen": 1791561633.514844,
+    "ast_hash": "5cf22e6a102331182ab8bf8716726d46",
+    "semantic_hash": ""
+  },
+  "research/branches/tools/build_index.py": {
+    "mtime": 1791552684.2337399,
+    "seen": 1791561633.514845,
+    "ast_hash": "50a391144c7868460f789779b50cc043",
+    "semantic_hash": ""
+  },
+  "research/branches/tools/collect.py": {
+    "mtime": 1791550611.2501109,
+    "seen": 1791561633.5148458,
+    "ast_hash": "8c39d6d6fc4acb1fc018d7ed84dd86df",
+    "semantic_hash": ""
+  },
+  "research/branches/index.md": {
+    "mtime": 1791552741.8140922,
+    "seen": 1791561633.516204,
+    "ast_hash": "a0574622647c6ad4bf62ff28b6f207d8",
+    "semantic_hash": ""
+  },
+  "research/branches/progress.md": {
+    "mtime": 1791552752.2718623,
+    "seen": 1791561633.516205,
+    "ast_hash": "7073019ae07fee234b598f855ecaab11",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/accounting.md": {
+    "mtime": 1791552664.7597272,
+    "seen": 1791561633.516205,
+    "ast_hash": "a46fe397820d1b0873129b8e73128c02",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/artificial-intelligence-part-1.md": {
+    "mtime": 1791538068.7160485,
+    "seen": 1791561633.516206,
+    "ast_hash": "8f125460f2fc1ca96b9765c85b7f3f52",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/artificial-intelligence-part-2.md": {
+    "mtime": 1791552468.0557637,
+    "seen": 1791561633.516206,
+    "ast_hash": "42f88c5ce9198f876b63bd270f4a6344",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/artificial-intelligence.md": {
+    "mtime": 1791552664.8899777,
+    "seen": 1791561633.5162072,
+    "ast_hash": "1e255e2a722213dffacd7624814fb9e4",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/computer-science-part-1.md": {
+    "mtime": 1791537512.9026005,
+    "seen": 1791561633.5162072,
+    "ast_hash": "7f60d50cd67cde055821beb5a79947f9",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/computer-science-part-2.md": {
+    "mtime": 1791537549.1519094,
+    "seen": 1791561633.5162082,
+    "ast_hash": "349055823dd21f5502ce7c050f9ab162",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/computer-science.md": {
+    "mtime": 1791552664.833625,
+    "seen": 1791561633.5162082,
+    "ast_hash": "ebbbab730adcc763e48fdbf86e2c98dd",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/cybersecurity.md": {
+    "mtime": 1791552664.851893,
+    "seen": 1791561633.5162082,
+    "ast_hash": "efbd72b6522eb90444f3358915574580",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/data-analytics.md": {
+    "mtime": 1791552664.795634,
+    "seen": 1791561633.516209,
+    "ast_hash": "b642ea9481ec85fe0c619949f25c7f87",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/data-science.md": {
+    "mtime": 1791552664.8698108,
+    "seen": 1791561633.516209,
+    "ast_hash": "e220f6f78131e5a1d87bf5f2fe905945",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/economics.md": {
+    "mtime": 1791552664.8128319,
+    "seen": 1791561633.5162098,
+    "ast_hash": "6b52cdb8765fd2f2fd815327898ba299",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/finance-part-1.md": {
+    "mtime": 1791533678.3034518,
+    "seen": 1791561633.5162098,
+    "ast_hash": "9550160850d85e623443a22b707ab729",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/finance-part-2.md": {
+    "mtime": 1791533799.5120635,
+    "seen": 1791561633.516211,
+    "ast_hash": "5577bbc12b5d2d99c70c3b3cc889a05d",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/finance-part-3.md": {
+    "mtime": 1791535232.7764924,
+    "seen": 1791561633.516211,
+    "ast_hash": "5a781a570803994322aa660638f3e456",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/finance-part-4.md": {
+    "mtime": 1791534914.1937134,
+    "seen": 1791561633.516211,
+    "ast_hash": "a2935f30244689f65b167790d00c7bf8",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/finance.md": {
+    "mtime": 1791552664.740953,
+    "seen": 1791561633.516212,
+    "ast_hash": "fb9cf9131132d508a9890c166a98e5e5",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/italy-pay-addendum.md": {
+    "mtime": 1791552249.0699475,
+    "seen": 1791561633.516212,
+    "ast_hash": "3a12df3e94502830e7e15cda9d20e8bc",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/logistics-supply-chain.md": {
+    "mtime": 1791552664.7124155,
+    "seen": 1791561633.516212,
+    "ast_hash": "4fbe4fdc1b4823b542f0b985e91232f8",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/management-consulting.md": {
+    "mtime": 1791552664.9073079,
+    "seen": 1791561633.516213,
+    "ast_hash": "55fae2ee2c52fb156734f989eea69365",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/management.md": {
+    "mtime": 1791552664.691807,
+    "seen": 1791561633.516213,
+    "ast_hash": "e1b8c6463feca41b19c8057f0cc51890",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/marketing.md": {
+    "mtime": 1791552664.777271,
+    "seen": 1791561633.516213,
+    "ast_hash": "7aabfe70e8d5ed80046a2a743d624e72",
+    "semantic_hash": ""
+  },
+  "research/branches/reports/product-management-startups.md": {
+    "mtime": 1791552664.9248967,
+    "seen": 1791561633.5162141,
+    "ast_hash": "bfad5bc596676e764dc9868474c0437d",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/artificial-intelligence-s1.md": {
+    "mtime": 1791538445.0873632,
+    "seen": 1791561633.5162141,
+    "ast_hash": "bb684a2baa6293aee18885b3b77a018a",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/artificial-intelligence-s2.md": {
+    "mtime": 1791538445.089886,
+    "seen": 1791561633.5162141,
+    "ast_hash": "fa232bbed8c35a097eb21dee2201eccf",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/artificial-intelligence-s4.md": {
+    "mtime": 1791538445.0925617,
+    "seen": 1791561633.516215,
+    "ast_hash": "62f7bdbe16ee26744ed61c7d4e43598a",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/artificial-intelligence-s5.md": {
+    "mtime": 1791538445.0951152,
+    "seen": 1791561633.516215,
+    "ast_hash": "83ead358724750f0b8ae0f2710a05432",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/brief-template.md": {
+    "mtime": 1791538469.5192068,
+    "seen": 1791561633.516216,
+    "ast_hash": "b71b459133f4803985af62977d1f6b6a",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/computer-science-s1.md": {
+    "mtime": 1791538445.0762565,
+    "seen": 1791561633.516216,
+    "ast_hash": "8f2c1c61d1f726c7f8b7b76fa639e21a",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/computer-science-s2.md": {
+    "mtime": 1791538445.0790112,
+    "seen": 1791561633.516216,
+    "ast_hash": "15b730b06192fdf43f081e4f65f5e941",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/computer-science-s4.md": {
+    "mtime": 1791538445.0819561,
+    "seen": 1791561633.516216,
+    "ast_hash": "7ce22397561fd19ba5f71e92e625e4d4",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/computer-science-s5.md": {
+    "mtime": 1791538445.084736,
+    "seen": 1791561633.516217,
+    "ast_hash": "29a3ae5ad903ead95bdb548eb3be1372",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/finance-s1.md": {
+    "mtime": 1791538392.8385286,
+    "seen": 1791561633.516217,
+    "ast_hash": "34e4b17e83e18eb5b9a07827325fcd0f",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/finance-s2.md": {
+    "mtime": 1791538392.8416202,
+    "seen": 1791561633.516217,
+    "ast_hash": "e6e239058e2220764b386501b263fcec",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/finance-s4.md": {
+    "mtime": 1791538392.8445172,
+    "seen": 1791561633.5162182,
+    "ast_hash": "f9ad67ba8d5e643c1643a073e6971ed8",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/finance-s5.md": {
+    "mtime": 1791538392.8476331,
+    "seen": 1791561633.5162182,
+    "ast_hash": "ee94c52c3d8de09c0ab678252bea2a71",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/index-head.md": {
+    "mtime": 1791552741.682343,
+    "seen": 1791561633.516222,
+    "ast_hash": "e67c7290c5e3efb70a7f04af4d81905e",
+    "semantic_hash": ""
+  },
+  "research/branches/snippets/index-tail.md": {
+    "mtime": 1791552741.6857412,
+    "seen": 1791561633.516222,
+    "ast_hash": "ead5e1fcda7e93b379848c79c0bf1eee",
+    "semantic_hash": ""
+  },
+  "research/branches/tools/collected.md": {
+    "mtime": 1791552741.75282,
+    "seen": 1791561633.516223,
+    "ast_hash": "553f81d80d132471b8096be9e7f350c8",
+    "semantic_hash": ""
+  }
+}

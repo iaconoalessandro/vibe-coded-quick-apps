@@ -31,7 +31,7 @@ const esbuild = require('esbuild');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, '_site');
-const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html'];
+const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html'];
 /* Never published: tooling, the test suites (tests/fixtures alone is 2.6 MB),
  * parked mockups, and documents written for this repository rather than for
  * readers of the site, and local environment files (the Python virtualenv
@@ -39,11 +39,13 @@ const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.ht
  * the photo and type attributions. */
 const SKIP = new Set(['.git', '.github', '.claude', 'node_modules', '_site', '.DS_Store',
   '.venv', '.gitignore', 'package.json', 'package-lock.json', 'tests', 'tools', 'design',
-  'docs', 'README.md']);
+  'docs', 'README.md', 'CLAUDE.md', 'graphify-out']);
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const hash = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 10);
-const isModel = (f) => f.startsWith('data/') || /^js\/score-/.test(f);
+/* The calculators' models. The Atlas's data (data/atlas/) is not one: the
+ * map page needs it, and needs no model. */
+const isModel = (f) => (f.startsWith('data/') && !f.startsWith('data/atlas/')) || /^js\/score-/.test(f);
 
 function minifyJs(code, file) {
   return esbuild.transformSync(code, { loader: 'js', minify: true, charset: 'utf8', legalComments: 'none', sourcefile: file }).code;
@@ -109,7 +111,9 @@ function build() {
   for (const page of PAGES) {
     let html = read(page);
     const scripts = scriptsOf(html);
-    const calculator = scripts.some((f) => /^js\/page-/.test(f));
+    /* A calculator ships the models; every other page — the fronts and the
+     * Atlas — ships without them. */
+    const calculator = scripts.some((f) => /^js\/page-(?!map\.js$)/.test(f));
 
     let js;
     if (calculator) {
@@ -132,6 +136,29 @@ function build() {
     html = html.replace(/(<script defer src="[^"]+"><\/script>\n?)+/, `<script defer src="${js}"></script>\n`);
     if (/<script defer src="(?!js\/[\w-]+\.[0-9a-f]{10}\.js)/.test(html)) throw new Error(`${page}: scripts left unbundled`);
     fs.writeFileSync(path.join(OUT, page), html);
+  }
+
+  /* The Atlas loads one record per country when a reader first opens it.
+   * They stay at their own paths (js/page-map.js asks for them by name),
+   * minified; sw.js caches each one the first time it is fetched. */
+  for (const f of fs.readdirSync(path.join(ROOT, 'data/atlas'))) {
+    if (!/^[a-z]{2}\.js$/.test(f)) continue;
+    const rel = 'data/atlas/' + f;
+    fs.writeFileSync(path.join(OUT, rel), minifyJs(read(rel), rel));
+  }
+  /* Each country's visas and permits, loaded with its page. */
+  fs.mkdirSync(path.join(OUT, 'data/atlas/visas'), { recursive: true });
+  for (const f of fs.readdirSync(path.join(ROOT, 'data/atlas/visas'))) {
+    if (!/^[a-z]{2}\.js$/.test(f)) continue;
+    const rel = 'data/atlas/visas/' + f;
+    fs.writeFileSync(path.join(OUT, rel), minifyJs(read(rel), rel));
+  }
+  /* How hiring works in each country, loaded with its page. */
+  fs.mkdirSync(path.join(OUT, 'data/atlas/entry'), { recursive: true });
+  for (const f of fs.readdirSync(path.join(ROOT, 'data/atlas/entry'))) {
+    if (!/^[a-z]{2}\.js$/.test(f)) continue;
+    const rel = 'data/atlas/entry/' + f;
+    fs.writeFileSync(path.join(OUT, rel), minifyJs(read(rel), rel));
   }
 
   const files = [...new Set(shell)];

@@ -334,7 +334,7 @@ window.Wizard = (function () {
         });
         if (!hits.length) {
           results.appendChild(el('div', 'company-empty',
-            'No match. Employers outside the published list score 0 here.'));
+            'Not in this list. Find the closest peer under “See some examples” and type its value (0 to 4) in the box.'));
           return;
         }
         hits.slice(0, 12).forEach(function (h) {
