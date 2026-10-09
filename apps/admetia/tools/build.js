@@ -39,7 +39,10 @@ const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.ht
  * the photo and type attributions. */
 const SKIP = new Set(['.git', '.github', '.claude', 'node_modules', '_site', '.DS_Store',
   '.venv', '.gitignore', 'package.json', 'package-lock.json', 'tests', 'tools', 'design',
-  'docs', 'README.md', 'CLAUDE.md', 'graphify-out']);
+  'docs', 'README.md', 'CLAUDE.md', 'graphify-out',
+  /* The Career Explorer's build notes and parsed data (careers/data/
+   * careers.json): for this repository, not loaded by any page. */
+  'BUILD_NOTES.md', 'careers.json']);
 
 const read = (f) => fs.readFileSync(path.join(ROOT, f), 'utf8');
 const hash = (s) => crypto.createHash('sha256').update(s).digest('hex').slice(0, 10);
