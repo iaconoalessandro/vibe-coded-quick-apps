@@ -478,7 +478,7 @@ t('"Clear everything" removes the passport (it is not a kept setting)', !/'atlas
 t('tools/build.js publishes map.html', /'map\.html': \{/.test(read('tools/shell.js')) && /require\('\.\/shell'\)\.ROOT_PAGES/.test(read('tools/build.js')));
 t('sw.js keeps map.html and the Atlas data offline', /'map\.html'/.test(read('sw.js')) && /'data\/atlas\/index\.js'/.test(read('sw.js')) && /'js\/page-map\.js'/.test(read('sw.js')));
 SHELL_PAGES.forEach((p) => {
-  t(p + ' links to the Atlas in the global navigation', /<a href="map\.html" data-section="move"[^>]*>Plan a move<\/a>/.test(read(p)));
+  t(p + ' links to the Atlas in the global navigation', /<a href="map\.html" data-section="move"[^>]*>Map Intelligence<\/a>/.test(read(p)));
 });
 t('the 404 page lists the Atlas', /<li><a href="map\.html"/.test(read('404.html')));
 t('map.html loads the Atlas index and shapes, not the country records', /data\/atlas\/index\.js/.test(read('map.html')) && /data\/atlas\/geo\.js/.test(read('map.html')) && !/data\/atlas\/[a-z]{2}\.js/.test(read('map.html')));

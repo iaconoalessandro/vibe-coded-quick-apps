@@ -90,6 +90,7 @@ function copyTree(from, to) {
   fs.mkdirSync(to, { recursive: true });
   for (const entry of fs.readdirSync(from, { withFileTypes: true })) {
     if (SKIP.has(entry.name)) continue;
+    if (entry.name === 'photo' && from === path.join(ROOT, 'img')) continue;
     const src = path.join(from, entry.name), dst = path.join(to, entry.name);
     if (entry.isDirectory()) copyTree(src, dst);
     else fs.copyFileSync(src, dst);

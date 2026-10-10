@@ -14,6 +14,8 @@ Every colour and face comes from the three editions' custom properties (`--paper
 | `--measure` | 68ch | the widest a paragraph runs |
 | `--tap` | 44px | the height aimed for on touch targets (a preference; WCAG 2.2 AA asks for 24 px) |
 | `--strip-h` | 42px | the pinned strip; `scroll-padding-top` keeps anchors and focus clear of it |
+| `--surface-active`, `--surface-hover`, `--border-subtle` | 6%, 3% and 14% ink | the selected tab, a hover, a quiet button edge |
+| `--ease-out` | `cubic-bezier(.16, 1, .3, 1)` | every fold and lift |
 | `--link-tint`, `--muted-tint` | darker link and secondary text | read through `--link` / `--muted` inside any tinted box, so contrast holds on `--paper-2` |
 
 Corners are square everywhere (the Atlas's rule, now tested for the new block too). Focus is the global `:focus-visible` outline, 2 px in the accent colour.
@@ -43,8 +45,19 @@ Corners are square everywhere (the Atlas's rule, now tested for the new block to
 | Figure | `figure.fig` + `figcaption` + `.fig-src` | A diagram or chart | The caption says what it shows, what it does not claim, and its source and date. A table or list with the same content sits beside it. |
 | Scrolling table | `div.tbl-scroll[role="region"][tabindex="0"][aria-labelledby]` | A table wider than the page | Scrolls inside itself; focusable so the keyboard can scroll it; `position: relative` so hidden labels do not widen the page. |
 | Long document | `.doc-layout` (`nav.doc-toc` + `.doc-body`) | The method page | Contents beside the text, pinned on wide screens. |
-| Guide navigation | `nav.atlas-toc.viewnav` | A country's views | Links with `aria-current="page"`; a strip on narrow screens that scrolls the current view into sight. |
+| Guide navigation | `nav.atlas-toc.viewnav > ol[role="tablist"]` | A country's views | The dossier's index tabs (below): links with `role="tab"` and `aria-selected`; a strip on narrow screens that scrolls the current view into sight. |
 | Source and date | existing claim marks `[n]`, "Checked", "read {date}" | Any factual line | Unchanged; each view lists its own numbered sources at its foot. |
+
+## Archetypes
+
+Two arrangements of the components above; the styles are the "Decision Workspace and Layered Dossier" block at the end of `css/app.css`.
+
+| Archetype | Where | Markup | Behaviour |
+|---|---|---|---|
+| Decision Workspace | The seven calculators (`js/engine.js`) | `.q-grid`: `#stepnav[role="tablist"]` and the running score in the rail, `#wizard[role="tabpanel"]` with each question's margin note beside it | The chosen step has the ink tint (`--surface-active`) and a 2px ink edge. Changing step folds the old page away on its left edge while the new one unfolds (240ms, `.fold-ghost`). |
+| Layered Dossier | A country's guide in the Atlas (`js/page-map.js`) | `.atlas-body`: the view tabs (`ol[role="tablist"]`, the chosen one marked in the accent colour), `#atlas-sheet[role="tabpanel"]` | Flat ruled paper, no edges or shadows. Choosing a view lifts its page 3px into place (200ms). Each tab keeps its own address. Below 1101px the tabs are a strip. |
+
+Tabs everywhere: arrows, Home and End move the focus (`js/ui.js`), Enter or Space opens the tab. Motion is transform and opacity only on `--ease-out`, and becomes an 80ms fade under reduced motion. Buttons (`.btn`) have a `--border-subtle` edge and a `--surface-hover` tint.
 
 ## Disclosure behaviour, in full
 

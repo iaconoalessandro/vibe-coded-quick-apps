@@ -57,7 +57,14 @@ window.Wizard = (function () {
     var barEl = document.querySelector(cfg.progress);
     var chipEl = cfg.chip ? document.querySelector(cfg.chip) : null;
 
-    if (navEl) navEl.setAttribute('aria-label', 'Steps');
+    /* The steps are tabs over one panel (the Decision Workspace): any of
+     * them can be opened at any time, and js/ui.js moves between them with
+     * the arrow keys. */
+    if (navEl) {
+      navEl.setAttribute('aria-label', 'Steps');
+      navEl.setAttribute('role', 'tablist');
+      mount.setAttribute('role', 'tabpanel');
+    }
     if (barEl && barEl.parentNode) {
       barEl.parentNode.setAttribute('role', 'progressbar');
       barEl.parentNode.setAttribute('aria-label', 'Main questions answered');
@@ -81,11 +88,14 @@ window.Wizard = (function () {
           var gaps = i !== current && i <= furthest ? missingIn(i).length : 0;
           b.className = (i === current ? 'current' : (isStepTouched(i) ? 'done' : '')) +
             (gaps ? ' missing' : '');
-          if (i === current) b.setAttribute('aria-current', 'step');
-          else b.removeAttribute('aria-current');
+          b.setAttribute('aria-selected', i === current ? 'true' : 'false');
+          b.tabIndex = i === current ? 0 : -1;
           b.setAttribute('aria-label', b.textContent +
             (gaps ? ' — ' + T('{n} unanswered', { n: gaps }) : ''));
         });
+        /* A column beside the questions, one row above them on a phone. */
+        navEl.setAttribute('aria-orientation', getComputedStyle(navEl).flexDirection === 'column' ? 'vertical' : 'horizontal');
+        mount.setAttribute('aria-labelledby', navEl.children[current].id);
       }
       drawSkipped();
     }
@@ -553,10 +563,33 @@ window.Wizard = (function () {
       navEl.scrollLeft += (br.left - nr.left) - (nr.width - br.width) / 2;
     }
 
+    /* The paper fold (css/app.css, .fold-ghost). The page being left is
+     * lifted out whole and kept for a moment, turning away on its left edge
+     * while the new one unfolds under it. It is inert and loses its ids and
+     * names, so it can be neither used nor mistaken for the live questions. */
+    var ghost = null;
+    function fold(back) {
+      if (ghost) ghost.remove();
+      var g = ghost = el('div', 'fold-ghost' + (back ? ' back' : ''));
+      while (mount.firstChild) g.appendChild(mount.firstChild);
+      Array.prototype.forEach.call(g.querySelectorAll('[id], [name]'), function (n) {
+        n.removeAttribute('id'); n.removeAttribute('name');
+      });
+      g.setAttribute('aria-hidden', 'true');
+      g.inert = true;
+      mount.parentNode.insertBefore(g, mount);
+      setTimeout(function () { g.remove(); }, 300);
+      return g;
+    }
+
     function go(i) {
       furthest = Math.max(furthest, current);
+      var from = current;
       current = Math.max(0, Math.min(steps.length - 1, i));
+      var old = fold(current < from);
       renderStep();
+      /* Never taller than the page replacing it: it must not hang over the footer. */
+      old.style.maxHeight = mount.offsetHeight + 'px';
       scrollToQuestions();
       var h = mount.querySelector('.step-head h1');
       if (h) h.focus({ preventScroll: true });
@@ -567,6 +600,10 @@ window.Wizard = (function () {
       navEl.innerHTML = '';
       steps.forEach(function (s, i) {
         var b = el('button');
+        b.type = 'button';
+        b.id = mount.id + '-tab-' + i;
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-controls', mount.id);
         b.appendChild(el('span', 'n', roman(i + 1) + '.'));
         b.appendChild(document.createTextNode(' ' + s.title));
         b.addEventListener('click', function () { go(i); });
@@ -671,9 +708,7 @@ window.Wizard = (function () {
     };
   }
 
-  /* The header of a calculator page: kicker, a headline with one emphasised
-   * word (`title` is [before, emphasised, after]), standfirst, and the track's
-   * photograph with its credit. */
+  /* title is [before, emphasised word, after]. */
   /* "25 questions · about 5 minutes · …", counted from the model. Of a set
    * of questions shown only for one answer (Italian or foreign grades), one
    * is ever on screen, so each set counts once. */
@@ -701,34 +736,6 @@ window.Wizard = (function () {
     text.appendChild(el('p', 'standfirst', standfirst));
     if (meta) text.appendChild(el('p', 'form-meta', meta));
     head.appendChild(text);
-    if (shot) {
-      var fig = el('figure', 'photo');
-      var plate = el('span', 'plate');
-      var pic = document.createElement('picture');
-      /* Phones hide this photo (css/app.css, max-width: 640px); an empty
-       * source there keeps them from downloading it anyway. */
-      var none = document.createElement('source');
-      none.media = '(max-width: 640px)';
-      none.srcset = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-      pic.appendChild(none);
-      /* Sized WebP variants from tools/build-images.sh; the JPEG stays as
-       * the fallback. */
-      var base = shot.src.replace(/\.jpg$/, '');
-      var source = document.createElement('source');
-      source.type = 'image/webp';
-      source.srcset = [480, 800, 1240].map(function (w) { return base + '-' + w + '.webp ' + w + 'w'; }).join(', ');
-      source.sizes = '(max-width: 900px) 100vw, 620px';
-      pic.appendChild(source);
-      var img = document.createElement('img');
-      img.src = shot.src;
-      img.width = shot.w; img.height = shot.h;
-      img.alt = T(shot.alt);
-      img.setAttribute('fetchpriority', 'high');
-      pic.appendChild(img);
-      plate.appendChild(pic);
-      fig.appendChild(plate);
-      head.appendChild(fig);
-    }
     return head;
   }
 

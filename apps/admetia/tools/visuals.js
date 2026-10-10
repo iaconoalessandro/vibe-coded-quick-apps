@@ -89,7 +89,7 @@ ${fields.map((f) => `<tr><th scope="row"><a href="careers/fields/${f.slug}.html"
   return `<figure class="fig path-fig">
   <div class="path-draw">${svg}</div>
   ${table}
-  <figcaption><span>The diagram and the table show the same links.</span> <span>A line means the field’s page in the Career Explorer points to that calculator; it is Admetia’s own mapping, not an entry requirement, and many roles are open to several degrees.</span> <span>Economics has no matching calculator here, except economic consulting, which links to Finance.</span> <span class="fig-src">Source: the Career Explorer’s ${fields.length} field reports (${total} role families), researched 9 October 2026.</span></figcaption>
+  <figcaption><span>A line means the field’s page in the Career Explorer points to that calculator; it is Admetia’s own mapping, not an entry requirement, and many roles are open to several degrees.</span> <span>Economics has no matching calculator here, except economic consulting, which links to Finance.</span> <span class="fig-src">Source: the Career Explorer’s ${fields.length} field reports (${total} role families), researched 9 October 2026.</span></figcaption>
 </figure>`;
 }
 

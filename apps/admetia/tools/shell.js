@@ -30,13 +30,13 @@ const MOTTO = 'The way in — independent guides to master’s admissions, caree
 
 /* The five sections. The label is the task a reader arrives with. */
 const SECTIONS = [
-  { id: 'study', label: 'Choose a master’s', href: 'study.html',
+  { id: 'study', label: 'Masters', href: 'study.html',
     blurb: 'Compare programmes, check what each one requires and costs, and test your chances.' },
   { id: 'careers', label: 'Explore careers', href: 'careers/index.html',
     blurb: 'What each role involves, what it pays, and which degrees lead there.' },
   { id: 'jobs', label: 'Find an internship or job', href: 'jobs.html',
     blurb: 'How hiring works in each country, when to apply, and how to prepare.' },
-  { id: 'move', label: 'Plan a move', href: 'map.html',
+  { id: 'move', label: 'Map Intelligence', href: 'map.html',
     blurb: 'Countries and cities, the route on your passport, costs, and the first weeks.' },
   { id: 'method', label: 'Sources and method', href: 'method.html',
     blurb: 'Where every figure comes from, how it was checked, and what is still unknown.' }
@@ -79,7 +79,7 @@ const LOCAL = {
     { key: 'careers/toolkit.html', label: 'Application toolkit', href: 'careers/toolkit.html' },
     { key: 'careers/interview-prep.html', label: 'Interview prep', href: 'careers/interview-prep.html' }
   ],
-  /* Plan a move: the country's own views are drawn by js/page-map.js, which
+  /* Map Intelligence: the country's own views are drawn by js/page-map.js, which
    * knows which country is open. */
   move: [],
   method: []

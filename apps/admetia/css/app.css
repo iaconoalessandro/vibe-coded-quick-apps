@@ -37,6 +37,12 @@
   --meter-track: #ecdccd;
 
   --double: 1px solid var(--hair);
+  /* The selected item of a workspace or dossier, a quiet button edge, and
+   * the one curve every fold and lift runs on. */
+  --surface-active: rgba(0, 0, 0, .06);
+  --surface-hover: rgba(0, 0, 0, .03);
+  --border-subtle: rgba(0, 0, 0, .14);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
 
   --font-mast: "Source Serif 4", Georgia, "Times New Roman", serif;
   --mast-weight: 600;
@@ -285,7 +291,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .standfirst {
   font: italic 400 clamp(19px, 1.7vw, 23px)/1.42 var(--font-head);
-  color: var(--ink-2); margin: 0 0 24px; max-width: 34em;
+  color: var(--ink-2); margin: 0 0 24px; max-width: none;
 }
 .dropcap::first-letter {
   float: left; font-family: var(--font-head); font-weight: 700; font-style: normal;
@@ -295,7 +301,7 @@ a:hover { text-decoration-thickness: 2px; }
 /* A short piece on method: kicker, one paragraph opening on a drop cap, and
    its sharpest line pulled out beside it. */
 .method { margin: 44px 0 8px; padding-top: 16px; border-top: var(--double); }
-.method-cols { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.method-cols { max-width: var(--measure); }
 .method .dropcap { margin: 0; font-size: 18px; line-height: 1.62; text-align: justify; hyphens: auto; }
 .pullquote.side { margin: 0; padding: 18px 0; grid-template-columns: 1fr; gap: 4px; }
 .pullquote.side::before { font-size: 84px; padding-top: .3em; }
@@ -323,7 +329,7 @@ a:hover { text-decoration-thickness: 2px; }
 .lead-photo .plate { aspect-ratio: 16 / 9; }
 .index { padding-left: 40px; }
 .index-item {
-  display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 16px;
+  display: grid; grid-template-columns: minmax(0, 1fr);
   padding: 22px 0; border-bottom: 1px solid var(--hair);
   text-decoration: none; color: inherit;
 }
@@ -384,7 +390,7 @@ a:hover { text-decoration-thickness: 2px; }
  * ======================================================================== */
 
 .sec-head {
-  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 40px; align-items: end;
+  display: grid; grid-template-columns: minmax(0, 1fr); align-items: end;
   padding: 28px 0 26px; margin-bottom: 26px; border-bottom: var(--double);
 }
 .sec-head .headline { font-size: clamp(36px, 5vw, 68px); }
@@ -400,7 +406,7 @@ a:hover { text-decoration-thickness: 2px; }
 .story p { margin: 0 0 10px; color: var(--ink-2); font-size: 16.5px; }
 .story:hover h2, .story:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
 .story-lead {
-  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px; align-items: center;
+  display: block;
   padding-bottom: 26px; margin-bottom: 30px; border-bottom: 1px solid var(--hair);
 }
 .story-lead h2 { font-size: clamp(34px, 4vw, 52px); margin-top: 0; }
@@ -1126,7 +1132,7 @@ html.i18n-wait body { visibility: hidden; }
 
 footer.foot {
   margin-top: 46px; padding: 22px 0 56px; border-top: var(--double);
-  display: flex; flex-wrap: wrap; align-items: flex-start;
+  display: flex; flex-wrap: wrap; align-items: flex-start; column-gap: 28px;
 }
 footer.foot > p { flex: 1 1 240px; min-width: 0; margin: 0 0 14px; padding: 0 24px; border-left: 1px solid var(--hair); font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 footer.foot > .boxout { flex: 2 1 480px; min-width: 0; }
@@ -1290,8 +1296,8 @@ footer.foot > .reality { flex: 0 0 100%; min-width: 0; margin: 0 0 22px; padding
 :root[data-theme="city"] .opt.compact.on { background: #0d7680; border-color: #0d7680; color: #fff; }
 :root[data-theme="city"] .progress i { background: #0d7680; }
 :root[data-theme="city"] .stepnav button { font: 400 17px/1.3 var(--font-display); }
-:root[data-theme="city"] .stepnav button.current { color: #0a5e66; font-weight: 600; }
-:root[data-theme="city"] .stepnav button.current .n { color: #0a5e66; }
+:root[data-theme="city"] .stepnav button.current { color: var(--ink); font-weight: 600; }
+:root[data-theme="city"] .stepnav button.current .n { color: var(--ink); }
 :root[data-theme="city"] .btn { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; border-radius: 0; }
 :root[data-theme="city"] .btn.primary { background: #0d7680; color: #fff; }
 :root[data-theme="city"] .out-list > summary { text-transform: none; letter-spacing: 0; font: 600 14px/20px var(--font-ui); border-color: #0d7680; color: #0d7680; }
@@ -1479,7 +1485,6 @@ html.no-js .reveal { opacity: 1; animation: none; }
   .ticker-label .ticker-name { display: none; }
   .ticker-view { margin: 0 10px; }
   .headline { font-size: clamp(36px, 10.5vw, 48px); }
-  .index-item { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; }
   .index-item .no { font-size: 44px; }
   .index-item h3 { font-size: 28px; }
   .pullquote { grid-template-columns: minmax(0, 1fr); gap: 0; }
@@ -1703,6 +1708,24 @@ html.no-js .reveal { opacity: 1; animation: none; }
   --lv1: #6da7ec; --lv2: #2a78d6; --lv3: #184f95; --lv4: #0d366b;
   --s1: #2a78d6; --s2: #d95926;
 }
+.atlas [data-continent="europe"] {
+  --q0: #e7ddf3; --q1: #c6ace1; --q2: #a07bc8; --q3: #7851a7; --q4: #513275;
+}
+.atlas [data-continent="asia"] {
+  --q0: #d8eadc; --q1: #a5cfae; --q2: #72b083; --q3: #46865b; --q4: #255a3b;
+}
+.atlas [data-continent="oceania"] {
+  --q0: #f7dce9; --q1: #eeb0cc; --q2: #dc7aaa; --q3: #b84e85; --q4: #85325f;
+}
+.atlas [data-continent="north-america"] {
+  --q0: #f8e2ce; --q1: #efbd90; --q2: #df9456; --q3: #bc6a2e; --q4: #85451d;
+}
+.atlas [data-continent].q0 { --country-fill: var(--q0); }
+.atlas [data-continent].q1 { --country-fill: var(--q1); }
+.atlas [data-continent].q2 { --country-fill: var(--q2); }
+.atlas [data-continent].q3 { --country-fill: var(--q3); }
+.atlas [data-continent].q4 { --country-fill: var(--q4); }
+.atlas [data-continent].qna { --country-fill: var(--meter-track); }
 
 .atlas-map { position: relative; margin: 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .atlas-svg { display: block; width: 100%; height: auto; max-height: 72vh; overflow: hidden; background: var(--sea); }
@@ -1718,12 +1741,13 @@ html.no-js .reveal { opacity: 1; animation: none; }
 .atlas-svg .cty.q0 { fill: var(--q0); } .atlas-svg .cty.q1 { fill: var(--q1); } .atlas-svg .cty.q2 { fill: var(--q2); }
 .atlas-svg .cty.q3 { fill: var(--q3); } .atlas-svg .cty.q4 { fill: var(--q4); } .atlas-svg .cty.qna { fill: var(--meter-track); }
 .atlas-svg .cty.hover[class*=" q"] { stroke-width: calc(var(--u, .1) * 3.2); filter: brightness(1.08); }
-.atlas-svg .cty.on { fill: var(--accent); stroke-width: calc(var(--u, .1) * 2.2); }
+.atlas-svg .cty.on { stroke-width: calc(var(--u, .1) * 3.2); paint-order: stroke; }
 .atlas-svg .cty:focus { outline: none; }
 .atlas-svg .cty:focus-visible { stroke: var(--accent); stroke-width: calc(var(--u, .1) * 4); paint-order: stroke; }
 .atlas-svg .cty.solo { cursor: default; fill: var(--meter-track); }
 
-.atlas-svg .cty.on[class*=" q"] { fill: var(--accent); }
+.atlas-svg .cty[data-continent] { fill: var(--country-fill, var(--q2)); }
+.atlas-svg .cty.on[data-continent] { fill: #800020; }
 
 .atlas-marks { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .cty-label {
@@ -1739,6 +1763,8 @@ html.no-js .reveal { opacity: 1; animation: none; }
 .mk-dot { display: block; width: 12px; height: 12px; border: 2px solid var(--ink); background: var(--paper); box-shadow: 0 0 0 2px var(--paper); }
 .mk.hover .mk-dot, .mk.focus .mk-dot { background: var(--paper-2); outline: 2px solid var(--accent); outline-offset: 2px; }
 .mk.on .mk-dot { background: var(--accent); border-color: var(--ink); }
+.atlas-map:not(.hub-map) .mk[data-continent] .mk-dot { background: var(--country-fill, var(--q2)); }
+.atlas-map:not(.hub-map) .mk.on .mk-dot { background: #800020; outline: 2px solid var(--ink); outline-offset: 2px; }
 .mk-name {
   position: absolute; left: 34px; top: 50%; transform: translateY(-50%); white-space: nowrap;
   font: 700 11.5px/1.2 var(--font-ui); color: var(--ink); background: var(--paper); padding: 1px 4px; pointer-events: none;
@@ -1783,6 +1809,12 @@ html.no-js .reveal { opacity: 1; animation: none; }
 .hub-legend { padding-top: 8px; }
 .lg-title { margin: 0 0 6px; font: 700 11.5px/1.2 var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .lg-steps { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.lg-continents { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px 28px; }
+.lg-continent-name { display: block; margin-bottom: 5px; font-weight: 600; }
+.lg-ramp { display: flex; gap: 2px; }
+.atlas-legend .lg-ramp .sw { flex: 1; max-width: 36px; height: 10px; border: 0; }
+.lg-class { font-size: 11px; font-weight: 700; color: var(--muted); }
+.lg-note { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
 .lg-step { display: inline-flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
 .atlas-legend .sw { width: 22px; height: 12px; border: 1px solid var(--ink); }
 .sw.q0 { background: var(--q0); } .sw.q1 { background: var(--q1); } .sw.q2 { background: var(--q2); }
@@ -1800,18 +1832,18 @@ html.no-js .reveal { opacity: 1; animation: none; }
 .atlas-pop {
   position: absolute; z-index: 5; width: 360px; max-width: calc(100% - 16px);
   background: var(--paper-3); border: 1px solid var(--rule); border-top: 4px solid var(--accent);
-  padding: 14px 16px 16px;
+  padding: 14px 16px 16px; overflow-y: auto; scroll-margin-bottom: 8px;
 }
 .pop-head .kicker { margin-bottom: 2px; }
 .pop-title { margin: 0 0 8px; font: var(--head-weight) 26px/1.1 var(--font-head); letter-spacing: -.01em; }
 .pop-title:focus { outline: none; }
 .pop-sum { margin: 0 0 10px; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
-.pop-facts { margin: 0 0 12px; display: grid; gap: 8px; }
+.pop-facts { margin: 0; display: grid; gap: 8px; }
 .pop-facts dt { font: 700 11px/1.2 var(--font-ui); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .pop-facts dd { margin: 2px 0 0; font-size: 14.5px; line-height: 1.45; }
 .pop-hubs { margin: 0; padding: 0; list-style: none; display: grid; gap: 3px; }
 .pop-hubs .more-hubs { color: var(--muted); font-style: italic; }
-.pop-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pop-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; }
 .pop-x {
   min-height: 44px; padding: 0 14px; border: 1px solid var(--hair); border-radius: 0; background: transparent; color: var(--ink);
   font: 700 12.5px/1 var(--font-ui); letter-spacing: .07em; text-transform: uppercase; cursor: pointer;
@@ -2349,14 +2381,14 @@ main:focus { outline: none; }
 /* ---------- page heads ---------- */
 .page-head, .front-head { padding: 30px 0 6px; }
 .page-head .headline, .front-head .headline { font-size: clamp(34px, 4.6vw, 56px); margin-bottom: 14px; }
-.page-head .standfirst { max-width: var(--measure); margin-bottom: 0; }
+.page-head .standfirst { margin-bottom: 0; }
 .front-head .standfirst, .programmes .atlas-head .standfirst { max-width: none; margin-bottom: 0; }
 .page-head-photo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 0 44px; align-items: center; }
 .page-head-photo .photo { margin: 0; }
 .page-head-photo .plate { aspect-ratio: 3 / 2; }
 .section-lead { max-width: var(--measure); margin: 0 0 18px; font: 400 18px/1.55 var(--font-body); color: var(--ink-2); }
 .more-line { max-width: var(--measure); margin: 14px 0 0; font-size: 16px; }
-.more-line a, .section-lead a, .doc-body a, .task-links a, .next-list a, .unsure-list a, .prep-list a, .country-links a, .front-what a, .saved-list a { color: var(--link); }
+.more-line a, .section-lead a, .doc-body a, .task-links a, .next-list a, .unsure-list a, .prep-list a, .country-links a, .saved-list a { color: var(--link); }
 
 /* ---------- task lists: a ruled index of things to do ---------- */
 .rubric + .tasks, .routes .tasks, .stages .tasks { margin-top: 0; }
@@ -2375,7 +2407,8 @@ main:focus { outline: none; }
 .routes .rubric, .stages .rubric, .front .rubric { margin-bottom: 10px; }
 
 /* ---------- the front page ---------- */
-.front { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 0 48px; align-items: start; padding: 22px 0 10px; }
+.front { padding: 22px 0 10px; }
+.front .tasks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
 .front-photo { margin: 0; position: sticky; top: calc(var(--strip-h) + 20px); }
 .front-photo .plate { aspect-ratio: 4 / 3; }
 .front-photo figcaption { margin-top: 8px; font: 400 14px/1.45 var(--font-ui); color: var(--muted); }
@@ -2388,8 +2421,6 @@ main:focus { outline: none; }
 .unsure-list, .prep-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; }
 .unsure-list h3, .prep-list h3 { margin: 16px 0 6px; font: var(--head-weight) 21px/1.2 var(--font-head); }
 .unsure-list p, .prep-list p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
-.front-what { margin: 0 0 20px; }
-.front-what p { max-width: var(--measure); }
 .when, .by-country, .prepare, .pathways { margin: 48px 0 0; padding-top: 26px; border-top: 3px double var(--rule); }
 .when .headline-2, .by-country .headline-2, .prepare .headline-2, .pathways .headline-2, .unsure .headline-2 { margin-bottom: 10px; }
 
@@ -2507,7 +2538,7 @@ main:focus { outline: none; }
 .site-foot a:hover { color: var(--ink); text-decoration: underline; }
 
 @media (max-width: 900px) {
-  .front, .page-head-photo, .path-fig, .doc-layout { grid-template-columns: minmax(0, 1fr); }
+  .front .tasks, .page-head-photo, .path-fig, .doc-layout { grid-template-columns: minmax(0, 1fr); }
   .front-photo { position: static; margin-top: 22px; }
   .page-head-photo .photo { margin-top: 20px; }
   .unsure-list, .prep-list { grid-template-columns: minmax(0, 1fr); }
@@ -2543,7 +2574,6 @@ main:focus { outline: none; }
 a.toc-link { text-decoration: none; }
 a.toc-link:hover { text-decoration: underline; }
 .toc-link.toc-all { margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--hair); color: var(--muted); }
-.toc-link[aria-current="page"] { border-left-color: var(--accent); color: var(--accent); font-weight: 700; }
 .view-name { display: block; margin-top: 6px; font: var(--head-weight) .62em/1.15 var(--font-head); color: var(--accent); }
 .view-about { font-size: 18px; }
 .atlas-offstage { display: none !important; }
@@ -2573,13 +2603,12 @@ a.toc-link:hover { text-decoration: underline; }
 .move-step a { color: var(--link); }
 .move-none { display: block; margin-top: 3px; font: italic 400 13px/1.3 var(--font-ui); color: var(--muted); }
 @media (max-width: 1100px) {
-  .atlas-side { top: calc(var(--strip-h) + env(safe-area-inset-top)); z-index: 11; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter); max-height: none; overflow: visible; background: var(--paper); border-bottom: 1px solid var(--rule); }
+  .atlas-side { top: calc(var(--strip-h) + env(safe-area-inset-top)); z-index: 11; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter); max-height: none; overflow: visible; background: var(--paper); }
   .atlas-side .atlas-toc { margin: 0; padding: 0; border-bottom: 0; }
   .atlas-side .atlas-toc + .atlas-toc { margin-top: 0; }
   /* The whole guide: the strip lists its sections; the views are a step back. */
   .atlas-side .viewnav:not(:only-child) { display: none; }
   .toc-link.toc-all { margin-top: 0; padding-top: 0; border-top: 0; }
-  a.toc-link[aria-current="page"] { border-left: 0; box-shadow: inset 0 -3px 0 var(--accent); }
 }
 @media (max-width: 720px) {
   .guide-tasks { grid-template-columns: minmax(0, 1fr); }
@@ -2638,3 +2667,67 @@ a.toc-link:hover { text-decoration: underline; }
 .tl-m { min-width: 20px; padding: 3px 4px; font-size: 12px; box-sizing: border-box; }
 .tl-m.tl-event { padding: 1px 2px; }
 .tl-table caption, .path-table caption, .doc-table caption { font: 600 14.5px/1.4 var(--font-ui); letter-spacing: 0; text-transform: none; color: var(--ink-2); }
+
+/* ===========================================================================
+ * Decision Workspace and Layered Dossier
+ *
+ * Two archetypes over the components above, in markup that was already
+ * there. The workspace is a calculator's questionnaire: its steps are tabs
+ * in a ruled rail, the questions and their margin notes beside it, the
+ * running score under it. The dossier is a country's guide in the Atlas: one
+ * sheet on a stack, its views index tabs down the margin in three tiers.
+ *
+ * Motion is transform and opacity only, on one curve, never over 260ms and
+ * never looping. Under reduced motion each becomes an 80ms fade.
+ * ======================================================================== */
+
+/* ---------- shared: buttons and tabs ---------- */
+:root[data-theme="city"] .btn { border-color: var(--border-subtle); transition: background-color .12s, color .12s, transform .1s var(--ease-out); }
+:root[data-theme="city"] .btn.primary { border-color: var(--btn-bg); }
+.btn:not(.primary):not(:disabled):hover { background: var(--surface-hover); }
+/* Answer the press itself, not the release. */
+.btn:not(:disabled):active { transform: scale(.98); }
+
+[role="tab"] { touch-action: manipulation; }
+.stepnav [role="tab"] { transition: background-color .12s; }
+.stepnav [role="tab"]:hover { background: var(--surface-hover); }
+.stepnav [role="tab"]:focus-visible, .viewnav [role="tab"]:focus-visible { outline-offset: -2px; }
+
+/* ---------- the workspace: steps in the rail ---------- */
+.stepnav { border-top: 1px solid var(--rule); }
+.stepnav [role="tab"] { padding-left: 12px; padding-right: 10px; }
+.stepnav [role="tab"][aria-selected="true"] { background: var(--surface-active); box-shadow: inset 2px 0 0 var(--ink); }
+@media (max-width: 1040px) {
+  .stepnav [role="tab"] { margin-right: 0; padding: 12px 16px; }
+  .stepnav [role="tab"][aria-selected="true"] { box-shadow: inset 0 -2px 0 var(--ink); }
+}
+
+/* The paper fold between steps (js/engine.js, fold): the page being left
+ * turns away on its left edge, the spine it shares with the rail, and the
+ * new one unfolds under it. Going back turns the other way. */
+.q-main { position: relative; }
+.fold-ghost {
+  position: absolute; left: 0; right: 0; z-index: 1; overflow: hidden; pointer-events: none;
+  background: var(--paper); box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  transform-origin: left center; animation: fold-out 240ms var(--ease-out) both;
+}
+.fold-ghost .actions { display: none; }
+.fold-ghost + * { transform-origin: left center; animation: fold-in 240ms var(--ease-out); }
+.fold-ghost.back, .fold-ghost.back + * { --fold: -6deg; }
+@keyframes fold-out { to { opacity: 0; transform: perspective(1200px) rotateY(calc(-1 * var(--fold, 6deg))); } }
+@keyframes fold-in { from { opacity: .7; transform: perspective(1200px) rotateY(var(--fold, 6deg)); } }
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes fade-in { from { opacity: 0; } }
+
+/* ---------- the dossier: the guide's views as tabs ---------- */
+/* The guide stays flat, ruled paper: no sheet edge, no shadow. Choosing a
+ * view lifts its page 3px into place (transform only, ends at rest). */
+.atlas-main { animation: sheet-up 200ms var(--ease-out); }
+@keyframes sheet-up { from { transform: translateY(3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fold-ghost { animation: fade-out 80ms linear both !important; }
+  .fold-ghost + * { animation: none !important; }
+  .atlas-main { animation: fade-in 80ms linear !important; }
+  .btn:not(:disabled):active { transform: none; }
+}

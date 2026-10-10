@@ -31,24 +31,10 @@
   if (crumb) crumb.textContent = track.name;
   document.title = T('{track} — Admetia', { track: track.name });
 
-  /* One photograph per track, chosen for what the track actually selects on
-   * rather than for a campus: computer science is people reading code, data
-   * science is the analysis itself, and the conversion degree is somebody
-   * learning to write their first lines. */
-  var TRACK_SHOT = {
-    cs: { src: 'img/photo/cs.jpg', w: 1200, h: 800,
-          alt: 'Two people reading source code on a large wall-mounted display.' },
-    dsai: { src: 'img/photo/datascience.jpg', w: 1200, h: 800,
-            alt: 'A laptop showing data dashboards, with printed charts on the desk beside it.' },
-    conversion: { src: 'img/photo/conversion.jpg', w: 1200, h: 800,
-                  alt: 'Hands typing beginner HTML and JavaScript on a laptop, a notebook open alongside.' }
-  };
-
   var intro = document.getElementById('intro');
-  var shot = TRACK_SHOT[trackId] || TRACK_SHOT.cs;
 
   intro.appendChild(Wizard.sectionHead(track.full,
-    ['Do you clear the ', 'rules', '?'], track.blurb, shot, Wizard.formMeta(M)));
+    ['Do you clear the ', 'rules', '?'], track.blurb, null, Wizard.formMeta(M)));
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');

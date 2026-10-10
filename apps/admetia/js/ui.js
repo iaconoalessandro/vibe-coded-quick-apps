@@ -1,12 +1,13 @@
 /* ---------------------------------------------------------------------------
  * Presentation helpers. Nothing here computes or changes a score.
  *
- * Three jobs:
+ * Four jobs:
  *   1. Reveal elements as they scroll into view.
  *   2. Shadow the top bar once the page has scrolled under it.
  *   3. Draw the animated score dial and count its number up.
+ *   4. Move between the tabs of a list with the arrow keys.
  *
- * All three degrade to nothing. js/theme.js removes the `no-js` class in
+ * All four degrade to nothing. js/theme.js removes the `no-js` class in
  * <head> and restores it if this file never loads, so a page whose scripts
  * fail still shows every .reveal element rather than a column of invisible
  * boxes.
@@ -196,6 +197,27 @@ window.UI = (function () {
     }
     window.requestAnimationFrame(frame);
   }
+
+  /* ------------------------------------------------------------------ */
+  /* Tabs                                                                */
+  /* ------------------------------------------------------------------ */
+
+  /* One listener for every role="tablist" (the calculators' steps, a country
+   * guide's views). Arrows, Home and End move the focus only; Enter or Space
+   * opens the tab, so nothing is redrawn while the reader is still travelling
+   * along the list. A list that handles its own keys is left alone. */
+  document.addEventListener('keydown', function (e) {
+    var tab = e.target.closest && e.target.closest('[role="tab"]');
+    var list = tab && tab.closest('[role="tablist"]');
+    if (!list || e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === ' ' && tab.tagName === 'A') { e.preventDefault(); tab.click(); return; }
+    var tabs = list.querySelectorAll('[role="tab"]');
+    var i = Array.prototype.indexOf.call(tabs, tab);
+    var j = { ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+    if (j === undefined) return;
+    e.preventDefault();
+    tabs[(j + tabs.length) % tabs.length].focus();
+  });
 
   document.addEventListener('DOMContentLoaded', function () {
     stickyBar();

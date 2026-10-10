@@ -34,29 +34,10 @@
   if (crumb) crumb.textContent = track.name;
   document.title = T('{track} master’s — Admetia', { track: track.name });
 
-  /* One photograph per track, chosen for the world the programme feeds into
-   * rather than for a campus: finance is a business district, management a
-   * business school, marketing an advertising street. */
-  var TRACK_SHOT = {
-    mif: {
-      src: 'img/photo/finance.jpg', w: 1200, h: 800,
-      alt: 'A trading desk of stacked monitors showing live candlestick charts.'
-    },
-    mim: {
-      src: 'img/photo/management.jpg', w: 1200, h: 800,
-      alt: 'Three consultants in a meeting, going through figures on a tablet together.'
-    },
-    marketing: {
-      src: 'img/photo/marketing.jpg', w: 1200, h: 800,
-      alt: 'A street wall of brand billboards \u2014 Gucci, adidas and the NBA stacked above a storefront.'
-    }
-  };
-
   var intro = document.getElementById('intro');
-  var shot = TRACK_SHOT[trackId] || TRACK_SHOT.mim;
 
   intro.appendChild(Wizard.sectionHead(track.full,
-    ['How strong is your ', 'profile', '?'], track.blurb, shot, Wizard.formMeta(M)));
+    ['How strong is your ', 'profile', '?'], track.blurb, null, Wizard.formMeta(M)));
 
   var wizardView = document.getElementById('wizard-view');
   var resultsView = document.getElementById('results-view');

@@ -592,6 +592,25 @@
       fmt: function (v) { return compact(v * 1e6); } }
   ];
   var CLASSES = 5;
+  var CONTINENTS = [
+    { id: 'europe', label: 'Europe' },
+    { id: 'asia', label: 'Asia' },
+    { id: 'oceania', label: 'Oceania' },
+    { id: 'north-america', label: 'North America' }
+  ];
+  function continentOf(id) {
+    var c = A.byId[id];
+    if (c.region === 'europe') return 'europe';
+    if (id === 'US' || id === 'CA') return 'north-america';
+    if (id === 'AU' || id === 'NZ') return 'oceania';
+    return 'asia';
+  }
+  function colourCountry(node, id, sc) {
+    var v = sc ? statOf(id, state.colour) : null;
+    node.setAttribute('data-continent', continentOf(id));
+    node.classList.remove('q0', 'q1', 'q2', 'q3', 'q4', 'qna');
+    if (sc) node.classList.add(v === null ? 'qna' : 'q' + sc.cls(v));
+  }
   function indicator(id) { return INDICATORS.filter(function (x) { return x.id === id; })[0]; }
   function statOf(countryId, k) {
     var v = S && S.values[countryId];
@@ -630,17 +649,19 @@
     return svg('path', { d: d, 'class': 'grat', 'aria-hidden': 'true' });
   }
 
-  /* Paints every covered country by the chosen indicator, or plain. */
+  /* Continent sets hue; global quintiles of the selected indicator set shade. */
   function paint() {
     var k = state.colour, sc = k !== 'none' && S ? scaleOf(k) : null;
     svgEl.setAttribute('data-colour', k);
     shapes.forEach(function (s) {
       if (!s.node) return;
       var v = sc ? statOf(s.id, k) : null;
-      s.node.classList.remove('q0', 'q1', 'q2', 'q3', 'q4', 'qna');
-      if (sc) s.node.classList.add(v === null ? 'qna' : 'q' + sc.cls(v));
+      colourCountry(s.node, s.id, sc);
       var I = sc && indicator(k);
       s.node.setAttribute('aria-label', name(s.id) + (I ? ', ' + T(I.label) + ': ' + (v === null ? T('no IMF figure') : I.fmt(v)) : ''));
+    });
+    if (marks) Array.prototype.forEach.call(marks.querySelectorAll('.mk[data-id]'), function (m) {
+      colourCountry(m, m.getAttribute('data-id'), sc);
     });
     drawLegend(sc);
   }
@@ -648,6 +669,18 @@
   function drawLegend(sc) {
     legend.textContent = '';
     var k = state.colour, I = indicator(k);
+    var continents = el('div', 'lg-continents');
+    CONTINENTS.forEach(function (continent) {
+      var key = el('div', 'lg-continent');
+      key.setAttribute('data-continent', continent.id);
+      key.appendChild(el('span', 'lg-continent-name', continent.label));
+      var ramp = el('span', 'lg-ramp');
+      ramp.setAttribute('aria-hidden', 'true');
+      for (var c = 0; c < (sc ? CLASSES : 1); c++) ramp.appendChild(el('i', 'sw q' + (sc ? c : 2)));
+      key.appendChild(ramp);
+      continents.appendChild(key);
+    });
+    legend.appendChild(continents);
     if (sc) {
       var scale = el('div', 'lg-scale');
       scale.appendChild(el('p', 'lg-title', I.long));
@@ -655,7 +688,7 @@
       for (var c = 0; c < CLASSES; c++) {
         var lo = c === 0 ? sc.vals[0] : sc.breaks[c - 1], hi = c === CLASSES - 1 ? sc.vals[sc.vals.length - 1] : sc.breaks[c];
         var st = el('span', 'lg-step');
-        st.appendChild(el('i', 'sw q' + c));
+        st.appendChild(raw('span', 'lg-class', String(c + 1)));
         st.appendChild(raw('span', null, I.fmt(lo) + '–' + I.fmt(hi)));
         row.appendChild(st);
       }
@@ -666,6 +699,7 @@
         row.appendChild(na);
       }
       scale.appendChild(row);
+      scale.appendChild(el('p', 'lg-note', 'Darker shades indicate higher values. The five ranges are shared across continents.'));
       scale.appendChild(raw('p', 'lg-src', T('{source}, {year} figures, partly estimates. Five classes of about nine countries each.', { source: S.source, year: S.year })));
       legend.appendChild(scale);
     }
@@ -682,7 +716,7 @@
     tools.appendChild(passportControl());
     tools.appendChild(segmented('Map', A.views, state.view, function (v) { state.view = v; drawView(); }));
     if (S) {
-      var opts = INDICATORS.filter(function (x) { return x.id !== 'pop'; }).concat([{ id: 'none', label: 'Plain' }]);
+      var opts = INDICATORS.filter(function (x) { return x.id !== 'pop'; }).concat([{ id: 'none', label: 'Continents' }]);
       tools.appendChild(segmented('Colour by', opts, state.colour, function (v) { state.colour = v; paint(); }));
     }
 
@@ -828,6 +862,7 @@
       items.push({ id: c.id, x0: f.x(s.anchor[0]), y0: f.y(s.anchor[1]) });
     });
     var taken = [];
+    var sc = state.colour !== 'none' && S ? scaleOf(state.colour) : null;
     spread(items, r.width, r.height).forEach(function (m) {
       taken.push([m.x - 12, m.y - 12, m.x + 12, m.y + 12]);
       var moved = Math.abs(m.x - m.x0) > 3 || Math.abs(m.y - m.y0) > 3;
@@ -845,6 +880,7 @@
       var mk = el('span', 'mk');
       mk.setAttribute('aria-hidden', 'true');
       mk.setAttribute('data-id', m.id);
+      colourCountry(mk, m.id, sc);
       mk.style.left = m.x + 'px';
       mk.style.top = m.y + 'px';
       mk.appendChild(el('i', 'mk-dot'));
@@ -999,7 +1035,8 @@
       fillPop(rec);
       position(id);
       var h = pop.querySelector('h2');
-      if (h) h.focus();
+      if (h) h.focus({ preventScroll: true });
+      pop.scrollIntoView({ block: 'nearest' });
     }, function () {
       if (state.open !== id) return;
       pop.textContent = '';
@@ -1037,13 +1074,16 @@
   function position(id) {
     var s = shapeById[id];
     var r = svgEl.getBoundingClientRect();
-    if (!s || !r.width || window.innerWidth < 720) { pop.style.left = pop.style.top = ''; return; }
+    if (!s || !r.width || window.innerWidth < 720) { pop.style.left = pop.style.top = pop.style.maxHeight = ''; return; }
     var f = fitOf(r, vb);
     var x = f.x(s.anchor[0]), y = f.y(s.anchor[1]);
     var w = Math.min(360, r.width - 24);
     var left = x + 28 + w > r.width ? x - 28 - w : x + 28;
     left = Math.max(8, Math.min(r.width - w - 8, left));
-    var top = Math.max(8, Math.min(Math.max(8, r.height - 280), y - 60));
+    /* Never taller than the window: it scrolls within itself, and openPop()
+     * brings the whole of it into view. */
+    pop.style.maxHeight = (window.innerHeight - 16 - (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0)) + 'px';
+    var top = Math.max(8, Math.min(r.height - 8 - pop.offsetHeight, y - 60));
     pop.style.left = left + 'px';
     pop.style.top = top + 'px';
   }
@@ -1108,6 +1148,12 @@
     h.tabIndex = -1;
     head.appendChild(h);
     pop.appendChild(head);
+    var act = el('div', 'pop-actions');
+    var go = el('a', 'btn primary', 'Open the country page →');
+    go.href = '#' + rec.id.toLowerCase();
+    act.appendChild(go);
+    act.appendChild(closeButton());
+    pop.appendChild(act);
     pop.appendChild(el('p', 'pop-sum', rec.summary));
     if (S) pop.appendChild(keyFigures(rec.id, false));
 
@@ -1127,12 +1173,6 @@
       : el('span', 'muted-note', 'Not rated: no source read puts any family at strong or dominant in this country.'));
     pop.appendChild(dl);
 
-    var act = el('div', 'pop-actions');
-    var go = el('a', 'btn primary', 'Open the country page →');
-    go.href = '#' + rec.id.toLowerCase();
-    act.appendChild(go);
-    act.appendChild(closeButton());
-    pop.appendChild(act);
     if (!A.inScope(passport(), rec.id) && !A.isHome(passport(), rec.id)) {
       pop.appendChild(el('p', 'pop-scope', 'Routes there on your passport are outside Admetia’s scope; the hubs above still apply.'));
     }
@@ -1553,24 +1593,34 @@
     if (id === 'life') return !!window.ATLAS_LIFE;
     return true;
   }
+  /* The Layered Dossier: the guide is one page (#atlas-sheet) and its views
+   * are its tabs. Each is still a link with its own address; js/ui.js moves
+   * between them with the arrow keys. */
   function viewNav(rec, current, entry) {
     var nav = el('nav', 'atlas-toc viewnav');
     nav.setAttribute('aria-label', T('{country}: sections of this guide', { country: name(rec.id) }));
-    nav.appendChild(el('p', 'toc-k', 'In this guide'));
+    nav.appendChild(el('p', 'toc-k', 'In this guide')).id = 'viewnav-k';
     var list = el('ol', 'toc-list');
+    list.setAttribute('role', 'tablist');
+    list.setAttribute('aria-labelledby', 'viewnav-k');
     VIEWS.forEach(function (v) {
       if (!hasView(rec, v.id, entry)) return;
       var li = el('li');
+      li.setAttribute('role', 'presentation');
       var a = el('a', 'toc-link' + (v.id === current ? ' on' : '') + (v.id === 'all' ? ' toc-all' : ''), v.nav);
       a.href = viewHref(rec, v.id);
-      if (v.id === current) a.setAttribute('aria-current', 'page');
+      a.id = 'view-tab-' + v.id;
+      a.setAttribute('role', 'tab');
+      a.setAttribute('aria-controls', 'atlas-sheet');
+      a.setAttribute('aria-selected', v.id === current ? 'true' : 'false');
+      a.tabIndex = v.id === current ? 0 : -1;
       li.appendChild(a);
       list.appendChild(li);
     });
     nav.appendChild(list);
     return nav;
   }
-  /* Breadcrumbs: the shell prints Home › Plan a move; the country and the
+  /* Breadcrumbs: the shell prints Home › Map Intelligence; the country and the
    * view are added here, and taken away again on the world view. */
   var trail = document.getElementById('trail');
   var trailBase = trail ? trail.innerHTML : '';
@@ -1578,7 +1628,7 @@
     if (!trail) return;
     trail.innerHTML = trailBase;
     if (!rec) {
-      /* World view: "Plan a move" is where you are, not a link to itself. */
+      /* World view: "Map Intelligence" is where you are, not a link to itself. */
       var last = trail.lastElementChild, a0 = last && last.querySelector('a');
       if (a0) { var sp0 = raw('span', null, a0.textContent); sp0.setAttribute('aria-current', 'page'); last.replaceChild(sp0, a0); }
       return;
@@ -1815,6 +1865,9 @@
     var toc = whole ? contents() : null;
     var cols = el('div', 'atlas-body');
     var main = el('div', 'atlas-main');
+    main.id = 'atlas-sheet';
+    main.setAttribute('role', 'tabpanel');
+    main.setAttribute('aria-labelledby', 'view-tab-' + view);
     var side = el('div', 'atlas-side');
     side.appendChild(viewNav(rec, view, entry));
     if (toc) side.appendChild(toc.node);
@@ -1850,7 +1903,7 @@
     if (view === 'sources') Array.prototype.forEach.call(page._notes.querySelectorAll('.note-up'), function (b) { b.hidden = true; });
     /* On a narrow screen the guide's navigation is a strip that scrolls
      * sideways: bring the view being read into sight. */
-    var here = page.querySelector('.viewnav [aria-current="page"]'), strip = here && here.parentNode.parentNode;
+    var here = page.querySelector('.viewnav [aria-selected="true"]'), strip = here && here.parentNode.parentNode;
     if (strip && strip.scrollWidth > strip.clientWidth) strip.scrollLeft = here.offsetLeft - (strip.clientWidth - here.offsetWidth) / 2;
   }
 

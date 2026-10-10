@@ -1,6 +1,8 @@
 # Credits
 
-## Photographs
+## Archived photographs
+
+These photographs were removed from the site on 10 October 2026. The source files remain archived for their attribution history and are excluded from the published build.
 
 Every photograph in `img/photo/` is **stored in this folder**. Nothing is hot-linked: the
 pages fetch no images, fonts or scripts from anywhere else. (The only request that leaves
