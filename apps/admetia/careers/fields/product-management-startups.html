@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Product Management &amp; Startups</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Product Management &amp; Startups</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -87,22 +82,23 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
-<p><em>Researched 9 October 2026. Figures are dated. Salary data in this branch is mostly self-reported (Levels.fyi, recruiter blogs), skews to large tech employers and big hubs, and is thin for Italy; treat every number as a benchmark, not an offer. Where a figure came from a search summary or an aggregator instead of the primary publisher, the text says so.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Product management (PM) is the job of deciding what a software product or digital service should do next and getting a team of engineers and designers to build it, with the product manager owning the outcome (usage, revenue, customer satisfaction) rather than writing the code. Around it sit the &quot;operator&quot; jobs that help a product team or a young company run (technical programme managers, product operations, chiefs of staff, business operations), and the founder path, where you build the company yourself and raise money from investors to do it. Startups are small companies trying to grow very fast; most fail, a few become very valuable, and almost everyone who works in them accepts lower or riskier pay in exchange for scope, speed and equity (a share of ownership). This branch suits people who like ambiguity, working with engineers and customers, and being judged on results. Entry is hard in 2026: big-tech junior openings have shrunk, and the quickest route into product or startups is often a first job next to the product (operations, analytics, customer-facing work) rather than a &quot;PM&quot; title.</p>
-<p><strong>Scope notes:</strong> Global view with the US (Bay Area, New York), UK (London), continental Europe (Italy always called out, plus Berlin, Paris, Amsterdam, Stockholm where data exists) and Asia/Gulf (Singapore, Tokyo, Hong Kong, Dubai/Abu Dhabi, Riyadh) where evidence was found; AI product management, software engineering, product marketing, venture capital and consulting are covered in other branches and only cross-referenced here. &quot;Entry&quot; means a graduate with 0-2 years' experience. Search allowance was limited (about 25 searches plus page fetches): Amsterdam, Stockholm, Hong Kong and Tokyo pay data were not found and are marked &quot;no reliable data found&quot;. Many programme and funding details come from secondary summaries and are flagged &quot;unverified&quot; where they could not be checked at the source.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><h3 id="the-2024-2026-context-in-numbers">The 2024-2026 context in numbers</h3>
-<ul>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Product management (PM) is the job of deciding what a software product or digital service should do next and getting a team of engineers and designers to build it, with the product manager owning the outcome (usage, revenue, customer satisfaction) rather than writing the code. Around it sit the &quot;operator&quot; jobs that help a product team or a young company run (technical programme managers, product operations, chiefs of staff, business operations), and the founder path, where you build the company yourself and raise money from investors to do it. Startups are small companies trying to grow very fast; most fail, a few become very valuable, and almost everyone who works in them accepts lower or riskier pay in exchange for scope, speed and equity (a share of ownership). This branch suits people who like ambiguity, working with engineers and customers, and being judged on results. Entry is hard in 2026: big-tech junior openings have shrunk, and the quickest route into product or startups is often a first job next to the product (operations, analytics, customer-facing work) rather than a &quot;PM&quot; title.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="the-2024-2026-context-in-numbers"><summary><h3 class="disc-t" translate="no" lang="en">The 2024-2026 context in numbers</h3> <span class="disc-n"><span>486</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Product jobs overall are not collapsing, but junior ones are scarce.</strong> Lenny's Newsletter's early-2026 market update reports PM openings at their highest level in over three years, driven by AI roles (summary seen via search; the post is paywalled). A LinkedIn-based tracker reported global PM postings down 9% in April 2026 but up 6.4% year on year (secondary summary, April 2026). A December 2025 Mind the Product salary report (Levels.fyi and 3Search data) says entry-level pay has barely moved while the number of trainee PM, product analyst and product owner roles has fallen, and some roles draw 400+ applications within days, including from experienced people willing to step down (Mind the Product, 19 December 2025).</li>
 <li><strong>Big tech hires fewer new graduates and is flattening management.</strong> SignalFire found new graduates were 7% of big-tech hires in 2024, down 25% on 2023 and more than 50% on 2019, and that non-technical functions such as recruiting, product and sales &quot;keep shrinking&quot; (SignalFire, May 2025; US data, engineering-heavy sample). &quot;Flattening&quot; of management layers at big tech is widely reported but was not verified at source here; Mind the Product's data is consistent with it, since senior individual-contributor PM pay rose while Head of Product, VP and CPO offers fell (December 2025).</li>
 <li><strong>&quot;Builder PM&quot; expectations.</strong> Job posts increasingly ask PMs to prototype with AI tools (for example Claude, Cursor, Lovable, v0) rather than only write specifications; examples include an MVST &quot;Builder PM&quot; post and a Certa &quot;Associate Product Manager - AI Builder&quot; post that still asks for 1-3 years' experience (job listings, seen October 2026). &quot;Builder PM&quot; is not a standard title yet and the idea is mostly practitioner commentary; some employers label ordinary PM jobs &quot;AI PM&quot; (University of Rochester careers blog, December 2025).</li>
 <li><strong>Startup money is huge but concentrated in AI.</strong> Crunchbase counted US$159bn of global venture funding in Q3 2026, with AI companies taking about US$102bn (64%) and 27 rounds of US$1bn or more; US startups took about 57% (figures from secondary write-ups of the Crunchbase report, October 2026; original not opened). On Carta's platform, US startups raised US$30.4bn in Q1 2026 with over 60% going to AI, the highest share Carta has recorded (Carta State of Private Markets Q1 2026, published 29 May 2026, via search summary). Europe is smaller: about US$44bn expected for 2025, up 7% (Atomico State of European Tech 2025, data to 30 September 2025). European early-stage rounds have fallen about 20% a year since 2022, mainly sub-US$1m rounds, while median seed and Series A round sizes rose 23% and 25% in 2025 (Atomico). The median European seed round is about half the US one in size (Atomico). Fewer, bigger rounds mean fewer startups funded and higher bars for those that are.</li>
 <li><strong>Founders are starting more companies anyway.</strong> Atomico counted over 27,000 new European founders in 2025, nearly 60% more than in 2023 (via secondary summary of Atomico 2025).</li>
-</ul>
-<h3 id="2-1-product-management-at-tech-companies">2.1 Product management at tech companies</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-1-product-management-at-tech-companies"><summary><h3 class="disc-t" translate="no" lang="en">2.1 Product management at tech companies</h3> <span class="disc-n"><span>222</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> A product manager owns the &quot;what and why&quot; of a product: researches user problems, sets priorities, writes requirements, agrees scope with engineering and design, launches, and measures results. Key terms: a <em>PRD</em> (product requirements document) is the document describing a feature and why it matters; a <em>roadmap</em> is the ordered plan of what the team will build and roughly when; an <em>OKR</em> (objectives and key results) is a quarterly goal-setting format; <em>product-market fit</em> means enough customers genuinely want and keep using the product.</li>
 <li><strong>In practice, the main flavours:</strong>
 <ul>
@@ -112,34 +108,34 @@
 <li><em>Growth PM</em>: owns acquisition, activation, retention or monetisation funnels; very quantitative; runs many experiments.</li>
 </ul></li>
 <li><strong>Who employs it.</strong> Big tech (Google, Meta, Amazon, Microsoft, Apple), scale-ups (Revolut, Stripe, Spotify, Uber, Booking.com, Adyen, Bending Spoons), and venture-backed startups where the founder often acts as de facto head of product until the first hires.</li>
-</ul>
-<h3 id="2-2-product-management-at-non-tech-companies">2.2 Product management at non-tech companies</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-2-product-management-at-non-tech-companies"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Product management at non-tech companies</h3> <span class="disc-n"><span>133</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Banks, insurers, retailers, telecom operators, utilities and media groups now run apps, websites and internal platforms, so they employ product managers, &quot;digital product owners&quot; (the Scrum term for the person who prioritises the team's backlog) and &quot;digital transformation&quot; teams.</li>
 <li><strong>In practice.</strong> Slower release cycles, heavier compliance and legacy systems; the business sponsor often has more power than the product team; less access to experimentation data. Titles are inconsistent: &quot;product owner&quot; may mean a delivery-focused backlog administrator, not a strategic PM. Banks and telcos often ask for Scrum certifications (see 3.1).</li>
 <li><strong>Pay signal.</strong> In London, JPMorgan's PM median on Levels.fyi was £101k against £302k at Meta (all levels, 9 October 2026), a sign that corporate PM jobs pay materially below tech-hub PM jobs; it is self-reported and small-sample.</li>
-</ul>
-<h3 id="2-3-associate-rotational-product-manager-programmes">2.3 Associate / rotational product manager (APM/RPM) programmes</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-3-associate-rotational-product-manager-programmes"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Associate / rotational product manager (APM/RPM) programmes</h3> <span class="disc-n"><span>256</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Structured early-career programmes that rotate new graduates through several product teams over 18-24 months, usually with mentoring and a bootcamp, ending in a full PM role.</li>
 <li><strong>Verified as running (October 2026):</strong> Meta RPM: 18 months, four-week bootcamp, three team rotations, Menlo Park and New York, starts March and September 2027, applications open once a year in late summer or early fall (Meta Careers page, October 2026; the page also states four or more years of related experience while third-party guides say under one year of PM experience, so the eligibility text is inconsistent: check before applying). Google APM: programme page exists, says application windows are announced per cohort and gives no dates for London or Bengaluru graduate cohorts; Google describes the target as technically oriented graduates (Google Careers, October 2026). Uber APM: two-year programme with three rotations; the 2026 window reportedly closed on 26 September (Leland guide, secondary; official Uber page confirms the programme exists). Atlassian APM (two one-year rotations; the Australia/New Zealand 2026 round ran in January 2026) and a Salesforce &quot;Associate Product Manager&quot; summer-2026 posting also exist (job listings). Other names appear on third-party lists (Stripe, Intuit RPM, Bloomberg) but were not verified here.</li>
 <li><strong>Reality.</strong> Cohorts are tiny (a third-party blog estimates about 10 Uber APMs a year from 3,000+ applicants; unverified) and skew to computer science and engineering graduates. Several programmes are US-centred. Italy has no APM programme comparable to Google's; the nearest equivalents are Bending Spoons' product and growth roles or a junior product owner job.</li>
-</ul>
-<h3 id="2-4-technical-programme-management-and-product-operations">2.4 Technical programme management (TPM) and product operations</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-4-technical-programme-management-and-product-operations"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Technical programme management (TPM) and product operations</h3> <span class="disc-n"><span>107</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>TPM.</strong> A technical programme manager coordinates large engineering efforts that span several teams: dependencies, schedules, risks, launches (for example a data-centre migration or a payments platform rebuild). Concentrated at Google, Amazon, Meta, Microsoft and large infrastructure-heavy firms.</li>
 <li><strong>Product operations (&quot;product ops&quot;).</strong> The team that makes product managers more effective: runs planning cycles, sets up analytics and feedback pipelines, manages tooling and launch processes, and ties product to sales and support. The role has no agreed definition and the most-cited surveys date from 2022, so treat descriptions as practitioner consensus.</li>
 <li><strong>Who employs it.</strong> Scale-ups and big tech (TPM); scale-ups from about 100-200 staff (product ops).</li>
-</ul>
-<h3 id="2-5-startups-as-employers">2.5 Startups as employers</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-5-startups-as-employers"><summary><h3 class="disc-t" translate="no" lang="en">2.5 Startups as employers</h3> <span class="disc-n"><span>294</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Early employee</strong> (first 5-30 hires): a generalist or specialist with broad responsibility, lower cash pay, an equity grant, and a high chance of the company failing or being acquired cheaply.</li>
 <li><strong>Founder's associate / chief of staff (CoS).</strong> A chief of staff is a right-hand person to a founder or executive who runs projects, prepares board materials, runs the operating cadence and fills any gap. &quot;Founder's associate&quot; is the junior version, typically reporting to a CEO of a company under 50 people. These roles are mostly filled through personal introductions and are rarely advertised (practitioner consensus; no primary data found).</li>
 <li><strong>BizOps, strategy &amp; operations (&quot;strategy and ops&quot;), startup generalist.</strong> An analyst-style role that builds models, tracks company metrics, plans pricing or expansion, and runs cross-team projects. Revolut's &quot;Strategy &amp; Operations Manager&quot; graduate programme asks for a STEM 2:1 and SQL, Python or R, so it screens out business graduates without coding (Revolut posting, 2026, from prior Admetia research).</li>
 <li><strong>Employers.</strong> Venture-backed startups, scale-ups, startup studios, and fast-growing fintechs. The Italian base is small: Italian venture investment was about €1.735bn across 436 rounds in 2025, second-best year after 2022, but with only nine new funds closing a total €545m and a recognised shortage of late-stage money and exits (Growth Capital and Italian Tech Alliance Observatory, January 2026, preliminary). Registered &quot;innovative startups&quot; number roughly 11,000-12,000, depending on the source (Cribes January 2026: 11,090; Cerved end-2025: 11,820; L'Espresso September 2026: 12,073); the status carries tax and legal benefits and, since 2025, must be earned through growth (Law 193/2024 and a MIMIT circular of 29 July 2025, via secondary summaries). The most prominent Italian tech employer is Bending Spoons (Milan), which now has offices in London, Madrid and Warsaw and recruits students directly (company newsroom, 2026).</li>
-</ul>
-<h3 id="2-6-entrepreneurship-founding-funding-equity-and-visas">2.6 Entrepreneurship: founding, funding, equity and visas</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-6-entrepreneurship-founding-funding-equity-and-visas"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Entrepreneurship: founding, funding, equity and visas</h3> <span class="disc-n"><span>793</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Founding.</strong> Starting a company, usually with a co-founder, to build a product or service. Most founders begin with a problem they know well, a prototype, and a few paying users, not a business plan.</li>
 <li><strong>How startups are funded.</strong>
 <ul>
@@ -159,12 +155,13 @@
 <li><em>UAE</em>: a Golden Visa route for entrepreneurs exists but criteria vary across guides (incubator approval versus a minimum project value of AED 500,000) and one source claims AED 2m; verify with UAE authorities. Abu Dhabi's Hub71 offers in-kind incentives of up to AED 250,000 plus AED 250,000 cash-for-equity (dated 2023 reports; confirm current terms). MENA startup funding fell to US$1.7bn in H1 2026, down 18% year on year (Wamda, July 2026); full-year 2025 was a record but trackers disagree (MAGNiTT: more than US$3bn; Wamda: US$7.5bn including debt, with Saudi Arabia at US$5bn). Saudi Arabia (Riyadh) is the largest Gulf market but debt-heavy.</li>
 </ul></li>
 <li><strong>Base rates.</strong> Most seed-funded startups never raise a Series A (Carta, 2026): only about 10% graduate within 12 months and a further 15.6% within 12-24 months, with roughly 80% of eventual graduates having done so by year three (Carta analysis, February 2026, via secondary summary). Shutdowns on Carta's platform rose 25.6% in 2024 to 966 (Carta, via secondary summary; counts only Carta customers). Looking at all new US businesses (not only venture-backed ones), about half of establishments are still operating after five years (BLS series, via secondary summary; includes sales and mergers, so overstates failure). For venture-backed startups the usual outcomes are a few big winners and many zero-return outcomes; no reliable figure for &quot;the share of venture-backed startups returning investors' money&quot; was found in the sources checked.</li>
-</ul>
-<h3 id="2-7-venture-builders-studios-and-corporate-innovation">2.7 Venture builders/studios and corporate innovation (brief)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-7-venture-builders-studios-and-corporate-innovation"><summary><h3 class="disc-t" translate="no" lang="en">2.7 Venture builders/studios and corporate innovation (brief)</h3> <span class="disc-n"><span>77</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Venture studios / startup generators</strong> create companies in-house and hire &quot;entrepreneurs in residence&quot;, operators and associates. Examples: Antler (hired two LBS MiM 2024 graduates), EF (talent-first, no idea required) and Founders Factory (general knowledge; not verified here).</li>
 <li><strong>Corporate innovation / digital units</strong>: bank &quot;digital factories&quot;, telco innovation labs, and corporate venture arms run pilots and partnerships. Autonomy is limited by the parent company, but the job is stable and pay is closer to corporate scales.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -194,7 +191,8 @@
 <tr><th scope="row">3.5 Founder / entrepreneur</th><td>60-80 (80+)</td><td>5 (3-4 in stable periods)</td><td>5</td><td>3</td><td>US: seed CEO median ~US$147-153k in funded companies (Kruze), often near zero in first year / UK: no reliable data found (EF London stipend £6,000) / Italy: no reliable data found; often unpaid at start</td><td>2 to start; 5 for top accelerators</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Banks do not employ this branch's roles in large numbers, so this section compares where product and operator roles sit: big tech, scale-ups, early-stage startups, bank/corporate digital units, consultancies/agencies, venture studios, and the founder path. Ratings are practitioner-consensus judgements except where figures are cited.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Banks do not employ this branch's roles in large numbers, so this section compares where product and operator roles sit: big tech, scale-ups, early-stage startups, bank/corporate digital units, consultancies/agencies, venture studios, and the founder path. Ratings are practitioner-consensus judgements except where figures are cited.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours / week, Stress (1-5), Pay (cash vs equity), Culture, Autonomy, Job security"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours / week</th><th scope="col">Stress (1-5)</th><th scope="col">Pay (cash vs equity)</th><th scope="col">Culture</th><th scope="col">Autonomy</th><th scope="col">Job security</th></tr></thead>
 <tbody>
@@ -268,7 +266,9 @@
 <tr><th scope="row">Startup operator (growth, ops)</th><td>no startup-specific data found; proxy: head of growth 45-60 at 5-10 yrs; digital project manager 30-40</td><td>45-60; 40-50</td><td>60-80; 50-55</td><td>National</td><td>MP26 digital</td><td>Low (proxy)</td></tr>
 <tr><th scope="row">Founder salary</th><td>no reliable data found for Italian startups</td><td></td><td></td><td></td><td>Pay of an administrator is set by the articles or shareholders' meeting; I found no Italian survey (only US data)</td><td>n/a</td></tr>
 </tbody></table></div><p>Notes: Startup pay depends on funding stage and equity. Public Italian data on startup pay does not seem to exist; the closest sources would be annual accounts of innovative startups in the company register.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p><em>Dates are publication/update dates or &quot;accessed October 2026&quot;. Items marked &quot;secondary&quot; were seen only through search summaries or aggregator write-ups and were not opened at the original source.</em></p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>601</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p><em>Dates are publication/update dates or &quot;accessed October 2026&quot;. Items marked &quot;secondary&quot; were seen only through search summaries or aggregator write-ups and were not opened at the original source.</em></p>
 <ol>
 <li>Mind the Product, &quot;How much were product managers paid in 2025?&quot;, 19 December 2025. <a class="cx-url" href="https://www.mindtheproduct.com/how-much-were-product-managers-paid-in-2025/" rel="noopener noreferrer">https://www.mindtheproduct.com/how-much-were-product-managers-paid-in-2025/</a></li>
 <li>Levels.fyi, Product Manager salary pages: London <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/london-metro-area" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/london-metro-area</a>; Italy <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/italy" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/italy</a>; Bay Area <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/san-francisco-bay-area" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/san-francisco-bay-area</a>; New York <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/new-york-city-area" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/new-york-city-area</a>; Germany <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/germany" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/germany</a>; France <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/france" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/france</a>; Singapore <a class="cx-url" href="https://www.levels.fyi/t/product-manager/locations/singapore" rel="noopener noreferrer">https://www.levels.fyi/t/product-manager/locations/singapore</a>; accessed 9 October 2026.</li>
@@ -297,7 +297,14 @@
 <li>Index Ventures, Rewarding Talent (2018 data; 2021 seed research). <a class="cx-url" href="https://www.indexventures.com/rewardingtalent/" rel="noopener noreferrer">https://www.indexventures.com/rewardingtalent/</a> ; Product-Led Alliance, State of Product Ops (2022) <a class="cx-url" href="https://www.productledalliance.com/state-of-product-ops/" rel="noopener noreferrer">https://www.productledalliance.com/state-of-product-ops/</a></li>
 <li>Admetia prior research, &quot;Careers in tech, scale-ups, startups, VC and AI companies (business roles)&quot;, 30 September 2026 (LBS MiM reports 2024-25, Bending Spoons, Revolut, AI-lab job boards, Crunchbase layoffs tracker). /Users/alessandro/Documents/Vibe Coding Projects/admetia/research/careers/tech-business-and-startups.md</li>
 </ol>
-<p><strong>Data limits.</strong> Not found or unverified: Amsterdam, Stockholm, Hong Kong, Tokyo and Riyadh pay figures; Italian APM or TPM pay; founder's-associate and product-ops pay surveys; a measured failure rate for venture-backed startups; the primary Crunchbase Q3 2026 and Carta seed-to-Series A pages (403/404 on fetch); current GOV.UK funds requirement for the Innovator Founder visa; Techstars European programme closures; certification value (practitioner opinion only); Italian tax treatment of startup employee equity (not checked).</p></div></section>
+<p><strong>Data limits.</strong> Not found or unverified: Amsterdam, Stockholm, Hong Kong, Tokyo and Riyadh pay figures; Italian APM or TPM pay; founder's-associate and product-ops pay surveys; a measured failure rate for venture-backed startups; the primary Crunchbase Q3 2026 and Carta seed-to-Series A pages (403/404 on fetch); current GOV.UK funds requirement for the Innovator Founder visa; Techstars European programme closures; certification value (practitioner opinion only); Italian tax treatment of startup employee equity (not checked).</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p><strong>Scope notes:</strong> Global view with the US (Bay Area, New York), UK (London), continental Europe (Italy always called out, plus Berlin, Paris, Amsterdam, Stockholm where data exists) and Asia/Gulf (Singapore, Tokyo, Hong Kong, Dubai/Abu Dhabi, Riyadh) where evidence was found; AI product management, software engineering, product marketing, venture capital and consulting are covered in other branches and only cross-referenced here. &quot;Entry&quot; means a graduate with 0-2 years' experience. Search allowance was limited (about 25 searches plus page fetches): Amsterdam, Stockholm, Hong Kong and Tokyo pay data were not found and are marked &quot;no reliable data found&quot;. Many programme and funding details come from secondary summaries and are flagged &quot;unverified&quot; where they could not be checked at the source.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
+<p><em>Researched 9 October 2026. Figures are dated. Salary data in this branch is mostly self-reported (Levels.fyi, recruiter blogs), skews to large tech employers and big hubs, and is thin for Italy; treat every number as a benchmark, not an offer. Where a figure came from a search summary or an aggregator instead of the primary publisher, the text says so.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -319,6 +326,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

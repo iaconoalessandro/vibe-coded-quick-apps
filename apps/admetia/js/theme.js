@@ -1,58 +1,20 @@
-/* Edition picker. Three looks for the same paper — The City, Wall Street and
- * FBI Watchlist — chosen from the top strip and remembered in this browser. Runs in
- * <head>, before first paint, so the page never flashes the wrong edition.
- *
- * Also marks the current page in the section navigation. */
-
+/* The City is the site's only design. Runs in <head> before first paint.
+ * Also prepares the language and shared navigation. */
 (function () {
   'use strict';
 
-  var KEY = 'admissions-calc:theme';
-  var DEFAULT = 'city';
-  var EDITIONS = [
-    { id: 'city', label: 'The City', title: 'Salmon financial paper' },
-    { id: 'wallstreet', label: 'Wall Street', title: 'Black and white, Times New Roman' },
-    { id: 'watchlist', label: 'FBI Watchlist', title: 'Black masthead, white page, full colour' }
-  ];
-  /* Earlier names for the same three, so a stored choice survives. */
-  var RENAMED = { salmon: 'city', newsprint: 'wallstreet', editorial: 'city' };
+  document.documentElement.setAttribute('data-theme', 'city');
+  /* Clear obsolete display preferences so returning readers use The City. */
+  try { localStorage.removeItem('admissions-calc:theme'); } catch (e) { /* storage blocked */ }
 
-  function valid(id) {
-    return EDITIONS.some(function (e) { return e.id === id; });
-  }
-  /* Anything else stored under the key — including the old light/dark
-   * setting — falls back to the default edition. */
-  function stored() {
-    try {
-      var v = localStorage.getItem(KEY);
-      v = RENAMED[v] || v;
-      return valid(v) ? v : null;
-    } catch (e) { return null; }
-  }
-  function apply(id) { document.documentElement.setAttribute('data-theme', id); }
-
-  /* The faces each edition sets above the fold (see css/fonts.css). Preloading
-   * them here, rather than with static <link> tags, means a reader on Wall
-   * Street never downloads The City's fonts, and the fetch starts before the
-   * stylesheet is parsed instead of after first layout. */
-  var FONTS = {
-    city: ['source-serif-4-roman', 'hanken-grotesk'],
-    wallstreet: ['roboto-serif-condensed', 'hanken-grotesk'],
-    watchlist: ['noto-serif-display', 'hanken-grotesk']
-  };
-  /* Pages in a subfolder (careers/) load this file by src; the fonts sit
-   * beside js/, so resolve them from the script's own address. Inlined in a
-   * root page by tools/build.js, there is no src and fonts/ is right. */
+  /* Preload The City's faces from the script's own location, including careers/. */
   var ROOT = '';
   try {
     var src = document.currentScript && document.currentScript.src;
     if (src) ROOT = new URL('../', src).href;
   } catch (e) { /* old browser: relative paths */ }
-  function preloadFonts(id) {
-    /* Once sw.js controls the page the fonts come from its cache at once, and
-     * a preload would only fetch each one a second time. */
-    if (navigator.serviceWorker && navigator.serviceWorker.controller) return;
-    (FONTS[id] || []).forEach(function (f) {
+  if (!(navigator.serviceWorker && navigator.serviceWorker.controller)) {
+    ['source-serif-4-roman', 'hanken-grotesk'].forEach(function (f) {
       var l = document.createElement('link');
       l.rel = 'preload';
       l.as = 'font';
@@ -62,9 +24,6 @@
       document.head.appendChild(l);
     });
   }
-
-  apply(stored() || DEFAULT);
-  preloadFonts(current());
 
   /* .reveal elements start hidden once `no-js` is gone (css/app.css). Drop it
    * here, before first paint, rather than in the deferred js/ui.js — otherwise
@@ -87,132 +46,6 @@
   window.addEventListener('load', function () {
     if (!window.UI) root.classList.add('no-js');
   });
-
-  function current() { return document.documentElement.getAttribute('data-theme'); }
-
-  function sync() {
-    var id = current();
-    var buttons = document.querySelectorAll('.edition button');
-    Array.prototype.forEach.call(buttons, function (b) {
-      var ed = b.getAttribute('data-ed');
-      if (!ed) return;
-      var on = ed === id;
-      b.setAttribute('aria-checked', on ? 'true' : 'false');
-      b.tabIndex = on ? 0 : -1;
-    });
-  }
-
-  /* The face and nameplate each edition needs before it can be shown. */
-  var READY = {
-    city: ['600 1em "Source Serif 4"'],
-    wallstreet: ['700 1em "Roboto Serif Condensed"', 'img/wordmark/wall-street.webp?v=admetia'],
-    watchlist: ['800 1em "Noto Serif Display"', 'img/wordmark/fbi-watchlist.webp?v=admetia']
-  };
-  function ready(id) {
-    var waits = (READY[id] || []).map(function (x) {
-      if (x.indexOf('img/') === 0) {
-        return new Promise(function (ok) { var i = new Image(); i.onload = i.onerror = ok; i.src = x; });
-      }
-      return document.fonts ? document.fonts.load(x).catch(function () {}) : null;
-    });
-    return Promise.race([Promise.all(waits), new Promise(function (ok) { setTimeout(ok, 450); })]);
-  }
-
-  /* Changing edition prints the new one over the old, top to bottom, like
-   * a press run (the ::view-transition rules in css/app.css). Only on a
-   * reader's own click, and not for readers who ask for less motion. */
-  function choose(id) {
-    try { localStorage.setItem(KEY, id); } catch (e) { /* ignore */ }
-    function change() {
-      apply(id);
-      sync();
-      try { document.dispatchEvent(new CustomEvent('editionchange', { detail: id })); } catch (e) { /* old browser */ }
-    }
-    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!document.startViewTransition || still || id === current()) return change();
-    ready(id).then(function () {
-      root.classList.add('press');
-      var run = document.startViewTransition(change);
-      /* A hidden tab skips the transition (the edition still changes). */
-      run.ready.catch(function () {});
-      run.finished.then(function () { root.classList.remove('press'); }, function () { root.classList.remove('press'); });
-    });
-  }
-
-  function buildPicker() {
-    var bar = document.querySelector('.ticker') || document.querySelector('.topbar-inner');
-    if (!bar) return;
-
-    var wrap = bar.querySelector('.edition');
-    if (wrap && wrap.querySelector('button')) {
-      sync();
-      return;
-    }
-
-    var set = null;
-    if (wrap) {
-      set = wrap.querySelector('.edition-set');
-      if (!set) {
-        set = document.createElement('div');
-        set.className = 'edition-set';
-        set.setAttribute('role', 'radiogroup');
-        set.setAttribute('aria-labelledby', 'edition-label');
-        wrap.appendChild(set);
-      }
-    } else {
-      wrap = document.createElement('div');
-      wrap.className = 'edition';
-      var label = document.createElement('span');
-      label.className = 'edition-label';
-      label.id = 'edition-label';
-      label.textContent = window.I18N ? I18N.t('Edition') : 'Edition';
-      wrap.appendChild(label);
-
-      set = document.createElement('div');
-      set.className = 'edition-set';
-      set.setAttribute('role', 'radiogroup');
-      set.setAttribute('aria-labelledby', 'edition-label');
-      wrap.appendChild(set);
-      bar.appendChild(wrap);
-    }
-
-    var buttons = EDITIONS.map(function (ed) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.setAttribute('role', 'radio');
-      b.setAttribute('data-ed', ed.id);
-      b.title = ed.label + ' — ' + ed.title;
-      var sw = document.createElement('i');
-      sw.className = 'sw ' + ed.id;
-      sw.setAttribute('aria-hidden', 'true');
-      b.appendChild(sw);
-      var t = document.createElement('span');
-      t.className = 't';
-      t.textContent = ed.label;
-      if (window.I18N) b.title = ed.label + ' — ' + I18N.t(ed.title);
-      b.appendChild(t);
-      b.addEventListener('click', function () { choose(ed.id); });
-      set.appendChild(b);
-      return b;
-    });
-
-    /* Arrow keys move the choice, as in any radio group. */
-    set.addEventListener('keydown', function (e) {
-      var dir = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1
-              : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0;
-      if (!dir) return;
-      e.preventDefault();
-      var i = EDITIONS.map(function (x) { return x.id; }).indexOf(current());
-      var next = EDITIONS[(i + dir + EDITIONS.length) % EDITIONS.length].id;
-      choose(next);
-      buttons.forEach(function (b) { if (b.getAttribute('data-ed') === next) b.focus(); });
-    });
-
-    if (!wrap.contains(set)) wrap.appendChild(set);
-    sync();
-    if (!bar.contains(wrap)) bar.appendChild(wrap);
-    window.Theme = { choose: choose, sync: sync, buildPicker: buildPicker, current: current };
-  }
 
   /* The section nav marks where you are: masters.html?track=mif is Finance,
    * computing.html with no track is Computer Science, and so on. */
@@ -242,9 +75,57 @@
     } catch (e) { d.textContent = new Date().toDateString(); }
   }
 
+  /* The five sections fold behind a Menu button on a narrow screen. Without
+   * this script the list simply stays open, wrapped onto several lines. */
+  function menu() {
+    var nav = document.querySelector('.site-nav');
+    var btn = nav && nav.querySelector('.site-nav-toggle');
+    if (!btn) return;
+    btn.hidden = false;
+    nav.classList.add('has-toggle');
+    function set(open) {
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
+    nav.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); }
+    });
+  }
+
+  /* The Admissions Index moves: a reader can stop it (and it stays stopped
+   * on later pages in this visit). It never starts for readers who ask for
+   * less motion. */
+  function tickerPause() {
+    var bar = document.querySelector('.ticker');
+    var btn = bar && bar.querySelector('.ticker-pause');
+    if (!btn) return;
+    var KEY2 = 'admissions-calc:ticker-paused';
+    function t(s) { return window.I18N ? I18N.t(s) : s; }
+    function set(paused) {
+      bar.classList.toggle('paused', paused);
+      btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+      btn.textContent = '';
+      var sp = document.createElement('span');
+      sp.textContent = t(paused ? 'Play' : 'Pause');
+      btn.appendChild(sp);
+      btn.setAttribute('aria-label', t(paused ? 'Play the Admissions index' : 'Pause the Admissions index'));
+    }
+    var paused = false;
+    try { paused = sessionStorage.getItem(KEY2) === '1'; } catch (e) { /* storage blocked */ }
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) paused = true;
+    set(paused);
+    btn.addEventListener('click', function () {
+      paused = !paused;
+      try { sessionStorage.setItem(KEY2, paused ? '1' : '0'); } catch (e) { /* ignore */ }
+      set(paused);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    buildPicker();
     markSection();
     dateline();
+    menu();
+    tickerPause();
   });
 }());

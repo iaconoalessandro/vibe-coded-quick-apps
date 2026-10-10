@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html data-theme="city" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,24 +13,15 @@
 @font-face { font-family: "Source Serif 4"; font-weight: 200 900; font-display: swap; src: url("fonts/source-serif-4-roman.woff2") format("woff2"); }
 @font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; font-display: swap; src: url("fonts/source-serif-4-italic.woff2") format("woff2"); }
 @font-face { font-family: "Hanken Grotesk"; font-weight: 100 900; font-display: swap; src: url("fonts/hanken-grotesk.woff2") format("woff2"); }
-@font-face { font-family: "Roboto Serif Condensed"; font-weight: 400 800; font-display: swap; src: url("fonts/roboto-serif-condensed.woff2") format("woff2"); }
-@font-face { font-family: "Noto Serif Display"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/noto-serif-display.woff2") format("woff2"); }
 
 :root { --paper: #fff1e5; --ink: #33302e; --muted: #66605c; --accent: #990f3d; --hair: #e6d9ce; --box: #f2dfce;
   --mast: "Source Serif 4", Georgia, serif; --mast-w: 600; --mast-case: uppercase; --head: "Source Serif 4", Georgia, serif; --ui: "Hanken Grotesk", Helvetica, Arial, sans-serif; }
-:root[data-theme="wallstreet"] { --paper: #fff; --ink: #111; --muted: #555; --accent: #111; --hair: #e0e0e0; --box: #f5f5f5;
-  --mast: "Roboto Serif Condensed", "Times New Roman", serif; --mast-w: 700; --head: "Times New Roman", Times, serif; }
-:root[data-theme="watchlist"] { --paper: #fcfcfc; --ink: #171717; --muted: #737373; --accent: #dc0000; --hair: #e0e0e0; --box: #f2f2f2;
-  --mast: "Noto Serif Display", Georgia, serif; --mast-w: 800; --mast-case: none; --head: Georgia, serif; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 var(--ui); -webkit-font-smoothing: antialiased; }
 .wrap { max-width: 860px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left)); }
 .mast { text-align: center; padding: 30px 0 14px; }
 .mast a { color: inherit; text-decoration: none; font: var(--mast-w) clamp(44px, 9vw, 92px)/1 var(--mast); text-transform: var(--mast-case); letter-spacing: .01em; }
-:root[data-theme="watchlist"] .mast-band { background: #171717; color: #fff; }
-:root[data-theme="watchlist"] .mast a { font-stretch: 75%; letter-spacing: -.02em; }
 .slogan { margin-top: 8px; font: italic 17px/1.3 var(--head); color: var(--muted); }
-:root[data-theme="watchlist"] .slogan { color: #bbb; font: 14px/1.3 var(--ui); }
 .dateline { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink);
   font: 700 11.5px/1.3 var(--ui); letter-spacing: .12em; text-transform: uppercase; }
 .correction { margin: 44px 0 30px; padding: 22px 26px 26px; border: 1px solid var(--ink); border-top: 5px solid var(--accent); background: var(--box); }
@@ -48,13 +39,12 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
 </style>
 <script>
 (function () {
-  var theme = 'city', lang = 'en';
+  var lang = 'en';
   try {
-    var t = localStorage.getItem('admissions-calc:theme');
-    if (t === 'wallstreet' || t === 'watchlist') theme = t;
+    localStorage.removeItem('admissions-calc:theme');
     if (localStorage.getItem('admissions-calc:lang') === 'it') lang = 'it';
   } catch (e) { /* storage blocked */ }
-  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.setAttribute('data-theme', 'city');
   document.documentElement.lang = lang;
   window.LANG404 = lang;
 }());
@@ -79,6 +69,12 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
   <h2 data-t="Sections">Sections</h2>
   <ul class="sections">
     <li><a href="index.html" data-t="Front page">Front page</a></li>
+    <li><a href="study.html" data-t="Choose a master’s">Choose a master’s</a></li>
+    <li><a href="careers/index.html" data-t="Explore careers">Explore careers</a></li>
+    <li><a href="jobs.html" data-t="Find an internship or job">Find an internship or job</a></li>
+    <li><a href="map.html" data-t="Plan a move">Plan a move</a></li>
+    <li><a href="method.html" data-t="Sources and method">Sources and method</a></li>
+    <li><a href="programmes.html" data-t="Programme Directory">Programme Directory</a></li>
     <li><a href="mba.html">MBA</a></li>
     <li><a href="masters.html?track=mif" data-t="Finance">Finance</a></li>
     <li><a href="masters.html?track=mim" data-t="Management">Management</a></li>
@@ -86,11 +82,10 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
     <li><a href="computing.html?track=cs" data-t="Computer Science">Computer Science</a></li>
     <li><a href="computing.html?track=dsai" data-t="Data &amp; AI">Data &amp; AI</a></li>
     <li><a href="computing.html?track=conversion" data-t="Conversion">Conversion</a></li>
-    <li><a href="programmes.html" data-t="Programmes">Programmes</a></li>
-    <li><a href="map.html" data-t="Atlas">Atlas</a></li>
+    <li><a href="hiring.html" data-t="Hiring by country">Hiring by country</a></li>
   </ul>
 
-  <p class="foot" data-t="Admetia — an independent calculator for MBA, business and computing master’s degrees.">Admetia — an independent calculator for MBA, business and computing master’s degrees.</p>
+  <p class="foot" data-t="Admetia — independent guides to master’s admissions, careers and working abroad.">Admetia — independent guides to master’s admissions, careers and working abroad.</p>
 </div>
 <script>
 (function () {
@@ -106,10 +101,15 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
     'Computer Science': 'Informatica',
     'Data & AI': 'Data e IA',
     'Conversion': 'Conversione',
-    'Programmes': 'Programmi',
-    'Atlas': 'Atlante',
-    'Admetia — an independent calculator for MBA, business and computing master’s degrees.':
-      'Admetia — un calcolatore indipendente per MBA, master in business e master in informatica.'
+    'Choose a master’s': 'Scegliere un master',
+    'Explore careers': 'Esplorare le carriere',
+    'Find an internship or job': 'Trovare uno stage o un lavoro',
+    'Plan a move': 'Organizzare un trasferimento',
+    'Sources and method': 'Fonti e metodo',
+    'Programme Directory': 'Elenco dei programmi',
+    'Hiring by country': 'Le assunzioni paese per paese',
+    'Admetia — independent guides to master’s admissions, careers and working abroad.':
+      'Admetia — guide indipendenti su ammissioni ai master, carriere e lavoro all’estero.'
   };
   var it = window.LANG404 === 'it';
   if (it) {

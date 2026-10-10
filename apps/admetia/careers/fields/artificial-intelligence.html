@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Artificial Intelligence</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Artificial Intelligence</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -95,13 +90,13 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
-<p><em>Assembled on 9 October 2026 from 2 research parts (artificial-intelligence-part-1.md, artificial-intelligence-part-2.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Artificial intelligence careers are about building, studying and governing systems that learn from data, from classic machine-learning models to the large language models (LLMs) behind chat assistants and agents. Most jobs are engineering jobs: training and deploying models, building products on top of foundation models, and running the GPU infrastructure that serves them. A smaller set are research, safety and evaluation roles at frontier labs, universities and AI safety institutes, and a growing set are customer-facing, product and governance roles that turn AI into deployed, compliant products. Pay at the frontier is extreme for a small elite, while the entry-level market is tough and crowded, and much AI data-labelling work is low-paid and precarious; the reports below separate these realities rather than averaging them.</p>
-<p>Scope notes: researched in two parts (building AI systems; research, frontier and governance roles). General software engineering, data science and data analytics have their own reports. Part 2 drew most of its pay-band evidence from published US job postings, many of them Anthropic's because that employer publishes ranges; treat those figures as one employer's data points, not as the market, and see the gaps list in ../index.md.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Area, What it does, Main employers, Part"><table>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Artificial intelligence careers are about building, studying and governing systems that learn from data, from classic machine-learning models to the large language models (LLMs) behind chat assistants and agents. Most jobs are engineering jobs: training and deploying models, building products on top of foundation models, and running the GPU infrastructure that serves them. A smaller set are research, safety and evaluation roles at frontier labs, universities and AI safety institutes, and a growing set are customer-facing, product and governance roles that turn AI into deployed, compliant products. Pay at the frontier is extreme for a small elite, while the entry-level market is tough and crowded, and much AI data-labelling work is low-paid and precarious; the reports below separate these realities rather than averaging them.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Area, What it does, Main employers, Part"><table>
 <thead><tr><th scope="col">Area</th><th scope="col">What it does</th><th scope="col">Main employers</th><th scope="col">Part</th></tr></thead>
 <tbody>
 <tr><th scope="row">Machine learning engineering</th><td>Trains, deploys and maintains models in production</td><td>Big tech, AI startups, banks, retailers, pharma</td><td>1</td></tr>
@@ -115,9 +110,10 @@
 <tr><th scope="row">Forward-deployed and solutions roles</th><td>Deploying AI with customers</td><td>Labs, AI platforms, consultancies</td><td>2</td></tr>
 <tr><th scope="row">Governance, policy, responsible AI</th><td>Rules, compliance (e.g. EU AI Act), risk management</td><td>Companies, regulators, think tanks, law and consulting firms</td><td>2</td></tr>
 <tr><th scope="row">AI product management</th><td>Deciding what AI products to build and how to measure them</td><td>Labs, tech firms, enterprises</td><td>2</td></tr>
-</tbody></table></div>
-<h3 id="part-1-building-ai-systems-2">Part 1: Building AI systems</h3>
-<p>This part of the AI branch covers the people who build, run and ship AI systems rather than those who do frontier research, safety, policy or product strategy (those are in part 2). In practice it means five kinds of work: training and deploying machine-learning models (machine learning engineering), building products on top of large language models (LLM application or &quot;AI engineering&quot;), running the platforms and GPU clusters that models train and run on (MLOps and AI infrastructure), making AI see and act in the physical world (computer vision, robotics, edge AI), and producing the human-generated data that models learn from (annotation, RLHF, AI training work). The first four are engineering jobs with a strong programming core; the fifth is a very different, mostly contract-based labour market. The field has a split personality in 2026: a small elite at frontier labs earns exceptional pay, while the entry-level market for ordinary graduates is tougher than the headlines suggest.</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-building-ai-systems-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Building AI systems</h3> <span class="disc-n"><span>1,831</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the AI branch covers the people who build, run and ship AI systems rather than those who do frontier research, safety, policy or product strategy (those are in part 2). In practice it means five kinds of work: training and deploying machine-learning models (machine learning engineering), building products on top of large language models (LLM application or &quot;AI engineering&quot;), running the platforms and GPU clusters that models train and run on (MLOps and AI infrastructure), making AI see and act in the physical world (computer vision, robotics, edge AI), and producing the human-generated data that models learn from (annotation, RLHF, AI training work). The first four are engineering jobs with a strong programming core; the fifth is a very different, mostly contract-based labour market. The field has a split personality in 2026: a small elite at frontier labs earns exceptional pay, while the entry-level market for ordinary graduates is tougher than the headlines suggest.</p>
 <p>Scope notes: (1) Compensation figures come mainly from Levels.fyi pages read on 9 October 2026; these are self-reported, small samples (tens to a few hundred submissions per page), skew toward big tech and well-paid people, and the dates on the pages are given as &quot;10/9/2026&quot;. (2) The web search tool was unavailable for most of this research, so evidence comes from direct reads of Levels.fyi, ITJobsWatch, employer job postings (Anthropic), BLS, Stanford, SignalFire, Indeed Hiring Lab, Wikipedia (for company background, treated as secondary) and the earlier project file on tech careers. Statements on hours, stress, day-to-day work, tier lists and exit routes are practitioner consensus from my general knowledge and are marked as such rather than backed by a dataset. Where I found no figure I say &quot;no reliable data found&quot;. (3) &quot;Entry&quot; means roughly 0-2 years of experience; &quot;senior&quot; means roughly 6-10 years.</p>
 <h4 id="p1-2-1-the-employer-landscape-in-2026">P1-2.1 The employer landscape in 2026</h4>
 <p><strong>Frontier labs.</strong> These are the companies training the most capable general models: OpenAI, Anthropic, Google DeepMind (inside Alphabet), Meta's AI groups, xAI, and in Europe Mistral AI (Paris). The Stanford AI Index 2026 reports that industry produced over 90% of notable frontier models in 2025, and the State of AI Report 2026 describes the frontier as a three-way race between Anthropic, OpenAI and Google. The State of AI Report also estimates that OpenAI's and Anthropic's combined annualised revenue reached about US$105 billion by late summer 2026, up from about US$30 billion at the start of the year (a report estimate, not audited figures). Labs hire engineers in large numbers, not only researchers: inference, training infrastructure, data pipelines, evaluation tooling and applied/customer-facing engineering are all engineering jobs. Mistral reportedly has more than 1,000 employees in 2026 and a valuation of about EUR 21 billion after a September 2026 Samsung stake (Wikipedia, secondary).</p>
@@ -142,9 +138,9 @@
 <p><strong>Applied AI / LLM application engineering (&quot;AI engineer&quot;).</strong> Building products on foundation models via APIs: retrieval-augmented generation (RAG: letting a model look up your documents before answering), tool-using agents (models that call software functions and take multi-step actions), prompt design, fine-tuning (further training a model on your own examples), and evaluation (automated tests of output quality). Employers: AI-native startups, SaaS companies, enterprises, consultancies, and the labs' own &quot;applied AI&quot; teams (Anthropic lists Applied AI Engineer roles in London, Paris, Tokyo, Bengaluru and elsewhere).</p>
 <p><strong>MLOps, ML platform and AI infrastructure.</strong> MLOps is DevOps for ML: pipelines, experiment tracking, model registries, monitoring. ML platform teams build internal tools so other teams can train and deploy. AI infrastructure covers GPU clusters, distributed training, and inference (running trained models to answer requests) optimisation: batching, caching, quantisation (using lower-precision numbers to run faster), GPU kernels (small programs that run on the GPU, written in CUDA or Triton). Employers: labs, hyperscalers, NVIDIA, neoclouds, any company with a serious ML platform.</p>
 <p><strong>Computer vision, robotics and edge/embedded AI.</strong> Models that process images, video, lidar and sensor data, and increasingly robot-control models; &quot;edge&quot; means running on small devices (cars, cameras, drones, factory machines, medical scanners) with tight limits on power and latency. Employers: automotive and autonomous driving (Waymo, Tesla, Mobileye, Wayve in London), industrial automation, defence and drones (Anduril, Skydio and European equivalents), medical imaging (Siemens Healthineers, GE HealthCare, Philips and startups), robotics startups and chipmakers. The company names here are well-known examples; I did not verify their current hiring.</p>
-<p><strong>AI data work.</strong> People who label images, rank model responses, write ideal answers, grade reasoning or build test sets. Two layers: low-paid micro-task work through platforms, and higher-paid expert contracting (doctors, lawyers, coders, mathematicians). Employers: Scale AI (with Outlier and Remotasks), Surge AI (DataAnnotation), Mercor, Turing, Invisible, Appen, TELUS and the labs' own data-operations teams. See 3.5 for pay and precarity.</p>
-<h3 id="part-2-research-frontier-and-governance-roles-2">Part 2: Research, frontier and governance roles</h3>
-<p>This part of the AI branch covers the jobs that decide what AI systems can do and how they are allowed to be used. These are the people who invent and train the models (research scientists and research engineers), the people who try to make them safe and measure their dangers (alignment, interpretability, evaluations and red teaming), the people who put them inside customers' businesses (forward-deployed engineers, solutions architects, AI consultants), the people who write the rules and manage the legal and ethical risk (governance, policy, responsible-AI and compliance staff), and the product managers who decide what gets built. Part 1 of the branch covers the more conventional engineering jobs (ML engineers, LLM application builders, MLOps, computer vision and robotics, data and annotation work).</p>
+<p><strong>AI data work.</strong> People who label images, rank model responses, write ideal answers, grade reasoning or build test sets. Two layers: low-paid micro-task work through platforms, and higher-paid expert contracting (doctors, lawyers, coders, mathematicians). Employers: Scale AI (with Outlier and Remotasks), Surge AI (DataAnnotation), Mercor, Turing, Invisible, Appen, TELUS and the labs' own data-operations teams. See 3.5 for pay and precarity.</p></div></div></details>
+<details class="disc cx-disc" id="part-2-research-frontier-and-governance-roles-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Research, frontier and governance roles</h3> <span class="disc-n"><span>1,532</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the AI branch covers the jobs that decide what AI systems can do and how they are allowed to be used. These are the people who invent and train the models (research scientists and research engineers), the people who try to make them safe and measure their dangers (alignment, interpretability, evaluations and red teaming), the people who put them inside customers' businesses (forward-deployed engineers, solutions architects, AI consultants), the people who write the rules and manage the legal and ethical risk (governance, policy, responsible-AI and compliance staff), and the product managers who decide what gets built. Part 1 of the branch covers the more conventional engineering jobs (ML engineers, LLM application builders, MLOps, computer vision and robotics, data and annotation work).</p>
 <p>Two things shape everything below. First, the top end of this field is small, very well paid and extremely selective: a few dozen organizations in a handful of cities (San Francisco Bay Area, London, Zurich, Paris, New York, Seattle) employ most frontier researchers, and the Stanford AI Index 2026 says industry produced more than 90% of notable frontier models in 2025. Second, the &quot;AI governance&quot; side is the opposite shape: it is a young, fast-growing, mostly non-technical-or-semi-technical profession driven by regulation (the EU AI Act, Italy's national AI law), with many more entry points and much lower pay.</p>
 <p>Scope notes: (1) Date of research: 9 October 2026. US pay from Levels.fyi was read on that date (self-reported, so a signal, not a survey). Employer figures come from public job-board feeds read on 9 October 2026 (OpenAI, Anthropic, xAI, Scale AI, Databricks, Cohere, Palantir, UK AISI) and, for Google DeepMind and Meta, from third-party mirrors of their postings (marked &quot;mirror&quot;; possibly expired, so signals only). (2) Posted ranges cover different seniority levels and mostly state base salary; equity and bonus come on top at most employers, so ranges across employers are indicative, not like-for-like. Where a posting does not say base or total, I treat it as base. Money is shown in the currency printed. (3) Where pages printed no pay I write &quot;no reliable data found&quot;. (4) Hours and stress ratings are my own estimates; no survey of AI lab working hours exists that I could find. (5) &quot;Entry comp&quot; in the summary table means the lowest realistic full-time professional level, not a PhD stipend, unless stated. (6) Part 1 and the general software, data science, cybersecurity and PM branches are cross-referenced only briefly.</p>
 <p><strong>AI research (the &quot;science&quot; side).</strong> Definition: producing new methods or knowledge about how models learn and behave, for example a new training recipe for reasoning or a theory of why a method works. At a frontier lab (a company building the most capable general-purpose models, such as Anthropic, Google DeepMind, Meta's Superintelligence Labs and FAIR, Mistral, OpenAI, xAI) you run experiments on models from small to huge, track results and write internal documents; at a university you also teach, write grants and supervise students. Employers: frontier labs; big-tech research groups (Microsoft Research, NVIDIA, Apple, Amazon); AI companies (Cohere, Databricks, Scale AI, Sakana AI in Tokyo); universities and institutes. In Europe the main academic network is ELLIS (a pan-European network of AI research units); in Italy the main public programme is FAIR (Future Artificial Intelligence Research), a nonprofit foundation funded through the national recovery plan (PNRR) with one hub, ten &quot;spokes&quot; and seven transversal projects (FAIR website, read October 2026), plus IIT, FBK, and universities such as Politecnico di Milano, Sapienza and Bocconi. Industry is where the compute is: the AI Index 2026 reports that new AI PhDs in the US and Canada rose 22% from 2022 to 2024 but the whole increase went to academic jobs, not industry.</p>
@@ -153,7 +149,8 @@
 <p><strong>Forward-deployed engineering, AI solutions engineering and AI consulting.</strong> Definition: customer-facing technical work that gets AI to function inside a specific organization. A forward-deployed engineer (FDE) is a software engineer who embeds with a customer, builds production systems on the vendor's platform and feeds lessons back to the product; Palantir pioneered the role (internally &quot;Delta&quot;), and the Pragmatic Engineer (12 August 2025) describes solutions architects as more advisory, FDEs as more hands-on and long-term, and consultants as one-off recommenders. Employers with open FDE or deployment-strategist roles in the October 2026 job feeds: Palantir, Databricks, OpenAI, Anthropic, Cohere, Scale AI and Sakana AI, across the US, London, Paris, Munich, Zurich, Madrid, Tokyo, Seoul, Singapore, Sydney and the Gulf (Anthropic also lists &quot;Applied AI Architect&quot; roles in Milan); plus cloud providers and consultancies (McKinsey/QuantumBlack, BCG X, Accenture, Deloitte and similar; I could not open a primary page for these, so role details are general knowledge, unverified).</p>
 <p><strong>AI governance, policy, responsible AI and compliance.</strong> Definition: writing, interpreting and implementing the rules and internal controls around AI, from drafting national policy to running a model-risk review at a bank, building an inventory of AI systems for EU AI Act compliance, or writing a lab's product-use policy. Employers: regulators and governments (the European Commission's AI Office, with more than 125 staff across six units on its page; national authorities; UK DSIT/AISI; US agencies); think tanks (GovAI and others); corporate responsible-AI and compliance teams (big tech, banks such as Citi); Big Four, consultancies and law firms (Andersen in Italy announced an AI governance and compliance department in June 2026, per Milano Finanza); standards bodies (CEN-CENELEC JTC 21, ISO/IEC SC 42; general knowledge). The IAPP-Credo AI AI Governance Profession Report (16 April 2025; 671 respondents) found governance sits in many places: privacy and legal/compliance each lead it in 22% of organizations, IT 17%, data governance 10%; about half of governance staff sit in ethics, compliance, privacy or legal teams.</p>
 <p>The EU AI Act timeline as of October 2026, after the &quot;AI Omnibus&quot; simplification (political agreement 7 May 2026, in force 27 July 2026, per the European Commission's AI Act page): prohibited practices and AI literacy duties since 2 February 2025; general-purpose AI model duties since 2 August 2025; most of the Act applies from 2 August 2026; a new prohibition on nudification apps and child sexual abuse material from 2 December 2026; high-risk systems in areas such as biometrics, employment, education and migration delayed to 2 December 2027; high-risk AI embedded in regulated products to 2 August 2028. The AI Office enforces rules on general-purpose models; national authorities share enforcement from 2 August 2026. Italy also passed its own AI law (Law 132/2025, in force 10 October 2025); I could not read which authorities it designates (widely reported as AgID and ACN, unverified). artificialintelligenceact.eu (updated 31 August 2026) lists the same later dates.</p>
-<p><strong>AI product management.</strong> Definition: deciding what AI products to build and how to ship them when the technology is probabilistic. What is distinctive versus general PM (covered in another branch): outputs vary, so quality is defined through evals; researchers' timelines are uncertain; capabilities change every few months so roadmaps are short; cost per query is a first-order constraint; and safety, abuse and trust issues are part of the product. October 2026 postings show the spread: OpenAI lists PMs for API agents, core models, integrity, youth and multimodal safety; Scale AI &quot;Senior AI Product Manager&quot; roles including cybersecurity and finance agents; Databricks PMs for its AI platform plus an associate-PM new-graduate programme; Cohere PMs for agents and integrations; Anthropic &quot;Product Manager, Claude&quot; and specialised PMs. Employers: labs, big tech, AI startups, enterprise software.</p></div></section>
+<p><strong>AI product management.</strong> Definition: deciding what AI products to build and how to ship them when the technology is probabilistic. What is distinctive versus general PM (covered in another branch): outputs vary, so quality is defined through evals; researchers' timelines are uncertain; capabilities change every few months so roadmaps are short; cost per query is a first-order constraint; and safety, abuse and trust issues are part of the product. October 2026 postings show the spread: OpenAI lists PMs for API agents, core models, integrity, youth and multimodal safety; Scale AI &quot;Senior AI Product Manager&quot; roles including cybersecurity and finance agents; Databricks PMs for its AI platform plus an associate-PM new-graduate programme; Cohere PMs for agents and integrations; Anthropic &quot;Product Manager, Claude&quot; and specialised PMs. Employers: labs, big tech, AI startups, enterprise software.</p></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -206,7 +203,8 @@
 </tbody></table></div>
 <p>Hours and stress ratings are the researchers' estimates from surveys, postings and practitioner consensus, not survey outputs per role family; see each part's notes.</p></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, early-career; detail, sources and regional differences in the part sections below):</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, early-career; detail, sources and regional differences in the part sections below):</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Typical hours/week, Stress 1-5, Pay level (relative), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Typical hours/week</th><th scope="col">Stress 1-5</th><th scope="col">Pay level (relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -218,9 +216,10 @@
 <tr><th scope="row">Academia / public research</th><td>40-55</td><td>3</td><td>Low (stipends, public pay scales)</td><td>Publication-driven</td><td>High</td></tr>
 <tr><th scope="row">Government, AI safety institute, nonprofit, think tank</th><td>40-50</td><td>3</td><td>Moderate (well below labs)</td><td>Public-interest, policy-facing</td><td>Medium-high</td></tr>
 <tr><th scope="row">Data-labelling platforms (contract work)</th><td>Variable, often part-time</td><td>3</td><td>Low and unstable; specialists paid more</td><td>Task-based, no career ladder</td><td>Low</td></tr>
-</tbody></table></div>
-<h3 id="part-1-building-ai-systems-3">Part 1: Building AI systems</h3>
-<p>The same engineering roles sit in very different organisations. The table compares ML/AI engineers (3.1-3.3) across employer types; ratings come from practitioner consensus and the data above, not a single survey, and pay refers to a mid-level engineer.</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-building-ai-systems-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Building AI systems</h3> <span class="disc-n"><span>1,061</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same engineering roles sit in very different organisations. The table compares ML/AI engineers (3.1-3.3) across employer types; ratings come from practitioner consensus and the data above, not a single survey, and pay refers to a mid-level engineer.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Dimension, Frontier lab, Big tech, AI startup, Bank / insurer / pharma (enterprise AI team), Consulting / IT services, I"><table>
 <thead><tr><th scope="col">Dimension</th><th scope="col">Frontier lab</th><th scope="col">Big tech</th><th scope="col">AI startup</th><th scope="col">Bank / insurer / pharma (enterprise AI team)</th><th scope="col">Consulting / IT services</th><th scope="col">Industrial / automotive</th></tr></thead>
 <tbody>
@@ -249,9 +248,9 @@
 <li><strong>Gulf.</strong> Abu Dhabi's G42, Stargate UAE (announced May 2025; operations expected 2026), MBZUAI and sovereign-cloud projects mean heavy investment in AI infrastructure, and the US reclassified the UAE in July 2026 to ease advanced-chip exports (Wikipedia on G42). Levels.fyi gives a UAE SWE median of AED 337,547 (all levels). Jobs are expatriate-heavy, tax-free, and tied to employer sponsorship. Saudi Arabia (Humain): unverified.</li>
 <li><strong>Asia.</strong> Singapore: ML engineer median S$141,805, SWE S$114,992 (Levels.fyi). Tokyo: SWE median JPY 8.05M, markedly below Singapore or London in dollar terms; Anthropic and DeepMind list Tokyo offices. Bengaluru and Mumbai: Anthropic lists Applied AI roles there; India's role as a global capability-centre (GCC) hub is general knowledge, not verified here. Hong Kong and China: no reliable data found; China's AI sector is large and competitive, with DeepSeek's R1 having briefly matched the top US model in February 2025 (Stanford AI Index 2026).</li>
 <li><strong>Visa and entry rules.</strong> The earlier project file notes the UK Skilled Worker new-entrant floor of about GBP 38,300 for software developers and Germany's reduced EU Blue Card threshold of EUR 45,934.20 for recent graduates (2026). Anthropic Fellows does not sponsor visas.</li>
-</ul>
-<h3 id="part-2-research-frontier-and-governance-roles-3">Part 2: Research, frontier and governance roles</h3>
-<p>The template heading refers to banks; here the comparison is across the employer types relevant to AI roles. The table covers the same roles across employer types. Hours are my estimates from job descriptions and practitioner commentary; pay uses sourced figures where I have them.</p>
+</ul></div></div></details>
+<details class="disc cx-disc" id="part-2-research-frontier-and-governance-roles-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Research, frontier and governance roles</h3> <span class="disc-n"><span>948</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The template heading refers to banks; here the comparison is across the employer types relevant to AI roles. The table covers the same roles across employer types. Hours are my estimates from job descriptions and practitioner commentary; pay uses sourced figures where I have them.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours/week, Stress, Pay (sourced where possible), Culture, Autonomy, Job security"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours/week</th><th scope="col">Stress</th><th scope="col">Pay (sourced where possible)</th><th scope="col">Culture</th><th scope="col">Autonomy</th><th scope="col">Job security</th></tr></thead>
 <tbody>
@@ -273,11 +272,13 @@
 <li>Italy: strong universities and the FAIR network give PhD and postdoc routes but low pay; governance and compliance demand is rising with Law 132/2025 and the EU AI Act (Il Sole 24 Ore reports Hays seeing more searches for AI governance specialists); I found no priced Italian posting beyond Anthropic's Milan role (which requires Italian).</li>
 <li>Gulf and Asia: published pay is thin. Levels.fyi (self-reported) shows G42 research scientists at a median AED 429,653 (tax-free), UAE software engineers AED 337,547, Singapore research scientists SGD 90,299 and Japan about JPY 10.5 million; MBZUAI, TII and Sakana AI advertise roles without pay. Palantir, Databricks, OpenAI, Cohere and Scale AI post FDE or applied-AI roles in Tokyo, Seoul, Singapore, Sydney, Abu Dhabi, Dubai, Riyadh and Doha without ranges. China has its own frontier labs (not covered). Hong Kong: no reliable data found.</li>
 <li>Immigration and talent flows: the AI Index 2026 reports that the number of AI researchers and developers moving to the US fell 89% since 2017, including 80% in the last year. Horizon does not sponsor visas and many fellowships need local work authorisation; Anthropic Fellows do not sponsor visas; Astra offers visa support; the UK AISI can sponsor visas for technical roles.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="backgrounds" class="cx-sec"><h2 translate="no" lang="en">5. Which backgrounds fit this branch</h2>
 <p class="cx-links-inline"><span>Each background’s full list of roles:</span> <a href="../backgrounds/management.html"><span translate="no">Management</span></a> · <a href="../backgrounds/logistics-and-supply-chain.html"><span translate="no">Logistics &amp; Supply Chain</span></a> · <a href="../backgrounds/finance.html"><span translate="no">Finance</span></a> · <a href="../backgrounds/accounting.html"><span translate="no">Accounting</span></a> · <a href="../backgrounds/marketing.html"><span translate="no">Marketing</span></a> · <a href="../backgrounds/data-analytics.html"><span translate="no">Data Analytics</span></a> · <a href="../backgrounds/economics.html"><span translate="no">Economics</span></a> · <a href="../backgrounds/computer-science.html"><span translate="no">Computer Science</span></a> · <a href="../backgrounds/cybersecurity.html"><span translate="no">Cybersecurity</span></a> · <a href="../backgrounds/data-science.html"><span translate="no">Data Science</span></a> · <a href="../backgrounds/artificial-intelligence.html"><span translate="no">Artificial Intelligence</span></a></p>
-<div class="cx-prose" translate="no" lang="en"><h3 id="ratings-by-background">(a) Ratings by background (whole branch)</h3>
-<div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Overall fit, One-line reason"><table>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="ratings-by-background"><summary><h3 class="disc-t" translate="no" lang="en">(a) Ratings by background (whole branch)</h3> <span class="disc-n"><span>282</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Overall fit, One-line reason"><table>
 <thead><tr><th scope="col">Background</th><th scope="col">Overall fit</th><th scope="col">One-line reason</th></tr></thead>
 <tbody>
 <tr><th scope="row">Management</th><td>stretch</td><td>Fits AI product management, consulting and governance; engineering, research and safety research are out of reach without a technical degree.</td></tr>
@@ -291,9 +292,9 @@
 <tr><th scope="row">Cybersecurity</th><td>possible</td><td>Strong for AI red teaming, security evaluations and secure AI infrastructure; ML knowledge must be added for most other roles.</td></tr>
 <tr><th scope="row">Data Science</th><td>strong</td><td>Modelling skills transfer directly to ML engineering, evaluations and research; production engineering is the usual gap.</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>strong</td><td>The direct match for every role family, though everyone with this degree competes for the same scarce entry seats.</td></tr>
-</tbody></table></div>
-<h3 id="matrix-by-role-family">(b) Matrix by role family (all parts)</h3>
-<p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="matrix-by-role-family"><summary><h3 class="disc-t" translate="no" lang="en">(b) Matrix by role family (all parts)</h3> <span class="disc-n"><span>433</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Mgmt, Log, Fin, Acc, Mkt, DA, Econ, CS, Cyber, DS, AI"><table>
 <thead><tr><th scope="col">Role family</th><th scope="col">Mgmt</th><th scope="col">Log</th><th scope="col">Fin</th><th scope="col">Acc</th><th scope="col">Mkt</th><th scope="col">DA</th><th scope="col">Econ</th><th scope="col">CS</th><th scope="col">Cyber</th><th scope="col">DS</th><th scope="col">AI</th></tr></thead>
 <tbody>
@@ -308,9 +309,9 @@
 <tr><th scope="row">P2-3.4 Forward-deployed engineer / AI solutions engineer / AI consultant</th><td>P</td><td>P</td><td>P</td><td>P</td><td>X</td><td>P</td><td>P</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
 <tr><th scope="row">P2-3.5 AI governance, policy and responsible-AI specialist</th><td>P</td><td>X</td><td>P</td><td>P</td><td>X</td><td>P</td><td>S</td><td>P</td><td>P</td><td>P</td><td>S</td></tr>
 <tr><th scope="row">P2-3.6 AI product manager</th><td>P</td><td>P</td><td>P</td><td>X</td><td>P</td><td>P</td><td>P</td><td>S</td><td>P</td><td>S</td><td>S</td></tr>
-</tbody></table></div>
-<h3 id="part-level-ratings-and-notes">Part-level ratings and notes</h3>
-<h4 id="part-1-building-ai-systems-4">Part 1: Building AI systems</h4>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="part-level-ratings-and-notes"><summary><h3 class="disc-t" translate="no" lang="en">Part-level ratings and notes</h3> <span class="disc-n"><span>1,099</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><h4 id="part-1-building-ai-systems-4">Part 1: Building AI systems</h4>
 <h4 id="ratings-by-background-2">(a) Ratings by background</h4>
 <p>Ratings are for the branch as a whole (building AI systems). The matrix in (b) breaks this down by role family.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Rating, One-line reason"><table>
@@ -378,7 +379,8 @@
 <tr><th scope="row">Data Science</th><td>S</td><td>S</td><td>S</td><td>S</td><td>P</td><td>S</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
 </tbody></table></div>
-<p>Notes: Economics and Management rate S or P for governance/policy because policy and regulation are about institutions and incentives; fellowship policy tracks (for example Anthropic's) say prior experience in economics or policy is a plus, not required. Law is not one of the 11 backgrounds but is the strongest background for governance and compliance; if it is not in your list, treat Accounting and Finance as the nearest &quot;regulated-industry&quot; analogues.</p></div></section>
+<p>Notes: Economics and Management rate S or P for governance/policy because policy and regulation are about institutions and incentives; fellowship policy tracks (for example Anthropic's) say prior experience in economics or policy is a plus, not required. Law is not one of the 11 backgrounds but is the strongest background for governance and compliance; if it is not in your list, treat Accounting and Finance as the nearest &quot;regulated-industry&quot; analogues.</p></div></div></details>
+</section>
 <section id="italy-pay" class="cx-sec"><h2>Italy pay (add-on)</h2>
 <p class="cx-note">From the Italy pay addendum (compiled 9 October 2026), which fills Italian gaps across all thirteen reports. How to read RAL, net pay and the 13th month: <a href="../italy-pay.html">Italy pay add-on</a>.</p>
 <div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Entry (RAL, EUR k), ~5 years, Senior, City/scope, Source and year, Confidence"><table>
@@ -397,7 +399,9 @@
 <tr><th scope="row">AI governance / compliance</th><td>Compliance officer/manager 35-55 (bonus 15-30%); privacy specialist 27-40</td><td>55-90; 40-50</td><td>&gt;90; &gt;50</td><td>National</td><td>MP26 banking and legal tables</td><td>Low (proxy)</td></tr>
 <tr><th scope="row">AI product manager</th><td>proxy: IT project/product manager 50-55 (bonus 10-20%)</td><td>55-70</td><td>&gt;70</td><td>National</td><td>MP26</td><td>Low (proxy)</td></tr>
 </tbody></table></div><p>Notes: The recruiter evidence shows no AI premium over data-science pay in Italy; the &quot;AI engineer&quot; pay figures online are mostly aggregator averages that disagree with each other (Jooble ML engineer about EUR 36k average in July 2026, but about EUR 31.5k for Lombardy). Prompt-engineer figures (EUR 25-60k) come from a single undated source and are not used in the table.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-building-ai-systems-5">Part 1: Building AI systems</h3>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>1,760</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-building-ai-systems-5">Part 1: Building AI systems</h3>
 <p>Levels.fyi pages show a &quot;last updated&quot; date of 10/9/2026 (9 October 2026, or possibly 10 September); all accessed October 2026. They are self-reported and not audited.</p>
 <ol>
 <li>Levels.fyi, ML/AI Software Engineer salaries (US median US$250K), <a class="cx-url" href="https://www.levels.fyi/t/software-engineer/focus/ml-ai" rel="noopener noreferrer">https://www.levels.fyi/t/software-engineer/focus/ml-ai</a>, accessed October 2026.</li>
@@ -502,7 +506,14 @@
 <li>UK consulting graduate pay (weak, conflicting third-party guides): <a class="cx-url" href="https://www.preplounge.com/en/blog/consulting/salary/uk" rel="noopener noreferrer">https://www.preplounge.com/en/blog/consulting/salary/uk</a> ; <a class="cx-url" href="https://www.learnsignal.com/blog/big-four-graduate-salary-uk-2026/" rel="noopener noreferrer">https://www.learnsignal.com/blog/big-four-graduate-salary-uk-2026/</a> (accessed Oct 2026)</li>
 <li>Il Sole 24 Ore on Hays Italia Salary Guide 2026 demand. <a class="cx-url" href="https://en.ilsole24ore.com/art/professional-demand-grows-40-per-cent-AI7G27kC" rel="noopener noreferrer">https://en.ilsole24ore.com/art/professional-demand-grows-40-per-cent-AI7G27kC</a> ; Milano Finanza on Andersen's AI governance department (17 Jun 2026). <a class="cx-url" href="https://www.milanofinanza.it/news/andersen-apre-il-dipartimento-di-ai-governance-compliance-e-si-rafforza-con-l-ingresso-di-maria-lilla-202606171157426067" rel="noopener noreferrer">https://www.milanofinanza.it/news/andersen-apre-il-dipartimento-di-ai-governance-compliance-e-si-rafforza-con-l-ingresso-di-maria-lilla-202606171157426067</a> (accessed Oct 2026; secondary)</li>
 </ol>
-<p>Not retrievable or not found (no claims rest on them): OpenAI's own fellowship page (access error); pay outside the US/Canada for OpenAI, Palantir, Databricks, Scale AI and Cohere roles; MBZUAI, TII and Sakana AI pay scales; AI Singapore pay (apprenticeship stipend figures conflicted, S$3,500-5,500 versus S$4,000, so omitted); GovAI's fellowship page (404); CRA Taulbee findings; Italian AI governance salary tables; Hays/Michael Page UK AI governance tables; AI-specific consultancy pay; CAISI-specific pay; Hong Kong and Saudi (HUMAIN, SDAIA) AI pay.</p></div></section>
+<p>Not retrievable or not found (no claims rest on them): OpenAI's own fellowship page (access error); pay outside the US/Canada for OpenAI, Palantir, Databricks, Scale AI and Cohere roles; MBZUAI, TII and Sakana AI pay scales; AI Singapore pay (apprenticeship stipend figures conflicted, S$3,500-5,500 versus S$4,000, so omitted); GovAI's fellowship page (404); CRA Taulbee findings; Italian AI governance salary tables; Hays/Michael Page UK AI governance tables; AI-specific consultancy pay; CAISI-specific pay; Hong Kong and Saudi (HUMAIN, SDAIA) AI pay.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: researched in two parts (building AI systems; research, frontier and governance roles). General software engineering, data science and data analytics have their own reports. Part 2 drew most of its pay-band evidence from published US job postings, many of them Anthropic's because that employer publishes ranges; treat those figures as one employer's data points, not as the market, and see the gaps list in ../index.md.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
+<p><em>Assembled on 9 October 2026 from 2 research parts (artificial-intelligence-part-1.md, artificial-intelligence-part-2.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -524,6 +535,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

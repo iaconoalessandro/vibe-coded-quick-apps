@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Cybersecurity</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Cybersecurity</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -94,13 +89,15 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Cybersecurity is the work of stopping, spotting and cleaning up after attacks on computers, networks, software, cloud accounts, industrial machinery and the data they hold. It is not one job: it spans analysts who watch alerts around the clock, hackers paid to break in legally, engineers who build defences into software and cloud platforms, lawyers-in-all-but-name who map companies to regulations, and executives who answer to the board after a breach. Roughly speaking, the technical end (SOC, incident response, penetration testing, security engineering) rewards deep systems skills, while the governance end (GRC, audit, privacy, consulting, leadership) rewards communication and judgement and is far more open to non-technical degrees. Demand is real and regulation is adding to it, but the &quot;millions of unfilled jobs&quot; headline is misleading for beginners: employers say they lack experienced people with specific skills (cloud, AI, application security), not that they will hire anyone with a certificate, and many first-job seekers wait many months. This report covers the US, UK, continental Europe (with Italy explicitly) and the main Asian and Gulf hubs, and points out where practice differs.</p>
-<p>Scope notes: (1) Date of research is 9 October 2026; figures are dated and mostly from 2025-2026, older data is flagged. (2) Salary data for cybersecurity is noisy: aggregators (Glassdoor, Payscale, Indeed, ZipRecruiter), recruiter guides and training-company blogs disagree by 30-100% for the same role, and for Italy and the Gulf I found no authoritative role-level salary survey I could read in full; where I could not verify a number it is marked &quot;unverified&quot; or &quot;no reliable data found&quot;. (3) Hours, stress ratings and day-in-the-life descriptions are my synthesis of practitioner write-ups, vendor surveys (flagged as vendor-sponsored) and general industry knowledge; no rigorous survey of weekly hours by cyber role was found. (4) Employer names in tier lists are real organisations; tiering is perception, not measurement. (5) Cross-references: AI red teaming at labs is covered in the AI branch, software engineering/DevOps in their branches, financial-sector risk/compliance in the finance risk branch; they are mentioned only briefly here.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><h3 id="2-0-the-2026-landscape-skills-gap-versus">2.0 The 2026 landscape: skills gap versus the entry-level reality</h3>
-<p><strong>What the data says.</strong></p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Cybersecurity is the work of stopping, spotting and cleaning up after attacks on computers, networks, software, cloud accounts, industrial machinery and the data they hold. It is not one job: it spans analysts who watch alerts around the clock, hackers paid to break in legally, engineers who build defences into software and cloud platforms, lawyers-in-all-but-name who map companies to regulations, and executives who answer to the board after a breach. Roughly speaking, the technical end (SOC, incident response, penetration testing, security engineering) rewards deep systems skills, while the governance end (GRC, audit, privacy, consulting, leadership) rewards communication and judgement and is far more open to non-technical degrees. Demand is real and regulation is adding to it, but the &quot;millions of unfilled jobs&quot; headline is misleading for beginners: employers say they lack experienced people with specific skills (cloud, AI, application security), not that they will hire anyone with a certificate, and many first-job seekers wait many months. This report covers the US, UK, continental Europe (with Italy explicitly) and the main Asian and Gulf hubs, and points out where practice differs.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="2-0-the-2026-landscape-skills-gap-versus"><summary><h3 class="disc-t" translate="no" lang="en">2.0 The 2026 landscape: skills gap versus the entry-level reality</h3> <span class="disc-n"><span>1,249</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>What the data says.</strong></p>
 <ul>
 <li><strong>ISC2 2025 Cybersecurity Workforce Study</strong> (published December 2025; 16,029 practitioners surveyed July-August 2025 across North America, Latin America, Asia-Pacific and EMEA): 36% reported cybersecurity budget cuts (down 1 point on 2024), 39% hiring freezes, 34% promotion freezes, 24% layoffs; 33% said budgets do not allow adequate staffing and 29% said they cannot afford staff with the skills needed. 59% reported critical or significant skills needs, up from 44% in 2024; the top shortfalls were AI (41%), cloud security (36%), risk assessment (29%) and application security (28%). Notably ISC2 <strong>stopped publishing a global &quot;workforce gap&quot; number</strong> this year and now frames the problem as skills, not headcount. Only 5% of respondents were entry or junior level, so the study under-samples the very people trying to get in (ISC2, Dec 2025).</li>
 <li><strong>ISC2 2025 Cybersecurity Hiring Trends</strong> (929 hiring managers in Canada, Germany, India, Japan, UK, US; fielded December 2024; published June 2025): 90% would consider candidates whose only background is prior IT work experience, 89% would consider those with only an entry-level cyber certificate; 55% use internships and 40% of entry-level roles fill in 1-3 months. But expectations are inflated: 38% require CISA for entry-level roles and about a third expect CISSP for entry or junior roles, although both certifications need five years' experience. Only 18% think entry-level staff can do cloud security tasks. The foreword notes recruiters being swamped by &quot;AI-polished&quot; CVs, with some postings getting over 1,000 applications on day one.</li>
@@ -124,35 +121,36 @@
 <li><strong>US.</strong> SEC cybersecurity disclosure rules (adopted July 2023): material incidents go on Form 8-K Item 1.05 within four business days of deciding they are material; annual 10-K disclosure of risk management and board oversight (Regulation S-K Item 106; first applied to fiscal years ending on or after 15 December 2023). They raised the profile and the personal-liability worry of CISOs. <strong>CMMC 2.0</strong> for defence contractors: final DFARS rule effective 10 November 2025, phased: phase 1 from that date (mainly self-assessments), <strong>phase 2 from 10 November 2026</strong> (third-party C3PAO Level 2 assessments written into solicitations), phase 3 in 2027, full roll-out by November 2028 (law-firm summaries of the Federal Register rule). This is creating a large wave of compliance consulting and assessor work in the US defence supply chain.</li>
 <li><strong>UK.</strong> The Cyber Security and Resilience Bill (amends the NIS Regulations 2018; 24-hour initial incident reports, wider scope including data centres and managed service providers) was introduced 12 November 2025, passed the Commons in June 2026, had Lords second reading on 14 July 2026 and committee stage scheduled from 1 September 2026. I found no report of Royal Assent as of early October 2026; verify at bills.parliament.uk. Phased application is expected in 2027-2028.</li>
 <li><strong>Asia.</strong> Hong Kong's HKMA Cyber Resilience Assessment Framework (C-RAF) drives bank hiring; Singapore's MAS Technology Risk Management Guidelines play the same role (I could only verify an older description of MAS guidance, so check current text); Japan is easing renewal rules for its registered specialist scheme from fiscal 2026 and tying subsidies to security measures (METI).</li>
-</ul>
-<h3 id="2-1-security-operations">2.1 Security operations (SOC)</h3>
-<p><strong>Definition:</strong> a Security Operations Centre is the team (often 24/7) that monitors alerts from tools such as SIEM (security information and event management: a log search and correlation platform, e.g. Splunk, Microsoft Sentinel, Elastic, Google SecOps), EDR (endpoint detection and response, e.g. CrowdStrike Falcon, Microsoft Defender for Endpoint, SentinelOne), email and network sensors, decides what is a real attack, and escalates. <strong>Practice:</strong> you work a queue; Tier 1 triages, Tier 2 investigates, Tier 3 hunts and builds detections. Many SOCs are being reshaped by automation (SOAR playbooks and AI triage). <strong>Employers:</strong> banks, large corporates, telcos, governments, and above all MSSPs (managed security service providers) running SOCs for many clients.</p>
-<h3 id="2-2-incident-response-and-digital-forensics">2.2 Incident response and digital forensics (DFIR)</h3>
-<p><strong>Definition:</strong> containing and investigating live breaches (ransomware, business email compromise, espionage) and reconstructing what happened from disk, memory, cloud and network evidence. <strong>Practice:</strong> irregular, high-intensity bursts, often on retainer for clients. <strong>Employers:</strong> IR specialist firms and vendor IR arms (Mandiant/Google, CrowdStrike, Palo Alto Unit 42, Kroll, Sygnia and others), Big 4 and consultancies, insurers' panels, large in-house teams, law enforcement and national CERTs.</p>
-<h3 id="2-3-threat-intelligence">2.3 Threat intelligence (CTI)</h3>
-<p><strong>Definition:</strong> collecting and analysing information about attackers, their tools and intent, turned into reports and detection content. <strong>Practice:</strong> tactical (indicators, detections), operational (campaign tracking) and strategic (briefings to executives, geopolitical context). <strong>Employers:</strong> vendors with intel teams, banks (cyber fusion centres), government and intelligence, big tech threat teams, ISACs (sector information-sharing groups).</p>
-<h3 id="2-4-offensive-security">2.4 Offensive security</h3>
-<p><strong>Definition:</strong> legally attacking systems to find weaknesses: penetration testing (scoped technical test), red teaming (goal-based simulated adversary against people, process and tech, evading the defenders), and bug bounty (independent hunters paid per valid vulnerability via platforms such as HackerOne and Bugcrowd). <strong>Practice:</strong> project work with reports; red teams are small and selective. <strong>Employers:</strong> specialist boutiques, Big 4, vendors, large banks and tech in-house teams; DORA TLPT adds EU demand. (AI red teaming at model labs: see AI branch.)</p>
-<h3 id="2-5-application-and-product-security">2.5 Application and product security (AppSec, DevSecOps)</h3>
-<p><strong>Definition:</strong> building security into software: threat modelling, code review, SAST/DAST/SCA scanning (static, dynamic and software-composition analysis), secure CI/CD pipelines, vulnerability management. <strong>Practice:</strong> embedded with engineering teams; heavy influence-without-authority. <strong>Employers:</strong> big tech, SaaS and fintech companies, banks with large dev organisations, product manufacturers (CRA).</p>
-<h3 id="2-6-security-engineering-and-cloud-security">2.6 Security engineering and cloud security</h3>
-<p><strong>Definition:</strong> designing, building and running security controls: detection engineering, endpoint/network security, cloud posture (AWS/Azure/GCP configuration, CSPM tools), secrets and key management, infrastructure-as-code guardrails. <strong>Employers:</strong> every company with a tech estate; cloud-native firms pay the most.</p>
-<h3 id="2-7-identity-and-access-management">2.7 Identity and access management (IAM)</h3>
-<p><strong>Definition:</strong> controlling who and what (people, apps, service accounts) can access which systems: SSO, MFA, privileged access management (PAM), joiner-mover-leaver processes, access reviews, and increasingly zero trust (the principle of never trusting a user or device by location alone; verify every request). <strong>Practice:</strong> large share of work is process and integration with HR and applications; steady demand in regulated sectors. <strong>Employers:</strong> banks, insurers, large corporates, integrators (Accenture, Deloitte, specialist IAM firms), vendors (Okta, Microsoft, CyberArk, SailPoint).</p>
-<h3 id="2-8-security-architecture">2.8 Security architecture</h3>
-<p><strong>Definition:</strong> designing the overall security model for systems and enterprises, setting standards, reviewing designs. <strong>Practice:</strong> mid-career; documents, review boards, trade-offs between risk and delivery speed. <strong>Employers:</strong> banks, large corporates, consultancies, government.</p>
-<h3 id="2-9-governance-risk-and-compliance-audit-and">2.9 Governance, risk and compliance (GRC), audit and privacy</h3>
-<p><strong>Definition:</strong> translating law and standards (ISO 27001, SOC 2, NIST CSF, PCI DSS, NIS2, DORA, GDPR) into controls, assessing whether they work, tracking risk, and evidencing it to auditors and regulators. <strong>Practice:</strong> documents, workshops, evidence collection, control testing; the most accessible area for non-technical graduates. <strong>Employers:</strong> banks (second line risk and technology risk), Big 4 and audit firms, insurers, public bodies, any company selling to regulated customers.</p>
-<h3 id="2-10-ot-ics-security">2.10 OT/ICS security</h3>
-<p><strong>Definition:</strong> protecting operational technology: industrial control systems (ICS), SCADA and PLCs that run power grids, factories, pipelines, water and transport, where availability and safety matter more than confidentiality. <strong>Practice:</strong> site visits, network segmentation, passive monitoring (vendors such as Dragos, Claroty, Nozomi), working with control engineers. <strong>Employers:</strong> utilities, oil and gas, manufacturers, rail, OT vendors and integrators (Siemens, Rockwell, ABB, Schneider), consultancies. In Italy: Enel, Eni, Terna, Snam, Leonardo (named from general knowledge; verify hiring).</p>
-<h3 id="2-11-consulting-and-managed-services">2.11 Consulting and managed services (MSSPs)</h3>
-<p><strong>Definition:</strong> selling security expertise by the hour or as a subscription: Big 4 and large integrators (Deloitte, PwC, EY, KPMG, Accenture, Capgemini), boutiques (NCC Group, Context/others, Bishop Fox, Trail of Bits), and MSSPs/MDR (managed detection and response) providers. <strong>Practice:</strong> utilisation targets, client deadlines, travel, wide exposure.</p>
-<h3 id="2-12-security-vendors">2.12 Security vendors</h3>
-<p><strong>Definition:</strong> companies that make security products (CrowdStrike, Palo Alto Networks, Microsoft Security, Cisco, Fortinet, Check Point, Okta, Wiz, Zscaler, etc.). Roles: product engineering, research, sales engineering (SE: technical presales who demo, run proofs of concept and answer customer questions), support, customer success. Pay includes equity; layoffs and AI-driven restructuring occur (CrowdStrike cut about 500 roles in May 2025 citing AI efficiencies, per a secondary report).</p>
-<h3 id="2-13-government-defence-and-intelligence">2.13 Government, defence and intelligence</h3>
-<p><strong>Definition:</strong> national cyber agencies (US CISA, NSA; UK NCSC/GCHQ; Italy ACN and the intelligence services; ENISA at EU level), militaries' cyber commands, police cybercrime units, and defence contractors. <strong>Practice:</strong> mission-driven, lower pay, strong training, and <strong>clearance and nationality requirements</strong> (US clearances need US citizenship; GCHQ requires UK residency history, e.g. seven of the last ten years on the listing I found). <strong>Employers/programmes:</strong> CyberCorps Scholarship for Service (US), NSA internships, GCHQ Cyber Practitioner Development Programme, ACN calls on InPA.</p>
-<h3 id="2-14-ciso-and-leadership-track">2.14 CISO and leadership track</h3>
-<p><strong>Definition:</strong> the chief information security officer owns security strategy, budget, board reporting and, increasingly, personal accountability (SEC rules; Fastly's 2025 research said 93% of organisations changed policies to address CISO personal liability concerns). It is the top of the ladder but a high-pressure, lower-tenure seat.</p></div></section>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-1-security-operations"><summary><h3 class="disc-t" translate="no" lang="en">2.1 Security operations (SOC)</h3> <span class="disc-n"><span>109</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> a Security Operations Centre is the team (often 24/7) that monitors alerts from tools such as SIEM (security information and event management: a log search and correlation platform, e.g. Splunk, Microsoft Sentinel, Elastic, Google SecOps), EDR (endpoint detection and response, e.g. CrowdStrike Falcon, Microsoft Defender for Endpoint, SentinelOne), email and network sensors, decides what is a real attack, and escalates. <strong>Practice:</strong> you work a queue; Tier 1 triages, Tier 2 investigates, Tier 3 hunts and builds detections. Many SOCs are being reshaped by automation (SOAR playbooks and AI triage). <strong>Employers:</strong> banks, large corporates, telcos, governments, and above all MSSPs (managed security service providers) running SOCs for many clients.</p></div></div></details>
+<details class="disc cx-disc" id="2-2-incident-response-and-digital-forensics"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Incident response and digital forensics (DFIR)</h3> <span class="disc-n"><span>63</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> containing and investigating live breaches (ransomware, business email compromise, espionage) and reconstructing what happened from disk, memory, cloud and network evidence. <strong>Practice:</strong> irregular, high-intensity bursts, often on retainer for clients. <strong>Employers:</strong> IR specialist firms and vendor IR arms (Mandiant/Google, CrowdStrike, Palo Alto Unit 42, Kroll, Sygnia and others), Big 4 and consultancies, insurers' panels, large in-house teams, law enforcement and national CERTs.</p></div></div></details>
+<details class="disc cx-disc" id="2-3-threat-intelligence"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Threat intelligence (CTI)</h3> <span class="disc-n"><span>51</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> collecting and analysing information about attackers, their tools and intent, turned into reports and detection content. <strong>Practice:</strong> tactical (indicators, detections), operational (campaign tracking) and strategic (briefings to executives, geopolitical context). <strong>Employers:</strong> vendors with intel teams, banks (cyber fusion centres), government and intelligence, big tech threat teams, ISACs (sector information-sharing groups).</p></div></div></details>
+<details class="disc cx-disc" id="2-4-offensive-security"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Offensive security</h3> <span class="disc-n"><span>78</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> legally attacking systems to find weaknesses: penetration testing (scoped technical test), red teaming (goal-based simulated adversary against people, process and tech, evading the defenders), and bug bounty (independent hunters paid per valid vulnerability via platforms such as HackerOne and Bugcrowd). <strong>Practice:</strong> project work with reports; red teams are small and selective. <strong>Employers:</strong> specialist boutiques, Big 4, vendors, large banks and tech in-house teams; DORA TLPT adds EU demand. (AI red teaming at model labs: see AI branch.)</p></div></div></details>
+<details class="disc cx-disc" id="2-5-application-and-product-security"><summary><h3 class="disc-t" translate="no" lang="en">2.5 Application and product security (AppSec, DevSecOps)</h3> <span class="disc-n"><span>43</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> building security into software: threat modelling, code review, SAST/DAST/SCA scanning (static, dynamic and software-composition analysis), secure CI/CD pipelines, vulnerability management. <strong>Practice:</strong> embedded with engineering teams; heavy influence-without-authority. <strong>Employers:</strong> big tech, SaaS and fintech companies, banks with large dev organisations, product manufacturers (CRA).</p></div></div></details>
+<details class="disc cx-disc" id="2-6-security-engineering-and-cloud-security"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Security engineering and cloud security</h3> <span class="disc-n"><span>35</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> designing, building and running security controls: detection engineering, endpoint/network security, cloud posture (AWS/Azure/GCP configuration, CSPM tools), secrets and key management, infrastructure-as-code guardrails. <strong>Employers:</strong> every company with a tech estate; cloud-native firms pay the most.</p></div></div></details>
+<details class="disc cx-disc" id="2-7-identity-and-access-management"><summary><h3 class="disc-t" translate="no" lang="en">2.7 Identity and access management (IAM)</h3> <span class="disc-n"><span>76</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> controlling who and what (people, apps, service accounts) can access which systems: SSO, MFA, privileged access management (PAM), joiner-mover-leaver processes, access reviews, and increasingly zero trust (the principle of never trusting a user or device by location alone; verify every request). <strong>Practice:</strong> large share of work is process and integration with HR and applications; steady demand in regulated sectors. <strong>Employers:</strong> banks, insurers, large corporates, integrators (Accenture, Deloitte, specialist IAM firms), vendors (Okta, Microsoft, CyberArk, SailPoint).</p></div></div></details>
+<details class="disc cx-disc" id="2-8-security-architecture"><summary><h3 class="disc-t" translate="no" lang="en">2.8 Security architecture</h3> <span class="disc-n"><span>31</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> designing the overall security model for systems and enterprises, setting standards, reviewing designs. <strong>Practice:</strong> mid-career; documents, review boards, trade-offs between risk and delivery speed. <strong>Employers:</strong> banks, large corporates, consultancies, government.</p></div></div></details>
+<details class="disc cx-disc" id="2-9-governance-risk-and-compliance-audit-and"><summary><h3 class="disc-t" translate="no" lang="en">2.9 Governance, risk and compliance (GRC), audit and privacy</h3> <span class="disc-n"><span>67</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> translating law and standards (ISO 27001, SOC 2, NIST CSF, PCI DSS, NIS2, DORA, GDPR) into controls, assessing whether they work, tracking risk, and evidencing it to auditors and regulators. <strong>Practice:</strong> documents, workshops, evidence collection, control testing; the most accessible area for non-technical graduates. <strong>Employers:</strong> banks (second line risk and technology risk), Big 4 and audit firms, insurers, public bodies, any company selling to regulated customers.</p></div></div></details>
+<details class="disc cx-disc" id="2-10-ot-ics-security"><summary><h3 class="disc-t" translate="no" lang="en">2.10 OT/ICS security</h3> <span class="disc-n"><span>74</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> protecting operational technology: industrial control systems (ICS), SCADA and PLCs that run power grids, factories, pipelines, water and transport, where availability and safety matter more than confidentiality. <strong>Practice:</strong> site visits, network segmentation, passive monitoring (vendors such as Dragos, Claroty, Nozomi), working with control engineers. <strong>Employers:</strong> utilities, oil and gas, manufacturers, rail, OT vendors and integrators (Siemens, Rockwell, ABB, Schneider), consultancies. In Italy: Enel, Eni, Terna, Snam, Leonardo (named from general knowledge; verify hiring).</p></div></div></details>
+<details class="disc cx-disc" id="2-11-consulting-and-managed-services"><summary><h3 class="disc-t" translate="no" lang="en">2.11 Consulting and managed services (MSSPs)</h3> <span class="disc-n"><span>46</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> selling security expertise by the hour or as a subscription: Big 4 and large integrators (Deloitte, PwC, EY, KPMG, Accenture, Capgemini), boutiques (NCC Group, Context/others, Bishop Fox, Trail of Bits), and MSSPs/MDR (managed detection and response) providers. <strong>Practice:</strong> utilisation targets, client deadlines, travel, wide exposure.</p></div></div></details>
+<details class="disc cx-disc" id="2-12-security-vendors"><summary><h3 class="disc-t" translate="no" lang="en">2.12 Security vendors</h3> <span class="disc-n"><span>65</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> companies that make security products (CrowdStrike, Palo Alto Networks, Microsoft Security, Cisco, Fortinet, Check Point, Okta, Wiz, Zscaler, etc.). Roles: product engineering, research, sales engineering (SE: technical presales who demo, run proofs of concept and answer customer questions), support, customer success. Pay includes equity; layoffs and AI-driven restructuring occur (CrowdStrike cut about 500 roles in May 2025 citing AI efficiencies, per a secondary report).</p></div></div></details>
+<details class="disc cx-disc" id="2-13-government-defence-and-intelligence"><summary><h3 class="disc-t" translate="no" lang="en">2.13 Government, defence and intelligence</h3> <span class="disc-n"><span>78</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> national cyber agencies (US CISA, NSA; UK NCSC/GCHQ; Italy ACN and the intelligence services; ENISA at EU level), militaries' cyber commands, police cybercrime units, and defence contractors. <strong>Practice:</strong> mission-driven, lower pay, strong training, and <strong>clearance and nationality requirements</strong> (US clearances need US citizenship; GCHQ requires UK residency history, e.g. seven of the last ten years on the listing I found). <strong>Employers/programmes:</strong> CyberCorps Scholarship for Service (US), NSA internships, GCHQ Cyber Practitioner Development Programme, ACN calls on InPA.</p></div></div></details>
+<details class="disc cx-disc" id="2-14-ciso-and-leadership-track"><summary><h3 class="disc-t" translate="no" lang="en">2.14 CISO and leadership track</h3> <span class="disc-n"><span>45</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p><strong>Definition:</strong> the chief information security officer owns security strategy, budget, board reporting and, increasingly, personal accountability (SEC rules; Fastly's 2025 research said 93% of organisations changed policies to address CISO personal liability concerns). It is the top of the ladder but a high-pressure, lower-tenure seat.</p></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -198,7 +196,8 @@
 <tr><th scope="row">3.10 Consultant / path to CISO</th><td>45-55 (60-70)</td><td>3-4</td><td>5</td><td>3</td><td>US$85-110k est. / £32-40k (Big 4 grad, not cyber-specific) / €26-32k est.</td><td>3</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Security roles exist almost everywhere, but the experience differs by employer. The ratings below are my synthesis of practitioner accounts, the sources cited above, and general industry knowledge; no single survey measures them. Scale: hours (typical weekly), stress (1-5), pay relative to other employers in the same region, culture, autonomy.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Security roles exist almost everywhere, but the experience differs by employer. The ratings below are my synthesis of practitioner accounts, the sources cited above, and general industry knowledge; no single survey measures them. Scale: hours (typical weekly), stress (1-5), pay relative to other employers in the same region, culture, autonomy.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours (incl. shifts/on-call), Stress, Pay (same region), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours (incl. shifts/on-call)</th><th scope="col">Stress</th><th scope="col">Pay (same region)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -278,7 +277,9 @@
 <tr><th scope="row">GRC / IT risk</th><td>IT risk manager 45-55; security manager 50-60</td><td>60-80; 60-75</td><td>&gt;80; &gt;75</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 <tr><th scope="row">CISO</th><td>70-80</td><td>80-100</td><td>&gt;100</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 </tbody></table></div><p>Notes: Aggregators disagree sharply on penetration-tester pay (Payscale about EUR 30k; a modelled site EUR 47-72k); I trust neither. MP26 shows its &quot;Cyber Security Engineer&quot; among the five most requested IT profiles.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given. Where a source was a secondary summary or vendor blog, it is flagged in the text.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>671</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given. Where a source was a secondary summary or vendor blog, it is flagged in the text.</p>
 <ol>
 <li>ISC2, &quot;2025 ISC2 Cybersecurity Workforce Study&quot; (Dec 2025). <a class="cx-url" href="https://www.isc2.org/Insights/2025/12/2025-ISC2-Cybersecurity-Workforce-Study" rel="noopener noreferrer">https://www.isc2.org/Insights/2025/12/2025-ISC2-Cybersecurity-Workforce-Study</a></li>
 <li>ISC2, &quot;A focus on skills&quot; (Dec 2025). <a class="cx-url" href="https://www.isc2.org/insights/2025/12/a-focus-on-skills-isc2-workforce-study" rel="noopener noreferrer">https://www.isc2.org/insights/2025/12/a-focus-on-skills-isc2-workforce-study</a></li>
@@ -327,7 +328,13 @@
 <li>KORE1 salary guides; HackerDNA pentester salary 2026; Indeed and ZipRecruiter pen tester salaries (weaker signals). <a class="cx-url" href="https://www.kore1.com/security-engineer-salary-guide/" rel="noopener noreferrer">https://www.kore1.com/security-engineer-salary-guide/</a> ; <a class="cx-url" href="https://hackerdna.com/blog/penetration-tester-salary" rel="noopener noreferrer">https://hackerdna.com/blog/penetration-tester-salary</a></li>
 <li>LearnSignal, Big Four graduate salary UK 2026; PrepLounge UK consulting salary. <a class="cx-url" href="https://www.learnsignal.com/blog/big-four-graduate-salary-uk-2026/" rel="noopener noreferrer">https://www.learnsignal.com/blog/big-four-graduate-salary-uk-2026/</a></li>
 <li>StationX and SecureWorld on certification value (vendor/trade sources; weaker signals). <a class="cx-url" href="https://app.stationx.net/articles/best-cybersecurity-certifications" rel="noopener noreferrer">https://app.stationx.net/articles/best-cybersecurity-certifications</a> ; <a class="cx-url" href="https://www.secureworld.io/industry-news/do-cybersecurity-certifications-matter" rel="noopener noreferrer">https://www.secureworld.io/industry-news/do-cybersecurity-certifications-matter</a></li>
-</ol></div></section>
+</ol></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: (1) Date of research is 9 October 2026; figures are dated and mostly from 2025-2026, older data is flagged. (2) Salary data for cybersecurity is noisy: aggregators (Glassdoor, Payscale, Indeed, ZipRecruiter), recruiter guides and training-company blogs disagree by 30-100% for the same role, and for Italy and the Gulf I found no authoritative role-level salary survey I could read in full; where I could not verify a number it is marked &quot;unverified&quot; or &quot;no reliable data found&quot;. (3) Hours, stress ratings and day-in-the-life descriptions are my synthesis of practitioner write-ups, vendor surveys (flagged as vendor-sponsored) and general industry knowledge; no rigorous survey of weekly hours by cyber role was found. (4) Employer names in tier lists are real organisations; tiering is perception, not measurement. (5) Cross-references: AI red teaming at labs is covered in the AI branch, software engineering/DevOps in their branches, financial-sector risk/compliance in the finance risk branch; they are mentioned only briefly here.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -349,6 +356,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

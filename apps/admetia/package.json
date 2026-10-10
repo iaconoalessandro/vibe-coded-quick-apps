@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node tools/build.js",
     "test": "node tools/run-tests.js",
-    "careers": "node tools/build-careers.js"
+    "careers": "node tools/build-careers.js",
+    "shell": "node tools/build-shell.js"
   },
   "devDependencies": {
     "esbuild": "0.28.2"

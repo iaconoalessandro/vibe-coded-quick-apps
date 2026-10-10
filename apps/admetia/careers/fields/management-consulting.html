@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Management Consulting</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Management Consulting</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -87,63 +82,64 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
-<p><em>Researched 9 October 2026. Figures are dated; where a number comes from a coaching or aggregator site rather than a firm or statistics office, the text says so. Salary data for management consulting is mostly self-reported or crowd-sourced, so treat every pay figure as a benchmark, not an offer.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Management consulting means selling expert advice and project teams to organisations that want to solve a business problem: where to grow, how to cut costs, how to merge two companies, how to roll out a new system or use AI. A client (a company, a government, an investor) hires a firm for a project of a few weeks to a year, and a small team of consultants works on it, usually at or near the client's offices. Firms make money by charging for time or for fixed project fees, and they hire many junior people to do the analysis under a few senior people who sell the work (the &quot;leverage pyramid&quot;). The branch runs from elite strategy firms (McKinsey, BCG, Bain) through the consulting arms of Deloitte, PwC, EY, KPMG and Accenture, to specialist boutiques and in-house &quot;internal consulting&quot; teams at large companies. Since 2023 the industry has been in a slowdown after the 2021-22 boom, and AI is changing what junior consultants do, so entry is still prestigious but less certain than it looked five years ago.</p>
-<p><strong>Scope notes:</strong> Global view with explicit US, UK, continental Europe (Italy always called out), Gulf and Asia comparisons; &quot;entry&quot; means a pre-experience graduate (bachelor's or master's, no MBA); economic consulting, audit, deal advisory, IT/system-integration engineering and data-science consulting sit in other branches and are only cross-referenced; Italian entry pay for MBB and tier-2 firms could not be verified from any reliable source, so it is marked &quot;no reliable data found&quot; rather than estimated; Asia (Hong Kong, Tokyo) data is thin and flagged as such.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><h3 id="how-the-industry-makes-money">How the industry makes money (applies to every sub-area)</h3>
-<ul>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Management consulting means selling expert advice and project teams to organisations that want to solve a business problem: where to grow, how to cut costs, how to merge two companies, how to roll out a new system or use AI. A client (a company, a government, an investor) hires a firm for a project of a few weeks to a year, and a small team of consultants works on it, usually at or near the client's offices. Firms make money by charging for time or for fixed project fees, and they hire many junior people to do the analysis under a few senior people who sell the work (the &quot;leverage pyramid&quot;). The branch runs from elite strategy firms (McKinsey, BCG, Bain) through the consulting arms of Deloitte, PwC, EY, KPMG and Accenture, to specialist boutiques and in-house &quot;internal consulting&quot; teams at large companies. Since 2023 the industry has been in a slowdown after the 2021-22 boom, and AI is changing what junior consultants do, so entry is still prestigious but less certain than it looked five years ago.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="how-the-industry-makes-money"><summary><h3 class="disc-t" translate="no" lang="en">How the industry makes money (applies to every sub-area)</h3> <span class="disc-n"><span>197</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Project fees and day rates.</strong> A client pays either a fixed fee for a defined scope (common at strategy firms; a typical top-tier team of 4-6 people is billed at a weekly fee in the hundreds of thousands of dollars or euros, but firms do not publish rates, so no reliable data on exact fees) or a rate per person-day (common at Big 4, Accenture and implementation work). Public-sector contracts are often tendered at a fixed day-rate card.</li>
 <li><strong>The leverage pyramid.</strong> One partner sells the work, a few managers run it, and many analysts and consultants do the analysis. Profit comes from &quot;leverage&quot;: the more junior hours sold per senior hour, the higher the profit per partner. &quot;Utilization&quot; is the share of a consultant's working time billed to clients; time between projects is &quot;the bench&quot;.</li>
 <li><strong>Up or out.</strong> Strategy firms (and some others) expect people to be promoted on a schedule; those who are not are &quot;counselled out&quot; (told to find another job, often with help). This keeps the pyramid shaped and supplies a steady flow of alumni into industry.</li>
 <li><strong>Engagement.</strong> The consulting word for a client project, run by a &quot;case team&quot;.</li>
-</ul>
-<h3 id="the-2023-2026-slowdown-with-dated-data">The 2023-2026 slowdown, with dated data</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="the-2023-2026-slowdown-with-dated-data"><summary><h3 class="disc-t" translate="no" lang="en">The 2023-2026 slowdown, with dated data</h3> <span class="disc-n"><span>604</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Peak and fall.</strong> UK consulting grew 23% in 2022 at its peak; member revenues of the Management Consultancies Association (MCA, the UK trade body) then rose only 3% in 2025 to about £21.8 billion, against an earlier forecast of 11% growth. The MCA's firms forecast 6% for 2026 and 8% for 2027 (Consultancy.uk, citing the MCA/Oxford Economics report, 2026; City AM, 2026).</li>
 <li><strong>MBB (McKinsey, BCG, Bain).</strong> McKinsey's headcount fell from about 45,100 (end-2023) to about 40,000 (May 2025) (Fortune, 29 May 2025, as summarised in earlier project research). The firm said in September 2025 it would grow its North American workforce by 12% in 2026 and in December 2025 was reported to be cutting about 10% of non-client-facing roles over 18-24 months (Storyboard18 citing Reuters/WSJ, Sept 2025; People Matters citing Bloomberg, Dec 2025). BCG reported 2025 revenue of $14.4 billion (+7%) and about 33,500 staff (BCG press release, 23 April 2026). Management Consulted, a coaching firm that collects offer data from clients, reports US MBB starting salaries flat for a third year running for 2025 offers (Poets&amp;Quants, 26 January 2026). Starting-salary freezes are a signal that firms have more junior supply than they need.</li>
 <li><strong>Big 4.</strong> Global revenue growth in the latest fiscal years was modest: Deloitte $70.5bn in FY2025 (+4.8% local currency), PwC $56.9bn (+2.7%), EY $53.2bn (+4%) (CPA Practice Advisor, Oct 2025). Graduate intake was cut: a leaked PwC US slide showed junior hiring falling from 3,242 to a projected 2,197 by fiscal 2028 (about -32%; PwC did not confirm the numbers; Entrepreneur, 2025); PwC UK cut its graduate scheme from 1,500 to 1,300 (Consultancy.uk, 12 Sept 2025); the press reported UK Big 4 graduate cuts at KPMG (1,399 to 942), Deloitte (1,700 to 1,400) and EY (1,800 to 1,600) between 2023 and 2024 (Scottish Financial News/Telegraph, June 2025; press-reported, not firm-published).</li>
 <li><strong>Accenture.</strong> FY2026 (ended 31 Aug 2026) revenue was $74.2 billion (+6% in USD, +5% local currency), bookings $84.5 billion; Q4 consulting revenue was $9.28 billion (Accenture results, 1 Oct 2026). Earlier, it cut 11,419 staff in one quarter in 2025 under an $865 million restructuring, taking headcount to about 779,000, and its CEO said it would exit people &quot;where reskilling is not a viable path&quot; (People Matters, 2025).</li>
 <li><strong>AI's effect on junior work.</strong> The routine tasks AI absorbs fastest (desk research, first-draft slides, data clean-up, meeting notes) are the tasks that traditionally trained first-year analysts. Evidence so far: starting pay frozen at the top firms (Management Consulted, 2026); Big 4 graduate intake cut; McKinsey piloting case interviews where candidates must use its internal AI tool and be judged on how well they check its output (CFO.com citing the Financial Times, 14 Jan 2026). Counter-evidence: McKinsey and BCG both say client-facing hiring continues and BCG says AI and tech work is over 40% of its revenue (BCG, April 2026); 78% of UK consultancies expect AI and digital demand to drive 2026 growth (MCA survey, Management Today, 2026). Honest summary: nobody knows whether the pyramid becomes a diamond; the likeliest outcome is smaller generalist intakes, more technical hires, and an AI-fluency filter on everyone. Two Big 4 executives were reported to expect UK graduate recruitment across major firms to fall by roughly half in a year (secondary reporting, late 2025; unverified).</li>
 <li><strong>Overall labour-market view.</strong> The US Bureau of Labor Statistics counts 1,077,100 management analysts (its category for consultants) in 2025, median pay $101,860 (May 2025), and projects 10% growth 2025-2035, &quot;much faster than average&quot; (BLS Occupational Outlook Handbook, accessed October 2026). BLS projections tend to lag firm-level slowdowns and cover all consultants, not only elite-firm graduates.</li>
-</ul>
-<h3 id="2-1-strategy-consulting-mbb-and-tier-2">2.1 Strategy consulting: MBB and tier-2</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-1-strategy-consulting-mbb-and-tier-2"><summary><h3 class="disc-t" translate="no" lang="en">2.1 Strategy consulting: MBB and tier-2</h3> <span class="disc-n"><span>241</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Advice to boards and CEOs on high-stakes decisions: which markets to enter, whether to acquire a company, how to restructure a portfolio, how to set pricing, how to respond to AI. Work is project-based, short (6-16 weeks typical) and heavily analytical.</li>
 <li><strong>Clients.</strong> Large corporates (about 60-70% of work at most firms; unverified, firm mix varies), private-equity funds (commercial due diligence: testing a target company's market in 3-6 weeks), governments and sovereign funds, and non-profits.</li>
 <li><strong>MBB.</strong> McKinsey, BCG and Bain: the three largest and most selective. They are generalist at entry and specialise later by industry or function. A fourth tier-1-adjacent group is sometimes added in practice: Oliver Wyman (financial services and risk), and in Europe Roland Berger.</li>
 <li><strong>Tier-2 strategy.</strong> Kearney (operations and procurement), Oliver Wyman, Roland Berger (DACH, automotive, restructuring), Strategy&amp; (PwC's strategy arm), EY-Parthenon and Monitor Deloitte (Big 4 strategy arms, strong in PE due diligence), L.E.K. Consulting (healthcare, PE), OC&amp;C (consumer, retail, PE), Simon-Kucher (pricing), Arthur D. Little, Alvarez &amp; Marsal and AlixPartners (turnaround, performance improvement; closer to &quot;restructuring&quot;).</li>
 <li><strong>How they differ in practice.</strong> MBB bill more per person, recruit mostly from target schools, and have the strongest exit brand. Tier-2 firms often pay close to MBB in some countries (Germany: Kearney reported at a base similar to MBB by PrepLounge, Dec 2025, single aggregator) and often have better work-life balance claims, though hours are not clearly lower (see section 3.1).</li>
-</ul>
-<h3 id="2-2-big-4-consulting-and-accenture">2.2 Big 4 consulting and Accenture</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-2-big-4-consulting-and-accenture"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Big 4 consulting and Accenture</h3> <span class="disc-n"><span>150</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> The consulting, &quot;advisory&quot; or &quot;transformation&quot; arms of Deloitte, PwC, EY and KPMG, plus Accenture (a pure consulting-and-technology company, not an audit firm). Work spans operations, finance and HR transformation, technology and ERP implementation, risk and regulatory compliance, cybersecurity, people and change management, and public-sector programmes. A smaller strategy layer (Monitor Deloitte, Strategy&amp;, EY-Parthenon, KPMG's strategy group) overlaps with 2.1.</li>
 <li><strong>Clients.</strong> Large corporates, banks and insurers, governments and public bodies, health systems. Often long engagements (months to years) and multi-team programmes.</li>
 <li><strong>Economics.</strong> Day-rate or time-and-materials billing, higher utilisation targets than MBB, large offshore delivery centres, and a wide pyramid. Deloitte and KPMG earn the largest share of revenue from advisory; PwC and EY from assurance (CPA Practice Advisor, 2025).</li>
 <li><strong>Cross-reference.</strong> Big 4 deal advisory/transaction services is in the Finance branch; Big 4 audit in Accounting; the engineering side of system integrators in Computer Science.</li>
-</ul>
-<h3 id="2-3-specialist-and-boutique-consulting">2.3 Specialist and boutique consulting</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-3-specialist-and-boutique-consulting"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Specialist and boutique consulting</h3> <span class="disc-n"><span>207</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Firms that dominate a niche: healthcare and life sciences (L.E.K., ZS Associates, ClearView Healthcare Partners, Trinity-type pharma specialists), pricing and revenue management (Simon-Kucher), network and telecom/media (Altman Solon), consumer/retail strategy (OC&amp;C), sustainability and energy-transition advisory, operations and supply chain, restructuring and turnaround (A&amp;M, AlixPartners, FTI Consulting).</li>
 <li><strong>Italian examples that could be verified.</strong> <em>BIP</em> (Business Integration Partners), founded in Milan in 2003, says it has 4,000+ staff in Italy, 11 Italian offices and 5,000+ people in 13 countries (BIP Italy page, accessed 2026; Management Consulted profile); it sits between management consulting and technology implementation. <em>Value Partners</em>, founded in Milan in 1993 (PitchBook), is a management consultancy; I could not verify its current size or revenue (a registry figure of about €5-6 million refers to one legal entity and does not show the group). <em>The European House - Ambrosetti (TEHA)</em> is a Milan-area think-tank and advisory firm in the 201-500 staff band (RevenueBase, 2026; data-vendor band, headquarters not confirmed by that source). No 2025 revenues for any of the three were found. Other Italian firms exist (for example Reply, which is closer to IT consulting) but were not verified here.</li>
 <li><strong>How they hire.</strong> Smaller graduate classes, often year-round, less standardised processes than MBB.</li>
-</ul>
-<h3 id="2-4-operations-and-implementation-consulting">2.4 Operations and implementation consulting</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-4-operations-and-implementation-consulting"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Operations and implementation consulting</h3> <span class="disc-n"><span>94</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Making a change actually happen: redesigning a factory floor or warehouse network, procurement savings, cost-out programmes, post-merger integration, setting up a transformation office that tracks every initiative. Includes lean/Six Sigma-style improvement.</li>
 <li><strong>Clients.</strong> Manufacturers, consumer goods, logistics, utilities, PE-owned companies that need margin improvement fast, and governments.</li>
 <li><strong>Who does it.</strong> Kearney, McKinsey Operations, Bain performance improvement, Alvarez &amp; Marsal and AlixPartners (PE performance improvement), Big 4 operations practices, Accenture Operations, and many boutiques. It is the most &quot;hands-on&quot; part of consulting and often involves staying on site for months.</li>
-</ul>
-<h3 id="2-5-in-house-internal-strategy-and-transformation">2.5 In-house/internal strategy and transformation teams</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-5-in-house-internal-strategy-and-transformation"><summary><h3 class="disc-t" translate="no" lang="en">2.5 In-house/internal strategy and transformation teams</h3> <span class="disc-n"><span>100</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> A company's own team of strategists and project leaders: corporate strategy, &quot;strategy and transformation office&quot;, internal consulting arms (some large banks, industrials, pharma and tech companies run teams that staff projects like a consulting firm), M&amp;A and corporate development.</li>
 <li><strong>Who hires.</strong> Large corporates; many hire mainly ex-consultants. Direct graduate entry exists mainly through rotational/leadership development programmes; pure strategy roles usually need 2-5 years of experience.</li>
 <li><strong>How the economics differ.</strong> No client billing; the &quot;client&quot; is another business unit. Lower pay at entry than elite consulting, but steadier hours and a path to general management.</li>
-</ul>
-<h3 id="2-6-public-sector-consulting">2.6 Public-sector consulting</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-6-public-sector-consulting"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Public-sector consulting</h3> <span class="disc-n"><span>326</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>What it is.</strong> Advising governments, regulators, EU institutions and state-owned entities on policy design, digital government, health-system reform, and delivery of large funded programmes.</li>
 <li><strong>Clients and drivers.</strong>
 <ul>
@@ -152,7 +148,8 @@
 <li><em>Local-hire rules:</em> Saudi Arabia required 35% Saudi staffing in consulting roles from March 2023, rising to 40% in the second phase from 2024 (Consultancy-me, 2023-24); the UAE's Emiratisation targets require companies with 50+ employees to reach 10% Emiratis by end-2026 (Middle East Briefing, 2026). For expatriate graduates this means fewer entry slots and more competition than headline growth suggests.</li>
 </ul></li>
 <li><strong>Who does it.</strong> Big 4, Accenture, McKinsey/BCG/Bain public-sector practices, Italian and European firms, and many specialist policy consultancies.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -182,7 +179,8 @@
 <tr><th scope="row">3.5 Internal strategy/corporate transformation</th><td>42-50 (55-60)</td><td>2-3</td><td>4</td><td>3</td><td>US/UK/Italy: no reliable data found at graduate level (corporate graduate-programme market rate)</td><td>3 (programmes) / 4 (strategy roles)</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Because this is the consulting branch, the comparison is across consulting employer types and against investment banking (IB), the usual alternative for the same graduates. Ratings are my synthesis of the sources cited; stress uses the shared 1-5 scale.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Because this is the consulting branch, the comparison is across consulting employer types and against investment banking (IB), the usual alternative for the same graduates. Ratings are my synthesis of the sources cited; stress uses the shared 1-5 scale.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Dimension, MBB, Tier-2 strategy, Big 4/Accenture advisory, Boutique/specialist, In-house strategy, Investment banking (a"><table>
 <thead><tr><th scope="col">Dimension</th><th scope="col">MBB</th><th scope="col">Tier-2 strategy</th><th scope="col">Big 4/Accenture advisory</th><th scope="col">Boutique/specialist</th><th scope="col">In-house strategy</th><th scope="col">Investment banking (analyst, comparison)</th></tr></thead>
 <tbody>
@@ -255,7 +253,9 @@
 <tr><th scope="row">Specialist/boutique consultant</th><td>no reliable data found</td><td></td><td></td><td></td><td></td><td>n/a</td></tr>
 <tr><th scope="row">Internal strategy / corporate organisation</th><td>Organisation analyst/PMO/project manager 35-60 (bank context, bonus 15-20%)</td><td>60-75</td><td>&gt;75</td><td>National</td><td>MP26 banking table</td><td>Low (proxy)</td></tr>
 </tbody></table></div><p>Notes: The MBB figure is a forum signal from before the two-year window and is the only specific number found; it should not be presented as fact. An undated third-party page quoting Glassdoor shows Associate Partner base pay of about EUR 120-146k (unverified). CaseBasix's McKinsey page (updated Aug 2026) gives no Italian number.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless noted. &quot;Via earlier project research&quot; means a source and figure originally taken from <code>/research/careers/consulting.md</code> (written early October 2026) and not re-fetched here.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>870</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless noted. &quot;Via earlier project research&quot; means a source and figure originally taken from <code>/research/careers/consulting.md</code> (written early October 2026) and not re-fetched here.</p>
 <p><strong>Pay and hiring</strong></p>
 <ul>
 <li>Poets&amp;Quants for Undergrads, &quot;Consulting Pay: What Business Graduates Earned in 2025&quot; (Management Consulted data), 26 Jan 2026. <a class="cx-url" href="https://poetsandquantsforundergrads.com/students/consulting-pay-what-business-graduates-earned-in-2025/" rel="noopener noreferrer">https://poetsandquantsforundergrads.com/students/consulting-pay-what-business-graduates-earned-in-2025/</a></li>
@@ -320,7 +320,14 @@
 <li>PrepLounge forum threads on MBB hours (2022-2025; anecdotal). <a class="cx-url" href="https://www.preplounge.com/consulting-forum/working-hours-at-mbb-and-other-firms-23858" rel="noopener noreferrer">https://www.preplounge.com/consulting-forum/working-hours-at-mbb-and-other-firms-23858</a></li>
 <li>Wharton Knowledge, &quot;Remaking the Workplace, One Night Off at a Time&quot;, 3 Jul 2012 (BCG study; stale). <a class="cx-url" href="https://knowledge.wharton.upenn.edu/article/remaking-the-workplace-one-night-off-at-a-time/" rel="noopener noreferrer">https://knowledge.wharton.upenn.edu/article/remaking-the-workplace-one-night-off-at-a-time/</a></li>
 </ul>
-<p><strong>Data limits (stated openly):</strong> Management Consulted's full salary report and McKinsey's own site were not accessible in this session (HTTP 403); no verified Italian MBB or tier-2 entry pay; thin Asia data; no firm publishes hours, acceptance rates or conversion rates, so all such figures here are practitioner estimates; partner pay is not published by any firm.</p></div></section>
+<p><strong>Data limits (stated openly):</strong> Management Consulted's full salary report and McKinsey's own site were not accessible in this session (HTTP 403); no verified Italian MBB or tier-2 entry pay; thin Asia data; no firm publishes hours, acceptance rates or conversion rates, so all such figures here are practitioner estimates; partner pay is not published by any firm.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p><strong>Scope notes:</strong> Global view with explicit US, UK, continental Europe (Italy always called out), Gulf and Asia comparisons; &quot;entry&quot; means a pre-experience graduate (bachelor's or master's, no MBA); economic consulting, audit, deal advisory, IT/system-integration engineering and data-science consulting sit in other branches and are only cross-referenced; Italian entry pay for MBB and tier-2 firms could not be verified from any reliable source, so it is marked &quot;no reliable data found&quot; rather than estimated; Asia (Hong Kong, Tokyo) data is thin and flagged as such.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
+<p><em>Researched 9 October 2026. Figures are dated; where a number comes from a coaching or aggregator site rather than a firm or statistics office, the text says so. Salary data for management consulting is mostly self-reported or crowd-sourced, so treat every pay figure as a benchmark, not an offer.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -342,6 +349,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

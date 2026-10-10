@@ -1,8 +1,8 @@
-"""Brand assets for Admetia: favicon, edition wordmarks, touch icon, link card.
+"""Brand assets for Admetia: favicon, touch icon, link card.
 
 Outlines come straight from the typefaces (shaped with HarfBuzz, so kerning is
 the font's own); PNGs are rendered by headless Chrome from the vector sources.
-Re-run after changing the name, then tools/build-images.sh for the WebP copies.
+Re-run after changing the name.
 
     python3 -m venv .venv && .venv/bin/pip install fonttools brotli uharfbuzz
     .venv/bin/python tools/build-brand.py
@@ -22,8 +22,6 @@ CACHE = os.path.join(REPO, 'tools', '.brand-cache')
 OUT = os.path.join(CACHE, 'out')
 os.makedirs(OUT, exist_ok=True)
 SOURCES = {
-    'Gloock-Regular.ttf': 'ofl/gloock/Gloock-Regular.ttf',
-    'RobotoSerif.ttf': 'ofl/robotoserif/RobotoSerif%5BGRAD,opsz,wdth,wght%5D.ttf',
     'SourceSerif4.ttf': 'ofl/sourceserif4/SourceSerif4%5Bopsz,wght%5D.ttf',
 }
 for name, path in SOURCES.items():
@@ -61,16 +59,6 @@ def outline(font_path, text, size, loc=None, tracking=0.0, scale_x=1.0):
     return spen.getCommands(), bpen.bounds
 
 
-def wordmark(name, font_path, text, size, fill, loc=None, tracking=0.0, scale_x=1.0, stroke=0.0):
-    d, (x0, y0, x1, y1) = outline(font_path, text, size, loc, tracking, scale_x)
-    pad = stroke / 2 + 1
-    w, h = x1 - x0 + 2 * pad, y1 - y0 + 2 * pad
-    extra = f' stroke="{fill}" stroke-width="{stroke:.2f}" stroke-linejoin="round"' if stroke else ''
-    svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x0 - pad:.2f} {y0 - pad:.2f} {w:.2f} {h:.2f}" '
-           f'width="{round(w)}" height="{round(h)}"><path d="{d}" fill="{fill}"{extra}/></svg>')
-    open(os.path.join(OUT, name + '.svg'), 'w').write(svg)
-    return round(w), round(h)
-
 
 def shoot(html_name, w, h, png_name, transparent=False):
     args = [CHROME, '--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1',
@@ -88,16 +76,6 @@ def page_for_svg(svg_name, w, h):
     open(os.path.join(OUT, name), 'w').write(html)
     return name
 
-
-# ---------------------------------------------------------------- wordmarks
-# Wall Street: capitals in Roboto Serif, ultra-condensed, compressed to 72%.
-ws = wordmark('wall-street', F('RobotoSerif.ttf'), 'ADMETIA.', 176, '#111111',
-              loc={'wdth': 50, 'opsz': 72, 'wght': 470, 'GRAD': 0}, scale_x=.72, tracking=.012)
-# FBI Watchlist: Gloock, white for the black band, slightly emboldened, tight.
-fw = wordmark('fbi-watchlist', F('Gloock-Regular.ttf'), 'Admetia', 176, '#ffffff', tracking=-.02, stroke=2.4)
-for name, (w, h) in (('wall-street', ws), ('fbi-watchlist', fw)):
-    shoot(page_for_svg(name + '.svg', w, h), w, h, name + '.png', transparent=True)
-print('wall-street', ws, 'fbi-watchlist', fw)
 
 # ---------------------------------------------------------------- favicon
 # A capital A in Source Serif 4 on claret: the letter is itself a way in.
@@ -144,7 +122,6 @@ open(os.path.join(OUT, 'og-card.html'), 'w').write(card)
 shoot('og-card.html', 1200, 630, 'og-card.png')
 subprocess.run(['sips', '-s', 'format', 'jpeg', '-s', 'formatOptions', '86', os.path.join(OUT, 'og-card.png'),
                 '--out', os.path.join(OUT, 'og-card.jpg')], check=True, capture_output=True)
-for f, dest in (('favicon.svg', 'img'), ('apple-touch-icon.png', 'img'), ('og-card.jpg', 'img/og-admetia.jpg'),
-                ('wall-street.png', 'img/wordmark'), ('fbi-watchlist.png', 'img/wordmark')):
+for f, dest in (('favicon.svg', 'img'), ('apple-touch-icon.png', 'img'), ('og-card.jpg', 'img/og-admetia.jpg')):
     shutil.copy(os.path.join(OUT, f), os.path.join(REPO, dest) if dest.endswith('.jpg') else os.path.join(REPO, dest, f))
-print('Written to img/. Now run tools/build-images.sh for the wordmarks\' WebP copies.')
+print('Written to img/.')

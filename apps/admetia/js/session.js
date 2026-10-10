@@ -186,11 +186,39 @@ window.Session = (function () {
     anchor.insertAdjacentElement('afterend', box);
   }
 
+  /* On the site's front page: everything this browser has saved, as links
+   * back to it. Calculators open on their results; the Career Compass and
+   * the interview stories keep their own answers under their own keys
+   * (careers/assets/), so they are only looked for, never read. The box
+   * stays hidden when there is nothing. */
+  function has(key) {
+    try { var v = localStorage.getItem(key); return !!v && v !== 'null' && v !== '{}' && v !== '[]'; } catch (e) { return false; }
+  }
+  function buildSavedWork() {
+    var box = document.getElementById('saved-work');
+    var ul = document.getElementById('saved-list');
+    if (!box || !ul) return;
+    var items = saved().map(function (c) { return [T('{name} calculator: see your results', { name: T(c[2]) }), c[1] + '#results']; });
+    if (has('admetia:compass')) items.push([T('Career Compass: your answers'), 'careers/compass.html']);
+    if (has('admetia:star')) items.push([T('Interview prep: your stories'), 'careers/interview-prep.html']);
+    if (storedAnswers('atlas')) items.push([T('Atlas: your passport is set'), 'map.html']);
+    if (!items.length) return;
+    items.forEach(function (it) {
+      var li = document.createElement('li'), a = document.createElement('a');
+      a.textContent = it[0];
+      a.href = it[1];
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    box.hidden = false;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     buildFooterControls();
     buildResumeBanner();
     markSavedLinks();
     buildReturnBox();
+    buildSavedWork();
   });
 
   return {

@@ -15,13 +15,13 @@
  * activate.
  * ------------------------------------------------------------------------- */
 
-var VERSION = 'v7';
+var VERSION = 'v9';
 var SHELL = 'admetia-shell-' + VERSION;
 var MEDIA = 'admetia-media-' + VERSION;
 
 var SHELL_FILES = [
   './',
-  'index.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html', 'map.html', 'hiring.html', 'programmes.html',
+  'index.html', 'study.html', 'jobs.html', 'method.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html', 'map.html', 'hiring.html', 'programmes.html',
   'css/fonts.css', 'css/app.css',
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
   'data/conversions.js', 'data/masters-model.js', 'data/computing-model.js',

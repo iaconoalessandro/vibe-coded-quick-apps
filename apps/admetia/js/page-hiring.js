@@ -285,9 +285,15 @@
 
     if (pool.length) { out.appendChild(el('p', 'item-k', 'Sources')); out.appendChild(noteList(pool)); }
     var more = el('p', 'atlas-note');
-    var a = raw('a', null, T('Open {country}’s page', { country: countryName(e.id) }));
-    a.href = 'map.html#' + e.id.toLowerCase();
+    /* Straight to the part of the country's guide this plan came from, with
+     * the same path picked; then the route on a passport. */
+    var a = raw('a', null, T('How hiring works in {country}, in full', { country: countryName(e.id) }));
+    a.href = 'map.html#' + e.id.toLowerCase() + '/hiring/' + plan.path;
     more.appendChild(a);
+    more.appendChild(document.createTextNode(' · '));
+    var a2 = raw('a', null, T('Visas and permits for {country}', { country: countryName(e.id) }));
+    a2.href = 'map.html#' + e.id.toLowerCase() + '/visas';
+    more.appendChild(a2);
     out.appendChild(more);
   }
 
@@ -357,7 +363,7 @@
       var e = r.e, row = el('tr');
       var h = raw('th', null, '');
       var a = raw('a', null, countryName(r.c.id));
-      a.href = 'map.html#' + r.c.id.toLowerCase();
+      a.href = 'map.html#' + r.c.id.toLowerCase() + '/hiring';
       h.appendChild(a);
       row.appendChild(h);
       var w0 = (e.ways || [])[0];
@@ -390,13 +396,16 @@
   /* ------------------------------------------------------------------ */
 
   function setHash() {
-    var h = plan.country ? '#' + plan.country.toLowerCase() + '/' + plan.stage + '/' + plan.path + (plan.field ? '/' + plan.field : '') : '';
+    var h = plan.country ? '#' + plan.country.toLowerCase() + '/' + plan.stage + '/' + plan.path + (plan.field ? '/' + plan.field : '')
+      : (plan.stage !== 'graduated' || plan.path !== 'first') ? '#-/' + plan.stage + '/' + plan.path : '';
     try { history.replaceState(null, '', location.pathname + location.search + h); } catch (e) { /* file:// */ }
   }
   function readHash() {
-    var m = /^#([a-z]{2})\/(studying|graduated|working)\/(first|intern|exp)(?:\/([a-z]+))?$/.exec(location.hash.toLowerCase());
-    if (!m || !A.byId[m[1].toUpperCase()]) return;
-    plan.country = m[1].toUpperCase(); plan.stage = m[2]; plan.path = m[3];
+    /* "-" for the country sets only where you are and what you want: the
+     * links from jobs.html, before a country is chosen. */
+    var m = /^#([a-z]{2}|-)\/(studying|graduated|working)\/(first|intern|exp)(?:\/([a-z]+))?$/.exec(location.hash.toLowerCase());
+    if (!m || (m[1] !== '-' && !A.byId[m[1].toUpperCase()])) return;
+    plan.country = m[1] === '-' ? '' : m[1].toUpperCase(); plan.stage = m[2]; plan.path = m[3];
     plan.field = m[4] && vocab(A.entryFields, m[4]) ? m[4] : '';
   }
 
@@ -410,5 +419,10 @@
   Promise.all(A.countries.map(function (c) { return loadEntry(c.id); })).then(function () {
     drawTable();
     document.title = T('How hiring works in 46 countries — Admetia');
+    /* #compare arrives before the table exists: go there once it does. */
+    if (location.hash.toLowerCase() === '#compare') {
+      var h = document.getElementById('compare');
+      if (h) { h.scrollIntoView({ block: 'start' }); h.focus({ preventScroll: true }); }
+    }
   });
 })();

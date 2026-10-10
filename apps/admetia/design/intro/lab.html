@@ -8,8 +8,6 @@
 @font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 200 900; src: url("../../fonts/source-serif-4-roman.woff2") format("woff2"); }
 @font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; src: url("../../fonts/source-serif-4-italic.woff2") format("woff2"); }
 @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 100 900; src: url("../../fonts/hanken-grotesk.woff2") format("woff2"); }
-@font-face { font-family: "Roboto Serif Condensed"; font-style: normal; font-weight: 400 800; src: url("../../fonts/roboto-serif-condensed.woff2") format("woff2"); }
-@font-face { font-family: "Noto Serif Display"; font-style: normal; font-weight: 100 900; font-stretch: 62.5% 100%; src: url("../../fonts/noto-serif-display.woff2") format("woff2"); }
 
 :root { --chrome: #141414; --line: #3a3a3a; --txt: #ececec; --dim: #9a9a9a; }
 * { box-sizing: border-box; }
@@ -135,10 +133,8 @@ button[aria-pressed="true"] { background: #fff; color: #111; border-color: #fff;
 
 <header class="bar">
   <div class="grp" id="g-ver"><span>Versione</span></div>
-  <div class="grp" id="g-ed"><span>Edizione dell'utente</span></div>
   <div class="grp" id="g-lang"><span>Lingua</span></div>
   <div class="grp" id="g-line"><span>Testo (A)</span></div>
-  <div class="grp" id="g-red"><span>Rosso Watchlist</span></div>
   <div class="grp" id="g-speed"><span>Velocità</span></div>
   <div class="grp" id="g-frame"><span>Schermo</span></div>
   <div class="grp"><button id="replay">▶ Rivedi</button><button id="flash">↺ Visita di ritorno</button></div>
@@ -153,14 +149,6 @@ const ED = {
     disp: '"Source Serif 4", Georgia, serif', dw: 600, ds: '100%', deck: '"Source Serif 4", Georgia, serif', mast: null,
     loudBg: '#990f3d', loudFg: '#fff1e5', s1: '#0d7680', s2: '#fcd0b1', midBg: '#262a33', midFg: '#fff1e5',
     desk: '#f2dfce', sheet: '#fff7ef', stamp: '#990f3d', bar: '#0d7680', barHi: '#990f3d', hot: '#fcd0b1', box: '#f2dfce', cta: '#0d7680' },
-  ws: { name: 'Wall Street', paper: '#ffffff', ink: '#111111', accent: '#111111', deep: '#1c1c1c',
-    disp: '"Roboto Serif Condensed", "Times New Roman", serif', dw: 700, ds: '100%', deck: '"Times New Roman", Times, serif', mast: '../../img/wordmark/wall-street.webp',
-    loudBg: '#111111', loudFg: '#ffffff', s1: '#0080c3', s2: '#e10000', midBg: '#0080c3', midFg: '#ffffff',
-    desk: '#e6e6e6', sheet: '#ffffff', stamp: '#111111', bar: '#111111', barHi: '#0080c3', hot: '#4fb3ff', box: '#e4e4e4', cta: '#0080c3' },
-  fw: { name: 'FBI Watchlist', paper: '#fcfcfc', ink: '#171717', accent: '#dc0000', deep: '#171717',
-    disp: '"Noto Serif Display", Georgia, serif', dw: 800, ds: '75%', deck: 'Georgia, serif', mast: '../../img/wordmark/fbi-watchlist.webp',
-    loudBg: '#dc0000', loudFg: '#ffffff', s1: '#007ac8', s2: '#171717', midBg: '#171717', midFg: '#ffffff',
-    band: '#171717', desk: '#ebebeb', sheet: '#ffffff', stamp: '#dc0000', bar: '#171717', barHi: '#dc0000', hot: '#ff3b30', box: '#e8e8e8', cta: '#dc0000' },
 };
 
 const LINES = [
@@ -173,22 +161,6 @@ const LINES = [
 ];
 // The three lines the live intro picks from at random.
 const RANDOM_SET = [2, 1, 0];
-
-// Watchlist's loud frame: alternatives to the full #dc0000 field.
-const REDS = {
-  black: { loudBg: '#171717', loudFg: '#ffffff', rule: '#dc0000', kick: '#ff5a4f', s1: '#dc0000', s2: '#007ac8', rowsA: ['#171717', '#ffffff'], rowsB: ['#fcfcfc', '#171717'], mid: ['#ffffff', '#dc0000'] },
-  dark: { loudBg: '#8f0a12', loudFg: '#ffffff', rule: '#ffffff', kick: null, s1: '#171717', s2: '#007ac8', rowsA: ['#8f0a12', '#ffffff'], rowsB: ['#fcfcfc', '#8f0a12'], mid: ['#171717', '#ffffff'] },
-  paper: { loudBg: '#fcfcfc', loudFg: '#171717', rule: '#dc0000', kick: '#dc0000', s1: '#dc0000', s2: '#007ac8', rowsA: ['#171717', '#ffffff'], rowsB: ['#fcfcfc', '#dc0000'], mid: ['#dc0000', '#ffffff'] },
-  orig: { loudBg: '#dc0000', loudFg: '#ffffff', rule: null, kick: null, s1: '#007ac8', s2: '#171717', rowsA: ['#dc0000', '#ffffff'], rowsB: ['#fcfcfc', '#dc0000'], mid: ['#171717', '#ffffff'] },
-};
-// With Watchlist on black, Wall Street's frame turns white so two black frames never meet.
-function applyRed() {
-  Object.assign(ED.fw, REDS[S.red]);
-  Object.assign(ED.ws, S.red === 'black'
-    ? { loudBg: '#ffffff', loudFg: '#111111', rule: '#111111', s1: '#0080c3', s2: '#e10000' }
-    : { loudBg: '#111111', loudFg: '#ffffff', rule: null, s1: '#0080c3', s2: '#e10000' });
-  ED.ws.rowsA = ['#111111', '#ffffff']; ED.ws.rowsB = ['#ffffff', '#111111'];
-}
 
 const TXT = {
   en: { q: ['WHERE', 'DO YOU', 'ACTUALLY', 'STAND?'], qShort: 'WHERE DO YOU STAND?', chances: 'Your chances', find: 'Find out in two minutes',
@@ -207,16 +179,16 @@ const SCHOOLS = [['INSEAD', 31.4, 2.1], ['LBS', 44.0, -0.8], ['HEC', 52.3, 1.4],
 const LAND = 1000;
 const V = {
   A: { name: 'A · Titoli', kind: 'Tipografia cinetica', glitch: true,
-    desc: 'La domanda del sito, una parola per taglio, ogni taglio un’edizione. Chiude con le righe che scorrono, come “MOTION” nel video.',
+    desc: 'La domanda del sito, una parola per taglio, ogni taglio in The City. Chiude con le righe che scorrono, come “MOTION” nel video.',
     seq: (c) => { const q = LINES[S.line === 'rnd' ? RANDOM_SET[Math.floor(Math.random() * RANDOM_SET.length)] : S.line][S.lang]; return [['word', 500, c[0], q[0], true], ['word', 500, c[1], q[1], true], ['word', 520, c[2], q[2], true], ['rows', 760, c[2], q[3]]]; } },
   B: { name: 'B · Mercati', kind: 'Ticker e dati',
     desc: 'Ticker di borsa con le scuole, grafico a barre dove spunta la tua barra, contatore che si ferma su “?%”.',
     seq: c => [['ticker', 900, c[0]], ['bars', 950, c[1]], ['counter', 900, c[2]]] },
   C: { name: 'C · Rotativa', kind: 'Prima pagina che si stampa',
-    desc: 'Tre prime pagine stampate una dopo l’altra, una per edizione; l’ultima testata diventa quella del sito.',
+    desc: 'Tre prime pagine stampate una dopo l’altra, in The City; l’ultima testata diventa quella del sito.',
     seq: c => [['page', 820, c[0], {}], ['page', 820, c[1], { wipe: true }], ['page', 900, c[2], { wipe: true }]] },
   D: { name: 'D · Verdetto', kind: 'Ammissione',
-    desc: 'Una lettera per edizione e tre timbri in crescendo: In valutazione → Shortlist → Ammesso.',
+    desc: 'Tre lettere in The City e tre timbri in crescendo: In valutazione → Shortlist → Ammesso.',
     seq: (c, T) => [['stamp', 760, c[0], T.stamps[0]], ['stamp', 760, c[1], T.stamps[1]], ['stamp', 1080, c[2], T.stamps[2], true]] },
   E: { name: 'E · Edizione speciale', kind: 'Mix di tutti e 4', glitch: true,
     desc: 'Tutti e quattro in fila: ticker → la domanda → prima pagina → timbro Ammesso.',
@@ -228,8 +200,10 @@ const V = {
 const SCENE_LABEL = { word: 'Parola', rows: 'Righe', ticker: 'Ticker', bars: 'Barre', counter: 'Contatore', page: 'Prima pagina', stamp: 'Timbro' };
 
 // ---------------------------------------------------------------- state + engine
-const S = { ver: 'A', ed: 'city', lang: 'en', speed: 1, phone: false, line: 'rnd', red: 'black' };
+const S = { ver: 'A', ed: 'city', lang: 'en', speed: 1, phone: false, line: 'rnd' };
 try { Object.assign(S, JSON.parse(localStorage.getItem('intro-lab') || '{}')); } catch (e) {}
+S.ed = 'city';
+delete S.red;
 const save = () => { try { localStorage.setItem('intro-lab', JSON.stringify(S)); } catch (e) {} };
 
 const stage = document.getElementById('stage');
@@ -532,12 +506,12 @@ function buildHud() {
   hudE = hud.querySelector('#hude'); hudP = hud.querySelector('#hudp'); hudBar = hud.querySelector('.hbar');
 }
 
-function order() { return [...['city', 'ws', 'fw'].filter(x => x !== S.ed), S.ed]; }
+function order() { return ['city', 'city', 'city']; }
 
 function reset() {
   timers.forEach(clearTimeout); timers = []; cancelAnimationFrame(raf);
   document.getAnimations().forEach(a => a.cancel());
-  applyRed(); stage.innerHTML = ''; buildHud(); seed = S.ver.charCodeAt(0) * 97;
+  stage.innerHTML = ''; buildHud(); seed = S.ver.charCodeAt(0) * 97;
 }
 // Return visit: just the nameplate composing and landing (as on the live site).
 function playFlash() {
@@ -594,14 +568,12 @@ function group(id, items, key) {
   });
 }
 function sync() {
-  const map = { 'g-line': 'line', 'g-red': 'red', 'g-ver': 'ver', 'g-ed': 'ed', 'g-lang': 'lang', 'g-speed': 'speed', 'g-frame': 'phone' };
+  const map = { 'g-line': 'line', 'g-ver': 'ver', 'g-lang': 'lang', 'g-speed': 'speed', 'g-frame': 'phone' };
   Object.entries(map).forEach(([id, key]) => document.querySelectorAll(`#${id} button`).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === String(S[key])))));
 }
 group('g-ver', Object.keys(V).map(k => [k, k]), 'ver');
-group('g-ed', [['city', 'The City'], ['ws', 'Wall Street'], ['fw', 'FBI Watchlist']], 'ed');
 group('g-lang', [['en', 'EN'], ['it', 'IT']], 'lang');
 group('g-line', [['rnd', 'Casuale (3)'], ...LINES.map((l, i) => [String(i), `${i + 1} · ${l.name}`])], 'line');
-group('g-red', [['black', 'Nero + rosso'], ['dark', 'Rosso scuro'], ['paper', 'Carta + rosso'], ['orig', 'Originale']], 'red');
 group('g-speed', [['1', '1×'], ['0.5', '½×'], ['0.25', '¼×']], 'speed');
 group('g-frame', [['false', 'Desktop'], ['true', 'Telefono']], 'phone');
 document.getElementById('replay').onclick = play;
@@ -614,10 +586,9 @@ addEventListener('keydown', e => {
 let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { size(); play(); }, 200); });
 
 const fontsReady = Promise.all([
-  '600 40px "Source Serif 4"', 'italic 400 20px "Source Serif 4"', '600 20px "Hanken Grotesk"', '700 40px "Roboto Serif Condensed"', '800 40px "Noto Serif Display"',
+  '600 40px "Source Serif 4"', 'italic 400 20px "Source Serif 4"', '600 20px "Hanken Grotesk"',
 ].map(f => document.fonts.load(f)));
-const imgsReady = Promise.all(['../../img/wordmark/wall-street.webp', '../../img/wordmark/fbi-watchlist.webp'].map(src => { const i = new Image(); i.src = src; return i.decode().catch(() => {}); }));
-Promise.all([fontsReady, imgsReady]).then(() => { sync(); size(); play(); });
+fontsReady.then(() => { sync(); size(); play(); });
 </script>
 </body>
 </html>

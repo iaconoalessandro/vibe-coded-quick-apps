@@ -504,66 +504,24 @@ as a margin note, and results that open with a one-sentence headline and read as
 table grouped by verdict. None of it touches a number — `js/score-*.js` and `data/` are
 unchanged, and all five suites still pass (21, 23, 21, 74, and the MBA golden checks).
 
-The Auto / Light / Dark toggle is replaced by an **Edition** picker with three looks —
-The City (default), Wall Street and FBI Watchlist — stored under the same
-`admissions-calc:theme` key, so "Clear everything" still preserves it. Older stored values
-(`light`, `dark`, and the interim names `salmon`, `newsprint`, `editorial`) map to an
-edition rather than being lost. The picker is a real radio group: arrow keys move the
-choice.
+The City is the sole design as of 10 October 2026. The edition picker and the
+retired templates' styles, fonts, nameplates and animation frames have been removed.
+Pages set `data-theme="city"` before JavaScript runs; `js/theme.js` clears obsolete
+`admissions-calc:theme` preferences before first paint. The language radio group remains.
 
-The City design specifications: paper `#FFF1E5`, text `#33302E`, standfirst
-`#66605C` in sans 16/24, section labels claret `#990F3D`, links and the active nav item teal
-`#0D7680` / `#0A5E66`, quote marks oxford `#0F5499`, feature boxes `#F2DFCE`, tags `#FCD0B1`,
-a dark `#262A33` market bar with outlined changes, headlines in a display serif at weight
-~400 (Source Serif 4), nav 12 px 600 uppercase.
-
-FBI Watchlist design specifications: interface 16/24, labels 12/18
-uppercase, headlines 40/48 and 32/38.4 in a demi display serif, decks in Georgia 18/28.8,
-list numerals 18 px red `#DC0000`, links `#003891`, "trending" blue `#007AC8`, market
-up/down `#008516` / `#D8361E`.
-
-Wall Street design specifications: black top strip, a white market line printing each value
-and change in green or red with an arrow, a blue `#0080C3` button, colour photographs,
-bold condensed headlines. Text stays in Times New Roman at 17/27.
-
-Typography scale pass. The City uses a classic modular typography scale (56/56 and 48/48 headlines,
-40/40 and 32/32 section heads, 28/32 story titles, 24/28 question heads, 20/24 decks, 18/28 reading
-text in the serif, 12/16 captions), 2 px corners, teal underlined links and `#96CC28` for gains on
-the market bar. Wall Street pairs condensed headlines (~44 px / 1.1) with text at 16/1.6 and a sans
-for the interface: nav 15 px, labels 12 px uppercase with 0.05em tracking, true black `#000`,
-greys `#555` / `#E0E0E0`, surfaces `#F5F5F5`, blue `#0080C3`. FBI Watchlist sets text in the sans at
-16/1.5, keeps Georgia for decks, teasers and italic pull quotes, and headlines at 40/48 and 32/38.4.
-Where a live measurement disagreed with a scale figure, the measurement was kept.
-
-**Nameplates.** Wall Street and FBI Watchlist show an image wordmark instead of live type.
-Each typeface was picked to match the classic editorial aesthetic: Gloock with bracketed heavy serifs;
-Roboto Serif at its narrowest width with condensed Scotch capitals, including the J that drops below the line.
-Wall Street's headlines use the same Roboto Serif cut, so headline and nameplate agree.
-The section nav now stays on one row at every width, scrolling sideways when it does not fit;
-previously it wrapped to two lines between ~640 and ~1100 px, and on phones three edition rules
-had removed its side padding, clipping the first link at 0 px.
-Checked: scroll width equals viewport width for every edition at 1440, 1000, 800 and 390 px,
-and the first nav link sits at the 18 px gutter on phones in all nine page × edition
-combinations tested. Wall Street now loads only its own two webfonts.
-
-The market line sits at the top of the page in The City and Wall Street,
-and under the navigation in FBI Watchlist; it moves when the edition changes.
+The City specifications: paper `#FFF1E5`, text `#33302E`, muted text `#66605C`,
+claret section labels `#990F3D`, teal links and navigation `#0D7680` / `#0A5E66`,
+feature boxes `#F2DFCE`, tags `#FCD0B1`, and a dark `#262A33` market bar.
+Source Serif 4 sets headlines and the live nameplate; Hanken Grotesk sets the interface.
+Opening titles, printed plans and shortlist images use the same design.
 
 The **Admissions Index** ticker (`js/ticker.js`) prices each programme at its Competitive
-bar and, where answers are saved, shows the margin against it. Checked: 106 entries on the
-front page (7 track composites plus every programme), and with the sample Management
-profile saved the MIM composite reads −2.7 ↓ — the mean of that profile's 20 margins. It
+bar and, where answers are saved, shows the margin against it. It sits above the masthead,
 pauses on hover and stands still under reduced motion.
 
-Checked by rendering every page in all three editions in headless Chrome:
-
-| Check | Result |
-|---|---|
-| Front page, both section fronts, all three calculators, desktop | render in all three editions |
-| Results for Management (full profile), CS and MBA (empty profile) | headline, summary, league table, verdict dividers |
-| 390 px phone viewport, emulated as a touch device | 12 of 12 page × edition checks at scroll width 390 px; only the nav, step list and ticker scroll sideways, as intended (The City's nameplate overflowed by 14 px until given a phone size) |
-| Score dial | now draws — see below |
-| Test suites | 5/5 pass, unchanged |
+Earlier visual checks covered desktop pages, results, a 390 px phone viewport and the
+score dial. Current verification for the single design lives in `tests/design-test.js`
+and `tests/site-test.js`; the build checks regenerated pages and local assets.
 
 **The dial bug.** The results dial's coloured ring had never drawn. Its gradient stops set
 `stop-color="var(--accent)"` as a presentation attribute, which does not resolve `var()`,

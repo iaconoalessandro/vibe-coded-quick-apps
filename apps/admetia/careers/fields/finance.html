@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Finance</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Finance</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -95,13 +90,13 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
-<p><em>Assembled on 9 October 2026 from 4 research parts (finance-part-1.md, finance-part-2.md, finance-part-3.md, finance-part-4.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Finance is the work of moving, pricing, investing and protecting money for companies, governments, institutions and individuals. It splits into four worlds that feel very different from the inside: the <strong>sell side</strong> (investment banks that advise on deals, raise capital and make markets, paid through fees and trading spreads), the <strong>buy side</strong> (asset managers, hedge funds, private equity, venture capital and private credit funds that invest money and are paid management and performance fees), <strong>corporate and risk finance</strong> (finance teams inside companies, risk and compliance at financial institutions, paid a salary to plan, control and protect), and <strong>quant and fintech</strong> (mathematicians, programmers and technology firms that model markets or rebuild financial services as software). Pay at the top of finance is among the highest any graduate can reach, but it is concentrated in a few very selective, long-hours seats; most finance jobs (FP&amp;A, risk, compliance, wealth management, corporate banking) are normal-hours, well-paid professional careers with far easier entry. Region matters more than in most branches: New York and London pay and recruit very differently from Milan, Hong Kong, Singapore, Tokyo or Dubai, and the reports below say where.</p>
-<p>Scope notes: this branch was researched in four parts (investment banking and advisory; sales &amp; trading, markets and research; the buy side; corporate finance, risk, quant and fintech). Accounting, management consulting and economics careers have their own branch reports.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><p>The table is a one-page map; each part below explains its sub-areas in detail (what it is, who it serves, how it makes money).</p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Finance is the work of moving, pricing, investing and protecting money for companies, governments, institutions and individuals. It splits into four worlds that feel very different from the inside: the <strong>sell side</strong> (investment banks that advise on deals, raise capital and make markets, paid through fees and trading spreads), the <strong>buy side</strong> (asset managers, hedge funds, private equity, venture capital and private credit funds that invest money and are paid management and performance fees), <strong>corporate and risk finance</strong> (finance teams inside companies, risk and compliance at financial institutions, paid a salary to plan, control and protect), and <strong>quant and fintech</strong> (mathematicians, programmers and technology firms that model markets or rebuild financial services as software). Pay at the top of finance is among the highest any graduate can reach, but it is concentrated in a few very selective, long-hours seats; most finance jobs (FP&amp;A, risk, compliance, wealth management, corporate banking) are normal-hours, well-paid professional careers with far easier entry. Region matters more than in most branches: New York and London pay and recruit very differently from Milan, Hong Kong, Singapore, Tokyo or Dubai, and the reports below say where.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><p>The table is a one-page map; each part below explains its sub-areas in detail (what it is, who it serves, how it makes money).</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Area, Side, Who it serves, How it makes money, Part"><table>
 <thead><tr><th scope="col">Area</th><th scope="col">Side</th><th scope="col">Who it serves</th><th scope="col">How it makes money</th><th scope="col">Part</th></tr></thead>
 <tbody>
@@ -121,9 +116,10 @@
 <tr><th scope="row">Risk and compliance</th><td>Inside financial firms</td><td>Their own bank, insurer or fund, and regulators</td><td>Cost centre that protects capital and licences</td><td>4</td></tr>
 <tr><th scope="row">Quant roles (banks, quant funds, prop trading firms)</th><td>Sell side, buy side and proprietary</td><td>Trading desks or the firm's own capital</td><td>Pricing models, systematic strategies, market making</td><td>4</td></tr>
 <tr><th scope="row">Fintech</th><td>Technology firms</td><td>Consumers, merchants, banks</td><td>Interchange, take rates, interest margin, subscriptions</td><td>4</td></tr>
-</tbody></table></div>
-<h3 id="part-1-investment-banking-and-advisory-2">Part 1: Investment banking and advisory</h3>
-<p>Investment banking and advisory is the part of finance where professionals help companies, governments and investors do large, infrequent financial transactions: selling a business, buying one, going public on a stock exchange, borrowing through bonds or loans, or fixing a balance sheet that has run into trouble. Banks and advisory firms are paid mainly through fees tied to those deals, not by trading or by managing money. This is the &quot;sell side&quot; of the industry (it serves issuers and corporate clients; the &quot;buy side&quot; means investors such as private equity funds and asset managers, which are covered in another part of this finance branch). The work is among the best paid and the most demanding in early careers, and it is also one of the most selective: junior pay is high, but hours are long and the entry funnel is narrow, so it pays to understand the whole map, including the adjacent and lower-intensity doors (corporate banking, Big 4 deal advisory) before committing.</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-investment-banking-and-advisory-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Investment banking and advisory</h3> <span class="disc-n"><span>2,992</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>Investment banking and advisory is the part of finance where professionals help companies, governments and investors do large, infrequent financial transactions: selling a business, buying one, going public on a stock exchange, borrowing through bonds or loans, or fixing a balance sheet that has run into trouble. Banks and advisory firms are paid mainly through fees tied to those deals, not by trading or by managing money. This is the &quot;sell side&quot; of the industry (it serves issuers and corporate clients; the &quot;buy side&quot; means investors such as private equity funds and asset managers, which are covered in another part of this finance branch). The work is among the best paid and the most demanding in early careers, and it is also one of the most selective: junior pay is high, but hours are long and the entry funnel is narrow, so it pays to understand the whole map, including the adjacent and lower-intensity doors (corporate banking, Big 4 deal advisory) before committing.</p>
 <p>Scope notes: (1) Today is 9 October 2026; figures are dated and mostly from 2025-2026, but some regional data (Hong Kong/Singapore bankers' pay, Feb 2024; Big 4 US pay, 2022) is older and is flagged where used. (2) &quot;Sales &amp; trading&quot;, research, the buy side, risk, quant and fintech are other parts of this branch and appear only as cross-references. (3) Many salary sources are self-reported surveys or recruiter/prep-site aggregators; where only these exist I say so, and where I found nothing reliable I write &quot;no reliable data found&quot;. (4) Several pages could not be opened (HTTP 403/404/429) and a few figures come from search-result summaries rather than a full read; these are marked &quot;snippet-level&quot; in section 6. (5) I assume the reader wants the full global picture, with the US and London as the reference markets, Milan as the Italian anchor, and Hong Kong, Singapore, Tokyo and Dubai as secondary hubs. (6) Ratings (stress, people, quant, entry difficulty) are my judgement from the evidence cited and the shared scales; they are not survey results.</p>
 <h4 id="p1-2-1-what-investment-banking-is-and">P1-2.1 What investment banking is, and where it sits</h4>
 <p>An <strong>investment bank</strong> (or the investment banking division, IBD, of a larger bank) is an adviser and fundraising intermediary for large organisations. Three broad things happen in a bank that people loosely call &quot;investment banking&quot;, and it matters which one you mean:</p>
@@ -194,9 +190,9 @@
 <li><strong>Restructuring / turnaround:</strong> operational and financial advice to troubled businesses (parallel to restructuring bankers).</li>
 <li><strong>Independent boutiques:</strong> firms such as Alvarez &amp; Marsal and FTI Consulting (restructuring and transaction advisory) appear in Debtwire's European restructuring adviser rankings (Q2 2026).</li>
 </ul>
-<p>Fees are typically time-based (hourly), unlike banks' success fees; one source (Mergers &amp; Inquisitions, figures as of 2022) quotes US$200k-800k per engagement. This is an important structural difference: pay is lower but steadier and hours shorter than in banking. A well-trodden path from TS into banking and the buy side exists but is narrower than bank-to-buy-side (section 3.6).</p>
-<h3 id="part-2-sales-and-trading-markets-and-research-2">Part 2: Sales &amp; trading, markets and research</h3>
-<p>This part of the finance branch covers the people who buy and sell financial products all day: the &quot;markets&quot; side of an investment bank (sales, trading, structuring and sell-side research), the physical commodity trading houses (Vitol, Trafigura, Glencore and similar), and the discretionary traders at hedge funds who are often recruited from bank desks. Unlike investment banking advisory (covered in part 1), these jobs are paid mainly for managing risk and serving investors in live markets, not for advising companies on deals. The work is fast, numerate and tied to the market clock, and the pay swings with trading revenues and volatility. Banks' markets divisions had a very strong 2025: the 12-bank Coalition Greenwich index earned US$174.7bn in markets revenue in 2025, up 14.5% (equities US$71.5bn, up 20.7%; fixed income, currencies and commodities, &quot;FICC&quot;, US$103.1bn, up 10.5%) (Coalition Greenwich, 7 May 2026). But the same year, headcount did not grow with revenue (see section 2.7).</p>
+<p>Fees are typically time-based (hourly), unlike banks' success fees; one source (Mergers &amp; Inquisitions, figures as of 2022) quotes US$200k-800k per engagement. This is an important structural difference: pay is lower but steadier and hours shorter than in banking. A well-trodden path from TS into banking and the buy side exists but is narrower than bank-to-buy-side (section 3.6).</p></div></div></details>
+<details class="disc cx-disc" id="part-2-sales-and-trading-markets-and-research-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Sales &amp; trading, markets and research</h3> <span class="disc-n"><span>3,020</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the finance branch covers the people who buy and sell financial products all day: the &quot;markets&quot; side of an investment bank (sales, trading, structuring and sell-side research), the physical commodity trading houses (Vitol, Trafigura, Glencore and similar), and the discretionary traders at hedge funds who are often recruited from bank desks. Unlike investment banking advisory (covered in part 1), these jobs are paid mainly for managing risk and serving investors in live markets, not for advising companies on deals. The work is fast, numerate and tied to the market clock, and the pay swings with trading revenues and volatility. Banks' markets divisions had a very strong 2025: the 12-bank Coalition Greenwich index earned US$174.7bn in markets revenue in 2025, up 14.5% (equities US$71.5bn, up 20.7%; fixed income, currencies and commodities, &quot;FICC&quot;, US$103.1bn, up 10.5%) (Coalition Greenwich, 7 May 2026). But the same year, headcount did not grow with revenue (see section 2.7).</p>
 <p><strong>Scope notes:</strong> (1) &quot;Today&quot; is 9 October 2026 and figures are dated; where a figure is from before October 2024 it is flagged. (2) Quant traders at proprietary trading firms, quant researchers and strats are covered in the quant part; I only compare them briefly in section 4. (3) Buy-side investing roles (portfolio managers at asset managers, PE, VC, private credit) are in the buy-side part; here I cover only discretionary trader/PMs at macro and multi-manager hedge funds and execution traders at asset managers. (4) Employer career pages for Goldman, Morgan Stanley, J.P. Morgan and Vitol blocked or failed to load, so programme details for those firms come from job boards and search-result text and are marked &quot;unverified&quot;. (5) Pay data for sales &amp; trading is thin and mostly from recruiters; I show ranges and flag disagreements. For Italy, Hong Kong, Singapore, Tokyo and Dubai I found no reliable sales-and-trading-specific pay survey and say so. (6) Hours figures rest on practitioner opinion, not on a survey; I tag them. (7) The Volcker rule description uses the US Federal Reserve's page, which was last updated in January 2020; I could not confirm whether the rule was changed in 2025-26.</p>
 <h4 id="p2-2-1-what-global-markets-is-and">P2-2.1 What &quot;Global Markets&quot; is, and sell side vs buy side</h4>
 <p>A bank's markets division (called Global Markets, Markets, Global Banking &amp; Markets or &quot;Sales &amp; Trading&quot;, depending on the bank) is the part of an investment bank that buys and sells securities and derivatives for clients and manages the resulting risk. Its clients are the &quot;buy side&quot;: asset managers, pension funds, insurers, hedge funds, sovereign wealth funds, central banks, corporate treasurers and wealthy families. The bank is the &quot;sell side&quot; because it sells products and services to those investors. Sell-side employees work for the intermediary; buy-side employees work for the people whose money is invested.</p>
@@ -264,9 +260,9 @@
 <h4 id="p2-2-11-discretionary-trading-at-hedge-funds">P2-2.11 Discretionary trading at hedge funds, and how it differs from bank trading</h4>
 <p>Discretionary traders and portfolio managers (PMs) at macro funds and multi-manager &quot;pod&quot; shops (Millennium, Citadel, Point72, Balyasny, Schonfeld and others) take directional or relative-value positions on rates, FX, credit, equities or commodities with fund capital, based on judgment (as opposed to computer-driven &quot;systematic&quot; strategies). The key differences from a bank trader: (1) no client flow to serve, so no spread income, only price views; (2) pay is a share of your own P&amp;L (typical PM payouts of 10-20% of P&amp;L in the US, 5-20% in London for fund PMs, Selby Jennings 2024); (3) strict risk limits and drawdown stops at multi-manager funds, so a bad few months can end a seat; (4) smaller teams and faster career highs and lows. Detail on hedge fund investing roles is in the buy-side part.</p>
 <h4 id="p2-2-12-briefly-proprietary-electronic-market-makers">P2-2.12 Briefly: proprietary/electronic market makers and buy-side execution desks</h4>
-<p>Proprietary trading firms such as Jane Street, Citadel Securities, Optiver, IMC and Susquehanna (SIG) make markets with their own capital and highly automated systems; recruitment is quantitative and covered in the quant part. <strong>Buy-side execution (dealing) desks</strong> sit inside asset managers (e.g., BlackRock's global trading team executes for all its portfolio managers across asset classes, per BlackRock job postings) and place orders with banks and electronic venues; they are the &quot;buyer&quot; of the sell side's service.</p>
-<h3 id="part-3-the-buy-side-2">Part 3: The buy side</h3>
-<p>The &quot;buy side&quot; is the part of finance that manages other people's money and decides what to buy, hold or sell: asset managers, hedge funds, private equity, venture capital, private credit funds, the big institutions that hand money to those managers (pension funds, sovereign wealth funds, endowments, insurers), and the private banks that look after wealthy families. It is called the buy side because these firms are the clients of investment banks and brokers (the &quot;sell side&quot;, covered in parts 1 and 2). Buy-side employers are usually small, pay a lot for a few people and ask for evidence of judgment rather than just hard work. Entry is competitive and often indirect: many of the most-wanted roles (private equity, credit, hedge fund analyst) are filled mainly from people who first spent two to three years at an investment bank, a consultancy or another fund.</p>
+<p>Proprietary trading firms such as Jane Street, Citadel Securities, Optiver, IMC and Susquehanna (SIG) make markets with their own capital and highly automated systems; recruitment is quantitative and covered in the quant part. <strong>Buy-side execution (dealing) desks</strong> sit inside asset managers (e.g., BlackRock's global trading team executes for all its portfolio managers across asset classes, per BlackRock job postings) and place orders with banks and electronic venues; they are the &quot;buyer&quot; of the sell side's service.</p></div></div></details>
+<details class="disc cx-disc" id="part-3-the-buy-side-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 3: The buy side</h3> <span class="disc-n"><span>2,545</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The &quot;buy side&quot; is the part of finance that manages other people's money and decides what to buy, hold or sell: asset managers, hedge funds, private equity, venture capital, private credit funds, the big institutions that hand money to those managers (pension funds, sovereign wealth funds, endowments, insurers), and the private banks that look after wealthy families. It is called the buy side because these firms are the clients of investment banks and brokers (the &quot;sell side&quot;, covered in parts 1 and 2). Buy-side employers are usually small, pay a lot for a few people and ask for evidence of judgment rather than just hard work. Entry is competitive and often indirect: many of the most-wanted roles (private equity, credit, hedge fund analyst) are filled mainly from people who first spent two to three years at an investment bank, a consultancy or another fund.</p>
 <p>Context for 2026: global assets under management reached about US$147 trillion in 2025, up 11%, but BCG estimates that more than 80% of revenue growth came from market gains rather than new client money (BCG, 24th Global Asset Management Report, via Alternatives Watch, 28 April 2026). Hedge fund industry capital hit a record of about US$5.6 trillion in Q2 2026 (HFR, Q2 2026, via Hedgeweek). Private equity (PE) is busy on paper but cash is not coming back to investors: distributions have been under 15% of net asset value for four straight years (Bain, Global Private Equity Report 2026, 23 February 2026). Private credit, the fastest-growing area of the last decade, is under real stress in 2026 (see 2.6).</p>
 <p><strong>Scope notes:</strong> (1) Today is 9 October 2026; figures are dated, and anything before October 2024 is flagged as old. (2) Pay data is the weakest part of this report. The best buy-side surveys (Heidrick &amp; Struggles, Johnson Associates, Selby Jennings, Dartmouth Partners, PE Professional) are paywalled or gated, and Heidrick's public pages do not show level-by-level tables. Where I could only reach recruiter blogs, job postings, forum summaries or press coverage of a survey, I say so and tag the figure. Where I found nothing credible I write &quot;no reliable data found&quot;. (3) Hours and stress ratings are practitioner estimates; I found no survey of weekly hours for these roles. (4) Quant researchers, traders and developers at systematic funds and prop firms are in another part; I only mention quant funds briefly. (5) I could not fetch the Heidrick full-report PDFs (cover pages only), the Wall Street Oasis benchmark pages (blocked) or the official Point72/Millennium career pages; programme details for those come from job-board listings and are marked. (6) Tier lists and &quot;who is in which tier&quot; are my synthesis of industry reputation, not data. (7) The 2028-class US PE recruiting calendar (this autumn/winter) was not reported anywhere I could find, so I flag it as unconfirmed.</p>
 <h4 id="p3-2-1-buy-side-vs-sell-side">P3-2.1 Buy side vs sell side, and who the end investors are</h4>
@@ -313,9 +309,9 @@
 <h4 id="p3-2-7-institutional-allocators-and-consultants">P3-2.7 Institutional allocators and consultants</h4>
 <p>Allocators decide how much goes to which asset class and which manager. In-house teams of <strong>pension funds</strong> (CPP Investments, Ontario Teachers', CalPERS, APG, GPIF), <strong>insurers' investment arms</strong> (Allianz, AXA, Generali), <strong>SWFs</strong> (NBIM, GIC, Temasek, ADIA, Mubadala, PIF), and <strong>endowments</strong> (Yale, Harvard) both select outside managers and invest directly. <strong>Fund-of-funds</strong> (e.g., Hamilton Lane, StepStone, Partners Group) pool client money into many private funds. <strong>Investment consultants</strong> (Mercer, WTW, Cambridge Associates, Aon) advise pension schemes and endowments on managers and strategy, and are a common first job (see 3.7). Gulf SWFs are very active: record commitments of US$53.9 billion across 108 deals in H1 2026 (Global SWF via Khaleej Times). Global state-owned investors, including pensions and central banks, hold US$62.5 trillion (Global SWF, H1 2026).</p>
 <h4 id="p3-2-8-private-wealth-management-and-private">P3-2.8 Private wealth management and private banking</h4>
-<p>Private banks and wealth managers (UBS, Julius Baer, Pictet, Lombard Odier, Fideuram-Intesa Sanpaolo Private Banking, Mediobanca Private Banking, UniCredit Private Banking, Morgan Stanley, Merrill, JPMorgan Private Bank) manage portfolios and offer lending, tax-aware and succession advice for wealthy individuals. They earn fees on assets (often 0.5-1.5% a year) plus lending margin, and the relationship manager (RM) brings in the clients. It is the largest buy-side-adjacent employer of client-facing graduates, and the wealth segment is growing: Johnson projected 2025 wealth-management bonuses up 8-10% (AI-CIO, 10 November 2025). In Italy many &quot;consulenti finanziari&quot; in networks (reti) are self-employed agents paid by commission, not employees, which changes both risk and pay.</p>
-<h3 id="part-4-corporate-finance-risk-quant-and-fintech-2">Part 4: Corporate finance, risk, quant and fintech</h3>
-<p>This part of the finance branch covers the people who run, protect and mathematically model money, rather than the people who advise on deals or sell products. It has four blocks. First, finance teams inside ordinary companies (budgeting, cash management, in-house M&amp;A). Second, the risk and compliance functions that keep banks, insurers and asset managers inside the law and inside their capital limits. Third, quantitative finance: the mathematicians and programmers who price derivatives, build trading models and run electronic market-making. Fourth, fintech, the technology-led payments, banking and lending firms. These areas are very different in lifestyle (a treasury analyst can have a predictable week, a junior quant trader earns more than almost any other graduate and is under heavy performance pressure), but they share one idea: the work is about measuring and controlling money and risk with data. Compared with investment banking, entry here is easier in corporate finance and compliance, and far harder at the top quant and prop-trading firms.</p>
+<p>Private banks and wealth managers (UBS, Julius Baer, Pictet, Lombard Odier, Fideuram-Intesa Sanpaolo Private Banking, Mediobanca Private Banking, UniCredit Private Banking, Morgan Stanley, Merrill, JPMorgan Private Bank) manage portfolios and offer lending, tax-aware and succession advice for wealthy individuals. They earn fees on assets (often 0.5-1.5% a year) plus lending margin, and the relationship manager (RM) brings in the clients. It is the largest buy-side-adjacent employer of client-facing graduates, and the wealth segment is growing: Johnson projected 2025 wealth-management bonuses up 8-10% (AI-CIO, 10 November 2025). In Italy many &quot;consulenti finanziari&quot; in networks (reti) are self-employed agents paid by commission, not employees, which changes both risk and pay.</p></div></div></details>
+<details class="disc cx-disc" id="part-4-corporate-finance-risk-quant-and-fintech-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 4: Corporate finance, risk, quant and fintech</h3> <span class="disc-n"><span>1,938</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the finance branch covers the people who run, protect and mathematically model money, rather than the people who advise on deals or sell products. It has four blocks. First, finance teams inside ordinary companies (budgeting, cash management, in-house M&amp;A). Second, the risk and compliance functions that keep banks, insurers and asset managers inside the law and inside their capital limits. Third, quantitative finance: the mathematicians and programmers who price derivatives, build trading models and run electronic market-making. Fourth, fintech, the technology-led payments, banking and lending firms. These areas are very different in lifestyle (a treasury analyst can have a predictable week, a junior quant trader earns more than almost any other graduate and is under heavy performance pressure), but they share one idea: the work is about measuring and controlling money and risk with data. Compared with investment banking, entry here is easier in corporate finance and compliance, and far harder at the top quant and prop-trading firms.</p>
 <p><strong>Scope notes:</strong> (1) &quot;Today&quot; is 9 October 2026; figures are dated and anything older than October 2024 is flagged. (2) Investment banking advisory, sales and trading, and buy-side investing roles (asset management, PE, VC, private credit, wealth) are covered in other parts; I only cross-reference them. (3) Quant compensation at private trading firms is not published by the firms; almost every figure below comes from recruiters, aggregators or self-reports and is labelled as such. (4) For fintech engineering roles I give a brief note only and cross-reference the Computer Science branch. (5) Where I could not find a reliable figure for a region I say &quot;no reliable data found&quot;. Ratings (stress, people, quant, entry difficulty) are my own judgement from practitioner descriptions, using the shared scales; hours figures are practitioner consensus unless a source is named.</p>
 <h4 id="p4-2-1-corporate-finance-inside-non-financial">P4-2.1 Corporate finance inside non-financial companies</h4>
 <p>Here &quot;finance&quot; means the finance department of a company that makes or sells something else (a carmaker, a retailer, a pharma firm, a software company). The employer is the company itself; the &quot;client&quot; is the business. Four sub-areas:</p>
@@ -364,7 +360,8 @@
 <li><strong>B2B infrastructure / banking-as-a-service (BaaS):</strong> sells licences, card-issuing and compliance infrastructure to other companies.</li>
 <li><strong>Crypto and digital assets:</strong> exchange trading fees, custody, stablecoin reserve income. Honest risk note: high volatility of revenue, many failures, regulatory shifts. In the EU, the MiCA regulation requires authorisation for crypto-asset service providers; the transitional period ended on 1 July 2026 and unauthorised firms must wind down EU client business (ESMA statement of 23 June 2026, via law-firm commentary); one source counts 244 authorisations by that date. Hong Kong approved its first stablecoin-issuer licences in April 2026 (HSBC and a Standard Chartered-led venture, single-source report).</li>
 </ul>
-<p>Funding context: global fintech venture funding was about US$52.7bn in 2025 (CB Insights via press), while KPMG's broader measure of fintech investment recovered from US$95.5bn to US$116bn but deal count fell to an eight-year low of 4,719 (KPMG Pulse of Fintech H2 2025). Capital is concentrating in bigger, later-stage companies, so early-stage startup hiring is thinner than in 2021. Hubs: London (largest in Europe), Milan (Satispay, Scalapay, Nexi's home; a Milan city page claims over 45% of Italian fintechs, promotional), Singapore and Hong Kong (regulated stablecoin and digital-asset regimes), Dubai (DIFC; I found no usable hiring data).</p></div></section>
+<p>Funding context: global fintech venture funding was about US$52.7bn in 2025 (CB Insights via press), while KPMG's broader measure of fintech investment recovered from US$95.5bn to US$116bn but deal count fell to an eight-year low of 4,719 (KPMG Pulse of Fintech H2 2025). Capital is concentrating in bigger, later-stage companies, so early-stage startup hiring is thinner than in 2021. Hubs: London (largest in Europe), Milan (Satispay, Scalapay, Nexi's home; a Milan city page claims over 45% of Italian fintechs, promotional), Singapore and Hong Kong (regulated stablecoin and digital-asset regimes), Dubai (DIFC; I found no usable hiring data).</p></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -496,7 +493,8 @@
 </tbody></table></div>
 <p>Hours and stress ratings are the researchers' estimates from surveys, postings and practitioner consensus, not survey outputs per role family; see each part's notes.</p></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, junior-to-mid level; the part sections below give the detail, sources and regional differences):</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, junior-to-mid level; the part sections below give the detail, sources and regional differences):</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Typical hours/week, Stress 1-5, Pay level (relative), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Typical hours/week</th><th scope="col">Stress 1-5</th><th scope="col">Pay level (relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -509,9 +507,10 @@
 <tr><th scope="row">Non-financial corporate (FP&amp;A, treasury, corp dev)</th><td>40-55</td><td>3</td><td>Moderate</td><td>Business-partnering, stable</td><td>Medium</td></tr>
 <tr><th scope="row">Risk / compliance at banks and insurers</th><td>40-50</td><td>3</td><td>Moderate</td><td>Process and regulation-driven</td><td>Low-medium</td></tr>
 <tr><th scope="row">Fintech</th><td>45-55</td><td>3</td><td>Moderate; equity is a lottery ticket</td><td>Fast, product-driven, less job security</td><td>High</td></tr>
-</tbody></table></div>
-<h3 id="part-1-investment-banking-and-advisory-3">Part 1: Investment banking and advisory</h3>
-<p>The same role (an analyst or associate working on deals) looks different depending on the employer. The table compares six common employer types. Hours and pay figures for banks come from the sources in section 3; hours for Big 4 and in-house corporate development come from low-quality sources (Mergers &amp; Inquisitions, 2022; a forum commenter, 2025) and should be treated as indicative.</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-investment-banking-and-advisory-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Investment banking and advisory</h3> <span class="disc-n"><span>1,135</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same role (an analyst or associate working on deals) looks different depending on the employer. The table compares six common employer types. Hours and pay figures for banks come from the sources in section 3; hours for Big 4 and in-house corporate development come from low-quality sources (Mergers &amp; Inquisitions, 2022; a forum commenter, 2025) and should be treated as indicative.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Dimension, Bulge bracket, Elite boutique, Middle-market bank/boutique, Regional/European bank, Big 4 deal advisory, In-h"><table>
 <thead><tr><th scope="col">Dimension</th><th scope="col">Bulge bracket</th><th scope="col">Elite boutique</th><th scope="col">Middle-market bank/boutique</th><th scope="col">Regional/European bank</th><th scope="col">Big 4 deal advisory</th><th scope="col">In-house corporate development</th></tr></thead>
 <tbody>
@@ -541,9 +540,9 @@
 <li><em>Regional/European banks:</em> better stability and local relationships; lower pay; Italian and other domestic banks hire through structured graduate programmes with permanent contracts, which is unusual in London.</li>
 <li><em>Big 4 deal advisory:</em> a real alternative for people who want deal exposure at lower intensity, with a recognised accounting qualification; lateral moves into banking are most plausible in the first years.</li>
 <li><em>In-house corporate development:</em> the common &quot;lifestyle&quot; landing spot for bankers after 2-4 years (eFinancialCareers, 2022, reported a post-pandemic exodus to corp dev); an entry-level corp dev job straight from university is rare because companies usually hire from banks, consulting and TS. The best data are a forum commenter and older articles; treat the numbers as indicative only.</li>
-</ul>
-<h3 id="part-2-sales-and-trading-markets-and-research-3">Part 2: Sales &amp; trading, markets and research</h3>
-<p>The same job, &quot;trader&quot;, exists in five kinds of organisation. Figures below are indicative, with hours from practitioner sources (not surveys). &quot;Pay&quot; refers to early-career total compensation unless noted.</p>
+</ul></div></div></details>
+<details class="disc cx-disc" id="part-2-sales-and-trading-markets-and-research-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Sales &amp; trading, markets and research</h3> <span class="disc-n"><span>930</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same job, &quot;trader&quot;, exists in five kinds of organisation. Figures below are indicative, with hours from practitioner sources (not surveys). &quot;Pay&quot; refers to early-career total compensation unless noted.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Dimension, Bank S&amp;T (market-making), Hedge fund (discretionary), Proprietary / electronic market maker (Jane Street, Cit"><table>
 <thead><tr><th scope="col">Dimension</th><th scope="col">Bank S&amp;T (market-making)</th><th scope="col">Hedge fund (discretionary)</th><th scope="col">Proprietary / electronic market maker (Jane Street, Citadel Securities, Optiver, IMC, SIG)</th><th scope="col">Commodity trading house</th><th scope="col">Asset manager trading desk (execution trader)</th></tr></thead>
 <tbody>
@@ -570,9 +569,9 @@
 <li><strong>Dubai:</strong> growing hedge fund and commodities hub, zero personal income tax, DIFC registered a record 1,924 new companies in 2025 (+28%) and 775 in Q1 2026 (+62%); bank sales-and-trading desk hiring is limited (I found no 2025-26 evidence of big-bank desk expansion), and Shell moved a gas trading team from Madrid to Dubai/London/Singapore (reported January 2025).</li>
 <li><strong>Milan/Italy:</strong> a mid-sized market; the main employers of traders and structurers are Intesa Sanpaolo (IMI CIB), UniCredit, Mediobanca (now under Monte dei Paschi after a 2025 takeover), Banca Akros and Equita; international banks have small Milan offices; pay is lower than London and the EU bonus cap applies. European banks' equity sales &amp; trading revenue grew strongly in Q1 2026 (Teleborsa, 12 May 2026), but recruiting firm commentary describes Milan banks as cautious on hiring (Kitalent, unverified).</li>
 </ul></li>
-</ul>
-<h3 id="part-3-the-buy-side-3">Part 3: The buy side</h3>
-<p>The same investing roles exist at very different employers. The table gives my synthesis from the sources above plus practitioner consensus; nothing in it is a survey result unless stated.</p>
+</ul></div></div></details>
+<details class="disc cx-disc" id="part-3-the-buy-side-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 3: The buy side</h3> <span class="disc-n"><span>737</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same investing roles exist at very different employers. The table gives my synthesis from the sources above plus practitioner consensus; nothing in it is a survey result unless stated.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours, Stress, Pay, Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours</th><th scope="col">Stress</th><th scope="col">Pay</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -595,9 +594,9 @@
 <li><strong>Hong Kong and Singapore</strong>: regional hubs for PE, hedge funds (Hillhouse, Millennium Hong Kong) and SWFs (GIC, Temasek). Heidrick's 2025 survey shows rising pay (78% expect base increases over 18 months). Hong Kong and Singapore recruiting follows no documented on-cycle model in my sources.</li>
 <li><strong>Tokyo</strong>: bilingual talent is scarce in private capital (Heidrick); asset managers are expanding (Tokio Marine AM plans about 100 extra staff; Nomura AM is moving staff to London and New York); GPIF hiring.</li>
 <li><strong>Gulf (Abu Dhabi, Dubai, Riyadh)</strong>: SWFs and PE/credit funds are growing; the Middle East managing partners' average total cash rose to US$750k in 2025 (Heidrick via Gulf News). National programmes (PIF, ADIA scholarship) often prioritise nationals; expatriates mostly enter via experienced hire.</li>
-</ul>
-<h3 id="part-4-corporate-finance-risk-quant-and-fintech-3">Part 4: Corporate finance, risk, quant and fintech</h3>
-<p>The same job names appear in very different workplaces. This table compares, for the roles in this part, the employer types the prompt asked for. Ratings are approximate judgements from the sources cited above plus practitioner consensus; stress uses the shared 1-5 scale. Pay is relative to a graduate in the same city.</p>
+</ul></div></div></details>
+<details class="disc cx-disc" id="part-4-corporate-finance-risk-quant-and-fintech-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 4: Corporate finance, risk, quant and fintech</h3> <span class="disc-n"><span>878</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same job names appear in very different workplaces. This table compares, for the roles in this part, the employer types the prompt asked for. Ratings are approximate judgements from the sources cited above plus practitioner consensus; stress uses the shared 1-5 scale. Pay is relative to a graduate in the same city.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Typical hours/week (peak), Stress, Pay (entry, relative), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Typical hours/week (peak)</th><th scope="col">Stress</th><th scope="col">Pay (entry, relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -621,11 +620,13 @@
 <li><strong>Singapore:</strong> Regional hub for prop trading and funds (Optiver's Career Kickstarter in Singapore ran 21-25 September 2026; Jane Street moved to a larger office in May 2026 and has nearly 600 people in Asia Pacific, per press reports) and strong in corporate treasury (Robert Half: treasury analyst S$80k-100k).</li>
 <li><strong>Tokyo:</strong> Smaller quant market; macro and multi-strategy funds are expanding (Brevan Howard plans a Tokyo office in 2026 and is hiring traders per Bloomberg, April 2026); Citadel Securities opened a Tokyo office in 2022. Language skills usually matter. No reliable pay data found.</li>
 <li><strong>Dubai:</strong> Growing DIFC/ADGM financial centre with fintech and crypto licensing, but I found no reliable hiring or pay data; treat claims by recruiters as unverified.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="backgrounds" class="cx-sec"><h2 translate="no" lang="en">5. Which backgrounds fit this branch</h2>
 <p class="cx-links-inline"><span>Each background’s full list of roles:</span> <a href="../backgrounds/management.html"><span translate="no">Management</span></a> · <a href="../backgrounds/logistics-and-supply-chain.html"><span translate="no">Logistics &amp; Supply Chain</span></a> · <a href="../backgrounds/finance.html"><span translate="no">Finance</span></a> · <a href="../backgrounds/accounting.html"><span translate="no">Accounting</span></a> · <a href="../backgrounds/marketing.html"><span translate="no">Marketing</span></a> · <a href="../backgrounds/data-analytics.html"><span translate="no">Data Analytics</span></a> · <a href="../backgrounds/economics.html"><span translate="no">Economics</span></a> · <a href="../backgrounds/computer-science.html"><span translate="no">Computer Science</span></a> · <a href="../backgrounds/cybersecurity.html"><span translate="no">Cybersecurity</span></a> · <a href="../backgrounds/data-science.html"><span translate="no">Data Science</span></a> · <a href="../backgrounds/artificial-intelligence.html"><span translate="no">Artificial Intelligence</span></a></p>
-<div class="cx-prose" translate="no" lang="en"><h3 id="ratings-by-background">(a) Ratings by background (whole branch)</h3>
-<p>Overall ratings combine the four parts; the matrix in (b) shows where a background is strong even if its overall rating is lower.</p>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="ratings-by-background"><summary><h3 class="disc-t" translate="no" lang="en">(a) Ratings by background (whole branch)</h3> <span class="disc-n"><span>318</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>Overall ratings combine the four parts; the matrix in (b) shows where a background is strong even if its overall rating is lower.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Overall fit, One-line reason"><table>
 <thead><tr><th scope="col">Background</th><th scope="col">Overall fit</th><th scope="col">One-line reason</th></tr></thead>
 <tbody>
@@ -640,9 +641,9 @@
 <tr><th scope="row">Cybersecurity</th><td>stretch</td><td>Front-office fit is minimal; realistic doors are technology and operational risk, fraud, and cyber-focused VC.</td></tr>
 <tr><th scope="row">Data Science</th><td>possible</td><td>Strong for quant, risk modelling, structuring and commodity analytics; IBD and fundamental investing need accounting and valuation skills.</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>possible</td><td>Strong for quant research, bank quant and fintech models; most advisory and fundamental investing seats rate it a stretch.</td></tr>
-</tbody></table></div>
-<h3 id="matrix-by-role-family">(b) Matrix by role family (all parts)</h3>
-<p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="matrix-by-role-family"><summary><h3 class="disc-t" translate="no" lang="en">(b) Matrix by role family (all parts)</h3> <span class="disc-n"><span>1,014</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Mgmt, Log, Fin, Acc, Mkt, DA, Econ, CS, Cyber, DS, AI"><table>
 <thead><tr><th scope="col">Role family</th><th scope="col">Mgmt</th><th scope="col">Log</th><th scope="col">Fin</th><th scope="col">Acc</th><th scope="col">Mkt</th><th scope="col">DA</th><th scope="col">Econ</th><th scope="col">CS</th><th scope="col">Cyber</th><th scope="col">DS</th><th scope="col">AI</th></tr></thead>
 <tbody>
@@ -675,9 +676,9 @@
 <tr><th scope="row">P4-3.7 Quantitative researcher and quantitative trader (quant funds and prop trading firms)</th><td>X</td><td>X</td><td>P</td><td>X</td><td>X</td><td>X</td><td>P</td><td>S</td><td>X</td><td>S</td><td>S</td></tr>
 <tr><th scope="row">P4-3.8 Quant developer / trading-systems engineer</th><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>S</td><td>X</td><td>P</td><td>P</td></tr>
 <tr><th scope="row">P4-3.9 Fintech business roles (strategy/bizops, product, risk/credit, partnerships)</th><td>S</td><td>P</td><td>S</td><td>P</td><td>P</td><td>S</td><td>S</td><td>P</td><td>P</td><td>S</td><td>P</td></tr>
-</tbody></table></div>
-<h3 id="part-level-ratings-and-notes">Part-level ratings and notes</h3>
-<h4 id="part-1-investment-banking-and-advisory-4">Part 1: Investment banking and advisory</h4>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="part-level-ratings-and-notes"><summary><h3 class="disc-t" translate="no" lang="en">Part-level ratings and notes</h3> <span class="disc-n"><span>2,342</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><h4 id="part-1-investment-banking-and-advisory-4">Part 1: Investment banking and advisory</h4>
 <p>Rating key: <strong>strong</strong> = routinely hired or the modal profile; <strong>possible</strong> = hired regularly but you need extra finance preparation or a stronger internship record; <strong>stretch</strong> = rare; needs a deliberate route (extra degree, relevant internships, or an adjacent role first).</p>
 <h4 id="ratings-by-background-2">(a) Ratings by background</h4>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Rating, One-line reason"><table>
@@ -814,7 +815,8 @@
 <tr><th scope="row">Data Science</th><td>P</td><td>P</td><td>X</td><td>S</td><td>P</td><td>S</td><td>S</td><td>P</td><td>S</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>X</td><td>X</td><td>X</td><td>P</td><td>P</td><td>S</td><td>S</td><td>P</td><td>P</td></tr>
 </tbody></table></div>
-<p>Notes: Computer Science and Cybersecurity also have strong fintech engineering paths (see the Computer Science branch). A &quot;P&quot; for Economics in quant roles assumes a strong mathematical track; a plain economics curriculum is a stretch.</p></div></section>
+<p>Notes: Computer Science and Cybersecurity also have strong fintech engineering paths (see the Computer Science branch). A &quot;P&quot; for Economics in quant roles assumes a strong mathematical track; a plain economics curriculum is a stretch.</p></div></div></details>
+</section>
 <section id="italy-pay" class="cx-sec"><h2>Italy pay (add-on)</h2>
 <p class="cx-note">From the Italy pay addendum (compiled 9 October 2026), which fills Italian gaps across all thirteen reports. How to read RAL, net pay and the 13th month: <a href="../italy-pay.html">Italy pay add-on</a>.</p>
 <div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Entry (RAL, EUR k), ~5 years, Senior, City/scope, Source and year, Confidence"><table>
@@ -837,7 +839,9 @@
 <tr><th scope="row">Credit analyst, bank</th><td>35-55</td><td>55-70</td><td>&gt;70</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 <tr><th scope="row">Relationship manager / private banker (assistant level)</th><td>35-55 (bonus 20-100%)</td><td>55-90 (RM); 55-110 (private banker)</td><td>&gt;90 / &gt;110</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 </tbody></table></div><p>Notes: (1) Banks under the credit CCNL have a visible floor (about EUR 35.65k for the 3rd area, 1st level from March 2026), so very high bonus ranges at the top of the MP26 bands should be read as exceptional, not typical. (2) US/UK banks' Milan offices and boutiques usually pay well above Italian banks, but I found no published figure; a Citi Milan placement-analyst ad (Sept 2026) showed EUR 51.1-73.9k but states that its ranges &quot;are not reflecting correctly&quot;, so I did not use it. (3) MP26 notes Italy's banking sector is seeing new international entrants and bank mergers, and rising packages for specialist roles.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-investment-banking-and-advisory-5">Part 1: Investment banking and advisory</h3>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>3,754</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-investment-banking-and-advisory-5">Part 1: Investment banking and advisory</h3>
 <p>Dates are publication dates where shown; &quot;accessed October 2026&quot; means undated. &quot;Snippet-level&quot; means the claim rests on a search-result summary, not a full page I could read (some pages returned HTTP 403, 404 or 429).</p>
 <p><strong>Compensation and hours</strong></p>
 <ol>
@@ -1072,7 +1076,14 @@
 <li>Quantvault and Fishbowl/Glassdoor commentary on Jane Street and Citadel hours (anecdotal; treated as signals only). <a class="cx-url" href="https://quantvault.org/jane-street-vs-citadel.html" rel="noopener noreferrer">https://quantvault.org/jane-street-vs-citadel.html</a> ; <a class="cx-url" href="https://www.fishbowlapp.com/post/does-anyone-know-what-the-wlb-is-at-jane-street-quant" rel="noopener noreferrer">https://www.fishbowlapp.com/post/does-anyone-know-what-the-wlb-is-at-jane-street-quant</a></li>
 <li>TechInterview, &quot;MS vs PhD for Quant Research&quot; (2026; unverified blog claims). <a class="cx-url" href="https://www.techinterview.org/post/3233474733/ms-vs-phd-quant-research/" rel="noopener noreferrer">https://www.techinterview.org/post/3233474733/ms-vs-phd-quant-research/</a></li>
 <li>Project prior research (used for leads only; verified or flagged): <code>research/careers/finance.md</code> and <code>research/careers/accounting-and-corporate.md</code> (early October 2026).</li>
-</ol></div></section>
+</ol></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: this branch was researched in four parts (investment banking and advisory; sales &amp; trading, markets and research; the buy side; corporate finance, risk, quant and fintech). Accounting, management consulting and economics careers have their own branch reports.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
+<p><em>Assembled on 9 October 2026 from 4 research parts (finance-part-1.md, finance-part-2.md, finance-part-3.md, finance-part-4.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -1094,6 +1105,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

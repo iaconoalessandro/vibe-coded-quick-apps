@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -20,27 +20,43 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <script src="js/theme.js"></script>
-<script src="js/intro.js"></script>
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 
+<!-- shell:top -->
+<a class="skip" href="#main">Skip to content</a>
+
 <div class="ticker" role="region" aria-label="Admissions index">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Admissions index</span></div>
+  <div class="ticker-label"><span class="ticker-arrow" aria-hidden="true">↗</span><span class="ticker-name">Admissions index</span></div>
   <div class="ticker-view"><div class="ticker-track"></div></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <button type="button" class="ticker-pause" aria-pressed="false">Pause</button>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Choose a master’s</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="study.html" data-section="study" aria-current="true">Choose a master’s</a></li>
+    <li><a href="careers/index.html" data-section="careers">Explore careers</a></li>
+    <li><a href="jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="map.html" data-section="move">Plan a move</a></li>
+    <li><a href="method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Choose a master’s">
   <div class="sections-inner">
+    <a href="study.html" data-sec="study">Overview</a>
+    <a href="programmes.html" data-sec="programmes">Programme Directory</a>
     <div class="sec-cluster">
-      <a class="sec-group" href="business.html" data-sec="business">Business</a>
+      <a class="sec-group" href="business.html" data-sec="business">Business calculators</a>
       <span class="sec-items">
         <a href="mba.html" data-sec="mba">MBA</a>
         <a href="masters.html?track=mif" data-sec="masters:mif">Finance</a>
@@ -49,24 +65,20 @@
       </span>
     </div>
     <div class="sec-cluster">
-      <a class="sec-group" href="it.html" data-sec="it">Computing</a>
+      <a class="sec-group" href="it.html" data-sec="it">Computing calculators</a>
       <span class="sec-items">
         <a href="computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
         <a href="computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
         <a href="computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
       </span>
     </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="careers/index.html" data-sec="careers">Careers</a>
-    </div>
   </div>
 </nav>
 
-<main class="shell">
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="index.html">Home</a></li><li><a href="study.html">Choose a master’s</a></li><li><a href="it.html">Computing calculators</a></li><li><span aria-current="page">Computing calculator</span></li></ol></nav>
+<!-- /shell:top -->
+
+<main class="shell" id="main" tabindex="-1">
 
   <section id="wizard-view" class="questionnaire">
     <div id="intro"></div>
@@ -107,6 +119,52 @@
       publishes an admitted-student profile to anchor one against either.</p>
     <p><b class="rubric-in">Colophon</b>Your answers never leave this browser. Visits are counted
       anonymously — which page, never what you type.</p>
+    <!-- shell:foot -->
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="programmes.html">Programme Directory</a></li>
+          <li><a href="business.html">Business calculators</a></li>
+          <li><a href="it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="careers/index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="careers/compass.html">Career Compass</a></li>
+          <li><a href="careers/roles/index.html">All roles</a></li>
+          <li><a href="careers/compare.html">Compare roles</a></li>
+          <li><a href="careers/italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="hiring.html">Hiring by country</a></li>
+          <li><a href="careers/recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="careers/toolkit.html">Application toolkit</a></li>
+          <li><a href="careers/interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="map.html#countries">All 46 countries</a></li>
+          <li><a href="method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="method.html#calculators">How the calculators score</a></li>
+          <li><a href="method.html#library">Research library</a></li>
+          <li><a href="method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /shell:foot -->
   </footer>
 
 </main>

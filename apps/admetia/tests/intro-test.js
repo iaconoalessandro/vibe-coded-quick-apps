@@ -10,7 +10,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm');
 const APP=path.join(__dirname,'..');
 const read=f=>fs.readFileSync(path.join(APP,f),'utf8');
-const PAGES=['index.html','business.html','it.html','mba.html','masters.html','computing.html'];
+const PAGES=['index.html','study.html','business.html','it.html','mba.html','masters.html','computing.html'];
 
 let pass=0,fail=0;
 function t(label,cond,extra){ if(cond){pass++;console.log('PASS  '+label);} else {fail++;console.log('FAIL  '+label+(extra?'  → '+extra:''));} }
@@ -43,8 +43,12 @@ t('The City\'s nameplate is spelled once: the typed-in letters replace the text,
 t('the titles carry the site\'s name, and the pages\' nameplate says the same',I.NAME==='Admetia'&&PAGES.every(p=>read(p).indexOf('<a class="nameplate" href="index.html">'+I.NAME+'</a>')>-1));
 
 /* ----------------------------------------------------------- wiring --- */
-PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',
+/* The titles belong to the master's fronts: a reader who follows a link
+ * straight to a tool, a country or a role is not made to watch them. */
+const INTRO_PAGES=['study.html','business.html','it.html'];
+INTRO_PAGES.forEach(p=>t(p+' loads js/intro.js in <head>, straight after js/theme.js',
   read(p).indexOf('<script src="js/theme.js"></script>\n<script src="js/intro.js"></script>\n')>-1&&read(p).indexOf('js/intro.js')<read(p).indexOf('</head>')));
+t('pages a reader lands on mid-task do not play the titles',['index.html','mba.html','masters.html','computing.html','programmes.html','map.html','hiring.html','jobs.html','method.html'].every(p=>read(p).indexOf('js/intro.js')<0));
 t('sw.js caches js/intro.js',/'js\/intro\.js'/.test(read('sw.js')));
 t('there is no footer switch for the titles',!/opening titles/.test(read('js/session.js'))&&!/intro-/.test(read('js/session.js'))&&!/opening titles/.test(read('js/i18n-it.js')));
 t('tools/build.js inlines it',/swap\('<script src="js\/intro\.js"><\/script>'/.test(read('tools/build.js')));
@@ -67,7 +71,7 @@ const mbaN=MBA.generalSchools.length+MBA.adjustedSchools.length;
 const mastersN=MS.schools.reduce((n,x)=>n+(x.tracks?x.tracks.length:1),0);
 t('the MBA count matches the model',I.COUNT.mba===mbaN,I.COUNT.mba+' vs '+mbaN);
 t('the computing count matches the model',I.COUNT.computing===IT.schools.length,I.COUNT.computing+' vs '+IT.schools.length);
-const home=/more than (\d+) programmes/.exec(read('index.html'));
+const home=/more than (\d+) programmes/.exec(read('study.html'));
 t('the business count is the one the front page states',!!home&&I.COUNT.programmes===+home[1],home&&home[1]);
 t('and the models do score more than that many business programmes',mastersN+mbaN>I.COUNT.programmes,(mastersN+mbaN)+' vs '+I.COUNT.programmes);
 

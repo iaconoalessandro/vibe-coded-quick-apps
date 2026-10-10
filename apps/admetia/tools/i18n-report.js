@@ -32,7 +32,7 @@ const GLOBALS = ['MASTERS_MODEL', 'IT_MODEL', 'MBA_MODEL', 'IT_EVIDENCE', 'ADMIS
 /* The same prose fields js/i18n.js translates. */
 const ALLOW = new Set(['label', 'blurb', 'help', 'note', 'because', 'v', 'k', 'why', 'intro', 'heading', 'detail',
   'title', 'short', 'full', 'from', 'window', 'source', 'unit', 'name', 'items']);
-const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html'];
+const PAGES = ['index.html', 'study.html', 'jobs.html', 'method.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html'];
 
 function dictionary(files) {
   const dict = {};

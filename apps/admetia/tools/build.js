@@ -6,11 +6,14 @@
  *
  *   - Each page's scripts become one minified bundle, and fonts.css + app.css
  *     one minified stylesheet: two requests where there were up to seventeen.
- *   - js/theme.js and js/intro.js are inlined in <head> (both have to run
- *     before first paint anyway) and the favicon becomes a data: URI.
- *   - The front pages (index, business, it) drop the ~200 KB of models and
- *     scoring. Their ticker gets its programme list precomputed here, and
- *     loads the models on its own only when there are saved answers to score.
+ *   - js/theme.js and, on the pages that carry it, js/intro.js are inlined
+ *     in <head> (both have to run before first paint anyway) and the favicon
+ *     becomes a data: URI.
+ *   - The master's fronts (study, business, it) drop the ~200 KB of models
+ *     and scoring. Their ticker gets its programme list precomputed here,
+ *     and loads the models on its own only when there are saved answers to
+ *     score. Pages with no ticker (the front page, the hubs, the Atlas)
+ *     never load a model at all.
  *   - Bundles are named by content hash, so a cached page can never pick up
  *     scripts from a different deploy.
  *   - sw.js gets the built file list and a VERSION derived from it.
@@ -31,7 +34,8 @@ const esbuild = require('esbuild');
 
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, '_site');
-const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'programmes.html', 'map.html', 'hiring.html'];
+/* Every hand-written page the shell knows (tools/shell.js). */
+const PAGES = Object.keys(require('./shell').ROOT_PAGES);
 /* Never published: tooling, the test suites (tests/fixtures alone is 2.6 MB),
  * parked mockups, and documents written for this repository rather than for
  * readers of the site, and local environment files (the Python virtualenv
@@ -39,7 +43,7 @@ const PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.ht
  * the photo and type attributions. */
 const SKIP = new Set(['.git', '.github', '.claude', 'node_modules', '_site', '.DS_Store',
   '.venv', '.gitignore', 'package.json', 'package-lock.json', 'tests', 'tools', 'design',
-  'docs', 'README.md', 'CLAUDE.md', 'graphify-out',
+  'docs', 'README.md', 'CLAUDE.md', 'PRODUCT.md', 'graphify-out',
   /* The Career Explorer's build notes and parsed data (careers/data/
    * careers.json): for this repository, not loaded by any page. */
   'BUILD_NOTES.md', 'careers.json']);
@@ -123,7 +127,8 @@ function build() {
       js = bundle(page.replace('.html', ''), scripts);
     } else {
       const files = scripts.filter((f) => !isModel(f));
-      js = bundle('front', files, { at: files.indexOf('js/ticker.js'), code: tickerData });
+      const at = files.indexOf('js/ticker.js');
+      js = at > -1 ? bundle('front', files, { at, code: tickerData }) : bundle('page', files);
     }
     shell.push(js);
 
@@ -133,7 +138,7 @@ function build() {
     };
     swap('href="img/favicon.svg"', `href="${favicon}"`);
     swap('<script src="js/theme.js"></script>', `<script>${themeJs}</script>`);
-    swap('<script src="js/intro.js"></script>', `<script>${introJs}</script>`);
+    if (html.includes('<script src="js/intro.js"></script>')) swap('<script src="js/intro.js"></script>', `<script>${introJs}</script>`);
     swap('<link rel="stylesheet" href="css/fonts.css">\n<link rel="stylesheet" href="css/app.css">',
       `<link rel="stylesheet" href="${cssPath}">`);
     html = html.replace(/(<script defer src="[^"]+"><\/script>\n?)+/, `<script defer src="${js}"></script>\n`);

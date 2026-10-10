@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Data Analytics</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Data Analytics</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -87,12 +82,13 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Data analytics is the work of turning a company's raw records (sales, clicks, shipments, payroll, claims) into numbers people can trust and act on: reports, dashboards, explanations of what happened and why, and recommendations on what to do next. It is mostly descriptive and diagnostic (&quot;returns rose 8% in the north; here is why&quot;), not predictive modelling. Typical tools are SQL, Excel, a BI (business intelligence) tool such as Power BI, Tableau or Looker, and increasingly dbt for transforming data inside a warehouse. Analytics sits between the business (finance, marketing, operations, HR) and the technical data teams, so it rewards people who can do both talking and numbers. It is one of the most accessible technical entry points for business, economics and engineering graduates, but in 2026 the junior end of the market is tougher than the headline demand suggests, and AI assistants are absorbing the most routine query-and-chart work.</p>
-<p>Scope notes: Global scope with US, UK, Italy (Milan where found), Hong Kong, Singapore, Tokyo, Dubai and India/Eastern Europe offshoring; today is 9 October 2026 and figures are dated; salary evidence for entry-level and for Italy is thin (aggregators, a few job adverts, and one recruiter guide summary), so ranges marked &quot;author estimate&quot; or &quot;unverified&quot; are judgement, not data; statistical modelling/ML (data science), AI/ML engineering, data and software engineering, FP&amp;A and marketing strategy are covered by other branches and only cross-referenced here.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><p><strong>2.1 What data analytics is in 2026, and the job market.</strong> Analytics covers descriptive analysis (what happened), diagnostic analysis (why), reporting and dashboards, and the &quot;modern data stack&quot;: data is pulled from source systems into a cloud data warehouse (a large central database such as Snowflake, BigQuery, Databricks or Microsoft Fabric) by ingestion tools, cleaned and modelled with SQL (often with dbt), and displayed in a BI tool. Where it ends: <em>data engineering</em> builds and runs the pipelines and platform (see the software and data engineering branch); <em>data science</em> builds statistical models, experiments and machine learning (see the data science branch); <em>analytics</em> uses the prepared data to answer business questions and owns the metrics and dashboards. Analytics engineering sits on the border with engineering; product analytics borders on data science when it designs experiments. Titles are inconsistent, so read the job description, not the title.</p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Data analytics is the work of turning a company's raw records (sales, clicks, shipments, payroll, claims) into numbers people can trust and act on: reports, dashboards, explanations of what happened and why, and recommendations on what to do next. It is mostly descriptive and diagnostic (&quot;returns rose 8% in the north; here is why&quot;), not predictive modelling. Typical tools are SQL, Excel, a BI (business intelligence) tool such as Power BI, Tableau or Looker, and increasingly dbt for transforming data inside a warehouse. Analytics sits between the business (finance, marketing, operations, HR) and the technical data teams, so it rewards people who can do both talking and numbers. It is one of the most accessible technical entry points for business, economics and engineering graduates, but in 2026 the junior end of the market is tougher than the headline demand suggests, and AI assistants are absorbing the most routine query-and-chart work.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><p><strong>2.1 What data analytics is in 2026, and the job market.</strong> Analytics covers descriptive analysis (what happened), diagnostic analysis (why), reporting and dashboards, and the &quot;modern data stack&quot;: data is pulled from source systems into a cloud data warehouse (a large central database such as Snowflake, BigQuery, Databricks or Microsoft Fabric) by ingestion tools, cleaned and modelled with SQL (often with dbt), and displayed in a BI tool. Where it ends: <em>data engineering</em> builds and runs the pipelines and platform (see the software and data engineering branch); <em>data science</em> builds statistical models, experiments and machine learning (see the data science branch); <em>analytics</em> uses the prepared data to answer business questions and owns the metrics and dashboards. Analytics engineering sits on the border with engineering; product analytics borders on data science when it designs experiments. Titles are inconsistent, so read the job description, not the title.</p>
 <p>Demand data, dated:</p>
 <ul>
 <li>UK adverts (ITJobsWatch, 6 months to 9 Oct 2026): 1,130 permanent adverts cite &quot;Data Analyst&quot;, up from 474 a year earlier and 730 in 2024; median advertised salary £52,500 (25th percentile £40,000, 75th £65,000). The same page shows the 2025 median at £45,000, so part of the &quot;rise&quot; is a mix effect from a thin 2025. Top skills in adverts: SQL 42%, BI 37%, Power BI 36%, Python 30%, Excel 27%, AI 23%. Business Analyst adverts: 1,520 (701 a year earlier), median £55,000. Power BI is cited by 2,355 permanent adverts (median £55,000), Tableau by 649 (median £55,000). ITJobsWatch skews to IT-recruiter adverts and experienced hires, so it understates graduate pay.</li>
@@ -148,7 +144,8 @@
 <tr><th scope="row">3.8 Analytics consultant</th><td>42-50 (55-65)</td><td>4</td><td>4</td><td>3</td><td>US about $75-95k (est.) / UK £31-38k London Big 4 (Learnsignal 2025/26) / Italy EUR 26-32k (Deloitte, SDG Group 2026 ads)</td><td>3</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Analytics roles differ more by employer than by title. Ratings below are practitioner perception unless numbers are cited; I found no survey comparing hours across employer types, so hours are estimates.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Analytics roles differ more by employer than by title. Ratings below are practitioner perception unless numbers are cited; I found no survey comparing hours across employer types, so hours are estimates.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours (typical/peak), Stress, Pay, Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours (typical/peak)</th><th scope="col">Stress</th><th scope="col">Pay</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -209,7 +206,9 @@
 <tr><th scope="row">Operations / supply-chain analyst</th><td>Supply chain specialist/planner 30-40; demand planner 30-40</td><td>40-45; 40-50</td><td>&gt;45; &gt;50</td><td>National</td><td>MP26 procurement and supply chain table</td><td>Medium</td></tr>
 <tr><th scope="row">Data analyst (job ad)</th><td>28-34</td><td>n/a</td><td>n/a</td><td>Trentino</td><td>Randstad job board, 2026 (single ad)</td><td>Low</td></tr>
 </tbody></table></div><p>Notes: The MP26 data-analyst row confirms the entry-level cluster in the low-to-mid 30s of thousands. MP26 reports 61% of digital professionals using GenAI and expects growth in &quot;advanced data analyst&quot; roles.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless stated. Aggregator, blog and vendor sources are weak signals; recruiter-guide figures that could not be opened are noted as &quot;not read&quot;.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>591</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless stated. Aggregator, blog and vendor sources are weak signals; recruiter-guide figures that could not be opened are noted as &quot;not read&quot;.</p>
 <ol>
 <li>ITJobsWatch, Data Analyst, Business Analyst, Power BI, Tableau, dbt, Data Governance, Data Steward market pages (permanent vacancies, 6 months to 9 Oct 2026). <a class="cx-url" href="https://www.itjobswatch.co.uk/jobs/uk/data_analyst.do" rel="noopener noreferrer">https://www.itjobswatch.co.uk/jobs/uk/data_analyst.do</a> and sibling pages (e.g. /jobs/uk/data%20governance.do). Digital analytics page, data to May 2025: <a class="cx-url" href="https://www.itjobswatch.co.uk/jobs/uk/digital%20analytics.do" rel="noopener noreferrer">https://www.itjobswatch.co.uk/jobs/uk/digital%20analytics.do</a></li>
 <li>US Bureau of Labor Statistics, Occupational Outlook Handbook: Data Scientists, Operations Research Analysts, Management Analysts, Market Research Analysts, Logisticians, Human Resources Specialists (May 2025 pay; projections 2025-35). <a class="cx-url" href="https://www.bls.gov/ooh/" rel="noopener noreferrer">https://www.bls.gov/ooh/</a> (e.g. <a class="cx-url" href="https://www.bls.gov/ooh/math/data-scientists.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/math/data-scientists.htm</a>). Percentiles for management analysts via WageDex (secondary).</li>
@@ -237,7 +236,13 @@
 <li>Amity Online, Fueler and similar blogs on India fresher analyst pay (2026), weak signals. <a class="cx-url" href="https://fueler.io/blog/data-analyst-salary-in-india-freshers-mid-level-and-senior-roles" rel="noopener noreferrer">https://fueler.io/blog/data-analyst-salary-in-india-freshers-mid-level-and-senior-roles</a></li>
 <li>Prior project research: research/careers/tech-data-and-ai.md (Oct 2026) used for leads only.</li>
 </ol>
-<p>Data limits: no Robert Walters, Michael Page, or Hays tables could be read for 2026 data/BI roles; no reliable entry-level US data-analyst series; Italy has no analytics-engineer, marketing-analyst, HR-analyst, governance or supply-chain-analyst data; UK steward data rests on one 2026 advert and 18 in 2024. Tier lists, hours and stress ratings are practitioner perception.</p></div></section>
+<p>Data limits: no Robert Walters, Michael Page, or Hays tables could be read for 2026 data/BI roles; no reliable entry-level US data-analyst series; Italy has no analytics-engineer, marketing-analyst, HR-analyst, governance or supply-chain-analyst data; UK steward data rests on one 2026 advert and 18 in 2024. Tier lists, hours and stress ratings are practitioner perception.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: Global scope with US, UK, Italy (Milan where found), Hong Kong, Singapore, Tokyo, Dubai and India/Eastern Europe offshoring; today is 9 October 2026 and figures are dated; salary evidence for entry-level and for Italy is thin (aggregators, a few job adverts, and one recruiter guide summary), so ranges marked &quot;author estimate&quot; or &quot;unverified&quot; are judgement, not data; statistical modelling/ML (data science), AI/ML engineering, data and software engineering, FP&amp;A and marketing strategy are covered by other branches and only cross-referenced here.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -259,6 +264,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

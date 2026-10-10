@@ -1,0 +1,49 @@
+{
+  "_about": "Baseline content that is deliberately not on the site any more, each with its reason. tools/ux-ledger.js fails on anything missing that is not listed here. Only interface labels belong in this file: substantive content must stay reachable.",
+  "blocks": {
+    "ExplorerCompassBy backgroundBy fieldAll rolesCompareCalendarToolkitInterview prepSources": "Interface labels. The Career Explorer's old local navigation row, replaced by the shared section navigation (Explore careers: Overview, Career Compass, By what you studied, By field, All roles, Compare roles, Italian pay, Research sources) and, for Calendar, Toolkit and Interview prep, by the Find an internship or job section navigation. Every destination is still linked from every page.",
+    "Admetia — an independent calculator for MBA, business and computing master’s degrees.": "Interface label. The 404 page's footer line, reworded with the site's motto now that the site covers careers, hiring and moving as well as the calculators.",
+    "Programmes": "Interface label. The 404 page's link to programmes.html, now labelled Programme Directory like every other link to that page.",
+    "Atlas": "Interface label. The 404 page's link to map.html, now labelled Plan a move like the global navigation.",
+    "Compass": "Interface label. The breadcrumb on careers/compass.html, now Career Compass, the page's own title.",
+    "Italy pay": "Interface label. The breadcrumb on careers/italy-pay.html, now Italian pay, as in the section navigation.",
+    "01": "Decoration. The numeral beside the Business entry on the old front page (aria-hidden); the entry itself is on study.html.",
+    "02": "Decoration. The numeral beside the IT & Computing entry on the old front page (aria-hidden); the entry itself is on study.html."
+  },
+  "strings": {
+    "s page with Munich": "Not a string: a fragment of a code comment (the apostrophe in \"Germany's page with Munich's detail open\"), rewritten when the routes changed.",
+    "Salmon financial paper": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Carta salmone da quotidiano finanziario": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Black and white, Times New Roman": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Bianco e nero, Times New Roman": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Black masthead, white page, full colour": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Testata nera, pagina bianca, a colori": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "black + red": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "\"Roboto Serif Condensed\", \"Times New Roman\", serif": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "700 1em \"Roboto Serif Condensed\"": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "\"Times New Roman\", Times, serif": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "\"Noto Serif Display\", Georgia, serif": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "800 1em \"Noto Serif Display\"": "Interface label. Removed with the edition picker, at the user’s request to keep only The City.",
+    "Roboto Serif Condensed": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "Noto Serif Display": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "font-weight:100 900;font-stretch:62.5% 100%;": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "inset(0 100% 0 0)": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City.",
+    "inset(0 0% 0 0)": "Decoration. Removed font or animation instruction for the retired templates; opening titles now use only The City."
+  },
+  "links": {},
+  "files": {
+    "CREDITS.md": "Updated: photo usage locations reflect the refactor; retired-template font credits were removed together with those fonts. Credits and licences for retained assets are preserved.",
+    "fonts/OFL-noto-serif-display.txt": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "fonts/OFL-roboto-serif.txt": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "fonts/noto-serif-display.woff2": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "fonts/roboto-serif-condensed.woff2": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/OFL-gloock.txt": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/OFL-roboto-serif.txt": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/README.md": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/fbi-watchlist.png": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/fbi-watchlist.webp": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/wall-street.png": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "img/wordmark/wall-street.webp": "Removed: asset or licence belonging exclusively to the retired templates, at the user’s request to keep only The City.",
+    "fonts/README.md": "Updated: document only The City fonts; the retired templates and their dedicated assets were removed at the user’s request."
+  }
+}

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Data Science</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Data Science</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -87,13 +82,15 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Data science is the work of using statistics, programming and domain knowledge to answer questions and make predictions from data, so that someone can decide something: ship a feature, approve a loan, stock a warehouse, continue a clinical trial. The title &quot;data scientist&quot; now covers three quite different jobs: (1) analytics or product data science, where you run experiments and explain what changed and why; (2) machine-learning (ML) or modelling data science, where you build predictive models such as forecasts, recommendations, fraud scores; and (3) research or applied science, a mostly PhD-track job inventing new methods. Beside these sit older, more specialised professions that are data science in everything but name: operations research (optimisation), statistics and biostatistics (clinical trials, official statistics), and the modelling teams of banks and insurers. In October 2026 the market is two-speed: the US Bureau of Labor Statistics projects data scientist employment to grow 35% from 2025 to 2035 and a median pay of US$120,230 (May 2025), yet generalist &quot;data scientist&quot; postings and entry-level hiring have weakened as work shifts to ML/AI engineers and as LLM-based tools automate routine analysis. The first job is the hard part; pay for those who get in is high, especially in the US.</p>
-<p>Scope notes: (1) Global scope with the US, UK, continental Europe (Italy and Milan explicitly) and Asia/Middle East hubs; pay is shown in original currency, never converted, and is gross (RAL, &quot;lordo&quot; in Italy) unless stated. (2) Other branches cover data analysts/BI/analytics engineering, AI/ML engineering and AI research, software and data engineering, and quant finance; they appear here only as cross-references (see the boundary table in 2.0). (3) Salary data come from Levels.fyi (self-reported, skewed to big tech and well-paid hubs, so it overstates typical pay, and several city pages rest on 12-23 submissions), BLS, job adverts and aggregators; where no reliable figure exists the text says so. (4) Hours and stress ratings are practitioner consensus and general knowledge, not survey data, because no reliable survey by role family was found; such points are marked &quot;(consensus)&quot;. Facts I could not confirm are marked &quot;unverified&quot;. (5) &quot;Entry&quot; means 0-2 years, &quot;~5 years&quot; means mid-level, &quot;senior&quot; means 8+ years or a senior/staff title. (6) Rating scales are the shared 1-5 scales; entry difficulty reflects the 2025-26 market.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><h3 id="2-0-where-data-science-ends-and-its">2.0 Where data science ends and its neighbours begin</h3>
-<p>Students confuse these because job titles overlap. A rule of thumb: ask what the main deliverable is.</p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Data science is the work of using statistics, programming and domain knowledge to answer questions and make predictions from data, so that someone can decide something: ship a feature, approve a loan, stock a warehouse, continue a clinical trial. The title &quot;data scientist&quot; now covers three quite different jobs: (1) analytics or product data science, where you run experiments and explain what changed and why; (2) machine-learning (ML) or modelling data science, where you build predictive models such as forecasts, recommendations, fraud scores; and (3) research or applied science, a mostly PhD-track job inventing new methods. Beside these sit older, more specialised professions that are data science in everything but name: operations research (optimisation), statistics and biostatistics (clinical trials, official statistics), and the modelling teams of banks and insurers. In October 2026 the market is two-speed: the US Bureau of Labor Statistics projects data scientist employment to grow 35% from 2025 to 2035 and a median pay of US$120,230 (May 2025), yet generalist &quot;data scientist&quot; postings and entry-level hiring have weakened as work shifts to ML/AI engineers and as LLM-based tools automate routine analysis. The first job is the hard part; pay for those who get in is high, especially in the US.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="2-0-where-data-science-ends-and-its"><summary><h3 class="disc-t" translate="no" lang="en">2.0 Where data science ends and its neighbours begin</h3> <span class="disc-n"><span>221</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>Students confuse these because job titles overlap. A rule of thumb: ask what the main deliverable is.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Neighbour branch, Main deliverable, How it differs from data science"><table>
 <thead><tr><th scope="col">Neighbour branch</th><th scope="col">Main deliverable</th><th scope="col">How it differs from data science</th></tr></thead>
 <tbody>
@@ -102,9 +99,9 @@
 <tr><th scope="row">Software and data engineering</th><td>Code, systems, data pipelines and warehouses</td><td>Builds the platform the data scientist uses. Covered in the Computer Science branch.</td></tr>
 <tr><th scope="row">Quant finance (quant researchers, traders, quant developers)</th><td>Trading and pricing models in markets</td><td>Same maths, but the client is the market and pay and selectivity are in a different league. Credit-risk modelling at a bank is data science; derivatives pricing is quant.</td></tr>
 <tr><th scope="row">Actuarial</th><td>Reserves, premiums and capital for regulated insurance, signed off under professional exams</td><td>Legally accountable and exam-gated; data scientists in insurance build predictive models but do not sign reserving opinions.</td></tr>
-</tbody></table></div>
-<h3 id="2-1-what-data-scientist-means-in-2026">2.1 What &quot;data scientist&quot; means in 2026, and how the title has split</h3>
-<p>The title was popularised around 2012 as &quot;the sexiest job&quot; combining statistics, coding and business sense. By 2026 it has fragmented. Large companies now run separate ladders: for example Levels.fyi lists Meta data scientist levels IC3-IC8 with a different ladder for machine learning engineers, and a career-advice source describes the split as product/analytics data science, ML data science and analytics data science, noting the clean split only holds at companies with enough headcount to specialise (resumegeni and codingshuttle pieces, 2026; low-quality sources, treat as description not evidence). In practice:</p>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="2-1-what-data-scientist-means-in-2026"><summary><h3 class="disc-t" translate="no" lang="en">2.1 What &quot;data scientist&quot; means in 2026, and how the title has split</h3> <span class="disc-n"><span>545</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The title was popularised around 2012 as &quot;the sexiest job&quot; combining statistics, coding and business sense. By 2026 it has fragmented. Large companies now run separate ladders: for example Levels.fyi lists Meta data scientist levels IC3-IC8 with a different ladder for machine learning engineers, and a career-advice source describes the split as product/analytics data science, ML data science and analytics data science, noting the clean split only holds at companies with enough headcount to specialise (resumegeni and codingshuttle pieces, 2026; low-quality sources, treat as description not evidence). In practice:</p>
 <ul>
 <li><strong>Analytics / product data science</strong>: experiments, metrics, causal inference (methods for working out whether X caused Y rather than merely correlating with it). Closest to a product manager. Little model building.</li>
 <li><strong>ML / modelling data science</strong>: forecasting, recommendation, pricing, churn, fraud. Python, feature engineering (turning raw data into inputs a model can use), model evaluation. Increasingly overlaps with ML engineering.</li>
@@ -118,50 +115,51 @@
 <li>Stanford's &quot;Canaries in the Coal Mine&quot; paper (Brynjolfsson, Chandar and Chen, August 2025), using ADP payroll data, found employment of 22-25 year-olds in the most AI-exposed occupations fell about 13% relative to less exposed ones, while older workers in the same jobs were stable. Software developers and customer service were the headline examples; data science was not isolated in what I could verify. Authors call it consistent with, not proof of, AI effects.</li>
 <li>Meta, July 2026: Alex Schultz, previously CMO and head of Analytics (which includes data science), became Meta's first chief data officer, and he cited an internal Analytics Agent as Meta's most widely used AI agent (The Star / Spokesman-Review, 1-2 July 2026). It signals that routine analytics is being automated at the largest employers.</li>
 </ul>
-<p>Net reading: tools like AutoML and LLM coding assistants have made writing a basic model or query cheap, so entry hiring has narrowed toward people who can frame a business problem, design experiments and judge model output. Employers' demand is shifting to ML/AI engineering. Demand for statistically rigorous people (causal inference, experimentation, regulated modelling) looks sturdier than demand for &quot;can fit a random forest&quot;.</p>
-<h3 id="2-2-product-and-experimentation-data-science">2.2 Product and experimentation data science</h3>
-<ul>
+<p>Net reading: tools like AutoML and LLM coding assistants have made writing a basic model or query cheap, so entry hiring has narrowed toward people who can frame a business problem, design experiments and judge model output. Employers' demand is shifting to ML/AI engineering. Demand for statistically rigorous people (causal inference, experimentation, regulated modelling) looks sturdier than demand for &quot;can fit a random forest&quot;.</p></div></div></details>
+<details class="disc cx-disc" id="2-2-product-and-experimentation-data-science"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Product and experimentation data science</h3> <span class="disc-n"><span>118</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Using A/B tests (randomised experiments comparing a new version of a product with the current one), metric design and causal inference to guide product decisions.</li>
 <li><strong>In practice</strong>: you define success metrics for a feature, size a two-week test on checkout, write the SQL for conversion lift, check for pitfalls (novelty effects, network effects, multiple comparisons), and present a go/no-go to the product team. Also: diagnosing metric drops, forecasting growth, building north-star metrics.</li>
 <li><strong>Employers</strong>: tech and consumer platforms (Meta, Google, Netflix, Airbnb, Uber, DoorDash, Stripe, Pinterest, Snap among the top payers on Levels.fyi, 2026; in Europe Booking.com, Spotify, Zalando, Delivery Hero, Wolt, Revolut, Monzo; in Asia Grab, Rakuten, PayPay), plus e-commerce, fintech, gaming and media.</li>
-</ul>
-<h3 id="2-3-machine-learning-modelling-data-science">2.3 Machine-learning / modelling data science</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-3-machine-learning-modelling-data-science"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Machine-learning / modelling data science</h3> <span class="disc-n"><span>88</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Building predictive or optimisation models that feed a product or an operational decision: demand forecasting, recommendation, dynamic pricing, customer churn, fraud detection, predictive maintenance.</li>
 <li><strong>In practice</strong>: framing the target variable, assembling features from messy tables, training and validating models, handing them to engineers for deployment (MLOps), monitoring drift. Increasingly includes LLM-based features (classification, extraction, search).</li>
 <li><strong>Employers</strong>: big tech and scale-ups; retail and e-commerce; telecoms; energy and utilities (Enel is the highest-paying Italian employer on Levels.fyi's Italian data scientist page, 2026, small sample); manufacturing; media.</li>
-</ul>
-<h3 id="2-4-decision-science-and-operations-research">2.4 Decision science and operations research</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-4-decision-science-and-operations-research"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Decision science and operations research</h3> <span class="disc-n"><span>156</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Operations research (OR) uses mathematical optimisation (finding the best allocation under constraints), simulation and queueing theory to improve operations; &quot;decision science&quot; is the business-facing label for the same family plus behavioural and econometric methods.</li>
 <li><strong>In practice</strong>: route and schedule optimisation, inventory and network design, workforce rostering, airline pricing and revenue management (how many seats to sell at which price), warehouse and delivery simulation, energy dispatch. Tools: solvers (Gurobi, CPLEX, OR-Tools), Python, simulation packages, sometimes AMPL/Julia.</li>
 <li><strong>Employers</strong>: logistics and e-commerce operators, airlines, retailers, utilities and grid operators, manufacturers, defence and government analysts, and software vendors who sell planning engines. BLS says operations research analysts work mostly in finance and insurance (26%), professional/technical services (22%), management of companies (9%), federal government (6%) and manufacturing (4%) (BLS, May 2025). I did not verify specific employers' OR teams in this round (e.g. Amazon's supply-chain optimisation group); examples named in role section 3.3 are general industry knowledge.</li>
-</ul>
-<h3 id="2-5-statistics-and-biostatistics">2.5 Statistics and biostatistics</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-5-statistics-and-biostatistics"><summary><h3 class="disc-t" translate="no" lang="en">2.5 Statistics and biostatistics</h3> <span class="disc-n"><span>171</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Designing studies and analysing data with rigorous inference. Biostatistics applies this to health: clinical trials, epidemiology, public health. Official statistics produces national numbers (inflation, employment, census).</li>
 <li><strong>In practice</strong>: writing statistical analysis plans for a trial, sample-size calculation, randomisation, analysing endpoints, interacting with regulators; or producing survey estimates and quality-controlling national statistics. Tools: R and SAS dominate pharma, with CDISC data standards (SDTM/ADaM) as the industry format.</li>
 <li><strong>Employers</strong>: pharma and biotech (e.g. GSK has a 2026 statistics/biostatistics graduate programme in Siena, Italy, requiring an MSc with a biostatistics focus, R assessed, and fluent English and Italian), contract research organisations (CROs, firms that run trials for drugmakers: IQVIA, Parexel and others), regulators, hospitals and universities, and national statistics offices: ISTAT (Italy), ONS (UK), Eurostat (EU). ISTAT opened a 195-post permanent recruitment in 2026 (54 researchers, 46 technologists, 95 technical collaborators); researcher/technologist applications closed 22 January 2026 (ISTAT/press, accessed Oct 2026). BLS: statisticians are most often employed by the federal government (16%), R&amp;D in life/physical/engineering sciences (15%) and healthcare (8%).</li>
-</ul>
-<h3 id="2-6-data-science-in-financial-services-and">2.6 Data science in financial services and insurance</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-6-data-science-in-financial-services-and"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Data science in financial services and insurance</h3> <span class="disc-n"><span>172</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Credit scoring (predicting the chance a borrower defaults), fraud detection, customer analytics, insurance pricing and claims, anti-money-laundering models, plus model validation.</li>
 <li><strong>In practice</strong>: models are regulated and must be explainable and documented; the work includes model risk governance, bias testing and sign-off by independent validators. Credit-risk modelling (probability of default, IFRS 9 provisioning) is a mature specialism. In insurance, predictive pricing models sit next to the actuarial function: Solvency UK/II requires the actuarial function to opine on underwriting policy, so pricing is where actuaries and data scientists collide (Novarica 2016 warned of friction; vendor Akur8 argues for hybrid &quot;actuarial data scientists&quot;; low-quality sources).</li>
 <li><strong>Employers</strong>: retail and commercial banks, card issuers (Capital One), fintechs (Monzo, Revolut), insurers (Admiral, Aviva, Allianz, Generali, AXA). BLS: insurance carriers employ 10% and credit intermediation 6% of US data scientists.</li>
 <li><strong>Versus actuaries and quants</strong>: actuaries are exam-qualified professionals responsible for reserves and capital; quants price and trade in markets (see Finance, Quant branch). Bank data scientists mostly model customers and risk, not markets.</li>
-</ul>
-<h3 id="2-7-research-and-applied-science">2.7 Research and applied science</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-7-research-and-applied-science"><summary><h3 class="disc-t" translate="no" lang="en">2.7 Research and applied science</h3> <span class="disc-n"><span>106</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: &quot;Applied scientist&quot; (Amazon's title; similar titles elsewhere: research scientist, scientist) builds new or heavily customised models and often publishes. Economist and &quot;economic data scientist&quot; roles in tech use econometrics (statistics for economic data, esp. causal) to study pricing, marketplaces and advertising. Cross-reference Economics.</li>
 <li><strong>In practice</strong>: reading papers, prototyping models, running offline and online evaluations, writing internal or external papers, sometimes shipping production code.</li>
 <li><strong>Employers</strong>: Amazon, Google, Meta, Microsoft, Apple, large marketplaces and platforms, research labs; AI labs sit in the AI branch. Amazon's US applied scientist pay is US$247k (L4) to US$413k (L6) in total compensation (Levels.fyi, 9 Oct 2026, 107 submissions).</li>
-</ul>
-<h3 id="2-8-data-science-consulting">2.8 Data science consulting</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-8-data-science-consulting"><summary><h3 class="disc-t" translate="no" lang="en">2.8 Data science consulting</h3> <span class="disc-n"><span>80</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition</strong>: Building analytics and AI solutions for client companies, as a practice inside a consultancy (McKinsey QuantumBlack, BCG X), a Big Four or IT-services analytics team (Deloitte, Accenture, Capgemini), or a specialist boutique (Reply and Bip in Italy).</li>
 <li><strong>In practice</strong>: 3-6 month client projects, mixing modelling with stakeholder management; heavy emphasis on PowerPoint and getting the client to adopt the model.</li>
 <li><strong>Employers</strong>: strategy consultancies, Big Four, IT integrators, boutiques. Clients are banks, energy companies, retailers, public bodies.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -197,7 +195,8 @@
 <tr><th scope="row">3.7 Data science consultant</th><td>45-55 (60+)</td><td>4</td><td>4</td><td>4</td><td>US: BCG data scientist ladder starts around US$166k total (Levels.fyi, 2025, thin); UK: no reliable data found; Italy: about EUR 29-42k (aggregators, not firm data)</td><td>4 (Tier 1), 3 (others)</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>The same role (data scientist) varies a lot by employer type. Ratings are practitioner consensus unless a source is shown; pay figures are anchored where data exist.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>The same role (data scientist) varies a lot by employer type. Ratings are practitioner consensus unless a source is shown; pay figures are anchored where data exist.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours/week, Stress (1-5), Pay (entry, relative), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours/week</th><th scope="col">Stress (1-5)</th><th scope="col">Pay (entry, relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -267,7 +266,9 @@
 <tr><th scope="row">Clinical data manager (pharma/CRO)</th><td>30-40</td><td>40-55</td><td>&gt;55</td><td>National</td><td>MP26 healthcare</td><td>Medium</td></tr>
 <tr><th scope="row">Applied scientist</th><td>no reliable data found</td><td></td><td></td><td></td><td></td><td>n/a</td></tr>
 </tbody></table></div><p>Notes: The Italian job market for biostatisticians is small and the only numbers are from a career-guide site and single ads. Public research positions often start as grants (borse), not salaries.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed 9 October 2026 unless a date is given. Levels.fyi pages are self-reported data, attribution required.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>747</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed 9 October 2026 unless a date is given. Levels.fyi pages are self-reported data, attribution required.</p>
 <ol>
 <li>BLS Occupational Outlook Handbook, Data Scientists (May 2025 wages, 2025-35 projections). U.S. Bureau of Labor Statistics. <a class="cx-url" href="https://www.bls.gov/ooh/math/data-scientists.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/math/data-scientists.htm</a></li>
 <li>BLS Occupational Outlook Handbook, Operations Research Analysts. <a class="cx-url" href="https://www.bls.gov/ooh/math/operations-research-analysts.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/math/operations-research-analysts.htm</a></li>
@@ -298,7 +299,13 @@
 <li>Project research files (reused leads, verified there): research/careers/tech-data-and-ai.md (Amazon Berlin applied scientist posting 16 June 2026, IMC London ML researcher posting, Monzo Associate Data Scientist internship 30 Sep 2026, GOV.UK Skilled Worker going rates updated 29 April 2026: <a class="cx-url" href="https://www.gov.uk/government/publications/skilled-worker-visa-going-rates-for-eligible-occupations" rel="noopener noreferrer">https://www.gov.uk/government/publications/skilled-worker-visa-going-rates-for-eligible-occupations</a>).</li>
 <li>Not obtained: ASA/Amstat salary data for industry statisticians (latest public report from 2015), PSI salary survey (none found), Eurostat and ISTAT pay scales, Michael Page/Robert Walters/Hays data science salary tables (gated). The New York Fed College Labor Market page (accessed 9 October 2026) gives 5.6% unemployment and 42% underemployment for recent graduates in Q2 2026 but major-level figures were not retrievable. <a class="cx-url" href="https://www.newyorkfed.org/research/college-labor-market" rel="noopener noreferrer">https://www.newyorkfed.org/research/college-labor-market</a></li>
 </ol>
-<p>Data limits: no reliable entry-level compensation was found for operations research or applied science outside the US, nor for consulting data scientists, and no systematic hours or stress survey by role family. Levels.fyi city pages for Hong Kong, Tokyo, Dubai and Italy rest on 12-23 submissions. Searches ran to about 28 queries plus page fetches.</p></div></section>
+<p>Data limits: no reliable entry-level compensation was found for operations research or applied science outside the US, nor for consulting data scientists, and no systematic hours or stress survey by role family. Levels.fyi city pages for Hong Kong, Tokyo, Dubai and Italy rest on 12-23 submissions. Searches ran to about 28 queries plus page fetches.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: (1) Global scope with the US, UK, continental Europe (Italy and Milan explicitly) and Asia/Middle East hubs; pay is shown in original currency, never converted, and is gross (RAL, &quot;lordo&quot; in Italy) unless stated. (2) Other branches cover data analysts/BI/analytics engineering, AI/ML engineering and AI research, software and data engineering, and quant finance; they appear here only as cross-references (see the boundary table in 2.0). (3) Salary data come from Levels.fyi (self-reported, skewed to big tech and well-paid hubs, so it overstates typical pay, and several city pages rest on 12-23 submissions), BLS, job adverts and aggregators; where no reliable figure exists the text says so. (4) Hours and stress ratings are practitioner consensus and general knowledge, not survey data, because no reliable survey by role family was found; such points are marked &quot;(consensus)&quot;. Facts I could not confirm are marked &quot;unverified&quot;. (5) &quot;Entry&quot; means 0-2 years, &quot;~5 years&quot; means mid-level, &quot;senior&quot; means 8+ years or a senior/staff title. (6) Rating scales are the shared 1-5 scales; entry difficulty reflects the 2025-26 market.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -320,6 +327,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

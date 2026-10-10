@@ -356,7 +356,7 @@ const FG = {}; (A.entryFields || []).forEach((F) => { FG[F.id] = F.g; });
 const oneSided = Object.values(E).filter((e) => ['biz', 'it'].some((g) => !(e.fields || []).some((x) => FG[x.f] === g))).map((e) => e.id);
 console.log('  (info) hiring fields per country (business/computing): ' + Object.values(E).map((e) => e.id + ' ' + (e.fields || []).filter((x) => FG[x.f] === 'biz').length + '/' + (e.fields || []).filter((x) => FG[x.f] === 'it').length).join(', '));
 t('every country covers both business and computing fields', oneSided.length === 0, oneSided.join(' '));
-t('the country page draws How hiring works', /function entrySection\(e\)/.test(read('js/page-map.js')) && /loadEntry\(id\)/.test(read('js/page-map.js')));
+t('the country page draws How hiring works', /function entrySection\(e, rec\)/.test(read('js/page-map.js')) && /loadEntry\(id\)/.test(read('js/page-map.js')));
 t('tools/build.js publishes the hiring files', /data\/atlas\/entry/.test(read('tools/build.js')));
 /* The full plan: the same rows in every country (tools/hiring-check.js). */
 const HC = require('../tools/hiring-check.js').check();
@@ -387,9 +387,12 @@ if (OUT) {
 }
 /* The topic page and the planner. */
 t('hiring.html exists and loads the planner and the hiring data', /js\/page-hiring\.js/.test(read('hiring.html')) && /data\/atlas\/outcomes\.js/.test(read('hiring.html')));
-t('hiring.html is built and kept offline', /'hiring\.html'\]/.test(read('tools/build.js')) && /'hiring\.html'/.test(read('sw.js')) && /js\/page-hiring\.js/.test(read('sw.js')));
-['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html'].forEach((p) => {
-  t(p + ' links to the hiring page in its section nav', /href="hiring\.html"[^>]*data-sec="hiring"/.test(read(p)));
+t('hiring.html is built and kept offline', /'hiring\.html': \{/.test(read('tools/shell.js')) && /require\('\.\/shell'\)\.ROOT_PAGES/.test(read('tools/build.js')) && /'hiring\.html'/.test(read('sw.js')) && /js\/page-hiring\.js/.test(read('sw.js')));
+/* Every page reaches hiring: "Find an internship or job" in the global
+ * navigation, and "Hiring by country" in the footer's site index. */
+const SHELL_PAGES = Object.keys(require('../tools/shell.js').ROOT_PAGES);
+SHELL_PAGES.forEach((p) => {
+  t(p + ' links to the jobs section and to the hiring page', /<a href="jobs\.html" data-section="jobs"/.test(read(p)) && /<li><a href="hiring\.html">Hiring by country<\/a><\/li>/.test(read(p)));
 });
 t('the hiring page draws the planner and the table of countries', /function drawPlanner/.test(read('js/page-hiring.js')) && /function drawTable/.test(read('js/page-hiring.js')));
 
@@ -472,10 +475,10 @@ const session = read('js/session.js');
 t('"Clear everything" removes the passport (it is not a kept setting)', !/'atlas'/.test((/var KEEP = \[[^\]]*\]/.exec(session) || [''])[0]) && /PREFIX \+ 'atlas'/.test(session));
 
 /* ------------------------------------------------------------- wiring --- */
-t('tools/build.js publishes map.html', /'map\.html'/.test(read('tools/build.js')));
+t('tools/build.js publishes map.html', /'map\.html': \{/.test(read('tools/shell.js')) && /require\('\.\/shell'\)\.ROOT_PAGES/.test(read('tools/build.js')));
 t('sw.js keeps map.html and the Atlas data offline', /'map\.html'/.test(read('sw.js')) && /'data\/atlas\/index\.js'/.test(read('sw.js')) && /'js\/page-map\.js'/.test(read('sw.js')));
-['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html'].forEach((p) => {
-  t(p + ' links to the Atlas in its section nav', /<a class="sec-group" href="map\.html" data-sec="map">Atlas<\/a>/.test(read(p)));
+SHELL_PAGES.forEach((p) => {
+  t(p + ' links to the Atlas in the global navigation', /<a href="map\.html" data-section="move"[^>]*>Plan a move<\/a>/.test(read(p)));
 });
 t('the 404 page lists the Atlas', /<li><a href="map\.html"/.test(read('404.html')));
 t('map.html loads the Atlas index and shapes, not the country records', /data\/atlas\/index\.js/.test(read('map.html')) && /data\/atlas\/geo\.js/.test(read('map.html')) && !/data\/atlas\/[a-z]{2}\.js/.test(read('map.html')));

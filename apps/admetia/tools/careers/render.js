@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------------------
  * Career Explorer: the pages, from the data tools/build-careers.js parsed.
  *
- * Every page is the site's own paper: the strip with the edition and
- * language pickers, the compact nameplate and the section navigation are
+ * Every page is the site's own paper: the strip with the
+ * language picker, the compact nameplate and the section navigation are
  * read from index.html at build time, so they never drift from the rest of
  * the site. Report text is wrapped in translate="no" lang="en": the Italian
  * edition translates the interface around it, never the research.
@@ -17,6 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const M = require('./md');
 const P = require('./parse');
+const SH = require('../shell');
 
 const esc = M.escHtml;
 const SITE = 'https://iaconoalessandro.github.io/admetia/';
@@ -34,14 +35,6 @@ function site(ROOT, data) {
   };
   /* Names from the research (fields, backgrounds, roles) stay in English. */
   const nm = (s) => `<span translate="no">${esc(s)}</span>`;
-
-  const indexHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const strip = /<div class="ticker"[\s\S]*?<\/div>\n<\/div>/.exec(indexHtml);
-  const nav = /<nav class="sections"[\s\S]*?<\/nav>/.exec(indexHtml);
-  if (!strip || !nav) throw new P.ParseError('index.html: strip or section nav not found');
-  const edition = /<div class="edition">[\s\S]*?<\/div><\/div>/.exec(strip[0]);
-  if (!edition) throw new P.ParseError('index.html: edition picker not found');
-  if (!/data-sec="careers"/.test(nav[0])) throw new P.ParseError('index.html: the section nav has no Careers link');
 
   const roleById = new Map(data.roles.map((r) => [r.id, r]));
   const fieldBySlug = new Map(data.fields.map((f) => [f.slug, f]));
@@ -93,24 +86,28 @@ function site(ROOT, data) {
 
   /* ---------------------------------------------------------------- shell */
 
+  /* The chrome is the site's own (tools/shell.js): the same strip,
+   * nameplate, navigation and breadcrumbs as every other page. A page sits
+   * in "Explore careers" unless it is one of the three getting-in pages,
+   * which belong to "Find an internship or job". */
+  const JOBS = new Set([U.calendar, U.toolkit, U.interview]);
   function shell(page) {
     const from = page.path;
     const r = (to) => rel(from, to);
-    const navHtml = nav[0]
-      .replace(/href="([^"#:]+)"/g, (m, h) => `href="${r(h)}"`)
-      .replace('<a class="sec-group" href', '<a class="sec-group" href')
-      .replace(/(<a class="sec-group)(" href="[^"]+" data-sec="careers")/, '$1 on" aria-current="page$2');
-    const crumbs = page.crumbs ? `<nav class="cx-crumbs" aria-label="${ui('Breadcrumb')}"><ol>` +
-      page.crumbs.map((c, i) => i === page.crumbs.length - 1
-        ? `<li><span aria-current="page">${c.name ? nm(c.label) : ui(c.label)}</span></li>`
-        : `<li><a href="${r(c.href)}">${c.name ? nm(c.label) : ui(c.label)}</a></li>`).join('') + '</ol></nav>' : '';
-    const local = [['Explorer', U.home], ['Compass', U.compass], ['By background', U.home + '#backgrounds'], ['By field', U.home + '#fields'],
-      ['All roles', U.roles], ['Compare', U.compare], ['Calendar', U.calendar], ['Toolkit', U.toolkit], ['Interview prep', U.interview], ['Sources', U.sources]]
-      .map(([l, h]) => `<a href="${r(h)}"${h === from ? ' aria-current="page"' : ''}>${ui(l)}</a>`).join('');
+    const section = JOBS.has(from) ? 'jobs' : 'careers';
+    const keys = SH.LOCAL[section].map((x) => x.key);
+    const current = keys.includes(from) ? from
+      : from.startsWith('careers/roles/') ? U.roles
+      : from.startsWith('careers/fields/') ? U.home + '#fields'
+      : from.startsWith('careers/backgrounds/') ? U.home + '#backgrounds' : null;
+    /* The page's own trail, without the old "Career Explorer" first step:
+     * the section's name stands there now. */
+    const crumbs = (page.crumbs || []).filter((c) => c.href !== U.home);
+    const top = SH.top({ path: from, section, current, crumbs, t: ui, name: nm });
     const title = page.title === 'Career Explorer' ? 'Career Explorer — Admetia' : `${page.title} — Career Explorer — Admetia`;
     if (page.static) { used.add(title); used.add(page.description); }
     return `<!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -136,24 +133,8 @@ function site(ROOT, data) {
 <link rel="stylesheet" href="${r('careers/assets/careers.css')}">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">${ui('Skip to content')}</a>
-
-<div class="ticker cx-strip" role="region" aria-label="${ui('Career Explorer')}">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">${ui('Career Explorer')}</span></div>
-  <div class="ticker-view"></div>
-  ${edition[0]}
-</div>
-
-<header class="masthead compact">
-  <a class="nameplate" href="${r('index.html')}">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
-</header>
-
-${navHtml}
-
+${top}
 <main class="shell cx-main" id="main" tabindex="-1">
-${crumbs}
-<nav class="cx-local" aria-label="${ui('Career Explorer sections')}">${local}</nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 ${page.body}
@@ -186,6 +167,7 @@ ${items.map((g) => `        <li>${mdInline(from, g.head)}${g.subs.length ? '<ul>
     </aside>
     <p><b class="rubric-in">${ui('The research')}</b>${ui('Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.')}</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    ${SH.foot({ path: from, t: ui }).split('\n').join('\n    ')}
   </footer>`;
   }
 
@@ -230,6 +212,48 @@ ${items}
     return `<nav class="cx-toc" aria-labelledby="toc-title"><details open><summary id="toc-title">${ui(label)}</summary><ol>
 ${entries.map(([id, text]) => `<li><a href="#${id}">${text}</a></li>`).join('\n')}
 </ol></details></nav>`;
+  }
+
+  /* ------------------------------------------------------------ folding */
+
+  const nWords = (t) => (P.stripMd(t).match(/\S+/g) || []).length;
+  const fmt = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const FOLD_OVER = 1200;   /* words: a section longer than this folds its parts */
+
+  /* One part of a long page as a native <details>, the heading in its
+   * summary. It keeps the heading's id, so links to it still arrive (and
+   * careers/assets/careers.js opens it when they do). */
+  function discHtml(id, level, titleHtml, noteHtml, bodyHtml, open) {
+    return `<details class="disc cx-disc"${id ? ` id="${id}"` : ''}${open ? ' open' : ''}><summary><h${level} class="disc-t" translate="no" lang="en">${titleHtml}</h${level}>${noteHtml ? ` <span class="disc-n">${noteHtml}</span>` : ''}</summary>
+<div class="disc-body">${bodyHtml}</div></details>`;
+  }
+  const wordsNote = (n) => `<span>${fmt(n)}</span> <span>${ui('words')}</span>`;
+  const discTools = () => `<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">${ui('Open every part')}</button> <span>${ui('Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.')}</span></p>`;
+
+  /* A report section as prose. A long one with headings of its own is cut
+   * at its top-level headings: what comes before the first stays in view,
+   * and each heading becomes a folded part labelled with its own words and
+   * its length. Nothing is shortened or reordered. */
+  function prose(from, text, hid, cls = 'cx-prose') {
+    const heads = [...text.matchAll(/^(#{2,6}) (.+)$/gm)];
+    if (nWords(text) <= FOLD_OVER || heads.length < 2) return `<div class="${cls}" translate="no" lang="en">${md(from, text, { headingId: hid })}</div>`;
+    const top = Math.min(...heads.map((h) => h[1].length));
+    const chunks = [{ title: null, lines: [] }];
+    for (const line of text.split('\n')) {
+      const m = /^(#{2,6}) (.+)$/.exec(line);
+      if (m && m[1].length === top) chunks.push({ title: m[2], lines: [] });
+      else chunks[chunks.length - 1].lines.push(line);
+    }
+    let out = '';
+    const intro = chunks[0].lines.join('\n').trim();
+    if (intro) out += `<div class="${cls}" translate="no" lang="en">${md(from, intro, { headingId: hid })}</div>\n`;
+    out += discTools() + '\n';
+    for (const c of chunks.slice(1)) {
+      const id = hid(c.title, top);
+      const body = c.lines.join('\n').trim();
+      out += discHtml(id, top, mdInline(from, c.title), wordsNote(nWords(body)), `<div class="${cls}" translate="no" lang="en">${md(from, body, { headingId: hid })}</div>`) + '\n';
+    }
+    return out;
   }
 
   function roleLink(from, id, extra = '') {
@@ -308,12 +332,13 @@ ${data.fields.map((f) => `      <li><a href="${rel(from, U.field(f.slug))}">${nm
       <li><a href="${rel(from, U.roles)}">${ui('All role families, searchable')}</a></li>
       <li><a href="${rel(from, U.compare)}">${ui('Compare roles: hours, stress, pay, entry')}</a></li>
       <li><a href="${rel(from, U.italy)}">${ui('Italy pay add-on')}</a></li>
+      <li><a href="${rel(from, 'study.html')}#pathways">${ui('Which master’s track leads here')}</a></li>
       <li><a href="${rel(from, U.sources)}">${ui('Sources, scales and gaps')}</a></li>
     </ul>
   </section>
 </div>
 
-<section class="cx-band" aria-labelledby="fields-title">
+<section class="cx-band">
   <h2 class="rubric" id="fields-title">${ui('The thirteen fields')}</h2>
   <div class="cx-table" role="region" tabindex="0" aria-labelledby="fields-title"><table class="cx-fields">
   <thead><tr><th scope="col">${ui('Field')}</th><th scope="col">${ui('Depth')}</th><th scope="col">${ui('Role families')}</th><th scope="col">${ui('What it is')}</th></tr></thead>
@@ -370,7 +395,7 @@ ${sections}
   ${prev ? `<a rel="prev" href="${rel(from, U.bg(prev.slug))}"><span>${ui('Previous background')}</span>${nm(prev.name)}</a>` : '<span></span>'}
   ${next ? `<a rel="next" href="${rel(from, U.bg(next.slug))}"><span>${ui('Next background')}</span>${nm(next.name)}</a>` : '<span></span>'}
 </nav>`;
-    add({ path: from, title: `If you studied ${b.name}`, crumbs: [{ href: U.home, label: 'Career Explorer' }, { href: U.home + '#backgrounds', label: 'By background' }, { label: b.name, name: true }],
+    add({ path: from, title: `If you studied ${b.name}`, crumbs: [{ href: U.home, label: 'Career Explorer' }, { href: U.home + '#backgrounds', label: 'By what you studied' }, { label: b.name, name: true }],
       description: `Which fields and role families a ${b.name} background leads to, rated strong, possible or stretch, with the reason for each.`, body });
   });
 
@@ -378,7 +403,7 @@ ${sections}
   data.fields.forEach((f, fi) => {
     const from = U.field(f.slug);
     const sl = slugger();
-    ['what-it-is', 'map', 'roles', 'employers', 'backgrounds', 'italy-pay', 'sources', 'verify-title', 'toc-title', 'reality-title', 'scores'].forEach((x) => sl(x));
+    ['what-it-is', 'map', 'roles', 'employers', 'backgrounds', 'italy-pay', 'sources', 'research-notes', 'verify-title', 'toc-title', 'reality-title', 'scores'].forEach((x) => sl(x));
     const hid = (t) => sl(t);
     const s = f.sections;
     const prev = data.fields[fi - 1], next = data.fields[fi + 1];
@@ -405,7 +430,19 @@ ${f.roles.map((id) => { const r = roleById.get(id); const tl = (l) => `<span cla
     const italyMd = [`| ${f.italy.header.join(' | ')} |`, `|${f.italy.header.map(() => '---').join('|')}|`, ...itRows.map((r) => `| ${r.join(' | ')} |`)].join('\n');
 
     const tocE = [['what-it-is', esc(s1Title(1))], ['map', esc(s1Title(2))], ['roles', esc(s1Title(3))], ['employers', esc(s1Title(4))],
-      ['backgrounds', esc(s1Title(5))], ['italy-pay', ui('Italy pay (add-on)')], ['sources', esc(s1Title(6))]];
+      ['backgrounds', esc(s1Title(5))], ['italy-pay', ui('Italy pay (add-on)')], ['sources', esc(s1Title(6))], ['research-notes', ui('How this field was researched')]];
+
+    /* Section 1 is one paragraph on the field, then the researchers' own
+     * "Scope notes": where they looked, what was thin and what could not be
+     * opened. Those are working notes, so they are printed whole under
+     * "How this field was researched" with the report's preface, and
+     * section 1 says where they went. The build stops if a report has no
+     * such paragraph rather than guess which one it is. */
+    const paras = s[1].split(/\n{2,}/);
+    const isScope = (x) => /^\**Scope notes?:?\**/.test(x.trim());
+    const scope = paras.filter(isScope);
+    if (scope.length !== 1) throw new P.ParseError(`${f.slug}: section 1 has ${scope.length} "Scope notes" paragraphs, expected one`);
+    const s1 = paras.filter((x) => !isScope(x)).join('\n\n');
     function s1Title(n) { return ['', '1. What this branch is', '2. Map of areas and sectors', '3. Role families', '4. Banks vs. other employer types', '5. Which backgrounds fit this branch', '6. Sources'][n]; }
 
     const body = `<header class="cx-head">
@@ -417,20 +454,29 @@ ${verifyBox(from, f.gaps, 'Parts of this field to check first')}
 <div class="cx-layout">
 ${toc(tocE)}
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en">${md(from, f.preface, { headingId: hid })}</div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(1))}</h2><div class="cx-prose" translate="no" lang="en">${md(from, s[1], { headingId: hid })}</div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(2))}</h2><div class="cx-prose" translate="no" lang="en">${md(from, s[2], { headingId: hid })}</div></section>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(1))}</h2><div class="cx-prose" translate="no" lang="en">${md(from, s1, { headingId: hid })}</div>
+<p class="cx-note">${uiRaw('Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.')}</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(2))}</h2>
+${prose(from, s[2], hid)}</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(3))}</h2>
 ${scoreTable}
 ${s3}</section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(4))}</h2><div class="cx-prose" translate="no" lang="en">${md(from, s[4], { headingId: hid })}</div></section>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(4))}</h2>
+${prose(from, s[4], hid)}</section>
 <section id="backgrounds" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(5))}</h2>
 <p class="cx-links-inline"><span>${ui('Each background’s full list of roles:')}</span> ${data.backgrounds.map((b) => `<a href="${rel(from, U.bg(b.slug))}">${nm(b.name)}</a>`).join(' · ')}</p>
-<div class="cx-prose" translate="no" lang="en">${md(from, s[5], { headingId: hid })}</div></section>
+${prose(from, s[5], hid)}</section>
 <section id="italy-pay" class="cx-sec"><h2>${ui('Italy pay (add-on)')}</h2>
 <p class="cx-note">${uiRaw(`From the Italy pay addendum (compiled 9 October 2026), which fills Italian gaps across all thirteen reports. How to read RAL, net pay and the 13th month: <a href="${rel(from, U.italy)}">Italy pay add-on</a>.`)}</p>
 <div class="cx-prose" translate="no" lang="en">${f.italy.before ? md(from, f.italy.before) : ''}${md(from, italyMd)}${f.italy.after ? md(from, f.italy.after) : ''}</div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">${esc(s1Title(6))}</h2><div class="cx-prose cx-sources" translate="no" lang="en">${md(from, s[6], { headingId: hid })}</div></section>
+<section class="cx-sec cx-evidence">
+${discHtml('sources', 2, esc(s1Title(6)), wordsNote(nWords(s[6])), `<div class="cx-prose cx-sources" translate="no" lang="en">${md(from, s[6], { headingId: hid })}</div>`)}
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>${ui('How this field was researched')}</h2>
+<p class="cx-note">${ui('The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.')}</p>
+<div class="cx-prose" translate="no" lang="en">${md(from, scope[0], { headingId: hid })}</div>
+<div class="cx-prose cx-preface" translate="no" lang="en">${md(from, f.preface, { headingId: hid })}</div>
+<p class="cx-note">${uiRaw(`Rating scales, the researchers’ assumptions and every gap they listed: <a href="${rel(from, U.sources)}">research sources</a>. How Admetia uses the research: <a href="${rel(from, 'method.html')}#careers">sources and method</a>.`)}</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="${ui('Other fields')}">
@@ -448,7 +494,7 @@ ${s3}</section>
     const sl = slugger();
     const T = P.TEMPLATE;
     T.forEach((t) => sl(t.anchor));
-    ['glance', 'italy-pay', 'connections', 'verify-title', 'toc-title', 'reality-title'].forEach((x) => sl(x));
+    ['glance', 'italy-pay', 'connections', 'getting-hired', 'getting-hired-h', 'verify-title', 'toc-title', 'reality-title'].forEach((x) => sl(x));
     const prev = f.roles[ri - 1], next = f.roles[ri + 1];
 
     const glance = `<section class="cx-glance" aria-labelledby="glance">
@@ -509,9 +555,19 @@ ${r.reachedFrom.length ? `<ul class="cx-rolelist">${r.reachedFrom.map((x) => rol
 <p class="cx-note">${uiRaw(`From the background fit matrix in the research index. The reasons are on each background’s page and in section 5 of the field’s report:`)} <a href="${rel(from, U.field(f.slug))}#backgrounds">${nm(f.name)}</a>.</p>
 ${r.calculators.length ? `<h3>${ui('Master’s calculators on this site')}</h3>
 <ul class="cx-links">${r.calculators.map((c) => `<li><a href="${rel(from, c.href)}">${ui(c.label)}</a></li>`).join('')}</ul>` : ''}
-</section>`;
+</section>
+<nav id="getting-hired" class="next" aria-labelledby="getting-hired-h">
+<h2 id="getting-hired-h" class="rubric">${ui('Getting hired in this role')}</h2>
+<p class="cx-note">${ui('The role’s own entry route is under “How to enter” above. These pages cover what is common to most applications.')}</p>
+<ul class="next-list">
+<li><a href="${rel(from, 'hiring.html')}">${ui('How hiring works in each country')}</a><span>${ui('The route most people take, language at work and sponsorship, for 46 countries.')}</span></li>
+<li><a href="${rel(from, U.calendar)}">${ui('Recruiting calendar')}</a><span>${ui('When each recruiting window opens, by sector, country and year of study.')}</span></li>
+<li><a href="${rel(from, U.toolkit)}">${ui('Application toolkit')}</a><span>${ui('CV templates, CV rules by country and motivation letters.')}</span></li>
+<li><a href="${rel(from, U.interview)}">${ui('Interview prep')}</a><span>${ui('What each area asks, your five stories, technical cards and practice cases.')}</span></li>
+</ul>
+</nav>`;
 
-    const tocE = [...T.map((t) => [t.anchor, mdInline(from, r.sections[t.key].label)]), ['italy-pay', ui('Italy pay (add-on)')], ['connections', ui('Where this role connects')]];
+    const tocE = [...T.map((t) => [t.anchor, mdInline(from, r.sections[t.key].label)]), ['italy-pay', ui('Italy pay (add-on)')], ['connections', ui('Where this role connects')], ['getting-hired', ui('Getting hired in this role')]];
     const body = `<article class="cx-role">
 <header class="cx-head">
   <p class="kicker"><a href="${rel(from, U.field(f.slug))}">${nm(f.name)}</a>${r.part ? ` · <span translate="no" lang="en">${esc(r.part)}</span>` : ''}</p>
@@ -618,7 +674,7 @@ ${['stress', 'people', 'quant'].map((k) => `<td class="cx-n">${pips(r.scores[k])
 ${rows}
 </tbody></table></div>
 <p class="cx-src-note">${uiRaw(`Entry pay cannot be sorted: the research gives it in local currency, base or total, by city and year, and does not convert it. Scores sort on the lowest figure given (“3-4” as 3, “4 (5 at top boutiques)” as 4); hours on the first (“75-85 (100-120)” as 75). Scales: <a href="${rel(from, U.sources)}#scales">sources page</a>.`)}</p>`;
-    add({ path: from, title: 'Compare roles', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Compare' }],
+    add({ path: from, title: 'Compare roles', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Compare roles' }],
       description: 'Sort and filter every role family by hours, stress, people vs quantitative work, entry pay and entry difficulty; set up to three side by side.', body });
   }());
 
@@ -647,7 +703,7 @@ ${toc([['about', ui('About the research')], ['scales', ui('Shared scales and con
 ${data.fields.map((f) => `<details class="cx-srcfold" id="src-${f.slug}"><summary><span translate="no" lang="en">${esc(f.name)}</span></summary><div class="cx-prose cx-sources" translate="no" lang="en">${md(from, f.sections[6], { headingId: hid })}</div><p class="cx-note"><a href="${rel(from, U.field(f.slug))}"><span>${ui('Open the field')}</span> ${nm(f.name)}</a></p></details>`).join('\n')}
 </section>
 </div></div>`;
-    add({ path: from, title: 'Sources, scales and gaps', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Sources' }],
+    add({ path: from, title: 'Sources, scales and gaps', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Research sources' }],
       description: 'The sources behind every Career Explorer page, the 1-5 rating scales, the researchers’ assumptions and the list of gaps to verify.', body });
   }());
 
@@ -679,7 +735,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
 <section id="benchmarks" class="cx-sec"><h2 translate="no" lang="en">3. Graduate outcome benchmarks</h2><div class="cx-prose" translate="no" lang="en">${md(from, I.benchmarks, { headingId: hid })}</div></section>
 <section id="italy-sources" class="cx-sec"><h2 translate="no" lang="en">4. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en">${md(from, I.sources, { headingId: hid })}</div></section>
 </div></div>`;
-    add({ path: from, title: 'Italy pay add-on', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Italy pay' }],
+    add({ path: from, title: 'Italy pay add-on', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Italian pay' }],
       description: 'Italian gross pay (RAL) by field and role family from recruiter guides, contract tables and postings, with source, year and confidence for every row.', body });
   }());
 
@@ -739,7 +795,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
 </div>
 <div class="cc-stage" data-cc-stage hidden></div>
 </div>`;
-    add({ path: from, title: 'Career Compass', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Compass' }],
+    add({ path: from, title: 'Career Compass', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Career Compass' }],
       scripts: ['careers/data/compass-data.js', 'careers/assets/compass-core.js', 'careers/assets/compass.js'],
       description: 'A short questionnaire for undecided students: ranks 124 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.', body });
   }());

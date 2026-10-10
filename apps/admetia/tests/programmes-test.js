@@ -83,7 +83,7 @@ t('ResultsKit exports picked, pickedBanner and pickedResults', /picked: picked,/
 /* ----------------------------------------------------------------- site --- */
 t('programmes.html loads the models, fees, calendar and its script', ['data/masters-model.js', 'data/computing-model.js', 'data/mba-model.js', 'data/deadlines.js', 'data/programme-fees.js', 'js/engine.js', 'js/results-kit.js', 'js/page-programmes.js']
   .every((f) => html.includes(`<script defer src="${f}"></script>`)));
-t('tools/build.js publishes it', /'programmes\.html'/.test(read('tools/build.js')));
+t('tools/build.js publishes it', /'programmes\.html': \{/.test(read('tools/shell.js')) && /require\('\.\/shell'\)\.ROOT_PAGES/.test(read('tools/build.js')));
 t('sw.js keeps it offline', /'programmes\.html'/.test(read('sw.js')) && /'js\/page-programmes\.js'/.test(read('sw.js')) && /'data\/programme-fees\.js'/.test(read('sw.js')));
 t('the sitemap lists it', /admetia\/programmes\.html<\/loc>/.test(read('sitemap.xml')));
 t('the front page and both pickers link to it', ['index.html', 'business.html', 'it.html'].every((p) => /<a href="programmes\.html">Programme Directory<\/a>/.test(read(p))));

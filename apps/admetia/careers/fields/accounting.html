@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Accounting</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Accounting</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -94,63 +89,66 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Accounting is the profession that records, checks, explains and plans around the money flowing through organisations. Some accountants work for the company itself (bookkeeping, month-end reporting, budgets, controls). Others work for outside firms that test and sign off a company's numbers (audit) or advise on taxes. A recognised qualification (CPA in the US, ACA/ACCA/CIMA in the UK and much of the world, dottore commercialista and revisore legale in Italy) is the main career asset, and in several countries it is a legal licence to sign. The branch is large and stable: the US Bureau of Labor Statistics counted about 1.6 million accountants and auditors in 2025 with a median wage of $83,680 (BLS, May 2025 data), and projects 5% growth to 2035. The entry route is under pressure, though: 2024-2026 brought smaller Big 4 graduate intakes, offshoring of routine audit work and AI automation of testing, alongside a genuine shortage of newly licensed CPAs in the US.</p>
-<p>Scope notes: Global scope with detail for the US, UK, Italy (Milan where data exist), Hong Kong, Singapore and Dubai. Finance roles (FP&amp;A, treasury, Big 4 deal advisory) and management consulting are covered in other branch reports and only cross-referenced here. Dates: today is 9 October 2026; I prefer sources from October 2024 onward and date every figure. My web-search allowance ran out near the end, so a few items (ACA structure, CPA exam structure, some Asian pay) rely on earlier project research or general knowledge and are marked &quot;unverified&quot;. Salary data are patchy: recruiter guides cover mostly industry roles; Big 4 starting pay is rarely published by the firms, so those figures come from press and aggregator sources and are flagged as weak. Forum and blog evidence is labelled as such.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><p>Context for 2024-2026 (it affects every sub-area below):</p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Accounting is the profession that records, checks, explains and plans around the money flowing through organisations. Some accountants work for the company itself (bookkeeping, month-end reporting, budgets, controls). Others work for outside firms that test and sign off a company's numbers (audit) or advise on taxes. A recognised qualification (CPA in the US, ACA/ACCA/CIMA in the UK and much of the world, dottore commercialista and revisore legale in Italy) is the main career asset, and in several countries it is a legal licence to sign. The branch is large and stable: the US Bureau of Labor Statistics counted about 1.6 million accountants and auditors in 2025 with a median wage of $83,680 (BLS, May 2025 data), and projects 5% growth to 2035. The entry route is under pressure, though: 2024-2026 brought smaller Big 4 graduate intakes, offshoring of routine audit work and AI automation of testing, alongside a genuine shortage of newly licensed CPAs in the US.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Context for 2024-2026 (it affects every sub-area below):</p>
 <ul>
 <li><strong>US pipeline shortage and new licensure routes.</strong> The AICPA 2025 Trends report (27 Oct 2025) counted 55,152 accounting bachelor's and master's degrees awarded in 2023-24, down 6.6% on the prior year (master's down about 15%, bachelor's down 3.3%), though spring 2025 enrolment rose 12.4% to 266,506. First-time CPA exam candidates were 42,626 in 2023 and 28,082 in 2024 (the 2023 spike came before the exam changed). The traditional route needs 150 college credit hours (a fifth year of study) plus experience. The AICPA/NASBA Uniform Accountancy Act 9th edition (July 2025) added a &quot;120-hour&quot; alternative: a bachelor's degree, the exam, and two years of CPA-verified work experience. Ohio was the first state to enact it (January 2025); by mid-2026 CFO Dive's tracker counted about 44 states and territories having eased the rules, with Missouri signing on 14 July 2026. Several large states (Michigan, Massachusetts, Florida, others) were holdouts as of that date. Many states keep the 150-hour route in parallel, and enacted does not always mean usable yet. Check your state board.</li>
 <li><strong>Big 4 intake cuts.</strong> UK Big 4 graduate-scheme intakes fell from about 6,500 in 2023 to about 5,400 in 2024 (our sum of press-reported per-firm figures; KPMG 1,399 to 942; Deloitte 1,700 to 1,400; EY 1,800 to 1,600; PwC 1,600 to 1,500; Scottish Financial News, 23 Jun 2025). PwC US reportedly planned to cut graduate hiring by about a third over three years (Business Insider via secondary coverage, Aug 2025; unverified from a PwC statement). Deloitte UK's 2026 early-careers intake was about 1,350-1,500, flat on 2025 (Deloitte UK press release, 1 Sep 2026). PwC Italia said about 2,000 new entrants for FY26 and a similar number for FY27 (ItaliaOggi, 14 Sep 2026, secondary). Indeed UK accountancy graduate adverts in 2025 were 44% below 2023, but adverts overstate the fall in hires (Institute of Student Employers, Aug 2026).</li>
 <li><strong>Offshoring.</strong> The UK Financial Reporting Council's July 2026 quality review said the Big 4 increasingly use &quot;extended team&quot; models in which offshore staff, mainly in India, do audit work involving judgement; KPMG UK reports about a quarter of audit practice staff offshore (The Accountant, Jul 2026, via earlier project research). In the US, PwC's &quot;acceleration centres&quot; are named in its own graduate-cut slide as a reason (above). I found no 2025-26 US headcount figures for India or Philippines delivery centres; a Big 4 job listing for a Pasig (Philippines) support centre describes electronic audit-file setup and external confirmations (undated listing).</li>
 <li><strong>AI.</strong> The firms are building agentic audit tools (EY Canvas, KPMG Clara, Deloitte Omnia, PwC Aura). One blog reports an EY aim of 100% agent-supported audit activity by 2028 (single secondary source, unverified). A Financial Times analysis found nearly 7% of Big 4 postings required AI expertise in 2025 vs under 2% in 2022 (via Computerworld, 19 May 2026). ICAEW notes it is &quot;unclear&quot; how much of the junior cut is AI versus offshoring and weak deals (ICAEW Insights, 10 Jun 2026). ICAEW's survey of 35 mid-tier firms (Feb-Mar 2026) predicted a 40% fall in graduate trainee hiring offset by a 49% rise in school leavers (small sample).</li>
 <li><strong>Private equity in mid-tier firms.</strong> Grant Thornton US sold a stake to New Mountain Capital in 2024 and operates an &quot;alternative practice structure&quot; separating attest (audit) from non-attest work; Baker Tilly (Hellman &amp; Friedman, Valeas) announced a merger with Moss Adams in April 2025; a 2026 industry tracker says about half of the 20 largest US firms were PE-backed by June 2026 (secondary; verify). Practical meaning: faster hiring of tech and advisory talent, more pressure on margins and utilisation, and different partnership economics than the old model.</li>
-</ul>
-<h3 id="2-1-external-audit-and-assurance">2.1 External audit and assurance</h3>
-<ul>
+</ul></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="2-1-external-audit-and-assurance"><summary><h3 class="disc-t" translate="no" lang="en">2.1 External audit and assurance</h3> <span class="disc-n"><span>152</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> An independent firm examines a company's financial statements and gives an opinion on whether they are fairly presented. The opinion is required by law for listed companies and (varying by country) for larger private ones.</li>
 <li><strong>In practice.</strong> Teams plan the audit, assess risks, test controls, &quot;sample&quot; transactions (pick, say, 25 revenue invoices and trace them to contracts and delivery proof), confirm balances with banks and customers, and document everything in an audit file. A partner signs.</li>
 <li><strong>Clients and economics.</strong> Listed companies, large private groups, banks, insurers, funds, subsidiaries of multinationals. Fees are time-based, priced per engagement; profitability depends on the staff pyramid (many juniors per partner), which is why intake cuts matter. Audit is a regulated, recurring but low-growth business; firms cross-sell tax, advisory and, increasingly, technology.</li>
 <li><strong>Firms.</strong> Big 4 (Deloitte, PwC, EY, KPMG); mid-tier networks (BDO, Grant Thornton, RSM, Forvis Mazars, Baker Tilly, Crowe); local firms.</li>
-</ul>
-<h3 id="2-2-tax">2.2 Tax</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-2-tax"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Tax</h3> <span class="disc-n"><span>116</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Helping individuals and companies calculate, file and plan taxes lawfully. Corporate tax compliance (returns, provisions), advisory (structuring deals and groups), transfer pricing (pricing of intra-group transactions between countries), indirect tax/VAT, and private client (wealthy individuals, trusts, family businesses).</li>
 <li><strong>Clients.</strong> Multinationals, mid-size companies, banks and funds, owner-managed businesses, individuals. Revenue is hourly or fixed-fee; compliance is seasonal and increasingly automated, advisory is better paid.</li>
 <li><strong>Context.</strong> Pillar Two (the OECD global minimum tax) and e-invoicing mandates (Italy has a mature system; the EU is moving towards it) create steady demand; the UAE introduced a 9% corporate tax in 2023, causing a hiring surge that cooled afterward (Gulf News 2023; The Finance Story, undated, secondary).</li>
-</ul>
-<h3 id="2-3-financial-accounting-and-reporting-in-industry">2.3 Financial accounting and reporting in industry</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-3-financial-accounting-and-reporting-in-industry"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Financial accounting and reporting in industry</h3> <span class="disc-n"><span>86</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Preparing the company's books and financial statements: accounts payable and receivable, general ledger, month-end close (the monthly process of finalising numbers), group consolidation, statutory accounts under IFRS (used in the EU, UK, much of Asia) or US GAAP.</li>
 <li><strong>Employers.</strong> Every company, from manufacturers to retailers; shared-service centres (hubs that run finance for many entities); banks and insurers.</li>
 <li><strong>Ladder.</strong> Staff accountant, senior accountant, accounting manager, financial controller (the person responsible for the books and reporting in a business or entity), group controller, CFO.</li>
-</ul>
-<h3 id="2-4-management-accounting-and-controlling">2.4 Management accounting and controlling</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-4-management-accounting-and-controlling"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Management accounting and controlling</h3> <span class="disc-n"><span>63</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Using numbers internally: budgets, forecasts, cost accounting, margin analysis, KPIs, business cases. In Germany, Italy and much of continental Europe, the &quot;controller&quot; (controllo di gestione) is a distinct, prestigious function that partners with business units; in the US the equivalent is closer to FP&amp;A or cost accounting (FP&amp;A is covered in the finance report).</li>
 <li><strong>Employers.</strong> Manufacturers, FMCG, energy, banks, retailers.</li>
-</ul>
-<h3 id="2-5-internal-audit-and-internal-controls">2.5 Internal audit and internal controls</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-5-internal-audit-and-internal-controls"><summary><h3 class="disc-t" translate="no" lang="en">2.5 Internal audit and internal controls</h3> <span class="disc-n"><span>68</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> A company's own team (or an outsourced one) evaluates risks and controls. In the US, SOX (the Sarbanes-Oxley Act of 2002) requires listed companies to document and test internal controls over financial reporting; SOX teams do much of this.</li>
 <li><strong>Employers.</strong> Listed companies, banks (heavily regulated), insurers, and outsourced providers (Big 4 risk teams; Protiviti, Crowe, RSM). Often viewed as a lower-intensity step out of audit.</li>
-</ul>
-<h3 id="2-6-forensic-accounting-and-investigations">2.6 Forensic accounting and investigations (brief)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-6-forensic-accounting-and-investigations"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Forensic accounting and investigations (brief)</h3> <span class="disc-n"><span>60</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Investigating fraud, disputes, regulatory breaches and money-laundering using accounting evidence. ACFE's 2024 Report to the Nations puts median occupational-fraud loss at $145,000 per case, with organisations estimated to lose about 5% of revenue to fraud (ACFE, 2024).</li>
 <li><strong>Employers.</strong> Big 4 forensic teams, specialist firms (FTI Consulting, Kroll, Alvarez &amp; Marsal, Stout), law firms, regulators, banks' financial-crime teams.</li>
-</ul>
-<h3 id="2-7-sustainability-reporting-and-assurance">2.7 Sustainability reporting and assurance (brief)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-7-sustainability-reporting-and-assurance"><summary><h3 class="disc-t" translate="no" lang="en">2.7 Sustainability reporting and assurance (brief)</h3> <span class="disc-n"><span>222</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Preparing and verifying non-financial reports (emissions, workforce, governance). In the EU this is the CSRD (Corporate Sustainability Reporting Directive) with ESRS (European Sustainability Reporting Standards); globally the ISSB (International Sustainability Standards Board) provides a baseline adopted in various jurisdictions.</li>
 <li><strong>2025-2026 reality.</strong> The EU &quot;Omnibus I&quot; package narrowed CSRD scope sharply. Reporting sources agree that the final deal limits scope to EU companies with more than 1,000 employees and more than EUR 450 million net turnover (non-EU groups: more than EUR 450m EU turnover with an EU subsidiary or branch above EUR 200m); estimates of companies removed range from about 80-90% (roughly 50,000 down to 5,000-6,000); mandatory assurance stays at limited assurance, and the planned move to reasonable assurance was dropped; the amended rules apply from financial years starting 1 January 2027, with the Commission's deadline for limited-assurance standards moved to 1 July 2027; ISSA 5000 (the global assurance standard) is effective for periods starting on or after 15 December 2026. The simplified ESRS are reported to cut mandatory data points from 1,073 to about 320, but I could not confirm formal adoption. These details come from law-firm notes (Mofo, Cooley, A&amp;O Shearman, Dechert, 2025-2026) and a Dutch summary; verify against the Official Journal text before relying on them. Implication: a smaller, more demanding market than the 2023 hype suggested.</li>
-</ul>
-<h3 id="2-8-public-sector-accounting-and-audit">2.8 Public sector accounting and audit (brief)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-8-public-sector-accounting-and-audit"><summary><h3 class="disc-t" translate="no" lang="en">2.8 Public sector accounting and audit (brief)</h3> <span class="disc-n"><span>77</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Accounting for governments (cash/accrual standards such as IPSAS in many countries, GASB in US states and cities) and auditing public spending.</li>
 <li><strong>Employers.</strong> Government finance departments, national audit offices (US GAO, UK NAO, Italy's Corte dei conti, European Court of Auditors), tax authorities, regulators (e.g. PCAOB in the US, FRC in the UK), and public-sector audit work contracted to private firms. BLS gives a US government median of $83,350 for accountants and auditors (May 2025).</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -187,7 +185,8 @@
 <tr><th scope="row">3.7 Sustainability reporting / ESG assurance</th><td>40-48 (50-60)</td><td>3</td><td>3</td><td>3</td><td>n/a / n/a / n/a</td><td>3</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Where the same accounting role (audit, financial reporting, controlling) exists in different organisations, the experience differs. Hours below combine regulator data (UK Big 4), surveys (US) and practitioner reports; the Italy and Gulf entries are mostly anecdotal. Pay shown is directional only.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Where the same accounting role (audit, financial reporting, controlling) exists in different organisations, the experience differs. Hours below combine regulator data (UK Big 4), surveys (US) and practitioner reports; the Italy and Gulf entries are mostly anecdotal. Pay shown is directional only.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours / busy season, Stress, Pay (entry to mid), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours / busy season</th><th scope="col">Stress</th><th scope="col">Pay (entry to mid)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -269,7 +268,9 @@
 <tr><th scope="row">Tax trainee (praticante)</th><td>18-36</td><td>n/a</td><td>n/a</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 <tr><th scope="row">In-house tax specialist / tax manager</th><td>27-40; manager 50-60</td><td>40-50; 60-70</td><td>&gt;50; &gt;70</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 </tbody></table></div><p>Notes: Big 4 entry pay is low (mid-to-high 20s) and rises faster after the first promotion; I found no official 2025-26 figure from any of the four networks. The MP26 tax and legal bands for professionals are wide because they merge several seniority levels in the &quot;&lt;5 years&quot; column.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>574</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given.</p>
 <ul>
 <li>US Bureau of Labor Statistics, Occupational Outlook Handbook: Accountants and Auditors (May 2025 data). <a class="cx-url" href="https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm</a></li>
 <li>AICPA, 2025 Trends Report (27 Oct 2025), summarised by Journal of Accountancy, &quot;The accounting graduate pipeline: where do things stand&quot; (Oct 2025). <a class="cx-url" href="https://www.journalofaccountancy.com/news/2025/oct/the-accounting-graduate-pipeline-where-do-things-stand.html" rel="noopener noreferrer">https://www.journalofaccountancy.com/news/2025/oct/the-accounting-graduate-pipeline-where-do-things-stand.html</a> ; <a class="cx-url" href="https://www.aicpa-cima.com/resources/article/2025-trends-report" rel="noopener noreferrer">https://www.aicpa-cima.com/resources/article/2025-trends-report</a></li>
@@ -305,7 +306,13 @@
 <li>Going Concern, Singapore Big 4 pay (2022). <a class="cx-url" href="https://www.goingconcern.com/singapore-labor-shortage-big-4-salaries/" rel="noopener noreferrer">https://www.goingconcern.com/singapore-labor-shortage-big-4-salaries/</a></li>
 <li>Project prior research: research/careers/accounting-and-corporate.md (early Oct 2026) for UK Big 4 intake details, ACCA/ICAEW exemption rules, corporate programme requirements.</li>
 <li>Data limits: the web-search allowance ran out near the end. Not verified from primary sources: ICAEW ACA structure and fees, AICPA CPA exam structure and pass rates, CISA/CAMS details, Big 4 US starting pay, Milan-specific pay, Gulf and Asian audit pay.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: Global scope with detail for the US, UK, Italy (Milan where data exist), Hong Kong, Singapore and Dubai. Finance roles (FP&amp;A, treasury, Big 4 deal advisory) and management consulting are covered in other branch reports and only cross-referenced here. Dates: today is 9 October 2026; I prefer sources from October 2024 onward and date every figure. My web-search allowance ran out near the end, so a few items (ACA structure, CPA exam structure, some Asian pay) rely on earlier project research or general knowledge and are marked &quot;unverified&quot;. Salary data are patchy: recruiter guides cover mostly industry roles; Big 4 starting pay is rarely published by the firms, so those figures come from press and aggregator sources and are flagged as weak. Forum and blog evidence is labelled as such.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -327,6 +334,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

@@ -1,5 +1,5 @@
 /* Opening titles. Whenever a reader arrives — a new tab, a typed address, a
- * bookmark, a link from somewhere else — the three editions cut past in
+ * bookmark, a link from somewhere else — The City appears in
  * kinetic type (one of three lines, picked at random) and the nameplate lands
  * in its place on the page. A reload gets only a soft fade: the page comes up
  * from its own paper in a third of a second, with no movement. Moving around
@@ -13,7 +13,7 @@
  *
  * Nothing for readers who ask for reduced motion, and never in print. Any
  * click, tap or key ends it. The visual reference, with every timing and
- * colour, is design/intro/lab.html (version A, Watchlist "black + red"). */
+ * colour uses The City palette and typefaces. */
 
 (function () {
   'use strict';
@@ -46,13 +46,13 @@
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'YOU?'], ['GMAT', 'GPA', 'CV', 'VERDICT'], ['WHERE', 'DO YOU', 'ACTUALLY', 'STAND?']],
       data: COUNT.programmes + '+ business programmes · ' + COUNT.mba + ' MBA schools · ' + COUNT.computing + ' computing',
       loading: 'Loading', skip: 'Skip',
-      motto: 'The way in — an independent calculator for MBA, business and computing master’s degrees'
+      motto: 'The way in — independent guides to master’s admissions, careers and working abroad'
     },
     it: {
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT', 'MEDIA', 'CV', 'VERDETTO'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
       data: COUNT.programmes + '+ programmi business · ' + COUNT.mba + ' scuole MBA · ' + COUNT.computing + ' informatica',
       loading: 'Caricamento', skip: 'Salta',
-      motto: 'The way in — un calcolatore indipendente per MBA, master in business e master in informatica'
+      motto: 'The way in — guide indipendenti su ammissioni ai master, carriere e lavoro all’estero'
     }
   };
 
@@ -80,36 +80,19 @@
   });
   if (mode === 'none') return;
 
-  /* Each edition's frame. Watchlist sits on its black masthead band with red
-   * only in the rule and label; Wall Street's frame is white, so two black
-   * frames never follow each other. */
+  /* The City frame for every beat. */
   var ED = {
     city: {
       name: 'The City', paper: '#fff1e5', ink: '#33302e',
       loud: ['#990f3d', '#fff1e5'], rule: null, kick: null, rgb: ['#0d7680', '#fcd0b1'],
       rowsA: ['#990f3d', '#fff1e5'], rowsB: ['#fff1e5', '#990f3d'], mid: ['#262a33', '#fff1e5'],
       face: ['"Source Serif 4", Georgia, serif', 600, '100%'], load: '600 1em "Source Serif 4"',
-      mast: null, deck: ['"Source Serif 4", Georgia, serif', 'italic', null]
-    },
-    wallstreet: {
-      name: 'Wall Street', paper: '#ffffff', ink: '#111111',
-      loud: ['#ffffff', '#111111'], rule: '#111111', kick: null, rgb: ['#0080c3', '#e10000'],
-      rowsA: ['#111111', '#ffffff'], rowsB: ['#ffffff', '#111111'], mid: ['#0080c3', '#ffffff'],
-      face: ['"Roboto Serif Condensed", "Times New Roman", serif', 700, '100%'], load: '700 1em "Roboto Serif Condensed"',
-      mast: 'img/wordmark/wall-street.webp?v=admetia', ratio: 489 / 128, deck: ['"Times New Roman", Times, serif', 'italic', null]
-    },
-    watchlist: {
-      name: 'FBI Watchlist', paper: '#fcfcfc', ink: '#171717', band: '#171717',
-      loud: ['#171717', '#ffffff'], rule: '#dc0000', kick: '#ff5a4f', rgb: ['#dc0000', '#007ac8'],
-      rowsA: ['#171717', '#ffffff'], rowsB: ['#fcfcfc', '#171717'], mid: ['#ffffff', '#dc0000'],
-      face: ['"Noto Serif Display", Georgia, serif', 800, '75%'], load: '800 1em "Noto Serif Display"',
-      mast: 'img/wordmark/fbi-watchlist.webp?v=admetia', ratio: 688 / 150, deck: ['"Hanken Grotesk", Helvetica, Arial, sans-serif', 'normal', '#bbbbbb']
+      deck: ['"Source Serif 4", Georgia, serif', 'italic', null]
     }
   };
 
-  var ed = ED[root.getAttribute('data-theme')] ? root.getAttribute('data-theme') : 'city';
+  var ed = 'city';
   var T = TXT[root.lang === 'it' ? 'it' : 'en'];
-  var order = ['city', 'wallstreet', 'watchlist'].filter(function (x) { return x !== ed; }).concat(ed);
 
   var UI = '"Hanken Grotesk", Helvetica, Arial, sans-serif';
   var RISE = 'cubic-bezier(.2,.9,.1,1)', SWEEP = 'cubic-bezier(.6,0,.2,1)', MOVE = 'cubic-bezier(.75,0,.2,1)';
@@ -124,8 +107,6 @@
   var CSS = [
     face('Source Serif 4', 'source-serif-4-roman', 'font-weight:200 900;'),
     face('Hanken Grotesk', 'hanken-grotesk', 'font-weight:100 900;'),
-    face('Roboto Serif Condensed', 'roboto-serif-condensed', 'font-weight:400 800;'),
-    face('Noto Serif Display', 'noto-serif-display', 'font-weight:100 900;font-stretch:62.5% 100%;'),
     'html.intro-on{overflow:hidden}',
     '@media print{.intro{display:none!important}html.intro-on{overflow:visible}}',
     '.intro{position:fixed;inset:0;z-index:2147483000;overflow:hidden;visibility:visible!important;cursor:pointer;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}',
@@ -286,13 +267,6 @@
 
   /* The page's own nameplate, as large as `width` and `height` allow. */
   function nameplate(k, parent, width, height) {
-    var e = ED[k];
-    if (e.mast) {
-      var img = el('img', 'intro-np', parent);
-      img.src = e.mast; img.alt = '';
-      img.style.width = Math.min(width, height * e.ratio) + 'px';
-      return img;
-    }
     var t = el('div', 'intro-np intro-npt', parent);
     setFace(t, ED.city);
     t.textContent = NAME.toUpperCase();
@@ -300,10 +274,6 @@
     return t;
   }
   function revealNameplate(np, k, dur) {
-    if (ED[k].mast) {
-      A(np, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], dur, 0, 'steps(11, end)');
-      return;
-    }
     var name = NAME.toUpperCase();
     np.textContent = '';
     letters(np, name).forEach(function (s, i) { A(s, [{ opacity: 0 }, { opacity: 1 }], 50, i * dur / name.length, 'linear'); });
@@ -312,11 +282,11 @@
   /* The nameplate composes, then flies into the page's own nameplate while
    * the backdrop fades and the page shows through. f < 1 speeds it up. */
   function landing(k, f) {
-    var e = ED[k], fg = e.band ? '#ffffff' : e.ink;
+    var e = ED[k], fg = e.ink;
     var L = layer('transparent', fg);
     ov.style.background = 'transparent';
     var bg = el('div', 'intro-bg', L);
-    bg.style.background = e.band || e.paper;
+    bg.style.background = e.paper;
     var lock = el('div', 'intro-lock', L);
     var npW = Math.min(W() * .76, H() * 1.3);
     var np = nameplate(k, lock, npW, H() * .2);
@@ -325,7 +295,6 @@
     if (e.deck[2]) mo.style.color = e.deck[2];
     mo.style.maxWidth = npW + 'px';
     var dbl = el('i', 'intro-dbl', lock);
-    if (e.band) dbl.style.visibility = 'hidden';
     lock.style.top = (H() - lock.getBoundingClientRect().height) / 2 + 'px';
 
     revealNameplate(np, k, 320 * f);
@@ -359,7 +328,7 @@
 
   function full() {
     var q = T.lines[Math.floor(Math.random() * T.lines.length)];
-    var beats = [[500, 'w', order[0], q[0]], [500, 'w', order[1], q[1]], [520, 'w', order[2], q[2]], [760, 'r', ed, q[3]]];
+    var beats = [[500, 'w', ed, q[0]], [500, 'w', ed, q[1]], [520, 'w', ed, q[2]], [760, 'r', ed, q[3]]];
     var t = 0;
     beats.forEach(function (b, i) {
       at(t, function () {
@@ -429,10 +398,10 @@
     stage = el('div', '', ov);
     stage.setAttribute('aria-hidden', 'true');
     stage.style.cssText = 'position:absolute;inset:0';
-    ov.style.background = mode === 'full' ? ED[order[0]].loud[0] : ED[ed].paper;
+    ov.style.background = mode === 'full' ? ED[ed].loud[0] : ED[ed].paper;
     if (mode === 'full') {
       hud = el('div', 'intro-hud', stage);
-      hud.style.color = ED[order[0]].loud[1];
+      hud.style.color = ED[ed].loud[1];
       [['top', 'left'], ['top', 'right'], ['bottom', 'left'], ['bottom', 'right']].forEach(function (p) {
         var c = el('i', 'intro-c', hud);
         c.style[p[0]] = '2.4vmin'; c.style[p[1]] = '2.4vmin';
@@ -455,13 +424,12 @@
     document.addEventListener('keydown', onKey, true);
     document.addEventListener('DOMContentLoaded', function () { if (!done && document.body) document.body.inert = true; });
 
-    if (ED[ed].mast) new Image().src = ED[ed].mast;
     /* Whatever happens, the page is never covered for more than 8 s. */
     setTimeout(function () { if (!done) teardown(); }, 8000);
 
     /* Wait for the faces, but not for long: if they are not in within 0.7 s
      * the page just fades in. */
-    var wanted = mode === 'full' ? order.map(function (k) { return ED[k].load; }).concat('600 1em "Hanken Grotesk"') : [];
+    var wanted = mode === 'full' ? [ED.city.load, '600 1em "Hanken Grotesk"'] : [];
     var started = false;
     var go = guard(function () {
       if (started) return;

@@ -14,10 +14,10 @@ re-encode for the web.
 
 | File | Used for | Subject | Source |
 |---|---|---|---|
-| `hero.jpg` | Front-page lead photograph | Students writing an exam | [Pexels 37758542](https://www.pexels.com/photo/university-students-studying-at-desks-37758542/) |
+| `hero.jpg` | Lead photograph of *Choose a master's* (`study.html`; the front page until 10 October 2026) | Students writing an exam | [Pexels 37758542](https://www.pexels.com/photo/university-students-studying-at-desks-37758542/) |
 | `../og-admetia.jpg` | The link-preview card shown when the site is shared (made from `hero.jpg`, set in the site's own typefaces) | Students writing an exam | as `hero.jpg` |
-| `scoring.jpg` | Not currently shown (was the landing "how the scoring works" band) | Assessors going through a printed application file | [Pexels 8730981](https://www.pexels.com/photo/a-close-up-shot-of-people-reviewing-documents-8730981/) |
-| `picker.jpg` | Business section-front header | Students working through notes together | [Pexels 7683734](https://www.pexels.com/photo/college-students-studying-together-7683734/) |
+| `scoring.jpg` | Header of *Find an internship or job* (`jobs.html`) | Assessors going through a printed application file | [Pexels 8730981](https://www.pexels.com/photo/a-close-up-shot-of-people-reviewing-documents-8730981/) |
+| `picker.jpg` | Front-page photograph, and the Business section-front header | Students working through notes together | [Pexels 7683734](https://www.pexels.com/photo/college-students-studying-together-7683734/) |
 | `business.jpg` | Business entry on the front page | Graduation, caps in the air | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Korea_University_Business_School_graduation_-_036A0151_-_52721871687.jpg) — KUBS, [CC0](https://creativecommons.org/publicdomain/zero/1.0/) |
 | `mba.jpg` | MBA story on the Business front, and the MBA calculator header | A senior executive in front of a boardroom in session | [Pexels 7433929](https://www.pexels.com/photo/man-in-black-suit-standing-with-his-arms-crossed-7433929/) |
 | `finance.jpg` | Finance story on the Business front, and its calculator header | A trading desk of live candlestick charts | [Pexels 38412413](https://www.pexels.com/photo/digital-stock-market-charts-on-multiple-screens-38412413/) |
@@ -38,20 +38,15 @@ opened as a local file.
 Like the photographs, the fonts are **stored in `fonts/`** and served from there
 (`css/fonts.css`); nothing is loaded from a font service. All are licensed under the
 [SIL Open Font License 1.1](https://openfontlicense.org), which allows use, bundling and
-redistribution. A browser only fetches the faces the active edition needs.
+redistribution. The City uses the two families below.
 
 | Edition | Typefaces |
 |---|---|
 | The City | Source Serif 4 (Adobe), Hanken Grotesk (Hanken Design Co.) |
-| Wall Street | Roboto Serif, ultra-condensed (Commercial Type for Google); Times New Roman from the system |
-| FBI Watchlist | Noto Serif Display, Hanken Grotesk; Georgia from the system |
-
-The Wall Street and FBI Watchlist nameplates are images made from Roboto Serif and
-[Gloock](https://github.com/duartp/gloock) (OFL) respectively — see `img/wordmark/README.md`.
 
 The licence text and copyright notice for each family are in `fonts/`.
 
-The three editions take their proportions from real papers' sites, measured or
+The City takes its proportions from real papers' sites, measured or
 matched by eye, but use none of their names, logos or proprietary typefaces.
 
 ## A note on the brand billboards

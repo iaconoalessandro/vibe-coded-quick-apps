@@ -110,11 +110,28 @@ t('no template section is empty', emptyS.length === 0, emptyS.slice(0, 5).join('
 t('every role page carries its source’s words (within 1%)', words.length === 0, words.slice(0, 5).join(' | '));
 
 /* ---------------------------------------------------------------- links --- */
-const ROOT_PAGES = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html', 'programmes.html'];
+const ROOT_PAGES = Object.keys(require('../tools/shell.js').ROOT_PAGES);
 const idCache = new Map();
 function ids(file) {
   if (!idCache.has(file)) idCache.set(file, new Set([...read(file).matchAll(/\sid="([^"]+)"/g)].map((m) => m[1])));
   return idCache.get(file);
+}
+/* Two pages read their address as a route, not an anchor: a country's guide
+ * (map.html#de, #de/hiring, #de/hiring/apply) and a hiring plan
+ * (hiring.html#de/graduated/first, or "-" before a country is chosen). A
+ * route counts as resolving when its country and its view exist. */
+const ATLAS_IDS = new Set(require('../tools/visuals.js').atlas().countries.map((c) => c.id.toLowerCase()));
+const ATLAS_VIEWS = new Set([...read('js/page-map.js').matchAll(/\{ id: '([a-z]+)', nav: '/g)].map((m) => m[1]));
+function isRoute(file, hash) {
+  if (file === 'map.html') {
+    const m = /^([a-z]{2})(?:\/([a-z0-9-]+))?(?:\/([a-z0-9-]+))?$/.exec(hash);
+    return !!m && ATLAS_IDS.has(m[1]) && (!m[2] || ATLAS_VIEWS.has(m[2]));
+  }
+  if (file === 'hiring.html') {
+    const m = /^([a-z]{2}|-)\/(studying|graduated|working)\/(first|intern|exp)(?:\/[a-z]+)?$/.exec(hash);
+    return !!m && (m[1] === '-' || ATLAS_IDS.has(m[1]));
+  }
+  return false;
 }
 const broken = [];
 let checked = 0;
@@ -128,7 +145,7 @@ for (const file of [...htmlFiles, ...ROOT_PAGES]) {
     const target = pathPart ? path.posix.normalize(path.posix.join(path.posix.dirname(file), pathPart.split('?')[0])) : file;
     const resolved = target.endsWith('/') ? target + 'index.html' : target;
     if (!fs.existsSync(path.join(APP, resolved))) { broken.push(`${file} → ${url}`); continue; }
-    if (hash && resolved.endsWith('.html') && !ids(resolved).has(hash)) broken.push(`${file} → ${url} (no #${hash})`);
+    if (hash && resolved.endsWith('.html') && !ids(resolved).has(hash) && !isRoute(resolved, hash)) broken.push(`${file} → ${url} (no #${hash})`);
   }
 }
 t(`every internal link and anchor resolves (${checked} checked)`, broken.length === 0, broken.slice(0, 6).join(' | '));
@@ -174,12 +191,17 @@ const absent = want.filter((u) => !locs.has(u));
 t(`the sitemap lists every page (${locs.size})`, absent.length === 0, absent.slice(0, 5).join(', '));
 
 /* ------------------------------------------------------------------ nav --- */
-const noNav = ROOT_PAGES.filter((p) => !/<a class="sec-group" href="careers\/index\.html" data-sec="careers">Careers<\/a>/.test(read(p)));
-t('every page of the site has Careers in its section nav', noNav.length === 0, noNav.join(', '));
-const navOff = htmlFiles.filter((f) => !/<a class="sec-group on" aria-current="page" href="[^"]*index\.html" data-sec="careers">Careers<\/a>/.test(read(f)));
-t('Career Explorer pages mark Careers as the current section', navOff.length === 0, navOff.slice(0, 3).join(', '));
+const noNav = ROOT_PAGES.filter((p) => !/<a href="careers\/index\.html" data-section="careers"[^>]*>Explore careers<\/a>/.test(read(p)));
+t('every page of the site has Explore careers in its global navigation', noNav.length === 0, noNav.join(', '));
+/* The three getting-in pages sit in "Find an internship or job"; every
+ * other explorer page marks "Explore careers" as where it is. */
+const JOBS_PAGES = ['careers/recruiting-calendar.html', 'careers/toolkit.html', 'careers/interview-prep.html'];
+const navOff = htmlFiles.filter((f) => !new RegExp('data-section="' + (JOBS_PAGES.includes(f) ? 'jobs' : 'careers') + '" aria-current="(page|true)"').test(read(f)));
+t('explorer pages mark their own section as current in the global navigation', navOff.length === 0, navOff.slice(0, 3).join(', '));
+const noTrail = htmlFiles.filter((f) => !/<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="[^"]*index\.html">Home<\/a><\/li>/.test(read(f)));
+t('every explorer page has breadcrumbs that start at Home', noTrail.length === 0, noTrail.slice(0, 3).join(', '));
 t('Hiring and the Atlas link to the explorer once each', ['hiring.html', 'map.html'].every((p) => (read(p).match(/class="form-meta">[^<]*<a href="careers\/index\.html">Career Explorer<\/a>/g) || []).length === 1));
-const noSkip = htmlFiles.filter((f) => !/<a class="cx-skip" href="#main">/.test(read(f)) || !/<main [^>]*id="main"/.test(read(f)));
+const noSkip = htmlFiles.filter((f) => !/<a class="skip" href="#main">/.test(read(f)) || !/<main [^>]*id="main"/.test(read(f)));
 t('every explorer page has a skip link to its main content', noSkip.length === 0, noSkip.slice(0, 3).join(', '));
 const h1 = htmlFiles.filter((f) => (read(f).match(/<h1\b/g) || []).length !== 1);
 t('every explorer page has exactly one h1', h1.length === 0, h1.slice(0, 3).join(', '));

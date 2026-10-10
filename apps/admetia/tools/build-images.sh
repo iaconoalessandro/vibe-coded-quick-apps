@@ -10,7 +10,6 @@
 # so the markup can follow one pattern; a master narrower than a size is
 # encoded at its own width instead of being upscaled.
 #
-# Also writes lossless WebP copies of the edition wordmarks.
 
 set -e
 cd "$(dirname "$0")/.."
@@ -22,8 +21,4 @@ for jpg in img/photo/*.jpg; do
     [ "$width" -lt "$w" ] && size="$width" || size="$w"
     cwebp -quiet -q 80 -m 6 -resize "$size" 0 "$jpg" -o "$name-$w.webp"
   done
-done
-
-for png in img/wordmark/*.png; do
-  cwebp -quiet -lossless -z 9 "$png" -o "${png%.png}.webp"
 done

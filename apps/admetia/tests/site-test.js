@@ -1,8 +1,7 @@
 /* The pages themselves: what they claim, what they are called, and how they
  * look when shared.
  *
- *   names    The three editions carry their own names — The City, Wall Street,
- *            FBI Watchlist. No trademarked newspaper name may appear in anything
+ *   names    The sole design is The City. No trademarked newspaper name may appear in anything
  *            a reader sees: the pages, the interface scripts' strings, or the
  *            Italian dictionaries.
  *   counts   Numbers the pages state in words must match the models.
@@ -11,7 +10,7 @@
 const fs=require('fs'),path=require('path'),vm=require('vm');
 const APP=path.join(__dirname,'..');
 const read=f=>fs.readFileSync(path.join(APP,f),'utf8');
-const PAGES=['index.html','business.html','it.html','mba.html','masters.html','computing.html'];
+const PAGES=['index.html','study.html','jobs.html','method.html','business.html','it.html','mba.html','masters.html','computing.html'];
 
 let pass=0,fail=0;
 function t(label,cond,extra){ if(cond){pass++;console.log('PASS  '+label);} else {fail++;console.log('FAIL  '+label+(extra?'  → '+extra:''));} }
@@ -25,7 +24,7 @@ fs.readdirSync(path.join(APP,'js')).filter(f=>f.endsWith('.js')).forEach(f=>{ if
 ['data/i18n-it-models.js'].forEach(f=>{ if(REAL.test(stripComments(read(f)))) seen.push(f); });
 t('no real newspaper name appears in anything a reader sees',seen.length===0,seen.join(', '));
 const theme=read('js/theme.js');
-t('the editions keep their own names',/'The City'/.test(theme)&&/'Wall Street'/.test(theme)&&/'FBI Watchlist'/.test(theme));
+t('The City is the only design',/The City/.test(theme)&&!/wallstreet|watchlist|EDITIONS|data-ed/.test(theme));
 
 /* ------------------------------------------------------------ counts --- */
 const s={window:{},Math,console,Object,String,Number,parseFloat,isNaN,Infinity};
@@ -37,7 +36,7 @@ const m=/(Twenty|Thirty)-?(one|two|three|four|five|six|seven|eight|nine)? progra
 const stated=m?WORDS[m[1].toLowerCase()]+(m[2]?WORDS[m[2]]:0):null;
 t('the computing page states the number of programmes the model scores',stated===IT.schools.length,stated+' vs '+IT.schools.length);
 const usCount=IT.schools.filter(x=>/USA/.test(x.region)).length;
-t('and mentions the US when the model has US programmes',!usCount||/the US, scored/.test(read('it.html'))&&/Europe and the US\./.test(read('index.html')));
+t('and mentions the US when the model has US programmes',!usCount||/the US, scored/.test(read('it.html'))&&/Europe and the US\./.test(read('study.html')));
 const mbaN=MBA.generalSchools.length+MBA.adjustedSchools.length;
 t('the MBA description states the number of schools the model scores',read('mba.html').indexOf('across '+mbaN+' business schools')>-1,String(mbaN));
 

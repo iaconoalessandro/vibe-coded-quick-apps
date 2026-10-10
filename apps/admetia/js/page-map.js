@@ -4,9 +4,22 @@
  * that says how to get there on your passport, and a zoomable map of each
  * country's hubs and what each one hires for.
  *
- *   map.html             the world view
- *   map.html#de          Germany's page
- *   map.html#de/munich   Germany's page with Munich's detail open
+ *   map.html                the world view
+ *   map.html#countries      the world view, at the list of countries
+ *   map.html#de             Germany's guide: the overview
+ *   map.html#de/hiring      one view of it (VIEWS below): cities, hiring,
+ *                           visas, work, life, arrival, sources
+ *   map.html#de/hiring/apply   that view, at one of its parts (opened if it
+ *                              is folded); #de/hiring/intern filters the
+ *                              routes to one path
+ *   map.html#de/all         the whole guide on one page, as it used to be
+ *   map.html#de/munich      the cities view with Munich's detail open (the
+ *                           address a picked hub has always had)
+ *
+ * A country's guide is long (Germany runs to some 9,000 words), so it is
+ * split by what a reader came to do. Nothing is left out of the split: the
+ * views together print every section "all" prints, and tests/ux-test.js
+ * checks that each section builder belongs to a view.
  *
  * Data: data/atlas/index.js (the 46 countries and the vocabulary),
  * data/atlas/geo.js (shapes), and one record per country, data/atlas/<id>.js,
@@ -127,9 +140,33 @@
     colour: S ? 'gdppc' : 'none',
     hover: null,
     focus: null,
-    open: null
+    open: null,
+    sel: { view: 'overview' },
+    path: '',          /* Getting hired: the routes shown (all, or one path) */
+    expand: false      /* every folded part of a view open */
   };
+  try { state.expand = sessionStorage.getItem('admissions-calc:atlas-expand') === '1'; } catch (e) { /* storage blocked */ }
+  /* The guide's views, in reading order. `nav` names it in the guide's
+   * navigation; `about` says what is in it, on the overview. */
+  var VIEWS = [
+    { id: 'overview', nav: 'Overview' },
+    { id: 'cities', nav: 'Cities and hubs', about: 'Where the work is: what each hub hires for, its named employers, and the hubs compared on demand, standing, pay and rent.' },
+    { id: 'hiring', nav: 'Getting hired', about: 'The routes most people take into a job here, the hiring calendar, whether a master’s is expected, language at work, the customs of applying, sponsorship in practice and graduate outcomes.' },
+    { id: 'visas', nav: 'Visas and permits', about: 'The published routes for your passport group, situation by situation: studying, an internship, the job search after a degree, a first skilled job and staying for good.' },
+    { id: 'work', nav: 'Working there' },
+    { id: 'life', nav: 'Life there', about: 'Climate, daylight, air quality, prices, safety, language in daily life, working hours, office culture and health care.' },
+    { id: 'arrival', nav: 'First weeks', about: 'What to do after you arrive, in the order most people do it: registering, your residence document, tax number, health cover and a bank account.' },
+    { id: 'sources', nav: 'Sources and research', about: 'Every source this guide cites, the research briefs behind it, and what has not been verified yet.' },
+    { id: 'all', nav: 'Whole guide on one page', about: 'Every section in one long page, for reading straight through, searching with your browser’s Find, or printing.' }
+  ];
+  var viewById = {};
+  VIEWS.forEach(function (v) { viewById[v.id] = v; });
+
   function passport() { return state.passport || 'eu'; }
+  /* "Showing: UK passport", but not "Showing: Another passport passport". */
+  function showingFor(P) {
+    return /passport$/i.test(P.label) ? T('Showing: {p}', { p: T(P.label) }) : T('Showing: {p} passport', { p: T(P.label) });
+  }
   function setPassport(id) {
     state.passport = id;
     if (window.Store) Store.save(STORE, { passport: id });
@@ -1450,6 +1487,169 @@
     return { node: nav, draw: draw };
   }
 
+  /* ------------------------------------------------------------------ */
+  /* Folded parts                                                        */
+  /* ------------------------------------------------------------------ */
+
+  /* One part of a long view, as a native <details>: its heading is the
+   * summary, so it is a button to assistive technology and to the keyboard
+   * with no script at all. Parts a reader needs before deciding are built
+   * open; the rest say in their label what they hold. `extra` is a node
+   * (a verdict chip, a count) shown in the label so a blocker stays in
+   * sight while its part is folded. The whole-guide view, "Open every
+   * part" and printing open them all. */
+  function disc(title, body, o) {
+    o = o || {};
+    var d = el('details', 'disc');
+    if (o.id) { d.id = 'part-' + o.id; d.setAttribute('data-part', o.id); }
+    d._open = !!o.open;
+    d.open = !!o.open || state.expand || state.sel.view === 'all';
+    var sum = el('summary');
+    var h = el('h3', 'disc-t', title);
+    sum.appendChild(h);
+    sum.appendChild(document.createTextNode(' '));
+    if (o.extra) { var x = el('span', 'disc-n'); x.appendChild(o.extra); sum.appendChild(x); }
+    else if (o.count) sum.appendChild(raw('span', 'disc-n', o.count));
+    d.appendChild(sum);
+    var b = el('div', 'disc-body');
+    b.appendChild(body);
+    d.appendChild(b);
+    return d;
+  }
+  function allDiscs() { return Array.prototype.slice.call(page.querySelectorAll('details.disc')); }
+  function setExpand(on) {
+    state.expand = on;
+    try { sessionStorage.setItem('admissions-calc:atlas-expand', on ? '1' : '0'); } catch (e) { /* ignore */ }
+    allDiscs().forEach(function (d) { d.open = on || d._open; });
+  }
+  /* "Open every part" beside a way to the whole guide: the working
+   * alternative where a browser's Find does not look inside folded parts. */
+  function discTools(rec) {
+    var bar = el('div', 'disc-tools');
+    var b = btn('btn small', state.expand ? 'Fold the optional parts' : 'Open every part');
+    b.setAttribute('aria-pressed', state.expand ? 'true' : 'false');
+    b.addEventListener('click', function () {
+      setExpand(!state.expand);
+      b.textContent = T(state.expand ? 'Fold the optional parts' : 'Open every part');
+      b.setAttribute('aria-pressed', state.expand ? 'true' : 'false');
+    });
+    bar.appendChild(b);
+    var a = raw('a', null, T('Read the whole guide on one page'));
+    a.href = '#' + rec.id.toLowerCase() + '/all';
+    bar.appendChild(a);
+    return bar;
+  }
+  /* Printing shows everything; the folds come back afterwards. */
+  window.addEventListener('beforeprint', function () { allDiscs().forEach(function (d) { d._was = d.open; d.open = true; }); });
+  window.addEventListener('afterprint', function () { allDiscs().forEach(function (d) { if (d._was !== undefined) d.open = d._was; }); });
+
+  /* ------------------------------------------------------------------ */
+  /* The guide's own navigation                                          */
+  /* ------------------------------------------------------------------ */
+
+  function viewHref(rec, id) { return '#' + rec.id.toLowerCase() + (id === 'overview' ? '' : '/' + id); }
+  function hasView(rec, id, entry) {
+    if (id === 'hiring') return !!entry;
+    if (id === 'life') return !!window.ATLAS_LIFE;
+    return true;
+  }
+  function viewNav(rec, current, entry) {
+    var nav = el('nav', 'atlas-toc viewnav');
+    nav.setAttribute('aria-label', T('{country}: sections of this guide', { country: name(rec.id) }));
+    nav.appendChild(el('p', 'toc-k', 'In this guide'));
+    var list = el('ol', 'toc-list');
+    VIEWS.forEach(function (v) {
+      if (!hasView(rec, v.id, entry)) return;
+      var li = el('li');
+      var a = el('a', 'toc-link' + (v.id === current ? ' on' : '') + (v.id === 'all' ? ' toc-all' : ''), v.nav);
+      a.href = viewHref(rec, v.id);
+      if (v.id === current) a.setAttribute('aria-current', 'page');
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+    nav.appendChild(list);
+    return nav;
+  }
+  /* Breadcrumbs: the shell prints Home › Plan a move; the country and the
+   * view are added here, and taken away again on the world view. */
+  var trail = document.getElementById('trail');
+  var trailBase = trail ? trail.innerHTML : '';
+  function setTrail(rec, view) {
+    if (!trail) return;
+    trail.innerHTML = trailBase;
+    if (!rec) {
+      /* World view: "Plan a move" is where you are, not a link to itself. */
+      var last = trail.lastElementChild, a0 = last && last.querySelector('a');
+      if (a0) { var sp0 = raw('span', null, a0.textContent); sp0.setAttribute('aria-current', 'page'); last.replaceChild(sp0, a0); }
+      return;
+    }
+    var cur = trail.querySelector('[aria-current]');
+    if (cur) {
+      var a = raw('a', null, cur.textContent);
+      a.href = '#';
+      cur.parentNode.replaceChild(a, cur);
+    }
+    function crumb(text, href) {
+      var li = el('li'), n = raw(href ? 'a' : 'span', null, text);
+      if (href) n.href = href; else n.setAttribute('aria-current', 'page');
+      li.appendChild(n);
+      trail.appendChild(li);
+    }
+    if (view === 'overview') crumb(name(rec.id));
+    else { crumb(name(rec.id), viewHref(rec, 'overview')); crumb(T(viewById[view].nav)); }
+  }
+
+  /* Before and after: the neighbouring views, then where the same question
+   * continues elsewhere on the site. */
+  var ELSEWHERE = {
+    cities: [['Compare how hiring works in all 46 countries', 'hiring.html#compare'], ['What each role family involves', 'careers/index.html']],
+    hiring: [['Plan your route in this country', 'hiring.html#{id}/graduated/first'], ['When each recruiting window opens', 'careers/recruiting-calendar.html'], ['CV rules by country, templates and letters', 'careers/toolkit.html'], ['Interview prep', 'careers/interview-prep.html']],
+    visas: [['Master’s programmes here: requirements, fees and deadlines', 'programmes.html']],
+    work: [['What each role pays and how its hours run', 'careers/compare.html']],
+    life: [],
+    arrival: [],
+    sources: [['How the Atlas was researched and checked', 'method.html#atlas'], ['The research library', 'method.html#library']]
+  };
+  function viewFoot(rec, current, entry) {
+    var box = el('nav', 'next view-next');
+    box.setAttribute('aria-label', T('Continue'));
+    box.appendChild(el('h2', 'rubric', 'Where to go next'));
+    var ul = el('ul', 'next-list');
+    var ids = VIEWS.filter(function (v) { return v.id !== 'all' && hasView(rec, v.id, entry); }).map(function (v) { return v.id; });
+    var at = ids.indexOf(current);
+    function item(text, href, note) {
+      var li = el('li'), a = raw('a', null, text);
+      a.href = href;
+      li.appendChild(a);
+      if (note) li.appendChild(raw('span', null, note));
+      ul.appendChild(li);
+    }
+    if (at > -1 && ids[at + 1]) item(T('Next in this guide: {view}', { view: T(viewById[ids[at + 1]].nav) }), viewHref(rec, ids[at + 1]), viewAbout(rec, ids[at + 1]));
+    (ELSEWHERE[current] || []).forEach(function (x) { item(T(x[0]), x[1].replace('{id}', rec.id.toLowerCase())); });
+    if (at > 0) item(T('Back to the overview of {country}', { country: name(rec.id) }), viewHref(rec, 'overview'));
+    box.appendChild(ul);
+    return box;
+  }
+  function viewAbout(rec, id) {
+    if (id === 'work') return rec.work.map(function (it) { return T(it.k); }).join(' · ');
+    return viewById[id].about ? T(viewById[id].about) : '';
+  }
+
+  /* Official advice applies whichever view is open: say so, and link to it,
+   * wherever the advice itself is not printed. */
+  function advisoryNotice(rec) {
+    var n = el('div', 'notice warn');
+    n.setAttribute('role', 'note');
+    n.appendChild(el('p', 'notice-k', 'Official advice and restrictions'));
+    var p = el('p');
+    p.appendChild(raw('span', null, T('Official travel advice or restrictions apply to {country}. Read them before you plan around anything on this page.', { country: name(rec.id) }) + ' '));
+    var a = raw('a', null, T('Read the advice'));
+    a.href = '#' + rec.id.toLowerCase() + '/overview/advice';
+    p.appendChild(a);
+    n.appendChild(p);
+    return n;
+  }
+
   /* Topics as a ledger: the topic on the left, what the sources say on the
    * right, one ruled row each, so short and long topics sit together
    * without leaving holes. */
@@ -1464,66 +1664,41 @@
     return wrap;
   }
 
-  function renderPage(rec, hubId, visas, entry) {
-    page.textContent = '';
-    page._notes = null;
-    page._toc = null;
-    var c = A.byId[rec.id];
-    document.title = T('{country} — Atlas — Admetia', { country: name(rec.id) });
-
-    var back = el('a', 'atlas-back', '← Back to the map');
-    back.href = '#';
-    page.appendChild(back);
-
-    var head = el('header', 'atlas-head');
-    head.appendChild(raw('p', 'kicker', (c.europe ? T('Europe') : T('Outside Europe')) + ' · ' + T('Checked {date}', { date: date(rec.checked) })));
-    head.appendChild(raw('h1', 'headline-2', name(rec.id)));
-    head.appendChild(el('p', 'standfirst', rec.summary));
-    page.appendChild(head);
-
-    var toc = contents();
-    var cols = el('div', 'atlas-body');
-    var main = el('div', 'atlas-main');
-    cols.appendChild(toc.node);
-    cols.appendChild(main);
-    page.appendChild(cols);
-
-    if (S) {
-      main.appendChild(sectionHead('Key figures', T('where it sits among the 46'), 'Key figures'));
-      main.appendChild(keyFigures(rec.id, true));
-    }
-
-    if (rec.advisory && rec.advisory.length) {
-      var adv = el('section', 'atlas-advisory');
-      adv.setAttribute('data-notes', T('Official advice and restrictions'));
-      adv.appendChild(sectionHead('Official advice and restrictions', null, 'Advice'));
-      rec.advisory.forEach(function (cid) { adv.appendChild(claim(rec, cid)); });
-      main.appendChild(adv);
-    }
-
+  /* The sections of a guide, each built once per view that shows it. */
+  function secFigures(rec, main) {
+    if (!S) return;
+    main.appendChild(sectionHead('Key figures', T('where it sits among the 46'), 'Key figures'));
+    main.appendChild(keyFigures(rec.id, true));
+  }
+  function secAdvisory(rec, main) {
+    if (!rec.advisory || !rec.advisory.length) return;
+    var adv = el('section', 'atlas-advisory');
+    adv.id = 'part-advice';
+    adv.setAttribute('data-notes', T('Official advice and restrictions'));
+    adv.appendChild(sectionHead('Official advice and restrictions', null, 'Advice'));
+    rec.advisory.forEach(function (cid) { adv.appendChild(claim(rec, cid)); });
+    main.appendChild(adv);
+  }
+  function secHubs(rec, main, hubId) {
     main.appendChild(sectionHead(rec.hubs.length > 1 ? 'Hubs' : 'The hub',
       rec.hubs.length > 1 ? T('{n} hubs: tap one for what it hires for', { n: rec.hubs.length }) : '',
       rec.hubs.length > 1 ? 'Hubs' : 'The hub'));
     main.appendChild(hubMap(rec, hubId));
-
     if (rec.hubs.length > 1) {
       main.appendChild(sectionHead('Hubs compared', T('{n} hubs side by side', { n: rec.hubs.length }), 'Compare'));
       main.appendChild(compareHubs(rec));
     }
-
-    if (entry) main.appendChild(entrySection(entry));
-
-    main.appendChild(visaSection(rec, visas));
-
+  }
+  function secWork(rec, main) {
     main.appendChild(sectionHead('Working there', null, 'Working there'));
     var work = itemList(rec, rec.work);
     work.setAttribute('data-notes', T('Working there'));
     main.appendChild(work);
-
-    if (window.ATLAS_LIFE) main.appendChild(lifeSection(rec));
-
-    main.appendChild(arrivalSection(rec, visas));
-
+  }
+  /* The working notes behind a guide: which briefs it draws on, what is
+   * not verified yet, and where its verification log is. Kept apart from
+   * the practical sections, in the Sources and research view. */
+  function secResearch(rec, main, visas) {
     main.appendChild(sectionHead('Research behind this page', null, 'Research'));
     var res = el('div', 'atlas-research');
     if (rec.briefs && rec.briefs.length) {
@@ -1554,11 +1729,142 @@
     }
     res.appendChild(raw('p', 'atlas-note', T('Verification log: {p} in research/verification/claims-to-verify.md.', { p: rec.log })));
     main.appendChild(res);
+  }
+
+  /* Which sections each view prints. "all" prints every one, in the order
+   * the single page always had; "sources" builds them out of sight, so its
+   * numbered list covers the whole guide. tests/ux-test.js reads this
+   * table: every section must belong to a view other than "all". */
+  var SECTIONS = {
+    figures: function (c) { secFigures(c.rec, c.main); },
+    advisory: function (c) { secAdvisory(c.rec, c.main); },
+    hubs: function (c) { secHubs(c.rec, c.main, c.sel.hub); },
+    hiring: function (c) { if (c.entry) c.main.appendChild(entrySection(c.entry, c.rec)); },
+    visas: function (c) { c.main.appendChild(visaSection(c.rec, c.visas)); },
+    work: function (c) { secWork(c.rec, c.main); },
+    life: function (c) { if (window.ATLAS_LIFE) c.main.appendChild(lifeSection(c.rec)); },
+    arrival: function (c) { c.main.appendChild(arrivalSection(c.rec, c.visas)); },
+    research: function (c) { secResearch(c.rec, c.main, c.visas); }
+  };
+  var VIEW_SECTIONS = {
+    overview: ['advisory', 'figures'],
+    cities: ['hubs'],
+    hiring: ['hiring'],
+    visas: ['advisory', 'visas'],
+    work: ['work'],
+    life: ['life'],
+    arrival: ['arrival'],
+    sources: ['research'],
+    all: ['figures', 'advisory', 'hubs', 'hiring', 'visas', 'work', 'life', 'arrival', 'research']
+  };
+
+  /* The overview's index: the passport the routes are shown for, then each
+   * view with what it holds. */
+  function guideIndex(rec, entry) {
+    var box = el('section', 'guide-index');
+    var h = el('h2', 'section', 'What do you need to know?');
+    h.id = 'sec-guide';
+    box.appendChild(h);
+    var scope = el('div', 'guide-scope');
+    scope.appendChild(passportControl());
+    scope.appendChild(el('p', 'seg-note', 'Your passport changes what Visas and permits and First weeks show. Everything else in the guide is the same for everyone.'));
+    box.appendChild(scope);
+    var ul = el('ul', 'tasks guide-tasks');
+    VIEWS.forEach(function (v) {
+      if (v.id === 'overview' || !hasView(rec, v.id, entry)) return;
+      var li = el('li', 'task' + (v.id === 'all' || v.id === 'sources' ? ' task-quiet' : ''));
+      var h3 = el('h3'), a = el('a', null, v.nav);
+      a.href = viewHref(rec, v.id);
+      h3.appendChild(a);
+      li.appendChild(h3);
+      var about = viewAbout(rec, v.id);
+      if (about) li.appendChild(raw('p', null, about));
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    return box;
+  }
+
+  function renderPage(rec, sel, visas, entry) {
+    page.textContent = '';
+    page._notes = null;
+    page._toc = null;
+    state.sel = sel;
+    var c = A.byId[rec.id];
+    var view = sel.view, V = viewById[view], whole = view === 'all';
+    document.title = view === 'overview' ? T('{country} — Atlas — Admetia', { country: name(rec.id) })
+      : T('{view} · {country} — Atlas — Admetia', { view: T(V.nav), country: name(rec.id) });
+    setTrail(rec, view);
+
+    var back = el('a', 'atlas-back', '← Back to the map');
+    back.href = '#';
+    page.appendChild(back);
+
+    var head = el('header', 'atlas-head');
+    head.appendChild(raw('p', 'kicker', (c.europe ? T('Europe') : T('Outside Europe')) + ' · ' + T('Checked {date}', { date: date(rec.checked) })));
+    var h1 = raw('h1', 'headline-2', name(rec.id));
+    if (view !== 'overview') {
+      h1.appendChild(raw('span', 'visually-hidden', ': '));
+      h1.appendChild(raw('span', 'view-name', T(V.nav)));
+    }
+    head.appendChild(h1);
+    if (view === 'overview' || whole) head.appendChild(el('p', 'standfirst', rec.summary));
+    else if (viewAbout(rec, view)) head.appendChild(raw('p', 'standfirst view-about', viewAbout(rec, view)));
+    page.appendChild(head);
+
+    var toc = whole ? contents() : null;
+    var cols = el('div', 'atlas-body');
+    var main = el('div', 'atlas-main');
+    var side = el('div', 'atlas-side');
+    side.appendChild(viewNav(rec, view, entry));
+    if (toc) side.appendChild(toc.node);
+    cols.appendChild(side);
+    cols.appendChild(main);
+    page.appendChild(cols);
+
+    var ctx = { rec: rec, main: main, sel: sel, visas: visas, entry: entry };
+    var list = VIEW_SECTIONS[view];
+    if (rec.advisory && rec.advisory.length && list.indexOf('advisory') < 0) main.appendChild(advisoryNotice(rec));
+    if (view === 'hiring' && !entry) main.appendChild(el('p', 'atlas-note', 'The hiring research for this country could not be loaded. Check your connection and try again.'));
+    list.forEach(function (k) { SECTIONS[k](ctx); });
+    if (view === 'overview') main.appendChild(guideIndex(rec, entry));
+    if (view === 'sources') {
+      /* Every section, built out of sight, so the list below is the whole
+       * guide's: nothing here is read, only cited. */
+      var hold = el('div', 'atlas-offstage');
+      hold.hidden = true;
+      main.appendChild(hold);
+      var off = { rec: rec, main: hold, sel: { view: 'all', hub: null }, visas: visas, entry: entry };
+      VIEW_SECTIONS.all.forEach(function (k) { if (k !== 'research') SECTIONS[k](off); });
+    }
+    if (main.querySelector('details.disc') && !whole) {
+      var first = main.querySelector('details.disc');
+      first.parentNode.insertBefore(discTools(rec), first);
+    }
 
     page._notes = el('section', 'atlas-notes');
     main.appendChild(page._notes);
+    if (!whole) main.appendChild(viewFoot(rec, view, entry));
     page._toc = toc;
     refreshNotes();
+    if (view === 'sources') Array.prototype.forEach.call(page._notes.querySelectorAll('.note-up'), function (b) { b.hidden = true; });
+    /* On a narrow screen the guide's navigation is a strip that scrolls
+     * sideways: bring the view being read into sight. */
+    var here = page.querySelector('.viewnav [aria-current="page"]'), strip = here && here.parentNode.parentNode;
+    if (strip && strip.scrollWidth > strip.clientWidth) strip.scrollLeft = here.offsetLeft - (strip.clientWidth - here.offsetWidth) / 2;
+  }
+
+  /* A part named in the address (#de/hiring/apply): open it if it is
+   * folded, bring it into view and move the keyboard there. */
+  function goPart(id) {
+    var n = id && (document.getElementById('part-' + id) || document.getElementById('sec-' + id));
+    if (!n) return false;
+    if (n.tagName === 'DETAILS') n.open = true;
+    var t = n.tagName === 'DETAILS' ? n.querySelector('summary') : (n.querySelector('h2, h3') || n);
+    if (t.tagName !== 'SUMMARY') t.tabIndex = -1;
+    n.scrollIntoView({ block: 'start' });
+    t.focus({ preventScroll: true });
+    return true;
   }
 
   /* ------------------------------------------------------------------ */
@@ -1630,14 +1936,22 @@
     function draw() {
       body.textContent = '';
       var pid = passport(), P = A.passportById[pid];
-      showing.textContent = T('Showing: {p} passport', { p: T(P.label) });
+      showing.textContent = showingFor(P);
       if (A.isHome(pid, rec.id)) {
         body.appendChild(el('p', 'atlas-note', 'This is your own country, so there is no route to describe. Pick another passport to see how others get here.'));
       } else if (!A.inScope(pid, rec.id)) {
         var sc = el('div', 'atlas-scope');
         sc.appendChild(el('h3', null, 'Outside Admetia’s scope'));
         sc.appendChild(el('p', null, 'Admetia covers routes into, out of and within Europe. A route from a non-European passport to a country outside Europe is not one of them, so there is no content for it here.'));
-        sc.appendChild(el('p', null, 'The hubs and the roles above still describe the job market.'));
+        if (state.sel.view === 'all') sc.appendChild(el('p', null, 'The hubs and the roles above still describe the job market.'));
+        else {
+          var hp = el('p');
+          hp.appendChild(raw('span', null, T('The hubs and the roles still describe the job market:') + ' '));
+          var ha = raw('a', null, T('Cities and hubs'));
+          ha.href = '#' + rec.id.toLowerCase() + '/cities';
+          hp.appendChild(ha);
+          sc.appendChild(hp);
+        }
         body.appendChild(sc);
       } else {
         drawFor(pid);
@@ -1855,7 +2169,13 @@
     return box;
   }
 
-  function entrySection(e) {
+  /* How hiring works, in parts. The lead, the routes in, the market and the
+   * language employers need are open: they are what a reader has to know
+   * before deciding anything. The rest is folded under a label that says
+   * what it holds, because it matters at one moment (writing the
+   * application, reading an offer) or to one field. Nothing is dropped:
+   * the parts are the same rows, in the same order, as the single page. */
+  function entrySection(e, rec) {
     var box = el('section', 'atlas-entry');
     box.setAttribute('data-notes', T('How hiring works'));
     box.appendChild(sectionHead('How hiring works', null, 'Hiring'));
@@ -1873,9 +2193,11 @@
     }
 
     if (e.ways && e.ways.length) {
-      box.appendChild(el('h3', 'item-k', 'Most people get in through'));
+      var waysBox = el('div', 'entry-waysbox');
+      var status = el('p', 'filter-status');
+      status.setAttribute('aria-live', 'polite');
       var ol = el('ol', 'atlas-items entry-ways');
-      e.ways.forEach(function (w) {
+      var items = e.ways.map(function (w) {
         var li = el('li', 'atlas-item'), body = el('div', 'entry-cell');
         li.appendChild(raw('h4', 'item-k', L(w.name)));
         var tags = el('p', 'entry-tags');
@@ -1888,15 +2210,44 @@
         body.appendChild(entryRun(e, w.t));
         li.appendChild(body);
         ol.appendChild(li);
+        return { li: li, paths: String(w.p || '').split(/\s+/).filter(Boolean) };
       });
-      box.appendChild(ol);
+      /* Which paths these routes serve; the control appears only when
+       * choosing one would hide something. */
+      var used = (A.entryPaths || []).filter(function (P) { return items.some(function (x) { return x.paths.indexOf(P.id) > -1; }); });
+      var narrows = used.some(function (P) { return items.some(function (x) { return x.paths.length && x.paths.indexOf(P.id) < 0; }); });
+      function show() {
+        var n = 0;
+        items.forEach(function (x) {
+          /* A route with no path named serves them all. */
+          var on = !state.path || !x.paths.length || x.paths.indexOf(state.path) > -1;
+          x.li.hidden = !on;
+          if (on) n++;
+        });
+        status.textContent = state.path ? T('{n} of {m} routes serve this path. The ranking is among all {m}.', { n: n, m: items.length }) : '';
+        status.hidden = !state.path;
+      }
+      if (narrows && state.sel.view !== 'all') {
+        if (state.path && !used.some(function (P) { return P.id === state.path; })) state.path = '';
+        var seg = segmented('Show routes for', [{ id: '', label: 'Every path' }].concat(used.map(function (P) { return { id: P.id, label: P.name }; })), state.path, function (v) {
+          state.path = v;
+          show();
+          try { history.replaceState(null, '', '#' + e.id.toLowerCase() + '/hiring' + (v ? '/' + v : '')); } catch (err) { /* file:// */ }
+          refreshNotes();
+        });
+        seg.classList.add('entry-pathpick');
+        waysBox.appendChild(seg);
+        waysBox.appendChild(status);
+      }
+      waysBox.appendChild(ol);
+      show();
+      box.appendChild(disc('Most people get in through', waysBox, { id: 'routes', open: true, count: T(items.length === 1 ? '{n} route' : '{n} routes, most used first', { n: items.length }) }));
     }
 
     var market = entryCustomRows(e, 'market', ['sponsorr']);
-    if (market) { box.appendChild(el('h3', 'item-k', 'The market')); box.appendChild(market); }
+    if (market) box.appendChild(disc('The market', market, { id: 'market', open: true }));
 
     if (e.lang && e.lang.length) {
-      box.appendChild(el('h3', 'item-k', 'Language at work'));
       var ll = el('div', 'atlas-items entry-lang');
       e.lang.forEach(function (x) {
         var F = vocab(A.entryFields, x.f), cell = el('div', 'entry-cell');
@@ -1905,12 +2256,11 @@
         cell.appendChild(entryRun(e, x.t));
         ll.appendChild(entryRow(F ? F.name : x.f, cell));
       });
-      box.appendChild(ll);
+      box.appendChild(disc('Language at work', ll, { id: 'language', open: true, count: T('by field') }));
     }
 
-    var list = el('div', 'atlas-items entry-more');
-    if (e.cycle && e.cycle.length) list.appendChild(entryRow('When the economy turns', entryRun(e, e.cycle)));
-    /* One row per group (business, computing): each field the research
+    if (e.cycle && e.cycle.length) box.appendChild(disc('When the economy turns', entryRun(e, e.cycle), { id: 'cycle' }));
+    /* One part per group (business, computing): each field the research
      * covers, then the fields it found nothing specific for. */
     (A.entryGroups || [{ id: null, name: 'Where a field works differently' }]).forEach(function (Gr) {
       var inGroup = (A.entryFields || []).filter(function (F) { return !Gr.id || F.g === Gr.id; });
@@ -1927,16 +2277,15 @@
       });
       var missing = inGroup.filter(function (F) { return fields.indexOf(F) < 0; }).map(function (F) { return T(F.name); });
       if (missing.length) fc.appendChild(raw('p', 'not-rated', T('No field-specific account found for: {list}. The general route above applies as far as the research knows.', { list: missing.join(', ') })));
-      list.appendChild(entryRow(Gr.name, fc));
+      box.appendChild(disc(Gr.name, fc, { id: 'fields-' + (Gr.id || 'all'), count: fields.map(function (F) { return T(F.name); }).join(' · ') }));
     });
-    if (e.schools && e.schools.length) list.appendChild(entryRow('Schools and people that open doors', entryRun(e, e.schools)));
-    if (e.events && e.events.length) list.appendChild(entryRow('Where students meet employers', entryRun(e, e.events)));
-    if (list.childNodes.length) box.appendChild(list);
+    if (e.schools && e.schools.length) box.appendChild(disc('Schools and people that open doors', entryRun(e, e.schools), { id: 'schools' }));
+    if (e.events && e.events.length) box.appendChild(disc('Where students meet employers', entryRun(e, e.events), { id: 'events' }));
 
     var apply = entryCustomRows(e, 'apply');
-    if (apply) { box.appendChild(el('h3', 'item-k', 'How to apply')); box.appendChild(apply); }
+    if (apply) box.appendChild(disc('How to apply', apply, { id: 'apply', count: T('photo, CV length, cover letter, references, certificates, salary expectation, checks, how doors open, applying from abroad, language') }));
 
-    var rows = e.rows || {}, more = el('div', 'atlas-items entry-more');
+    var rows = e.rows || {};
     (A.entryRows || []).forEach(function (R) {
       var lines = rows[R.id];
       if (R.id === 'sponsor') {
@@ -1947,23 +2296,23 @@
         if (V) cell.appendChild(el('span', 'verdict entry-v cv-sponsorr-' + V.id, V.name));
         if (sp) cell.appendChild(entryRun(e, sp.t));
         if (lines && lines.length) cell.appendChild(entryRun(e, lines));
-        more.appendChild(entryRow(R.name, cell));
+        /* The verdict stays in the label: whether employers sponsor is a
+         * blocker a reader should see without opening anything. */
+        box.appendChild(disc(R.name, cell, { id: R.id, extra: V ? el('span', 'verdict entry-v cv-sponsorr-' + V.id, V.name) : null }));
         return;
       }
       if (!lines || !lines.length) return;
-      more.appendChild(entryRow(R.name, entryRun(e, lines)));
+      box.appendChild(disc(R.name, entryRun(e, lines), { id: R.id }));
     });
     var pt = programmeTable(e);
-    if (pt) more.appendChild(entryRow('Employers with programmes', pt));
-    if (more.childNodes.length) box.appendChild(more);
+    if (pt) box.appendChild(disc('Employers with programmes', pt, { id: 'programmes', count: T('intake, window, languages, international graduates') }));
 
     var ob = outcomesBlock(e);
     if (ob || (e.outcomes && e.outcomes.length)) {
-      box.appendChild(el('h3', 'item-k', 'Graduate outcomes'));
       var oc = el('div', 'atlas-items entry-more');
       if (ob) oc.appendChild(entryRow('In numbers', ob));
       if (e.outcomes && e.outcomes.length) oc.appendChild(entryRow('What the numbers do not show', entryRun(e, e.outcomes)));
-      box.appendChild(oc);
+      box.appendChild(disc('Graduate outcomes', oc, { id: 'outcomes' }));
     }
     var cmp = el('p', 'atlas-note');
     var pa = raw('a', null, T('Plan your route in this country'));
@@ -2258,24 +2607,52 @@
     var showing = raw('span', 'count', '');
     head.appendChild(showing);
     box.appendChild(head);
+    if (state.sel.view === 'arrival') {
+      var tools = el('div', 'atlas-tools');
+      tools.appendChild(passportControl());
+      box.appendChild(tools);
+    }
     var body = el('div');
     box.appendChild(body);
     function draw() {
       body.textContent = '';
       var pid = passport(), P = A.passportById[pid];
-      showing.textContent = T('in the order most people do them') + ' · ' + T('Showing: {p} passport', { p: T(P.label) });
+      showing.textContent = T('in the order most people do them') + ' · ' + showingFor(P);
       if (!v || !(v.arrival || []).length) {
         body.appendChild(el('p', 'atlas-note', 'The first-weeks research for this country could not be loaded. Check your connection and try again.'));
       } else if (A.isHome(pid, rec.id)) {
         body.appendChild(el('p', 'atlas-note', 'This is your own country, so there are no first steps to describe. Pick another passport to see what newcomers do.'));
       } else if (!A.inScope(pid, rec.id)) {
-        body.appendChild(el('p', 'atlas-note', 'Outside Admetia’s scope for this passport, as in Visas and permits above.'));
+        body.appendChild(el('p', 'atlas-note', state.sel.view === 'all' ? 'Outside Admetia’s scope for this passport, as in Visas and permits above.' : 'Outside Admetia’s scope for this passport, as Visas and permits explains.'));
       } else {
         var list = el('ol', 'atlas-items atlas-steps');
+        /* The same steps as a line to follow: the way in first (it differs
+         * by passport), then each task in order, each a link to its text
+         * below. A step the research does not cover for this passport is
+         * marked, not skipped. */
+        var seq = el('ol', 'move-seq');
+        var first = el('li', 'move-step move-entry');
+        var free = v.free && forPassport(v.free, pid);
+        first.appendChild(el('span', 'move-k', 'The way in'));
+        var fa = raw('a', null, T(free ? 'No permit needed: you move freely' : 'A visa or permit comes first'));
+        fa.href = '#' + rec.id.toLowerCase() + '/visas';
+        first.appendChild(fa);
+        seq.appendChild(first);
+        var stepNo = 0;
         A.arrivalSteps.forEach(function (S) {
           var xs = v.arrival.filter(function (x) { return x.k === S.id && forPassport(x, pid); });
           if (!xs.length) return;
+          stepNo++;
+          var st = el('li', 'move-step');
+          st.appendChild(raw('span', 'move-k', T('Step {n}', { n: stepNo })));
+          var sa = el('a', null, S.name);
+          sa.href = '#' + rec.id.toLowerCase() + '/arrival/' + S.id;
+          sa.addEventListener('click', function (ev) { ev.preventDefault(); goPart(S.id); });
+          st.appendChild(sa);
+          if (xs.every(function (x) { return x.none; })) st.appendChild(el('span', 'move-none', 'Not covered yet'));
+          seq.appendChild(st);
           var row = el('li', 'atlas-item');
+          row.id = 'part-' + S.id;
           row.appendChild(el('h3', 'item-k', S.name));
           var cell = el('div', 'arrival-cell');
           xs.forEach(function (x) {
@@ -2285,6 +2662,12 @@
           row.appendChild(cell);
           list.appendChild(row);
         });
+        if (stepNo) {
+          var fig = el('figure', 'fig move-fig');
+          fig.appendChild(seq);
+          fig.appendChild(raw('figcaption', null, T('The usual order for the passport shown ({p}). Each step links to what it involves, below; sources are numbered there.', { p: T(P.label) })));
+          body.appendChild(fig);
+        }
         body.appendChild(list);
       }
       refreshNotes();
@@ -2660,7 +3043,9 @@
     rows.forEach(function (x) {
       var h = x[0], st = x[1], tr = el('tr');
       if (h !== last) tr.className = 'first';
-      tr.appendChild(raw('th', 'st-h', h === last ? '' : h.name));
+      /* The hub's name heads its first row only; the rows under it carry
+       * a plain cell, not an empty header. */
+      tr.appendChild(raw(h === last ? 'td' : 'th', 'st-h', h === last ? '' : h.name));
       last = h;
       tr.appendChild(el('td', 'st-f', A.roles.filter(function (r) { return r.id === st.f; })[0].name));
       st.s.forEach(function (n, i) {
@@ -2941,15 +3326,36 @@
   /* Routing                                                             */
   /* ------------------------------------------------------------------ */
 
-  function route() {
-    var m = /^#([a-z]{2})(?:\/([a-z0-9-]+))?$/.exec(location.hash.toLowerCase());
+  /* The address, read: country, view, hub, part. A second word that is not
+   * a view is a hub (#de/munich, the address hubs have always had). */
+  function parse(hash) {
+    var m = /^#([a-z]{2})(?:\/([a-z0-9-]+))?(?:\/([a-z0-9-]+))?$/.exec(String(hash).toLowerCase());
     var id = m && m[1].toUpperCase();
+    if (!id || !A.byId[id]) return null;
+    var sel = { id: id, view: 'overview', hub: null, part: null };
+    if (m[2] && viewById[m[2]]) {
+      sel.view = m[2];
+      if (sel.view === 'cities') sel.hub = m[3] || null; else sel.part = m[3] || null;
+    } else if (m[2]) { sel.view = 'cities'; sel.hub = m[2]; }
+    return sel;
+  }
+
+  var shown = null;
+  function route() {
+    var sel = parse(location.hash);
     if (page._cleanup) { page._cleanup(); page._cleanup = null; }
-    if (!id || !A.byId[id]) {
+    if (!sel) {
+      shown = null;
       page.hidden = true;
       world.hidden = false;
       document.title = T('Atlas — Admetia');
+      setTrail(null);
       if (!svgEl) buildWorld(); else { placeMarks(); syncMarks(); }
+      if (location.hash.toLowerCase() === '#countries') {
+        var h = document.getElementById('countries');
+        list.scrollIntoView({ block: 'start' });
+        if (h) h.focus({ preventScroll: true });
+      }
       return;
     }
     closePop(true);
@@ -2957,9 +3363,16 @@
     page.hidden = false;
     page.textContent = '';
     page.appendChild(el('p', 'pop-loading', 'Loading…'));
-    Promise.all([load(id), loadVisas(id), loadEntry(id)]).then(function (got) {
+    /* A path named on the hiring view (#de/hiring/intern) sets the filter. */
+    if (sel.view === 'hiring' && sel.part && (A.entryPaths || []).some(function (P) { return P.id === sel.part; })) { state.path = sel.part; sel.part = 'routes'; }
+    Promise.all([load(sel.id), loadVisas(sel.id), loadEntry(sel.id)]).then(function (got) {
       var rec = got[0];
-      renderPage(rec, m[2], got[1], got[2]);
+      if (sel.view === 'hiring' && !got[2] && !sel.part) { /* no hiring file: the view says so */ }
+      renderPage(rec, sel, got[1], got[2]);
+      var same = shown && shown.id === sel.id && shown.view === sel.view;
+      shown = sel;
+      if (sel.part && goPart(sel.part)) return;
+      if (same && sel.view === 'cities') return;
       window.scrollTo(0, 0);
       var h = page.querySelector('h1');
       if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); }
@@ -2972,5 +3385,5 @@
   window.addEventListener('hashchange', route);
   route();
 
-  window.AtlasPage = { load: load, inScope: A.inScope, mercator: mercator, spread: spread };
+  window.AtlasPage = { load: load, inScope: A.inScope, mercator: mercator, spread: spread, parse: parse, VIEWS: VIEWS, VIEW_SECTIONS: VIEW_SECTIONS };
 }());

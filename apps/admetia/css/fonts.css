@@ -1,9 +1,6 @@
 /* Typefaces, served from fonts/ like every other asset — no font CDN, no
  * network request. All are SIL Open Font License 1.1; see fonts/README.md.
- * A browser only fetches the faces the active edition actually uses.
- *
- * Wall Street sets its text in Times New Roman and FBI Watchlist its decks in
- * Georgia; both are system fonts and need no file. */
+ * The City uses Source Serif 4 and Hanken Grotesk. */
 
 /* The City: headlines and nameplate. */
 @font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 200 900; font-display: swap;
@@ -11,15 +8,6 @@
 @font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; font-display: swap;
   src: url("../fonts/source-serif-4-italic.woff2") format("woff2"); }
 
-/* Text and interface for The City and FBI Watchlist. */
+/* Text and interface for The City. */
 @font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 100 900; font-display: swap;
   src: url("../fonts/hanken-grotesk.woff2") format("woff2"); }
-
-/* Wall Street: headlines. A static cut of Roboto Serif — ultra-condensed width,
-   optical size 72 — with only the weight left variable (400–800). */
-@font-face { font-family: "Roboto Serif Condensed"; font-style: normal; font-weight: 400 800; font-display: swap;
-  src: url("../fonts/roboto-serif-condensed.woff2") format("woff2"); }
-
-/* FBI Watchlist: headlines (a demi cut). */
-@font-face { font-family: "Noto Serif Display"; font-style: normal; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap;
-  src: url("../fonts/noto-serif-display.woff2") format("woff2"); }

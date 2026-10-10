@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Computer Science</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Computer Science</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -87,13 +82,13 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
-<p><em>Assembled on 9 October 2026 from 2 research parts (computer-science-part-1.md, computer-science-part-2.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Computer science careers are about designing, building and running software and the systems it runs on. Most graduates become software engineers who build products (websites, apps, back-end services, games), but a large share work one layer down, keeping infrastructure, cloud platforms, data pipelines and embedded devices running, or in enterprise IT and consulting, where they configure and integrate business software for clients. Pay ranges more widely than almost any other branch: a new graduate at a top US tech or trading firm can earn several times what the same graduate earns at an Italian IT services firm, and the gap between the US and Europe is large. Since 2023 the entry-level market has been the hardest in a decade (fewer junior postings, AI coding tools changing junior work), while demand for experienced engineers remains solid, so the first job is the main hurdle.</p>
-<p>Scope notes: researched in two parts (product software engineering; infrastructure, systems and other CS careers). AI/ML engineering, data science, data analytics, cybersecurity, quant development (Finance part 4) and product management have their own reports.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Area, What it builds or runs, Main employers, Part"><table>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Computer science careers are about designing, building and running software and the systems it runs on. Most graduates become software engineers who build products (websites, apps, back-end services, games), but a large share work one layer down, keeping infrastructure, cloud platforms, data pipelines and embedded devices running, or in enterprise IT and consulting, where they configure and integrate business software for clients. Pay ranges more widely than almost any other branch: a new graduate at a top US tech or trading firm can earn several times what the same graduate earns at an Italian IT services firm, and the gap between the US and Europe is large. Since 2023 the entry-level market has been the hardest in a decade (fewer junior postings, AI coding tools changing junior work), while demand for experienced engineers remains solid, so the first job is the main hurdle.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Area, What it builds or runs, Main employers, Part"><table>
 <thead><tr><th scope="col">Area</th><th scope="col">What it builds or runs</th><th scope="col">Main employers</th><th scope="col">Part</th></tr></thead>
 <tbody>
 <tr><th scope="row">Backend, frontend, full-stack engineering</th><td>Server logic, APIs and user interfaces of web products</td><td>Big tech, scale-ups, startups, banks, agencies</td><td>1</td></tr>
@@ -108,9 +103,10 @@
 <tr><th scope="row">Enterprise applications and IT operations</th><td>SAP, Salesforce, ServiceNow configuration; system administration</td><td>System integrators, corporate IT departments</td><td>2</td></tr>
 <tr><th scope="row">Technology consulting / system integration</th><td>Client IT projects</td><td>Accenture, Deloitte, Capgemini, Reply and others</td><td>2</td></tr>
 <tr><th scope="row">CS research</th><td>New algorithms, systems and theory</td><td>Universities, industry research labs</td><td>2</td></tr>
-</tbody></table></div>
-<h3 id="part-1-product-software-engineering-2">Part 1: Product software engineering</h3>
-<p>This part of the computer science branch covers the people who build and test the software products that customers and employees use: websites, apps, payment systems, games and the services behind them. It also covers the technical people who help sell or promote those products to other engineers. Seven role families are covered: backend, frontend, full-stack, mobile, game programming, quality assurance (QA) and test automation, and customer-facing technical roles (solutions/sales engineering and developer advocacy). Infrastructure, data engineering, embedded systems, enterprise IT and research are in part 2; AI/ML engineering, data science, cybersecurity, quant development and product management are other branches and appear here only as cross-references. The honest headline for a student in October 2026 is that this is still one of the best-paid career families for graduates, but the entry-level door is narrower than it was in 2021, and the gap between the best-paying employers and the average one is very large.</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-product-software-engineering-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Product software engineering</h3> <span class="disc-n"><span>2,134</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the computer science branch covers the people who build and test the software products that customers and employees use: websites, apps, payment systems, games and the services behind them. It also covers the technical people who help sell or promote those products to other engineers. Seven role families are covered: backend, frontend, full-stack, mobile, game programming, quality assurance (QA) and test automation, and customer-facing technical roles (solutions/sales engineering and developer advocacy). Infrastructure, data engineering, embedded systems, enterprise IT and research are in part 2; AI/ML engineering, data science, cybersecurity, quant development and product management are other branches and appear here only as cross-references. The honest headline for a student in October 2026 is that this is still one of the best-paid career families for graduates, but the entry-level door is narrower than it was in 2021, and the gap between the best-paying employers and the average one is very large.</p>
 <p>Scope notes: (1) Pay figures mix sources of different quality. Levels.fyi is self-reported and skews toward big tech, scale-ups and well-paid hubs, so it overstates typical pay; ITJobsWatch is based on UK job-advert salaries and is noisy for small samples; Italian figures rest on small samples and secondary sources. (2) Hours and stress figures are practitioner consensus, not survey data, because no reliable survey by role family was found; they are marked as such. (3) &quot;Entry&quot; means 0-2 years of experience, &quot;~5 years&quot; means mid-level to senior, &quot;senior&quot; means 8+ years or a senior/staff title. (4) Exchange rates are not converted; each figure is in its original currency. (5) Items marked &quot;unverified&quot; could not be checked against a primary source during this research. (6) Searching was cut off by a tool limit partway through, so some areas (game programmer pay outside Canada, DevRel pay, Italy-specific QA and game studio data) have &quot;no reliable data found&quot; notes instead of numbers.</p>
 <h4 id="p1-2-1-overview-who-employs-software-engineers">P1-2.1 Overview: who employs software engineers</h4>
 <p>Software engineers work in almost every industry. In the US, the Bureau of Labor Statistics (BLS) says most software developers work in computer systems design, finance and insurance, software publishers or manufacturing (BLS Occupational Outlook Handbook, May 2025 data). The main employer types:</p>
@@ -163,9 +159,9 @@
 <h4 id="p1-2-8-customer-facing-technical-roles">P1-2.8 Customer-facing technical roles</h4>
 <p><strong>Definition.</strong> Solutions engineers and sales engineers (the same job under different names) are the technical experts who join sales teams: they run product demos, answer security and architecture questions, run proofs of concept, and help customers decide to buy. Developer advocates (DevRel) explain a product to developers through talks, code samples, documentation, videos and community work.</p>
 <p><strong>In practice.</strong> Solutions engineering is a technical sales job with quota-linked pay. Developer advocacy is a communications job for people who can code; it is a small, volatile field that often expands and contracts with company marketing budgets. SignalFire reports the sales-engineer share of tech headcount up about 11% since 2022 and forward-deployed engineers (engineers embedded with customers, popular at AI companies) up about 30%.</p>
-<p><strong>Employers.</strong> B2B software vendors (cloud, data, security, developer tools), consultancies, and AI companies.</p>
-<h3 id="part-2-infrastructure-systems-and-other-cs-careers-2">Part 2: Infrastructure, systems and other CS careers</h3>
-<p>This part of the Computer Science branch covers the people who build and run the machinery underneath software: the cloud platforms, deployment pipelines, firmware inside cars and chips, data pipelines, enterprise systems (ERP, CRM) and the consulting firms that install them, plus the researchers who push the field forward. Part 1 covers product software engineers (backend, frontend, mobile, games, QA). The jobs here are less visible than building an app, but they are large, stable employers of CS graduates, and several of them (SRE, cloud, data engineering, embedded) pay as well as product engineering in the same market. The honest headline for 2026 is that the entry door is narrower than the 2021 boom suggested: in the US, 69.3% of software-development job postings in Q1 2026 were senior and only 4.5% entry-level (Indeed Hiring Lab, 23 Jul 2026), and several of these roles (DevOps, SRE, cloud architect) are rarely given to complete beginners. Alternative first jobs (IT support, graduate consulting schemes, engineering-services firms, industrial employers) are how many people actually get in.</p>
+<p><strong>Employers.</strong> B2B software vendors (cloud, data, security, developer tools), consultancies, and AI companies.</p></div></div></details>
+<details class="disc cx-disc" id="part-2-infrastructure-systems-and-other-cs-careers-2"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Infrastructure, systems and other CS careers</h3> <span class="disc-n"><span>1,098</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>This part of the Computer Science branch covers the people who build and run the machinery underneath software: the cloud platforms, deployment pipelines, firmware inside cars and chips, data pipelines, enterprise systems (ERP, CRM) and the consulting firms that install them, plus the researchers who push the field forward. Part 1 covers product software engineers (backend, frontend, mobile, games, QA). The jobs here are less visible than building an app, but they are large, stable employers of CS graduates, and several of them (SRE, cloud, data engineering, embedded) pay as well as product engineering in the same market. The honest headline for 2026 is that the entry door is narrower than the 2021 boom suggested: in the US, 69.3% of software-development job postings in Q1 2026 were senior and only 4.5% entry-level (Indeed Hiring Lab, 23 Jul 2026), and several of these roles (DevOps, SRE, cloud architect) are rarely given to complete beginners. Alternative first jobs (IT support, graduate consulting schemes, engineering-services firms, industrial employers) are how many people actually get in.</p>
 <p>Scope notes: (1) Today is 9 October 2026. Salary figures are dated; most are from 2025-2026. UK figures from ITJobsWatch are advertised salaries over the six months to 9 Oct 2026 and cover all seniority levels, so they overstate entry pay. Levels.fyi and Stack Overflow figures are self-reported, skew to tech employers, and are all-levels medians, not graduate offers. (2) &quot;Systems programming/low-latency&quot; and &quot;database administration&quot; have no separate role family in section 3; they are treated inside 3.1 (platform/performance work), 3.3 (embedded/systems) and 3.4 (data engineering), and low-latency trading development is cross-referenced to the quant-development branch. (3) Hours and stress ratings are the author's synthesis of practitioner descriptions and the few surveys found (Catchpoint, BLS); no cross-employer hours survey for these roles was found, so treat hours as estimates. (4) A web-search budget limit ended searching before every gap could be closed; missing items are marked &quot;no reliable data found&quot;. Italian pay figures are the weakest part of the evidence base: official, role-specific Italian IT salary tables could not be read, so the Italian numbers rest on job adverts, Levels.fyi and commercial estimate sites, and are labelled so. (5) Employer tier lists are a perception-based framework, not a ranking.</p>
 <p><strong>DevOps, site reliability engineering (SRE) and platform engineering.</strong> DevOps is a way of working that joins software development and IT operations so code reaches users quickly and safely; SRE (a discipline that began at Google) treats reliability as an engineering problem with numeric targets (service level objectives, SLOs); platform engineering builds internal &quot;paved roads&quot; (self-service tooling) that other developers use. In practice: Terraform/Kubernetes, CI/CD pipelines, monitoring, incident response and on-call. Employers: every company that runs software at scale, from big tech and fintech to banks, telecoms and retailers. The 2025 DORA research programme (Google Cloud) describes platform adoption as widespread (a secondary summary quotes about 90%) and says AI acts as an &quot;amplifier&quot; of an organisation's existing strengths and weaknesses (DORA 2025).</p>
 <p><strong>Cloud engineering and architecture (AWS, Azure, GCP).</strong> Cloud engineers design, build and secure infrastructure rented from the big providers; solutions architects design systems for customers, often in pre-sales at the provider or at a consultancy. Employers: the hyperscalers (Amazon Web Services, Microsoft, Google Cloud), consultancies and system integrators, and the in-house IT of nearly every large organisation. Italian-market examples include Italian cloud providers such as Aruba and the cloud units of Reply (Storm Reply), Engineering and Accenture.</p>
@@ -175,7 +171,8 @@
 <p><strong>Database administration/engineering.</strong> Keeping databases (Oracle, SQL Server, PostgreSQL, MongoDB) backed up, fast and secure. The US Bureau of Labor Statistics (BLS) projects database administrators at 0% employment change and database architects at +9% for 2025-35, with pay of $104,620 (administrators) and $139,500 (architects) in May 2025 (BLS). The classic DBA job is shrinking and merging into cloud and data engineering.</p>
 <p><strong>Enterprise IT: ERP/CRM consulting, systems administration, IT support.</strong> ERP (enterprise resource planning: finance, supply chain, HR) means SAP, Oracle; CRM (customer relationship management) means Salesforce; ServiceNow runs IT and business workflows. Consultants configure and customise them for clients. Sysadmin and help-desk roles keep an organisation's own systems running and are a classic entry route. SAP's mainstream maintenance for its older ERP (ECC 6.0) ends on 31 Dec 2027 (extended maintenance to 2030 at extra cost), which is driving migration work to S/4HANA; only about 39% of ECC customers had migrated by late 2024 (Basis Technologies, via secondary reports).</p>
 <p><strong>IT/technology consulting and system integrators.</strong> Firms that build and run technology for clients: Accenture, Deloitte, Capgemini, IBM Consulting, NTT Data, Cognizant, Kyndryl, Sopra Steria, CGI; in Italy Reply, Engineering Ingegneria Informatica, Almaviva, Exprivia. Reply reported 2025 revenue of EUR 2,483.6m (+8.0%) and 16,624 employees (+6.0%) (Reply, Mar 2026). Engineering reported 2025 revenue of EUR 1,759.7m (+2.5%) (Engineering press release, 30 Mar 2026); its headcount is not stated in the release (company materials from 2024 say about 15,000, a third-party estimate says about 20,000; unverified).</p>
-<p><strong>Computer science research.</strong> Industry labs (Google DeepMind/Research, Microsoft Research, Meta, IBM Research, Nvidia), universities and public institutes. A PhD is the usual ticket. In the US, 61.4% of new CS PhDs with known jobs went to industry in 2025 (CRA Taulbee 2025).</p></div></section>
+<p><strong>Computer science research.</strong> Industry labs (Google DeepMind/Research, Microsoft Research, Meta, IBM Research, Nvidia), universities and public institutes. A PhD is the usual ticket. In the US, 61.4% of new CS PhDs with known jobs went to industry in 2025 (CRA Taulbee 2025).</p></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -237,7 +234,8 @@
 </tbody></table></div>
 <p>Hours and stress ratings are the researchers' estimates from surveys, postings and practitioner consensus, not survey outputs per role family; see each part's notes.</p></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, early-career; detail, sources and regional differences in the part sections below):</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>Cross-part overview (approximate, early-career; detail, sources and regional differences in the part sections below):</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Typical hours/week, Stress 1-5, Pay level (relative), Culture, Autonomy, Job security"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Typical hours/week</th><th scope="col">Stress 1-5</th><th scope="col">Pay level (relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th><th scope="col">Job security</th></tr></thead>
 <tbody>
@@ -248,9 +246,10 @@
 <tr><th scope="row">Industrial / automotive / manufacturer</th><td>38-45</td><td>2-3</td><td>Moderate</td><td>Engineering-led, long product cycles</td><td>Medium</td><td>High (but sector restructuring in Europe)</td></tr>
 <tr><th scope="row">IT services / consulting / system integrator</th><td>40-50 (client peaks)</td><td>3</td><td>Low to moderate at entry, esp. in Italy</td><td>Client-driven, billable, staffing-based</td><td>Low at entry</td><td>Medium</td></tr>
 <tr><th scope="row">Public sector / university</th><td>35-45</td><td>2</td><td>Low to moderate</td><td>Stable, bureaucratic</td><td>Medium-high in research</td><td>High</td></tr>
-</tbody></table></div>
-<h3 id="part-1-product-software-engineering-3">Part 1: Product software engineering</h3>
-<p>The same software role looks quite different depending on the employer. The comparison below is for a backend or full-stack engineer; it summarises Levels.fyi pay data and practitioner consensus (hours, stress, culture and security are not measured by a reliable survey; treat them as indicative).</p>
+</tbody></table></div></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="part-1-product-software-engineering-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 1: Product software engineering</h3> <span class="disc-n"><span>863</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The same software role looks quite different depending on the employer. The comparison below is for a backend or full-stack engineer; it summarises Levels.fyi pay data and practitioner consensus (hours, stress, culture and security are not measured by a reliable survey; treat them as indicative).</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours/week (peak), Stress, Pay (US entry total comp, indicative), Culture, Autonomy, Job security"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours/week (peak)</th><th scope="col">Stress</th><th scope="col">Pay (US entry total comp, indicative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th><th scope="col">Job security</th></tr></thead>
 <tbody>
@@ -270,9 +269,9 @@
 <li><strong>Asian and Middle Eastern hubs:</strong> Singapore, Hong Kong and Dubai pay mostly in line with Europe or higher for the top few employers (Meta SGD 270,759, Morgan Stanley HK$750,289, Careem AED 509,449 in Levels.fyi), but visas and employer sponsorship drive access; Tokyo pays less in yen terms than US firms, with Indeed (¥24.1 million), Amazon (¥17.9 million) and Woven by Toyota (¥17 million) near the top. Bangalore matters mostly as the offshoring benchmark: India median software engineer pay is US$33,768, and big IT services firms such as TCS and Infosys hire and shed tens of thousands per year.</li>
 <li><strong>Culture and hours by region:</strong> The US has the longest hours and fastest hire-and-fire cycle but the highest pay; the UK is similar with lower pay; continental Europe (Germany, Netherlands, Switzerland, France) tends to have shorter hours, more notice periods and stronger worker protections; Italy has strong legal protections for permanent employees but also many fixed-term and freelance arrangements (practitioner consensus, unverified); Japan has a reputation for long hours and slow promotion; trading firms and banks ask for more hours everywhere.</li>
 <li><strong>Banks specifically:</strong> A bank gives you stable employment and formal training but lower pay than Silicon Valley and slower technology. Trading firms are the exception: they pay more than big tech and demand more.</li>
-</ul>
-<h3 id="part-2-infrastructure-systems-and-other-cs-careers-3">Part 2: Infrastructure, systems and other CS careers</h3>
-<p>The template title says &quot;banks&quot;, but for this branch the useful comparison is across the employer types listed in the brief. Ratings are the author's synthesis of the sources above, practitioner descriptions and structural features of each employer type; they are not survey results, and individual teams differ a lot.</p>
+</ul></div></div></details>
+<details class="disc cx-disc" id="part-2-infrastructure-systems-and-other-cs-careers-3"><summary><h3 class="disc-t" translate="no" lang="en">Part 2: Infrastructure, systems and other CS careers</h3> <span class="disc-n"><span>1,053</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>The template title says &quot;banks&quot;, but for this branch the useful comparison is across the employer types listed in the brief. Ratings are the author's synthesis of the sources above, practitioner descriptions and structural features of each employer type; they are not survey results, and individual teams differ a lot.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours, Stress, Pay (relative, same role), Culture, Autonomy, Job security"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours</th><th scope="col">Stress</th><th scope="col">Pay (relative, same role)</th><th scope="col">Culture</th><th scope="col">Autonomy</th><th scope="col">Job security</th></tr></thead>
 <tbody>
@@ -293,11 +292,13 @@
 <li><strong>Asian and Middle East hubs.</strong> Singapore, Hong Kong and the UAE pay mid-to-high local salaries with low tax in Singapore and the UAE (tax rates not verified here); Singapore's top payers are Meta, Google and Airwallex, Hong Kong's Morgan Stanley and Huawei, the UAE's Careem and Talabat (Levels.fyi). Japan's median is lower in dollar terms. Taiwan is the semiconductor hub: TSMC's average package for new master's-level engineers is NT$2.2m, above the Taiwan software-engineer median of NT$1.49m (CNA, Mar 2026; Levels.fyi). South Korea: no reliable data found.</li>
 <li><strong>Hours and on-call.</strong> The strongest sources found indicate incident load rather than formal long hours drives stress in infrastructure roles (Catchpoint), while consulting and go-live peaks drive hours in integrators. Public sector, industrial and university employers have the most predictable schedules.</li>
 <li><strong>Job security.</strong> Security is lowest at startups and in consulting bench cycles, medium at big tech and banks, highest in public/industrial staff positions, but automotive and some industrial restructurings in 2024-26 show that &quot;stable&quot; employers can cut deeply; collective agreements usually protect current staff and push the adjustment onto temporary and new hires (project research file on German OEM deals).</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="backgrounds" class="cx-sec"><h2 translate="no" lang="en">5. Which backgrounds fit this branch</h2>
 <p class="cx-links-inline"><span>Each background’s full list of roles:</span> <a href="../backgrounds/management.html"><span translate="no">Management</span></a> · <a href="../backgrounds/logistics-and-supply-chain.html"><span translate="no">Logistics &amp; Supply Chain</span></a> · <a href="../backgrounds/finance.html"><span translate="no">Finance</span></a> · <a href="../backgrounds/accounting.html"><span translate="no">Accounting</span></a> · <a href="../backgrounds/marketing.html"><span translate="no">Marketing</span></a> · <a href="../backgrounds/data-analytics.html"><span translate="no">Data Analytics</span></a> · <a href="../backgrounds/economics.html"><span translate="no">Economics</span></a> · <a href="../backgrounds/computer-science.html"><span translate="no">Computer Science</span></a> · <a href="../backgrounds/cybersecurity.html"><span translate="no">Cybersecurity</span></a> · <a href="../backgrounds/data-science.html"><span translate="no">Data Science</span></a> · <a href="../backgrounds/artificial-intelligence.html"><span translate="no">Artificial Intelligence</span></a></p>
-<div class="cx-prose" translate="no" lang="en"><h3 id="ratings-by-background">(a) Ratings by background (whole branch)</h3>
-<div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Overall fit, One-line reason"><table>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="ratings-by-background"><summary><h3 class="disc-t" translate="no" lang="en">(a) Ratings by background (whole branch)</h3> <span class="disc-n"><span>265</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Overall fit, One-line reason"><table>
 <thead><tr><th scope="col">Background</th><th scope="col">Overall fit</th><th scope="col">One-line reason</th></tr></thead>
 <tbody>
 <tr><th scope="row">Management</th><td>stretch</td><td>Realistic doors are functional ERP/CRM consulting, technology consulting delivery roles and solutions engineering; engineering roles need a technical conversion.</td></tr>
@@ -311,9 +312,9 @@
 <tr><th scope="row">Cybersecurity</th><td>possible</td><td>Strong for cloud, DevOps/DevSecOps and sysadmin roles and security-vendor solutions engineering; product engineering needs more development practice.</td></tr>
 <tr><th scope="row">Data Science</th><td>possible</td><td>Strong for data engineering and research; product and infrastructure engineering need more engineering practice.</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>strong</td><td>AI curricula include heavy programming and maths; strongest for backend, data and research roles, less so for enterprise IT.</td></tr>
-</tbody></table></div>
-<h3 id="matrix-by-role-family">(b) Matrix by role family (all parts)</h3>
-<p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="matrix-by-role-family"><summary><h3 class="disc-t" translate="no" lang="en">(b) Matrix by role family (all parts)</h3> <span class="disc-n"><span>517</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><p>S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt = Management, Log = Logistics &amp; Supply Chain, Fin = Finance, Acc = Accounting, Mkt = Marketing, DA = Data Analytics, Econ = Economics, CS = Computer Science, Cyber = Cybersecurity, DS = Data Science, AI = Artificial Intelligence.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Mgmt, Log, Fin, Acc, Mkt, DA, Econ, CS, Cyber, DS, AI"><table>
 <thead><tr><th scope="col">Role family</th><th scope="col">Mgmt</th><th scope="col">Log</th><th scope="col">Fin</th><th scope="col">Acc</th><th scope="col">Mkt</th><th scope="col">DA</th><th scope="col">Econ</th><th scope="col">CS</th><th scope="col">Cyber</th><th scope="col">DS</th><th scope="col">AI</th></tr></thead>
 <tbody>
@@ -331,9 +332,9 @@
 <tr><th scope="row">P2-3.5 Enterprise applications consultant (SAP, Salesforce, ServiceNow, etc.) and IT systems administrator/support</th><td>P</td><td>S</td><td>P</td><td>S</td><td>P</td><td>P</td><td>P</td><td>S</td><td>S</td><td>P</td><td>P</td></tr>
 <tr><th scope="row">P2-3.6 Technology consultant at an IT consultancy / system integrator</th><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>S</td><td>P</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
 <tr><th scope="row">P2-3.7 Computer science researcher (PhD, industry research lab, academic career)</th><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>S</td><td>P</td><td>S</td><td>S</td></tr>
-</tbody></table></div>
-<h3 id="part-level-ratings-and-notes">Part-level ratings and notes</h3>
-<h4 id="part-1-product-software-engineering-4">Part 1: Product software engineering</h4>
+</tbody></table></div></div></div></details>
+<details class="disc cx-disc" id="part-level-ratings-and-notes"><summary><h3 class="disc-t" translate="no" lang="en">Part-level ratings and notes</h3> <span class="disc-n"><span>1,165</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><h4 id="part-1-product-software-engineering-4">Part 1: Product software engineering</h4>
 <h4 id="background-ratings">(a) Background ratings</h4>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Background, Rating, Reason"><table>
 <thead><tr><th scope="col">Background</th><th scope="col">Rating</th><th scope="col">Reason</th></tr></thead>
@@ -400,7 +401,8 @@
 <tr><th scope="row">Data Science</th><td>P</td><td>P</td><td>X</td><td>S</td><td>P</td><td>S</td><td>S</td></tr>
 <tr><th scope="row">Artificial Intelligence</th><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>S</td><td>S</td></tr>
 </tbody></table></div>
-<p>Notes: embedded is P (not S) for CS because many employers in Italy and Germany prefer electronic or computer engineering degrees; CS graduates with strong C, operating systems and computer-architecture coursework do enter. A technical master's (computer science, computer engineering) is the standard conversion route for most &quot;X&quot; cells and is the main way non-CS graduates reach 3.1-3.4.</p></div></section>
+<p>Notes: embedded is P (not S) for CS because many employers in Italy and Germany prefer electronic or computer engineering degrees; CS graduates with strong C, operating systems and computer-architecture coursework do enter. A technical master's (computer science, computer engineering) is the standard conversion route for most &quot;X&quot; cells and is the main way non-CS graduates reach 3.1-3.4.</p></div></div></details>
+</section>
 <section id="italy-pay" class="cx-sec"><h2>Italy pay (add-on)</h2>
 <p class="cx-note">From the Italy pay addendum (compiled 9 October 2026), which fills Italian gaps across all thirteen reports. How to read RAL, net pay and the 13th month: <a href="../italy-pay.html">Italy pay add-on</a>.</p>
 <div class="cx-prose" translate="no" lang="en"><div class="cx-table" role="region" tabindex="0" aria-label="Table: Role family, Entry (RAL, EUR k), ~5 years, Senior, City/scope, Source and year, Confidence"><table>
@@ -420,7 +422,9 @@
 <tr><th scope="row">Fixed-term lecturer-researcher RTD-A</th><td>about 28.5 (part-time regime) to 39.2 (full time)</td><td>n/a</td><td>n/a</td><td>One university</td><td>Unimore pay table valid from 1 Jan 2025 (column headings ambiguous on whether the 13th is included)</td><td>Medium</td></tr>
 <tr><th scope="row">Researcher at a public research body (CNR/ISTAT-type, level III)</th><td>34.7 tabular (0-2 years, from 1 Jan 2026)</td><td>37.5 (3-7 yrs); 40.3 (8-12 yrs)</td><td>up to 57.99 (level III, 30+ yrs); level II &quot;first researcher&quot; 43.95-77</td><td>Italy</td><td>GU 14 Jul 2026, table C4 (research bodies); the table heading says &quot;12 payments to which the 13th is added&quot;, so total may be higher</td><td>High (table), but 13th treatment unclear</td></tr>
 </tbody></table></div><p>Notes: The RTT (tenure-track) grade created in 2022 appears in no table I found; I report only RTD-A.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-product-software-engineering-5">Part 1: Product software engineering</h3>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>1,999</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><h3 id="part-1-product-software-engineering-5">Part 1: Product software engineering</h3>
 <p>Levels.fyi pages show a &quot;last updated&quot; date of 9 October 2026 at access; the underlying submissions span several years and are self-reported.</p>
 <ol>
 <li>Levels.fyi, &quot;2025 Annual Report&quot; (End of Year Pay Report), <a class="cx-url" href="https://www.levels.fyi/2025/" rel="noopener noreferrer">https://www.levels.fyi/2025/</a> and structured version <a class="cx-url" href="https://www.levels.fyi/2025/report.md" rel="noopener noreferrer">https://www.levels.fyi/2025/report.md</a>. Accessed October 2026 (report covers 2025).</li>
@@ -520,7 +524,14 @@
 <li>GOV.UK, Skilled Worker going rates for eligible occupations - <a class="cx-url" href="https://www.gov.uk/government/publications/skilled-worker-visa-going-rates-for-eligible-occupations" rel="noopener noreferrer">https://www.gov.uk/government/publications/skilled-worker-visa-going-rates-for-eligible-occupations</a> - updated 29 Apr 2026 (project research file); Berlin ServicePortal, Blue Card - <a class="cx-url" href="https://service.berlin.de/dienstleistung/324659/" rel="noopener noreferrer">https://service.berlin.de/dienstleistung/324659/</a> - 2026 (project research file).</li>
 <li>Project research files: careers/tech-data-and-ai.md and careers/industrial-automotive-defence.md, admetia/research - early Oct 2026 (used for leads and cross-checks; figures reused only where the primary URL is cited above).</li>
 </ol>
-<p><strong>Unverified or not retrieved (for transparency):</strong> official Italian role-specific IT salary tables (Hays Italia, Michael Page Italia 2026 guides); US graduate pay at Accenture/Deloitte; Italian PhD scholarship amount for 2026; Taulbee 2024-25 placement split; Levels.fyi cloud/embedded/solutions-architect role pages (not found); hours-per-week surveys by role. Interview formats, hiring calendars and tier lists are practitioner convention and author synthesis.</p></div></section>
+<p><strong>Unverified or not retrieved (for transparency):</strong> official Italian role-specific IT salary tables (Hays Italia, Michael Page Italia 2026 guides); US graduate pay at Accenture/Deloitte; Italian PhD scholarship amount for 2026; Taulbee 2024-25 placement split; Levels.fyi cloud/embedded/solutions-architect role pages (not found); hours-per-week surveys by role. Interview formats, hiring calendars and tier lists are practitioner convention and author synthesis.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p>Scope notes: researched in two parts (product software engineering; infrastructure, systems and other CS careers). AI/ML engineering, data science, data analytics, cybersecurity, quant development (Finance part 4) and product management have their own reports.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p>
+<p><em>Assembled on 9 October 2026 from 2 research parts (computer-science-part-1.md, computer-science-part-2.md). Headings inside each part keep that part's own numbering with a prefix (P1-3.2 = part 1, section 3.2), so cross-references such as &quot;see 2.6&quot; inside a part point to that part's own subsection. Ratings use the shared scales defined in ../index.md.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -542,6 +553,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

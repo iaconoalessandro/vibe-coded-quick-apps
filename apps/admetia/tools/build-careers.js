@@ -324,7 +324,8 @@ function compassData(data, site) {
 }
 
 function writeSitemap(careerPages) {
-  const root = ['index.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html', 'hiring.html', 'programmes.html'];
+  /* Every hand-written page the shell knows (tools/shell.js). */
+  const root = Object.keys(require('./shell').ROOT_PAGES);
   for (const p of root) if (!fs.existsSync(path.join(ROOT, p))) fail(`sitemap: ${p} missing`);
   const urls = [''].concat(root.slice(1), careerPages.map((p) => p.replace(/(^|\/)index\.html$/, '$1')));
   const xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

@@ -12,6 +12,18 @@
 
 Admetia is a privacy-first admissions chances evaluator for top-tier **MBA**, **Business Master's**, and **IT & Computing Master's** programmes across the UK, Europe, and the US — in **English and Italian**.
 
+Around the calculators it is also a reference for the decisions next to them, organised by task (10 October 2026):
+
+| Section | Hub | What is in it |
+|---|---|---|
+| **Choose a master's** | `study.html` | Programme Directory, the seven calculators, which track leads to which career field |
+| **Explore careers** | `careers/index.html` | 124 role families in 13 fields, Career Compass, compare, Italian pay |
+| **Find an internship or job** | `jobs.html` | Hiring by country (planner and table), recruiting calendar, application toolkit, interview prep |
+| **Plan a move** | `map.html` | 46 countries: each guide in views (cities, getting hired, visas, working, life, first weeks, sources) or whole on one page |
+| **Sources and method** | `method.html` | How each part was researched and checked, the research library, privacy, credits |
+
+The front page (`index.html`) is the way in to all five. The chrome every page shares is written once in `tools/shell.js`; `npm run shell` stamps it into the root pages and `npm run careers` builds the Career Explorer with it. How the structure was arrived at, and how it was checked: `docs/ux-refactor/`.
+
 **Live Site:** <https://iaconoalessandro.github.io/admetia/>
 
 Zero build steps to run it. Zero runtime dependencies. Your answers never leave your browser: the only request the site makes is an optional, anonymous visit count (see *Visit counting* below), and it is off until a counter address is set.
@@ -30,7 +42,7 @@ Zero build steps to run it. Zero runtime dependencies. Your answers never leave 
   ```bash
   npm test
   ```
-  *(565 checks passing across 11 suites — all models, edge cases, the application calendar, the Atlas, the Italian translation and the pages themselves — plus 8,000 frozen MBA profiles re-scored in both readings).* The runner
+  *(14 suites — all models, edge cases, the application calendar, the Atlas, the Italian translation and the pages themselves — plus 8,000 frozen MBA profiles re-scored in both readings).* The runner
   (`tools/run-tests.js`) is plain Node, so it behaves the same on Windows, macOS and Linux; pass
   `-- -v` to see every assertion. Each suite also runs on its own, e.g. `node tests/computing-test.js`.
 
@@ -69,7 +81,7 @@ A rule-first evaluation model for 26 computing master's programmes in the UK, Eu
 All 136 programmes the three calculators score (67 business master's, 26 computing master's, 43 MBAs) in one searchable list, with no questionnaire. Filter by track, region, fee band, GMAT/GRE policy, experience caps, hard prerequisites (quant or business credits, a specific degree, a minimum degree class, conversion-only) and deadline; sort by name, calibrated bar, fee or next deadline; set three side by side. Every requirement keeps its source tag. Fees come from `data/programme-fees.js`, transcribed from `research/money/costs-and-funding.md` (and the MBA research), in the school's own currency and never converted; programmes with no fee in the research say so. **Test my chances** opens the calculator with `?school=<id>`: a note above the questions names the programme, and the results open at its row (`js/results-kit.js`, `picked*`). Filters live in the URL fragment, so a list can be shared. Checks: `tests/programmes-test.js`.
 
 ### 5. The Atlas (`map.html`)
-A Europe-centred world map of the 46 countries Admetia covers: 25 in Europe (the UK, Switzerland, Norway and Iceland included) and 21 outside it, with Hong Kong and Taiwan as separate entries. The map uses the Mercator projection and zooms and pans (wheel, drag, pinch, or the + / − / reset buttons). Tap a country for a quick overview; open its page for **how hiring works** there, the route from your passport (EU/EEA/Swiss, UK, US or another), working there, the first weeks, official travel advice and the open gaps. Every country gets a zoomable hub map of its big cities (192 hubs in all); each hub lists its sectors, named employers and a demand level for each of 14 role families, with finance split into eight sub-roles. A route is in scope only if Europe is one end, so a US passport looking at Singapore is told it is outside Admetia's scope. Every statement is a claim tagged *data*, *employer-stated*, *practitioner consensus* or *anecdotal*, with its source and the date it was read; a demand level with no source behind it shows as *Not rated*. The verification log for each country is a P number in `research/verification/claims-to-verify.md` §4.2.
+A Europe-centred world map of the 46 countries Admetia covers: 25 in Europe (the UK, Switzerland, Norway and Iceland included) and 21 outside it, with Hong Kong and Taiwan as separate entries. The map uses the Mercator projection and zooms and pans (wheel, drag, pinch, or the + / − / reset buttons). Tap a country for a quick overview; open its page for **how hiring works** there, the route from your passport (EU/EEA/Swiss, UK, US or another), working there, the first weeks, official travel advice and the open gaps. Every country gets a zoomable hub map of its big cities (200 hubs in all); each hub lists its sectors, named employers and a demand level for each of 14 role families, with finance split into eight sub-roles. A route is in scope only if Europe is one end, so a US passport looking at Singapore is told it is outside Admetia's scope. Every statement is a claim tagged *data*, *employer-stated*, *practitioner consensus* or *anecdotal*, with its source and the date it was read; a demand level with no source behind it shows as *Not rated*. The verification log for each country is a P number in `research/verification/claims-to-verify.md` §4.2.
 
 **How hiring works** (`data/atlas/entry/<id>.js`) describes, for each country, the way most graduates actually get their first job rather than every possible path: the routes in order of how many people they carry (Werkstudent jobs in Germany, the final internship and alternance in France, the six-month stage in Italy, co-op in Canada, summer jobs in Finland, the April cohort in Japan), what a downturn does to them, where each business field (finance, accounting, consulting, marketing, corporate, public sector) and each computing field (software, data and AI, cybersecurity) works differently, with the employers and the schools they recruit from, the schools and people that open doors, where students meet employers, and the customs of applying (photo on the CV, how doors open, applying from abroad, language). Each line cites the file's own sources or is marked *Our reading* where Admetia wrote it without a single source; a part with nothing reliable is left out.
 
@@ -99,7 +111,7 @@ The world map is coloured by an IMF indicator of the reader's choice (GDP per he
 - **100% Client-Side Answers:** Your answers are saved only in your browser's `localStorage` so refreshing doesn't lose your work. Wiped at any time with the footer's *"Clear everything"* button.
 - **English and Italian:** *EN · IT* in the top strip switches the whole site — pages, questions, options, school facts, deadline notes and results — and the choice is remembered. English stays the default. On phones the strip shows just the other language. Translating never changes a score: only the words are swapped, and `tests/i18n-test.js` proves the numbers match.
 - **Link Previews:** Every page carries a preview card (`img/og-admetia.jpg`), so a shared link shows a picture, a title and a line of description in WhatsApp, LinkedIn, Telegram and the rest.
-- **Three Editions:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — and the *Edition* picker in the top strip switches between **The City** (the default: salmon paper, claret and teal, a dark market bar), **Wall Street** (black and white with colour photographs, Times New Roman with a condensed display face for headlines) and **FBI Watchlist** (black masthead, white page, full colour). The choice is remembered in this browser.
+- **The City:** The site is laid out like a financial newspaper — masthead, section navigation grouped under Business and Computing, a questionnaire with margin notes, results as a league table — with salmon paper, claret and teal, and a dark market bar. The City is the only design; the top strip retains the language switch.
 - **The Admissions Index:** a market-style ticker under the navigation. Each programme is a symbol whose "price" is the Competitive bar the model uses for it; once you have answered a calculator, the change column shows your margin against each bar in green or red. It is built from the models and your saved answers — nothing is fetched, and none of it is market data.
 
 ---
@@ -108,23 +120,28 @@ The world map is coloured by an IMF indicator of the reader's choice (GDP per he
 
 ```text
 Pages (they stay at the top level: GitHub Pages publishes these paths as the site's URLs)
-index.html          Landing page — Business or IT track selector
+index.html          Front page — the five sections, by task
+study.html          Choose a master's: directory, calculators, track-to-field diagram
+                    (the calculator landing that used to be the front page)
+jobs.html           Find an internship or job: by stage, recruiting timeline, countries
+method.html         Sources and method: labels, models, research library, privacy, credits
+programmes.html     Programme Directory
 business.html       Business track picker (MBA, Finance, Management, Marketing)
 mba.html            MBA calculator and results
 masters.html        Master's calculator (?track=mim|mif|marketing)
 it.html             IT track picker (Computer Science, Data Science & AI, Conversion)
 computing.html      Computing calculator (?track=cs|dsai|conversion)
-map.html            The Atlas: world map, country pages and hub maps
+map.html            The Atlas: world map and each country's guide, in views
+                    (#de, #de/hiring, #de/visas … #de/all for the whole guide)
 hiring.html         How hiring works in 46 countries: the planner and the table of countries
 404.html            Page-not-found, in the site's own style
 sw.js               Service worker — keeps visited calculators working offline
                     (it has to sit at the top to cover every page)
 
-css/app.css         The newspaper layout and its three editions
+css/app.css         The City newspaper layout
 css/fonts.css       @font-face rules for the typefaces in fonts/ (all SIL OFL)
 fonts/              The typefaces, with their licences
 img/photo/          Photographs: JPEG masters plus 480/800/1240px WebP (tools/build-images.sh)
-img/wordmark/       Nameplate images for the Wall Street and FBI Watchlist editions
 img/                Favicon, touch icon, link-preview card and the section marks (mark-*.svg)
 
 js/ — what runs in the page
@@ -136,7 +153,7 @@ js/ — what runs in the page
   storage.js        Saving answers in this browser (localStorage)
   session.js        "Clear everything", resume banners and "See your results" links
   ui.js             Scroll reveals, the top-bar shadow and the score dial; never touches a score
-  theme.js          Edition picker, section-nav highlighting and the dateline
+  theme.js          The City setup, section-nav highlighting and the dateline
   ticker.js         The Admissions Index ticker and the front page's "Highest bars"
   intro.js          The opening titles
   i18n.js           The language switch and the translation engine
@@ -165,6 +182,10 @@ data/ — what the calculators know
 tests/*-test.js     Test suites (equivalence, gates, profiles, calendar, translation, pages);
                     computing-test.js covers the IT track, i18n-test.js the Italian
 tools/build.js      Packages the site into _site/ for publishing (bundled, minified, hashed)
+tools/shell.js      The shared chrome: sections, navigation, breadcrumbs, footer index
+tools/build-shell.js  Stamps the chrome and the generated figures into the root pages (npm run shell)
+tools/visuals.js    The figures drawn from site data: track-to-field diagram, recruiting timeline
+tools/ux-ledger.js  Content ledger: proves nothing published before the restructuring was lost
 tools/run-tests.js  Cross-platform test runner behind `npm test`
 tools/i18n-report.js  What is missing or out of date in the Italian
 tools/atlas-geo.js  Rebuilds data/atlas/geo.js from Natural Earth (downloads once)
@@ -172,13 +193,14 @@ tools/atlas-stats.js  Rebuilds data/atlas/stats.js from the IMF DataMapper API
 tools/atlas-outcomes.js  Rebuilds data/atlas/outcomes.js (Eurostat API, World Bank API, research/outcomes/researched.json)
 tools/hiring-check.js  Checks every country's hiring file and Working there rows against the full plan
 tools/build-images.sh   WebP copies of the photographs
-tools/build-brand.py    Favicon, wordmarks, touch icon and link card (needs .venv, see the file)
+tools/build-brand.py    Favicon, touch icon and link card (needs .venv, see the file)
 tools/data-collection/  One-off collectors behind data/computing-evidence.js — not part of
                     the everyday workflow
 docs/EMPLOYER-GUIDE.md  The employer placement guide
 docs/VERIFICATION.md    The 28 September 2026 audit: mathematical proof and methodology
 docs/ATLAS-PROGRESS.md  The Atlas checklist: method, batches and one row per country
 docs/GAP-ANALYSIS.md    What the Atlas needed that the site and research did not have
+docs/ux-refactor/       The restructuring: inventory and ledger, journeys, components, validation
 design/concepts/    Parked alternative redesigns (static mockups, not part of the site)
 design/intro/       The lab and brief the opening titles were built from
 CREDITS.md          Photograph and typeface credits and licensing details

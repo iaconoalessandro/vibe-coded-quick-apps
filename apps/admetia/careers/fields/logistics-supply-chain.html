@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -25,51 +25,46 @@
 <link rel="stylesheet" href="../assets/careers.css">
 </head>
 <body class="cx">
-<a class="cx-skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<div class="ticker cx-strip" role="region" aria-label="Career Explorer">
-  <div class="ticker-label"><span class="ticker-arrow">↗</span><span class="ticker-name">Career Explorer</span></div>
+<div class="ticker strip" role="region" aria-label="Display settings">
+  <div class="ticker-label"><span class="ticker-name">Explore careers</span></div>
   <div class="ticker-view"></div>
-  <div class="edition"><span class="edition-label" id="edition-label">Edition</span><div class="edition-set" role="radiogroup" aria-labelledby="edition-label"></div></div>
+  <div class="language"></div>
 </div>
 
 <header class="masthead compact">
   <a class="nameplate" href="../../index.html">Admetia</a>
-  <p class="motto">The way in — an independent calculator for MBA, business and computing master’s degrees</p>
+  <p class="motto">The way in — independent guides to master’s admissions, careers and working abroad</p>
 </header>
 
-<nav class="sections" aria-label="Calculators">
+<nav class="site-nav" aria-label="Main">
+  <button type="button" class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden><span class="site-nav-toggle-k">Menu</span><span class="visually-hidden">: </span><span class="site-nav-toggle-here">Explore careers</span></button>
+  <ul class="site-nav-list" id="site-nav-list">
+    <li><a href="../../study.html" data-section="study">Choose a master’s</a></li>
+    <li><a href="../index.html" data-section="careers" aria-current="true">Explore careers</a></li>
+    <li><a href="../../jobs.html" data-section="jobs">Find an internship or job</a></li>
+    <li><a href="../../map.html" data-section="move">Plan a move</a></li>
+    <li><a href="../../method.html" data-section="method">Sources and method</a></li>
+  </ul>
+</nav>
+
+<nav class="sections" aria-label="Explore careers">
   <div class="sections-inner">
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../business.html" data-sec="business">Business</a>
-      <span class="sec-items">
-        <a href="../../mba.html" data-sec="mba">MBA</a>
-        <a href="../../masters.html?track=mif" data-sec="masters:mif">Finance</a>
-        <a href="../../masters.html?track=mim" data-sec="masters:mim">Management</a>
-        <a href="../../masters.html?track=marketing" data-sec="masters:marketing">Marketing</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../it.html" data-sec="it">Computing</a>
-      <span class="sec-items">
-        <a href="../../computing.html?track=cs" data-sec="computing:cs">Computer Science</a>
-        <a href="../../computing.html?track=dsai" data-sec="computing:dsai">Data &amp; AI</a>
-        <a href="../../computing.html?track=conversion" data-sec="computing:conversion">Conversion</a>
-      </span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group" href="../../map.html" data-sec="map">Atlas</a>
-      <span class="sec-items"><a href="../../hiring.html" data-sec="hiring">Hiring</a></span>
-    </div>
-    <div class="sec-cluster">
-      <a class="sec-group on" aria-current="page" href="../index.html" data-sec="careers">Careers</a>
-    </div>
+    <a href="../index.html" data-sec="careers/index.html">Overview</a>
+    <a href="../compass.html" data-sec="careers/compass.html">Career Compass</a>
+    <a href="../index.html#backgrounds" data-sec="careers/index.html#backgrounds">By what you studied</a>
+    <a href="../index.html#fields" data-sec="careers/index.html#fields" class="on" aria-current="page">By field</a>
+    <a href="../roles/index.html" data-sec="careers/roles/index.html">All roles</a>
+    <a href="../compare.html" data-sec="careers/compare.html">Compare roles</a>
+    <a href="../italy-pay.html" data-sec="careers/italy-pay.html">Italian pay</a>
+    <a href="../sources.html" data-sec="careers/sources.html">Research sources</a>
   </div>
 </nav>
 
+<nav class="trail" aria-label="Breadcrumb"><ol id="trail"><li><a href="../../index.html">Home</a></li><li><a href="../index.html">Explore careers</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Logistics &amp; Supply Chain</span></span></li></ol></nav>
+
 <main class="shell cx-main" id="main" tabindex="-1">
-<nav class="cx-crumbs" aria-label="Breadcrumb"><ol><li><a href="../index.html">Career Explorer</a></li><li><a href="../index.html#fields">By field</a></li><li><span aria-current="page"><span translate="no">Logistics &amp; Supply Chain</span></span></li></ol></nav>
-<nav class="cx-local" aria-label="Career Explorer sections"><a href="../index.html">Explorer</a><a href="../compass.html">Compass</a><a href="../index.html#backgrounds">By background</a><a href="../index.html#fields">By field</a><a href="../roles/index.html">All roles</a><a href="../compare.html">Compare</a><a href="../recruiting-calendar.html">Calendar</a><a href="../toolkit.html">Toolkit</a><a href="../interview-prep.html">Interview prep</a><a href="../sources.html">Sources</a></nav>
 <p class="cx-en-note" lang="it">Questa sezione è in inglese. Abbiamo tradotto solo menu ed etichette: i testi della ricerca restano nella lingua originale, così cifre, fonti e avvertenze non cambiano.</p>
 
 <header class="cx-head">
@@ -94,64 +89,67 @@
 <li><a href="#backgrounds">5. Which backgrounds fit this branch</a></li>
 <li><a href="#italy-pay">Italy pay (add-on)</a></li>
 <li><a href="#sources">6. Sources</a></li>
+<li><a href="#research-notes">How this field was researched</a></li>
 </ol></details></nav>
 <div class="cx-body">
-<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
-<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Logistics and supply chain work is about getting the right goods, in the right quantity, to the right place at the right cost: buying materials and products (procurement), deciding how much to make and stock (planning), moving things by road, rail, air and sea (transport and shipping), storing and handling them (warehousing), and making them (manufacturing operations). It is a large, mostly practical branch with many entry points and a lot of graduate openings compared with finance or consulting, but pay at entry is usually moderate and a good share of jobs are operational (shifts, sites, firefighting). Since 2020 the field has been in the news constantly: pandemic shortages, the Red Sea and Suez diversions from late 2023, US tariff turbulence, and in 2026 a new Gulf and Strait of Hormuz crisis. That makes the work more visible and more stressful, and it has raised the value of people who can plan around disruption. Technology (planning software, warehouse robots, AI &quot;agents&quot;) is changing the entry-level jobs fastest, so the safest entrants are those who combine operational understanding with data skills.</p>
-<p><strong>Scope notes:</strong> Global view with explicit US, UK, continental Europe (Italy always called out) and Asia/Middle East (Singapore, Dubai) comparisons; &quot;entry&quot; means a graduate with a bachelor's or master's and no MBA; figures are dated and sourced, and where a figure is from a job posting, recruiter blog or aggregator it is labelled as a weak signal; no reliable Italian recruiter salary guide for 2025-26 was found, so Italian pay rests on a few postings and a training-site table and is marked indicative; generic operations/supply-chain analytics is covered in the data analytics report, general operations in the management report, consulting in the management consulting report, and physical commodity trading (which shares chartering skills) in the finance report; facts that come from my background knowledge rather than a source I opened are marked &quot;unverified&quot;.</p></div></section>
-<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2><div class="cx-prose" translate="no" lang="en"><p><strong>2026 context that shapes every area (dated).</strong></p>
+<section id="what-it-is" class="cx-sec"><h2 translate="no" lang="en">1. What this branch is</h2><div class="cx-prose" translate="no" lang="en"><p>Logistics and supply chain work is about getting the right goods, in the right quantity, to the right place at the right cost: buying materials and products (procurement), deciding how much to make and stock (planning), moving things by road, rail, air and sea (transport and shipping), storing and handling them (warehousing), and making them (manufacturing operations). It is a large, mostly practical branch with many entry points and a lot of graduate openings compared with finance or consulting, but pay at entry is usually moderate and a good share of jobs are operational (shifts, sites, firefighting). Since 2020 the field has been in the news constantly: pandemic shortages, the Red Sea and Suez diversions from late 2023, US tariff turbulence, and in 2026 a new Gulf and Strait of Hormuz crisis. That makes the work more visible and more stressful, and it has raised the value of people who can plan around disruption. Technology (planning software, warehouse robots, AI &quot;agents&quot;) is changing the entry-level jobs fastest, so the safest entrants are those who combine operational understanding with data skills.</p></div>
+<p class="cx-note">Where the researchers looked, which figures are thin and what they could not verify: <a href="#research-notes">how this field was researched</a>.</p></section>
+<section id="map" class="cx-sec"><h2 translate="no" lang="en">2. Map of areas and sectors</h2>
+<div class="cx-prose" translate="no" lang="en"><p><strong>2026 context that shapes every area (dated).</strong></p>
 <ul>
 <li><em>Red Sea/Suez and Hormuz.</em> Most container lines left the Red Sea route from late 2023 and sailed round the Cape of Good Hope, adding up to about two weeks to Asia-Europe voyages and absorbing roughly 2.5 million TEU (twenty-foot equivalent units, the standard container measure) of capacity out of a 34 million TEU fleet, about 7% (Xeneta, 2026, via Maritime Executive). Early 2026 saw a cautious return: large containership Suez transits rose 215% in the first half of 2026 versus a year earlier and Maersk restored a second Suez service (AGBI, July 2026). That was disrupted by the February 2026 US-Israel strikes on Iran and the Strait of Hormuz crisis that followed: Shanghai-Jebel Ali spot rates went from about US$1,800 per container in January 2026 to over US$7,000 by late March (Freightos data cited by AGBI/trade press), carriers added war-risk surcharges (Hapag-Lloyd: US$3,000 per 40-foot box, reported), and Maersk introduced an Emergency Freight Rate for several Gulf states in September 2026. Xeneta said in early October 2026 that rates had probably peaked, but Far East-US West Coast spot rates were still about 344% above 28 February levels and would stay elevated for the rest of the year (Xeneta via AJOT, 2 Oct 2026). These are trade-press summaries; check rates before using them for anything quantitative.</li>
 <li><em>Tariffs.</em> The US Supreme Court ruled against the IEEPA tariffs in February 2026; a 10% Section 122 surcharge ran until 24 July 2026 and was replaced the same day by Section 301 tariffs of roughly 10-12.5% by country (USMCA-qualifying goods exempt), with Section 232 tariffs still in force and a Section 301 &quot;excess capacity&quot; action against 16 economies still pending in early October 2026; refund claims and appeals are ongoing (law-firm and trade-press summaries, July-October 2026; verify with USTR/CBP). Practical effect: more work for customs, trade compliance, sourcing and planning teams.</li>
 <li><em>Nearshoring.</em> Surveys point to firms moving some sourcing from China to Mexico and Southeast Asia (Fictiv 2024: 54% of North American manufacturers had adopted nearshoring strategies, via a secondary write-up), but mid-2026 reporting says Mexico's advantage is being eroded by US policy on USMCA and component tariffs. Treat the trend as real but unstable.</li>
 <li><em>Automation and AI.</em> Amazon passed one million warehouse robots in June 2025 and in 2026 cut about 30,000 corporate jobs (reported), mostly not warehouse staff. Gartner reports that supply chain job postings requiring AI skills rose 387% between Q1 2023 and Q1 2026 (35 million postings analysed, via Supply Chain 24/7). Kuehne+Nagel is cutting more than 2,000 roles, mainly attributed to technology-enabled efficiency, and DSV says it has removed over 8,000 white-collar positions since integrating Schenker (trade press, 2026). A job-risk website cites Gartner (February 2026) as saying 55% of supply chain leaders expect agentic AI to reduce entry-level hiring (could not confirm at source: unverified). Net: demand for planners and analysts is not collapsing, but routine coordination and data-entry work is the first to be automated, which makes entry-level back-office roles less safe than before.</li>
-</ul>
-<h3 id="2-1-procurement-and-purchasing">2.1 Procurement and purchasing</h3>
-<ul>
+</ul></div>
+<p class="disc-tools" data-disc-tools hidden><button type="button" class="btn small" data-disc-all aria-pressed="false">Open every part</button> <span>Parts are folded to keep this page short. Opening them all lets your browser’s Find search the whole text.</span></p>
+<details class="disc cx-disc" id="2-1-procurement-and-purchasing"><summary><h3 class="disc-t" translate="no" lang="en">2.1 Procurement and purchasing</h3> <span class="disc-n"><span>146</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Buying what an organisation needs. <em>Direct procurement</em> buys what goes into the product (steel, chemicals, components, packaging); <em>indirect procurement</em> buys everything else (IT, marketing, facilities, travel, professional services). <em>Sourcing</em> finds and qualifies suppliers and runs tenders; <em>category management</em> owns a whole spend category (for example plastics resins) with a strategy; <em>supplier management</em> handles performance, risk and relationships.</li>
 <li><strong>In practice.</strong> You compare quotes, negotiate price and terms, run a request for proposal, check supplier financial and sustainability risk, and chase late deliveries. In 2025-26 it increasingly means re-sourcing around tariffs and switching suppliers at short notice.</li>
 <li><strong>Employers.</strong> Manufacturers (automotive, FMCG, pharma, electronics, aerospace and defence), retailers, energy and utilities, the public sector (NHS, defence, ministries), and procurement outsourcers. In the US, BLS counts 516,100 buyers and purchasing agents (2025), 22% in manufacturing, 14% wholesale, 13% government (BLS Occupational Outlook Handbook, May 2025 data).</li>
-</ul>
-<h3 id="2-2-supply-chain-planning">2.2 Supply chain planning</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-2-supply-chain-planning"><summary><h3 class="disc-t" translate="no" lang="en">2.2 Supply chain planning</h3> <span class="disc-n"><span>137</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> <em>Demand planning</em> forecasts what customers will buy; <em>supply planning</em> works out what to produce or buy to meet that; <em>S&amp;OP</em> (sales and operations planning) or <em>IBP</em> (integrated business planning) is the monthly cycle where sales, finance, operations and planning agree one plan; <em>inventory management</em> sets <em>safety stock</em> (buffer inventory held against uncertainty) and reorder rules.</li>
 <li><strong>In practice.</strong> You own a forecast in a system, explain forecast errors, balance factory capacity against sales promotions, and decide trade-offs such as air-freighting a shortfall. It is spreadsheet and system heavy, meeting heavy, and the first function blamed when stock is wrong.</li>
 <li><strong>Employers.</strong> FMCG and consumer goods (P&amp;G, Unilever), pharma, retail and e-commerce, electronics, automotive, and planning-focused consultancies. P&amp;G's European planning centre in Warsaw is described by P&amp;G as the region's largest planning hub (P&amp;G careers, 2025-26).</li>
-</ul>
-<h3 id="2-3-logistics-and-transportation">2.3 Logistics and transportation (freight forwarding, 3PL, customs)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-3-logistics-and-transportation"><summary><h3 class="disc-t" translate="no" lang="en">2.3 Logistics and transportation (freight forwarding, 3PL, customs)</h3> <span class="disc-n"><span>252</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> <em>Freight forwarders</em> arrange cargo moves for shippers without necessarily owning ships, planes or trucks (they buy space from carriers and add documents, customs and consolidation). <em>Third-party logistics (3PL)</em> firms run warehousing and transport on contract for a client. <em>Customs and trade compliance</em> covers classification (HS codes), duty, origin rules, sanctions and licences, and <em>Incoterms</em> (standard trade terms that say who pays for and bears risk on each leg, for example FOB or DAP). <em>Last-mile</em> is final delivery to the customer.</li>
 <li><strong>In practice.</strong> A forwarder's day is quotes, bookings, documents and exception handling (a delayed vessel, a missing certificate, a customs hold). Peak periods and disruptions raise workload sharply.</li>
 <li><strong>Employers.</strong> By Armstrong &amp; Associates' 2025 ranking of the top 25 forwarders, Kuehne+Nagel and DSV share first, then DHL, Sinotrans, Nippon Express and CEVA (revenue: DSV about US$37.4bn, DHL Supply Chain &amp; Global Forwarding about US$35.5bn, K+N about US$33.8bn; Sinotrans led ocean volume at 4.93m TEU; via Supply Chain 24/7, one secondary source). Also integrators (UPS, FedEx, DHL Express), 3PLs such as GXO, DB Schenker (now part of DSV), Geodis and CEVA, plus many regional firms. In Italy: Savino Del Bene, Fercam, Arcese, BRT and DHL Italy appeared at the top of the older Top 1000 ranking (2018 data, published 2020; dated, treat as a list of names not a current ranking). The Italian contract-logistics market was forecast at about EUR 112.4bn in 2025 (+1.9%) with roughly 79,000 firms (Politecnico di Milano Contract Logistics Observatory via Shipping Italy, Nov 2025).</li>
-</ul>
-<h3 id="2-4-warehousing-and-distribution-operations">2.4 Warehousing and distribution operations</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-4-warehousing-and-distribution-operations"><summary><h3 class="disc-t" translate="no" lang="en">2.4 Warehousing and distribution operations</h3> <span class="disc-n"><span>99</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Receiving, storing, picking, packing and dispatching goods in warehouses, fulfilment centres and cross-docks, usually managed through a <em>WMS</em> (warehouse management system).</li>
 <li><strong>In practice.</strong> A graduate &quot;area manager&quot; or shift supervisor runs 20-100 operatives, tracks productivity and safety, and fixes flow problems, usually on a shift pattern. It is physical, metric-driven and hands-on.</li>
 <li><strong>Employers.</strong> Retail and e-commerce (Amazon, Zalando, Tesco, Walmart), 3PLs (DHL Supply Chain, GXO, CEVA, Kuehne+Nagel contract logistics), grocery wholesalers, and manufacturers' distribution arms. Amazon's own listings describe the entry-level Area Manager as on-site, with 10-12 hour shifts and weekends/nights common (Amazon postings, 2025-26).</li>
-</ul>
-<h3 id="2-5-manufacturing-and-production-operations-lean">2.5 Manufacturing and production operations / lean</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-5-manufacturing-and-production-operations-lean"><summary><h3 class="disc-t" translate="no" lang="en">2.5 Manufacturing and production operations / lean</h3> <span class="disc-n"><span>104</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Running a plant: production scheduling, shift management, quality, maintenance coordination, continuous improvement. <em>Lean</em> is a method for removing waste from processes; <em>Six Sigma</em> uses statistics to cut defects; the two are often combined as Lean Six Sigma (belt levels: yellow, green, black).</li>
 <li><strong>In practice.</strong> Early career means supervising a line, owning daily output and safety targets, and running small improvement projects.</li>
 <li><strong>Employers.</strong> FMCG, automotive, pharma, food, chemicals, aerospace and defence. For Italy this is a core part of the economy (northern manufacturing districts), though the 2025-26 industrial picture is mixed (see the separate industrial-automotive-defence research note for the automotive side).</li>
-</ul>
-<h3 id="2-6-shipping-and-maritime">2.6 Shipping and maritime</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-6-shipping-and-maritime"><summary><h3 class="disc-t" translate="no" lang="en">2.6 Shipping and maritime</h3> <span class="disc-n"><span>243</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> <em>Container lines</em> (liner shipping) run scheduled services; <em>tramp/bulk and tanker shipping</em> is chartered on demand. <em>Ship brokers</em> intermediate between shipowners and charterers (companies hiring a ship); <em>chartering</em> is hiring a ship, on a voyage or time basis; <em>port operators</em> run terminals. <em>Laytime</em> is the time allowed to load or discharge, and <em>demurrage</em> is the penalty charged when it is exceeded.</li>
 <li><strong>In practice.</strong> Liner companies employ customer service, pricing, network planning, equipment (container repositioning) and port-operations staff; brokerages employ small desks of brokers who live on phone, chat and market information.</li>
 <li><strong>Employers.</strong> Alphaliner's mid-2026 data (secondary reports) put MSC first with about 7.33m TEU (21.6% of global capacity), Maersk about 4.65m and CMA CGM about 4.29m, followed by COSCO, Hapag-Lloyd, ONE, Evergreen, HMM, Yang Ming and ZIM. Ports: Rotterdam 14.2m TEU in 2025, Antwerp-Bruges 13.6m, Hamburg 8.3m (US-bound trade down 25.6% on US customs measures); Singapore's PSA terminals 44.5m TEU (record, +8%); Jebel Ali about 15.55m TEU (flat, +0.1%), with DP World noting reduced inbound vessel traffic due to the Iran conflict (port authorities and trade press, 2025-26). Italy: Italian ports handled about 12.8m TEU in 2025 (+7.1%), with Gioia Tauro above 4.5m TEU (+14%, MSC transhipment hub); Trieste was Italy's largest port by tonnage at nearly 60m tonnes; Genoa is the main gateway for northern Italian cargo (Ports Europe / Shipping Italy, 2026). Ship brokers: Clarksons, Braemar, SSY (Simpson Spence Young), Howe Robinson, and many Nordic and Greek brokers.</li>
-</ul>
-<h3 id="2-7-supply-chain-technology-and-analytics">2.7 Supply chain technology and analytics</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-7-supply-chain-technology-and-analytics"><summary><h3 class="disc-t" translate="no" lang="en">2.7 Supply chain technology and analytics</h3> <span class="disc-n"><span>90</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li><strong>Definition.</strong> Implementing and running the systems: ERP (SAP, Oracle), advanced planning systems/APS (SAP IBP, Kinaxis, o9, Blue Yonder), transport and warehouse systems (TMS, WMS), control towers and analytics.</li>
 <li><strong>In practice.</strong> You configure planning parameters, clean master data, build dashboards (SQL, Power BI/Tableau, Python), and train users. Vendors are all pushing &quot;agentic AI&quot;: Kinaxis announced Maestro Agent Studio, SAP has added AI agents for planning (vendor claims, 2026).</li>
 <li><strong>Employers.</strong> Software vendors, system integrators (Accenture, Capgemini, Deloitte and boutique SAP/Kinaxis/o9 partners), large manufacturers and retailers' IT/digital supply chain teams.</li>
-</ul>
-<h3 id="2-8-supply-chain-consulting">2.8 Supply chain consulting (brief)</h3>
-<ul>
+</ul></div></div></details>
+<details class="disc cx-disc" id="2-8-supply-chain-consulting"><summary><h3 class="disc-t" translate="no" lang="en">2.8 Supply chain consulting (brief)</h3> <span class="disc-n"><span>48</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose" translate="no" lang="en"><ul>
 <li>Operations and supply chain practices exist at Kearney, McKinsey Operations, BCG, Bain, A&amp;M, AlixPartners, the Big 4 and Accenture, plus boutiques. See the management consulting report for entry routes and pay. Typical projects: network design, inventory reduction, procurement savings, S&amp;OP transformation, tariff-response sourcing studies, ERP/planning system implementations.</li>
-</ul></div></section>
+</ul></div></div></details>
+</section>
 <section id="roles" class="cx-sec"><h2 translate="no" lang="en">3. Role families</h2>
 <div class="cx-table" role="region" tabindex="0" aria-labelledby="scores"><table class="cx-scoretable">
 <caption id="scores">Role families and their scores <span>(from the research index; 1-5 scales on the sources page)</span></caption>
@@ -187,7 +185,8 @@
 <tr><th scope="row">3.7 Supply chain consultant</th><td>50-60 (60-70)</td><td>4</td><td>4</td><td>4</td><td>US$78-112k Big 4 base (2026) / GBP 32-37k Big 4 base (2026) / about EUR 26-30k indicative (Indeed Italy)</td><td>3-4</td></tr>
 </tbody></table></div></div>
 </section>
-<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2><div class="cx-prose" translate="no" lang="en"><p>The template heading is shared across branches; here the comparison is between employer types for the same supply chain roles. Hours, stress and pay below are my synthesis of the sources in this report plus practitioner descriptions, not measured survey results; they are marked weak where anecdotal.</p>
+<section id="employers" class="cx-sec"><h2 translate="no" lang="en">4. Banks vs. other employer types</h2>
+<div class="cx-prose" translate="no" lang="en"><p>The template heading is shared across branches; here the comparison is between employer types for the same supply chain roles. Hours, stress and pay below are my synthesis of the sources in this report plus practitioner descriptions, not measured survey results; they are marked weak where anecdotal.</p>
 <div class="cx-table" role="region" tabindex="0" aria-label="Table: Employer type, Hours (incl. shifts), Stress, Pay at entry (relative), Culture, Autonomy"><table>
 <thead><tr><th scope="col">Employer type</th><th scope="col">Hours (incl. shifts)</th><th scope="col">Stress</th><th scope="col">Pay at entry (relative)</th><th scope="col">Culture</th><th scope="col">Autonomy</th></tr></thead>
 <tbody>
@@ -262,7 +261,9 @@
 <tr><th scope="row">Shipping: field sales; sales manager</th><td>45-55; 60-65 (bonus 10-25%)</td><td>55-70; 65-75</td><td>&gt;70; &gt;75</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 <tr><th scope="row">Customs declarant</th><td>33-40</td><td>40-50</td><td>&gt;50</td><td>National</td><td>MP26</td><td>Medium</td></tr>
 </tbody></table></div><p>Notes: MP26 does not publish city splits; Genoa and Trieste port employers may follow the logistics or port-sector CCNL, which I could not retrieve.</p></div></section>
-<section id="sources" class="cx-sec"><h2 translate="no" lang="en">6. Sources</h2><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given. Secondary and aggregator sources are flagged in the text.</p>
+<section class="cx-sec cx-evidence">
+<details class="disc cx-disc" id="sources"><summary><h2 class="disc-t" translate="no" lang="en">6. Sources</h2> <span class="disc-n"><span>461</span> <span>words</span></span></summary>
+<div class="disc-body"><div class="cx-prose cx-sources" translate="no" lang="en"><p>All accessed October 2026 unless a date is given. Secondary and aggregator sources are flagged in the text.</p>
 <ul>
 <li>BLS Occupational Outlook Handbook, Logisticians (May 2025 wages). <a class="cx-url" href="https://www.bls.gov/ooh/business-and-financial/logisticians.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/business-and-financial/logisticians.htm</a></li>
 <li>BLS Occupational Outlook Handbook, Purchasing Managers, Buyers and Purchasing Agents (May 2025 wages; 2024 purchasing-manager median from search summary). <a class="cx-url" href="https://www.bls.gov/ooh/business-and-financial/purchasing-managers-buyers-and-purchasing-agents.htm" rel="noopener noreferrer">https://www.bls.gov/ooh/business-and-financial/purchasing-managers-buyers-and-purchasing-agents.htm</a></li>
@@ -279,7 +280,13 @@
 <li>Ports: Ports Europe on Italy 2025 (<a class="cx-url" href="https://www.portseurope.com/italian-ports-record-teu-growth-in-2025-led-by-gioia-tauro-and-genoa/" rel="noopener noreferrer">https://www.portseurope.com/italian-ports-record-teu-growth-in-2025-led-by-gioia-tauro-and-genoa/</a>); Shipping Italy, contract logistics (13 Nov 2025; <a class="cx-url" href="https://www.shippingitaly.it/2025/11/13/quanto-vale-e-come-evolve-la-logistica-conto-terzi-in-italia/" rel="noopener noreferrer">https://www.shippingitaly.it/2025/11/13/quanto-vale-e-come-evolve-la-logistica-conto-terzi-in-italia/</a>) and Top 1000 (2020 edition, dated; <a class="cx-url" href="https://www.shippingitaly.it/2020/08/31/savino-del-bene-ancora-al-vertice-della-classifica-della-logistica-merci-italiana/" rel="noopener noreferrer">https://www.shippingitaly.it/2020/08/31/savino-del-bene-ancora-al-vertice-della-classifica-della-logistica-merci-italiana/</a>); trans.info and HHLA on Rotterdam/Antwerp/Hamburg 2025 (<a class="cx-url" href="https://trans.info/en/rotterdam-antwerp-2025-458342" rel="noopener noreferrer">https://trans.info/en/rotterdam-antwerp-2025-458342</a>); PSA 2025 (<a class="cx-url" href="https://www.singaporepsa.com/2026/01/14/psa-internationals-2025-container-throughput-performance/" rel="noopener noreferrer">https://www.singaporepsa.com/2026/01/14/psa-internationals-2025-container-throughput-performance/</a>); DP World/Jebel Ali via AGBI (<a class="cx-url" href="https://www.agbi.com/logistics/2026/03/dp-world-says-jebel-ali-is-open-and-posts-2025-profits/" rel="noopener noreferrer">https://www.agbi.com/logistics/2026/03/dp-world-says-jebel-ali-is-open-and-posts-2025-profits/</a>).</li>
 <li>Admetia internal notes: management-consulting.md, data-analytics.md (sibling reports), careers/industrial-automotive-defence.md (leads only).</li>
 </ul>
-<p><strong>Data-limit notes.</strong> (1) The search allowance was limited, so many pay points come from postings, training sites or secondary summaries; Hays/CIPS 2026, Michael Page and Robert Walters guides were gated and not read. (2) No reliable Italian recruiter salary guide for 2025-26, no US/Italy entry data for ship brokers, and no Singapore/Dubai graduate pay for most roles were found. (3) Tier lists are my synthesis of sources and industry perception, except Gartner Top 25, Alphaliner and Armstrong &amp; Associates, which are cited. (4) Items marked &quot;unverified&quot; come from background knowledge. (5) Tariff, Hormuz and Red Sea conditions change weekly; figures are as of early October 2026 at best.</p></div></section>
+<p><strong>Data-limit notes.</strong> (1) The search allowance was limited, so many pay points come from postings, training sites or secondary summaries; Hays/CIPS 2026, Michael Page and Robert Walters guides were gated and not read. (2) No reliable Italian recruiter salary guide for 2025-26, no US/Italy entry data for ship brokers, and no Singapore/Dubai graduate pay for most roles were found. (3) Tier lists are my synthesis of sources and industry perception, except Gartner Top 25, Alphaliner and Armstrong &amp; Associates, which are cited. (4) Items marked &quot;unverified&quot; come from background knowledge. (5) Tariff, Hormuz and Red Sea conditions change weekly; figures are as of early October 2026 at best.</p></div></div></details>
+</section>
+<section id="research-notes" class="cx-sec cx-provenance"><h2>How this field was researched</h2>
+<p class="cx-note">The report’s own working notes, as written: what it covers, where its figures are strongest and weakest, and what the researchers could not open or verify. They explain the report rather than the careers, so they sit here, apart from the guidance.</p>
+<div class="cx-prose" translate="no" lang="en"><p><strong>Scope notes:</strong> Global view with explicit US, UK, continental Europe (Italy always called out) and Asia/Middle East (Singapore, Dubai) comparisons; &quot;entry&quot; means a graduate with a bachelor's or master's and no MBA; figures are dated and sourced, and where a figure is from a job posting, recruiter blog or aggregator it is labelled as a weak signal; no reliable Italian recruiter salary guide for 2025-26 was found, so Italian pay rests on a few postings and a training-site table and is marked indicative; generic operations/supply-chain analytics is covered in the data analytics report, general operations in the management report, consulting in the management consulting report, and physical commodity trading (which shares chartering skills) in the finance report; facts that come from my background knowledge rather than a source I opened are marked &quot;unverified&quot;.</p></div>
+<div class="cx-prose cx-preface" translate="no" lang="en"><p><em>Italian pay: where this report says &quot;no reliable data found&quot; for Italy, see <a href="../italy-pay.html">italy-pay-addendum.md</a> for recruiter-guide, contract (CCNL) and posting figures. Shared rating scales and the cross-branch comparison are in <a href="../sources.html">../index.md</a>.</em></p></div>
+<p class="cx-note">Rating scales, the researchers’ assumptions and every gap they listed: <a href="../sources.html">research sources</a>. How Admetia uses the research: <a href="../../method.html#careers">sources and method</a>.</p></section>
 </div>
 </div>
 <nav class="cx-pager" aria-label="Other fields">
@@ -301,6 +308,50 @@
     </aside>
     <p><b class="rubric-in">The research</b>Thirteen branch reports and an Italy pay add-on, researched on 9 October 2026 for Admetia. Nothing on these pages is advice; check the sources before relying on a number.</p>
     <p><b class="rubric-in">Colophon</b>Your choices never leave this browser. Visits are counted anonymously — which page, never which country.</p>
+    <nav class="site-foot" aria-label="Site index">
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../study.html">Choose a master’s</a></p>
+        <ul>
+          <li><a href="../../programmes.html">Programme Directory</a></li>
+          <li><a href="../../business.html">Business calculators</a></li>
+          <li><a href="../../it.html">Computing calculators</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../index.html">Explore careers</a></p>
+        <ul>
+          <li><a href="../compass.html">Career Compass</a></li>
+          <li><a href="../roles/index.html">All roles</a></li>
+          <li><a href="../compare.html">Compare roles</a></li>
+          <li><a href="../italy-pay.html">Italian pay</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../jobs.html">Find an internship or job</a></p>
+        <ul>
+          <li><a href="../../hiring.html">Hiring by country</a></li>
+          <li><a href="../recruiting-calendar.html">Recruiting calendar</a></li>
+          <li><a href="../toolkit.html">Application toolkit</a></li>
+          <li><a href="../interview-prep.html">Interview prep</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../map.html">Plan a move</a></p>
+        <ul>
+          <li><a href="../../map.html#countries">All 46 countries</a></li>
+          <li><a href="../../method.html#atlas">How to read the Atlas</a></li>
+        </ul>
+      </div>
+      <div class="site-foot-col">
+        <p class="site-foot-h"><a href="../../method.html">Sources and method</a></p>
+        <ul>
+          <li><a href="../../method.html#calculators">How the calculators score</a></li>
+          <li><a href="../../method.html#library">Research library</a></li>
+          <li><a href="../../method.html#privacy">Privacy and saved answers</a></li>
+          <li><a href="../../method.html#credits">Credits</a></li>
+        </ul>
+      </div>
+    </nav>
   </footer>
 </main>
 

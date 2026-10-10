@@ -181,7 +181,6 @@
         bar.appendChild(view);
       }
       place();
-      if (window.Theme && window.Theme.buildPicker) window.Theme.buildPicker();
     }
     var lbl = bar.querySelector('.ticker-label');
     if (lbl) {
@@ -202,14 +201,13 @@
     track.style.setProperty('--dur', Math.max(60, all.length * 2.6) + 's');
   }
 
-  /* The market line sits at the very top of the page across all three editions. */
+  /* The market line sits at the very top of the page in The City. */
   function place() {
     if (!bar) return;
     var anchor = document.querySelector('.masthead');
     if (!anchor) return;
     if (bar.nextSibling !== anchor) anchor.parentNode.insertBefore(bar, anchor);
   }
-  document.addEventListener('editionchange', place);
 
   /* The five highest bars across the master's and computing tracks, for the
    * front page. */

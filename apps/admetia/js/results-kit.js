@@ -1019,12 +1019,10 @@ window.ResultsKit = (function () {
   function shareImage(plan) {
     var root = document.documentElement, css = getComputedStyle(root);
     function v(name, dflt) { return css.getPropertyValue(name).trim() || dflt; }
-    var ed = root.getAttribute('data-theme') || 'city';
     var paper = v('--paper', '#fff1e5'), ink = v('--ink', '#33302e'), accent = v('--accent', '#990f3d');
     var mast = v('--font-mast', 'serif'), disp = v('--font-display', 'serif'), head = v('--font-head', 'serif'), ui = v('--font-ui', 'sans-serif');
     var mastW = v('--mast-weight', '700'), dispW = v('--display-weight', '600');
     var TONE = { safe: v('--high', ink), target: v('--good', ink), dream: v('--mid', ink) };
-    var stretch = ed === 'watchlist' ? 'condensed' : ed === 'wallstreet' ? 'ultra-condensed' : 'normal';
     var W = 1080, H = 1350, X = 84;
     var fonts = [mastW + ' 100px ' + mast, dispW + ' 60px ' + disp, '700 28px ' + ui, '600 34px ' + ui, 'italic 400 30px ' + head];
     return Promise.all(fonts.map(function (f) { return document.fonts.load(f).catch(function () {}); })).then(function () {
@@ -1035,19 +1033,17 @@ window.ResultsKit = (function () {
       c.fillStyle = paper;
       c.fillRect(0, 0, W, H);
 
-      /* Nameplate and slogan; Watchlist sets them on its black band. */
-      var band = ed === 'watchlist';
-      if (band) { c.fillStyle = '#171717'; c.fillRect(0, 0, W, 250); }
+      /* The City nameplate and slogan. */
       c.textAlign = 'center';
-      c.fillStyle = band ? '#ffffff' : ink;
-      face(mastW + ' 118px ' + mast, stretch);
+      c.fillStyle = ink;
+      face(mastW + ' 118px ' + mast);
       c.fillText(v('--mast-case', 'uppercase') === 'none' ? 'Admetia' : 'ADMETIA', W / 2, 172);
       face('italic 400 30px ' + head);
-      c.fillStyle = band ? '#bbbbbb' : ink;
+      c.fillStyle = ink;
       c.fillText('The way in', W / 2, 224);
 
       /* Dateline between rules. */
-      var y = band ? 290 : 262, date = new Date().toLocaleDateString(I.locale || 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      var y = 262, date = new Date().toLocaleDateString(I.locale || 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
       c.fillStyle = ink;
       c.fillRect(X, y, W - 2 * X, 5);
       c.fillRect(X, y + 9, W - 2 * X, 1.5);
@@ -1065,7 +1061,7 @@ window.ResultsKit = (function () {
       face('700 26px ' + ui);
       c.fillText(clip(c, String(plan.kicker).toUpperCase(), W - 2 * X), X, y);
       c.fillStyle = ink;
-      face(dispW + ' 62px ' + disp, stretch === 'normal' ? 'normal' : 'semi-condensed');
+      face(dispW + ' 62px ' + disp);
       wrap(c, plan.title, W - 2 * X).slice(0, 3).forEach(function (l) { y += 70; c.fillText(l, X, y); });
 
       /* Three facts, as a markets strip. */

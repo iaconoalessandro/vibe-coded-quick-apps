@@ -52,6 +52,14 @@ Three pages built with the rest of the explorer by `tools/careers/getting-in.js`
 - **Italian.** 412 interface strings in `js/i18n-it.js` ("Getting in" block), month abbreviations included. Templates, quoted research, study cards and practice cases stay in English.
 - **Checks.** `tests/careers-test.js` "getting in" block: templates equal a fresh build; Word files carry headings and no tables, text boxes or images; LaTeX files are balanced and pdfLaTeX-safe; every Overleaf link points to a published file; the worked numbers recompute; the drill accepts its own answers; every script string has Italian.
 
+## Shared shell and folded parts (10 October 2026)
+
+- **Chrome.** `tools/careers/render.js` no longer copies the strip and navigation out of `index.html`: it calls `tools/shell.js`, the same module that stamps the root pages. Explorer pages sit in "Explore careers"; the three getting-in pages (calendar, toolkit, interview prep) keep their addresses under `careers/` and sit in "Find an internship or job". The old local row (`.cx-local`) and the Explorer's own skip link and breadcrumb classes are gone, with their rules in `careers.css`.
+- **Field pages.** A report section over 1,200 words with headings of its own is cut at its top-level headings; each becomes a native `<details>` labelled with the heading and its length (ids unchanged, so links still arrive; `careers.js` opens the part). Section 6 (sources) is one labelled part. Role-family lists are never folded. Short fields print as before.
+- **Research notes.** Each report's "Scope notes" paragraph moves, whole, from section 1 to a new last section, "How this field was researched", with the report's preface; section 1 says where it went. The build stops if a report does not have exactly one such paragraph.
+- **Role pages.** A "Getting hired in this role" block links to hiring by country, the calendar, the toolkit and interview prep.
+- **Nothing in a report is shortened or reordered.** `tests/careers-test.js` still compares each role page's words with its source, and `tests/ux-test.js` runs the content ledger (`tools/ux-ledger.js`).
+
 ## Changes to existing files
 
 - **Section nav** on all 8 pages: a fourth cluster, "Careers". The row was already full (Wall Street used 1116 of 1120 px, and "Hiring" was partly clipped in every edition at 1280 px), so `css/app.css` tightens the cluster spacing and lets the nav row run 40 px past the text column on each side. All four clusters now fit at 1280 px in all three editions; narrower screens scroll as before.

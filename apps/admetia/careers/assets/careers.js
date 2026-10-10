@@ -319,4 +319,44 @@
     if (ct) comparePage(ct);
     contents();
   });
+
+  /* ------------------------------------------------------- folded parts */
+
+  /* Long field pages fold their reference parts (<details class="disc">).
+   * A link to something inside a folded part opens it first; "Open every
+   * part" opens them all, which is also what printing does. Without this
+   * file each part still opens by itself. */
+  function openFor(node) {
+    for (var n = node; n; n = n.parentElement) if (n.tagName === 'DETAILS') n.open = true;
+  }
+  function arrive() {
+    var id = decodeURIComponent(location.hash.replace(/^#/, ''));
+    var t = id && document.getElementById(id);
+    if (!t) return;
+    openFor(t);
+    t.scrollIntoView({ block: 'start' });
+    var f = t.tagName === 'DETAILS' ? t.querySelector('summary') : t;
+    if (f && f.tagName !== 'SUMMARY' && !f.hasAttribute('tabindex')) f.setAttribute('tabindex', '-1');
+    if (f) f.focus({ preventScroll: true });
+  }
+  var discs = $$('details.disc');
+  if (discs.length) {
+    discs.forEach(function (d) { d._open = d.open; });
+    $$('[data-disc-tools]').forEach(function (bar) {
+      var b = $('[data-disc-all]', bar);
+      /* The button opens the parts of its own section. */
+      var scope = bar.closest('section') || document;
+      bar.hidden = false;
+      b.addEventListener('click', function () {
+        var on = b.getAttribute('aria-pressed') !== 'true';
+        $$('details.disc', scope).forEach(function (d) { d.open = on || d._open; });
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        b.textContent = T(on ? 'Fold the parts again' : 'Open every part');
+      });
+    });
+    window.addEventListener('hashchange', arrive);
+    if (location.hash) arrive();
+    window.addEventListener('beforeprint', function () { discs.forEach(function (d) { d._was = d.open; d.open = true; }); });
+    window.addEventListener('afterprint', function () { discs.forEach(function (d) { if (d._was !== undefined) d.open = d._was; }); });
+  }
 }());

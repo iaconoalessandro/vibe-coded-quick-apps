@@ -223,7 +223,7 @@ window.I18N = (function () {
   }
 
   /* ------------------------------------------------------------------ */
-  /* The picker, in the top strip beside the editions                   */
+  /* The language picker, in the top strip                   */
   /* ------------------------------------------------------------------ */
 
   function choose(id) {
@@ -236,10 +236,10 @@ window.I18N = (function () {
   }
 
   function buildPicker() {
-    var host = document.querySelector('.ticker .edition') || document.querySelector('.edition');
+    var host = document.querySelector('.ticker .language') || document.querySelector('.language');
     if (!host || host.querySelector('.lang-set')) return;
     var set = document.createElement('div');
-    set.className = 'edition-set lang-set';
+    set.className = 'lang-set';
     set.setAttribute('role', 'radiogroup');
     set.setAttribute('aria-label', t('Language'));
     var buttons = LANGS.map(function (L) {
