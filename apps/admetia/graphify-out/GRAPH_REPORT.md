@@ -6,12 +6,12 @@
 - Unclassified: 21 file(s) not represented in the graph (top: .tex 8, .css 6, .woff2 3)
 
 ## Summary
-- 7933 nodes · 9337 edges · 662 communities (490 shown, 172 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 226 edges (avg confidence: 0.87)
+- 7933 nodes · 9336 edges · 662 communities (490 shown, 172 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 225 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3b77fc66`
+- Built from commit: `02d21fff`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -526,9 +526,9 @@
 4. `route()` - 24 edges
 5. `create()` - 23 edges
 6. `1. Registro dei Punti Aperti (Open Questions)` - 23 edges
-7. `buildWorld()` - 22 edges
-8. `data()` - 22 edges
-9. `renderResults()` - 22 edges
+7. `renderResults()` - 22 edges
+8. `buildWorld()` - 22 edges
+9. `data()` - 22 edges
 10. `Origin-country playbooks for EU (non-Italian) students` - 21 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -2515,24 +2515,24 @@ Cohesion: 0.50
 Nodes (3): 1. Fonti Primarie Statali e Legislative Turche, 2. Fonti Consolari e Internazionali, Registro delle Fonti Ufficiali: Turchia (TR)
 
 ## Knowledge Gaps
-- **5052 isolated node(s):** `Platform`, `Stack`, `Users`, `Product Purpose`, `Positioning` (+5047 more)
+- **5052 isolated node(s):** `name`, `private`, `description`, `build`, `test` (+5047 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5562 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **172 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **What connects `Platform`, `Stack`, `Users` to the rest of the system?**
+- **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `build-brand.py`, `United Arab Emirates (P34)`, `Verification round 5b (3 October 2026)`, `1. How hiring actually works there`, `P44 Ireland (data/atlas/ie.js)`, `P41 United Kingdom (data/atlas/gb.js)`, `ux-ledger.js`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `What to add to each entry file`, `United States (P60)`, `P38 Italy (data/atlas/it.js)`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **What connects `name`, `private`, `description` to the rest of the system?**
   _5052 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `results-kit.js` be split into smaller, more focused modules?**
   _Cohesion score 0.13438735177865613 - nodes in this community are weakly interconnected._
-- **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `build-brand.py`, `United Arab Emirates (P34)`, `Verification round 5b (3 October 2026)`, `1. How hiring actually works there`, `P44 Ireland (data/atlas/ie.js)`, `P41 United Kingdom (data/atlas/gb.js)`, `ux-ledger.js`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `What to add to each entry file`, `United States (P60)`, `P38 Italy (data/atlas/it.js)`?**
+- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Should `intro.js` be split into smaller, more focused modules?**
   _Cohesion score 0.10448979591836735 - nodes in this community are weakly interconnected._
-- **Why does `f()` connect `f` to `ux-test.js`, `intro.js`, `design-test.js`, `careers-test.js`, `masters-test.js`, `atlas-test.js`, `features-test.js`, `programmes-test.js`, `i18n-test.js`, `profiles-test.js`, `deadlines-test.js`, `site-test.js`, `visas-sources.js`, `mba-test.js`, `intro-test.js`, `atlas-life.js`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `Rules (read first)` connect `ux-ledger.js` to `data`, `What to add to each entry file`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Should `create` be split into smaller, more focused modules?**
   _Cohesion score 0.1076923076923077 - nodes in this community are weakly interconnected._

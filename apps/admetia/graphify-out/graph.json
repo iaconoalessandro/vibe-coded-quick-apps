@@ -196373,18 +196373,6 @@
       "weight": 1.0
     },
     {
-      "source": "js_results_kit_session_whatif_draw",
-      "target": "js_intro_glitch_frame",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "js/results-kit.js",
-      "source_location": "L679",
-      "weight": 1.0
-    },
-    {
       "source": "js_results_kit_session_whatif_paint",
       "target": "js_page_map_zoomable_up",
       "relation": "indirect_call",
@@ -200793,5 +200781,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "3b77fc66c6c7f8f4320cec6320a4431464bd1fb4"
+  "built_at_commit": "02d21fff713c3af124853542b7dc165a0b42d35e"
 }
