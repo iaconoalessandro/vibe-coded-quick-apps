@@ -1,0 +1,69 @@
+% Investment banking and markets: one-page CV
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries [FIRST NAME LAST NAME]}\\[3pt]
+[City, Country] \textperiodcentered{} [+39 333 000 0000] \textperiodcentered{} [name.surname@university.edu] \textperiodcentered{} [linkedin.com/in/yourname]
+\end{center}
+\cvsection{Education}
+\cventry{[University name], [City]}{[Sep 2026 -- Sep 2027 (expected)]}
+\cvsub{[MSc in Finance]}
+\begin{itemize}
+  \item Grade: [current average, e.g. 71\% (Distinction: 70\% and above)]; [scholarship or prize, with how selective it is, e.g. ``top 5\% of 400 admits'']
+  \item Relevant modules: [Corporate Finance, Valuation, Financial Statement Analysis, Econometrics]
+\end{itemize}
+\cventry{[University name], [City]}{[Sep 2023 -- Jul 2026]}
+\cvsub{[BSc in Economics and Finance]}
+\begin{itemize}
+  \item Final grade: [110/110 cum laude] ([top 3\% of the cohort], if your school publishes it); thesis: [title], supervised by [Prof. Name]
+  \item Exchange: [University], [City], [Jan 2025 -- Jun 2025]; [courses taken, grade]
+\end{itemize}
+\cvsection{Experience}
+\cventry{[Firm name], [City]}{[Jun 2026 -- Aug 2026]}
+\cvsub{[Summer Analyst, Mergers \& Acquisitions]}
+\begin{itemize}
+  \item {}[Built a three-statement model and DCF for a \texteuro{}[x]m [sector] target; the valuation range was used in the client's board presentation]
+  \item {}[Prepared trading comparables for [n] listed peers in [n] countries and a precedent-transactions table of [n] deals]
+  \item {}[Drafted [n] pages of the information memorandum for a [sector] carve-out; coordinated data requests with [n] client teams]
+\end{itemize}
+\cventry{[Firm name], [City]}{[Jan 2026 -- Mar 2026]}
+\cvsub{[Off-cycle Intern, Equity Research, [sector] team]}
+\begin{itemize}
+  \item {}[Updated earnings models for [n] covered companies and wrote [n] results notes published to clients]
+  \item {}[Built a [screen / dataset] of [what]; it changed the team's estimate of [metric] by [x]\%]
+\end{itemize}
+\cvsection{Leadership and activities}
+\cventry{[University Finance Society], [City]}{[Oct 2024 -- Jun 2026]}
+\cvsub{[Head of the student investment fund]}
+\begin{itemize}
+  \item {}[Led [n] analysts managing a \texteuro{}[x]k portfolio; returned [x]\% against [x]\% for the benchmark over [period]]
+  \item {}[Organised [n] events with [firm names]; [n] attendees]
+\end{itemize}
+\cvsection{Skills, languages and interests}
+\textbf{Technical:} [Excel (financial modelling), PowerPoint, Bloomberg, FactSet, Python (pandas)]\par
+\textbf{Certifications:} [Bloomberg Market Concepts; CFA Level I candidate, Jun 2027]\par
+\textbf{Languages:} [Italian (native), English (C2, IELTS 8.0), French (B2)]\par
+\textbf{Interests:} [specific ones you can talk about for two minutes, e.g. marathon running (3 finished), chess (club captain)]\par
+\end{document}

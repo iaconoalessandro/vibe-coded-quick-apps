@@ -1,0 +1,63 @@
+% Master's application CV (academic)
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries [FIRST NAME LAST NAME]}\\[3pt]
+[City, Country] \textperiodcentered{} [+39 333 000 0000] \textperiodcentered{} [name.surname@university.edu] \textperiodcentered{} [linkedin.com/in/yourname]
+\end{center}
+\cvsection{Education}
+\cventry{[University name], [City]}{[Sep 2023 -- Jul 2026]}
+\cvsub{[Bachelor's degree in Economics and Management], [180 ECTS]}
+\begin{itemize}
+  \item Final grade: [108/110] (Italian scale, 110 maximum; pass 66); weighted average [27.4/30]
+  \item \textbf{Credits by area:} Quantitative [36 ECTS: Mathematics 12, Statistics 12, Econometrics 12]; Economics [30 ECTS]; Business and management [48 ECTS]; Finance and accounting [24 ECTS]
+  \item Thesis: ``[Title]'', supervisor [Prof. Name]; grade [x]; [one line on the method and finding]
+  \item Exchange: [University], [City], [Sep 2024 -- Jan 2025], [30 ECTS]
+\end{itemize}
+\cvsection{Tests and certificates}
+[GMAT Focus 665 (Quant 85, Verbal 82, Data Insights 81), Jun 2026] \textperiodcentered{} [IELTS Academic 7.5, May 2026]\par
+\cvsection{Academic projects and research}
+\cventry{[Project or research assistantship], [Department]}{[Feb 2025 -- Jun 2025]}
+\begin{itemize}
+  \item {}[Collected and cleaned a dataset of [n] [observations] and estimated [model] in [Stata/R/Python]; results presented at [seminar]]
+\end{itemize}
+\cvsection{Professional experience}
+\cventry{[Company name], [City]}{[Jun 2025 -- Aug 2025]}
+\cvsub{[Intern, [function]]}
+\begin{itemize}
+  \item {}[What you did, with a number]
+\end{itemize}
+\cvsection{Activities}
+\begin{itemize}
+  \item {}[Society, role, dates]: [what changed because of you]
+  \item {}[Volunteering or sport, dates, level]
+\end{itemize}
+\cvsection{Languages and skills}
+\textbf{Languages (CEFR):} [Italian (native), English (C1), Spanish (B2)]\par
+\textbf{Software:} [Excel, Stata, R, Python]\par
+\cvsection{Referees}
+[Prof. Name Surname], [Professor of \ldots{}], [University]; [email]  (academic)\par
+[Name Surname], [Job title], [Company]; [email]  (professional)\par
+\end{document}

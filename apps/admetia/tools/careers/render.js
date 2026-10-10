@@ -52,6 +52,7 @@ function site(ROOT, data) {
   const U = {
     home: 'careers/index.html', roles: 'careers/roles/index.html', compare: 'careers/compare.html',
     sources: 'careers/sources.html', italy: 'careers/italy-pay.html', compass: 'careers/compass.html',
+    calendar: 'careers/recruiting-calendar.html', toolkit: 'careers/toolkit.html', interview: 'careers/interview-prep.html',
     field: (s) => `careers/fields/${s}.html`, role: (id) => `careers/roles/${roleById.get(id).slug}.html`,
     bg: (s) => `careers/backgrounds/${s}.html`
   };
@@ -104,7 +105,7 @@ function site(ROOT, data) {
         ? `<li><span aria-current="page">${c.name ? nm(c.label) : ui(c.label)}</span></li>`
         : `<li><a href="${r(c.href)}">${c.name ? nm(c.label) : ui(c.label)}</a></li>`).join('') + '</ol></nav>' : '';
     const local = [['Explorer', U.home], ['Compass', U.compass], ['By background', U.home + '#backgrounds'], ['By field', U.home + '#fields'],
-      ['All roles', U.roles], ['Compare', U.compare], ['Sources', U.sources]]
+      ['All roles', U.roles], ['Compare', U.compare], ['Calendar', U.calendar], ['Toolkit', U.toolkit], ['Interview prep', U.interview], ['Sources', U.sources]]
       .map(([l, h]) => `<a href="${r(h)}"${h === from ? ' aria-current="page"' : ''}>${ui(l)}</a>`).join('');
     const title = page.title === 'Career Explorer' ? 'Career Explorer — Admetia' : `${page.title} — Career Explorer — Admetia`;
     if (page.static) { used.add(title); used.add(page.description); }
@@ -271,6 +272,16 @@ ${entries.map(([id, text]) => `<li><a href="#${id}">${text}</a></li>`).join('\n'
   <p>${ui('Answer 8 to 17 questions about what you studied, what you would enjoy doing and how you want to work. The Career Compass ranks the role families against your answers and shows why, what stands in the way, and a door that is still open.')}</p>
   <p><a class="btn primary" href="${rel(from, U.compass)}">${ui('Take the Career Compass')}</a></p>
 </aside>
+
+<section class="gi-band" aria-labelledby="gi-band-h">
+  <p class="kicker">${ui('Getting in')}</p>
+  <h2 id="gi-band-h" class="cx-door-h">${ui('Know the job? Get the offer')}</h2>
+  <ul class="gi-band-links">
+    <li><a href="${rel(from, U.calendar)}"><b>${ui('Recruiting calendar')}</b><span>${ui('When each internship, graduate scheme and stage opens, by sector and country, with the official portals.')}</span></a></li>
+    <li><a href="${rel(from, U.toolkit)}"><b>${ui('Application toolkit')}</b><span>${ui('One-column CV templates in Word and LaTeX, and motivation letters sized to each school’s limit.')}</span></a></li>
+    <li><a href="${rel(from, U.interview)}"><b>${ui('Interview prep')}</b><span>${ui('What each area asks and how often, your five stories, finance cards, case primer and practice cases.')}</span></a></li>
+  </ul>
+</section>
 
 <div class="stories cx-doors">
   <section class="story-col" id="backgrounds" aria-labelledby="door-1">
@@ -733,6 +744,10 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
       description: 'A short questionnaire for undecided students: ranks 124 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.', body });
   }());
 
+  /* Getting in: recruiting calendar, application toolkit, interview prep,
+   * and the template files they offer (tools/careers/getting-in.js). */
+  const gettingIn = require('./getting-in').build({ ROOT, ui, uiRaw, rel, U, esc, nm, add, md, mdInline });
+
   function searchIndex() {
     const clip = (s, n) => { s = P.stripMd(s).replace(/https?:\/\/\S+/g, '').replace(/\s+/g, ' ').trim(); return s.length > n ? s.slice(0, n) : s; };
     return data.roles.map((r) => ({
@@ -752,7 +767,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
     return [...used].map(norm).filter((k) => /[a-z]{3}/.test(k) && s.dict[k] === undefined && s.dict[k.replace(/&/g, '&amp;')] === undefined);
   }
 
-  return { pages: () => pages, searchIndex, missingIt, used, U, rel };
+  return { pages: () => pages, files: () => gettingIn.files, searchIndex, missingIt, used, U, rel };
 }
 
 module.exports = { site };

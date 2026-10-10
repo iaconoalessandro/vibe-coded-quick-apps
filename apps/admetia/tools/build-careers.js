@@ -297,6 +297,9 @@ function main() {
   const site = R.site(ROOT, data);
   const pages = site.pages();
   for (const p of pages) write(p.path, p.html);
+  /* The application toolkit's downloads; stale ones go first. */
+  fs.rmSync(path.join(OUT, 'templates'), { recursive: true, force: true });
+  for (const f of site.files()) write(f.path.replace(/^careers\//, ''), f.content);
   write('data/search-index.json', JSON.stringify(site.searchIndex()) + '\n');
   write('data/compass-data.js', compassData(data, site));
 

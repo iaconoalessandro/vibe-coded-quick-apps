@@ -1,0 +1,40 @@
+% Motivation letter: ESCP
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries Motivation letter: ESCP}\\[3pt]
+Master in Management \textperiodcentered{} limit: one page (about 450--500 words)
+\end{center}
+\guide{Admetia skeleton. The headings and budgets below are a suggestion for spending the limit; the school publishes the limit and the prompt, not the parts. Delete every grey line before you submit, and check the limit on the school's own page.}
+\cvsection{Why ESCP (about 160 words)}
+\guide{The multi-campus structure, tracks or specialisations that matter to you, specifically.}
+[Write here.]\par
+\cvsection{What you contribute (about 170 words)}
+\guide{One or two experiences, with results, that will add to your class.}
+[Write here.]\par
+\cvsection{How the degree fits your goals (about 170 words)}
+\guide{Where you want to work and how the programme gets you there.}
+[Write here.]\par
+\end{document}

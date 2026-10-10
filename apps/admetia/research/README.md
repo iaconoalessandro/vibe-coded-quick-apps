@@ -67,6 +67,7 @@ research/
 - **getting-in/applications-and-interviews.md**: what predicts performance, employer AI policies, contract rules.
 - **getting-in/recruiting-calendar.md**: month-by-month calendars; online tests; AI video interviews; the one-year UK MSc problem.
 - **getting-in/breaking-in.md**: referrals, networking, CVs by country, name discrimination, back-door routes.
+- **getting-in/interview-cases.md**: the case studies, technical exercises and behavioural formats by career area, how often each appears (always, usually, often, sometimes), and the firms' free official practice cases.
 - **getting-in/employer-pipelines.md**: which employers hire from which schools and regions; French internships and apprenticeships; German dual study.
 
 ### money/

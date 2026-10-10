@@ -236,5 +236,109 @@ t('compass: a role marked "not for me" leaves the list', !K.results(CD, { ...PER
 t('compass: no answers still gives eight roles, the same every time', K.results(CD, {}).now.length === 8 && JSON.stringify(K.results(CD, {}).now) === JSON.stringify(K.results(CD, {}).now));
 t('compass: every score is between 0 and 100', Object.values(res).every((r) => r.all.every((x) => x.score >= 0 && x.score <= 100)));
 
+/* ----------------------------------------------------------- getting in --- */
+/* The recruiting calendar, application toolkit and interview prep
+ * (tools/careers/getting-in.js). The build itself stops if a quoted research
+ * passage has gone; these check the outputs. */
+const files = site.files();
+const staleT = files.filter((f) => {
+  const p = path.join(APP, f.path);
+  return !fs.existsSync(p) || !fs.readFileSync(p).equals(Buffer.from(f.content));
+}).map((f) => f.path);
+t('the template downloads match a fresh build (run npm run careers)', staleT.length === 0, staleT.slice(0, 4).join(', '));
+const tplOnDisk = fs.readdirSync(path.join(APP, 'careers/templates'));
+t('8 Word and 8 LaTeX templates, and nothing else in careers/templates', tplOnDisk.length === 16 && tplOnDisk.filter((f) => f.endsWith('.docx')).length === 8 && tplOnDisk.filter((f) => f.endsWith('.tex')).length === 8, tplOnDisk.join(', '));
+
+/* Read a part out of a .docx (a zip) without dependencies. */
+function unzipPart(buf, name) {
+  const zlib = require('zlib');
+  let at = buf.lastIndexOf(Buffer.from([0x50, 0x4b, 0x05, 0x06]));
+  if (at < 0) throw new Error('no zip end record');
+  let cd = buf.readUInt32LE(at + 16);
+  const n = buf.readUInt16LE(at + 10);
+  for (let i = 0; i < n; i++) {
+    const nameLen = buf.readUInt16LE(cd + 28), extra = buf.readUInt16LE(cd + 30), comment = buf.readUInt16LE(cd + 32);
+    const fname = buf.slice(cd + 46, cd + 46 + nameLen).toString();
+    const local = buf.readUInt32LE(cd + 42), size = buf.readUInt32LE(cd + 20), method = buf.readUInt16LE(cd + 10);
+    if (fname === name) {
+      const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28);
+      const data = buf.slice(start, start + size);
+      return (method === 8 ? zlib.inflateRawSync(data) : data).toString('utf8');
+    }
+    cd += 46 + nameLen + extra + comment;
+  }
+  return null;
+}
+const docxBad = [];
+for (const f of tplOnDisk.filter((x) => x.endsWith('.docx'))) {
+  const buf = fs.readFileSync(path.join(APP, 'careers/templates', f));
+  const doc = unzipPart(buf, 'word/document.xml');
+  const types = unzipPart(buf, '[Content_Types].xml');
+  if (!doc || !types) { docxBad.push(f + ': missing parts'); continue; }
+  if (/<w:tbl\b|<w:txbxContent|<w:drawing|<w:hdr|<w:ftr/.test(doc)) docxBad.push(f + ': table, text box, image, header or footer');
+  if (!/w:val="Heading1"/.test(doc)) docxBad.push(f + ': no Heading 1');
+  if ((doc.match(/<w:p>/g) || []).length !== (doc.match(/<\/w:p>/g) || []).length) docxBad.push(f + ': unbalanced paragraphs');
+}
+t('every Word template is a readable .docx with real headings and no tables, text boxes, images, headers or footers', docxBad.length === 0, docxBad.join(' | '));
+const texBad = [];
+for (const f of tplOnDisk.filter((x) => x.endsWith('.tex'))) {
+  const tex = read('careers/templates/' + f);
+  const body = tex.replace(/\\[{}%&$#_]/g, '').replace(/%.*$/gm, '');
+  let depth = 0;
+  for (const ch of body) { if (ch === '{') depth++; else if (ch === '}' && --depth < 0) break; }
+  if (depth !== 0) texBad.push(f + ': unbalanced braces');
+  if ((tex.match(/\\begin\{itemize\}/g) || []).length !== (tex.match(/\\end\{itemize\}/g) || []).length) texBad.push(f + ': itemize not closed');
+  if (!/\\begin\{document\}[\s\S]*\\end\{document\}\s*$/.test(tex)) texBad.push(f + ': document environment');
+  if (/tabular|\\includegraphics|multicol/.test(tex)) texBad.push(f + ': table, image or columns');
+  if (/\\item \[/.test(tex)) texBad.push(f + ': an item starting with [ would be read as a label');
+  if (/[≥≤×→]/.test(tex)) texBad.push(f + ': a character pdfLaTeX cannot typeset in text');
+}
+t('every LaTeX template is balanced, one column and pdfLaTeX-safe', texBad.length === 0, texBad.join(' | '));
+const toolkit = read('careers/toolkit.html');
+const snips = [...toolkit.matchAll(/overleaf\.com\/docs\?snip_uri=([^&"]+)/g)].map((m) => decodeURIComponent(m[1]));
+t('every Overleaf button opens a template the site publishes', snips.length === 8 && snips.every((u) => u.startsWith('https://iaconoalessandro.github.io/admetia/careers/templates/') &&
+  fs.existsSync(path.join(APP, u.replace('https://iaconoalessandro.github.io/admetia/', '')))), String(snips.length));
+
+const CAL = require('../tools/careers/calendar');
+const cal = read('careers/recruiting-calendar.html');
+t(`the calendar draws every window (${CAL.ROWS.length})`, (cal.match(/<li class="rc-row" /g) || []).length === CAL.ROWS.length);
+t('every calendar window has a confidence flag, a bar and the research it rests on', CAL.ROWS.every((r) => /^[HML]$/.test(r.flag) && r.segs.length && r.quotes.length));
+t('every portal link is an https address on the employer’s or school’s own site', Object.values(CAL.P).every(([, u]) => /^https:\/\/[a-z0-9.-]+\.[a-z]{2,}\//.test(u)));
+t('the calendar does not use the unsourced front-loading figures', !/reduces interview odds|30% and 50%|Prime Window/.test(cal.replace(/<p class="cx-src-note">[\s\S]*?<\/p>/g, '')));
+
+const IV = require('../tools/careers/interview');
+const prep = read('careers/interview-prep.html');
+t('32 finance study cards, 8 per deck', IV.DECKS.length === 4 && IV.DECKS.every((d) => d.cards.length === 8) && (prep.match(/class="iv-card"/g) || []).length === 32);
+t(`every practice case has a worked answer (${IV.PRACTICE.length})`, IV.PRACTICE.every((c) => c.sizing || c.answer.length) && (prep.match(/class="iv-ans"/g) || []).length === IV.PRACTICE.length);
+t('every career area shows its exercises with a frequency', IV.AREAS.every(([k]) => prep.includes(`id="area-${k}"`)) && (prep.match(/class="iv-pill iv-(always|usually|often|sometimes)"/g) || []).length >= 30);
+/* The worked numbers, recomputed. */
+const close = (a, b, tol = 1e-9) => Math.abs(a - b) <= tol;
+t('worked numbers: depreciation walk-through balances (−7.5 assets, −7.5 equity)', close(-10 + (10 - 7.5), -7.5));
+t('worked numbers: treasury stock method gives 50 new shares', close(100 - 100 * 10 / 20, 50));
+t('worked numbers: terminal value 100 × 1.02 / 6% = 1,700', close(100 * 1.02 / 0.06, 1700, 1e-6));
+t('worked numbers: WACC 0.6 × 10% + 0.4 × 5% × 0.75 = 7.5%', close(0.6 * 0.10 + 0.4 * 0.05 * 0.75, 0.075));
+t('worked numbers: paper LBO 3.0× and about 25% IRR', close((150 * 10 - 300) / 400, 3) && close(Math.pow(3, 1 / 5) - 1, 0.2457, 0.001));
+t('worked numbers: the gym case adds up (€9.36m revenue, €1.40m profit)', close(14000 * 40 * 12 + 8800 * 25 * 12, 9.36e6) && close(9.36e6 - 7.96e6, 1.4e6, 1) && close(6000 * 15 * 12 - 2800 * 25 * 12, 0.24e6, 1));
+t('worked numbers: the shampoo case is −8% (0.84 × 101 / 92)', close(0.84 * 101 / 92 - 1, -0.078, 0.001));
+t('worked numbers: rerolling a die below 3.5 is worth 4.25', close(0.5 * 5 + 0.5 * 3.5, 4.25));
+t('worked numbers: espresso sizing (15m a day × 365 × €1.20 ≈ €6.6bn)', close(15e6 * 365 * 1.2 / 1e9, 6.57, 0.01));
+{
+  const Drill = require('../careers/assets/getting-in.js');
+  let bad = 0;
+  for (let i = 0; i < 2000; i++) for (const k of IV.DRILL) { const q = Drill.make(k); if (!(q.a > 0) || !Drill.right(q, q.a)) bad++; }
+  t('the arithmetic drill accepts its own answers (10,000 questions)', bad === 0, String(bad));
+  t('the drill reads 1,200, 1.2k, 40,8 and 3.5m as numbers', Drill.parse('1,200') === 1200 && Drill.parse('1.2k') === 1200 && Drill.parse('40,8') === 40.8 && Drill.parse('3.5m') === 3.5e6 && isNaN(Drill.parse('abc')));
+}
+{
+  const src = read('js/i18n-it.js');
+  const sb = { I18N: { add: (l, d) => { sb.dict = d; } } };
+  require('vm').runInNewContext(src, sb);
+  const ui = [...read('careers/assets/getting-in.js').matchAll(/\bT\('((?:[^'\\]|\\.)*)'/g)].map((m) => m[1].replace(/\\'/g, "'"));
+  const lack = [...new Set(ui)].filter((k) => sb.dict[k] === undefined);
+  t(`every getting-in script string has Italian (${new Set(ui).size})`, lack.length === 0, lack.slice(0, 4).join(' | '));
+  const js = read('careers/assets/getting-in.js');
+  t('the getting-in script loads nothing from another host', !/https?:\/\//.test(js.replace(/\/\*[\s\S]*?\*\//g, '')));
+}
+
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

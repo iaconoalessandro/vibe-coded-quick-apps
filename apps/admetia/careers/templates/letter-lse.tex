@@ -1,0 +1,46 @@
+% Motivation letter: LSE
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries Motivation letter: LSE}\\[3pt]
+Statement of academic purpose \textperiodcentered{} limit: 1,000--1,500 words
+\end{center}
+\guide{Admetia skeleton. The headings and budgets below are a suggestion for spending the limit; the school publishes the limit and the prompt, not the parts. Delete every grey line before you submit, and check the limit on the school's own page.}
+\cvsection{The academic question that interests you (about 250 words)}
+\guide{A topic or problem from your studies you want to go further with, stated precisely.}
+[Write here.]\par
+\cvsection{How your studies prepared you (about 400 words)}
+\guide{Courses, grades, thesis and methods, linked to what the programme teaches.}
+[Write here.]\par
+\cvsection{Why this programme (about 400 words)}
+\guide{Specific modules, the department's research, the structure of the programme. Not the school's ranking, not London.}
+[Write here.]\par
+\cvsection{Relevant experience (about 200 words)}
+\guide{Work, research or projects that show you can do the work.}
+[Write here.]\par
+\cvsection{Your plans (about 150 words)}
+\guide{Further study or the career you intend, and how the programme fits.}
+[Write here.]\par
+\end{document}

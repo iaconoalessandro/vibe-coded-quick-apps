@@ -2257,5 +2257,832 @@ I18N.add('it', {
   'Jump to it':
     'Vai alla riga',
   'Every programme the calculators score, filtered by what you studied and where you want to work':
-    'Tutti i programmi valutati dai calcolatori, filtrati per i tuoi ruoli e per dove vuoi lavorare'
+    'Tutti i programmi valutati dai calcolatori, filtrati per i tuoi ruoli e per dove vuoi lavorare',
+
+  /* ------------------------------------------------- Getting in: calendar, toolkit, interview prep */
+
+  'Getting in':
+    'Come entrare',
+  'Know the job? Get the offer':
+    'Sai che lavoro vuoi? Ottieni l’offerta',
+  'Recruiting calendar':
+    'Calendario delle selezioni',
+  'When each internship, graduate scheme and stage opens, by sector and country, with the official portals.':
+    'Quando aprono stage, graduate programme e tirocini, per settore e paese, con i portali ufficiali.',
+  'Application toolkit':
+    'Kit per le candidature',
+  'One-column CV templates in Word and LaTeX, and motivation letters sized to each school’s limit.':
+    'Modelli di CV a una colonna in Word e LaTeX, e lettere motivazionali calibrate sul limite di ogni scuola.',
+  'Interview prep':
+    'Preparare i colloqui',
+  'What each area asks and how often, your five stories, finance cards, case primer and practice cases.':
+    'Cosa chiede ogni settore e con che frequenza, le tue cinque storie, schede di finanza, guida ai case e casi di prova.',
+  'Calendar':
+    'Calendario',
+  'Toolkit':
+    'Kit',
+  'The year before':
+    'L’anno prima',
+  'The start year':
+    'L’anno di inizio',
+  'Best time to apply':
+    'Il momento migliore per candidarsi',
+  'Rolling from opening; closes when full':
+    'A ciclo continuo dall’apertura; chiude quando i posti sono pieni',
+  'A few days in spring':
+    'Pochi giorni in primavera',
+  'Where to apply':
+    'Dove candidarsi',
+  'Spring weeks and insight programmes':
+    'Spring week e programmi insight',
+  'Banking and markets':
+    'Banca e mercati',
+  'Big 4 and audit':
+    'Big 4 e revisione',
+  'UK (London)':
+    'Regno Unito (Londra)',
+  'Who can apply, the evidence and where to apply':
+    'Chi può candidarsi, le fonti e dove candidarsi',
+  'Who can apply':
+    'Chi può candidarsi',
+  'First-year undergraduates':
+    'Studenti al primo anno di laurea triennale',
+  'For first-year undergraduates (second year on a four-year degree). Master’s students cannot apply: go to the summer internship row instead. Strong spring-week performers are fast-tracked to the next summer’s assessments.':
+    'Per chi è al primo anno della triennale (o al secondo di un corso quadriennale). Gli studenti di master non possono candidarsi: guarda la riga dello stage estivo. Chi va bene nella spring week accede in via rapida alle selezioni dell’estate successiva.',
+  'Portals open from July: apply in the first weeks':
+    'I portali aprono da luglio: candidati nelle prime settimane',
+  'Applications open':
+    'Candidature aperte',
+  'Tests and video interviews, then superdays':
+    'Test e video-colloqui, poi superday',
+  '10-week internship; return offers at the end':
+    'Stage di 10 settimane; offerte di rientro alla fine',
+  '11 Oct: Bank of America deadline (2027 cycle)':
+    '11 ott: scadenza Bank of America (ciclo 2027)',
+  'Investment banking summer internship (London)':
+    'Stage estivo in investment banking (Londra)',
+  'Penultimate year (incl. year one of a two-year master’s)':
+    'Penultimo anno (incluso il primo anno di un master biennale)',
+  'Final year (incl. a one-year master’s)':
+    'Ultimo anno (incluso un master di un anno)',
+  'Rolling: Bank of America says assessments often begin before the deadline, and Citi London has no deadline. A one-year UK master’s student finishing within the bank’s window is eligible on paper, but the internship clashes with the dissertation.':
+    'A ciclo continuo: Bank of America dice che le prove spesso iniziano prima della scadenza, e Citi a Londra non ha scadenza. Chi fa un master di un anno nel Regno Unito e finisce entro la finestra della banca può candidarsi sulla carta, ma lo stage si sovrappone alla tesi.',
+  'Apply September–November':
+    'Candidati tra settembre e novembre',
+  'Tests and interviews':
+    'Test e colloqui',
+  'Start: July–September':
+    'Inizio: luglio–settembre',
+  'Investment banking graduate analyst (London)':
+    'Graduate analyst in investment banking (Londra)',
+  'Recent graduates':
+    'Neolaureati',
+  'Fewer places than the internship, because banks fill most graduate seats with their own summer interns. Stronger with a prior internship or a relevant master’s.':
+    'Meno posti che per lo stage, perché le banche riempiono quasi tutti i posti da graduate con i propri stagisti estivi. Più facile con uno stage alle spalle o un master pertinente.',
+  'Year-round':
+    'Tutto l’anno',
+  'Open all year':
+    'Aperto tutto l’anno',
+  'Busiest: Oct–Dec for January starts; May–Jul for autumn starts':
+    'Picchi: ott–dic per gli inizi di gennaio; mag–lug per gli inizi in autunno',
+  'Off-cycle internships and boutiques (London)':
+    'Stage off-cycle e boutique (Londra)',
+  'The most realistic bank door for late starters. 3–6 months; boutiques hire when a deal team needs someone.':
+    'La porta più realistica per chi parte tardi. Da 3 a 6 mesi; le boutique assumono quando un team ha bisogno di qualcuno.',
+  'Opened about 18 months ahead (December, two years before)':
+    'Aperto circa 18 mesi prima (dicembre, due anni prima)',
+  'Opened before this season':
+    'Aperto prima di questa stagione',
+  'Internship':
+    'Stage',
+  'Investment banking summer internship (US)':
+    'Stage estivo in investment banking (Stati Uniti)',
+  'US recruiting runs 6–12 months earlier than London. It matters only if you study at a US programme or want a US summer; a European candidate for London should follow the London rows.':
+    'Negli Stati Uniti si recluta 6–12 mesi prima che a Londra. Conta solo se studi in un programma americano o vuoi un’estate negli USA; chi punta a Londra dall’Europa segua le righe di Londra.',
+  'September–November: events and fairs':
+    'Settembre–novembre: eventi e fiere',
+  'Applications open and close October–December (varies by firm)':
+    'Candidature aperte e chiuse tra ottobre e dicembre (varia per società)',
+  'Case rounds, final rounds and offers, November–February':
+    'Case, round finali e offerte, novembre–febbraio',
+  'Summer internship (10–12 weeks), or a start the next autumn':
+    'Stage estivo (10–12 settimane), o un inizio nell’autunno successivo',
+  'Consulting internships and graduate roles (UK)':
+    'Stage e ruoli da graduate in consulenza (Regno Unito)',
+  'Consulting':
+    'Consulenza',
+  'Some firms recruit on a rolling basis and others set deadlines. Case preparation has to start before the window opens.':
+    'Alcune società selezionano a ciclo continuo, altre fissano scadenze. La preparazione ai case deve iniziare prima che la finestra apra.',
+  'Visiting Associate internships recruit through the year':
+    'Gli stage da Visiting Associate selezionano tutto l’anno',
+  '6 Jan: BCG Women’s deadline':
+    '6 gen: scadenza BCG Women',
+  '5 Apr: BCG Women’s deadline':
+    '5 apr: scadenza BCG Women',
+  '26 Jun: BCG Women’s deadline':
+    '26 giu: scadenza BCG Women',
+  'Consulting internships with binding offers (Germany, Austria)':
+    'Stage in consulenza con offerta vincolante (Germania, Austria)',
+  'Germany and Austria':
+    'Germania e Austria',
+  'Enrolled students only (internship agreement needed)':
+    'Solo studenti iscritti (serve una convenzione di stage)',
+  'The 8–12 week internship is the main door: strong interns get a binding full-time offer (BCG FAST FORWARD) with no interviews at graduation. Open from the third bachelor’s semester and in a gap year. Interviews are often partly in German.':
+    'Lo stage di 8–12 settimane è la porta principale: chi va bene riceve un’offerta a tempo pieno vincolante (BCG FAST FORWARD) senza altri colloqui alla laurea. Aperto dal terzo semestre della triennale e durante un anno di pausa. I colloqui sono spesso in parte in tedesco.',
+  'Roles close when full; some reopen':
+    'I ruoli chiudono quando sono pieni; alcuni riaprono',
+  'Apply September–November: places fill in order':
+    'Candidati tra settembre e novembre: i posti si riempiono in ordine',
+  'Online tests, video interview, in-person final stage':
+    'Test online, video-colloquio, fase finale in presenza',
+  'Programmes start in September':
+    'I programmi iniziano a settembre',
+  'Big 4 graduate schemes (UK, September start)':
+    'Graduate programme Big 4 (Regno Unito, inizio a settembre)',
+  'EY allows one programme application every six months, with a six-month wait after a rejection, so practise the tests before the first application of the season.':
+    'EY permette una candidatura a un programma ogni sei mesi, con sei mesi di attesa dopo un rifiuto: esercitati sui test prima della prima candidatura della stagione.',
+  'Opens once a year, around Q4; closes each role when it has enough applications':
+    'Apre una volta l’anno, verso il quarto trimestre; chiude ogni ruolo quando ha abbastanza candidature',
+  'Personality and online tests, recorded interview with a business case, a final day':
+    'Test di personalità e online, colloquio registrato con un business case, una giornata finale',
+  'Programme starts in September':
+    'Il programma inizia a settembre',
+  'FMCG graduate schemes (UK and Ireland)':
+    'Graduate programme FMCG (Regno Unito e Irlanda)',
+  'FMCG and corporate':
+    'FMCG e aziende',
+  'Unilever’s timing is stated for its UK and Ireland programme; other FMCG employers’ months are practitioner consensus (September–November openings). P&G recruits role by role, and its tests decide progression for most roles.':
+    'I tempi di Unilever sono quelli dichiarati per il programma di Regno Unito e Irlanda; i mesi degli altri datori FMCG sono consenso dei professionisti (aperture tra settembre e novembre). P&G seleziona ruolo per ruolo, e per la maggior parte dei ruoli sono i test a decidere chi passa.',
+  'Apply in the autumn of the final year':
+    'Candidati nell’autunno dell’ultimo anno',
+  'Stage de fin d’études, up to six months: the main hiring channel':
+    'Stage de fin d’études, fino a sei mesi: il principale canale di assunzione',
+  'Final-year internship that leads to the job (France)':
+    'Lo stage dell’ultimo anno che porta al lavoro (Francia)',
+  'Tech':
+    'Tech',
+  'France (Paris)':
+    'Francia (Parigi)',
+  '42.3% of grande école graduates in work were hired by their final internship or apprenticeship host. You need a convention de stage from a school, so it has to happen while you are enrolled.':
+    'Il 42,3% dei laureati delle grandes écoles con un lavoro è stato assunto dall’azienda dello stage finale o dell’apprendistato. Serve una convention de stage rilasciata da una scuola, quindi va fatto mentre sei iscritto.',
+  'Apply Sep–Nov for January; Feb–Apr for July':
+    'Candidati tra set e nov per gennaio; tra feb e apr per luglio',
+  'Six-month stage':
+    'Stage di sei mesi',
+  'Six-month stages in Paris (two intakes)':
+    'Stage di sei mesi a Parigi (due ingressi)',
+  'Practitioner consensus, not confirmed by employers. Internships over two months need a convention de stage, so you must be enrolled.':
+    'Consenso dei professionisti, non confermato dai datori di lavoro. Gli stage oltre i due mesi richiedono una convention de stage, quindi devi essere iscritto.',
+  'Apply May–Jul for October; Nov–Jan for April':
+    'Candidati tra mag e lug per ottobre; tra nov e gen per aprile',
+  'Internship, 3–6 months':
+    'Stage, 3–6 mesi',
+  'Praktikum in Frankfurt and Munich (two intakes)':
+    'Praktikum a Francoforte e Monaco (due ingressi)',
+  'Timing is practitioner consensus. The legal point is firm: a voluntary internship over three months must pay the minimum wage unless it is mandatory under university rules (MiLoG §22), so employers want enrolled students.':
+    'I tempi sono consenso dei professionisti. Il punto giuridico è solido: uno stage volontario oltre i tre mesi va pagato almeno il salario minimo, salvo che sia obbligatorio per il regolamento universitario (MiLoG §22), quindi le aziende vogliono studenti iscritti.',
+  'Rolling, with intakes in Jan–Feb and Sep–Oct':
+    'A ciclo continuo, con ingressi a gen–feb e set–ott',
+  'Busiest: Oct–Dec for January; May–Jul for September':
+    'Picchi: ott–dic per gennaio; mag–lug per settembre',
+  'Stage curriculare and extracurriculare (Milan)':
+    'Stage curriculare ed extracurriculare (Milano)',
+  'Italy (Milan)':
+    'Italia (Milano)',
+  'Curricular stages run while enrolled, for credits; extracurricular stages within 12 months of graduating, with a regional minimum allowance (€800 a month in Lombardy). Elite boutiques and MBB Milan offices take six-month interns year-round. Timing is practitioner consensus.':
+    'Gli stage curriculari si fanno da iscritti, per crediti; quelli extracurriculari entro 12 mesi dalla laurea, con un’indennità minima regionale (800 € al mese in Lombardia). Le boutique d’élite e gli uffici MBB di Milano prendono stagisti per sei mesi tutto l’anno. I tempi sono consenso dei professionisti.',
+  'Rolling starts in Jan, Apr, Jul and Oct; apply 3–5 months ahead':
+    'Inizi a ciclo continuo a gen, apr, lug e ott; candidati 3–5 mesi prima',
+  'Off-cycle internships (Zurich)':
+    'Stage off-cycle (Zurigo)',
+  'Switzerland (Zurich)':
+    'Svizzera (Zurigo)',
+  'In practice open to Swiss and EU/EFTA citizens, and to non-EU students enrolled at a Swiss university doing a required internship.':
+    'In pratica aperti a cittadini svizzeri e UE/AELS, e a studenti extra-UE iscritti a un’università svizzera che devono fare uno stage obbligatorio.',
+  'Rolling, role by role':
+    'A ciclo continuo, ruolo per ruolo',
+  'Some internships open as early as July':
+    'Alcuni stage aprono già a luglio',
+  'Tech internships and graduate roles (US-headquartered firms)':
+    'Stage e ruoli da graduate nel tech (aziende con sede negli USA)',
+  'All countries':
+    'Tutti i paesi',
+  'The research has no employer dates for tech; this row says only that some US-headquartered firms open internships as early as July. Check each employer’s listing.':
+    'La ricerca non ha date dei datori di lavoro per il tech; questa riga dice solo che alcune aziende americane aprono gli stage già a luglio. Controlla l’annuncio di ogni azienda.',
+  'Filter the calendar':
+    'Filtra il calendario',
+  'Sector':
+    'Settore',
+  'All sectors':
+    'Tutti i settori',
+  'Where you are':
+    'A che punto sei',
+  'Show every row':
+    'Mostra tutte le righe',
+  'Programme or start':
+    'Programma o inizio',
+  'A dated deadline':
+    'Una scadenza con data',
+  'Today':
+    'Oggi',
+  'One-year UK master’s':
+    'Master di un anno nel Regno Unito',
+  'Two-year continental MiM':
+    'Master in Management biennale in Europa continentale',
+  'Getting in · recruiting calendar':
+    'Come entrare · calendario delle selezioni',
+  'When to apply':
+    'Quando candidarsi',
+  'The recruiting windows for internships, graduate schemes and six-month stages in banking, consulting, Big 4, FMCG and tech, in London, Paris, Frankfurt, Milan, Zurich and the US. Filter by sector, country and where you are in your studies.':
+    'Le finestre di selezione per stage, graduate programme e tirocini di sei mesi in banca, consulenza, Big 4, FMCG e tech, a Londra, Parigi, Francoforte, Milano, Zurigo e negli Stati Uniti. Filtra per settore, paese e punto in cui sei negli studi.',
+  'The timeline':
+    'La linea del tempo',
+  'Why early beats the deadline':
+    'Perché presto batte la scadenza',
+  'Month by month, by programme':
+    'Mese per mese, per programma',
+  'Decision rules':
+    'Regole di decisione',
+  'Myths':
+    'Miti',
+  'Sources and limits':
+    'Fonti e limiti',
+  'One season runs from July of the year before a summer internship or a September start to September of the start year. Each row shows when applications open, the weeks to aim for, when assessments run and when the programme starts. Open a row for who can apply, the evidence and the official portals.':
+    'Una stagione va da luglio dell’anno prima di uno stage estivo o di un inizio a settembre fino a settembre dell’anno di inizio. Ogni riga mostra quando aprono le candidature, le settimane a cui puntare, quando si svolgono le prove e quando inizia il programma. Apri una riga per vedere chi può candidarsi, le fonti e i portali ufficiali.',
+  'How sure is each line?':
+    'Quanto è sicura ogni riga?',
+  'Stated by the employer for the current cycle, or official data.':
+    'Dichiarato dal datore di lavoro per il ciclo in corso, o dato ufficiale.',
+  'A university careers service or several independent practitioners agree.':
+    'Concordano un career service universitario o più professionisti indipendenti.',
+  'Inferred, or from a single or anecdotal source. Check before you plan around it.':
+    'Dedotto, o da una sola fonte o da testimonianze. Verifica prima di pianificarci sopra.',
+  'No row matches these filters.':
+    'Nessuna riga corrisponde a questi filtri.',
+  'In a rolling process the stated deadline is the last possible day, not the recommended one. Employers say assessments start before the deadline and that roles close when they are full; none publishes offer rates by application week, so how much earlier helps is unknown. The research’s verdict on this, word for word:':
+    'In una selezione a ciclo continuo la scadenza dichiarata è l’ultimo giorno possibile, non quello consigliato. I datori di lavoro dicono che le prove iniziano prima della scadenza e che i ruoli chiudono quando sono pieni; nessuno pubblica le percentuali di offerta per settimana di candidatura, quindi quanto aiuti candidarsi prima non si sa. Il verdetto della ricerca, parola per parola:',
+  'Some figures in circulation put a number on the advantage (for example that applying three days before a deadline cuts interview odds by 70–80%). The research file carries them without a source, and they contradict its own verdict above, so this page does not use them.':
+    'Circolano cifre che quantificano il vantaggio (per esempio che candidarsi tre giorni prima della scadenza riduca del 70–80% le probabilità di colloquio). Il file di ricerca le riporta senza fonte, e contraddicono il suo stesso verdetto qui sopra, quindi questa pagina non le usa.',
+  'The research’s two calendars, for a one-year UK master’s and a two-year continental Master in Management. “Y” is the year you finish a one-year UK MSc, and the year of your first-year summer internship in a two-year MiM.':
+    'I due calendari della ricerca, per un master di un anno nel Regno Unito e un Master in Management biennale in Europa continentale. “Y” è l’anno in cui finisci un MSc di un anno nel Regno Unito, e l’anno dello stage estivo del primo anno in un MiM biennale.',
+  'Months and flags come from research/getting-in/recruiting-calendar.md (researched 30 September 2026, with employer pages re-read on 10 October 2026). Dates move every cycle: confirm each one on the employer’s own page before you plan around it. Portal links were opened on 10 October 2026.':
+    'Mesi e livelli di affidabilità vengono da research/getting-in/recruiting-calendar.md (ricerca del 30 settembre 2026, con le pagine dei datori di lavoro rilette il 10 ottobre 2026). Le date cambiano a ogni ciclo: verifica ognuna sulla pagina del datore di lavoro prima di pianificare. I link ai portali sono stati aperti il 10 ottobre 2026.',
+  'Several bank, McKinsey and BCG pages could not be read by the researchers, so some opening dates rest on careers-service and practitioner consensus (flag M). The Paris, Frankfurt, Milan and Zurich stage windows are practitioner consensus only (flag L).':
+    'Diverse pagine di banche, McKinsey e BCG non erano leggibili per i ricercatori, quindi alcune date di apertura si basano sul consenso di career service e professionisti (livello M). Le finestre degli stage a Parigi, Francoforte, Milano e Zurigo sono solo consenso dei professionisti (livello L).',
+  'Recruiting calendar — Career Explorer — Admetia':
+    'Calendario delle selezioni — Career Explorer — Admetia',
+  'When to apply for internships, graduate schemes and six-month stages in banking, consulting, Big 4, FMCG and tech across London, Paris, Frankfurt, Milan, Zurich and the US, with official portals.':
+    'Quando candidarsi a stage, graduate programme e tirocini di sei mesi in banca, consulenza, Big 4, FMCG e tech a Londra, Parigi, Francoforte, Milano, Zurigo e negli Stati Uniti, con i portali ufficiali.',
+  'Template':
+    'Modello',
+  'Investment banking and markets: one-page CV':
+    'Investment banking e mercati: CV di una pagina',
+  'Investment banking, sales and trading, equity research, asset management, private equity (graduate and intern roles), and finance roles at London-run schemes.':
+    'Investment banking, sales and trading, equity research, asset management, private equity (ruoli da graduate e stage), e ruoli in finanza nei programmi gestiti da Londra.',
+  'Education first, with the grade in the local system and the scale beside it: finance screens read grades, and a missing grade is read as a bad one.':
+    'Prima la formazione, con il voto nel sistema locale e la scala accanto: in finanza si leggono i voti, e un voto mancante viene letto come un voto basso.',
+  'Experience bullets name the deal type, the size and the analysis you did, because the first screen looks for those words.':
+    'I punti dell’esperienza nominano il tipo di operazione, la dimensione e l’analisi che hai fatto, perché il primo filtro cerca quelle parole.',
+  'One page, no photo, no date of birth: the UK and US finance norm, and the norm for London-run schemes recruiting in Milan or Frankfurt.':
+    'Una pagina, niente foto, niente data di nascita: la norma della finanza nel Regno Unito e negli USA, e quella dei programmi gestiti da Londra che selezionano a Milano o Francoforte.',
+  'Word (.docx)':
+    'Word (.docx)',
+  'LaTeX (.tex)':
+    'LaTeX (.tex)',
+  'Open in Overleaf':
+    'Apri in Overleaf',
+  'Preview the template':
+    'Anteprima del modello',
+  'The research behind it':
+    'La ricerca dietro',
+  'Strategy consulting: one-page CV':
+    'Consulenza strategica: CV di una pagina',
+  'Strategy and management consulting (MBB, tier 2, Big 4 consulting and deals), corporate strategy and rotational programmes.':
+    'Consulenza strategica e direzionale (MBB, tier 2, consulenza e deals delle Big 4), strategia aziendale e programmi a rotazione.',
+  'Every bullet is an action, its context and a result with a number, so the CV doubles as the list of stories for the fit interview.':
+    'Ogni punto è un’azione, il suo contesto e un risultato con un numero, così il CV è anche la lista delle storie per il colloquio di fit.',
+  'Leadership gets its own section: McKinsey, BCG and Bain all interview on it, and the CV is where the interviewer picks the story.':
+    'La leadership ha una sezione sua: McKinsey, BCG e Bain fanno domande su questo, e il CV è dove l’intervistatore sceglie la storia.',
+  'One page, no photo, standard headings, contact details in the body.':
+    'Una pagina, niente foto, titoli standard, contatti nel corpo del documento.',
+  'Software engineering and data: one-page CV':
+    'Ingegneria del software e dati: CV di una pagina',
+  'Software engineering, data science and analytics, machine learning, quantitative developer roles and technical product roles.':
+    'Ingegneria del software, data science e analytics, machine learning, ruoli da quant developer e ruoli di prodotto tecnici.',
+  'Technical skills sit high and are grouped by type, because recruiters and parsers search for named languages and tools.':
+    'Le competenze tecniche stanno in alto, raggruppate per tipo, perché recruiter e sistemi di parsing cercano linguaggi e strumenti per nome.',
+  'Projects come before experience if they are stronger: each names the stack, links the code and gives a measurable result.':
+    'I progetti vengono prima dell’esperienza se sono più forti: ognuno nomina lo stack, collega il codice e dà un risultato misurabile.',
+  'One column with no skill bars or icons; parsers cannot read graphics.':
+    'Una colonna, senza barre delle competenze né icone; i parser non leggono la grafica.',
+  'Master\'s application CV (academic)':
+    'CV per la candidatura a un master (accademico)',
+  'Applications to MSc, MiM and MiF programmes, and scholarship applications. Admissions offices read credits, grades and tests first.':
+    'Candidature a MSc, MiM e MiF, e richieste di borse di studio. Gli uffici ammissioni leggono per primi crediti, voti e test.',
+  'Credits by subject area, in ECTS or CFU, sit under each degree: continental schools gate on credits in named sectors, and a test score does not waive them.':
+    'I crediti per area, in ECTS o CFU, stanno sotto ogni laurea: le scuole europee filtrano sui crediti in settori precisi, e un punteggio ai test non li sostituisce.',
+  'The thesis, test scores and language certificates have their own lines, with dates.':
+    'Tesi, punteggi ai test e certificati di lingua hanno righe proprie, con le date.',
+  'Referees sit at the end, typed by school: some want an academic referee, some a professional one, some one of each on the CV.':
+    'I referenti stanno alla fine, del tipo che chiede ogni scuola: alcune vogliono un referente accademico, altre uno professionale, altre uno per tipo sul CV.',
+  'Limit:':
+    'Limite:',
+  'about 4,000 characters (1–2 pages)':
+    'circa 4.000 caratteri (1–2 pagine)',
+  'The 4,000-character figure comes from a search summary of Bocconi\'s admissions page, not a full read.':
+    'La cifra di 4.000 caratteri viene da un riassunto di ricerca della pagina ammissioni della Bocconi, non da una lettura completa.',
+  'What the school says':
+    'Cosa dice la scuola',
+  'A way to spend the limit (Admetia’s suggestion, not the school’s rule):':
+    'Un modo per usare lo spazio (un suggerimento di Admetia, non una regola della scuola):',
+  'Why this programme':
+    'Perché questo programma',
+  'about':
+    'circa',
+  'characters':
+    'caratteri',
+  'Name the programme, two or three courses or tracks you want and why. Show you know how it differs from the alternatives.':
+    'Nomina il programma, due o tre corsi o percorsi che vuoi e perché. Mostra che sai in cosa si distingue dalle alternative.',
+  'What prepared you':
+    'Cosa ti ha preparato',
+  'Your degree, the courses and grades that matter for this programme, your thesis. If you are short of credits in a required area, say how you are filling the gap.':
+    'La tua laurea, i corsi e i voti che contano per questo programma, la tesi. Se ti mancano crediti in un’area richiesta, di’ come stai colmando la lacuna.',
+  'Evidence from experience':
+    'Prove dalla tua esperienza',
+  'One internship, project or activity told as a short story with a result.':
+    'Uno stage, un progetto o un’attività raccontati come una breve storia con un risultato.',
+  'Your goal and the link':
+    'Il tuo obiettivo e il collegamento',
+  'The role or sector you aim for after the programme, and which parts of it get you there.':
+    'Il ruolo o il settore a cui punti dopo il programma, e quali parti del programma ti ci portano.',
+  'One or two sentences. No list of adjectives.':
+    'Una o due frasi. Niente elenco di aggettivi.',
+  '3,500 + 2,500 characters (two questions)':
+    '3.500 + 2.500 caratteri (due domande)',
+  'Question wording and limits from Imperial\'s admissions blog (9 Dec 2024), read in full.':
+    'Testo delle domande e limiti dal blog ammissioni di Imperial (9 dic 2024), letto per intero.',
+  'Question 1 (3,500 characters)':
+    'Domanda 1 (3.500 caratteri)',
+  'Why Imperial Business School':
+    'Perché Imperial Business School',
+  'The programme by its correct name, the modules, projects or people that matter to you, and why they fit what you want to do.':
+    'Il programma con il suo nome esatto, i moduli, i progetti o le persone che contano per te, e perché sono adatti a ciò che vuoi fare.',
+  'What you will contribute':
+    'Cosa porterai',
+  'Two pieces of evidence: what you have done that other students will gain from (a skill, an experience, a perspective).':
+    'Due prove: cosa hai fatto di cui gli altri studenti potranno beneficiare (una competenza, un’esperienza, un punto di vista).',
+  'Where it leads':
+    'Dove ti porta',
+  'One sentence on your goal and how the year gets you there.':
+    'Una frase sul tuo obiettivo e su come l’anno ti ci porta.',
+  'Question 2 (2,500 characters)':
+    'Domanda 2 (2.500 caratteri)',
+  'The value and the situation':
+    'Il valore e la situazione',
+  'Name the value (Respect, Collaboration, Integrity, Innovation or Excellence) and set the scene in two sentences.':
+    'Nomina il valore (Respect, Collaboration, Integrity, Innovation o Excellence) e descrivi la scena in due frasi.',
+  'What you did':
+    'Cosa hai fatto',
+  'Your actions, in the first person, in the order you took them.':
+    'Le tue azioni, in prima persona, nell’ordine in cui le hai fatte.',
+  'The impact':
+    'L’impatto',
+  'What changed, with a number where there is one.':
+    'Cosa è cambiato, con un numero se c’è.',
+  'What you took from it':
+    'Cosa ne hai tratto',
+  'One sentence.':
+    'Una frase.',
+  '1,000–1,500 words':
+    '1.000–1.500 parole',
+  'From LSE\'s statement-of-academic-purpose page, read in full.':
+    'Dalla pagina della LSE sullo statement of academic purpose, letta per intero.',
+  'The academic question that interests you':
+    'La domanda accademica che ti interessa',
+  'words':
+    'parole',
+  'A topic or problem from your studies you want to go further with, stated precisely.':
+    'Un tema o un problema dei tuoi studi che vuoi approfondire, formulato con precisione.',
+  'How your studies prepared you':
+    'Come ti hanno preparato gli studi',
+  'Courses, grades, thesis and methods, linked to what the programme teaches.':
+    'Corsi, voti, tesi e metodi, collegati a ciò che il programma insegna.',
+  'Specific modules, the department\'s research, the structure of the programme. Not the school\'s ranking, not London.':
+    'Moduli specifici, la ricerca del dipartimento, la struttura del programma. Non il ranking della scuola, non Londra.',
+  'Relevant experience':
+    'Esperienza pertinente',
+  'Work, research or projects that show you can do the work.':
+    'Lavoro, ricerca o progetti che mostrano che sai fare il lavoro.',
+  'Your plans':
+    'I tuoi piani',
+  'Further study or the career you intend, and how the programme fits.':
+    'Ulteriori studi o la carriera che intendi fare, e come ci si inserisce il programma.',
+  'one page (about 450–500 words)':
+    'una pagina (circa 450–500 parole)',
+  'From ESCP\'s best-practices blog (8 Jan 2026), read in full. The word count is Admetia\'s estimate of one page.':
+    'Dal blog di ESCP sulle buone pratiche (8 gen 2026), letto per intero. Il numero di parole è una stima di Admetia per una pagina.',
+  'The multi-campus structure, tracks or specialisations that matter to you, specifically.':
+    'La struttura su più campus, i percorsi o le specializzazioni che contano per te, in modo specifico.',
+  'What you contribute':
+    'Cosa porti',
+  'One or two experiences, with results, that will add to your class.':
+    'Una o due esperienze, con risultati, che arricchiranno la tua classe.',
+  'How the degree fits your goals':
+    'Come il titolo si lega ai tuoi obiettivi',
+  'Where you want to work and how the programme gets you there.':
+    'Dove vuoi lavorare e come il programma ti ci porta.',
+  'School and limit':
+    'Scuola e limite',
+  'Your draft':
+    'La tua bozza',
+  'Counted in this browser; nothing is sent. The draft is kept in this browser until you clear it.':
+    'Contato in questo browser; non viene inviato nulla. La bozza resta in questo browser finché non la cancelli.',
+  'Clear the draft':
+    'Cancella la bozza',
+  'The draft checker needs JavaScript. The limits are listed with each school above.':
+    'Il controllo della bozza richiede JavaScript. I limiti sono elencati con ogni scuola qui sopra.',
+  'Getting in · application toolkit':
+    'Come entrare · kit per le candidature',
+  'Four one-column CV templates that applicant tracking systems can read, in Word and LaTeX, and motivation-letter skeletons sized to Bocconi’s, Imperial’s, LSE’s and ESCP’s own limits, with a checker for your draft.':
+    'Quattro modelli di CV a una colonna leggibili dai sistemi di selezione automatica, in Word e LaTeX, e schemi di lettera motivazionale calibrati sui limiti di Bocconi, Imperial, LSE ed ESCP, con un controllo per la tua bozza.',
+  'CV templates':
+    'Modelli di CV',
+  'CV rules by country':
+    'Regole del CV per paese',
+  'Writing the bullets':
+    'Scrivere i punti',
+  'Motivation letters by school':
+    'Lettere motivazionali per scuola',
+  'Check your draft':
+    'Controlla la tua bozza',
+  'AI and your own words':
+    'L’IA e le tue parole',
+  'Each template is one column with standard headings, the contact details in the body, real bullets and no tables, text boxes, icons or photos: the safe default for applicant tracking systems. Replace every [bracketed] placeholder. The Word file opens in Word, Google Docs, Pages and LibreOffice; the LaTeX file compiles with pdfLaTeX, and the Overleaf button opens a copy in your own Overleaf account.':
+    'Ogni modello ha una colonna con titoli standard, i contatti nel corpo del testo, elenchi puntati veri e niente tabelle, caselle di testo, icone o foto: la scelta sicura per i sistemi di selezione automatica. Sostituisci ogni segnaposto [tra parentesi quadre]. Il file Word si apre in Word, Google Docs, Pages e LibreOffice; il file LaTeX si compila con pdfLaTeX, e il pulsante Overleaf ne apre una copia nel tuo account Overleaf.',
+  'The templates follow the UK and US finance and consulting norm (one page, no photo, grades shown). For a local employer elsewhere, the research’s table, word for word:':
+    'I modelli seguono la norma di finanza e consulenza nel Regno Unito e negli USA (una pagina, niente foto, voti indicati). Per un datore di lavoro locale altrove, la tabella della ricerca, parola per parola:',
+  'Start with a verb, say what you worked on, and end with a result, with a number where there is one. The first screen is quick and pattern-based, so the employer, the deal or project and the number should be readable at a glance.':
+    'Inizia con un verbo, di’ su cosa hai lavorato e chiudi con un risultato, con un numero se c’è. Il primo filtro è rapido e cerca schemi, quindi il datore di lavoro, l’operazione o il progetto e il numero devono leggersi a colpo d’occhio.',
+  'Weak and strong versions of the same bullet':
+    'Versioni deboli e forti dello stesso punto',
+  'Weak':
+    'Debole',
+  'The examples are invented to show the pattern. Never invent a number on your own CV: interviewers ask about every line.':
+    'Gli esempi sono inventati per mostrare lo schema. Non inventare mai un numero nel tuo CV: gli intervistatori chiedono di ogni riga.',
+  'Limits differ by an order of magnitude, so one letter cannot be reused: write a bank of facts and stories once, then write each letter to that school’s prompt and limit. The schools publish limits and prompts; how to divide the space is our suggestion.':
+    'I limiti cambiano di un ordine di grandezza, quindi una lettera non si può riusare: scrivi una volta una raccolta di fatti e storie, poi scrivi ogni lettera sulla domanda e sul limite di quella scuola. Le scuole pubblicano limiti e domande; come dividere lo spazio è un nostro suggerimento.',
+  'Paste a draft to count it against the school’s limit, and to flag what schools ask you to leave out: rankings, generic praise of the city or the school, and another school’s name left in from a different letter.':
+    'Incolla una bozza per contarla rispetto al limite della scuola, e per segnalare ciò che le scuole chiedono di evitare: ranking, lodi generiche della città o della scuola, e il nome di un’altra scuola rimasto da un’altra lettera.',
+  'Employers and schools allow AI for research, structure and proofreading, and ban it for writing answers in assessments and interviews. Detectors misread non-native English, so the practical risk is a follow-up question about a sentence you cannot explain.':
+    'Datori di lavoro e scuole permettono l’IA per ricerca, struttura e correzione, e la vietano per scrivere le risposte in prove e colloqui. I rilevatori fraintendono l’inglese dei non madrelingua, quindi il rischio pratico è una domanda di approfondimento su una frase che non sai spiegare.',
+  'Application toolkit — Career Explorer — Admetia':
+    'Kit per le candidature — Career Explorer — Admetia',
+  'Free one-column CV templates in Word and LaTeX for banking, consulting, tech and master’s applications, and motivation-letter skeletons sized to Bocconi, Imperial, LSE and ESCP limits.':
+    'Modelli gratuiti di CV a una colonna in Word e LaTeX per banca, consulenza, tech e candidature ai master, e schemi di lettera motivazionale calibrati sui limiti di Bocconi, Imperial, LSE ed ESCP.',
+  'Always':
+    'Sempre',
+  'The employer states the stage is part of the process for that role.':
+    'Il datore di lavoro dichiara che la fase fa parte del processo per quel ruolo.',
+  'Usually':
+    'Di solito',
+  'Several employers state it, or one says it applies to most candidates.':
+    'Lo dichiarano più datori di lavoro, o uno dice che vale per la maggior parte dei candidati.',
+  'Often':
+    'Spesso',
+  'Practitioners or repeated candidate reports agree; no employer states it as a rule.':
+    'Concordano professionisti o testimonianze ripetute dei candidati; nessun datore di lavoro lo dichiara come regola.',
+  'Sometimes':
+    'A volte',
+  'Reported for some firms, offices or years only.':
+    'Riportato solo per alcune società, uffici o anni.',
+  'Exercises by career area and how often they appear':
+    'Prove per settore e con che frequenza compaiono',
+  'Career area':
+    'Settore',
+  'Strategy consulting':
+    'Consulenza strategica',
+  'Investment banking':
+    'Investment banking',
+  'Sales and trading':
+    'Sales and trading',
+  'Private equity':
+    'Private equity',
+  'Asset management and research':
+    'Asset management e ricerca',
+  'Quantitative trading':
+    'Trading quantitativo',
+  'FMCG and marketing':
+    'FMCG e marketing',
+  'Tech, product and data':
+    'Tech, prodotto e dati',
+  'Your five stories':
+    'Le tue cinque storie',
+  'Failure':
+    'Fallimento',
+  'Conflict':
+    'Conflitto',
+  'Innovation':
+    'Innovazione',
+  'High pressure':
+    'Alta pressione',
+  'What it has to show':
+    'Cosa deve mostrare',
+  'You set a direction and moved people towards it, ideally without formal authority.':
+    'Hai indicato una direzione e ci hai portato le persone, idealmente senza autorità formale.',
+  'How it is asked':
+    'Come viene chiesto',
+  'A title you will recognise':
+    'Un titolo che riconoscerai',
+  'Situation: where, when, what was at stake':
+    'Situazione: dove, quando, cosa c’era in gioco',
+  'Task: what you, personally, had to do':
+    'Compito: cosa dovevi fare tu, personalmente',
+  'Action: what you did, step by step, in the first person':
+    'Azione: cosa hai fatto, passo per passo, in prima persona',
+  'Result: what changed, with a number if there is one':
+    'Risultato: cosa è cambiato, con un numero se c’è',
+  'What you learned or would do differently':
+    'Cosa hai imparato o cosa faresti diversamente',
+  'Which criteria does this story show? Employers’ own words:':
+    'Quali criteri mostra questa storia? Le parole dei datori di lavoro:',
+  'reported themes; the page shows them as tiles that could not be read (Claims to verify 1)':
+    'temi riportati; la pagina li mostra come riquadri che non è stato possibile leggere (Claims to verify 1)',
+  'A real failure, your share of it, what you did next and what you changed afterwards.':
+    'Un fallimento vero, la tua parte di responsabilità, cosa hai fatto dopo e cosa hai cambiato in seguito.',
+  'You disagreed with substance, listened, and reached a better outcome without damaging the relationship.':
+    'Eri in disaccordo nel merito, hai ascoltato e siete arrivati a un risultato migliore senza rovinare il rapporto.',
+  'The idea was yours, you tested it, and you carried it through to a result.':
+    'L’idea era tua, l’hai messa alla prova e l’hai portata fino a un risultato.',
+  'How you prioritised, in what order you acted and what you dropped, and that the result held.':
+    'Come hai stabilito le priorità, in che ordine hai agito e cosa hai lasciato perdere, e che il risultato ha retto.',
+  'Copy all five stories':
+    'Copia tutte e cinque le storie',
+  'Download as text':
+    'Scarica come testo',
+  'Clear my stories':
+    'Cancella le mie storie',
+  'Coverage: which criteria your stories show':
+    'Copertura: quali criteri mostrano le tue storie',
+  'The story builder needs JavaScript. The five story types and how they are asked are listed below.':
+    'Il costruttore di storie richiede JavaScript. I cinque tipi di storia e come vengono chiesti sono elencati qui sotto.',
+  'Deck':
+    'Mazzo',
+  'All four decks':
+    'Tutti e quattro i mazzi',
+  'Three statements':
+    'I tre prospetti',
+  'Enterprise and equity value':
+    'Enterprise value ed equity value',
+  'Practise as flashcards':
+    'Esercitati con le flashcard',
+  'Show the answer':
+    'Mostra la risposta',
+  'Again later':
+    'Di nuovo dopo',
+  'I knew it':
+    'La sapevo',
+  'Back to the list':
+    'Torna all’elenco',
+  'Interviewer-led and candidate-led cases compared':
+    'Case guidati dall’intervistatore e dal candidato a confronto',
+  'Interviewer-led':
+    'Guidato dall’intervistatore',
+  'Candidate-led':
+    'Guidato dal candidato',
+  'Who drives':
+    'Chi conduce',
+  'The interviewer: you answer a sequence of set questions':
+    'L’intervistatore: rispondi a una sequenza di domande fissate',
+  'You: you propose the structure and choose what to analyse next':
+    'Tu: proponi la struttura e scegli cosa analizzare dopo',
+  'Associated with':
+    'Associato a',
+  'McKinsey':
+    'McKinsey',
+  'BCG and Bain (offices vary)':
+    'BCG e Bain (gli uffici variano)',
+  'How it starts':
+    'Come inizia',
+  'A prompt, then “how would you think about this?”':
+    'Un testo, poi “come ci ragioneresti?”',
+  'A prompt, then silence: your clarifying questions and structure':
+    'Un testo, poi silenzio: le tue domande di chiarimento e la tua struttura',
+  'What goes wrong':
+    'Cosa va storto',
+  'Answering a different question than the one asked; not closing each question':
+    'Rispondere a una domanda diversa da quella posta; non chiudere ogni domanda',
+  'Stalling after the framework; not asking for data; losing the thread':
+    'Bloccarsi dopo lo schema; non chiedere dati; perdere il filo',
+  'What to practise':
+    'Cosa esercitare',
+  'Crisp answers to each step: structure, exhibit, maths, recommendation':
+    'Risposte nette a ogni passo: struttura, grafico, calcoli, raccomandazione',
+  'Leading: “I’d like to start with X because…”, then summarising as you go':
+    'Condurre: “Partirei da X perché…”, poi riassumere man mano',
+  'Clarify':
+    'Chiarire',
+  'Restate the question and the objective. Ask what success means, and about scope (geography, time frame) only if it changes the answer.':
+    'Riformula la domanda e l’obiettivo. Chiedi cosa vuol dire successo, e chiedi del perimetro (area geografica, orizzonte temporale) solo se cambia la risposta.',
+  'Structure':
+    'Strutturare',
+  'Break the problem into three or four parts that do not overlap and together cover it (an issue tree). Say which part you would test first and why.':
+    'Dividi il problema in tre o quattro parti che non si sovrappongono e che insieme lo coprono (un albero dei problemi). Di’ quale parte verificheresti per prima e perché.',
+  'Analyse':
+    'Analizzare',
+  'Ask for or read the data. State what each exhibit shows in one sentence, then what it means for the question.':
+    'Chiedi o leggi i dati. Di’ in una frase cosa mostra ogni grafico, poi cosa significa per la domanda.',
+  'Calculate':
+    'Calcolare',
+  'Say your method before the numbers, round sensibly, and sanity-check the result against something you know.':
+    'Spiega il metodo prima dei numeri, arrotonda con criterio e verifica il risultato con qualcosa che conosci.',
+  'Recommend':
+    'Raccomandare',
+  'Lead with the answer, give two or three reasons, name the main risk and the next step. About 30–60 seconds.':
+    'Parti dalla risposta, dai due o tre ragioni, nomina il rischio principale e il passo successivo. Circa 30–60 secondi.',
+  'Your answer':
+    'La tua risposta',
+  'Check':
+    'Verifica',
+  'Start a two-minute drill':
+    'Inizia un esercizio di due minuti',
+  'A worked answer':
+    'Una risposta svolta',
+  'Getting in · interview prep':
+    'Come entrare · preparare i colloqui',
+  'What each career area actually asks, and how often, from employers’ own pages; a builder for the five behavioural stories every process needs; study cards for the finance technical core; a consulting case primer with a mental-arithmetic drill; and practice cases with worked answers.':
+    'Cosa chiede davvero ogni settore, e con che frequenza, dalle pagine dei datori di lavoro; un costruttore per le cinque storie comportamentali che ogni processo richiede; schede di studio sul nucleo tecnico della finanza; una guida ai case di consulenza con un esercizio di calcolo mentale; e casi di prova con risposte svolte.',
+  'What you will face':
+    'Cosa ti aspetta',
+  'Free official practice':
+    'Esercitazioni ufficiali gratuite',
+  'Finance technical cards':
+    'Schede tecniche di finanza',
+  'Consulting case primer':
+    'Guida ai case di consulenza',
+  'Practice cases':
+    'Casi di prova',
+  'What preparation is worth':
+    'Quanto vale la preparazione',
+  'Every exercise below carries a frequency word, read from the research, and the evidence for it. Open an area for the full table, quoted as written.':
+    'Ogni prova qui sotto ha una parola di frequenza, letta dalla ricerca, e le fonti che la sostengono. Apri un settore per la tabella completa, citata così com’è.',
+  'The firms publish practice material for free. Use it before anything paid: it shows the format and what is scored.':
+    'Le società pubblicano materiale di esercitazione gratis. Usalo prima di qualsiasi cosa a pagamento: mostra il formato e cosa viene valutato.',
+  'Five stories cover most behavioural questions: leadership, failure, conflict, innovation and high pressure. Write each in the STAR order (situation, task, action, result), add what you learned, and tag the criteria it shows. McKinsey asks for two examples per theme, so keep a second version of your strongest ones.':
+    'Cinque storie coprono la maggior parte delle domande comportamentali: leadership, fallimento, conflitto, innovazione e alta pressione. Scrivi ognuna nell’ordine STAR (situazione, compito, azione, risultato), aggiungi cosa hai imparato e indica i criteri che mostra. McKinsey chiede due esempi per tema, quindi tieni una seconda versione delle storie più forti.',
+  'Your stories are saved only in this browser. The checks are rules of thumb from the employers’ guidance (your own actions, a measurable result), not any employer’s scoring rubric, which none publishes.':
+    'Le tue storie sono salvate solo in questo browser. I controlli sono regole pratiche tratte dalle indicazioni dei datori di lavoro (le tue azioni, un risultato misurabile), non la griglia di valutazione di un datore di lavoro, che nessuno pubblica.',
+  'Thirty-two cards on the four topics practitioners agree banks test: how the three statements link, enterprise to equity value, the DCF and the WACC. No bank publishes a question list; these are standard textbook answers, written for this site.':
+    'Trentadue schede sui quattro temi che, secondo i professionisti, le banche verificano: come si collegano i tre prospetti, da enterprise value a equity value, il DCF e il WACC. Nessuna banca pubblica un elenco di domande; queste sono risposte standard da manuale, scritte per questo sito.',
+  'Who leads the case':
+    'Chi conduce il case',
+  'Five steps of any case':
+    'Cinque passi per ogni case',
+  'Market sizing: a worked example':
+    'Stima di mercato: un esempio svolto',
+  'Mental arithmetic shortcuts':
+    'Scorciatoie di calcolo mentale',
+  'Seven short cases, one or two per career area, written for this site in the style of the official ones. Try each before opening the worked answer.':
+    'Sette casi brevi, uno o due per settore, scritti per questo sito sullo stile di quelli ufficiali. Prova ognuno prima di aprire la risposta svolta.',
+  'From research/getting-in/applications-and-interviews.md. The frequencies and official cases on this page are from research/getting-in/interview-cases.md, read on 10 October 2026.':
+    'Da research/getting-in/applications-and-interviews.md. Le frequenze e i casi ufficiali in questa pagina vengono da research/getting-in/interview-cases.md, letto il 10 ottobre 2026.',
+  'Interview prep — Career Explorer — Admetia':
+    'Preparare i colloqui — Career Explorer — Admetia',
+  'What consulting, banking, trading, PE, Big 4, FMCG and tech interviews ask and how often, a STAR story builder, finance technical flashcards, a consulting case primer and practice cases.':
+    'Cosa chiedono i colloqui di consulenza, banca, trading, PE, Big 4, FMCG e tech e con che frequenza, un costruttore di storie STAR, flashcard di finanza, una guida ai case di consulenza e casi di prova.',
+  '{p}% of {b}':
+    '{p}% di {b}',
+  'At {g}% a year, about how many years to double?':
+    'Al {g}% l’anno, in circa quanti anni si raddoppia?',
+  'Fixed costs €{f}; price €{p}; variable cost €{v} a unit. Break-even units?':
+    'Costi fissi {f} €; prezzo {p} €; costo variabile {v} € a unità. Unità di pareggio?',
+  '{n} of {total} windows':
+    '{n} di {total} finestre',
+  '{n} characters':
+    '{n} caratteri',
+  '{min}–{max} words':
+    '{min}–{max} parole',
+  'about {n} words':
+    'circa {n} parole',
+  '{used} of {max} characters':
+    '{used} di {max} caratteri',
+  '{used} words; the school asks for {min}–{max}':
+    '{used} parole; la scuola ne chiede {min}–{max}',
+  '{used} of about {max} words':
+    '{used} di circa {max} parole',
+  '{w} words, {ns} characters without spaces':
+    '{w} parole, {ns} caratteri senza spazi',
+  '{c} characters':
+    '{c} caratteri',
+  'Over the limit by {n}.':
+    'Oltre il limite di {n}.',
+  'Under the minimum by {n} words.':
+    'Sotto il minimo di {n} parole.',
+  '“{word}”: {why}':
+    '“{word}”: {why}',
+  'Names another school: {name}. Check that this letter was written for {school}.':
+    'Nomina un’altra scuola: {name}. Controlla che questa lettera sia stata scritta per {school}.',
+  'Within the limit, and nothing from the schools’ “avoid” lists.':
+    'Entro il limite, e niente dalle liste delle cose da evitare.',
+  'Title':
+    'Titolo',
+  'Situation':
+    'Situazione',
+  'Task':
+    'Compito',
+  'Action':
+    'Azione',
+  'Result':
+    'Risultato',
+  'What I learned':
+    'Cosa ho imparato',
+  'Fill in all four parts. Missing: {list}.':
+    'Compila tutte e quattro le parti. Mancano: {list}.',
+  'Situation, task, action and result are all there.':
+    'Situazione, compito, azione e risultato ci sono tutti.',
+  'Your action is in the first person.':
+    'La tua azione è in prima persona.',
+  'Your action says “we” more than “I”: interviewers want your own part.':
+    'La tua azione dice “noi” più di “io”: gli intervistatori vogliono la tua parte.',
+  'Your result has a number in it.':
+    'Il tuo risultato contiene un numero.',
+  'Add a number to the result if there is one: how much, how many, how fast.':
+    'Aggiungi un numero al risultato se c’è: quanto, quanti, quanto in fretta.',
+  'Most of the story is about what you did.':
+    'La maggior parte della storia riguarda ciò che hai fatto tu.',
+  'Situation and task take more than a third of it: cut the scene-setting.':
+    'Situazione e compito occupano più di un terzo: taglia la descrizione della scena.',
+  'About {m} minutes to say at a normal pace.':
+    'Circa {m} minuti per raccontarla a ritmo normale.',
+  'About {m} minutes to say: aim for about two.':
+    'Circa {m} minuti per raccontarla: punta a circa due.',
+  'Criteria tagged: {n}.':
+    'Criteri indicati: {n}.',
+  'Tag the criteria this story shows.':
+    'Indica i criteri che questa storia mostra.',
+  'complete':
+    'completa',
+  'Criterion':
+    'Criterio',
+  'Tag criteria in each story to see what your five stories cover.':
+    'Indica i criteri in ogni storia per vedere cosa coprono le tue cinque storie.',
+  'All five stories: {w} words, about {m} minutes to say.':
+    'Tutte e cinque le storie: {w} parole, circa {m} minuti per raccontarle.',
+  'Shows':
+    'Criteri mostrati',
+  'Copied.':
+    'Copiato.',
+  'Your browser blocked copying; use “Download as text”.':
+    'Il browser ha bloccato la copia; usa “Scarica come testo”.',
+  'Clear all five stories from this browser?':
+    'Cancellare tutte e cinque le storie da questo browser?',
+  'Cleared.':
+    'Cancellate.',
+  'Deck finished: {n} cards.':
+    'Mazzo finito: {n} schede.',
+  'Pick a deck and start again, or go back to the list.':
+    'Scegli un mazzo e ricomincia, o torna all’elenco.',
+  '{left} of {n} left':
+    'Ne restano {left} su {n}',
+  '{s} seconds left · {r} right out of {d}':
+    '{s} secondi rimasti · {r} giuste su {d}',
+  'Time. {r} right out of {d}.':
+    'Tempo. {r} giuste su {d}.',
+  'Go again':
+    'Di nuovo',
+  'Type a number.':
+    'Scrivi un numero.',
+  'Right.':
+    'Giusto.',
+  'Not quite: {q} = {a}.':
+    'Non proprio: {q} = {a}.',
+  'LSE asks you to avoid statements about its performance in rankings.':
+    'La LSE chiede di evitare affermazioni sulla sua posizione nei ranking.',
+  'LSE asks you to avoid generic statements about London being a global or cosmopolitan centre.':
+    'La LSE chiede di evitare affermazioni generiche su Londra come centro globale o cosmopolita.',
+  'Imperial wants to hear about you, not the school.':
+    'Imperial vuole sapere di te, non della scuola.',
+  'Jul':
+    'Lug',
+  'Aug':
+    'Ago',
+  'Sep':
+    'Set',
+  'Oct':
+    'Ott',
+  'Nov':
+    'Nov',
+  'Dec':
+    'Dic',
+  'Jan':
+    'Gen',
+  'Feb':
+    'Feb',
+  'Mar':
+    'Mar',
+  'Apr':
+    'Apr',
+  'May':
+    'Mag',
+  'Jun':
+    'Giu'
 });

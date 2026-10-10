@@ -1,0 +1,67 @@
+% Strategy consulting: one-page CV
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries [FIRST NAME LAST NAME]}\\[3pt]
+[City, Country] \textperiodcentered{} [+39 333 000 0000] \textperiodcentered{} [name.surname@university.edu] \textperiodcentered{} [linkedin.com/in/yourname]
+\end{center}
+\cvsection{Education}
+\cventry{[University name], [City]}{[Sep 2025 -- Jul 2027 (expected)]}
+\cvsub{[Master in Management]}
+\begin{itemize}
+  \item Grade: [average and scale, e.g. 28.9/30]; [CEMS or double-degree track, if any]
+  \item {}[Case competition, consulting club or field project, with the result, e.g. ``1st of 42 teams, [Competition], 2026'']
+\end{itemize}
+\cventry{[University name], [City]}{[Sep 2022 -- Jul 2025]}
+\cvsub{[BSc in Business Administration]}
+\begin{itemize}
+  \item Final grade: [110/110]; thesis: [title, one line on the finding]
+\end{itemize}
+\cvsection{Experience}
+\cventry{[Firm name], [City]}{[Jun 2026 -- Sep 2026]}
+\cvsub{[Summer Consultant / Visiting Associate]}
+\begin{itemize}
+  \item {}[Sized the [market] in [n] countries from [n] data sources; the estimate set the client's 3-year revenue target of \texteuro{}[x]m]
+  \item {}[Interviewed [n] customers and [n] experts; synthesised findings into [n] slides presented to the client's CEO]
+  \item {}[Identified \texteuro{}[x]m of cost savings in [area] by [method]; [x]\% adopted in the client's budget]
+\end{itemize}
+\cventry{[Company name], [City]}{[Jan 2025 -- Jun 2025]}
+\cvsub{[Business Analyst Intern, Strategy team]}
+\begin{itemize}
+  \item {}[Built the business case for [initiative]; approved with a \texteuro{}[x]k budget]
+  \item {}[Automated [report] in [tool], cutting preparation from [x] hours to [y] a week]
+\end{itemize}
+\cvsection{Leadership and impact}
+\cventry{[Organisation], [City]}{[Sep 2023 -- Jun 2025]}
+\cvsub{[President / Project lead]}
+\begin{itemize}
+  \item {}[Grew membership from [x] to [y] by [what you did]; raised \texteuro{}[x]k in sponsorship from [n] firms]
+  \item {}[Led a team of [n] volunteers to [outcome, with a number]]
+\end{itemize}
+\cvsection{Additional information}
+\textbf{Languages:} [Italian (native), English (C1), German (B2: name it if you target DACH offices, which often interview in German)]\par
+\textbf{Skills:} [Excel, PowerPoint, Alteryx or Tableau, SQL (basic)]\par
+\textbf{Interests:} [two or three, specific]\par
+\end{document}
