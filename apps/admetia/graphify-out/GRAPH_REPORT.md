@@ -6,18 +6,18 @@
 - Unclassified: 23 file(s) not represented in the graph (top: .tex 8, .css 7, .woff2 3)
 
 ## Summary
-- 8182 nodes · 9624 edges · 682 communities (512 shown, 170 thin omitted)
+- 8182 nodes · 9624 edges · 676 communities (500 shown, 176 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 239 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8ed2a903`
+- Built from commit: `bea40e87`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - results-kit.js
-- careers.js
+- site
 - Admetia home page (index.html)
 - intro.js
 - create
@@ -147,7 +147,7 @@
 - Russia: country brief
 - United Arab Emirates: country brief
 - visas_immigration/README.md
-- 2. Map of areas and sectors
+- 3. Role families
 - Verification round 5c (3 October 2026)
 - Part E — The press and social media
 - 2. Matrice Completa dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE)
@@ -189,7 +189,7 @@
 - Verification round 4a (2 October 2026)
 - 3. Matrice Completa dei Casi d'Uso (UE vs Extra-UE)
 - Intro Lab (visual reference for the opening titles)
-- 3. Role families
+- 2. Map of areas and sectors
 - 2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE)
 - page-hiring.js
 - lifeSection
@@ -210,7 +210,7 @@
 - standingTable
 - Audit 1: Atlas geography and labour market, Western Europe
 - 1. CRITICAL: wrong or dangerously misleading
-- theme.js
+- menu
 - Audit 4: Immigration, procedures and costs, 25 European destinations
 - Audit 5: immigration, procedures and costs in the 21 non-European destinations (EU/EEA/Swiss and UK passports)
 - parse.js
@@ -282,12 +282,12 @@
 - 1. Punti Aperti Normativi e Monitoraggio Attivo
 - Questioni Aperte e Punti di Monitoraggio: Polonia (PL)
 - Guida Ufficiale Visti e Immigrazione: Portogallo (PT)
-- Part 2: Research, frontier and governance roles
+- Artificial Intelligence
 - 2. Questioni Aperte e Punti di Monitoraggio Amministrativo
 - 1. Monitoraggio Riforme Volatili e Transizioni Normative
 - 1. Elenco dei Punti Aperti e Questioni da Monitorare
 - Guida Ufficiale Visti e Immigrazione: Estonia (EE)
-- Part 1: Product software engineering
+- canada_sources.md
 - 1. Elenco dei Punti Aperti e Questioni da Monitorare
 - Punti Aperti e Questioni da Verificare Manualmente: Italia (IT)
 - Guida Ufficiale Visti e Immigrazione: Paesi Bassi (Netherlands)
@@ -390,7 +390,7 @@
 - Verification round 6c: Life there (8 October 2026)
 - Caso 7: Master di I/II Livello e Dottorato di Ricerca (PhD)
 - Career Compass: plan
-- Registro Punti Aperti e Verifiche Manuali: Singapore (SGP)
+- ireland_sources.md
 - Caso 6: Erasmus+ / SEMP (Swiss European Mobility Programme)
 - Caso 9: Ricongiungimento Familiare e Soggiorni Brevi (Fino a 90 gg)
 - 3. Role families
@@ -429,7 +429,7 @@
 - Career Explorer: build notes
 - 0. Read this first
 - P47 Portugal (data/atlas/pt.js)
-- compass-core.js
+- kuwait_sources.md
 - ux-ledger.js
 - Punti Aperti e Questioni da Verificare Manualmente: Francia (FR)
 - Hiring sources: link check, 9 October 2026
@@ -438,10 +438,9 @@
 - docx.js
 - 1. QUESTIONI APERTE E DISCREPANZE DA RISOLVERE
 - 2.1 Journeys
-- interview.js
-- index.md
+- careers/getting-in.js
 - Registro delle Fonti Primarie e Riferimenti Normativi: Stati Uniti (US)
-- 2. Map of areas and sectors
+- 3. Role families
 - 3. Role families
 - 3. Role families
 - 2. Pay by branch and role family
@@ -450,7 +449,7 @@
 - 2. Modifiche alla Codebase Esistente
 - 2. Modifiche alla Codebase Esistente
 - Product
-- ref_vm
+- singapore_sources.md
 - 3. Role families
 - 3. Role families
 - Verification round 5b (3 October 2026)
@@ -475,12 +474,11 @@
 - Part 3: The buy side
 - el
 - Sub-agent brief template (used for all research agents)
-- read
+- united_kingdom_sources.md
 - switzerland_visas_immigration_guide.md
 - Part 1: Investment banking and advisory
 - Part 4: Corporate finance, risk, quant and fintech
 - Career Explorer: progress checklist
-- index.js
 - 4. Role families compared across branches
 - Career branches: index
 - calendar
@@ -490,7 +488,6 @@
 - Canada (P61)
 - 2. Map of areas and sectors
 - calendar.js
-- careers/getting-in.js
 - artificial-intelligence-s5.md
 - computer-science-s5.md
 - finance-s5.md
@@ -498,26 +495,22 @@
 - Saudi Arabia (P72)
 - 4. Validation
 - render.js
-- Part-level ratings and notes
 - C. Diagrams (8): build in code, not with an image model
 - glassmorphism/README.md
 - 1. Inventory, baseline and migration ledger
-- hiring-check.js
-- Guida Ufficiale Visti e Immigrazione: Stato del Qatar
+- ref_vm
+- Punti Aperti e Verifiche Manuali: Qatar (QA)
 - 3. Components and patterns
 - 6. Disciplina del Registro Non Residenti (RNI - Soggiorni < 4 Mesi)
-- read
 - Admetia UX restructuring: working documents
 - P44 Ireland (data/atlas/ie.js)
 - vietnam_visas_immigration_guide.md
 - 8. Your own situation
-- Part 1: Building AI systems
 - Caso 6: Erasmus+ e Mobilità Intra-UE
 - Caso 1: Lavoro Dipendente Ordinario (Single Permit / GVVA con Test UWV)
 - Caso 4: Studio Universitario (Bachelor / Master / Corsi Accademici)
 - Caso 8: Working Holiday (WHP / WHS - Working Holiday Programme & Scheme)
 - Part 1: Product software engineering
-- iceland_visas_immigration_guide.md
 - Registro delle Fonti Ufficiali: Turchia (TR)
 - malaysia_visas_immigration_guide.md
 - P38 Italy (data/atlas/it.js)
@@ -531,12 +524,10 @@
 - build-plates.sh
 - Sistema di Riferimento Unico: Visti e Immigrazione (Admetia)
 - 6. Realtà Pratica, Friczioni e Trappole Operative
-- is
 - config.js
 - Admetia field drawings to redo: three replacement prompts
 - contents
 - foldAll
-- hong_kong_sources.md
 - Caso 1: Lavoro Dipendente Ordinario (General Employment)
 - Caso 3: Internship / Tirocinio (Stage Curriculare vs Extracurricolare)
 - Caso 4: Studio Universitario (Bachelor / Master)
@@ -546,11 +537,11 @@
 2. `raw()` - 49 edges
 3. `Verification round 4k (3 October 2026)` - 38 edges
 4. `D. Country photographs (35): source real photographs` - 36 edges
-5. `route()` - 24 edges
+5. `route()` - 25 edges
 6. `create()` - 24 edges
 7. `1. Registro dei Punti Aperti (Open Questions)` - 23 edges
-8. `buildWorld()` - 22 edges
-9. `renderResults()` - 22 edges
+8. `renderResults()` - 22 edges
+9. `buildWorld()` - 22 edges
 10. `data()` - 22 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -574,15 +565,15 @@
 - **Three parked redesign concepts (workspace, bento, minimal)** — design_concepts_workspace, design_concepts_bento, design_concepts_minimal [EXTRACTED 1.00]
 - **Admetia calculator pages sharing the reality-check disclaimer** — masters_html, mba_html, it_html, admetia_reality_check_disclaimer [INFERRED 0.85]
 
-## Communities (682 total, 170 thin omitted)
+## Communities (676 total, 176 thin omitted)
 
 ### Community 0 - "results-kit.js"
 Cohesion: 0.13
 Nodes (15): battlePlan(), clip(), jumpBar(), keyRow(), openVerdicts(), planButton(), shareButton(), shareImage() (+7 more)
 
-### Community 1 - "careers.js"
-Cohesion: 0.20
-Nodes (23): arrive(), comparePage(), apply(), boxes(), drawSide(), picked(), el(), fold() (+15 more)
+### Community 1 - "site"
+Cohesion: 0.18
+Nodes (15): site(), discHtml(), footer(), md(), mdInline(), miniScores(), pips(), prose() (+7 more)
 
 ### Community 2 - "Admetia home page (index.html)"
 Cohesion: 0.21
@@ -590,7 +581,7 @@ Nodes (13): Admetia home page (index.html), Three calculators: MBA, business mas
 
 ### Community 3 - "intro.js"
 Cohesion: 0.10
-Nodes (44): add(), attrs(), buildPicker(), cap(), choose(), fill(), inlineOnly(), lookup() (+36 more)
+Nodes (53): adjust(), background(), balance(), band(), clamp(), context(), employer(), has() (+45 more)
 
 ### Community 4 - "create"
 Cohesion: 0.11
@@ -669,8 +660,8 @@ Cohesion: 0.11
 Nodes (15): APP, calcKeys, fs, kit, m, pageKeys, PAGES, path (+7 more)
 
 ### Community 23 - "Admetia README"
-Cohesion: 0.17
-Nodes (14): Employer prestige and internship tier guide, Decision flowchart for unlisted employers, Master's internship tiers (Global, National, Small/Local, N/A), MBA employer prestige 0-4 scale, Verification audit (28 September 2026), MBA edge cases and corrected-mode checks, Master's hard-gate checks, 8,000 frozen MBA profiles golden test (+6 more)
+Cohesion: 0.12
+Nodes (20): Credits (photos, typefaces, data), TheGradCafe applicant-outcome aggregates, MBA calibration of CEIBS, Guanghua, Fudan, Nanyang, Photographs (Pexels, Wikimedia CC0), stored locally, Typefaces (SIL OFL, bundled in fonts/), Employer prestige and internship tier guide, Decision flowchart for unlisted employers, Master's internship tiers (Global, National, Small/Local, N/A) (+12 more)
 
 ### Community 24 - "Come i numeri fuorviano (IT) (it/how-numbers-mislead.md)"
 Cohesion: 0.11
@@ -697,8 +688,8 @@ Cohesion: 0.12
 Nodes (13): APP, base, ctx, fs, home, INTRO_PAGES, itDict, mastersN (+5 more)
 
 ### Community 30 - "Business tracks picker page"
-Cohesion: 0.23
-Nodes (8): 404 page-not-found page, Business tracks picker page, Computing calculator page, IT track picker page, Atlas map page, Master's calculator page, MBA calculator page, IT & Computing Master's Calculator
+Cohesion: 0.15
+Nodes (11): 404 page-not-found page, Business tracks picker page, Computing calculator page, IT track picker page, tickerPause(), set(), t(), Atlas map page (+3 more)
 
 ### Community 31 - "data.js"
 Cohesion: 0.25
@@ -729,8 +720,8 @@ Cohesion: 0.12
 Nodes (15): Chevening, Edit log (all edits to body files, 2 Oct 2026), Fulbright Italy, P15. STEM designation of US programmes (places/visas-and-work-rights.md s7, claim 15, rule 4; places/beyond-europe.md s1.1, H-d, claim 1, 'What this changes'), P28. Greece art. 5C (places/origin-countries-eu.md bottom line 4, s7 'Return regime', s10 table, H-b, myth 3, claims 16, sources), P30. UK earned settlement (decisions/long-horizon-careers.md bottom line 4, s6 UK block, table row, H-c, myths, rule 1, claims 2-3), P31. UK going rates, SOC 2134 (careers/tech-data-and-ai.md bottom line 8, s7, H-f, myths, rule 6, 'What this changes'; places/visas-and-work-rights.md s1.3 table), P32. Chevening and Fulbright Italy (money/scholarships.md bottom lines 3-4, s1.1, 1.2, s7 table, myths, rules 1-3, claim 10) (+7 more)
 
 ### Community 38 - "Atlas progress checklist"
-Cohesion: 0.15
-Nodes (15): Atlas progress checklist, Country roll-out batches 1-9 (46 countries), Claim tagging method (data, employer-stated, practitioner consensus, anecdotal), Demand-level rule (dominant, strong, present, marginal, gap), Pilot countries: Germany, UAE, Singapore, Estonia, Gap analysis for the Atlas, Build order: Atlas, arrival checklists, recognition, youth mobility, Research coverage of 46 countries (deep, partial, thin, none) (+7 more)
+Cohesion: 0.09
+Nodes (16): file(), Atlas progress checklist, Country roll-out batches 1-9 (46 countries), Claim tagging method (data, employer-stated, practitioner consensus, anecdotal), Demand-level rule (dominant, strong, present, marginal, gap), Pilot countries: Germany, UAE, Singapore, Estonia, Gap analysis for the Atlas, Build order: Atlas, arrival checklists, recognition, youth mobility (+8 more)
 
 ### Community 39 - "Planning intelligence: what someone weighs before moving"
 Cohesion: 0.08
@@ -937,8 +928,8 @@ Cohesion: 0.08
 Nodes (24): 10. Month-by-month calendars, 1. London investment banking: the 2027 summer cycle, 2. US investment banking: recruiting creep and JPMorgan's 2025 stance, 3.1 Paris: The 6-Month "Césure" and "Stage de Fin d'Études" (PFE), 3.2 Frankfurt & Munich: The 6-Month "Praktikum" and MiLoG §22 Gating, 3.3 Milan: "Stage Curriculare" vs. "Stage Extracurriculare", 3.4 Zurich: Swiss Off-Cycle Internships & Work Permit Barriers, 3.5 Continental 6-Month Off-Cycle Recruitment Calendar Across Major Hubs (+16 more)
 
 ### Community 141 - "assets/compass.js"
-Cohesion: 0.10
-Nodes (61): answered(), bar(), bgName(), byId(), decode(), el(), en(), encode() (+53 more)
+Cohesion: 0.07
+Nodes (77): answered(), bar(), bgName(), byId(), decode(), el(), en(), encode() (+69 more)
 
 ### Community 142 - "Italy (Atlas brief, round 5, 3 October 2026)"
 Cohesion: 0.11
@@ -1090,11 +1081,11 @@ Nodes (12): 1. Bottom line, 2. The economy and the graduate labour market, 3. Hu
 
 ### Community 179 - "visas_immigration/README.md"
 Cohesion: 0.04
-Nodes (33): Registro delle Fonti Primarie Ufficiali: Bulgaria (BG), 1. Indice Sistematico delle Fonti Primarie, Registro delle Fonti Primarie e Riferimenti Normativi: Canada (CA), 1. Indice Sistematico delle Fonti Primarie, Registro delle Fonti Primarie e Riferimenti Normativi: Repubblica Ceca (CZ), Indice delle Fonti Primarie Verificate, Registro Ufficiale delle Fonti Primarie: Finlandia (FI), 1. Indice Sistematico delle Fonti Primarie (+25 more)
+Nodes (27): 1. Indice Sistematico delle Fonti Primarie, Registro delle Fonti Primarie e Riferimenti Normativi: Repubblica Ceca (CZ), Indice delle Fonti Primarie Verificate, Registro Ufficiale delle Fonti Primarie: Finlandia (FI), 1. Indice Sistematico delle Fonti Primarie, Registro delle Fonti Primarie e Riferimenti Normativi: Germania (DE), 1. Fonti Primarie Legislative e Istituzionali di Hong Kong, Registro delle Fonti Ufficiali: Hong Kong (HKG) (+19 more)
 
-### Community 180 - "2. Map of areas and sectors"
-Cohesion: 0.06
-Nodes (35): 1. What this branch is, 2.0 The 2026 landscape: skills gap versus the entry-level reality, 2.10 OT/ICS security, 2.11 Consulting and managed services (MSSPs), 2.12 Security vendors, 2.13 Government, defence and intelligence, 2.14 CISO and leadership track, 2.1 Security operations (SOC) (+27 more)
+### Community 180 - "3. Role families"
+Cohesion: 0.11
+Nodes (19): 1. What this branch is, 3.10 Security consultant (Big 4, specialist consultancies, MSSPs) and the path to CISO, 3.1 SOC analyst (tier 1-3), 3.2 Incident responder / digital forensics (DFIR), 3.3 Threat intelligence analyst, 3.4 Penetration tester / red teamer / offensive security, 3.5 Application security / product security engineer (incl. DevSecOps), 3.6 Security engineer / cloud security engineer / IAM engineer (+11 more)
 
 ### Community 181 - "Verification round 5c (3 October 2026)"
 Cohesion: 0.14
@@ -1260,9 +1251,9 @@ Nodes (43): 1. Architettura Giuridica ed Enti Competenti, 2. Red Flags e Trappol
 Cohesion: 0.18
 Nodes (9): Intro Lab (visual reference for the opening titles), buildHud() corner HUD, glitch() band cut transition, landing() nameplate landing, playFlash() reload flash, SC scene functions (word, rows, bars, ticker, counter, stamp, page), Intro animation brief (Titoli version A), Intro technical constraints (no libs, 8KB, a11y, offline) (+1 more)
 
-### Community 222 - "3. Role families"
-Cohesion: 0.14
-Nodes (14): 3.10 Sustainability and corporate responsibility manager (in-house), 3.11 Business analyst and process improvement specialist, 3.12 Real estate and property manager (surveying route), 3.1 Management trainee / graduate leadership programme (rotational) → general manager, 3.2 Operations manager (manufacturing, retail, services), 3.3 Project / programme manager, 3.4 HR / people professional (HRBP, talent acquisition, L&D, reward), 3.5 Corporate strategy and business development (in-house) (+6 more)
+### Community 222 - "2. Map of areas and sectors"
+Cohesion: 0.12
+Nodes (16): 2.0 The 2026 landscape: skills gap versus the entry-level reality, 2.10 OT/ICS security, 2.11 Consulting and managed services (MSSPs), 2.12 Security vendors, 2.13 Government, defence and intelligence, 2.14 CISO and leadership track, 2.1 Security operations (SOC), 2.2 Incident response and digital forensics (DFIR) (+8 more)
 
 ### Community 223 - "2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE)"
 Cohesion: 0.05
@@ -1278,7 +1269,7 @@ Nodes (23): entryCustomRows(), entryNotes(), entryRow(), entryRun(), entrySectio
 
 ### Community 226 - "ux-test.js"
 Cohesion: 0.04
-Nodes (44): A, actx, APP, arrival, box, builders, careers, clash (+36 more)
+Nodes (55): A, actx, APP, arrival, badNotes, box, builders, careers (+47 more)
 
 ### Community 227 - "session.js"
 Cohesion: 0.33
@@ -1294,7 +1285,7 @@ Nodes (5): 7. Added 2026-10-01 (Gemini comparison and new files), decisions/shou
 
 ### Community 230 - "careers-test.js"
 Cohesion: 0.03
-Nodes (53): absent, APP, ATLAS_IDS, ATLAS_VIEWS, big, box, broken, { buildData } (+45 more)
+Nodes (64): absent, APP, ATLAS_IDS, ATLAS_VIEWS, big, box, broken, { buildData } (+56 more)
 
 ### Community 231 - "Round 5d: verification log"
 Cohesion: 0.08
@@ -1340,9 +1331,9 @@ Nodes (21): 1.1 Netherlands record duplicates content on screen, 1.2 "Entry pay"
 Cohesion: 0.13
 Nodes (14): 1.1 The evidence rule is inverted: hubs left white despite qualifying named employers already in the record, 1.2 "Could not confirm the head office" excuses that a public SEC filing (or the company's own site) disproves, 1.3 Russia: the sanction that directly affects a graduate's job is missing, and Rosneft is listed as an employer, 1.4 Citizenship-restricted public employers presented as graduate hubs, 1.5 Same-sex relations and other criminal-law basics are never mentioned, 1.6 Self-contradiction on screen: standing shown for a family marked "not rated" (29 hubs), 1.7 Smaller factual and framing errors, 1. CRITICAL: wrong or dangerously misleading (+6 more)
 
-### Community 244 - "theme.js"
-Cohesion: 0.15
-Nodes (12): Credits (photos, typefaces, data), TheGradCafe applicant-outcome aggregates, MBA calibration of CEIBS, Guanghua, Fudan, Nanyang, Photographs (Pexels, Wikimedia CC0), stored locally, Typefaces (SIL OFL, bundled in fonts/), menu(), closeSections(), set() (+4 more)
+### Community 244 - "menu"
+Cohesion: 0.67
+Nodes (3): menu(), closeSections(), set()
 
 ### Community 245 - "Audit 4: Immigration, procedures and costs, 25 European destinations"
 Cohesion: 0.17
@@ -1589,12 +1580,12 @@ Cohesion: 0.36
 Nodes (8): forPassport(), L(), verdictChip(), visaLine(), visaNotes(), visaRun(), drawFor(), v()
 
 ### Community 306 - "2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE vs GCC)"
-Cohesion: 0.15
-Nodes (13): 2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE vs GCC), Caso 10: Soggiorni Brevi (≤ 90 gg) e Ricongiungimento Familiare, Caso 1: Lavoro Dipendente Ordinario (Subordinate Employment - Mainland), Caso 2: Lavoro Altamente Qualificato / Skilled (Regimi Speciali QFC, QFZA, MOCI), Caso 3: Internship / Tirocinio, Caso 4: Studio Universitario (Bachelor / Master), Caso 5: Tesi / Ricerca all'Estero (Visiting Student e Ricercatore Scientifico), Caso 6: Erasmus+ e Mobilità Internazionale (+5 more)
+Cohesion: 0.11
+Nodes (18): 1. Architettura Giuridica ed Enti Competenti, 2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE vs GCC), 3. Riepilogo Costi Amministrativi Obbligatori per Tipologia, 4. Statuto Giuridico durante l'Attesa e Trappole Penali, 5. Sanzioni per Overstay e Termini di Grazia, Caso 10: Soggiorni Brevi (≤ 90 gg) e Ricongiungimento Familiare, Caso 1: Lavoro Dipendente Ordinario (Subordinate Employment - Mainland), Caso 2: Lavoro Altamente Qualificato / Skilled (Regimi Speciali QFC, QFZA, MOCI) (+10 more)
 
 ### Community 307 - "ref_fs"
-Cohesion: 0.11
-Nodes (13): fs, GEO, get(), https, METRICS, path, ROOT, dir (+5 more)
+Cohesion: 0.08
+Nodes (22): fs, GEO, get(), https, METRICS, path, ROOT, fs (+14 more)
 
 ### Community 308 - "Guida Ufficiale Visti e Immigrazione: Svizzera (Confederazione Svizzera)"
 Cohesion: 0.29
@@ -1617,20 +1608,20 @@ Cohesion: 0.29
 Nodes (7): 1. QUESTIONI APERTE E DISCREPANZE DA RISOLVERE, OQ-JP-01: Facoltà di Conversione in Loco (Change of Status) da Working Holiday a Visto Lavorativo (Gijinkoku) per Cittadini Italiani, OQ-JP-02: Esclusione Strutturale degli Atenei Italiani dai Ranking Abilitanti per il Visto J-Find, OQ-JP-03: Implementazione Operativa del Nuovo Tariffario Progressivo ISA dal 1° Ottobre 2026, OQ-JP-04: Transizione verso la "Myna Hokenshō" e Certificato di Conferma di Iscrizione per Neo-Arrivati, OQ-JP-05: Entrata in Vigore delle Riforme di Giugno 2024: Ikusei Shūrō e Revoca della PR (Aprile 2027), OQ-JP-06: Status di "Super-Turista" del Visto Digital Nomad e Assenza di Zairyu Card
 
 ### Community 313 - "1. Punti Aperti Normativi e Monitoraggio Attivo"
-Cohesion: 0.17
-Nodes (9): 1. Punti Aperti Normativi e Monitoraggio Attivo, 2. Monitoraggio delle Prassi Burocratiche e Tempi De Facto, NO-Q01: Proposta di Innalzamento dell'Underholdskrav a 4 G per il Ricongiungimento Familiare, NO-Q02: Modulazione Autonoma delle Tasse Universitarie Extra-UE da Agosto 2026, NO-Q03: Adeguamento Annuale delle Soglie Skilled Worker al Lønnsoppgjør (Maggio 2027), NO-Q04: Implementazione Operativa di ETIAS per la Norvegia (Q4 2026 / 2027), Registro Punti Aperti e Divergenze di Monitoraggio: Norvegia (NO), Indice delle Fonti Primarie Ufficiali (+1 more)
+Cohesion: 0.25
+Nodes (7): 1. Punti Aperti Normativi e Monitoraggio Attivo, 2. Monitoraggio delle Prassi Burocratiche e Tempi De Facto, NO-Q01: Proposta di Innalzamento dell'Underholdskrav a 4 G per il Ricongiungimento Familiare, NO-Q02: Modulazione Autonoma delle Tasse Universitarie Extra-UE da Agosto 2026, NO-Q03: Adeguamento Annuale delle Soglie Skilled Worker al Lønnsoppgjør (Maggio 2027), NO-Q04: Implementazione Operativa di ETIAS per la Norvegia (Q4 2026 / 2027), Registro Punti Aperti e Divergenze di Monitoraggio: Norvegia (NO)
 
 ### Community 314 - "Questioni Aperte e Punti di Monitoraggio: Polonia (PL)"
-Cohesion: 0.33
-Nodes (6): Questione Aperta 1: Prassi di Transizione Digitale del Portale MOS (Obbligatorio dal 27/04/2026) e Abolizione del Timbro Fisico, Questione Aperta 2: Sovraccarico Strutturale dei Voivodati Metropolitani (Mazowieckie e Małopolskie) e Ricorsi ex art. 112a, Questione Aperta 3: Restrizioni Bancarie all'Apertura del Conto Corrente (Direttiva PAD) per Titolari di Sola Attestazione di Domanda, Questione Aperta 4: Riluttanza dei Locatori Privati alla Dichiarazione di Residenza (*Meldunek / Zameldowanie*), Questione Aperta 5: Esclusione della Georgia dall'Oświadczenie (01/12/2025) e Rincaro Quadruplo dei Diritti Istruttori del Mercato del Lavoro, Questioni Aperte e Punti di Monitoraggio: Polonia (PL)
+Cohesion: 0.17
+Nodes (9): Questione Aperta 1: Prassi di Transizione Digitale del Portale MOS (Obbligatorio dal 27/04/2026) e Abolizione del Timbro Fisico, Questione Aperta 2: Sovraccarico Strutturale dei Voivodati Metropolitani (Mazowieckie e Małopolskie) e Ricorsi ex art. 112a, Questione Aperta 3: Restrizioni Bancarie all'Apertura del Conto Corrente (Direttiva PAD) per Titolari di Sola Attestazione di Domanda, Questione Aperta 4: Riluttanza dei Locatori Privati alla Dichiarazione di Residenza (*Meldunek / Zameldowanie*), Questione Aperta 5: Esclusione della Georgia dall'Oświadczenie (01/12/2025) e Rincaro Quadruplo dei Diritti Istruttori del Mercato del Lavoro, Questioni Aperte e Punti di Monitoraggio: Polonia (PL), 1. Registro Fonti Primarie Legislative e Regolamentari, 2. Portali Ufficiali Istituzionali di Riferimento (+1 more)
 
 ### Community 315 - "Guida Ufficiale Visti e Immigrazione: Portogallo (PT)"
 Cohesion: 0.17
 Nodes (12): 1.1 Quadro Normativo Cardine, 1.2 Mappa degli Enti e Portali Competenti, 1. Architettura Giuridica ed Enti Competenti, 4. Riepilogo Costi Amministrativi Obbligatori per Tipologia (Tariffe 2026), 5.1 Valore Legale della Ricevuta AIMA (Recibo de Pedido) `[PT-SRC-01]`, 5.2 Divieto Assoluto di Transito Schengen: La Regola dei Voli Diretti `[PT-SRC-23]`, 5. Statuto Giuridico durante l'Attesa e Disciplina dei Viaggi all'Estero, 6.1 Regime IRS Jovem (Artigo 12.º-B CIRS) `[PT-SRC-27]` (+4 more)
 
-### Community 316 - "Part 2: Research, frontier and governance roles"
-Cohesion: 0.13
-Nodes (15): 3. Role families, P1-3.1 Machine learning engineer, P1-3.2 AI engineer / LLM application engineer, P1-3.3 MLOps / ML platform / AI infrastructure engineer (including inference and GPU performance), P1-3.4 Computer vision / robotics / edge AI engineer, P1-3.5 AI data specialist / AI trainer / annotation and human-feedback work, P2-3.1 AI research scientist (industry and academia), P2-3.2 Research engineer (+7 more)
+### Community 316 - "Artificial Intelligence"
+Cohesion: 0.05
+Nodes (38): 1. What this branch is, 2. Map of areas and sectors, 3. Role families, 4. Banks vs. other employer types, 5. Which backgrounds fit this branch, 6. Sources, (a) Ratings by background, (a) Ratings by background (whole branch) (+30 more)
 
 ### Community 317 - "2. Questioni Aperte e Punti di Monitoraggio Amministrativo"
 Cohesion: 0.17
@@ -1647,10 +1638,6 @@ Nodes (8): 1. Elenco dei Punti Aperti e Questioni da Monitorare, Punti Aperti e 
 ### Community 320 - "Guida Ufficiale Visti e Immigrazione: Estonia (EE)"
 Cohesion: 0.18
 Nodes (11): 1.1 Quadro Normativo Cardine, 1.2 Mappa degli Enti e Portali Istituzionali, 1. Architettura Giuridica ed Enti Competenti, 3. Riepilogo Costi Amministrativi Obbligatori per Tipologia, 4.1 Assenza di Soggiorno Ponte per Prima Domanda di TRP (VMS §§ 43–44), 4.2 Regime Tassativo dei Viaggi all'Estero durante i 270 Giorni Post-Studio, 4. Statuto Giuridico durante l'Attesa, 5. Sezione Speciale: Red Flags, Trappole Amministrative e Rifiuti (+3 more)
-
-### Community 321 - "Part 1: Product software engineering"
-Cohesion: 0.11
-Nodes (18): 3. Role families, P1-3.1 Backend software engineer, P1-3.2 Frontend engineer, P1-3.3 Full-stack engineer (especially at startups and agencies), P1-3.4 Mobile engineer, P1-3.5 Game developer (programmer roles at studios), P1-3.6 QA / test automation engineer / SDET, P1-3.7 Solutions engineer / sales engineer / developer advocate (+10 more)
 
 ### Community 322 - "1. Elenco dei Punti Aperti e Questioni da Monitorare"
 Cohesion: 0.18
@@ -1677,8 +1664,8 @@ Cohesion: 0.12
 Nodes (15): 2.1 Schools missing from the MBA calculator (data/mba-model.js:554–597), 2.2 Programmes missing from the master's calculator (data/masters-model.js), 2.3 Programme types missing (with the question a student will ask), 2.4 Test and English options missing, 2.5 Grade converters still missing, 2.6 Money questions no calculator page answers, 2.7 MBA application craft is almost entirely missing, 2. MISSING basics a student will ask about (+7 more)
 
 ### Community 328 - "Questioni Aperte e Registro di Monitoraggio: Russia (RU)"
-Cohesion: 0.18
-Nodes (8): Aggiunta del 06/10/2026: Soglia HQS dal 01/03/2027 (OPEN-RU-HQS), Questione Aperta 1: Prassi di Applicazione del Termine Unificato di 30 Giorni per le Visite Mediche degli Studenti (Legge n. 162-FZ), Questione Aperta 2: Interoperabilità Tecnica del "Registro delle Persone Controllate" (Legge n. 248-FZ) con il Settore Bancario, Questione Aperta 3: Regime Operativo di Transito Bielorussia-Russia per Autoveicoli Privati con Targa UE, Questione Aperta 4: Monitoraggio della Proposta di Riforma della Soglia Salariale HQS/VKS a 717.000 RUB/Mese (Orizzonte Marzo 2027), Questione Aperta 5: Disponibilità e Prassi degli Slot Consolari Diretti in Italia dopo la Chiusura di Palermo, Questioni Aperte e Registro di Monitoraggio: Russia (RU), Registro delle Fonti Ufficiali e Normative: Russia (RU)
+Cohesion: 0.29
+Nodes (7): Aggiunta del 06/10/2026: Soglia HQS dal 01/03/2027 (OPEN-RU-HQS), Questione Aperta 1: Prassi di Applicazione del Termine Unificato di 30 Giorni per le Visite Mediche degli Studenti (Legge n. 162-FZ), Questione Aperta 2: Interoperabilità Tecnica del "Registro delle Persone Controllate" (Legge n. 248-FZ) con il Settore Bancario, Questione Aperta 3: Regime Operativo di Transito Bielorussia-Russia per Autoveicoli Privati con Targa UE, Questione Aperta 4: Monitoraggio della Proposta di Riforma della Soglia Salariale HQS/VKS a 717.000 RUB/Mese (Orizzonte Marzo 2027), Questione Aperta 5: Disponibilità e Prassi degli Slot Consolari Diretti in Italia dopo la Chiusura di Palermo, Questioni Aperte e Registro di Monitoraggio: Russia (RU)
 
 ### Community 329 - "page-programmes.js"
 Cohesion: 0.18
@@ -1697,16 +1684,16 @@ Cohesion: 0.20
 Nodes (9): 1. File Creati, 2. Modifiche Chirurgiche alla Codebase, 3. Esito Verifiche e Integrità della Build, A. `visas_immigration/README.md`, B. `data/atlas/ae.js`, C. `research/countries/ae-united-arab-emirates.md`, D. `research/places/gulf-and-central-eastern-europe.md`, E. `research/places/visas-and-work-rights.md` (+1 more)
 
 ### Community 333 - "Punti Aperti e Registro delle Incertezze: Malta (MT)"
-Cohesion: 0.20
-Nodes (7): 1. OQ-MT-01: Estensione dello Skills Pass ad altri settori oltre all'Hospitality, 2. OQ-MT-02: Rinvio dello Skills Pass per Lavoratori Nazionali e Cittadini UE al 2027, 3. OQ-MT-03: Mercato Nero degli Slot VFS Global e Tempi Consolari per Paesi Terzi, 4. OQ-MT-04: Transizione Riforma Fiscale Non-Dom 2027 e Tassa Minima di €5.000, 5. OQ-MT-05: Monitoraggio Rigoroso Quota Massimo Inquilini Housing Authority, Punti Aperti e Registro delle Incertezze: Malta (MT), Registro delle Fonti Ufficiali Primarie: Malta (MT)
+Cohesion: 0.33
+Nodes (6): 1. OQ-MT-01: Estensione dello Skills Pass ad altri settori oltre all'Hospitality, 2. OQ-MT-02: Rinvio dello Skills Pass per Lavoratori Nazionali e Cittadini UE al 2027, 3. OQ-MT-03: Mercato Nero degli Slot VFS Global e Tempi Consolari per Paesi Terzi, 4. OQ-MT-04: Transizione Riforma Fiscale Non-Dom 2027 e Tassa Minima di €5.000, 5. OQ-MT-05: Monitoraggio Rigoroso Quota Massimo Inquilini Housing Authority, Punti Aperti e Registro delle Incertezze: Malta (MT)
 
 ### Community 334 - "Questioni Aperte e Punti di Monitoraggio Manuale: Spagna (ES)"
 Cohesion: 0.20
 Nodes (7): OQ-ES-01: Durata dell'Autorizzazione per Ricerca Lavoro (DA 17ª Ley 14/2013), OQ-ES-02: Dottorandi con Borse Estere o Senza Contratto EPI ex Criterio de Gestión 2/2026, OQ-ES-03: Efficacia Pratica del Silenzio Positivo nei Rapporti con Banche e Risorse Umane, OQ-ES-04: Contrasto ai Bot della Cita Previa e Nuove Misure Tecnologiche, OQ-ES-05: Interpretazione DGT del Regime Beckham per Studenti di Master Online o Semestrali, Questioni Aperte e Punti di Monitoraggio Manuale: Spagna (ES), Registro Ufficiale delle Fonti: Spagna (ES)
 
 ### Community 335 - "1. Questioni Aperte da Monitorare Periodicamente"
-Cohesion: 0.22
-Nodes (9): 1. Questioni Aperte da Monitorare Periodicamente, 2. Registro Parametri Volatili e Scadenziario Revisioni, 3. Contatti Istituzionali di Riferimento per Assistenza di Frontiera, Aggiunta del 06/10/2026: Tariffe in euro dopo l'adozione dell'euro (OPEN-BG-EUR), Punto Aperto 1: Proposta di Aumento della Tassa Consolare Visto D (Тарифа № 3 МВнР), Punto Aperto 2: Controlli Mobili Residui alle Frontiere Terrestri Interne (Grecia e Romania), Punto Aperto 3: Applicazione della Quota del 20%/35% (Art. 7 ЗТМТМ) alle Domande di EU Blue Card, Punto Aperto 4: Superamento delle Barriere Bancarie (FATF Grey List e Direttiva PAD) (+1 more)
+Cohesion: 0.15
+Nodes (10): 1. Questioni Aperte da Monitorare Periodicamente, 2. Registro Parametri Volatili e Scadenziario Revisioni, 3. Contatti Istituzionali di Riferimento per Assistenza di Frontiera, Aggiunta del 06/10/2026: Tariffe in euro dopo l'adozione dell'euro (OPEN-BG-EUR), Punto Aperto 1: Proposta di Aumento della Tassa Consolare Visto D (Тарифа № 3 МВнР), Punto Aperto 2: Controlli Mobili Residui alle Frontiere Terrestri Interne (Grecia e Romania), Punto Aperto 3: Applicazione della Quota del 20%/35% (Art. 7 ЗТМТМ) alle Domande di EU Blue Card, Punto Aperto 4: Superamento delle Barriere Bancarie (FATF Grey List e Direttiva PAD) (+2 more)
 
 ### Community 336 - "2. Modifiche alla Codebase Esistente"
 Cohesion: 0.22
@@ -1901,8 +1888,8 @@ Cohesion: 0.29
 Nodes (7): 1. Percorso D3 Ordinario (Art. 61.º-A e Art. 90.º Lei 23/2007) `[PT-SRC-01]`, 2. Carta Blu UE / Cartão Azul UE (Artt. 121.º-A a 121.º-K Lei 23/2007) `[PT-SRC-24]`, 3. Programma Tech Visa (Portaria n.º 111/2019) `[PT-SRC-25]`, 4. Startup Visa (Despacho n.º 567-B/2018) `[PT-SRC-01]`, Caso 2: Lavoro Altamente Qualificato / Skilled (D3, Carta Blu UE, Tech Visa, Startup Visa), Cittadini Extra-UE, Cittadini UE / SEE / Svizzeri
 
 ### Community 384 - "1. QUESTIONI APERTE E STATI NON CONCLUSI (UNVERIFIABLE / IN ATTUAZIONE)"
-Cohesion: 0.18
-Nodes (8): 1. QUESTIONI APERTE E STATI NON CONCLUSI (UNVERIFIABLE / IN ATTUAZIONE), 2. REGISTRO DEI DATI VOLATILI (CON DATE DI SCADENZA AUDIT), 3. CONTATTI ISTITUZIONALI PER RISOLUZIONE QUESITI, Punto Aperto 1: Accordo Bilaterale Working Holiday con la Repubblica di Corea, Punto Aperto 2: Regime Definitivo delle Frontiere Terrestri Schengen (Ungheria e Bulgaria), Punto Aperto 3: Transizione Telematica OUG nr. 32/2026 e Piattaforma WorkinRomania.gov.ro, Registro dei Punti Aperti e Questioni da Monitorare: Romania (RO), Registro delle Fonti Primarie Ufficiali: Romania (RO)
+Cohesion: 0.29
+Nodes (7): 1. QUESTIONI APERTE E STATI NON CONCLUSI (UNVERIFIABLE / IN ATTUAZIONE), 2. REGISTRO DEI DATI VOLATILI (CON DATE DI SCADENZA AUDIT), 3. CONTATTI ISTITUZIONALI PER RISOLUZIONE QUESITI, Punto Aperto 1: Accordo Bilaterale Working Holiday con la Repubblica di Corea, Punto Aperto 2: Regime Definitivo delle Frontiere Terrestri Schengen (Ungheria e Bulgaria), Punto Aperto 3: Transizione Telematica OUG nr. 32/2026 e Piattaforma WorkinRomania.gov.ro, Registro dei Punti Aperti e Questioni da Monitorare: Romania (RO)
 
 ### Community 385 - "build-shell.js"
 Cohesion: 0.20
@@ -1937,8 +1924,8 @@ Cohesion: 0.33
 Nodes (5): Q1: Prassi di Esenzione dalla Tassa Consolare di Ingresso a Posteriori (*Tek Giriş Vize Harcı*) per Cittadini Italiani, Q2: Attuazione del Regolamento per il Digital Nomad Visa e Disciplina Fiscale del Telelavoro, Q3: Discrezionalità Bancaria di Filiale sull'Apertura Conti per Residenti con Müracaat Belgesi, Q4: Tempi di Consegna Postale PTT e Tracciamento dei Rientri alla Direzione Provinciale, Questioni Aperte e Punti di Monitoraggio: Turchia (TR)
 
 ### Community 393 - "1. Questioni Aperte e Discrepanze Rilevate dal Verification Council"
-Cohesion: 0.33
-Nodes (6): 1. Questioni Aperte e Discrepanze Rilevate dal Verification Council, Q-UAE-01: Risoluzione del Blocco "Duplicate UID" tra Dubai (GDRFA) e Livello Federale (ICP), Q-UAE-02: Rifiuto dell'Emirates ID Digitale da Parte delle Banche Retail Tradizionali e Paradosso degli Assegni / Ejari, Q-UAE-03: Gestione delle Cicatrici Polmonari Pregresse (Old Healed TB Scars) nel Primo Visto di Residenza, Q-UAE-04: Tempi di Risposta degli Atenei Esteri al Sistema MOHESR / DataFlow Group, Q-UAE-05: Criteri Probatori per Redditi Esteri e Criptovalute nel Green Visa Freelance
+Cohesion: 0.15
+Nodes (10): 1. Questioni Aperte e Discrepanze Rilevate dal Verification Council, Punti Aperti e Questioni da Verificare Manualmente: Emirati Arabi Uniti (UAE), Q-UAE-01: Risoluzione del Blocco "Duplicate UID" tra Dubai (GDRFA) e Livello Federale (ICP), Q-UAE-02: Rifiuto dell'Emirates ID Digitale da Parte delle Banche Retail Tradizionali e Paradosso degli Assegni / Ejari, Q-UAE-03: Gestione delle Cicatrici Polmonari Pregresse (Old Healed TB Scars) nel Primo Visto di Residenza, Q-UAE-04: Tempi di Risposta degli Atenei Esteri al Sistema MOHESR / DataFlow Group, Q-UAE-05: Criteri Probatori per Redditi Esteri e Criptovalute nel Green Visa Freelance, 1. Fonti Primarie Legislative e Istituzionali degli Emirati Arabi Uniti (+2 more)
 
 ### Community 394 - "Registro delle Modifiche (Changelog): Kuwait (KW)"
 Cohesion: 0.40
@@ -2059,10 +2046,6 @@ Nodes (4): Borse di Dottorato FCT (Fundação para a Ciência e a Tecnologia) `[
 ### Community 423 - "Career Compass: plan"
 Cohesion: 0.17
 Nodes (11): 10. As built (9 October 2026), 1. What it is, and what it is not, 2. The research it uses (most of it is not on the site today), 3. The questionnaire (four parts, 17 questions in the full mode, every one skippable; quick mode asks 1, 2, 6, 7, 8, 9, 10, 13), 4. Scoring (transparent, client-side, no model), 5. Results page, 6. Build, 7. Checks (+3 more)
-
-### Community 424 - "Registro Punti Aperti e Verifiche Manuali: Singapore (SGP)"
-Cohesion: 0.50
-Nodes (3): 1. Punti Aperti Risolti nel Council del 05/10/2026, 2. Punti Aperti e Verifiche Manuali Attive (Da Monitorare sul Campo), Registro Punti Aperti e Verifiche Manuali: Singapore (SGP)
 
 ### Community 425 - "Caso 6: Erasmus+ / SEMP (Swiss European Mobility Programme)"
 Cohesion: 0.50
@@ -2212,12 +2195,8 @@ Nodes (6): 0.1 What Admetia is becoming, 0.2 What exists, so it is not rebuilt, 
 Cohesion: 0.33
 Nodes (6): Metrics (new), New and changed claims, Notes on the Portugal section, P47 Portugal (data/atlas/pt.js), Ratings changed (old → new), Standing (new)
 
-### Community 557 - "compass-core.js"
-Cohesion: 0.20
-Nodes (25): adjust(), background(), balance(), band(), clamp(), context(), employer(), has() (+17 more)
-
 ### Community 558 - "ux-ledger.js"
-Cohesion: 0.14
+Cohesion: 0.13
 Nodes (19): Rules (read first), args, blocks(), crypto, decode(), ENT, { execFileSync }, externalLinks() (+11 more)
 
 ### Community 559 - "Punti Aperti e Questioni da Verificare Manualmente: Francia (FR)"
@@ -2248,24 +2227,20 @@ Nodes (8): 1. QUESTIONI APERTE E DISCREPANZE DA RISOLVERE, OQ-KR-01: Regime Post
 Cohesion: 0.12
 Nodes (15): 2.1 Journeys, 2.2 Sitemap, 2.3 Vocabulary, 2.4 Navigation, 2.5 What was split, and what was not, 2.6 Validation script for real users (not run), 2. Journeys and information architecture, J1. Choosing a master's (+7 more)
 
-### Community 566 - "interview.js"
-Cohesion: 0.17
-Nodes (11): AREAS, CASE_STEPS, CASE_STYLES, CRITERIA, DECKS, DRILL, OFFICIAL, PRACTICE (+3 more)
-
-### Community 567 - "index.md"
-Cohesion: 0.08
-Nodes (24): 1. The branches, 2. Shared scales and conventions, 5. Assumptions made, 6. Gaps and low-confidence areas to verify, Career branches: index, 1. What this branch is, 4. Banks vs. other employer types, 6. Sources (+16 more)
+### Community 566 - "careers/getting-in.js"
+Cohesion: 0.09
+Nodes (19): CAL, DOCX, fs, IV, M, P, path, TPL (+11 more)
 
 ### Community 568 - "Registro delle Fonti Primarie e Riferimenti Normativi: Stati Uniti (US)"
 Cohesion: 0.50
 Nodes (3): 1. Indice Sistematico delle Fonti Primarie, 2. Note di metodo, Registro delle Fonti Primarie e Riferimenti Normativi: Stati Uniti (US)
 
-### Community 569 - "2. Map of areas and sectors"
-Cohesion: 0.12
-Nodes (15): 1. What this branch is, 2.1 General management and leadership development (management-trainee schemes), 2.2 Operations management, 2.3 Project and programme management, 2.4 Human resources / people management, 2.5 Corporate strategy and business development (in-house), 2.6 Public-sector and non-profit management (brief), 2.7 Retail and hospitality management (brief) (+7 more)
+### Community 569 - "3. Role families"
+Cohesion: 0.07
+Nodes (29): 1. What this branch is, 2.1 General management and leadership development (management-trainee schemes), 2.2 Operations management, 2.3 Project and programme management, 2.4 Human resources / people management, 2.5 Corporate strategy and business development (in-house), 2.6 Public-sector and non-profit management (brief), 2.7 Retail and hospitality management (brief) (+21 more)
 
 ### Community 570 - "3. Role families"
-Cohesion: 0.07
+Cohesion: 0.08
 Nodes (26): 1. What this branch is, 2.1 Strategy consulting: MBB and tier-2, 2.2 Big 4 consulting and Accenture, 2.3 Specialist and boutique consulting, 2.4 Operations and implementation consulting, 2.5 In-house/internal strategy and transformation teams, 2.6 Public-sector consulting, 2. Map of areas and sectors (+18 more)
 
 ### Community 571 - "3. Role families"
@@ -2273,11 +2248,11 @@ Cohesion: 0.10
 Nodes (19): 1. What this branch is, 2.1 The employer landscape in 2026, 2.2 The hiring market and pay dynamics (dated data), 2.3 Sub-areas, 2. Map of areas and sectors, 3.1 Machine learning engineer, 3.2 AI engineer / LLM application engineer, 3.3 MLOps / ML platform / AI infrastructure engineer (including inference and GPU performance) (+11 more)
 
 ### Community 573 - "2. Pay by branch and role family"
-Cohesion: 0.14
-Nodes (14): 2. Pay by branch and role family, Accounting, Artificial Intelligence, Computer Science, Cybersecurity, Data Analytics, Data Science, Economics (+6 more)
+Cohesion: 0.11
+Nodes (18): 1. How to read Italian pay, 2. Pay by branch and role family, 3. Graduate outcome benchmarks, 4. Sources, Accounting, Artificial Intelligence, Computer Science, Cybersecurity (+10 more)
 
 ### Community 574 - "3. Role families"
-Cohesion: 0.09
+Cohesion: 0.10
 Nodes (21): 1. What this branch is, 2. Map of areas and sectors, 3.10 Development economist and impact-evaluation researcher, 3.11 Health economist (HEOR and market access), 3.1 Central bank economist (research and policy tracks), 3.2 Economist at an international organisation (IMF/World Bank/OECD/development banks), 3.3 Government economist / official statistician, 3.4 Economic consultant (competition, litigation, regulation) (+13 more)
 
 ### Community 575 - "Audit 2: Atlas geography and labour markets (Nordics, CEE, Southern Europe)"
@@ -2296,10 +2271,6 @@ Nodes (7): 1. File Creati (Struttura della Fonte Unica di Verità), 2. Modifiche
 Cohesion: 0.15
 Nodes (12): Accessibility & Inclusion, Brand Commitments, Capabilities and Constraints, Evidence on Hand, Operating Context, Platform, Positioning, Product (+4 more)
 
-### Community 579 - "ref_vm"
-Cohesion: 0.18
-Nodes (9): fs, get(), https, IND, ISO3, path, ROOT, vm (+1 more)
-
 ### Community 580 - "3. Role families"
 Cohesion: 0.12
 Nodes (15): 1. What this branch is, 2. Map of areas and sectors, 3.1 DevOps / site reliability / platform engineer, 3.2 Cloud engineer / cloud solutions architect, 3.3 Embedded / firmware / systems engineer, 3.4 Data engineer, 3.5 Enterprise applications consultant (SAP, Salesforce, ServiceNow, etc.) and IT systems administrator/support, 3.6 Technology consultant at an IT consultancy / system integrator (+7 more)
@@ -2313,8 +2284,8 @@ Cohesion: 0.10
 Nodes (19): Metrics (new), Metrics (new), Metrics (new), New and changed claims, New and changed claims, New and changed claims, Notes on the Greece section, Notes on the Malta section (+11 more)
 
 ### Community 583 - "3. Role families"
-Cohesion: 0.14
-Nodes (14): 3.10 E-commerce manager, 3.11 Category and trade marketing manager, 3.12 Events and sponsorship manager, 3.1 Brand manager, 3.2 Digital / performance marketing specialist, 3.3 Content, social and community marketer, 3.4 Product marketing manager (tech/B2B), 3.5 CRM / lifecycle marketing specialist (+6 more)
+Cohesion: 0.10
+Nodes (20): 1. What this branch is, 2. Map of areas and sectors, 3.10 E-commerce manager, 3.11 Category and trade marketing manager, 3.12 Events and sponsorship manager, 3.1 Brand manager, 3.2 Digital / performance marketing specialist, 3.3 Content, social and community marketer (+12 more)
 
 ### Community 584 - "A. Field plates (13): drawn still lifes"
 Cohesion: 0.14
@@ -2366,7 +2337,7 @@ Nodes (10): P4-3.1 FP&A / corporate finance analyst (to CFO track), P4-3.2 Corpo
 
 ### Community 596 - "assets/getting-in.js"
 Cohesion: 0.06
-Nodes (52): apply(), asText(), checks(), cover(), cur(), draftKey(), el(), fmt() (+44 more)
+Nodes (60): arrive(), comparePage(), apply(), boxes(), drawSide(), picked(), el(), fold() (+52 more)
 
 ### Community 597 - "B. Role scenes (11): drawn scenes"
 Cohesion: 0.17
@@ -2396,10 +2367,6 @@ Nodes (41): Claude prompt: complete image-placement audit for Admetia, advisoryN
 Cohesion: 0.25
 Nodes (7): 1. What this branch is, 2. Map of areas and sectors, 3. Role families, 4. Banks vs. other employer types, 5. Which backgrounds fit this branch, 6. Sources, Sub-agent brief template (used for all research agents)
 
-### Community 604 - "read"
-Cohesion: 0.18
-Nodes (11): enOnly, figBad, h1, ids(), navOff, noNav, noSkip, noTrail (+3 more)
-
 ### Community 605 - "switzerland_visas_immigration_guide.md"
 Cohesion: 0.10
 Nodes (17): 1. File Creati (Struttura della Fonte Unica di Verità), 2. Modifiche Chirurgiche alla Codebase Esistente, 3. Esito del Controllo di Integrità e Baseline, Modifica 1: `research/places/visas-and-work-rights.md`, Modifica 2: `research/countries/ch-switzerland.md`, Modifica 3: `visas_immigration/README.md`, Registro delle Modifiche (Changelog): Svizzera (CH), 1. Monitoraggio Istituzionale e Riforme Legislative (+9 more)
@@ -2417,8 +2384,8 @@ Cohesion: 0.22
 Nodes (8): 1. Explore, 2. Generator, 3. Site integration, 4. Checks (tests/careers-test.js), 5. Visual review, 6. Career Compass (docs/CAREER-COMPASS.md), Career Explorer: progress checklist, Status (9 October 2026)
 
 ### Community 610 - "4. Role families compared across branches"
-Cohesion: 0.14
-Nodes (14): 4. Role families compared across branches, [Accounting](reports/accounting.md), [Artificial Intelligence](reports/artificial-intelligence.md), [Computer Science](reports/computer-science.md), [Cybersecurity](reports/cybersecurity.md), [Data Analytics](reports/data-analytics.md), [Data Science](reports/data-science.md), [Economics](reports/economics.md) (+6 more)
+Cohesion: 0.11
+Nodes (19): 1. The branches, 2. Shared scales and conventions, 4. Role families compared across branches, 5. Assumptions made, 6. Gaps and low-confidence areas to verify, [Accounting](reports/accounting.md), [Artificial Intelligence](reports/artificial-intelligence.md), Career branches: index (+11 more)
 
 ### Community 611 - "Career branches: index"
 Cohesion: 0.50
@@ -2448,10 +2415,6 @@ Nodes (10): 2.0 Where data science ends and its neighbours begin, 2.1 What "data
 Cohesion: 0.18
 Nodes (10): AXIS, MYTHS, P, PLACES, ROWS, RULES, SECTORS, TABLES (+2 more)
 
-### Community 619 - "careers/getting-in.js"
-Cohesion: 0.20
-Nodes (8): CAL, DOCX, fs, IV, M, P, path, TPL
-
 ### Community 633 - "keyFigures"
 Cohesion: 0.33
 Nodes (9): colourCountry(), continentOf(), drawLegend(), indicator(), keyFigures(), paint(), scaleOf(), secFigures() (+1 more)
@@ -2468,10 +2431,6 @@ Nodes (8): 4.1 Tests and build, 4.2 Content preservation, 4.3 Accessibility, 4.4
 Cohesion: 0.22
 Nodes (8): FIG, fs, LEVEL, LEVEL_NAME, M, P, path, SH
 
-### Community 637 - "Part-level ratings and notes"
-Cohesion: 0.25
-Nodes (8): 5. Which backgrounds fit this branch, (a) Ratings by background, (a) Ratings by background (whole branch), (b) Matrix by role family (all parts), (b) Role-family matrix (S = strong, P = possible, X = stretch), Part 1: Building AI systems, Part 2: Research, frontier and governance roles, Part-level ratings and notes
-
 ### Community 638 - "C. Diagrams (8): build in code, not with an image model"
 Cohesion: 0.22
 Nodes (9): AST-025 · `diagram-rag-pipeline`, AST-026 · `diagram-mlops-three-layers`, AST-027 · `diagram-star-schema`, AST-028 · `diagram-soc-tiers`, AST-029 · `diagram-three-way-match`, AST-030 · `diagram-audit-vouching`, AST-031 · `diagram-data-pipeline-roles`, AST-032 · `diagram-planning-loop` (+1 more)
@@ -2480,13 +2439,13 @@ Nodes (9): AST-025 · `diagram-rag-pipeline`, AST-026 · `diagram-mlops-three-la
 Cohesion: 0.29
 Nodes (6): 1.1 What is published, and what is not, 1.2 Routes at the baseline, 1.3 Baseline results, 1.4 Problems found, 1.5 Migration ledger, 1. Inventory, baseline and migration ledger
 
-### Community 641 - "hiring-check.js"
-Cohesion: 0.31
+### Community 641 - "ref_vm"
+Cohesion: 0.27
 Nodes (8): check(), fs, isDate(), load(), numsOf(), path, ROOT, vm
 
-### Community 643 - "Guida Ufficiale Visti e Immigrazione: Stato del Qatar"
-Cohesion: 0.17
-Nodes (9): 1. REGISTRO DEI PUNTI APERTI E DISCREPANZE AUDITATE, 2. MODALITÀ DI CHIUSURA DEI PUNTI APERTI, Punti Aperti e Verifiche Manuali: Qatar (QA), Registro Ufficiale delle Fonti: Qatar (QA), 1. Architettura Giuridica ed Enti Competenti, 3. Riepilogo Costi Amministrativi Obbligatori per Tipologia, 4. Statuto Giuridico durante l'Attesa e Trappole Penali, 5. Sanzioni per Overstay e Termini di Grazia (+1 more)
+### Community 643 - "Punti Aperti e Verifiche Manuali: Qatar (QA)"
+Cohesion: 0.67
+Nodes (3): 1. REGISTRO DEI PUNTI APERTI E DISCREPANZE AUDITATE, 2. MODALITÀ DI CHIUSURA DEI PUNTI APERTI, Punti Aperti e Verifiche Manuali: Qatar (QA)
 
 ### Community 644 - "3. Components and patterns"
 Cohesion: 0.25
@@ -2495,10 +2454,6 @@ Nodes (7): 3. Components and patterns, Archetypes, Chrome, Content patterns, Dis
 ### Community 645 - "6. Disciplina del Registro Non Residenti (RNI - Soggiorni < 4 Mesi)"
 Cohesion: 0.50
 Nodes (4): 6. Disciplina del Registro Non Residenti (RNI - Soggiorni < 4 Mesi), Elenco dei 19 Comuni Abilitati allo Sportello RNI, Finalità e Vantaggi, Riforma Reclutamento Tassativa 2026 (Separazione UE vs Extra-UE)
-
-### Community 646 - "read"
-Cohesion: 0.25
-Nodes (8): badNotes, dupIds, ldOf(), missingMenus, plain(), read(), seoBad, srcOpen
 
 ### Community 647 - "Admetia UX restructuring: working documents"
 Cohesion: 0.33
@@ -2515,10 +2470,6 @@ Nodes (4): 1. Tabella dei Punti Aperti, 2. Raccomandazioni Operative per i Candi
 ### Community 650 - "8. Your own situation"
 Cohesion: 0.40
 Nodes (5): 8.1 What it could cover, 8.2 How to implement without becoming intrusive, 8.3 Data and sources, 8.4 Deliverables, 8. Your own situation
-
-### Community 651 - "Part 1: Building AI systems"
-Cohesion: 0.33
-Nodes (6): 2. Map of areas and sectors, P1-2.1 The employer landscape in 2026, P1-2.2 The hiring market and pay dynamics (dated data), P1-2.3 Sub-areas, Part 1: Building AI systems, Part 2: Research, frontier and governance roles
 
 ### Community 652 - "Caso 6: Erasmus+ e Mobilità Intra-UE"
 Cohesion: 0.67
@@ -2537,12 +2488,8 @@ Cohesion: 0.67
 Nodes (3): A. Paesi Convenzionati, B. Requisiti e Limiti Operativi, Caso 8: Working Holiday (WHP / WHS - Working Holiday Programme & Scheme)
 
 ### Community 657 - "Part 1: Product software engineering"
-Cohesion: 0.07
-Nodes (27): 1. What this branch is, 2. Map of areas and sectors, 4. Banks vs. other employer types, 5. Which backgrounds fit this branch, 6. Sources, (a) Background ratings, (a) Ratings by background (whole branch), (b) Matrix by role family (all parts) (+19 more)
-
-### Community 658 - "iceland_visas_immigration_guide.md"
-Cohesion: 0.25
-Nodes (5): 1. Tabella delle Questioni Aperte e Monitoraggio, Aggiunta del 06/10/2026, Registro Questioni Aperte e Punti di Monitoraggio: Islanda (IS), Indice delle Fonti Primarie Verificate, Registro Ufficiale delle Fonti Primarie: Islanda (IS)
+Cohesion: 0.04
+Nodes (45): 1. What this branch is, 2. Map of areas and sectors, 3. Role families, 4. Banks vs. other employer types, 5. Which backgrounds fit this branch, 6. Sources, (a) Background ratings, (a) Ratings by background (whole branch) (+37 more)
 
 ### Community 659 - "Registro delle Fonti Ufficiali: Turchia (TR)"
 Cohesion: 0.50
@@ -2581,8 +2528,8 @@ Cohesion: 0.50
 Nodes (3): 1. Registro delle Modifiche Pianificate e Applicate, 2. Creazione della Struttura di Fonte Unica, Changelog Consolidamento Immigrazione e Visti: Polonia (PL)
 
 ### Community 669 - "1. Questioni Aperte e Discrepanze Rilevate dal Verification Council"
-Cohesion: 0.33
-Nodes (6): 1. Questioni Aperte e Discrepanze Rilevate dal Verification Council, Q-OM-01: Applicazione della Deroga Salariale per il Ricongiungimento Familiare (600 OMR vs 300 OMR), Q-OM-02: Tempi Reali dell'Attestazione Titoli MOFA tramite Oman Post, Q-OM-03: Verifica DataFlow per Figure Commerciali e di Direzione, Q-OM-04: Transizione Tecnologica Mobile PKI da SIM "Tam" a App "Theqa", Q-OM-05: Assenza di Percorsi di Tirocinio Aziendale Indipendente per Laureati Esteri
+Cohesion: 0.15
+Nodes (10): 1. Questioni Aperte e Discrepanze Rilevate dal Verification Council, Punti Aperti e Questioni da Verificare Manualmente: Sultanato dell'Oman (OM), Q-OM-01: Applicazione della Deroga Salariale per il Ricongiungimento Familiare (600 OMR vs 300 OMR), Q-OM-02: Tempi Reali dell'Attestazione Titoli MOFA tramite Oman Post, Q-OM-03: Verifica DataFlow per Figure Commerciali e di Direzione, Q-OM-04: Transizione Tecnologica Mobile PKI da SIM "Tam" a App "Theqa", Q-OM-05: Assenza di Percorsi di Tirocinio Aziendale Indipendente per Laureati Esteri, 1. Fonti Primarie Statali e Legislative dell'Oman (+2 more)
 
 ### Community 671 - "Sistema di Riferimento Unico: Visti e Immigrazione (Admetia)"
 Cohesion: 0.50
@@ -2591,10 +2538,6 @@ Nodes (4): Indice dei Paesi e Stato di Verifica, Regole di Governance e Integrit
 ### Community 672 - "6. Realtà Pratica, Friczioni e Trappole Operative"
 Cohesion: 0.33
 Nodes (6): 6.1. La Crisi Abitativa e la Trappola dell'Anagrafe (*Anmelde-Falle*), 6.2. Tempi Reali di Rilascio dei Permessi e il Limbo dei Viaggi Schengen, 6.3. Difficoltà Bancarie e Barriera FATCA per Cittadini USA, 6.4. Rigidità dei Controlli sul Meldeverfahren e Tolleranza Zero, 6.5. Mercato del Lavoro Reale per Laureati Extra-UE di Atenei Svizzeri, 6. Realtà Pratica, Friczioni e Trappole Operative
-
-### Community 673 - "is"
-Cohesion: 0.67
-Nodes (3): is(), parse(), t()
 
 ### Community 674 - "config.js"
 Cohesion: 0.33
@@ -2625,24 +2568,24 @@ Cohesion: 0.67
 Nodes (3): A. Cittadini UE / AELS, B. Cittadini Extra-UE (Procedura Visto D e Permesso B Studio), Caso 4: Studio Universitario (Bachelor / Master)
 
 ## Knowledge Gaps
-- **5234 isolated node(s):** `Why the first versions went wrong, and what changes`, `field-marketing`, `field-artificial-intelligence`, `field-economics`, `fs` (+5229 more)
+- **5234 isolated node(s):** `here`, `root`, `built`, `out`, `name` (+5229 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5760 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **170 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **176 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `index.js`, `atlas-geo.js`, `atlas-test.js`, `page-map.js`, `i18n-test.js`, `Admetia README`, `Business tracks picker page`?**
+- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **What connects `Why the first versions went wrong, and what changes`, `field-marketing`, `field-artificial-intelligence` to the rest of the system?**
+- **What connects `here`, `root`, `built` to the rest of the system?**
   _5234 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `results-kit.js` be split into smaller, more focused modules?**
   _Cohesion score 0.13438735177865613 - nodes in this community are weakly interconnected._
 - **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `build-brand.py`, `Verification round 5b (3 October 2026)`, `Round 5d: verification log`, `P44 Ireland (data/atlas/ie.js)`, `P41 United Kingdom (data/atlas/gb.js)`, `ux-ledger.js`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `P38 Italy (data/atlas/it.js)`, `What to add to each entry file`, `United States (P60)`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Should `intro.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.10448979591836735 - nodes in this community are weakly interconnected._
-- **Why does `v()` connect `drawFor` to `results-kit.js`, `ux-test.js`, `create`, `assets/getting-in.js`, `el`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _Cohesion score 0.1037037037037037 - nodes in this community are weakly interconnected._
+- **Why does `Rules (read first)` connect `ux-ledger.js` to `data`, `What to add to each entry file`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Should `create` be split into smaller, more focused modules?**
   _Cohesion score 0.10609756097560975 - nodes in this community are weakly interconnected._

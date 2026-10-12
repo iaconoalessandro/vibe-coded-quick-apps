@@ -354,8 +354,8 @@
     "semantic_hash": ""
   },
   "js/i18n-it.js": {
-    "mtime": 1791789642.4869998,
-    "seen": 1791789746.263554,
+    "mtime": 1791789770.7991467,
+    "seen": 1791789781.7878568,
     "ast_hash": "e40e45cea3ccee901647b08d2fb3ba8e",
     "semantic_hash": ""
   },
@@ -378,8 +378,8 @@
     "semantic_hash": ""
   },
   "js/page-map.js": {
-    "mtime": 1791789554.0186336,
-    "seen": 1791789746.263558,
+    "mtime": 1791789770.7998714,
+    "seen": 1791789781.7879858,
     "ast_hash": "07a7ad595f8dcdf1e6f0ab7d29cdc856",
     "semantic_hash": ""
   },
@@ -468,8 +468,8 @@
     "semantic_hash": ""
   },
   "tests/atlas-test.js": {
-    "mtime": 1791789592.2675798,
-    "seen": 1791789746.263576,
+    "mtime": 1791789770.800203,
+    "seen": 1791789781.788658,
     "ast_hash": "844d00cd3b2bfeeafedf948abfe911e9",
     "semantic_hash": ""
   },
@@ -500,7 +500,7 @@
   "tests/fixtures/mba-golden.json": {
     "mtime": 1789305605.6794183,
     "seen": 1791789746.263581,
-    "ast_hash": "6a5c4c44f650dd9f5f9e822ebec6ac05",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "tests/i18n-test.js": {
@@ -600,8 +600,8 @@
     "semantic_hash": ""
   },
   "CREDITS.md": {
-    "mtime": 1791789653.2193475,
-    "seen": 1791789746.2636192,
+    "mtime": 1791789770.7735634,
+    "seen": 1791789781.790215,
     "ast_hash": "6f6f72bca6d817e437bbb929ed478d7e",
     "semantic_hash": ""
   },
@@ -4070,7 +4070,7 @@
   "careers/data/careers.json": {
     "mtime": 1791789659.6447198,
     "seen": 1791789746.263415,
-    "ast_hash": "83e115cea78658b97ca6145a984fa633",
+    "ast_hash": "",
     "semantic_hash": ""
   },
   "careers/data/search-index.json": {
@@ -4080,8 +4080,8 @@
     "semantic_hash": ""
   },
   "tests/careers-test.js": {
-    "mtime": 1791789583.0275655,
-    "seen": 1791789746.263576,
+    "mtime": 1791789770.800493,
+    "seen": 1791789781.788658,
     "ast_hash": "81c5f5fd69fbf38ce87119df805d9d3f",
     "semantic_hash": ""
   },
@@ -4122,8 +4122,8 @@
     "semantic_hash": ""
   },
   "tools/careers/render.js": {
-    "mtime": 1791789575.9083576,
-    "seen": 1791789746.263607,
+    "mtime": 1791789770.8011656,
+    "seen": 1791789781.7897532,
     "ast_hash": "c86884e6214904ab0985c8542dcfe42e",
     "semantic_hash": ""
   },
@@ -4410,8 +4410,8 @@
     "semantic_hash": ""
   },
   "careers/roles/brand-manager.html": {
-    "mtime": 1791789660.0234048,
-    "seen": 1791789746.2636642,
+    "mtime": 1791789770.773929,
+    "seen": 1791789781.792089,
     "ast_hash": "af60dcc9d2540ee771d78c57932a2f97",
     "semantic_hash": ""
   },
@@ -4446,8 +4446,8 @@
     "semantic_hash": ""
   },
   "careers/roles/computer-vision-robotics-edge-ai-engineer.html": {
-    "mtime": 1791789660.010136,
-    "seen": 1791789746.26367,
+    "mtime": 1791789770.774266,
+    "seen": 1791789781.792331,
     "ast_hash": "d2b6ddfa9409b651e2576b998efaf78b",
     "semantic_hash": ""
   },
@@ -4566,8 +4566,8 @@
     "semantic_hash": ""
   },
   "careers/roles/embedded-firmware-systems-engineer.html": {
-    "mtime": 1791789660.0080638,
-    "seen": 1791789746.263689,
+    "mtime": 1791789770.7745767,
+    "seen": 1791789781.7931252,
     "ast_hash": "566598b6e9dff023fc936846b4f04cf8",
     "semantic_hash": ""
   },
@@ -4668,8 +4668,8 @@
     "semantic_hash": ""
   },
   "careers/roles/incident-responder-digital-forensics.html": {
-    "mtime": 1791789660.0155048,
-    "seen": 1791789746.2637079,
+    "mtime": 1791789770.7749133,
+    "seen": 1791789781.793917,
     "ast_hash": "cd59a10169297c9d3924d0475e88e89f",
     "semantic_hash": ""
   },
@@ -4704,8 +4704,8 @@
     "semantic_hash": ""
   },
   "careers/roles/logistics-and-transport-coordinator-manager.html": {
-    "mtime": 1791789660.0200727,
-    "seen": 1791789746.263712,
+    "mtime": 1791789770.775249,
+    "seen": 1791789781.794094,
     "ast_hash": "844175f8500d17231f442c9cd48c92a0",
     "semantic_hash": ""
   },
@@ -4776,14 +4776,14 @@
     "semantic_hash": ""
   },
   "careers/roles/operations-manager.html": {
-    "mtime": 1791789660.0173187,
-    "seen": 1791789746.263723,
+    "mtime": 1791789770.7756498,
+    "seen": 1791789781.794549,
     "ast_hash": "081ecb13ae7a15eaafad52a820abc82d",
     "semantic_hash": ""
   },
   "careers/roles/ot-ics-security-specialist.html": {
-    "mtime": 1791789660.0167625,
-    "seen": 1791789746.263724,
+    "mtime": 1791789770.7759736,
+    "seen": 1791789781.7945511,
     "ast_hash": "c5aa2b7f3f5311245dbb2eb865ddd4a6",
     "semantic_hash": ""
   },
@@ -4914,8 +4914,8 @@
     "semantic_hash": ""
   },
   "careers/roles/shipping-and-maritime-roles.html": {
-    "mtime": 1791789660.020431,
-    "seen": 1791789746.2637498,
+    "mtime": 1791789770.7763834,
+    "seen": 1791789781.795649,
     "ast_hash": "3e4c17150944b9f03a7f4781335ac65f",
     "semantic_hash": ""
   },
@@ -5022,14 +5022,14 @@
     "semantic_hash": ""
   },
   "careers/roles/trader-analyst-at-a-physical-commodity-trading-house.html": {
-    "mtime": 1791789660.0011854,
-    "seen": 1791789746.263765,
+    "mtime": 1791789770.7772586,
+    "seen": 1791789781.7962828,
     "ast_hash": "a2e994216c53607f51c659ff8a60b248",
     "semantic_hash": ""
   },
   "careers/roles/trader-at-a-bank.html": {
-    "mtime": 1791789660.0003457,
-    "seen": 1791789746.263766,
+    "mtime": 1791789770.7789383,
+    "seen": 1791789781.7962828,
     "ast_hash": "445c8f481abfad963940c3a51d352539",
     "semantic_hash": ""
   },
@@ -5046,8 +5046,8 @@
     "semantic_hash": ""
   },
   "careers/roles/warehouse-distribution-operations-manager.html": {
-    "mtime": 1791789660.0202649,
-    "seen": 1791789746.2637708,
+    "mtime": 1791789770.7798305,
+    "seen": 1791789781.796457,
     "ast_hash": "32fa82abfffa9b764789f6c3d33a8c22",
     "semantic_hash": ""
   },
@@ -6060,8 +6060,8 @@
     "semantic_hash": ""
   },
   "tools/careers/figures.js": {
-    "mtime": 1791789568.6827705,
-    "seen": 1791789746.2636008,
+    "mtime": 1791789770.8008084,
+    "seen": 1791789781.789546,
     "ast_hash": "89f773d92e621e38a474e68a517e7af1",
     "semantic_hash": ""
   },
@@ -7098,8 +7098,8 @@
     "semantic_hash": ""
   },
   "docs/image-audit/image-prompts-redo-fields.md": {
-    "mtime": 1791789158.0086477,
-    "seen": 1791789746.263797,
+    "mtime": 1791789770.7803407,
+    "seen": 1791789781.797452,
     "ast_hash": "eea28dfdf4624eaccb0b62fbc25c1b24",
     "semantic_hash": ""
   }
