@@ -6,12 +6,12 @@
 - Unclassified: 23 file(s) not represented in the graph (top: .tex 8, .css 7, .woff2 3)
 
 ## Summary
-- 8175 nodes · 9620 edges · 674 communities (504 shown, 170 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 240 edges (avg confidence: 0.86)
+- 8175 nodes · 9619 edges · 674 communities (504 shown, 170 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 239 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0d8e630d`
+- Built from commit: `bb25e56d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -188,7 +188,7 @@
 - build-careers.js
 - Verification round 4a (2 October 2026)
 - 3. Matrice Completa dei Casi d'Uso (UE vs Extra-UE)
-- calendar
+- site
 - Part 1: Product software engineering
 - 2. Matrice dei Casi d'Uso (Dettaglio Operativo UE vs Extra-UE)
 - page-hiring.js
@@ -370,7 +370,7 @@
 - Report di Verifica Operativa: Cina (People's Republic of China)
 - 5. Costi Ufficiali, Prova Fondi e Salari (Dati Verificati 2026)
 - Changelog Consolidamento Immigrazione e Visti: Belgio (BE)
-- US consolidation triage (task 5.4). READ-ONLY survey of the repo, 2026-10-06
+- 1. Triage table (one row per occurrence or tight group)
 - Changelog Consolidamento Immigrazione e Visti: Danimarca (DK)
 - Changelog Consolidamento Immigrazione e Visti: Finlandia (FI)
 - Changelog Consolidamento Immigrazione e Visti: Francia (FR)
@@ -433,7 +433,7 @@
 - ux-ledger.js
 - Punti Aperti e Questioni da Verificare Manualmente: Francia (FR)
 - Hiring sources: link check, 9 October 2026
-- 1. Triage table (one row per occurrence or tight group)
+- figures.js
 - templates.js
 - docx.js
 - 1. QUESTIONI APERTE E DISCREPANZE DA RISOLVERE
@@ -456,7 +456,7 @@
 - Verification round 5b (3 October 2026)
 - 3. Role families
 - A. Field plates (13): drawn still lifes
-- foldAll
+- Career branch reports: progress checklist
 - 3. Role families
 - 3. Role families
 - Part-level ratings and notes
@@ -568,8 +568,8 @@
 ## Communities (674 total, 170 thin omitted)
 
 ### Community 0 - "results-kit.js"
-Cohesion: 0.13
-Nodes (15): battlePlan(), clip(), jumpBar(), keyRow(), openVerdicts(), planButton(), shareButton(), shareImage() (+7 more)
+Cohesion: 0.11
+Nodes (24): battlePlan(), calendar(), checkedOf(), clip(), daysUntil(), deadlineNode(), fmtDate(), inDays() (+16 more)
 
 ### Community 1 - "careers.js"
 Cohesion: 0.20
@@ -1247,9 +1247,9 @@ Nodes (5): P33 Germany (data/atlas/de.js), P34 United Arab Emirates (data/atlas/
 Cohesion: 0.05
 Nodes (43): 1. Architettura Giuridica ed Enti Competenti, 2. Red Flags e Trappole Burocratiche Salva-Vita (Audit Red Team), 3. Matrice Completa dei Casi d'Uso (UE vs Extra-UE), 4. Riepilogo Costi Amministrativi Obbligatori per Tipologia, 5. Statuto Giuridico durante l'Attesa (La Ricevuta / Still Working Letter), 6. Regime Fiscale e Previdenziale (Quadro Sintetico 2026), A. Cittadini UE, A. Cittadini UE / SEE / Svizzera (inclusi Italiani) (+35 more)
 
-### Community 221 - "calendar"
-Cohesion: 0.31
-Nodes (9): calendar(), checkedOf(), daysUntil(), deadlineNode(), fmtDate(), inDays(), planDoc(), staleness() (+1 more)
+### Community 221 - "site"
+Cohesion: 0.18
+Nodes (15): site(), discHtml(), footer(), md(), mdInline(), miniScores(), pips(), prose() (+7 more)
 
 ### Community 222 - "Part 1: Product software engineering"
 Cohesion: 0.18
@@ -1971,9 +1971,9 @@ Nodes (5): 5.1. Tariffe Amministrative Ufficiali (Livello Federale e Cantonale),
 Cohesion: 0.50
 Nodes (3): 1. Registro delle Modifiche Pianificate e Applicate, 2. Creazione della Struttura di Fonte Unica, Changelog Consolidamento Immigrazione e Visti: Belgio (BE)
 
-### Community 404 - "US consolidation triage (task 5.4). READ-ONLY survey of the repo, 2026-10-06"
-Cohesion: 0.20
-Nodes (9): regionOf(), tag(), 0. Legend and totals, 2. Runtime-coupled places (everything that ships to users or is checked by tests), 3. Known wrong or unsafe values to grep for at the end (must be absent, or only present with the correction), 4. Tests, i18n and build risks (what must stay green; run `npm test` and `node tools/build.js` after edits, baseline: 11 suites pass, build ok), 5. Patterns of the 48 existing guides (how other records reference the guide), 6. Counts (rows in section 1, by class) (+1 more)
+### Community 404 - "1. Triage table (one row per occurrence or tight group)"
+Cohesion: 0.11
+Nodes (17): regionOf(), tag(), 0. Legend and totals, 1.1 data/atlas/us.js (RUNTIME, shipped to users; Italian twins in the same file), 1.2 research/places/visas-and-work-rights.md (VW)  [published to users: build copies research/], 1.3 research/places/beyond-europe.md (BE), 1.4 Other research files, 1.5 Verification logs and trackers (research/verification/*) (+9 more)
 
 ### Community 405 - "Changelog Consolidamento Immigrazione e Visti: Danimarca (DK)"
 Cohesion: 0.50
@@ -2008,8 +2008,8 @@ Cohesion: 0.50
 Nodes (3): 1. Tabella delle Modifiche Eseguite, 2. Creazione della Struttura di Fonte Unica, Changelog Consolidamento Immigrazione e Visti: Spagna (ES)
 
 ### Community 413 - "whatIf"
-Cohesion: 0.30
-Nodes (12): outList(), label(), whatIf(), card(), changes(), draw(), drawCompare(), lever() (+4 more)
+Cohesion: 0.23
+Nodes (15): foldAll(), folds(), label(), outList(), label(), whatIf(), card(), changes() (+7 more)
 
 ### Community 414 - "Changelog Consolidamento Immigrazione e Visti: Svezia (SE)"
 Cohesion: 0.50
@@ -2219,9 +2219,9 @@ Nodes (8): Aggiunta del 06/10/2026: punti da verificare dopo l'integrazione del 
 Cohesion: 0.50
 Nodes (3): Hiring sources: link check, 9 October 2026, Still gone (404): kept on purpose, with "page no longer online" in the source title, Unreachable from the build machine (timeout, DNS or TLS error): re-check from a normal connection
 
-### Community 561 - "1. Triage table (one row per occurrence or tight group)"
-Cohesion: 0.25
-Nodes (8): 1.1 data/atlas/us.js (RUNTIME, shipped to users; Italian twins in the same file), 1.2 research/places/visas-and-work-rights.md (VW)  [published to users: build copies research/], 1.3 research/places/beyond-europe.md (BE), 1.4 Other research files, 1.5 Verification logs and trackers (research/verification/*), 1.6 docs/ (audit and planning), 1.7 Code, data and tests (non-atlas), 1. Triage table (one row per occurrence or tight group)
+### Community 561 - "figures.js"
+Cohesion: 0.27
+Nodes (10): back(), box(), DIAGRAM, down(), esc(), head(), plate(), ROLE (+2 more)
 
 ### Community 562 - "templates.js"
 Cohesion: 0.23
@@ -2311,9 +2311,9 @@ Nodes (20): 1. What this branch is, 2. Map of areas and sectors, 3.10 E-commerce
 Cohesion: 0.14
 Nodes (14): A. Field plates (13): drawn still lifes, AST-001 · `field-finance`, AST-002 · `field-computer-science`, AST-003 · `field-artificial-intelligence`, AST-004 · `field-data-science`, AST-005 · `field-data-analytics`, AST-006 · `field-cybersecurity`, AST-007 · `field-management` (+6 more)
 
-### Community 585 - "foldAll"
-Cohesion: 1.00
-Nodes (3): foldAll(), folds(), label()
+### Community 585 - "Career branch reports: progress checklist"
+Cohesion: 0.33
+Nodes (5): Career branch reports: progress checklist, How to resume, Opus tasks, QC notes, Sub-agent tasks (18 planned + 2 reserved)
 
 ### Community 586 - "3. Role families"
 Cohesion: 0.13
@@ -2356,8 +2356,8 @@ Cohesion: 0.20
 Nodes (10): P4-3.1 FP&A / corporate finance analyst (to CFO track), P4-3.2 Corporate treasury analyst, P4-3.3 Corporate development (in-house M&A), P4-3.4 Risk management (market, credit, operational, liquidity) at banks, insurers and asset managers, P4-3.5 Compliance and financial crime (AML/KYC, sanctions), P4-3.6 Bank quant: strats / desk quant, pricing and XVA, model validation, P4-3.7 Quantitative researcher and quantitative trader (quant funds and prop trading firms), P4-3.8 Quant developer / trading-systems engineer (+2 more)
 
 ### Community 596 - "assets/getting-in.js"
-Cohesion: 0.06
-Nodes (52): apply(), asText(), checks(), cover(), cur(), draftKey(), el(), fmt() (+44 more)
+Cohesion: 0.16
+Nodes (22): apply(), asText(), checks(), cover(), cur(), draftKey(), el(), fmt() (+14 more)
 
 ### Community 597 - "B. Role scenes (11): drawn scenes"
 Cohesion: 0.17
@@ -2584,24 +2584,24 @@ Cohesion: 0.67
 Nodes (3): is(), parse(), t()
 
 ## Knowledge Gaps
-- **5230 isolated node(s):** `Platform`, `Stack`, `Users`, `Product Purpose`, `Positioning` (+5225 more)
+- **5230 isolated node(s):** `here`, `root`, `built`, `out`, `name` (+5225 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 5755 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **170 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `build-brand.py`, `Verification round 5b (3 October 2026)`, `Round 5d: verification log`, `P44 Ireland (data/atlas/ie.js)`, `P41 United Kingdom (data/atlas/gb.js)`, `How hiring works: file schema and writing brief`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `P38 Italy (data/atlas/it.js)`, `What to add to each entry file`, `United States (P60)`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **What connects `Platform`, `Stack`, `Users` to the rest of the system?**
+- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **What connects `here`, `root`, `built` to the rest of the system?**
   _5230 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `results-kit.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.13438735177865613 - nodes in this community are weakly interconnected._
-- **Why does `Atlas progress checklist` connect `Atlas progress checklist` to `atlas-geo.js`, `atlas-test.js`, `i18n-test.js`, `page-map.js`, `Admetia README`, `Business tracks picker page`?**
+  _Cohesion score 0.10984848484848485 - nodes in this community are weakly interconnected._
+- **Why does `route()` connect `page-map.js` to `2. Modifiche alla Codebase Esistente`, `2. Modifiche alla Codebase Esistente`, `create`, `2. Modifiche Chirurgiche alla Codebase`, `2. Modifiche Chirurgiche alla Codebase`, `draw`, `2. Modifiche alla Codebase Esistente`, `2. Modifiche alla Codebase Esistente`, `Audit 4: Immigration, procedures and costs, 25 European destinations`, `Audit 5: immigration, procedures and costs in the 21 non-European destinations (EU/EEA/Swiss and UK passports)`, `2. MODIFICHE ALLA CODEBASE PRE-ESISTENTE`, `el`, `Changelog Consolidamento Immigrazione e Visti: Polonia (PL)`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Should `create` be split into smaller, more focused modules?**
   _Cohesion score 0.10609756097560975 - nodes in this community are weakly interconnected._
-- **Why does `Rules (read first)` connect `How hiring works: file schema and writing brief` to `data`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `data()` connect `data` to `P47 Portugal (data/atlas/pt.js)`, `build-brand.py`, `Verification round 5b (3 October 2026)`, `Round 5d: verification log`, `P44 Ireland (data/atlas/ie.js)`, `P41 United Kingdom (data/atlas/gb.js)`, `How hiring works: file schema and writing brief`, `Israel: country brief`, `0. Read this first`, `Brief: deepening the Atlas, country by country (round 5, 3 October 2026)`, `1. CRITICAL: wrong or dangerously misleading`, `P38 Italy (data/atlas/it.js)`, `What to add to each entry file`, `United States (P60)`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Should `build-brand.py` be split into smaller, more focused modules?**
   _Cohesion score 0.11261261261261261 - nodes in this community are weakly interconnected._

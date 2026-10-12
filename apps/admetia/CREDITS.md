@@ -30,7 +30,7 @@ the site like everything else. There are 57: a plate on each of the 13 career-fi
 pages (`field-*`), a scene on 11 role pages (`role-*`) and a street scene on all 46 country
 overviews in the Atlas (`photo-*`, named for the brief they came from).
 
-**They are illustrations, not photographs, and every caption says so.** A country's
+**They are illustrations, not photographs.** A country's
 drawing is an impression of its lead hub's working district, not a record of a real
 street: buildings, signs and people are invented, and nothing in a drawing is evidence
 for anything a guide says. No drawing depicts or implies a real employer, product or

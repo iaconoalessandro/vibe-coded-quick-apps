@@ -133,38 +133,27 @@ const DIAGRAM = {
 
 const ROLE = {
   'trader-at-a-bank': ['role-bank-trader-desk',
-    'Drawing of a bank trading desk at dawn: six screens of prices, a dealer phone board, a notepad and a coffee cup, with rows of desks and a city skyline behind.',
-    'A market-making desk before the open. Illustration.'],
+    'Drawing of a bank trading desk at dawn: six screens of prices, a dealer phone board, a notepad and a coffee cup, with rows of desks and a city skyline behind.'],
   'trader-analyst-at-a-physical-commodity-trading-house': ['role-commodity-trading-cargo',
-    'Drawing of a trader, seen from behind, at a desk by a window; outside, a tanker loads at a jetty beside storage tanks. A position sheet, a shipping schedule and a rolled chart lie in the foreground.',
-    'Physical trading: the book on the desk is a cargo somewhere. Illustration.'],
+    'Drawing of a trader, seen from behind, at a desk by a window; outside, a tanker loads at a jetty beside storage tanks. A position sheet, a shipping schedule and a rolled chart lie in the foreground.'],
   'embedded-firmware-systems-engineer': ['role-embedded-bench',
-    'Drawing of an electronics bench: a circuit board wired to a debug probe and analyser clips, an oscilloscope showing a square wave with a glitch circled, a cable harness, a laptop and a datasheet.',
-    'Firmware is debugged on the bench, with the board on the table. Illustration.'],
+    'Drawing of an electronics bench: a circuit board wired to a debug probe and analyser clips, an oscilloscope showing a square wave with a glitch circled, a cable harness, a laptop and a datasheet.'],
   'computer-vision-robotics-edge-ai-engineer': ['role-robot-cell-vision',
-    'Drawing of a fenced robot cell: an industrial arm with a camera above a conveyor of metal parts, one of them outlined by a detection box, a calibration checkerboard and a small computer on the fence.',
-    'Perception work is tested on the device, in the cell. Illustration.'],
+    'Drawing of a fenced robot cell: an industrial arm with a camera above a conveyor of metal parts, one of them outlined by a detection box, a calibration checkerboard and a small computer on the fence.'],
   'incident-responder-digital-forensics': ['role-forensics-lab',
-    'Drawing of a forensic workbench: a laptop linked through a write-blocker to a hard drive, two sealed evidence bags, a custody form on a clipboard and a wall clock at three.',
-    'Chain of custody: evidence is copied through a write-blocker and signed for. Illustration.'],
+    'Drawing of a forensic workbench: a laptop linked through a write-blocker to a hard drive, two sealed evidence bags, a custody form on a clipboard and a wall clock at three.'],
   'ot-ics-security-specialist': ['role-ot-control-cabinet',
-    'Drawing of an open industrial control cabinet with a controller rack, a network switch and a small monitoring sensor; a hard hat and a high-visibility vest hang on the door, and a worker walks away among the plant’s pipework.',
-    'OT security is done in the plant: a passive sensor watches the control network without touching it. Illustration.'],
+    'Drawing of an open industrial control cabinet with a controller rack, a network switch and a small monitoring sensor; a hard hat and a high-visibility vest hang on the door, and a worker walks away among the plant’s pipework.'],
   'operations-manager': ['role-operations-shift-handover',
-    'Drawing of a factory shift handover: six operators in overalls, seen from behind, face a board with three bars and a shift grid, beside a bottling line.',
-    'The handover at the board, where the shift’s OEE is read. Illustration.'],
+    'Drawing of a factory shift handover: six operators in overalls, seen from behind, face a board with three bars and a shift grid, beside a bottling line.'],
   'logistics-and-transport-coordinator-manager': ['role-transport-documents',
-    'Drawing of a desk with a stamped bill of lading and a vessel schedule; behind it, a gantry crane lifts a container from a ship at a quay.',
-    'Every container moves on documents: the bill of lading, the customs entry, the schedule. Illustration.'],
+    'Drawing of a desk with a stamped bill of lading and a vessel schedule; behind it, a gantry crane lifts a container from a ship at a quay.'],
   'warehouse-distribution-operations-manager': ['role-warehouse-aisle',
-    'Drawing of a warehouse aisle: racking on both sides, a pick cart of totes with a handheld scanner, a dashed pick path on the floor and workers at two loading docks at the far end.',
-    'From pick path to dock door: the flow a shift manager keeps moving. Illustration.'],
+    'Drawing of a warehouse aisle: racking on both sides, a pick cart of totes with a handheld scanner, a dashed pick path on the floor and workers at two loading docks at the far end.'],
   'shipping-and-maritime-roles': ['role-shipbroker-desk',
-    'Drawing of a shipbroker’s desk with a chart of vessel positions, a charter contract, a phone and a headset; through the window, a bulk carrier lies at anchor.',
-    'A fixture is a ship, a cargo and a contract, agreed by phone. Illustration.'],
+    'Drawing of a shipbroker’s desk with a chart of vessel positions, a charter contract, a phone and a headset; through the window, a bulk carrier lies at anchor.'],
   'brand-manager': ['role-brand-shelf',
-    'Drawing of a supermarket shelf of plain packs, with one brand’s block highlighted at eye level and a promotion tag beneath; a creative brief and a flat packaging proof rest on a trolley in the foreground.',
-    'Share is won on the shelf: facings, position and the promotion tag. Illustration.'],
+    'Drawing of a supermarket shelf of plain packs, with one brand’s block highlighted at eye level and a promotion tag beneath; a creative brief and a flat packaging proof rest on a trolley in the foreground.'],
 
   'ai-engineer-llm-application-engineer': ['rag',
     'Diagram: a RAG pipeline in five steps. Split documents into chunks; embed them as vectors; store them in a vector database; retrieve the best passages; prompt the model to answer from them, with citations. Regression checks run on every change.',
@@ -205,6 +194,6 @@ module.exports = {
     const f = ROLE[slug];
     if (!f) return null;
     const [key, alt, cap] = f;
-    return DIAGRAM[key] ? { alt, cap, svg: DIAGRAM[key](slug) } : { alt, cap, img: plate(key) };
+    return DIAGRAM[key] ? { alt, cap, svg: DIAGRAM[key](slug) } : { alt, img: plate(key) };
   }
 };

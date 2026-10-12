@@ -503,9 +503,7 @@ t('the Atlas headline has no italic accent word', !/<h1[^>]*>[^<]*<em>/.test(rea
   vm.runInNewContext(read('js/i18n-it.js'), itSrc);
   const bad = plates.filter((p) => !A.byId[p.id.toUpperCase()] || !fs.existsSync(path.join(APP, 'img/plates', p.file + '-400.webp')) || !fs.existsSync(path.join(APP, 'img/plates', p.file + '-800.webp')) || !itSrc.dict[p.alt]);
   t('every overview drawing (' + plates.length + ') names a country, exists in both sizes and has Italian', plates.length > 0 && bad.length === 0, bad.map((p) => p.id).join(', '));
-  const lead = (id) => { const src = read('data/atlas/' + id + '.js'), m = /name:\s*(["'])((?:\\.|(?!\1).)*)\1/.exec(src.slice(src.indexOf('hubs: ['))); return m && m[2]; };
-  const noCap = plates.filter((p) => !itSrc.dict[lead(p.id) + '. Illustration.']).map((p) => p.id);
-  t('each drawing’s caption, the lead hub’s name, has Italian', noCap.length === 0, noCap.join(', '));
+  t('overview drawings carry no caption', !/raw\('figcaption'/.test(pm.slice(pm.indexOf('function plate(rec)'), pm.indexOf('var viewById'))));
 }
 
 console.log('\n' + pass + ' passed, ' + fail + ' failed');

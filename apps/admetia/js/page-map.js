@@ -233,8 +233,6 @@
     img.width = 800; img.height = 533;
     img.loading = 'lazy'; img.decoding = 'async';
     fig.appendChild(img);
-    /* One dictionary entry per caption: the city takes its Italian name there. */
-    fig.appendChild(raw('figcaption', null, T(rec.hubs[0].name + '. Illustration.')));
     return fig;
   }
   var viewById = {};

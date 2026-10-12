@@ -46,9 +46,12 @@ function site(ROOT, data) {
   function roleFigure(from, slug) {
     const f = FIG.role(slug);
     if (!f) return '';
-    const pic = f.svg ? `<div class="cx-diagram" role="img" aria-label="${ui(f.alt)}">${f.svg}</div>`
-      : `<img src="${rel(from, f.img.s400)}" srcset="${srcset(from, f.img)}" sizes="(max-width: 640px) 100vw, 300px" alt="${ui(f.alt)}" width="800" height="533" loading="lazy" decoding="async">`;
-    return `<figure class="fig cx-fig${f.svg ? ' cx-fig-dg' : ''}">${pic}<figcaption>${ui(f.cap)}</figcaption></figure>\n`;
+    if (f.svg) {
+      const pic = `<div class="cx-diagram" role="img" aria-label="${ui(f.alt)}">${f.svg}</div>`;
+      return `<figure class="fig cx-fig cx-fig-dg">${pic}<figcaption>${ui(f.cap)}</figcaption></figure>\n`;
+    }
+    const pic = `<img src="${rel(from, f.img.s400)}" srcset="${srcset(from, f.img)}" sizes="(max-width: 640px) 100vw, 300px" alt="${ui(f.alt)}" width="800" height="533" loading="lazy" decoding="async">`;
+    return `<figure class="fig cx-fig">${pic}</figure>\n`;
   }
 
   const roleById = new Map(data.roles.map((r) => [r.id, r]));

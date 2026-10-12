@@ -115,9 +115,10 @@ const figRoles = Object.keys(FIG.ROLE);
 t('every role with a figure is a role family', figRoles.every((s) => data.roles.some((r) => r.slug === s)), figRoles.filter((s) => !data.roles.some((r) => r.slug === s)).join(', '));
 const figBad = figRoles.filter((s) => {
   const f = FIG.role(s), html = read(`careers/roles/${s}.html`), n = (html.match(/<figure class="fig cx-fig/g) || []).length;
-  return n !== 1 || !f.alt || !f.cap || (f.img ? !onDisk(f.img) : !/<text /.test(f.svg));
+  const hasCap = html.includes('<figcaption>');
+  return n !== 1 || !f.alt || (f.svg ? (!f.cap || !hasCap) : (f.cap || hasCap)) || (f.img ? !onDisk(f.img) : !/<text /.test(f.svg));
 });
-t('each of them has one figure with a caption, alternative text and its drawing or diagram', figBad.length === 0, figBad.join(', '));
+t('each of them has one figure with alternative text and either a diagram with a caption or a drawing without one', figBad.length === 0, figBad.join(', '));
 /* A diagram may only use words its own role's paragraph contains. */
 const loose = [];
 for (const s of figRoles) {
