@@ -1,5 +1,48 @@
 # Credits
 
+## School logos
+
+The Programme Directory (including its side-by-side comparison) and the business
+calculator results use 81 school and university marks stored in `img/schools/`.
+They identify the institution named beside each image. The marks belong to their
+respective institutions; their inclusion does not imply affiliation or endorsement.
+
+`img/schools/sources.json` records the institution, official website, exact asset
+source, retrieval date, and local file for every mark. Assets were retrieved from
+the institutions' websites and brand resources, with Wikipedia/Wikimedia-hosted
+marks used where the official site could not be downloaded. The Manchester,
+Berkeley Haas, emlyon, INSEAD, RSM and Stanford replacements were supplied by
+the user; their attachment names are recorded separately in the source registry.
+Those files are stored unchanged, with display crops applied by the shared component.
+Other logos were rasterised
+or resized for display, retaining their colours and proportions; Darden and Ross
+retain their original SVGs. Display viewports isolate symbols from accompanying wordmarks
+where a separable symbol exists, without changing the source files. Coloured
+tiles use matching backgrounds, and transparent white logos use dark backgrounds.
+Pages load these files locally and do
+not contact the source websites or a third-party logo service.
+
+## Illustrations
+
+The drawings in `img/plates/` were made for Admetia on 11 October 2026 with an AI image
+generator, from the briefs in `docs/image-audit/image-prompts.md`, and are stored with
+the site like everything else. There are 57: a plate on each of the 13 career-field
+pages (`field-*`), a scene on 11 role pages (`role-*`) and a street scene on all 46 country
+overviews in the Atlas (`photo-*`, named for the brief they came from).
+
+**They are illustrations, not photographs, and every caption says so.** A country's
+drawing is an impression of its lead hub's working district, not a record of a real
+street: buildings, signs and people are invented, and nothing in a drawing is evidence
+for anything a guide says. No drawing depicts or implies a real employer, product or
+person. Guides that carry official travel advice have a drawing too; it says nothing about whether to go, and the advice is the first thing in the guide's text.
+
+The eight diagrams on role pages are not images: they are drawn in the page from the
+role's own paragraph (`tools/careers/figures.js`), and a test checks that their labels
+use only that paragraph's words.
+
+`tools/build-plates.sh` makes the two WebP sizes each page serves from the PNG masters,
+which are about 3 MB each and are not kept in the repository.
+
 ## Archived photographs
 
 These photographs were removed from the site on 10 October 2026. The source files remain archived for their attribution history and are excluded from the published build.

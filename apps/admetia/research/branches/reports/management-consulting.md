@@ -387,6 +387,139 @@ Strategy analyst/associate → manager → senior manager → director → VP st
 
 ---
 
+### 3.6 Operations and implementation consultant
+
+**What you actually do.** You make a change happen inside a client's operations (section 2.4) instead of only recommending it. On an engagement you map how a plant, warehouse network, hospital ward or back office actually runs; time tasks and pull data to find where cost, time and capacity are lost; redesign the process with the supervisors who run it; then stay while it is rolled out, tracking the savings until they show in the accounts. BCG lists the scope as manufacturing, supply chain, procurement, service operations, capital projects, operational excellence and shared services (BCG Operations page, 2026). Newton, a UK firm built on this model, describes the junior job as "mapping processes and analyzing data to identify opportunities" on site, "from the shop floor to the boardroom" (Newton careers pages, 2026). The methods are Lean and Six Sigma, defined in the logistics branch. Tools: process maps, spreadsheets, savings trackers, time studies on the floor. Deliverables: a baseline, a redesigned process, a pilot, a roll-out plan and a weekly benefits report.
+
+**A typical day and week.** The week is spent at the client, not in your firm's office. Newton's US entry requirement is to "travel and work on-site at client premises as needed Monday-Friday"; AlixPartners asks its analysts for the "ability to travel up to 100% Monday through Friday as required" (firm adverts, 2026). PA Consulting tells graduates that client-site time can reach five days a week (PA 2026 graduate advert). A typical day: an early walk of the line, ward or depot; a workshop with team leaders; an afternoon of analysis; an evening update of the tracker. A steering meeting with the client's operations director closes the week. Sites are often outside big cities: "You'll travel often and may spend nights away from home" (UK National Careers Service profile of management consultants, 2026).
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found for operations practices; no firm publishes hours. Official profiles are low: the UK National Careers Service gives 37 to 42 hours a week for management consultants in general (2026), and the US Bureau of Labor Statistics says only that some "work more than 40 hours per week" (May 2025 data). A coaching site says implementation runs cooler than strategy or turnaround work, without numbers (StrategyCase, July 2026; author's estimate). The 50-60 typical and 65-70 peak in the summary table are my reading from the Big 4 and strategy rows, not a measured figure.
+- Stress: 3-4/5. Savings targets with dates attached, go-lives, and working among people whose jobs you are changing.
+- Lifestyle: the heaviest travel in consulting, on the client's shift pattern, with weekends at home. Little remote work, because the job is observation and coaching on site.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. Most of the day is spent with supervisors and front-line staff; the analysis is spreadsheets, time studies and simple statistics.
+
+**Compensation (approximate).**
+- US: firm-stated figures: Newton pays entry-level consultants $95,000 (FAQ, 2026 round), and AlixPartners advertises $110,000 plus a discretionary bonus for performance analysts starting August 2027 in Chicago (advert reposted on Blind). Big 4 and Accenture analysts: $78,000-$112,000 base, as in 3.2. Official median for management analysts at all levels: $101,860 (BLS, May 2025).
+- UK: Newton states £48,000 plus a £2,500 sign-on bonus and a six-monthly company bonus (2026 intake). PA Consulting advertised "salary potential" of £33,000 plus a £3,500 transport allowance for Autumn 2026, with operations and improvement as one rotation (advert reposted by Stemettes; secondary). Big 4 and Accenture: £32,000-£37,000, as in 3.2.
+- Italy: no reliable data found for operations practices; EFESO's page, which links to Milan openings, states no pay. Indicative €26,000-€30,000 gross, as in 3.2. Benchmark, not a consulting figure: master's graduates in industrial and information engineering earned €1,783 net a month one year after graduating, against €1,488 for all master's graduates (AlmaLaurea, 2024 survey).
+- About 5 years: UK £45,000-£65,000 at two to five years, £55,000-£80,000 for senior consultants (Prospects, September 2026; all consulting, guide only). US and Italy: no reliable data found.
+
+**Career path.** Analyst or consultant (0-2 years) → senior consultant (2-4) → manager (4-7) → principal or partner. The years are my estimate, except at Newton, which promotes to senior consultant from about 20 months "depending on demonstrated capability" (2026). Many leave before manager for line roles in operations.
+
+**Exit opportunities.**
+- After 2-3 years: operations, supply-chain, procurement or continuous-improvement management at a client; private-equity portfolio operations teams; a strategy firm's operations practice.
+- After 7-10 years: plant, operations or transformation director, the chief operating officer track, partner, interim management.
+
+**Tier list of employers.**
+- Tier 1: Kearney and the operations practices of McKinsey, BCG and Bain (section 2.4).
+- Tier 2: Alvarez & Marsal and AlixPartners performance improvement, Big 4 operations practices, Accenture, PA Consulting, Newton.
+- Tier 3: specialists in industrial operations, lean, procurement or supply chain, such as EFESO (which calls itself a "pure player" in industrial operations) and Argon & Co; in Italy, Bip and Reply (section 3.2) and EFESO's Milan office.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: Newton takes any degree, with AAB at A-level in the UK or a 3.5 GPA in the US; AlixPartners asks for "a quantitative or analytical degree program" (adverts, 2026). Engineering and supply-chain degrees are the usual base at industrial specialists, but no firm page opened states this.
+- Schemes and timing: Newton's UK programme opened on 14 September 2026 and recruits until full, usually by March; its US round ran from 1 September to 11 October 2026. PA's Autumn 2026 programme closed on 7 November 2025 (the advert gives day and month; the year is my inference).
+- Process: at Newton, cognitive tests and a one-way video interview, a virtual selection day with group and technical exercises, then two final interviews (2026). Elsewhere, the case interviews of 3.1 and 3.2 with operations cases (capacity, bottlenecks, cost reduction).
+- Visas: Newton says it can sponsor Skilled Worker visas in the UK and offers no sponsorship for its US role (2026).
+- Languages: the client's shop-floor language; in Italy this means Italian.
+- Common mistakes: preparing only market-entry cases; never having seen a factory, a warehouse or a ward.
+- Non-target routes: two to four years in industry operations, then lateral entry. The BLS notes that many management analysts "enter the occupation with several years of work experience" (May 2025 data).
+- Entry difficulty: 3-4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Weeks away from home, in places chosen by the client's factories and depots; resistance from the people whose work you are changing; cost-cutting mandates that can end in job losses; savings targets you are measured against. Demand is uneven: 46% of the UK industry association's member firms reported lower fee income in 2025 (MCA Annual Industry Report, July 2026). Poor fit: people who want pure analysis from a head office, or who need to be home every evening.
+
+---
+
+### 3.7 Public-sector consultant
+
+**What you actually do.** You advise governments, regulators, EU institutions and state-owned bodies (section 2.6). The UK's National Audit Office describes the legitimate use: consultants advise on a specific project or programme and supply "expert insight or specialist skills" or an outside view, for a defined period, when government lacks the skill itself (NAO, November 2025). A junior works on one piece of a larger programme: gathering evidence on a service, drafting part of a business case, tracking a funded programme's milestones, preparing papers for a governance board. A graduate advert from Local Partnerships, a consultancy owned by HM Treasury, the Local Government Association and the Welsh Government, lists the duties plainly: research, analysis and data work; reports and presentations for senior stakeholders; attending meetings and recording actions (2026). Typical subjects are adult social care, children's services, health and local-government finances (IMPOWER and Newton sector pages, 2026); in Italy, Intellera Consulting works for central and local administrations and the health service on digital transition and public funds (Intellera site, 2026). Tools: slides, spreadsheets, business-case templates.
+
+**A typical day and week.** Meetings with officials, drafting a report section or a business case, a workshop with service staff, a governance board. PA Consulting tells graduates to expect at least two days a week in its office or on client site, and up to five on site depending on the assignment (PA 2026 graduate advert). Procurement shapes the calendar: since November 2024, UK central-government consultancy contracts above £600,000 or longer than nine months need a minister's sign-off, and those above £100,000 or longer than three months the permanent secretary's (Cabinet Office, 14 November 2024), so work comes in short, tightly scoped packages. The pace follows the client's budget year and political calendar.
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found; no survey covers public-sector practices. Contract and profile figures are low: Local Partnerships advertises a 35-hour week (2026), and the UK National Careers Service gives 37 to 42 hours for management consultants in general (2026). The 45-55 typical and 60-65 peak in the summary table are my reading from the Big 4 row above, not measured.
+- Stress: 3/5. Deadlines are set by budgets, audits and elections; scrutiny is public.
+- Lifestyle: capital cities, ministries, councils and hospitals, with hybrid working common (two office days a week at PA and Local Partnerships); in the Gulf, long placements on site.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. The work is persuading officials and writing for non-specialist readers; the analysis is costings, demand data and options appraisal.
+
+**Compensation (approximate).**
+- US: no firm-published entry figure found; the early-careers pages of Booz Allen and Guidehouse state no pay (2026). Entry follows the analyst scales of 3.2: $78,000-$112,000 base. For comparison, management analysts employed by government itself had a median of $97,300, against $107,330 in professional and technical services firms (BLS, May 2025; all experience levels, not entry pay).
+- UK: PA Consulting advertised "salary potential" of £33,000 plus a £3,500 transport allowance for Autumn 2026 (advert reposted by Stemettes; secondary). Newton, whose sectors include central and local government and health, states £48,000 plus a £2,500 sign-on bonus (2026 intake). Local Partnerships advertised £27,000 for a two-year graduate post starting July 2026. Big 4: £32,000-£37,000, as in 3.2.
+- Italy: no reliable data found; the Intellera site states no pay. Indicative €26,000-€30,000 gross, as in 3.2. Benchmark, not a consulting figure: master's graduates earned €1,488 net a month one year after graduating (AlmaLaurea, 2024 survey).
+- About 5 years: UK £45,000-£65,000 at two to five years (Prospects, September 2026; all consulting, guide only). US and Italy: no reliable data found.
+
+**Career path.** Analyst (0-3 years) → consultant or manager (3-7) → director or partner; the years are my estimate, as no firm page opened gives them. PA's graduate programme runs 18 months across several rotations (2026). Moves into the civil service or international organisations are common.
+
+**Exit opportunities.**
+- After 2-3 years: government departments and agencies (which employ management analysts directly, as the BLS figure above shows), international organisations, think tanks, in-house strategy at state-owned companies.
+- After 7-10 years: partner, senior public-sector posts, development banks.
+
+**Tier list of employers.**
+- Tier 1: the public-sector practices of McKinsey, BCG and Bain.
+- Tier 2: Big 4 and Accenture, which hold most large public contracts; PA Consulting and Newton in the UK; Booz Allen Hamilton and Guidehouse in the US.
+- Tier 3: national and specialist consultancies: IMPOWER and the publicly owned Local Partnerships in the UK; Intellera Consulting in Italy.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: economics, politics, public policy, management. PA and Local Partnerships accept any discipline; PA sets no grade requirement (adverts, 2026).
+- Schemes and timing: PA's Autumn 2026 programme closed on 7 November 2025 (the advert gives day and month; the year is my inference). Guidehouse was listing "Campus 2027" roles in October 2026; Booz Allen considers interns from late August for the following summer (firm pages, 2026).
+- Constraints: PA requires British citizenship or five years' UK residence, and all its staff need Baseline Personnel Security Standard clearance, with higher vetting for some roles (PA advert, 2026); the government applies that baseline check to "government contractors" (GOV.UK, September 2024). US federal consulting is widely said to need citizenship and a clearance, but neither firm's early-careers page states the rule and individual job adverts were not opened: unverified. In the Gulf, local-hire quotas reduce entry places for expatriates (Saudi Arabia required 35% Saudi staffing in consulting from March 2023 and 40% in the second phase; section 2.6).
+- Italy: public bodies are a small part of the market. Private clients were 89% of the €6.3 billion consulting turnover in 2023 (Il Sole 24 Ore on Assoconsult data, February 2024), which leaves about 11% for the rest (my arithmetic). Demand has been driven by the national recovery plan (section 2.6), which has an end date.
+- Common mistakes: ignoring how procurement shapes the work; assuming policy influence at entry.
+- Non-target routes: a civil-service or EU traineeship first; a policy master's.
+- Entry difficulty: 3/5 at Big 4; 5/5 at the strategy firms.
+
+**Honest downsides and who it is NOT a good fit for.** Demand depends on political decisions. The UK Treasury estimated central-government spending on consultants at about £1.36 billion in 2022-23; the Chancellor then announced a stop to non-essential consultancy spending and an aim to halve the bill in 2025-26, and the main purchasing framework was cut from £5.7 billion over four years to £1.7 billion over two (NAO, November 2025; Cabinet Office, November 2024). The public sector supplies about a fifth to a quarter of UK consultancies' income (Consultancy.uk on the NAO report, November 2025; secondary), so a cut of that size matters for hiring. Beyond that: slow clients, press scrutiny of fees, recommendations that are not implemented, and nationality and vetting rules that exclude many international students. Poor fit: people who want fast, measurable commercial results.
+
+---
+
+### 3.8 Turnaround and restructuring consultant
+
+**What you actually do.** You work for a company in financial trouble, or for its lenders or owners. It is the operational side of the restructuring banker's work in the Finance branch: the banker renegotiates the debt, you fix the business. Two jobs share the label. In turnaround advisory (Alvarez & Marsal, AlixPartners, FTI Consulting) the tasks are those an Alvarez & Marsal advert lists: "building and managing 13-week cash flow forecast", a cash-conservation strategy and controls, a liquidation analysis to test whether a reorganisation plan is feasible, pre-bankruptcy planning and support in running the case (A&M senior associate advert, Chicago, October 2026). Seniors may take an interim seat such as chief restructuring officer. In UK-style restructuring and insolvency teams, much of the work is formal procedures run by a licensed insolvency practitioner; only individuals, not firms, can hold that licence (ICAEW, 2026). Those procedures are mostly small: of 23,938 company insolvencies in England and Wales in 2025, 18,525 were creditors' voluntary liquidations and 1,495 were administrations (Insolvency Service, January 2026). Tools: cash-flow and three-statement models, cost baselines, weekly reporting packs.
+
+**A typical day and week.** A daily cash call with the client's finance team, checking receipts and payments against the forecast; analysis of a division's costs or a supplier list; a meeting with lenders or the private-equity owner; a weekly report on progress against the plan. The work is done at the client: the A&M advert asks for "willingness to travel 100%", and AlixPartners asks its analysts for the "ability to travel up to 100% Monday through Friday as required" (adverts, 2026). Assignments start at short notice and run on the lenders' timetable.
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found; no firm publishes hours and no survey covers the field. A coaching site says turnarounds and restructurings "tend to run hotter than implementation work", without numbers (StrategyCase, July 2026; author's estimate). The 55-65 typical and 70-80 peak in the summary table are an unsourced estimate.
+- Stress: 4/5. A missed payroll or covenant has consequences within days, and creditors test every number.
+- Lifestyle: on site at the client, with little notice and little control over location; quieter between cases.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 4/5. Cash-flow modelling and accounting detail every day, delivered to managers, lenders and staff who are under strain.
+
+**Compensation (approximate).**
+- US: the one firm-stated entry figure found is AlixPartners' $110,000 plus a discretionary bonus for performance analysts starting August 2027 in Chicago, a role in its improvement practices, not in turnaround and restructuring (advert reposted on Blind). Otherwise self-reported; weak: Glassdoor totals of $83,000-$115,000 for AlixPartners analysts (17 salaries, June 2024) and $84,000-$112,000 for A&M analysts in Chicago (35 salaries, June 2024), both via Road to Offer (September 2026).
+- UK: no firm-published graduate figure found. Self-reported; weak: A&M analysts £35,000-£49,000 (Glassdoor UK, 83 salaries, via Road to Offer, 2026), consistent with the £35,000 for A&M and £40,000 for FTI in 3.3.
+- Italy: no reliable data found.
+- About 5 years: A&M advertises $160,000-$185,000 plus bonus for senior associates with at least six years' experience (Chicago, October 2026). Self-reported; weak: UK A&M associates £60,000-£90,000 and senior associates £90,000-£128,000 (Glassdoor UK via Road to Offer, 2026).
+
+**Career path.** At A&M: analyst → associate → senior associate → director → senior director → managing director; at AlixPartners: analyst → associate → vice president → senior vice president → director → partner (titles as listed by Road to Offer, 2026). FTI says most of its consulting roles have six levels (FTI early-careers page, 2026). No reliable data found on years per level; the A&M advert implies about six years to senior associate. On the insolvency track the milestone is the Joint Insolvency Examination Board exam, two papers (corporate and personal) sat once a year, followed by a licence from a recognised professional body, which also requires a minimum number of hours of insolvency experience (ICAEW and JIEB, 2026; the hours are not stated on the pages opened).
+
+**Exit opportunities.**
+- After 2-3 years: private-equity portfolio operations, distressed-debt and special-situations investors, corporate finance and turnaround roles in industry.
+- After 7-10 years: managing director, licensed insolvency practitioner, interim chief restructuring officer or finance chief, operating partner at a fund.
+
+**Tier list of employers.**
+- Tier 1: Alvarez & Marsal, AlixPartners, FTI Consulting.
+- Tier 2: the restructuring practices of the Big 4 and of advisory firms such as Teneo, Interpath and Kroll.
+- Tier 3: small turnaround boutiques, regional insolvency practices and interim-management firms.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: finance, accounting, economics or engineering; accounting fluency is essential. AlixPartners asks analysts for "a quantitative or analytical degree program" (advert, 2026).
+- Graduate routes: they exist, mostly at the insolvency end and in the UK. Search results showed adverts titled "Restructuring and Insolvency Graduate Programme" (A&M, London and Leeds), "2026 Graduate Scheme, Restructuring, London" (FTI), "Graduate Associate, Restructuring" (Interpath) and "Financial Restructuring Graduate Programme, September 2027 intake" (EY), but every one of those pages refused to open, so their terms (reported as a 2:1 degree and study for the ACA accountancy qualification) are unverified. AlixPartners' student page names a Business Analyst programme "for London-based Master's grads", an MBA programme and internships; FTI names internships, an early-identification programme and entry-level posts (firm pages, 2026).
+- Experience: turnaround work proper is an experienced-hire field. The A&M advert wants six years, four of them in restructuring, and prefers the CTP, CIRA, CPA or CFA. The Turnaround Management Association's Certified Turnaround Professional needs at least four years of leadership experience in distressed companies within the past 15; its Certified Turnaround Analyst is knowledge-based and aimed at newer practitioners (TMA, 2026). No reliable data found on the share of hires who come from audit, transaction services or banking.
+- Qualifications: in the UK, the ACA and then the insolvency exam, which non-members can also register for through ICAEW (2026); in the US, the certificates above; the CTP has three 100-question exams (TMA, 2026).
+- Common mistakes: applying without being able to read the three financial statements; confusing the role with restructuring banking.
+- Non-target routes: Big 4 audit or transaction services, then a move across.
+- Entry difficulty: 4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Job cuts are often part of the plan, and you deliver the news. Travel is close to total and unplanned. The work is busiest when the economy is weakest and thinner otherwise: company insolvencies in England and Wales were 5% lower in 2025 than in 2023, the highest year since 1993 (Insolvency Service, January 2026). Graduate schemes at the insolvency end are closer to accountancy training on liquidations than to rescuing large companies, and pay there is below strategy consulting (section 3.3). Poor fit: people uncomfortable with confrontation or with delivering bad news.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -396,6 +529,9 @@ Strategy analyst/associate → manager → senior manager → director → VP st
 | 3.3 Specialist/boutique consultant | 50-65 (70-80) | 3-4 | 3 | 4 | US: $95-132k base (OW analysts); UK: £47-52k base at top boutiques (£34-41k at others); Italy: no reliable data found | 4 (top) / 3 |
 | 3.4 Technology/digital consultant (business-side) | 45-55 (60-70) | 3 | 4 | 3 | US: $78-112k base (up to ~$125k total at Accenture Strategy); UK: £33.5-37k base (Capgemini Invent £51k); Italy: ~€25-30k (indicative) | 3 |
 | 3.5 Internal strategy/corporate transformation | 42-50 (55-60) | 2-3 | 4 | 3 | US/UK/Italy: no reliable data found at graduate level (corporate graduate-programme market rate) | 3 (programmes) / 4 (strategy roles) |
+| 3.6 Operations and implementation consultant | 50-60 (65-70) | 3-4 | 4 | 3 | US $78-112k base (Big 4 and Accenture analyst scales, as 3.2); $95k Newton, $110k AlixPartners (firm-stated, 2026) / UK £32-37k (as 3.2); £48k Newton, £33k + £3.5k allowance PA (firm-stated, 2026) / Italy ~€26-30k gross (indicative, as 3.2) | 3-4 |
+| 3.7 Public-sector consultant | 45-55 (60-65) | 3 | 4 | 3 | US $78-112k base (as 3.2; no firm-published public-sector figure) / UK £32-37k (as 3.2); £33k + £3.5k allowance PA, £48k Newton, £27k Local Partnerships (firm-stated, 2026) / Italy ~€26-30k gross (indicative, as 3.2) | 3 (Big 4) / 5 (strategy firms) |
+| 3.8 Turnaround and restructuring consultant | 55-65 (70-80) | 4 | 4 | 4 | US ≈ $83-115k total (Glassdoor 2024; self-reported; weak); $110k AlixPartners performance analyst (firm-stated, 2027 start) / UK ≈ £35-49k (A&M analysts, Glassdoor 2026; self-reported; weak) / Italy n.r.d. | 4 |
 
 ---
 
@@ -449,19 +585,19 @@ Ratings: **strong** = a common, direct route with a clear advantage; **possible*
 
 ### (b) Matrix (S = strong, P = possible, X = stretch)
 
-| Background | 3.1 Strategy (MBB/tier-2) | 3.2 Management/operations at Big 4/Accenture | 3.3 Specialist/boutique | 3.4 Technology/digital | 3.5 Internal strategy |
-|---|---|---|---|---|---|
-| Management | S | S | P | P | S |
-| Logistics & Supply Chain | P | S | S | P | S |
-| Finance | S | S | S | P | S |
-| Accounting | P | S | P | P | P |
-| Marketing | P | S | P | P | P |
-| Data Analytics | P | S | S | S | P |
-| Economics | S | S | S | P | S |
-| Computer Science | P | P | P | S | P |
-| Cybersecurity | X | P | P | S | X |
-| Data Science | P | P | S | S | P |
-| Artificial Intelligence | P | P | P | S | X |
+| Background | 3.1 Strategy (MBB/tier-2) | 3.2 Management/operations at Big 4/Accenture | 3.3 Specialist/boutique | 3.4 Technology/digital | 3.5 Internal strategy | 3.6 Operations/implementation | 3.7 Public sector | 3.8 Turnaround |
+|---|---|---|---|---|---|---|---|---|
+| Management | S | S | P | P | S | S | S | P |
+| Logistics & Supply Chain | P | S | S | P | S | S | P | P |
+| Finance | S | S | S | P | S | P | P | S |
+| Accounting | P | S | P | P | P | P | P | S |
+| Marketing | P | S | P | P | P | X | P | X |
+| Data Analytics | P | S | S | S | P | P | P | P |
+| Economics | S | S | S | P | S | P | S | P |
+| Computer Science | P | P | P | S | P | P | P | X |
+| Cybersecurity | X | P | P | S | X | X | P | X |
+| Data Science | P | P | S | S | P | P | P | X |
+| Artificial Intelligence | P | P | P | S | X | X | P | X |
 
 Notes: Strategy consulting is open to any strong degree; the matrix shows where a background is a natural fit, not a rule. At MBB, a STEM background with strong academics can outrank a business degree. Internal strategy roles are mainly accessed after experience, so ratings reflect entry via programmes or first jobs.
 
@@ -530,5 +666,43 @@ All accessed October 2026 unless noted. "Via earlier project research" means a s
 - StrategyCase, "Big 4 to MBB" and experienced-hire guides (coaching content; unverified claims). https://strategycase.com/switch-from-big-4-to-mbb/
 - PrepLounge forum threads on MBB hours (2022-2025; anecdotal). https://www.preplounge.com/consulting-forum/working-hours-at-mbb-and-other-firms-23858
 - Wharton Knowledge, "Remaking the Workplace, One Night Off at a Time", 3 Jul 2012 (BCG study; stale). https://knowledge.wharton.upenn.edu/article/remaking-the-workplace-one-night-off-at-a-time/
+
+**Second pass, 11 October 2026: role families 3.6 to 3.8 (re-researched the same day from opened sources)**
+
+Every figure in 3.6 to 3.8 comes from a page that was opened and read on 11-12 October 2026, or from another section of this report where the text says "as in 3.2" or "3.3"; hours ranges, ladder years and background ratings are my judgement and are labelled as such.
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, "Management Analysts" (May 2025 wages, including by industry; 2025-35 outlook). https://www.bls.gov/ooh/business-and-financial/management-analysts.htm
+- UK National Careers Service, "Management consultant" job profile (hours, travel, pay band; 2026). https://nationalcareers.service.gov.uk/job-profiles/management-consultant
+- Prospects, "Management consultant" job profile (September 2026; pay bands "as a guide only"). https://www.prospects.ac.uk/job-profiles/management-consultant
+- Newton, UK graduate consultant programme (2026 intake: salary, requirements, process, dates). https://newtonimpact.com/graduate
+- Newton, US entry-level consultant page and FAQ (2026 round). https://newtonimpact.com/en-us/?p=8692
+- AlixPartners, "Performance Analyst starting August 2027", Chicago (firm advert as reposted on Blind's job board; secondary copy of a primary advert). https://www.teamblind.com/jobs/315380147
+- AlixPartners, careers and "Students and recent graduates" pages (2026; programmes named, no pay). https://www.alixpartners.com/careers/students-and-recent-graduates/
+- Alvarez & Marsal, "Senior Associate, Restructuring", Chicago (firm advert as reposted on eFinancialCareers, October 2026; secondary copy of a primary advert). https://www.efinancialcareers.com/jobs-United_States-IL-Chicago-Senior_Associate_Restructuring.id24849217
+- FTI Consulting, "Early Careers" page (2026; entry routes, six career levels, no pay). https://www.fticonsulting.com/careers/early-careers
+- PA Consulting, "Early careers" page (2026; programmes by country, no pay). https://www.paconsulting.com/careers/early-careers
+- PA Consulting, "2026 Graduate Consulting Rotational Programme Analyst, London" (firm advert as reposted by Stemettes; secondary copy; PA's own job pages would not load). https://stemettes.org/zine/jobs/2026-graduate-consulting-rotational-programme-analyst-london/
+- Local Partnerships, "Graduate Consultant" advert on the Local Government Association careers site (closed 19 April 2026). https://www.careers.local.gov.uk/job/graduate-consultant-004842
+- BCG, Operations capability page (2026). https://www.bcg.com/capabilities/operations/overview
+- EFESO, careers page (2026; no pay). https://www.efeso.com/careers
+- Argon & Co, careers page (2026; no pay; used only for the employer list). https://www.argonandco.com/en/careers/
+- IMPOWER, careers page (2026; sector list only). https://www.impower.co.uk/careers/
+- Intellera Consulting, home page (2026; client sectors, no pay). https://www.intelleraconsulting.com/
+- Booz Allen Hamilton, "Internships and Early Careers" (2026; no pay, no citizenship statement). https://www.boozallen.com/careers/internships-and-early-careers.html
+- Guidehouse, "Early Career and Internships" (2026; no pay). https://guidehouse.com/careers/early-career-and-internships
+- National Audit Office, "Lessons learned: the government's use of external consultants", 21 November 2025. https://www.nao.org.uk/insights/governments-use-of-external-consultants/
+- Cabinet Office, "New controls across government to curb consultancy spend and save over £1.2 billion by 2026", 14 November 2024. https://www.gov.uk/government/news/new-controls-across-government-to-curb-consultancy-spend-and-save-over-12-billion-by-2026
+- Consultancy.uk, "NAO finds government lacks clarity on consulting spend", 24 November 2025 (secondary; source of the public-sector share of consultancies' income). https://www.consultancy.uk/news/42253/nao-finds-government-lacks-clarity-on-consulting-spend
+- GOV.UK, "National security vetting: clearance levels" (updated 23 September 2024). https://www.gov.uk/government/publications/united-kingdom-security-vetting-clearance-levels/national-security-vetting-clearance-levels
+- Oxford Economics, "MCA Annual Industry Report 2026" summary page, 10 July 2026 (2025 fee income; the full report sits behind a form and was not read). https://www.oxfordeconomics.com/resource/mca-annual-industry-report-2026/
+- The Insolvency Service, "Company insolvencies, December 2025" commentary, 20 January 2026 (England and Wales, 2025 totals). https://www.gov.uk/government/statistics/company-insolvencies-december-2025/commentary-company-insolvency-statistics-december-2025
+- ICAEW, "Qualifying as an insolvency practitioner" (2026). https://www.icaew.com/regulation/insolvency/become-an-insolvency-practitioner-with-icaew/qualifying-as-an-insolvency-practitioner
+- Joint Insolvency Examination Board, "Becoming an IP" (2026). https://jieb.co.uk/becoming-an-ip/
+- Turnaround Management Association, certification FAQ (2026; CTP and CTA requirements). https://turnaround.org/faq
+- AlmaLaurea, "Le retribuzioni dei laureati: un'analisi approfondita" (2024 survey of 2023 graduates; a graduate benchmark, not consulting pay). https://www.almalaurea.it/news/retribuzione-laureati-analisi-approfondita
+- Il Sole 24 Ore, "Consulenza, mercato in crescita spinto dalla domanda d'innovazione", 24 February 2024 (Assoconsult and NetConsulting cube data for 2023; secondary). https://en.ilsole24ore.com/art/consulenza-mercato-crescita-spinto-domanda-d-innovazione-AFyfMYoC
+- Road to Offer, Alvarez & Marsal and AlixPartners salary guides, updated 20 September 2026 (repeat Glassdoor samples of June 2024 and 2026; self-reported; weak). https://www.roadtooffer.com/blog/alvarez-marsal-salary ; https://www.roadtooffer.com/blog/alixpartners-salary
+- StrategyCase, "How Many Hours Do Consultants Really Work?", updated 14 July 2026 (author's estimates, no survey; weak). https://strategycase.com/how-much-consultants-work/
+- Could not be opened, so not cited as read: McKinsey Implementation careers page (timed out twice); Kearney, Alvarez & Marsal, Teneo and PwC UK careers sites (HTTP 403); Bright Network, Gradcracker, ICAEW Training Vacancies and Vault adverts (HTTP 403); TargetJobs adverts for FTI and Interpath restructuring graduates (HTTP 404); PA Consulting job pages (redirect loop); Insolvency Practitioners Association licence pages (not found); Interpath's careers page opened but lists no programmes. The UK restructuring graduate adverts named in 3.8 were therefore seen only as titles in search results.
+- Not found: an hours survey for operations, public-sector or turnaround work; any firm-published Italian pay for the three roles, or an Italian recruiter guide covering junior consultants (Michael Page Italia's guides found were for 2022 and for middle management); a firm-published US or UK graduate salary in turnaround and restructuring; a firm-published US entry salary in federal consulting, and a firm page stating the US citizenship or clearance rule; years per level at the turnaround firms; the number of experience hours for a UK insolvency licence; the public-sector share of Italian consulting in the current Assoconsult Osservatorio (the 2023 figure is derived by subtraction); the public-sector share and graduate-hiring figures in the full MCA report.
 
 **Data limits (stated openly):** Management Consulted's full salary report and McKinsey's own site were not accessible in this session (HTTP 403); no verified Italian MBB or tier-2 entry pay; thin Asia data; no firm publishes hours, acceptance rates or conversion rates, so all such figures here are practitioner estimates; partner pay is not published by any firm.

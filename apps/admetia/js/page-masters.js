@@ -251,7 +251,7 @@
       M.excluded.forEach(function (x) {
         var r = el('div', 'row');
         var n = el('div', 'name');
-        n.appendChild(document.createTextNode(x.name));
+        n.appendChild(SchoolLogos.heading('excluded:' + x.name, x.name));
         n.appendChild(el('small', null, x.why));
         r.appendChild(n);
         var badge = el('div', 'badge mid', 'Post-experience');
@@ -692,7 +692,7 @@
     var wrap = el('div', 'row');
 
     var name = el('div', 'name');
-    name.appendChild(document.createTextNode(sc.name));
+    name.appendChild(SchoolLogos.heading(sc.id, sc.name));
     /* A ruled-out row keeps only its country: timing and weighting are
      * beside the point until the rule is met, and wait in the fold. */
     var meta = T(sc.region);

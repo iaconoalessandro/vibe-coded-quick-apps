@@ -132,6 +132,180 @@ Scope notes: global, with the US (Washington DC), UK, Italy, Frankfurt/Brussels/
 - **How to enter**: *Degrees*: PhD required for faculty; bachelor's or master's for pre-docs (Fed RA, IMF RAP, think-tank RA also count as pre-doc-like). *Calendar of the academic job market (typical practice; AEA says interviews will occur online in 2026)*: candidate profiles and listings on JOE (Job Openings for Economists, the AEA's listings site) open in the late summer; applications are due in the autumn; first-round interviews historically ran at the January ASSA meetings (now online), followed by campus visits ("flyouts") in January-March and offers in spring. Hiring conditions: JOE listings in the second half of 2024 were down 4.6% from 2023 and 22.8% from 2022; the first half of 2025 was down 14.4% from 2024 and 39% from 2023 (AEA Committee on the Job Market, July 2025). The December 2025 department-chair survey attributed weakness to US university shocks (endowment tax, grant cuts, indirect-cost reductions, visa restrictions); I could not read the hiring count from the PDF. *Interview formats*: job market paper presentation (job talk), research conversations with faculty, teaching statement. *Skills*: econometrics, one's subfield, coding, writing. *Common mistakes*: starting a PhD without research experience or pre-doc; weak letters; no job market paper. *Alternative routes*: pre-docs (Harvard, USC, LBS, LSE and others; NBER predoc job announcement 2026), master's with thesis, central bank RAs. I found no systematic placement rate for pre-docs. Entry difficulty: 5/5 for top-programme tenure-track seats; 3/5 for pre-docs.
 - **Honest downsides and who it is NOT a good fit for**: 5-6+ years of stipend-level pay; a weak 2025-26 job market (listings down 39% vs 2023 by mid-2025); US-visa uncertainty; tenure review stress; pre-docs are low-paid and temporary. Not a good fit if you need income soon, dislike open-ended research, or want applied impact quickly.
 
+---
+
+### 3.8 Markets economist and strategist (banks and asset managers)
+
+**What you actually do.** You forecast growth, inflation and central-bank decisions for a bank's clients and trading desks or an asset manager's portfolio managers. Goldman Sachs's advert for a US economics research seat lists the core of it: write weekly research reports, present the team's views to clients, forecast GDP, the labour market, inflation and monthly indicators, follow and forecast monetary policy, and comment on high-frequency data releases (Goldman Sachs posting; an aggregator copy dates it 24 July 2026). In Italy the equivalent is a bank research department: Intesa Sanpaolo's publishes a Macroeconomic Outlook, a Weekly Economic Monitor and "Macro Rapid Response" notes (Intesa Sanpaolo research page, October 2026). It is the private-sector cousin of the central-bank economist in 3.1, judged on being useful and fast, not on publication. Tools: data terminals, statistical packages, spreadsheets, charts.
+
+**A typical day and week.** Illustrative composite, not a measured schedule. Early read of overnight data, a morning call with the sales and trading floor, a short note within an hour of a release, client calls, and longer pieces between events. The week follows the data calendar and central-bank meetings.
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Typical 50-60 with early starts, peaks 65+ around major releases (author judgement from the market-hours pattern; compare the sell-side research analyst in the Finance branch). The only official statement is generic: most economists work full time and some work more than 40 hours a week (BLS, May 2025 data).
+- Stress: 3-4/5; views are public and dated, and Goldman Sachs asks for the "ability to handle a demanding workload".
+- Lifestyle: market hours, office-based; travel to clients at senior levels.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 4/5.
+
+**Compensation (approximate).**
+- US: no graduate figure is published for an economics seat. Goldman Sachs's New York "US Economics Research Associate" states an expected base salary of $150,000-$225,000 plus a possible discretionary bonus, but it prefers a PhD, so it is not a first-degree entry job (2026 posting). JPMorgan's 2027 research analyst programme in New York states none (posting copied on The Muse, 15 September 2026). Economists as a whole: median $124,720, lowest tenth under $67,360, top tenth over $238,060 (BLS Occupational Outlook Handbook, May 2025).
+- UK: no reliable entry figure found. Capital Economics offers a "competitive starting salary" plus a discretionary bonus and gives the number only at interview (firm's page, October 2026). Prospects gives £25,000-£35,000 as the starting range for economists in all sectors and says banking usually pays more (updated October 2025; a careers guide, not a survey). The Society of Professional Economists' salary survey is members-only and could not be read.
+- Italy: no reliable data found for bank research departments. The floor is the national banking contract: €2,742.34 a month at the third professional area, first level, from 1 March 2026 (CCNL Credito ABI table on ilccnl.it), about €35,650 a year over 13 instalments (my arithmetic; the table does not state the number of instalments, and the hiring level for research graduates could not be confirmed). For scale, Italian master's graduates in all fields earned €1,495 net a month one year after graduating (AlmaLaurea, 28th report, June 2026).
+
+**Career path.** Research analyst or assistant economist (0-3 years; the Capital Economics scheme lasts two years, the UBS London research programme 18 months) → economist (3-7) → senior economist or strategist → chief economist; or a move to the buy side. Years are author judgement.
+
+**Exit opportunities.**
+- After 2-3 years: asset managers and hedge funds (macro research), central banks, economic consulting.
+- After 7-10 years: chief economist, portfolio strategy, policy institutions.
+
+**Tier list of employers.**
+- Tier 1: economics teams of global investment banks (Goldman Sachs, JPMorgan, UBS and peers), large asset managers and macro hedge funds.
+- Tier 2: commercial banks' research departments (in Italy, Intesa Sanpaolo), insurers, rating agencies, independent research firms such as Capital Economics.
+- Tier 3: corporate treasury and trade-association economists.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: there are two doors. Graduate research programmes take a bachelor's or master's: JPMorgan asks for graduation between December 2026 and June 2027 and a 3.2/4.0 average; UBS London for a 2:1 and at most two years' experience; Capital Economics for a first or strong 2:1 in economics or a close subject, with no master's required and a part-time master's or CFA paid for after year one. Economist seats in a bank's economics team ask for more: Goldman Sachs prefers a PhD in economics "or other strong research experience in markets or at a central bank". BLS gives a master's as the typical US entry level, and Prospects says a postgraduate qualification is likely to be expected in the UK.
+- Programmes: JPMorgan fills its class on a rolling basis from September; the UBS London 2027 programme closed in September 2026; Capital Economics closes on 16 October 2026 for a September 2027 start and invites 10-15 applicants to a writing test and first interview. Bank research programmes mostly feed company (equity) research; economics is a small part of the intake.
+- Common mistakes: academic writing where a one-page view is wanted; no opinion on current data.
+- Non-target routes: central-bank or ministry forecasting, then a move across (the route Goldman Sachs names); independent research firms; economic data providers.
+- Entry difficulty: 5/5; few seats per firm.
+
+**Honest downsides and who it is NOT a good fit for.** Very few jobs and a forecast record that is public; teams are said to be cut early in downturns (general observation, not sourced). Pay is opaque at entry: no graduate programme read states a salary, and the one published economics figure is for PhD-level hires. Poor fit: people who want long research horizons.
+
+---
+
+### 3.9 Regulator and competition-authority economist
+
+**What you actually do.** You do the economics behind public decisions on competition and regulated industries. At the UK Competition and Markets Authority (CMA), economists on a merger inquiry set out theories of harm (the ways a deal could hurt customers), draft questionnaires for businesses and consumer surveys, analyse the data, present the evidence to independent decision makers and take part in hearings; one CMA economist put the split at about 40% data work and 60% assessing other evidence, writing and communicating (CMA blog, 2 May 2019). Sector regulators add price controls for networks (energy, telecoms, water) and cost-benefit analysis of rules. The European Commission's Chief Competition Economist team advises on economics and econometrics in antitrust, merger and State-aid cases and works directly on those with the heaviest quantitative analysis (Commission page, October 2026). The US Federal Trade Commission's Bureau of Economics has about 80 PhD economists, supported by statisticians who compute market shares and prepare exhibits (FTC pages, October 2026). It is the public-side counterpart of the economic consultant in 3.4, who argues the companies' side. Tools: econometrics software, spreadsheets, cost models, consultation documents.
+
+**A typical day and week.** Illustrative composite. Data requests to firms, modelling, drafting a section of a consultation or decision, meetings with legal and policy colleagues, hearings with the regulated companies. The weeks before a published decision are the tight ones (author judgement).
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Typical 38-45, peaks 50 before decisions (author judgement).
+- Stress: 2-3/5.
+- Lifestyle: office or hybrid; stable. The CMA lists flexible working patterns, including working from home, and 25 days' leave rising to 30 (CMA recruitment page, October 2026). Posts exist outside capitals: FCA in Leeds, CMA in Edinburgh, Belfast and Cardiff.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 4/5. The CMA's 60% share for evidence, writing and communicating puts the people side at the top of that 3.
+
+**Compensation (approximate).**
+- UK: the FCA's two-year Economics Graduate Programme paid £36,000 in London and £33,000 in Leeds for the 2026 intake (programme listings on Higherin; closed 30 November 2025). Ofcom's own page for its two-year graduate programme states no pay; the £32,000 plus £1,500 allowance in the first pass came from a Bright Network page that could not be reopened (unverified). One rung up, Ofgem advertised a Senior Economist (Competition), Grade 7, at £47,895-£62,699 (Government Analysis Function vacancy page; closed 23 March 2026). CMA economist pay: no reliable data found; its assistant economists come through the Government Economic Service scheme in 3.3.
+- EU: the Commission hires competition economists as temporary staff at grades AD5 to AD7. Basic salary from 1 July 2025, step 1: AD5 €6,152.64 a month, AD7 €7,876.27, before EU tax and allowances (Commission tables, COM(2025) 736 annex).
+- US: FTC statisticians, the bachelor's and master's entry job, start at GS-7 or GS-9: $57,736 or $70,623 at step 1 in Washington in 2026. PhD economists start on a ladder from GS-12, $102,415-$133,142 (FTC pages; OPM 2026 table).
+- Italy: the first step is the competition authority's traineeship: 10 places for economists in 2026, up to 18 months, with an allowance of €1,500 gross a month, which the notice says is not pay and creates no employment relationship (AGCM notice, decision of 14 July 2026); €18,000 a year (my arithmetic). Permanent officials' pay: no reliable data found (the authority's pay notes could not be opened; the energy regulator's 2026 notice gives no amounts).
+
+**Career path.** Assistant or graduate economist (0-2 years; the FCA and Ofcom programmes last two) → economist (2-5) → senior or principal economist (Grade 7 at Ofgem) → director of economics or chief economist. At the FTC, statisticians serve one-year terms renewable up to four; economists move from GS-12 to GS-15. Years are author judgement.
+
+**Exit opportunities.**
+- After 2-3 years: economic consultancies (3.4), regulated companies' regulation teams, other regulators, the EU's competition directorate.
+- After 7-10 years: partner-track consulting, chief economist, policy leadership.
+
+**Tier list of employers.**
+- Tier 1: national competition authorities (CMA, FTC, AGCM) and the European Commission's competition directorate.
+- Tier 2: sector regulators (Ofgem, Ofcom, FCA; ARERA in Italy).
+- Tier 3: regional and local bodies; regulated firms' in-house teams.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: UK schemes take a bachelor's. The FCA asks for an economics degree and a 2:1; the Government Economic Service asks for a first or 2:1 in economics, or a postgraduate economics degree, with micro and macro both studied. Elsewhere the bar is higher. FTC economists hold PhDs; its statistician posts take a bachelor's with a 3.0 average (GS-7) or a master's (GS-9). AGCM's traineeship needs a master's at 105/110 or above plus a second-level master, a PhD (or 18 months of one) or a year of relevant experience, and an age under 32.
+- Programmes: FCA applications reopen in autumn 2026; Ofcom's next intake starts in November; Commission calls closed on 29 August 2025 and 17 July 2026; the FTC hires statisticians in the fall; AGCM's notice came out in July with a 20-day window.
+- Permanent posts in Italy: AGCM's January 2025 competition for 4 economist officials required a master's held for three years and three years' qualified experience (QuiFinanza, 24 January 2025; secondary). ARERA's 2026 competition, 10 officials in Milan of whom 6 economics graduates, required four years' post-degree experience, with a PhD or master's counting (Concorsando, 1 September 2026; secondary).
+- Nationality: FCA offers depend on holding the right to work in the UK independently; the Government Economic Service gives no visa sponsorship; FTC posts need US citizenship.
+- Common mistakes: no industrial-organisation or econometrics modules (AGCM scores theses in exactly these fields); not having read a published decision.
+- Non-target routes: economic consultancy first, then a move to the authority.
+- Entry difficulty: 4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Public-sector pay, slow cases, and decisions shaped by law and politics as much as by economics. Outside the UK there is no true graduate job: Italy offers an allowance-paid traineeship and then competitions asking for three to four years' experience, the FTC's economist grade needs a PhD, and Commission posts are temporary contracts. Poor fit: people who want quick results.
+
+---
+
+### 3.10 Development economist and impact-evaluation researcher
+
+**What you actually do.** You work on the economics of low- and middle-income countries, in one of two forms. As a research associate on a randomised evaluation you design survey questionnaires, run pilots, manage survey teams, clean and analyse the data and coordinate with local partners; the desk version is Stata or R work on large datasets under a professor's guidance, plus literature reviews, ethics-board applications and inputs to funder reports (J-PAL general field and data postings for summer 2027 starts). Country posts add management: an IPA post in the Philippines supervises field staff and handles project finances (IPA posting, read October 2026). As a government economist on the ODI Fellowship you are employed as a local civil servant for two years in a ministry of finance, planning, health or education, a central bank, a statistics office or a regulator in Africa, Asia, the Caribbean, the Pacific or the Western Balkans (fellowship listing, 9 March 2026). Tools: Stata, R or Python, survey software, spreadsheets.
+
+**A typical day and week.** Illustrative composite. Field offices: supervising survey teams, checking incoming data, coding, weekly calls with the principal investigators abroad. An IPA Zambia research-associate post splits the time 40% research and data analysis, 35% work with the partner regulator and 25% coordination, budgets and funder reports (IPA posting, 2026). Ministries: briefing notes, budget tables, meetings with donors.
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Typical 45-50, peaks 60 during data collection (author judgement). Prospects describes hours in overseas development posts as often long and unpredictable (March 2026; it covers aid work in general, not economists).
+- Stress: 3/5.
+- Lifestyle: often based in the country studied, on fixed-term contracts: 6-12 months and 8 months (J-PAL listings), 12 months (IPA Zambia), one year renewable (Harvard), two years (ODI). Prospects warns of gaps between assignments.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 4/5. Field posts that manage survey teams and partners sit higher on people; desk data posts lower.
+
+**Compensation (approximate).**
+- ODI Fellowship, 2026-2028 cohort: about £32,600 a year net of tax in the first year and £34,600 in the second, including a housing allowance that varies by country (Opportunity Desk listing, 9 March 2026; secondary, because ODI's own pages returned an access error).
+- US: a university research assistant post listed by J-PAL (University of Michigan) pays $20-$22 an hour, full time, on a 6-12-month contract (2026), about $41,600-$45,760 a year at 2,080 hours (my arithmetic). J-PAL North America's own pre-doctoral research associates at MIT were paid $51,500-$56,500 for two-year posts starting in summer 2021 (J-PAL job description, 2020; dated). The Harvard and Chicago postings read state no pay, and the $69,294-$74,624 figure in the first pass could not be reopened (unverified).
+- Country offices: pay follows the local market. A research associate in Colombia was offered COP 4,480,000 a month on an 8-month contract (Good Business Lab, listed by J-PAL, 2026). The IPA posts read state no salary.
+- UK: no reliable data found for development economists; UK charities' starting roles pay £20,000-£28,000 (Prospects, March 2026; all development work).
+- Italy: no reliable data found; the state-funded junior professional officer route is in 3.2.
+
+**Career path.** Research associate or fellow (1-3 years) → PhD or master's, or research manager → economist at a development bank, agency or NGO, or an academic career. The World Bank's Young Professionals Program, the usual staff entry, asks for a graduate degree plus 2-6 years' relevant experience (World Bank page, October 2026).
+
+**Exit opportunities.**
+- After 2-3 years: a PhD in economics. This is a recognised pre-doctoral route: 39% of students finishing top-50 economics PhDs in 2017 had worked as research assistants after their first degree (2018 study cited in the Econ RA Guide, 2020), and Harvard says many of its fellows go on to top PhD programmes. Also international organisations (3.2), development consultancies, impact investors.
+- After 7-10 years: senior economist at a development bank, research director, faculty.
+
+**Tier list of employers.**
+- Tier 1: the ODI Fellowship; research networks running randomised evaluations (J-PAL, IPA) and the university labs that hire through them (Harvard's Center for International Development, Chicago's Development Innovation Lab); the World Bank's research and evaluation units.
+- Tier 2: bilateral development agencies, large NGOs, development consultancies.
+- Tier 3: small NGOs and short project contracts.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: research-associate posts take a bachelor's or master's with microeconomics, econometrics and statistics, plus Stata or R (J-PAL general postings); Chicago's lab states a strong preference for a quantitative GRE score above 167. The ODI Fellowship asks for postgraduate economists and statisticians of any nationality. Country-office posts often ask for more: IPA Zambia 2-4 years' experience, IPA Philippines a master's, two years of project management and experience in the country.
+- Calendar: the J-PAL/IPA common application takes a CV, statement of purpose, transcripts and two letters for starts from 1 May 2027; a typical selection is a CV screen, a data test and two interview rounds (Michigan listing). The 2026 ODI deadline was 31 March 2026. The World Bank programme's window was 1-30 September 2026.
+- Languages: the Colombia post requires English at C1 and Spanish; Harvard counts French, Arabic or Indonesian as a plus.
+- Common mistakes: no coding sample; no evidence of having lived or worked in a comparable setting.
+- Non-target routes: field internships, a thesis using development data, NGO monitoring-and-evaluation roles.
+- Entry difficulty: 4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Short contracts, modest pay (an hourly rate in the US, local-currency salaries in country offices), time away from home, and a career that usually needs a PhD or several years' experience to reach an economist grade. Poor fit: people who want stability or a single location.
+
+---
+
+### 3.11 Health economist (HEOR and market access)
+
+**What you actually do.** You estimate whether a medicine or health programme is worth its price. HEOR stands for health economics and outcomes research, a field that weighs effectiveness, cost and patients' quality of life for regulators, payers and providers (ISPOR, the field's professional society); market access is the commercial function it serves. Costello Medical's advert describes the junior job: develop economic models in Excel, research and appraise the medical and economic literature, liaise with clinicians and write technical reports on methods and results (Health Economist posting, Boston, 28 January 2026). At York Health Economics Consortium the work includes cost-effectiveness and budget-impact models, survival-curve fitting on patient-level data, clients' submission dossiers to assessment bodies such as NICE and critiques of other companies' models for those bodies (vacancy, May 2026). Tools: Excel with VBA, R, statistical packages, literature databases.
+
+**A typical day and week.** Illustrative composite. Model building and checking, a call with the client's medical team, drafting a report section, a literature screen; weeks run to submission deadlines. Costello says new joiners work on three to four projects at once.
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Typical 40-45, peaks 50-55 before submissions (author judgement). Contract hours at York Health Economics Consortium are 37.5 a week (vacancy, May 2026).
+- Stress: 3/5.
+- Lifestyle: office or hybrid; consultancy work is client-driven. Costello allows home working for up to half the time; the Office of Health Economics (OHE) is hybrid around a London office.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 4/5. Adverts ask for Excel and VBA modelling first, then clear reports and client contact.
+
+**Compensation (approximate).**
+- UK consultancies: York Health Economics Consortium advertised a Research Consultant at £28,700-£43,050 depending on qualifications and experience, with 30 days' leave (vacancy closing 14 June 2026; it asks for a postgraduate degree and modelling experience). OHE's Graduate Economist advert gives only a "competitive salary" and warns that the post does not automatically meet the Skilled Worker visa salary threshold (advert closing 16 January 2026). The Costello Medical UK advert at up to £42,000 cited in the first pass could not be reopened (unverified).
+- UK public bodies: the NHS pay scale for 2026/27 starts Band 6 at £39,959 and Band 7 at £49,387, plus 20% in inner London capped at £8,746 (NHS Employers, from 1 April 2026). NICE's own pages returned an access error, so the band for its junior analysts is not confirmed.
+- UK universities: no junior health-economics post was listed on jobs.ac.uk on 11 October 2026; senior posts ran from £46,049-£56,535 (Southampton, senior research fellow) to £53,317-£61,034 (London School of Hygiene & Tropical Medicine, assistant professor, including London weighting).
+- US: Costello Medical's Boston Health Economist starts at $75,000, or $80,000 with a master's or PhD, described as standardised and non-negotiable (posting of 28 January 2026). No survey found.
+- Italy: no reliable data found. The medicines agency's competitions page listed only transfers and secondments between October 2025 and April 2026 (AIFA, read October 2026). For scale, Italian master's graduates in all fields earned €1,495 net a month one year after graduating (AlmaLaurea, 28th report, June 2026).
+
+**Career path.** Analyst or research assistant (0-2 years) → health economist or consultant (2-5) → senior or principal (5-10) → director of HEOR or market access. Years are author judgement.
+
+**Exit opportunities.**
+- After 2-3 years: pharmaceutical companies' market-access teams, health-technology assessment bodies, academia.
+- After 7-10 years: head of market access, consultancy partner, policy roles.
+
+**Tier list of employers.**
+- Tier 1: health-technology assessment bodies (NICE in England, AIFA in Italy) and the HEOR teams of large pharmaceutical companies.
+- Tier 2: specialist HEOR and market-access consultancies (Costello Medical, York Health Economics Consortium, Lumanity) and research institutes such as OHE; economic consultancies' health practices.
+- Tier 3: university research units on short contracts.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: in the UK the standard credential is a one-year MSc in health economics. OHE requires an MSc in health economics, industrial economics or similar; York Health Economics Consortium a postgraduate degree in a numerical discipline. York's MSc takes a 2:2 or better in economics or a related subject, and most students spend the summer on a placement supervised by a working health economist in a university unit, the NHS or a pharmaceutical company (University of York course page, October 2026). No advert read requires a PhD. Costello Medical hires on a first degree: a quantitative degree with a 3.3 average, advanced Excel and VBA, with postgraduate training only "desired", and it funds York's part-time postgraduate course in health economics with paid study leave.
+- Programmes: no fixed season was found. OHE recruited two graduates in January 2026 for a March start; Costello sets no deadline and starts people monthly, selecting through a video interview, a technical and proofreading test and an interview with a short presentation, in about six weeks.
+- Common mistakes: no modelling example; treating it as general consulting.
+- Non-target routes: a research-assistant post in a university health-economics unit; statistics or epidemiology roles, then a move across.
+- Entry difficulty: 3/5 with the right master's.
+
+**Honest downsides and who it is NOT a good fit for.** A narrow specialism tied to one industry and its regulation, with repetitive modelling at junior levels. UK entry pay can start under £30,000 at a consultancy, and neither Costello in the US nor OHE in the UK sponsors or guarantees a work visa. Poor fit: people who want broad economics or policy work.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -143,6 +317,10 @@ Scope notes: global, with the US (Washington DC), UK, Italy, Frankfurt/Brussels/
 | 3.5 Tech-sector economist | 40-50 (55-60) | 3 | 4 | 5 | US: about USD 210-220k total (Amazon L4); UK: no reliable data found; Italy: no reliable data found | 5 |
 | 3.6 Think-tank researcher | 40-50 (50-60) | 3 | 4 | 3 | US: USD 58-66k (Brookings/PIIE); UK: GBP 45-57k (Resolution Foundation), GBP 65.6k with PhD (IFS); Italy: no reliable data found | 3 |
 | 3.7 Academic / pre-doc | Faculty 45-60; pre-doc 40-50 (peak at deadlines) | 3-4 | 3 | 5 | US: pre-doc USD 42-55k; assistant professor about USD 154k; UK: pre-doc GBP 36.5-43k; Italy: PhD borsa about EUR 18.4k gross | 3 (pre-doc) / 5 (faculty) |
+| 3.8 Markets economist and strategist | 50-60 (65+) | 3-4 | 4 | 4 | US n.r.d. at graduate level; $150-225k base for a PhD-level seat (Goldman Sachs, 2026) / UK n.r.d.; £25-35k for economists in all sectors (Prospects, 2025) / Italy n.r.d.; banking-contract floor ≈ €35.7k gross (2026, my arithmetic) | 5 |
+| 3.9 Regulator and competition-authority economist | 38-45 (50) | 2-3 | 3 | 4 | US $57.7-70.6k (FTC statistician, GS-7/9, 2026); $102.4k for a PhD economist (GS-12) / UK £36k London, £33k Leeds (FCA economics graduates, 2026) / Italy €1,500 gross a month allowance (AGCM traineeship, 2026); officials n.r.d. | 4 |
+| 3.10 Development economist and impact-evaluation researcher | 45-50 (60) | 3 | 3 | 4 | US $20-22 an hour ≈ $42-46k (university research assistant listed by J-PAL, 2026) / UK n.r.d.; ODI Fellowship ≈ £32.6k net in year 1 (secondary) / Italy n.r.d. | 4 |
+| 3.11 Health economist (HEOR and market access) | 40-45 (50-55) | 3 | 3 | 4 | US $75k, or $80k with a master's or PhD (Costello Medical, Boston, 2026) / UK £28.7-43.1k (York Health Economics Consortium, 2026); NHS Band 6 from £40.0k / Italy n.r.d. | 3 |
 
 ## 4. Banks vs. other employer types
 
@@ -181,19 +359,19 @@ Where the same role (an economist) exists in different kinds of organisation, th
 
 ### (b) Matrix (S = strong, P = possible, X = stretch/not realistic)
 
-| Background | 3.1 Central bank | 3.2 IO | 3.3 Government / statistician | 3.4 Econ consulting | 3.5 Tech economist | 3.6 Think tank | 3.7 Academia / pre-doc |
-|---|---|---|---|---|---|---|---|
-| Management | X | X | P | X | X | X | X |
-| Logistics & Supply Chain | X | X | P | X | X | X | X |
-| Finance | P | P | P | P | X | P | P |
-| Accounting | X | X | P | P | X | X | X |
-| Marketing | X | X | X | X | P | X | X |
-| Data Analytics | P | P | S | P | P | P | P |
-| Economics | S | S | S | S | S | S | S |
-| Computer Science | P | P | P | P | P | X | P |
-| Cybersecurity | X | X | X | X | X | X | X |
-| Data Science | P | P | S | P | P | P | P |
-| Artificial Intelligence | P | P | P | P | P | X | P |
+| Background | 3.1 Central bank | 3.2 IO | 3.3 Government / statistician | 3.4 Econ consulting | 3.5 Tech economist | 3.6 Think tank | 3.7 Academia / pre-doc | 3.8 Markets economist | 3.9 Regulator | 3.10 Development | 3.11 Health economist |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Management | X | X | P | X | X | X | X | X | X | X | X |
+| Logistics & Supply Chain | X | X | P | X | X | X | X | X | X | X | X |
+| Finance | P | P | P | P | X | P | P | S | P | P | P |
+| Accounting | X | X | P | P | X | X | X | X | X | X | X |
+| Marketing | X | X | X | X | P | X | X | X | X | X | X |
+| Data Analytics | P | P | S | P | P | P | P | P | P | P | S |
+| Economics | S | S | S | S | S | S | S | S | S | S | S |
+| Computer Science | P | P | P | P | P | X | P | X | X | X | X |
+| Cybersecurity | X | X | X | X | X | X | X | X | X | X | X |
+| Data Science | P | P | S | P | P | P | P | P | P | P | S |
+| Artificial Intelligence | P | P | P | P | P | X | P | X | X | X | X |
 
 Notes: for PhD-gated seats (research economist, IMF Economist Program, tech economist, faculty) a non-economics background needs an economics PhD or a heavily quantitative one. The matrix reflects realistic entry, not eligibility.
 
@@ -227,5 +405,43 @@ Notes: for PhD-gated seats (research economist, IMF Economist Program, tech econ
 - Pre-doc postings 2026: Harvard (Stantcheva), https://jobs.protocol.ai/companies/harvard-university/jobs/66757794-pre-doctoral-fellowship-prof-stantcheva; USC Economics, https://dornsife.usc.edu/paulina-oliva/announcements/; LBS, https://www.london.edu/faculty-and-research/economics/pre-doctoral-research-assistant; LSE STICERD, https://jobs.lse.ac.uk/Vacancies/W/1390/0/461209/15539/research-assistant-sticerd; NBER predoc 2026, https://www.nber.org/sites/default/files/2026-02/Job%20Announcement%20-%20Predoc%202026.pdf.
 - Brookings Research Assistant, https://careers-brookings.icims.com/jobs/3884/research-assistant/job; PIIE Research Analyst, https://www.piie.com/about/employment/research-analyst-consultant; Resolution Foundation application pack (April 2026), https://www.resolutionfoundation.org/app/uploads/2026/04/Senior-Economist-Research-and-Policy-Analyst-Application-Pack.pdf; IFS Research Economist advert (via search summary, 2026); Bruegel research assistant listings, https://jobsin.brussels/jobs/bruegel-research-assistant-on-energy-and-climate-2026-06/.
 - Admetia library research (written early October 2026): research/careers/public-policy-and-academia.md (EPSO AD5, AMLA net-pay example, IMF EP, World Bank YPP, OECD Young Associates, UN YPP, MAECI JPO, Bank of Italy concorso, PhD stipends); research/careers/economic-consulting-real-estate-and-sustainability.md (UK economic consulting pay, secondary and unverified).
+
+**Second pass, 11 October 2026: role families 3.8 to 3.11 (re-researched the same day from opened sources)**
+
+Every figure in these four sections comes from a page that was opened and read on 11-12 October 2026; pages that could not be opened are listed under "Not found" and are not cited as read. Ratings and year ranges are my judgement.
+- 3.8: Goldman Sachs, Global Investment Research, US Economics Research Associate (2026 posting): https://higher.gs.com/roles/180084 ; aggregator copy dated 24 July 2026 (secondary): https://jobs.anitab.org/companies/goldman-sachs/jobs/87369027-global-investment-research-us-economics-research-associate
+- 3.8: JPMorgan Chase, 2027 Commercial & Investment Bank Markets Full-Time Analyst Program, Research (copy on The Muse, posted 15 September 2026; secondary): https://www.themuse.com/jobs/jpmorganchase/2027-commercial-investment-bank-markets-fulltime-analyst-program-research
+- 3.8: UBS, 2027 Graduate Talent Program, Global Research, London (TargetJobs listing, closed September 2026; secondary): https://targetjobs.co.uk/jobs/2027-graduate-talent-program-global-equity-research-240863
+- 3.8: Capital Economics, Graduate Training Scheme (read October 2026): https://capitaleconomics.com/careers/graduates
+- 3.8: Intesa Sanpaolo, Research (read October 2026): https://group.intesasanpaolo.com/en/research
+- 3.8: US Bureau of Labor Statistics, Occupational Outlook Handbook, Economists (May 2025 data): https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm
+- 3.8: Prospects, Economist job profile (updated October 2025; careers-service guide): https://www.prospects.ac.uk/job-profiles/economist
+- 3.8: CCNL Credito ABI, pay table in force from 1 March 2026 (reproduced by ilccnl.it; secondary): https://ilccnl.it/ccnl/credito---abi/credito---abi-dal-011099/tabelleretributive
+- 3.8, 3.11: AlmaLaurea, press release on the 28th report (11 June 2026; graduates of all fields): https://www.almalaurea.it/sites/default/files/comunicati/2026/cs-rapporto-almalaurea-2026.pdf
+- 3.9: Competition and Markets Authority blog, "Working as an Economist at the CMA" (2 May 2019): https://competitionandmarkets.blog.gov.uk/2019/05/02/working-as-an-economist-at-the-cma/ ; CMA recruitment page (read October 2026): https://www.gov.uk/government/organisations/competition-and-markets-authority/about/recruitment
+- 3.9: Financial Conduct Authority, Economics Graduate Programme 2026, London and Leeds (Higherin listings; closed 30 November 2025; secondary): https://higherin.com/jobs/38926/financial-conduct-authority-fca/economics-graduate-programme-2026-london and https://higherin.com/jobs/39649/financial-conduct-authority-fca/economics-graduate-programme-2026-leeds ; FCA graduate scheme page (updated 2 February 2026): https://www.fca.org.uk/graduate-scheme/printable/print
+- 3.9: Ofcom, Graduate programme (read October 2026; no pay stated): https://careers.ofcom.org.uk/careers/early-careers/graduate-programme/
+- 3.9: Government Analysis Function, Ofgem Senior Economist (Competition) vacancy (closed 23 March 2026): https://analysisfunction.civilservice.gov.uk/vacancies/senior-economist-competition/
+- 3.9: gov.uk, Assistant Economist recruitment (updated 3 February 2026): https://www.gov.uk/guidance/assistant-economist-recruitment
+- 3.9: European Commission, Chief Competition Economist (read October 2026): https://competition-policy.ec.europa.eu/chief-competition-economist_en ; EU Careers, Economic Analyst COMP/COM/2026/TA2a/CET (deadline 17 July 2026): https://selection.eu-careers.europa.eu/en/job-opportunities/economic-analyst/comp-com-2026-ta2a-cet ; Economist COM/TA/COMP/25 (deadline 29 August 2025): https://selection.eu-careers.europa.eu/en/job-opportunities/economist/com-ta-comp-25-ad5-ad7
+- 3.9: European Commission, COM(2025) 736 annex, basic salaries from 1 July 2025 (Council document 16220/25 ADD 1, 1 December 2025): https://data.consilium.europa.eu/doc/document/ST-16220-2025-ADD-1/en/pdf
+- 3.9: US Federal Trade Commission, Bureau of Economics, Economist Recruiting: https://www.ftc.gov/node/81814 ; Statistician position: https://www.ftc.gov/node/27878 (read October 2026)
+- 3.9: US Office of Personnel Management, 2026 General Schedule, Washington-Baltimore-Arlington: https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/html/DCB.aspx
+- 3.9: AGCM, notice for 10 trainees with advanced economic training (decision of 14 July 2026; copy of the notice hosted by Simone Concorsi): https://simoneconcorsi.it/wp-content/uploads/2026/09/agcm-bando-praticanti-formazione-economica-2026.pdf
+- 3.9: QuiFinanza, AGCM competitions for officials (24 January 2025; secondary): https://quifinanza.it/lavoro/bandi-e-concorsi/concorso-agcm-funzionari-giuridici-economici/877576/ ; ARERA, competition for ten officials (published 26 August 2026): https://www.arera.it/stampa-bandi-concorso/dettaglio/bando-di-concorso-per-titoli-ed-esami-finalizzato-allassunzione-di-dieci-unita-di-personale-da-inquadrare-nella-carriera-dei-funzionari-di-ruolo-dellautorita-di-regolazione-per-energia-reti-e-ambiente ; details from Concorsando (1 September 2026; secondary): https://www.concorsando.it/blog/concorso-arera-funzionari-regolazione-energia-reti-e-ambiente-2026/
+- 3.10: J-PAL careers listings (read October 2026): General Field Research Associate: https://www.povertyactionlab.org/careers/general-field-research-associate-job-105607 ; General Data Research Associate: https://www.povertyactionlab.org/careers/general-data-research-associate-job-105606 ; Research Assistant, Economics (University of Michigan): https://www.povertyactionlab.org/careers/research-assistant-economics-job-105626 ; Research Associate, Good Business Lab (Colombia): https://www.povertyactionlab.org/careers/research-associate-good-business-lab-job-105625 ; Research Fellow, Harvard CID: https://www.povertyactionlab.org/careers/research-fellow-harvard-cid-prof-rema-hanna-job-105614 ; Research Professional, Development Innovation Lab: https://www.povertyactionlab.org/careers/research-professional-development-innovation-lab-job-105609
+- 3.10: J-PAL North America, Pre-Doctoral Research Fellow/Research Associate job description (2020, for summer 2021 starts; dated): https://www.nber.org/sites/default/files/2020-10/2021JPALRAfullJD_circulate.pdf
+- 3.10: Innovations for Poverty Action, current opportunities (read October 2026): https://poverty-action.org/current-opportunities ; Research Associate, Zambia: https://poverty-action.org/research-associate-42 ; Research Associate, PSPS, Philippines: https://poverty-action.org/research-associate-psps
+- 3.10: ODI Fellowship Scheme 2026-2028 (Opportunity Desk listing, 9 March 2026; secondary): https://opportunitydesk.org/2026/03/09/odi-fellowship-scheme-2026-2028/
+- 3.10: World Bank, Young Professionals Program (2027 cohort): https://www.worldbank.org/en/about/careers/programs-and-internships/young-professionals-program
+- 3.10: Prospects, International aid/development worker job profile (March 2026; careers-service guide): https://www.prospects.ac.uk/job-profiles/international-aid-development-worker
+- 3.10: Econ RA Guide, v1.0 (21 December 2020): https://raguide.github.io/
+- 3.11: Costello Medical, Health Economist, Boston (posted 28 January 2026): https://apply.workable.com/costello-medical/jobs/view/A09EB777C8.md ; Costello Medical careers page (read October 2026): https://www.costellomedical.com/careers/
+- 3.11: York Health Economics Consortium, Research Consultant vacancy (closing 14 June 2026): https://www.yhec.co.uk/wp-content/uploads/2026/05/Research-Consultant-Pharma-Modelling-May-2026.pdf
+- 3.11: Office of Health Economics, Graduate Economist job description (closing 16 January 2026): https://www.ohe.org/wp-content/uploads/2025/12/Graduate-Economist-job-description.pdf
+- 3.11: NHS Employers, Pay scales for 2026/27 (from 1 April 2026): https://www.nhsemployers.org/articles/pay-scales-202627
+- 3.11: jobs.ac.uk, economist and health economics listings (read 11 October 2026): https://www.jobs.ac.uk/categories/economist-jobs and https://www.jobs.ac.uk/search/?keywords=health+economics
+- 3.11: University of York, MSc Health Economics (read October 2026): https://www.york.ac.uk/study/postgraduate-taught/courses/msc-health-economics/ ; ISPOR, About HEOR: https://www.ispor.org/heor-resources/about-heor ; AIFA, competitions page (read October 2026): https://www.aifa.gov.it/bandi-di-concorso
+- Not found: any graduate pay figure for bank or asset-manager economists (the Society of Professional Economists' and NABE salary surveys are members-only; Goldman Sachs's campus pay table and its junior economist postings would not open); UK and Italian bank research pay; current CMA economist pay and the CMA's assistant-economist adverts; Ofcom's graduate salary (the Bright Network page that carried it returned an access error) and the Ofgem economist advert cited in the first pass (removed); the eligibility text of the Commission's competition-economist calls; AGCM and ARERA officials' pay tables; ODI's own fellowship pages and the J-PAL North America and IPA Philippines postings cited in the first pass (access errors); pay on the Harvard, Chicago and IPA postings; NICE's careers pages and analyst adverts (access errors or removed); the Costello Medical UK and Novartis Dublin adverts cited in the first pass (removed); any HEOR salary survey; Italian pay for all four roles beyond the figures above; an hours survey for any of the four.
 
 **Data limits.** No official 2025-26 IMF salary table, World Bank FY27 US scale, Fed RA grade, OECD economist pay, BoJ or Gulf entry data was retrievable; ISTAT/MEF pay and Italian think-tank rosters are missing; UK economic-consulting pay is a secondary, unverified range; tech pay rests on a small self-reported sample; the AEA December 2025 hiring-count memo could not be read.

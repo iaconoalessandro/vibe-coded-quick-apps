@@ -377,6 +377,96 @@ Entry difficulty: 3/5 (few dedicated graduate seats; competition from a wider po
 **Honest downsides and who it is NOT a good fit for**
 Regulatory uncertainty (the Omnibus scale-back removed most CSRD companies and delayed standards); the field is smaller than promised; much of the work is data chasing; some firms have reduced sustainability teams. Not a good fit if you want a stable regulatory tailwind or are seeking a purely policy role.
 
+---
+
+### 3.8 Public-sector accountant and auditor
+
+**What you actually do.** You account for, or audit, public money (section 2.8). Two jobs share the label. As a trainee at a national audit office you test the accounts of ministries and agencies and feed reports to parliament: the UK National Audit Office (NAO) certified 413 sets of accounts and published 61 value-for-money and wider assurance reports in 2025-26 (NAO scheme site, read October 2026). As a finance trainee in a ministry, council or health body you sit on the other side: budgets, monthly monitoring, year-end accounts and advice to the managers who spend the money. Either way you study for a professional accountancy qualification on the job. Tools: the organisation's ledger system, spreadsheets, audit software.
+
+**A typical day and week.** Audit: sample transactions from a department's ledger, trace them to contracts and approvals, meet its finance team, write up findings. Finance: investigate variances against budget, advise budget holders, prepare annual accounts (Prospects profile, September 2026). Study shapes the calendar: NAO trainees get 25 weeks of paid study leave over the three years (NAO recruitment FAQs, October 2026).
+
+**Hours, stress and lifestyle.**
+- Hours: no hours survey found. Contracted weeks are short: 35 hours at Audit Scotland (2026 advert), "37 to 39" for public finance accountants (Prospects, September 2026), 36 in Italian central government (CCNL Funzioni Centrali 2025-2027). Extra hours come at year end, during audits and around budget deadlines (Prospects); the 45-50 peak is my estimate.
+- Stress: 2/5.
+- Lifestyle: hybrid, with long leave and large pensions (NAO: two office days a week, 35 days' leave including public holidays, employer pension contribution 28.97%).
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 3/5. The NAO says you "do not need to be a mathematician"; the technical load is the accounting exams.
+
+**Compensation (approximate).**
+- UK: NAO graduate trainees start on £35,787 in London and £28,912 in Newcastle and are expected to pass £62,000 and £54,000 once qualified (2026 figures, NAO scheme site). Audit Scotland: £32,408 (graduates page, 2026). Civil Service Fast Stream: £31,554, then £45,000-£55,000 on completing the four-year finance scheme (Civil Service Careers, 2026). Liverpool City Council graduate accountancy post: £30,060 (advert closed April 2025).
+- US: federal base pay in the Washington DC locality from January 2026 is $57,736 at GS-7 step 1 and $70,623 at GS-9 step 1 (OPM salary table 2026-DCB); which grade a new graduate gets was not verified. State-auditor starting pay: no reliable data found.
+- Italy: a funzionario (the graduate grade) in a ministry or at the Corte dei conti has a base salary of €26,735.93 a year from 1 January 2026, plus a thirteenth month, so about €28,960 (my arithmetic), before allowances (CCNL Funzioni Centrali 2025-2027, signed 6 August 2026, ARAN). In municipalities and regions the same grade has €24,941.67, about €27,020 with the thirteenth (CCNL Funzioni Locali 2022-2024, signed 23 February 2026, ARAN). Total pay with allowances: no reliable data found.
+- EU institutions: grade AD 5, step 1 has a basic salary of €6,152.64 a month (EU Careers salary tables, read October 2026).
+
+**Career path.** Trainee (3 years at the NAO, 4 at Audit Wales and on the Finance Fast Stream, about 4.5 at Audit Scotland) → qualified auditor or accountant → audit manager or finance manager → head or director of audit or finance (ladder per Prospects; years beyond qualification: no reliable data found).
+
+**Exit opportunities.**
+- After 2-3 years: other public bodies, charities, and the public-sector teams of the large audit firms, which Prospects lists as employers.
+- After 7-10 years: finance director of a public body, senior audit roles, regulators.
+
+**Tier list of employers.**
+- Tier 1: national audit offices (the NAO, about 70 graduates a year; Audit Scotland; Audit Wales; the US Government Accountability Office; Italy's Corte dei conti) and the European Court of Auditors in Luxembourg.
+- Tier 2: central government finance functions (the UK Government Finance Function; Italy's Ragioneria Generale dello Stato), large councils and health bodies.
+- Tier 3: small local bodies.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: a 2:1 in any discipline for the NAO, Audit Wales and the Finance Fast Stream; an honours degree in any subject at Audit Scotland. US federal financial-auditor posts need an accounting degree, or a related degree with 24 semester hours of accounting (OPM, series 0511).
+- Qualification: the ICAEW chartered qualification at the NAO and Audit Wales (14 exams, 450 days of audit experience, fully funded), the ICAS one at Audit Scotland, and the public-finance body CIPFA's in councils (four stages, per Prospects; CIPFA's own site could not be opened).
+- Calendar: Fast Stream applications close on 5 November 2026 (Audit Scotland's last intake closed on 11 January 2026). Italy recruits by public competition on the inPA portal: a MEF notice for 485 funzionari was open from 30 December 2025 to 27 January 2026 (lentepubblica, January 2026; secondary).
+- Nationality: the NAO, Audit Scotland and Audit Wales state that they cannot sponsor work visas; the NAO takes EU nationals only with, or eligible for, settled status. The European Court of Auditors takes EU citizens only, from EPSO reserve lists.
+- Common mistakes: treating it as a fallback from the audit firms (the NAO runs online tests, a job simulation and an assessment centre).
+- Non-target routes: a finance-assistant post in a council or health body with part-time study.
+- Entry difficulty: 4/5 for national audit offices; 2-3/5 for local finance traineeships.
+
+**Honest downsides and who it is NOT a good fit for.** Pay scales are fixed and public, with lower ceilings than private practice; Italian base pay starts under €30,000. Exams still decide the outcome: 1% of NAO trainees are dismissed for exam failure (NAO freedom-of-information response FOI-1862, September 2025). Poor fit: people aiming for high pay or transactions work, and students without the right to work in the UK who target the British schemes.
+
+---
+
+### 3.9 Fund accountant (fund administration)
+
+**What you actually do.** You keep the books of investment funds, usually at an administrator or custodian bank that funds hire for the job: record trades, income, expenses and investor money in and out, reconcile cash and positions with the custodian, check prices, and calculate the net asset value (NAV), the per-share figure investors buy and sell at. A 2026 State Street posting lists validating daily activity, calculating NAV, yields, distributions and corporate actions, and resolving exceptions; Robert Half's 2027 profile adds financial statements, investor reports and month-, quarter- and year-end closes. Errors are regulated events: Luxembourg's supervisor has a circular on protecting investors when a NAV is miscalculated (CSSF 24/856, published 29 March 2024). The work sits where funds are domiciled: Luxembourg funds held €6,687 billion of net assets at end July 2026 (CSSF figures via ALFI); Ireland serviced €5.7 trillion at end 2023, with 19,519 people directly employed, nearly half of them outside Dublin (Indecon report for Irish Funds, reported by RTÉ, September 2024). Tools: a fund-accounting platform (State Street's hedge-fund posting requires Advent Geneva), Excel, reconciliation tools.
+
+**A typical day and week.** For daily-priced funds: load the day's trades and corporate actions, clear reconciliation breaks, review prices, run and check the NAV before a fixed cut-off, then answer the fund manager's queries. Private-equity, property and credit funds are valued monthly or quarterly, so pressure bunches at period ends, and year end adds financial statements and auditors' requests. This cycle is my summary of the postings above; no time-use source found.
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Typical 40-45 with peaks of 50+ at month, quarter and year end is my estimate. One fixed point: Italy's banking contract sets a 37-hour week (QuiFinanza, July 2026).
+- Stress: 3/5; the NAV deadline is fixed.
+- Lifestyle: office or hybrid (State Street's Quincy posting was fully in-office); large teams of recent graduates.
+
+**Human vs. quantitative profile.** People/communication: 2/5. Quantitative/technical: 3/5. The work is procedural ("adherence to Standard Operating Procedures", State Street): accounting and arithmetic, not modelling.
+
+**Compensation (approximate).**
+- Ireland: Morgan McKinley's 2026 guide puts Dublin fund accountants at €30,000-€35,000 with 0-3 years' experience and €35,000-€45,000 with 3-5 years, senior fund accountants at €43,000-€48,000 and fund accounting managers at €60,000-€70,000 (recruiter model based on placements). Payscale's Dublin entry-level average of about €26,000 rests on 25 profiles last updated in January 2020 (self-reported; weak).
+- Luxembourg: no employer-published entry figure found. The legal minimum for a skilled worker is €3,325.59 a month from 1 June 2026 (guichet.lu), about €39,900 a year (my arithmetic). Payscale shows an average of €44,449 from 10 profiles (June 2026; self-reported; weak).
+- US: Robert Half's 2027 guide gives $74,000-$99,500, the low end for someone new to the role; a State Street senior associate posting in Quincy, Massachusetts, asking for three years' experience, stated $52,000-$94,120 (removed July 2026), so administrators can pay well below the recruiter range.
+- UK and Jersey: Morgan McKinley's 2026 London guide gives fund administrators £35,000-£45,000 with 0-3 years' experience, and £45,000-£70,000 for fund accountants on the asset-management side. One Jersey advert for a trainee fund administrator offered £28,000-£32,000 (AP Personnel, 23 September 2026). Edinburgh: no reliable data found.
+- Italy: no fund-accounting figure found. Where the employer is a bank applying the national banking contract, the minimum for the usual graduate level is €2,742.34 a month from 1 March 2026 (FirstCisl table as reported by QuiFinanza, July 2026; secondary), about €35,650 over 13 payments (my arithmetic).
+
+**Career path.** Junior fund accountant (0-2 years) → fund accountant (2-4) → senior or supervisor (4-7) → manager → head of fund accounting or client-service director. Years are rough; Alter Domus publishes its ladder as trainee, officer, senior officer.
+
+**Exit opportunities.**
+- After 2-3 years: fund managers' finance and operations teams, audit of funds, depositary and compliance roles, private-equity fund finance.
+- After 7-10 years: fund controller, chief operating officer of a small fund manager, conducting officer in Luxembourg.
+
+**Tier list of employers.**
+- Tier 1: the global custodian banks and administrators (State Street, BNY, Northern Trust, JPMorgan, BNP Paribas, CACEIS, Brown Brothers Harriman): daily-priced funds at scale.
+- Tier 2: specialist administrators for private equity, property, credit and hedge funds (Citco, with over 50 offices; Alter Domus, with over 6,000 staff; Apex Group, SS&C, IQ-EQ, Waystone).
+- Tier 3: small administrators and outsourced processing centres.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: accounting, finance, economics or business; State Street asks for a bachelor's in accounting or finance.
+- Qualification: none is needed to start, and employers fund study: Alter Domus offers "ACCA support and study leave", Citco exam and fee support for job-related qualifications. Ireland has a sector certificate, the IOB Professional Certificate in International Investment Fund Services, run with Irish Funds: three modules including fund accounting and valuation, 15 ECTS, awarded by University College Dublin, €2,040 (IOB, September 2026 intake).
+- Languages: English is the working language in Dublin and widely used in Luxembourg, where French or German helps (not sourced this cycle).
+- Common mistakes: expecting investment work (this is accounting and control); assuming the title means one pay level, when in-house roles at asset managers pay far more than administrators.
+- Non-target routes: a transfer-agency or reconciliations job at the same administrator.
+- Entry difficulty: 2/5; administrators hire in volume (Irish direct employment rose 22% in the five years to 2023).
+
+**Honest downsides and who it is NOT a good fit for.** Repetitive work against a fixed daily cut-off. Starting pay is modest: Dublin's €30,000-€35,000 is below Luxembourg's legal minimum for skilled workers, and a Dublin senior after 3-5 years is on €43,000-€48,000. The jobs are in a handful of fund centres. Automation and offshoring of the junior tasks are my judgement; no source opened. Poor fit: people who want to analyse investments.
+
+---
+
 ### Role family summary
 
 Entry compensation is approximate base or gross pay, with year and source in the sections above; "n/a" means no reliable data found.
@@ -390,6 +480,8 @@ Entry compensation is approximate base or gross pay, with year and source in the
 | 3.5 Internal auditor | 38-45 (50-55) | 2-3 | 4 | 3 | USD ~89k advertised midpoint (weak) / n/a / n/a | 3 |
 | 3.6 Forensic accountant | 42-50 (55-70) | 3-4 | 3 | 4 | USD 89-125k (RH 2027, mid-level) / n/a / n/a | 4 |
 | 3.7 Sustainability reporting / ESG assurance | 40-48 (50-60) | 3 | 3 | 3 | n/a / n/a / n/a | 3 |
+| 3.8 Public-sector accountant and auditor | 35-39 (45-50) | 2 | 3 | 3 | USD 57.7k GS-7, 70.6k GS-9 federal base, Washington DC (OPM 2026; entry grade unverified) / GBP 28.9k Newcastle, 35.8k London (National Audit Office, 2026) / EUR 26.7k base plus 13th month, ministry graduate grade (ARAN contract, 2026) | 4 (national audit offices); 2-3 (local) |
+| 3.9 Fund accountant (fund administration) | 40-45 (50+) | 3 | 2 | 3 | USD 74-99.5k (RH 2027; one administrator posting from USD 52k) / GBP 35-45k London fund administrator, 0-3 yrs (Morgan McKinley 2026); Dublin EUR 30-35k / n/a; EUR 35.65k bank-contract minimum (2026, my arithmetic) | 2 |
 
 ## 4. Banks vs. other employer types
 
@@ -439,19 +531,19 @@ Regional differences (qualification and entry):
 
 ### (b) Matrix: S = strong fit, P = possible, X = stretch
 
-| Background | 3.1 External auditor | 3.2 Tax | 3.3 Financial accountant / controller | 3.4 Management accountant / controller | 3.5 Internal auditor | 3.6 Forensic accountant | 3.7 Sustainability reporting / ESG assurance |
-|---|---|---|---|---|---|---|---|
-| Management | P | P | P | S | P | X | P |
-| Logistics & Supply Chain | X | X | P | S | P | X | P |
-| Finance | S | S | S | S | S | P | P |
-| Accounting | S | S | S | S | S | S | S |
-| Marketing | X | X | X | P | X | X | P |
-| Data Analytics | S | P | P | S | S | S | P |
-| Economics | S | S | S | S | P | P | P |
-| Computer Science | P | X | P | P | S | S | P |
-| Cybersecurity | P | X | X | X | S | P | X |
-| Data Science | P | X | P | P | S | S | P |
-| Artificial Intelligence | P | X | X | X | P | P | X |
+| Background | 3.1 External auditor | 3.2 Tax | 3.3 Financial accountant / controller | 3.4 Management accountant / controller | 3.5 Internal auditor | 3.6 Forensic accountant | 3.7 Sustainability reporting / ESG assurance | 3.8 Public sector | 3.9 Fund accountant |
+|---|---|---|---|---|---|---|---|---|---|
+| Management | P | P | P | S | P | X | P | P | P |
+| Logistics & Supply Chain | X | X | P | S | P | X | P | X | X |
+| Finance | S | S | S | S | S | P | P | S | S |
+| Accounting | S | S | S | S | S | S | S | S | S |
+| Marketing | X | X | X | P | X | X | P | X | X |
+| Data Analytics | S | P | P | S | S | S | P | P | P |
+| Economics | S | S | S | S | P | P | P | S | P |
+| Computer Science | P | X | P | P | S | S | P | X | X |
+| Cybersecurity | P | X | X | X | S | P | X | X | X |
+| Data Science | P | X | P | P | S | S | P | X | X |
+| Artificial Intelligence | P | X | X | X | P | P | X | X | X |
 
 Notes: ratings are my judgement based on entry requirements stated by firms and professional bodies, not an employer-published scale. "P" assumes you complete the accounting prerequisites or a conversion (e.g. ACCA/ACA in the UK, CPA credits in the US, an Italian economics master's).
 
@@ -493,3 +585,32 @@ All accessed October 2026 unless a date is given.
 - Going Concern, Singapore Big 4 pay (2022). https://www.goingconcern.com/singapore-labor-shortage-big-4-salaries/
 - Project prior research: research/careers/accounting-and-corporate.md (early Oct 2026) for UK Big 4 intake details, ACCA/ICAEW exemption rules, corporate programme requirements.
 - Data limits: the web-search allowance ran out near the end. Not verified from primary sources: ICAEW ACA structure and fees, AICPA CPA exam structure and pass rates, CISA/CAMS details, Big 4 US starting pay, Milan-specific pay, Gulf and Asian audit pay.
+
+**Second pass, 11 October 2026: role families 3.8 and 3.9 (re-researched the same day from opened sources)**
+
+Every figure in 3.8 and 3.9 comes from a page or PDF that was opened and read; search snippets were not used, sums marked "my arithmetic" are mine, and scores and background ratings are my judgement.
+- National Audit Office, Accountancy Training Scheme site: home page (work in numbers 2025-26), "About the scheme", "Benefits and Rewards" (2026 pay), "How to Apply": https://naoaccountancyscheme.co.uk/ ; https://naoaccountancyscheme.co.uk/about-the-scheme/ ; https://naoaccountancyscheme.co.uk/benefits-and-rewards/ ; https://naoaccountancyscheme.co.uk/how-to-apply/
+- National Audit Office, Recruitment FAQs (PDF, October 2026; intake, exams, study leave, nationality): http://naoaccountancyscheme.co.uk/wp-content/uploads/2026/10/Recruitment-FAQs.pdf
+- National Audit Office, freedom-of-information response FOI-1862 (dated 25 September 2025; retention, pass rates, dismissals): https://www.nao.org.uk/wp-content/uploads/2026/08/FOI-1862.pdf
+- Audit Scotland, "Graduates" (2026 pay): https://audit.scot/about-us/work-with-us/graduates ; Graduate Trainee Auditor advert, closed 11 January 2026 (hours, visa statement): https://myjobscotland.gov.uk/organisations/audit-scotland/jobs/graduate-trainee-auditor-442181
+- Audit Wales, "Our accountancy programme" and "Early careers" (read October 2026; no salary stated): https://www.audit.wales/our-accountancy-programme ; https://www.audit.wales/early-careers
+- Civil Service Careers, "Fast Stream" and "Finance scheme" (2026): https://www.civil-service-careers.gov.uk/fast-stream/ ; https://www.civil-service-careers.gov.uk/fast-stream/fs-all-schemes/fs-finance-scheme/
+- Liverpool City Council, Graduate Accountancy Officer advert (closed 29 April 2025): https://jobs.liverpool.gov.uk/jobs/job/Graduate-Accountancy-Officer/678
+- Prospects, "Chartered public finance accountant" (updated September 2026; careers-service profile, secondary for the CIPFA qualification): https://www.prospects.ac.uk/job-profiles/chartered-public-finance-accountant
+- US Office of Personnel Management, Salary Table 2026-DCB (effective January 2026): https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/pdf/2026/DCB.pdf ; Auditing Series 0511 qualification standard: https://www.opm.gov/policy-data-oversight/classification-qualifications/general-schedule-qualification-standards/0500/auditing-series-0511/
+- ARAN, CCNL comparto Funzioni Centrali 2025-2027 (signed 6 August 2026; Tabella 3, art. 29): https://www.aranagenzia.it/documento_pubblico/contratto-collettivo-nazionale-di-lavoro-relativo-al-personale-del-comparto-funzioni-centrali-triennio-2025-2027/ ; CCNL comparto Funzioni Locali 2022-2024 (signed 23 February 2026; Tabella B): https://www.aranagenzia.it/documento_pubblico/contratto-collettivo-nazionale-di-lavoro-relativo-al-personale-del-comparto-funzioni-locali-triennio-2022-2024/
+- lentepubblica, "Nuovo concorso funzionari MEF 2026" (24 January 2026; secondary): https://lentepubblica.it/concorsi-pubblici/nuovo-concorso-funzionari-mef-2026-posti-prove-scadenze/
+- EU Careers, "Salary levels and progression" (read October 2026): https://eu-careers.europa.eu/benefits-and-pay/salary-and-allowances/salary-levels-and-progression_en ; European Court of Auditors, "Job opportunities": https://www.eca.europa.eu/en/job-opportunities
+- State Street, "Alternative Ops Fund Accounting, Senior Associate", Quincy MA (employer posting hosted by Built In Boston, removed 7 July 2026): https://www.builtinboston.com/job/alternative-ops-fund-accounting-senior-associate/10060953
+- Robert Half, "Fund Accountant Salary" (US, 2027 guide): https://www.roberthalf.com/us/en/job-details/fund-accountant
+- CSSF, Circular 24/856 (published 29 March 2024; landing page read, PDF text not extracted): https://www.cssf.lu/en/Document/circular-cssf-24-856/
+- ALFI, Luxembourg industry statistics (CSSF data, end July 2026): https://www.alfi.lu/en-gb/pages/industry-statistics/luxembourg
+- RTÉ, report on the Indecon study for Irish Funds (23 September 2024, end-2023 data; secondary): https://rte.ie/news/business/2024/0923/1471387-regulatory-environment-biggest-issue-facing-funds-sector
+- Morgan McKinley 2026 salary guide pages (recruiter model): Dublin fund accountant, senior fund accountant, fund accounting manager: https://www.morganmckinley.com/ie/salary-guide/data/fund-accountant/dublin ; https://www.morganmckinley.com/ie/salary-guide/data/senior-fund-accountant/dublin ; https://www.morganmckinley.com/ie/salary-guide/data/fund-accounting-manager/dublin ; London fund accountant and fund administrator: https://www.morganmckinley.com/uk/salary-guide/data/fund-accountant/london ; https://www.morganmckinley.com/uk/salary-guide/data/fund-administrator/london
+- Payscale (self-reported; weak): Fund Accountant, Dublin, entry level (25 profiles, last updated January 2020): https://www.payscale.com/research/IE/Job=Fund_Accountant/Salary/bd852f09/Entry-Level-Dublin ; Fund Accountant, Luxembourg (10 profiles, June 2026): https://www.payscale.com/research/LU/Job=Fund_Accountant/Salary
+- Guichet.lu, "Social parameters" (from 1 June 2026): https://guichet.public.lu/en/citoyens/outils/parametres-sociaux.html
+- QuiFinanza, "Aumento stipendi bancari 2026" (16 July 2026; secondary for the FirstCisl banking-contract table): https://quifinanza.it/lavoro/aumento-stipendi-bancari-2026/1008500/
+- Jersey Evening Post jobs, AP Personnel, "Trainee Fund Administrator - Jersey" (23 September 2026; one advert): https://jobs.jerseyeveningpost.com/jobs/trainee-fund-administrator-jersey-jersey/56592-1/
+- Alter Domus careers and early-career pages: https://careers.alterdomus.com/en ; https://careers.alterdomus.com/en/early-career-professionals ; Citco careers: https://www.citco.com/careers
+- IOB, Professional Certificate in International Investment Fund Services (September 2026 intake): https://iob.ie/programme/investment-fund-services-cert
+- Not found: hours surveys for either role; years to promotion after qualifying in public audit; US state-auditor starting pay and the federal grade given to new graduates; Italian public pay including allowances; an Italian fund-accounting salary (AlmaLaurea, JobPricing and Michael Page Italy were not reached before the search allowance ran out; the BNP Paribas and CACEIS Milan postings did not open); an employer-published Luxembourg entry salary; Edinburgh fund-accounting pay; EFAMA and Assogestioni employment figures. Pages that could not be opened: CIPFA (403), NHS Graduate Management Training Scheme (403), the Hackney council advert and the earlier TargetJobs NAO listing (404; the Essex and Bright Network pages were not re-opened and are no longer cited), gradireland's fund accountant profile (404), the Moovijob Luxembourg posting (403), Irish Funds statistics (figures not rendered), the BLS OEWS occupation table, the FirstCisl PDF (not machine-readable here).

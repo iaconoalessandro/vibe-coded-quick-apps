@@ -39,7 +39,7 @@ const CC = require('./careers/compass');
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'research/branches');
 const OUT = path.join(ROOT, 'careers');
-const SITE = 'https://iaconoalessandro.github.io/admetia/';
+const SITE = require('./shell').SITE;
 
 function fail(msg) { throw new P.ParseError(msg); }
 
@@ -47,7 +47,6 @@ function fail(msg) { throw new P.ParseError(msg); }
 /* 1. Parse                                                                 */
 /* ------------------------------------------------------------------------ */
 
-function firstInt(s) { const m = /\d+/.exec(s || ''); return m ? Number(m[0]) : null; }
 function rangeOf(s) {
   /* Hours: the first figure or range in the cell ("DCM 60-70 (80-90); ..." → 60-70). */
   const m = /(\d+)(?:\s*-\s*(\d+))?/.exec(P.stripMd(s || ''));

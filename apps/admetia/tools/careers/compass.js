@@ -116,6 +116,8 @@ const ROLES = {
   'data-science/3.5': 'a=quant,data,check o=bank pay=2 up=2 st=3 ex=2 ai=2 lang=1',
   'data-science/3.6': 'a=research,quant,build o=tech,lab pay=3 up=3 st=2 ex=2 ai=1 lang=0 gate=phd',
   'data-science/3.7': 'a=advise,data,quant o=consult pay=2 up=2 st=2 ex=3 ai=2 lang=1',
+  'data-science/3.8': 'a=quant,check,advise o=bank,consult pay=2 up=3 st=3 ex=2 ai=2 lang=1 qual',
+  'data-science/3.9': 'a=data,research,build o=lab,corp,public pay=1 up=2 st=1 ex=2 ai=1 lang=0 mi sec=pharma',
 
   'data-analytics/3.1': 'a=data,operate o=corp pay=1 up=2 st=2 ex=2 ai=3 lang=1',
   'data-analytics/3.2': 'a=data,build o=corp pay=1 up=2 st=2 ex=1 ai=3 lang=1',
@@ -125,6 +127,8 @@ const ROLES = {
   'data-analytics/3.6': 'a=data,people o=corp pay=1 up=2 st=3 ex=1 ai=2 lang=1',
   'data-analytics/3.7': 'a=check,data o=corp,bank pay=1 up=1 st=3 ex=1 ai=2 lang=1',
   'data-analytics/3.8': 'a=advise,data o=consult pay=2 up=2 st=2 ex=3 ai=2 lang=1',
+  'data-analytics/3.9': 'a=data,quant,sell o=corp,bank pay=1 up=2 st=3 ex=2 ai=2 lang=1',
+  'data-analytics/3.10': 'a=check,data,protect o=bank,tech pay=1 up=2 st=3 ex=2 ai=3 lang=1',
 
   'cybersecurity/3.1': 'a=protect,data o=corp,consult pay=1 up=2 st=3 ex=2 ai=2 lang=1',
   'cybersecurity/3.2': 'a=protect,research o=consult,public pay=2 up=2 st=3 ex=2 ai=1 lang=1 gate=exp',
@@ -143,6 +147,12 @@ const ROLES = {
   'management/3.4': 'a=people,advise o=corp pay=1 up=2 st=3 ex=1 ai=2 lang=2',
   'management/3.5': 'a=advise,deals,research o=corp pay=2 up=3 st=2 ex=3 ai=1 lang=1',
   'management/3.6': 'a=operate,people,research o=public pay=1 up=1 st=3 ex=1 ai=1 lang=2 mi cit df=eu sec=public',
+  'management/3.7': 'a=operate,people,sell o=corp pay=2 up=2 st=3 ex=2 ai=1 lang=2',
+  'management/3.8': 'a=operate,people,sell o=corp pay=1 up=2 st=2 ex=2 ai=1 lang=2',
+  'management/3.9': 'a=operate,people,data o=public pay=1 up=2 st=3 ex=2 ai=1 lang=2 mi sec=public,pharma',
+  'management/3.10': 'a=check,advise,data o=corp pay=1 up=2 st=2 ex=2 ai=2 lang=1 mi sec=sustainability',
+  'management/3.11': 'a=advise,operate,data o=corp,bank,public pay=1 up=2 st=3 ex=3 ai=2 lang=1',
+  'management/3.12': 'a=deals,sell,advise o=consult,corp pay=1 up=2 st=2 ex=2 ai=1 lang=2 qual sec=realestate',
 
   'logistics-supply-chain/3.1': 'a=deals,operate,sell o=corp pay=1 up=2 st=3 ex=2 ai=2 lang=2 sec=industrial,energy',
   'logistics-supply-chain/3.2': 'a=data,operate,quant o=corp pay=1 up=2 st=3 ex=2 ai=2 lang=1 sec=industrial',
@@ -151,6 +161,9 @@ const ROLES = {
   'logistics-supply-chain/3.5': 'a=deals,sell,operate o=corp,agency pay=1 up=3 st=1 ex=1 ai=1 lang=0 sec=energy',
   'logistics-supply-chain/3.6': 'a=data,build,operate o=corp pay=1 up=2 st=3 ex=2 ai=2 lang=1',
   'logistics-supply-chain/3.7': 'a=advise,operate,data o=consult pay=2 up=2 st=2 ex=3 ai=2 lang=1',
+  'logistics-supply-chain/3.8': 'a=operate,data,quant o=corp pay=1 up=2 st=3 ex=2 ai=2 lang=2 sec=industrial',
+  'logistics-supply-chain/3.9': 'a=check,operate,advise o=corp,consult pay=1 up=2 st=3 ex=2 ai=2 lang=1',
+  'logistics-supply-chain/3.10': 'a=check,operate,quant o=corp pay=1 up=2 st=3 ex=2 ai=1 lang=2 sec=industrial,pharma',
 
   'accounting/3.1': 'a=check,advise o=consult pay=1 up=2 st=2 ex=3 ai=3 lang=2 qual df=audit ms=audit',
   'accounting/3.2': 'a=check,advise,research o=consult pay=1 up=2 st=3 ex=2 ai=3 lang=2 qual df=audit ms=audit',
@@ -159,6 +172,8 @@ const ROLES = {
   'accounting/3.5': 'a=check,advise o=corp,bank pay=1 up=2 st=3 ex=2 ai=2 lang=2 qual gate=exp',
   'accounting/3.6': 'a=check,research,protect o=consult pay=2 up=2 st=3 ex=2 ai=2 lang=1 qual gate=exp',
   'accounting/3.7': 'a=check,research,advise o=consult,corp pay=1 up=2 st=1 ex=2 ai=2 lang=1 mi qual gate=exp sec=sustainability',
+  'accounting/3.8': 'a=check,operate,advise o=public pay=1 up=2 st=3 ex=2 ai=2 lang=2 mi cit qual sec=public',
+  'accounting/3.9': 'a=check,quant,operate o=bank pay=1 up=2 st=2 ex=2 ai=3 lang=0 qual',
 
   'marketing/3.1': 'a=create,operate,sell o=corp pay=2 up=3 st=2 ex=3 ai=2 lang=2 cr df=fmcg ms=fmcg sec=luxury,pharma',
   'marketing/3.2': 'a=data,create o=agency,tech pay=1 up=2 st=2 ex=2 ai=3 lang=1 df=agency',
@@ -168,6 +183,10 @@ const ROLES = {
   'marketing/3.6': 'a=research,data o=agency,corp pay=1 up=2 st=2 ex=2 ai=3 lang=2',
   'marketing/3.7': 'a=advise,create,sell o=agency pay=1 up=2 st=1 ex=2 ai=3 lang=2 cr df=agency spons=rare',
   'marketing/3.8': 'a=sell,deals o=tech,corp,startup pay=2 up=3 st=2 ex=2 ai=1 lang=2 df=tech ms=tech sec=tech',
+  'marketing/3.9': 'a=create,sell,people o=agency,corp,public pay=1 up=2 st=2 ex=2 ai=3 lang=2 cr df=agency',
+  'marketing/3.10': 'a=data,operate,sell o=corp,startup pay=1 up=2 st=2 ex=2 ai=2 lang=1',
+  'marketing/3.11': 'a=data,sell,advise o=corp pay=2 up=2 st=3 ex=2 ai=2 lang=2 df=fmcg',
+  'marketing/3.12': 'a=operate,sell,create o=agency,corp pay=1 up=1 st=1 ex=1 ai=1 lang=2 cr sec=sports',
 
   'economics/3.1': 'a=research,quant o=public pay=2 up=2 st=3 ex=2 ai=1 lang=1 mi cit df=eu sec=public',
   'economics/3.2': 'a=research,quant,advise o=public pay=3 up=2 st=3 ex=2 ai=1 lang=0 mi cit sec=public',
@@ -176,24 +195,36 @@ const ROLES = {
   'economics/3.5': 'a=research,quant,data o=tech pay=3 up=3 st=2 ex=2 ai=1 lang=0 gate=phd',
   'economics/3.6': 'a=research,advise o=public pay=1 up=1 st=2 ex=2 ai=2 lang=1 mi sec=public',
   'economics/3.7': 'a=research,quant o=lab pay=1 up=2 st=2 ex=1 ai=1 lang=0 gate=phd',
+  'economics/3.8': 'a=research,quant,advise o=bank pay=3 up=3 st=1 ex=2 ai=2 lang=0',
+  'economics/3.9': 'a=research,quant,check o=public pay=1 up=2 st=3 ex=3 ai=1 lang=2 mi cit sec=public,energy',
+  'economics/3.10': 'a=research,data,quant o=public,lab pay=1 up=1 st=1 ex=2 ai=1 lang=1 mi sec=public',
+  'economics/3.11': 'a=quant,research,advise o=consult,corp,public pay=2 up=2 st=3 ex=2 ai=2 lang=0 sec=pharma',
 
   'management-consulting/3.1': 'a=advise,quant,operate o=consult pay=3 up=3 st=2 ex=3 ai=1 lang=2 df=mbb ms=mbb',
   'management-consulting/3.2': 'a=advise,operate o=consult pay=2 up=2 st=2 ex=3 ai=2 lang=2 df=big4cons',
   'management-consulting/3.3': 'a=advise,research,quant o=consult,agency pay=2 up=2 st=2 ex=2 ai=2 lang=1 sec=pharma,sustainability',
   'management-consulting/3.4': 'a=advise,build,operate o=consult pay=2 up=2 st=2 ex=2 ai=2 lang=1',
   'management-consulting/3.5': 'a=advise,operate,research o=corp pay=2 up=2 st=2 ex=3 ai=1 lang=1',
+  'management-consulting/3.6': 'a=advise,operate,data o=consult pay=2 up=2 st=2 ex=3 ai=1 lang=2 df=big4cons sec=industrial',
+  'management-consulting/3.7': 'a=advise,operate,research o=consult pay=2 up=2 st=2 ex=3 ai=2 lang=2 mi df=big4cons sec=public',
+  'management-consulting/3.8': 'a=advise,quant,operate o=consult pay=3 up=3 st=3 ex=3 ai=1 lang=1 gate=exp',
 
   'product-management-startups/3.1': 'a=create,operate,data o=tech,startup pay=3 up=3 st=2 ex=3 ai=1 lang=0 cr df=tech ms=tech sec=tech',
   'product-management-startups/3.2': 'a=create,operate,data o=tech pay=3 up=3 st=2 ex=3 ai=1 lang=0 cr df=tech ms=tech sec=tech',
   'product-management-startups/3.3': 'a=operate,build o=tech pay=2 up=2 st=2 ex=2 ai=2 lang=0 df=tech sec=tech',
   'product-management-startups/3.4': 'a=operate,sell,people o=startup pay=1 up=2 st=1 ex=3 ai=1 lang=0 df=tech spons=rare sec=tech',
-  'product-management-startups/3.5': 'a=create,sell,people o=startup pay=1 up=3 st=1 ex=3 ai=1 lang=0 cr spons=rare sec=tech'
+  'product-management-startups/3.5': 'a=create,sell,people o=startup pay=1 up=3 st=1 ex=3 ai=1 lang=0 cr spons=rare sec=tech',
+  'product-management-startups/3.6': 'a=create,build,research o=tech,startup,agency pay=1 up=2 st=1 ex=2 ai=3 lang=0 cr sec=tech',
+  'product-management-startups/3.7': 'a=research,data,people o=tech,agency pay=1 up=2 st=1 ex=2 ai=2 lang=1 sec=tech',
+  'product-management-startups/3.8': 'a=sell,people,operate o=tech,startup pay=2 up=2 st=2 ex=2 ai=2 lang=1 df=tech sec=tech',
+  'product-management-startups/3.9': 'a=create,research,sell o=startup,corp pay=2 up=2 st=1 ex=3 ai=1 lang=1 cr spons=rare sec=tech'
 };
 
 /* Roles that are rarely a first job. The note is our paraphrase of the
  * role's own "How to enter"; the role page has the full text. A student who
  * has worked 2+ years sees `exp` roles as open now. */
 const GATES = {
+  'management-consulting/3.8': 'Most hires come after 2–5 years in audit, transaction services, consulting or banking; graduate intakes are small.',
   'finance/P2-3.6': 'Almost no direct graduate entry: a sell-side desk seat and a track record come first.',
   'finance/P3-3.4': 'Almost all associates come from top banks’ M&A or leveraged-finance analyst classes, or from strategy consulting.',
   'finance/P3-3.5': 'No standard path: hires come from start-ups, banking, consulting, private equity or founding.',

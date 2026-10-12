@@ -494,5 +494,19 @@ t('grey shapes have no role, no name and no tab stop', /p\.setAttribute\('class'
 t('the map is one tab stop with arrow-key movement', /function rovingReset\(\)/.test(pm) && /ArrowRight: \[1, 0\]/.test(pm));
 t('the Atlas headline has no italic accent word', !/<h1[^>]*>[^<]*<em>/.test(read('map.html')));
 
+/* The drawings on the overviews: each names a covered country, exists in both
+ * sizes, and has Italian. Guides with travel advice carry one too. */
+{
+  const block = pm.slice(pm.indexOf('var PLATES = {'), pm.indexOf('function plate(rec)'));
+  const plates = [...block.matchAll(/^\s+([a-z]{2}): \['([^']+)', '((?:[^'\\]|\\.)+)'\]/gm)].map((m) => ({ id: m[1], file: m[2], alt: m[3].replace(/\\'/g, "'") }));
+  const itSrc = { I18N: { add: (l, d) => { itSrc.dict = d; } } };
+  vm.runInNewContext(read('js/i18n-it.js'), itSrc);
+  const bad = plates.filter((p) => !A.byId[p.id.toUpperCase()] || !fs.existsSync(path.join(APP, 'img/plates', p.file + '-400.webp')) || !fs.existsSync(path.join(APP, 'img/plates', p.file + '-800.webp')) || !itSrc.dict[p.alt]);
+  t('every overview drawing (' + plates.length + ') names a country, exists in both sizes and has Italian', plates.length > 0 && bad.length === 0, bad.map((p) => p.id).join(', '));
+  const lead = (id) => { const src = read('data/atlas/' + id + '.js'), m = /name:\s*(["'])((?:\\.|(?!\1).)*)\1/.exec(src.slice(src.indexOf('hubs: ['))); return m && m[2]; };
+  const noCap = plates.filter((p) => !itSrc.dict[lead(p.id) + '. Illustration.']).map((p) => p.id);
+  t('each drawing’s caption, the lead hub’s name, has Italian', noCap.length === 0, noCap.join(', '));
+}
+
 console.log('\n' + pass + ' passed, ' + fail + ' failed');
 process.exit(fail ? 1 : 0);

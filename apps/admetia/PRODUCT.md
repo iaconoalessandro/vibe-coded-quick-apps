@@ -28,7 +28,7 @@ Read on phones and laptops, often on a deep link from a search or a shared addre
 
 ## Capabilities and Constraints
 
-Three admissions models behind seven calculators; a directory of 136 programmes; 124 role families in 13 fields; hiring, visa, life and arrival guides for 46 countries and 200 hubs; recruiting calendar, application templates and interview preparation. All substantive content, data, citations, downloads and saved answers must be preserved; public addresses must keep working.
+Three admissions models behind seven calculators; a directory of 136 programmes; 154 role families in 13 fields; hiring, visa, life and arrival guides for 46 countries and 200 hubs; recruiting calendar, application templates and interview preparation. All substantive content, data, citations, downloads and saved answers must be preserved; public addresses must keep working.
 
 ## Brand Commitments
 

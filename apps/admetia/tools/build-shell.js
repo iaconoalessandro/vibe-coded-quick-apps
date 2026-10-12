@@ -6,6 +6,9 @@
  *   <!-- shell:top -->  … <!-- /shell:top -->     skip link, strip, nameplate,
  *                                                 navigation, breadcrumbs
  *   <!-- shell:foot --> … <!-- /shell:foot -->    the footer's site index
+ *   <!-- gen:seo -->    … <!-- /gen:seo -->       in <head>: the page's one
+ *                                                 address and its structured
+ *                                                 data (tools/shell.js ld)
  *
  * The pages stay plain HTML that runs unbuilt; this only keeps the blocks
  * identical. The Career Explorer's pages get the same chrome from
@@ -31,8 +34,21 @@ function block(html, name, content, file) {
   return html.replace(re, () => `${m[1]}<!-- shell:${name} -->\n${body}\n${m[1]}<!-- /shell:${name} -->`);
 }
 
+/* A page's own title or description, as plain text. */
+function meta(html, re, file) {
+  const m = re.exec(html);
+  if (!m) throw new Error(`${file}: no ${re}`);
+  return m[1].replace(/&quot;/g, '"').replace(/&#39;/g, '\'').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+}
+
 /* Generated visuals and lists (tools/visuals.js), by marker name. */
 const GEN = {
+  seo: (file, html) => {
+    const cfg = S.ROOT_PAGES[file];
+    return `<link rel="canonical" href="${S.url(file)}">\n` + S.ld({ path: file, ...cfg,
+      title: meta(html, /<title>([^<]*)<\/title>/, file), description: meta(html, /<meta name="description" content="([^"]*)">/, file),
+      main: cfg.kind === 'directory' ? V.programmes() : null });
+  },
   pathways: () => V.pathways(),
   timeline: () => V.timeline(),
   'countries-hiring': () => V.countries('hiring', 'How hiring works, by country'),
@@ -46,7 +62,7 @@ function stamp(file, html) {
   html = block(html, 'foot', S.foot({ path: file }), file);
   html = html.replace(/([ \t]*)<!-- gen:([a-z-]+) -->[\s\S]*?<!-- \/gen:\2 -->/g, (m, pad, name) => {
     if (!GEN[name]) throw new Error(`${file}: unknown generated block "${name}"`);
-    return `${pad}<!-- gen:${name} -->\n${GEN[name]().split('\n').map((l) => (l ? pad + l : l)).join('\n')}\n${pad}<!-- /gen:${name} -->`;
+    return `${pad}<!-- gen:${name} -->\n${GEN[name](file, html).split('\n').map((l) => (l ? pad + l : l)).join('\n')}\n${pad}<!-- /gen:${name} -->`;
   });
   return html;
 }

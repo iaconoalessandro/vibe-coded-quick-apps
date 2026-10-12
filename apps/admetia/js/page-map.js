@@ -6,9 +6,11 @@
  *
  *   map.html                the world view
  *   map.html#countries      the world view, at the list of countries
- *   map.html#de             Germany's guide: the overview
- *   map.html#de/hiring      one view of it (VIEWS below): cities, hiring,
- *                           visas, work, life, arrival, sources
+ *   map.html#de             Germany's guide: its figures, then the bar of
+ *                           views with Cities and hubs open
+ *   map.html#de/cities      the same page, opened at that bar
+ *   map.html#de/hiring      one view of it (VIEWS below): hiring, visas,
+ *                           work, life, arrival, sources
  *   map.html#de/hiring/apply   that view, at one of its parts (opened if it
  *                              is folded); #de/hiring/intern filters the
  *                              routes to one path
@@ -68,6 +70,15 @@
     if (cls) n.className = cls;
     if (text !== undefined && text !== null) n.textContent = text;
     return n;
+  }
+  /* A finished table, for a reader who hears it: each header cell says
+   * which way it reads, and the table takes the name printed beside it. */
+  function tableOf(t, label) {
+    Array.prototype.forEach.call(t.querySelectorAll('th'), function (h) {
+      h.scope = h.parentNode.parentNode.tagName === 'THEAD' ? 'col' : 'row';
+    });
+    if (label) t.setAttribute('aria-label', label);
+    return t;
   }
   function svg(tag, attrs) {
     var n = document.createElementNS(NS, tag);
@@ -159,6 +170,73 @@
     { id: 'sources', nav: 'Sources and research', about: 'Every source this guide cites, the research briefs behind it, and what has not been verified yet.' },
     { id: 'all', nav: 'Whole guide on one page', about: 'Every section in one long page, for reading straight through, searching with your browser’s Find, or printing.' }
   ];
+  /* The drawing on a guide's overview: country → [file in img/plates, what it
+   * shows]. Drawn for the guide, not photographed, and its caption says so.
+   * Guides with official travel advice have one too (the owner's call,
+   * 11 October 2026); the advice stays the first thing in the text. */
+  var PLATES = {
+    ae: ['photo-ae-dubai', 'Drawing of office workers on a palm-lined pavement in Dubai, with a metro train on a raised track and towers behind.'],
+    at: ['photo-at-vienna', 'Drawing of commuters outside an underground station in Vienna, with a tram passing and office towers behind.'],
+    au: ['photo-au-sydney', 'Drawing of office workers crossing a pedestrian plaza in Sydney between stone bank buildings, with a clock tower at the end of the street.'],
+    be: ['photo-be-brussels', 'Drawing of commuters at a metro entrance in Brussels, beside a row of European flags in front of a curved institution building.'],
+    bg: ['photo-bg-sofia', 'Drawing of commuters going down into a metro station in Sofia, among glass office blocks.'],
+    ca: ['photo-ca-toronto', 'Drawing of a streetcar running between stone bank buildings and office towers in Toronto, with people on the pavement.'],
+    ch: ['photo-ch-zurich', 'Drawing of trams and commuters crossing a square in Zurich in front of a grand bank building flying Swiss flags.'],
+    cn: ['photo-cn-shanghai', 'Drawing of office workers on a circular elevated walkway in Shanghai, above a road with a bus and cyclists, among office towers.'],
+    cz: ['photo-cz-prague', 'Drawing of people waiting at a tram stop in Prague as a tram arrives, with modern office buildings behind.'],
+    de: ['photo-de-frankfurt-am-main', 'Drawing of commuters taking the escalator down to a station in Frankfurt, below two glass bank towers.'],
+    dk: ['photo-dk-copenhagen', 'Drawing of cyclists commuting along the harbour front in Copenhagen, past glass office buildings.'],
+    ee: ['photo-ee-tallinn', 'Drawing of people walking between converted brick factory buildings and a modern office block in Tallinn, with a chimney behind.'],
+    es: ['photo-es-madrid', 'Drawing of office workers on a wide pavement in Madrid, with leaning towers and skyscrapers ahead.'],
+    fi: ['photo-fi-helsinki', 'Drawing of commuters at a tram stop in Helsinki as a tram pulls in, with office buildings and bare trees behind.'],
+    fr: ['photo-fr-paris', 'Drawing of commuters crossing the esplanade of La Défense in Paris, towards a great square arch among office towers.'],
+    gb: ['photo-gb-london', 'Drawing of office workers walking through the City of London towards a columned exchange building, with a double-decker bus and glass towers behind.'],
+    gr: ['photo-gr-athens-and-piraeus', 'Drawing of office workers on the Piraeus waterfront, with office buildings on one side and ships at the quay on the other.'],
+    hk: ['photo-hk-hong-kong', 'Drawing of office workers on an elevated walkway in Hong Kong, above a street with double-deck trams and towers behind.'],
+    ie: ['photo-ie-dublin', 'Drawing of people walking along a dock in Dublin past modern office buildings, with a tram alongside.'],
+    il: ['photo-il-tel-aviv', 'Drawing of people on foot, on bicycles and on scooters along a tree-lined boulevard in Tel Aviv, with a tram passing and towers behind low white buildings.'],
+    is: ['photo-is-reykjavik', 'Drawing of people walking along a street of low office buildings in Reykjavík, with a bus passing.'],
+    it: ['photo-it-milan', 'Drawing of commuters crossing a square of glass buildings in Milan, with a metro entrance and a spired tower behind.'],
+    jp: ['photo-jp-tokyo', 'Drawing of office workers on a tree-lined avenue in Tokyo, walking towards a red-brick station among office towers.'],
+    kr: ['photo-kr-seoul', 'Drawing of commuters filling a pavement between office towers in Seoul, with a bus at a stop.'],
+    kw: ['photo-kw-kuwait-city', 'Drawing of office workers on a palm-lined pavement in Kuwait City, beside glass towers and a stone arcade.'],
+    lt: ['photo-lt-vilnius', 'Drawing of glass office towers along a wide road in Vilnius, with a bus passing and people on the pavement.'],
+    lu: ['photo-lu-luxembourg-city', 'Drawing of a tram running past office buildings in Luxembourg City, beside a row of European and Luxembourg flags.'],
+    mt: ['photo-mt-valletta-and-the-harbour-towns', 'Drawing of people walking along a palm-lined harbour promenade in Malta, with blocks of offices and flats on one side and boats on the water.'],
+    my: ['photo-my-kuala-lumpur', 'Drawing of commuters on a covered elevated walkway in Kuala Lumpur, with a monorail train passing between office towers.'],
+    nl: ['photo-nl-amsterdam', 'Drawing of commuters and cyclists beside a glass station entrance in Amsterdam, below office towers.'],
+    no: ['photo-no-oslo', 'Drawing of people waiting at a tram stop in Oslo as a tram arrives, below a row of tall office buildings.'],
+    nz: ['photo-nz-auckland', 'Drawing of people passing a grand stone station building in Auckland, with a glass office tower behind.'],
+    om: ['photo-om-muscat', 'Drawing of office workers on a palm-lined pavement in Muscat, past low white office buildings with bare mountains behind.'],
+    pl: ['photo-pl-warsaw', 'Drawing of people leaving a metro entrance in Warsaw beside a tall glass office tower.'],
+    pt: ['photo-pt-lisbon', 'Drawing of people crossing the road towards a station in Lisbon with a soaring roof of steel ribs and glass.'],
+    qa: ['photo-qa-doha', 'Drawing of office workers on a palm-lined pavement in Doha, walking past a curved metro station entrance towards glass towers.'],
+    ro: ['photo-ro-bucharest', 'Drawing of commuters going down into a metro station in Bucharest, on a boulevard of glass office buildings with a tram passing.'],
+    ru: ['photo-ru-moscow', 'Drawing of commuters in winter coats walking through snow towards a metro entrance in Moscow, with a bus at a stop and glass towers behind.'],
+    sa: ['photo-sa-riyadh', 'Drawing of office workers crossing a plaza in Riyadh between angular glass buildings joined by footbridges, towards a metro entrance.'],
+    se: ['photo-se-stockholm', 'Drawing of commuters on foot and by bicycle in central Stockholm, beside a station building with a clock tower.'],
+    sg: ['photo-sg-singapore', 'Drawing of a crowd of office workers walking towards a station entrance in Singapore, between palms and tall office towers.'],
+    th: ['photo-th-bangkok', 'Drawing of commuters on a covered elevated walkway in Bangkok, with a train on a raised track above a road full of buses, cars and motorbikes.'],
+    tr: ['photo-tr-istanbul', 'Drawing of commuters going down into a metro station in Istanbul, on a tree-lined street of glass office towers with a bus and taxis passing.'],
+    tw: ['photo-tw-taipei', 'Drawing of commuters on a crossing and scooter riders at a junction in Taipei, among office buildings.'],
+    us: ['photo-us-new-york', 'Drawing of commuters on a narrow street in New York, passing a columned exchange building hung with American flags.'],
+    vn: ['photo-vn-ho-chi-minh-city', 'Drawing of motorbike riders and pedestrians on a tree-lined street in Ho Chi Minh City, beside a station entrance.']
+  };
+  function plate(rec) {
+    var p = PLATES[String(rec.id).toLowerCase()];
+    if (!p) return null;
+    var fig = el('figure', 'fig atlas-plate'), img = document.createElement('img'), src = 'img/plates/' + p[0];
+    img.src = src + '-400.webp';
+    img.srcset = src + '-400.webp 400w, ' + src + '-800.webp 800w';
+    img.sizes = '(max-width: 640px) 100vw, 400px';
+    img.alt = T(p[1]);
+    img.width = 800; img.height = 533;
+    img.loading = 'lazy'; img.decoding = 'async';
+    fig.appendChild(img);
+    /* One dictionary entry per caption: the city takes its Italian name there. */
+    fig.appendChild(raw('figcaption', null, T(rec.hubs[0].name + '. Illustration.')));
+    return fig;
+  }
   var viewById = {};
   VIEWS.forEach(function (v) { viewById[v.id] = v; });
 
@@ -1593,18 +1671,22 @@
     if (id === 'life') return !!window.ATLAS_LIFE;
     return true;
   }
-  /* The Layered Dossier: the guide is one page (#atlas-sheet) and its views
-   * are its tabs. Each is still a link with its own address; js/ui.js moves
-   * between them with the arrow keys. */
-  function viewNav(rec, current, entry) {
-    var nav = el('nav', 'atlas-toc viewnav');
-    nav.setAttribute('aria-label', T('{country}: sections of this guide', { country: name(rec.id) }));
-    nav.appendChild(el('p', 'toc-k', 'In this guide')).id = 'viewnav-k';
+  /* The Layered Dossier: the guide is one page and its views are its tabs,
+   * in one bar across it (#atlas-sheet is the panel under them). Each is
+   * still a link with its own address; js/ui.js moves between them with the
+   * arrow keys. A country opens on Cities and hubs, so the overview and that
+   * view are one page and share a tab: #de opens it at the top, #de/cities
+   * at the bar. `still`: the whole guide's bar does not follow the scroll,
+   * its "On this page" list does. */
+  function viewNav(rec, current, entry, still) {
+    var nav = el('nav', 'viewnav' + (still ? ' viewnav-still' : ''));
+    var label = T('{country}: sections of this guide', { country: name(rec.id) });
+    nav.setAttribute('aria-label', label);
     var list = el('ol', 'toc-list');
     list.setAttribute('role', 'tablist');
-    list.setAttribute('aria-labelledby', 'viewnav-k');
+    list.setAttribute('aria-label', label);
     VIEWS.forEach(function (v) {
-      if (!hasView(rec, v.id, entry)) return;
+      if (v.id === 'overview' || !hasView(rec, v.id, entry)) return;
       var li = el('li');
       li.setAttribute('role', 'presentation');
       var a = el('a', 'toc-link' + (v.id === current ? ' on' : '') + (v.id === 'all' ? ' toc-all' : ''), v.nav);
@@ -1665,7 +1747,7 @@
     box.setAttribute('aria-label', T('Continue'));
     box.appendChild(el('h2', 'rubric', 'Where to go next'));
     var ul = el('ul', 'next-list');
-    var ids = VIEWS.filter(function (v) { return v.id !== 'all' && hasView(rec, v.id, entry); }).map(function (v) { return v.id; });
+    var ids = VIEWS.filter(function (v) { return v.id !== 'all' && v.id !== 'overview' && hasView(rec, v.id, entry); }).map(function (v) { return v.id; });
     var at = ids.indexOf(current);
     function item(text, href, note) {
       var li = el('li'), a = raw('a', null, text);
@@ -1808,9 +1890,9 @@
     all: ['figures', 'advisory', 'hubs', 'hiring', 'visas', 'work', 'life', 'arrival', 'research']
   };
 
-  /* The overview's index: the passport the routes are shown for, then each
-   * view with what it holds. */
-  function guideIndex(rec, entry) {
+  /* Above the tabs on a country's first page: the question the guide
+   * answers and the passport its routes are shown for. */
+  function guideIndex() {
     var box = el('section', 'guide-index');
     var h = el('h2', 'section', 'What do you need to know?');
     h.id = 'sec-guide';
@@ -1819,19 +1901,6 @@
     scope.appendChild(passportControl());
     scope.appendChild(el('p', 'seg-note', 'Your passport changes what Visas and permits and First weeks show. Everything else in the guide is the same for everyone.'));
     box.appendChild(scope);
-    var ul = el('ul', 'tasks guide-tasks');
-    VIEWS.forEach(function (v) {
-      if (v.id === 'overview' || !hasView(rec, v.id, entry)) return;
-      var li = el('li', 'task' + (v.id === 'all' || v.id === 'sources' ? ' task-quiet' : ''));
-      var h3 = el('h3'), a = el('a', null, v.nav);
-      a.href = viewHref(rec, v.id);
-      h3.appendChild(a);
-      li.appendChild(h3);
-      var about = viewAbout(rec, v.id);
-      if (about) li.appendChild(raw('p', null, about));
-      ul.appendChild(li);
-    });
-    box.appendChild(ul);
     return box;
   }
 
@@ -1842,9 +1911,11 @@
     state.sel = sel;
     var c = A.byId[rec.id];
     var view = sel.view, V = viewById[view], whole = view === 'all';
-    document.title = view === 'overview' ? T('{country} — Atlas — Admetia', { country: name(rec.id) })
+    /* A country's first page: its figures, then the tabs with Cities and hubs open. */
+    var landing = view === 'overview' || view === 'cities', tab = landing ? 'cities' : view;
+    document.title = landing ? T('{country} — Atlas — Admetia', { country: name(rec.id) })
       : T('{view} · {country} — Atlas — Admetia', { view: T(V.nav), country: name(rec.id) });
-    setTrail(rec, view);
+    setTrail(rec, landing ? 'overview' : view);
 
     var back = el('a', 'atlas-back', '← Back to the map');
     back.href = '#';
@@ -1853,34 +1924,54 @@
     var head = el('header', 'atlas-head');
     head.appendChild(raw('p', 'kicker', (c.europe ? T('Europe') : T('Outside Europe')) + ' · ' + T('Checked {date}', { date: date(rec.checked) })));
     var h1 = raw('h1', 'headline-2', name(rec.id));
-    if (view !== 'overview') {
+    if (!landing) {
       h1.appendChild(raw('span', 'visually-hidden', ': '));
       h1.appendChild(raw('span', 'view-name', T(V.nav)));
     }
     head.appendChild(h1);
-    if (view === 'overview' || whole) head.appendChild(el('p', 'standfirst', rec.summary));
+    if (landing || whole) head.appendChild(el('p', 'standfirst', rec.summary));
     else if (viewAbout(rec, view)) head.appendChild(raw('p', 'standfirst view-about', viewAbout(rec, view)));
+    /* The first page's drawing sits beside the summary; on a phone it waits
+     * below the key figures, clear of the first screen and of the tabs.
+     * shortcut: placed once per render, so resizing across 640px moves it only on the next view change. */
+    var pic = landing || whole ? plate(rec) : null;
+    var low = pic && landing && window.matchMedia && matchMedia('(max-width: 640px)').matches;
+    if (pic && !low) { head.className += ' atlas-head-plate'; head.appendChild(pic); }
     page.appendChild(head);
 
+    /* One column: what a first page leads with, the tabs, then the view
+     * (the tab panel). Only the whole guide keeps a side column, for its
+     * "On this page" list; its tabs run across the top instead. */
     var toc = whole ? contents() : null;
-    var cols = el('div', 'atlas-body');
-    var main = el('div', 'atlas-main');
+    var cols = el('div', 'atlas-body' + (toc ? ' atlas-body-toc' : ''));
+    var top = el('div', 'atlas-main');
+    var main = el('div', 'atlas-sheet');
     main.id = 'atlas-sheet';
     main.setAttribute('role', 'tabpanel');
-    main.setAttribute('aria-labelledby', 'view-tab-' + view);
-    var side = el('div', 'atlas-side');
-    side.appendChild(viewNav(rec, view, entry));
-    if (toc) side.appendChild(toc.node);
-    cols.appendChild(side);
-    cols.appendChild(main);
+    main.setAttribute('aria-labelledby', 'view-tab-' + tab);
+    var nav = viewNav(rec, tab, entry, whole);
+    if (toc) {
+      var side = el('div', 'atlas-side');
+      side.appendChild(toc.node);
+      cols.appendChild(side);
+      page.appendChild(nav);
+    }
+    cols.appendChild(top);
     page.appendChild(cols);
 
     var ctx = { rec: rec, main: main, sel: sel, visas: visas, entry: entry };
-    var list = VIEW_SECTIONS[view];
-    if (rec.advisory && rec.advisory.length && list.indexOf('advisory') < 0) main.appendChild(advisoryNotice(rec));
+    var list = VIEW_SECTIONS[tab];
+    if (landing) {
+      var lead = { rec: rec, main: top, sel: sel, visas: visas, entry: entry };
+      VIEW_SECTIONS.overview.forEach(function (k) { SECTIONS[k](lead); });
+      if (low) top.appendChild(pic);
+      top.appendChild(guideIndex());
+    }
+    if (!toc) top.appendChild(nav);
+    top.appendChild(main);
+    if (!landing && rec.advisory && rec.advisory.length && list.indexOf('advisory') < 0) main.appendChild(advisoryNotice(rec));
     if (view === 'hiring' && !entry) main.appendChild(el('p', 'atlas-note', 'The hiring research for this country could not be loaded. Check your connection and try again.'));
     list.forEach(function (k) { SECTIONS[k](ctx); });
-    if (view === 'overview') main.appendChild(guideIndex(rec, entry));
     if (view === 'sources') {
       /* Every section, built out of sight, so the list below is the whole
        * guide's: nothing here is read, only cited. */
@@ -1897,7 +1988,7 @@
 
     page._notes = el('section', 'atlas-notes');
     main.appendChild(page._notes);
-    if (!whole) main.appendChild(viewFoot(rec, view, entry));
+    if (!whole) main.appendChild(viewFoot(rec, tab, entry));
     page._toc = toc;
     refreshNotes();
     if (view === 'sources') Array.prototype.forEach.call(page._notes.querySelectorAll('.note-up'), function (b) { b.hidden = true; });
@@ -2178,6 +2269,7 @@
       tb.appendChild(r);
     });
     t.appendChild(tb);
+    tableOf(t, T('Employers with programmes'));
     var wrap = el('div', 'life-scroll');
     wrap.appendChild(t);
     return wrap;
@@ -2208,6 +2300,7 @@
     });
     if (!n) return null;
     t.appendChild(tb);
+    tableOf(t, T('Graduate outcomes'));
     var wrap = el('div', 'life-scroll');
     wrap.appendChild(t);
     var box = el('div', 'entry-cell');
@@ -2467,6 +2560,7 @@
       });
       t.appendChild(tb);
       if (!n) return null;
+      tableOf(t, cell.previousSibling.firstChild.textContent);
       var wrap = el('div', 'life-scroll');
       wrap.appendChild(t);
       cell.appendChild(wrap);
@@ -2529,7 +2623,7 @@
         r.appendChild(raw('td', null, zoneText(g.t)));
         tb.appendChild(r);
       });
-      tt.appendChild(tb); tw.appendChild(tt); tm.appendChild(tw);
+      tt.appendChild(tb); tableOf(tt, T('Time zone')); tw.appendChild(tt); tm.appendChild(tw);
       var ts = el('p', 'cmp-src'); ts.appendChild(el('span', null, 'Sources')); ts.appendChild(raw('span', null, ' ')); ts.appendChild(cite([lifeNote('time')], true)); tm.appendChild(ts);
     } else line(tm, noData, [lifeNote('time')]);
 
@@ -3061,7 +3155,7 @@
       body.appendChild(tr);
     });
     tb.appendChild(body);
-    scroll.appendChild(tb);
+    scroll.appendChild(tableOf(tb));
     f.appendChild(scroll);
     var lg = el('div', 'dm-legend');
     A.levels.slice().reverse().forEach(function (l) {
@@ -3112,7 +3206,7 @@
       body.appendChild(tr);
     });
     tb.appendChild(body);
-    scroll.appendChild(tb);
+    scroll.appendChild(tableOf(tb));
     f.appendChild(scroll);
     f.appendChild(el('p', 'cmp-src', 'Judgements from cited rankings and statistics, never measurements: 5 leading, 4 among the top five, 3 a recognised secondary centre, 2 minor, 1 negligible at that scale. The sources are in each hub’s detail.'));
     return f;
@@ -3345,7 +3439,7 @@
       thead.appendChild(hr);
       tb.appendChild(thead);
       tb.appendChild(body);
-      wrap.appendChild(tb);
+      wrap.appendChild(tableOf(tb, T(title)));
     }
     if (notRated.length) wrap.appendChild(raw('p', 'not-rated', T('Not rated, no source found: {list}', { list: notRated.join(', ') })));
     return wrap;
@@ -3412,20 +3506,50 @@
       return;
     }
     closePop(true);
+    /* Moving between a guide's views (or picking a hub) keeps the reader
+     * where they are: note where the bar of views sits on screen, leave the
+     * old page standing until the new one is ready (an emptied page is short
+     * and the browser would scroll up), and put the bar back there. Only if
+     * the bar is on screen, which is how a tab is clicked. */
+    var wasBar = shown && shown.id === sel.id && !page.hidden ? page.querySelector('.viewnav') : null;
+    var keepAt = wasBar ? wasBar.getBoundingClientRect().top : null;
+    if (keepAt !== null && (keepAt < 0 || keepAt > window.innerHeight - 40)) keepAt = null;
     world.hidden = true;
     page.hidden = false;
-    page.textContent = '';
-    page.appendChild(el('p', 'pop-loading', 'Loading…'));
+    if (keepAt === null) {
+      page.textContent = '';
+      page.appendChild(el('p', 'pop-loading', 'Loading…'));
+    }
     /* A path named on the hiring view (#de/hiring/intern) sets the filter. */
     if (sel.view === 'hiring' && sel.part && (A.entryPaths || []).some(function (P) { return P.id === sel.part; })) { state.path = sel.part; sel.part = 'routes'; }
     Promise.all([load(sel.id), loadVisas(sel.id), loadEntry(sel.id)]).then(function (got) {
       var rec = got[0];
       if (sel.view === 'hiring' && !got[2] && !sel.part) { /* no hiring file: the view says so */ }
       renderPage(rec, sel, got[1], got[2]);
-      var same = shown && shown.id === sel.id && shown.view === sel.view;
+      var tabOf = function (x) { return x.view === 'overview' ? 'cities' : x.view; };
+      var same = shown && shown.id === sel.id && tabOf(shown) === tabOf(sel);
       shown = sel;
       if (sel.part && goPart(sel.part)) return;
-      if (same && sel.view === 'cities') return;
+      var nbar = keepAt !== null && page.querySelector('.viewnav');
+      if (nbar) {
+        /* The bar is sticky: read where it sits in the page, not where it is stuck. */
+        var was = nbar.style.position;
+        nbar.style.position = 'static';
+        var natural = window.pageYOffset + nbar.getBoundingClientRect().top;
+        nbar.style.position = was;
+        window.scrollTo({ top: Math.max(0, natural - keepAt), behavior: 'instant' });
+        var on = nbar.querySelector('[aria-selected="true"]');
+        /* The tab that was clicked is gone with the old page: keep the keyboard on the new one. */
+        if (on && !page.contains(document.activeElement)) on.focus({ preventScroll: true });
+        return;
+      }
+      if (sel.view === 'cities') {
+        /* Picking a hub redraws the page it is already on: stay put. Arriving
+         * at the tab from elsewhere: start at the bar, not above the figures. */
+        if (same) return;
+        var bar = page.querySelector('.viewnav'), at = bar && bar.querySelector('[aria-selected="true"]');
+        if (bar && at) { bar.scrollIntoView({ block: 'start' }); at.focus({ preventScroll: true }); return; }
+      }
       window.scrollTo(0, 0);
       var h = page.querySelector('h1');
       if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); }

@@ -11,16 +11,16 @@ Files: `reports/<branch>.md` (one per branch); Finance, Computer Science and Art
 | [Finance](reports/finance.md) | Deep (4 parts) | 29 | Moving, pricing, investing and protecting money: investment banking and advisory (M&A, ECM, DCM/LevFin, restructuring), sales & trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and fintech. Top pay, but concentrated in a few very selective, long-hours seats. |
 | [Computer Science](reports/computer-science.md) | Deep (2 parts) | 14 | Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade. |
 | [Artificial Intelligence](reports/artificial-intelligence.md) | Deep (2 parts) | 11 | Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; crowded entry. |
-| [Data Science](reports/data-science.md) | Deep | 7 | Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting. |
-| [Data Analytics](reports/data-analytics.md) | Deep | 8 | Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door. |
+| [Data Science](reports/data-science.md) | Deep | 9 | Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting. |
+| [Data Analytics](reports/data-analytics.md) | Deep | 10 | Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door. |
 | [Cybersecurity](reports/cybersecurity.md) | Deep | 10 | Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite "skills gap" headlines. |
-| [Management](reports/management.md) | Medium | 6 | General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management. |
-| [Logistics & Supply Chain](reports/logistics-supply-chain.md) | Medium | 7 | Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting. |
-| [Accounting](reports/accounting.md) | Medium | 7 | Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific. |
-| [Marketing (incl. sales)](reports/marketing.md) | Medium | 8 | Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development. |
-| [Economics](reports/economics.md) | Medium | 7 | Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top. |
-| [Management Consulting](reports/management-consulting.md) | Medium (extra) | 5 | Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy. |
-| [Product Management & Startups](reports/product-management-startups.md) | Medium (extra) | 5 | Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding). |
+| [Management](reports/management.md) | Medium | 12 | General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management. |
+| [Logistics & Supply Chain](reports/logistics-supply-chain.md) | Medium | 10 | Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting. |
+| [Accounting](reports/accounting.md) | Medium | 9 | Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific. |
+| [Marketing (incl. sales)](reports/marketing.md) | Medium | 12 | Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development. |
+| [Economics](reports/economics.md) | Medium | 11 | Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top. |
+| [Management Consulting](reports/management-consulting.md) | Medium (extra) | 8 | Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy. |
+| [Product Management & Startups](reports/product-management-startups.md) | Medium (extra) | 9 | Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding). |
 
 **No fourteenth branch was added.** The two branches newcomers ask about most that the brief did not list are **Sales & Business Development** and **Human Resources**. Rather than spend a sub-agent on a separate report, sales and BD were added as a full role family in Marketing (3.8: SDR/BDR → account executive, key account management, with OTE pay), and HR as a full role family in Management (3.4). Sales is the larger entry door for business graduates and is the one to promote to its own report if the site needs it.
 
@@ -69,6 +69,12 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.4 HR/People | S | P | X | X | P | P | P | X | X | X | X |
 | 3.5 Strategy & BD | P | P | S | P | P | S | S | P | X | P | P |
 | 3.6 Public/Non-profit | S | P | P | P | P | P | S | P | P | P | P |
+| 3.7 Retail | S | S | P | P | S | P | P | P | X | X | X |
+| 3.8 Hospitality | S | P | P | P | S | P | P | X | X | X | X |
+| 3.9 Healthcare | S | P | S | S | P | S | S | P | X | P | X |
+| 3.10 Sustainability | S | S | P | P | P | P | S | X | X | P | X |
+| 3.11 Business analyst | S | S | P | P | P | S | P | S | P | P | P |
+| 3.12 Real estate | S | P | S | P | P | P | S | X | X | X | X |
 
 #### [Logistics & Supply Chain](reports/logistics-supply-chain.md)
 
@@ -81,6 +87,9 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.5 Shipping/maritime | P | S | P | P | X | X | P | X | X | X | X |
 | 3.6 Analyst/systems | P | S | P | P | X | S | P | S | P | S | S |
 | 3.7 Consultant | P | P | P | P | P | P | S | P | X | P | P |
+| 3.8 Production/lean | S | S | P | P | X | P | P | P | X | P | X |
+| 3.9 Customs/trade compliance | P | S | P | P | X | P | P | X | X | X | X |
+| 3.10 Quality | P | S | X | X | X | P | X | P | X | P | X |
 
 #### [Finance](reports/finance.md)
 
@@ -127,6 +136,8 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.5 Internal auditor | P | P | S | S | X | S | P | S | S | S | P |
 | 3.6 Forensic accountant | X | X | P | S | X | S | P | S | P | S | P |
 | 3.7 Sustainability reporting / ESG assurance | P | P | P | S | P | P | P | P | X | P | X |
+| 3.8 Public sector | P | X | S | S | X | P | S | X | X | X | X |
+| 3.9 Fund accountant | P | X | S | S | X | P | P | X | X | X | X |
 
 #### [Marketing (incl. sales)](reports/marketing.md)
 
@@ -140,6 +151,10 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.6 Research/insights | P | P | P | P | S | S | S | P | X | S | P |
 | 3.7 Agency | S | X | P | X | S | P | P | X | X | X | X |
 | 3.8 Sales/BD | S | P | P | P | S | X | P | P | P | X | P |
+| 3.9 PR/comms | P | X | X | X | S | X | P | X | X | X | X |
+| 3.10 E-commerce | S | P | P | P | S | S | P | P | X | P | X |
+| 3.11 Category/trade | S | P | P | P | S | S | P | X | X | P | X |
+| 3.12 Events | S | P | X | X | S | X | X | X | X | X | X |
 
 #### [Data Analytics](reports/data-analytics.md)
 
@@ -153,6 +168,8 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.6 HR | S | X | X | X | X | S | P | P | X | P | X |
 | 3.7 Governance | P | P | P | P | X | S | P | P | S | P | P |
 | 3.8 Consultant | P | P | P | P | P | S | S | P | X | S | P |
+| 3.9 Pricing/revenue | P | P | S | P | P | S | S | P | X | S | P |
+| 3.10 Fraud/credit risk | P | X | S | S | X | S | P | P | P | P | P |
 
 #### [Economics](reports/economics.md)
 
@@ -165,6 +182,10 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.5 Tech economist | X | X | X | X | P | P | S | P | X | P | P |
 | 3.6 Think tank | X | X | P | X | X | P | S | X | X | P | X |
 | 3.7 Academia / pre-doc | X | X | P | X | X | P | S | P | X | P | P |
+| 3.8 Markets economist | X | X | S | X | X | P | S | X | X | P | X |
+| 3.9 Regulator | X | X | P | X | X | P | S | X | X | P | X |
+| 3.10 Development | X | X | P | X | X | P | S | X | X | P | X |
+| 3.11 Health economist | X | X | P | X | X | S | S | X | X | S | X |
 
 #### [Computer Science](reports/computer-science.md)
 
@@ -211,6 +232,8 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.5 Bank/insurance DS | X | X | S | P | X | S | S | P | P | S | P |
 | 3.6 Applied scientist | X | X | X | X | X | X | S | S | X | S | S |
 | 3.7 DS consultant | P | P | P | P | P | S | S | S | X | S | P |
+| 3.8 Actuary | X | X | P | P | X | P | S | P | X | S | P |
+| 3.9 Bioinformatics | X | X | X | X | X | P | X | S | X | S | S |
 
 #### [Artificial Intelligence](reports/artificial-intelligence.md)
 
@@ -237,6 +260,9 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.3 Specialist/boutique | P | S | S | P | P | S | S | P | P | S | P |
 | 3.4 Technology/digital | P | P | P | P | P | S | P | S | S | S | S |
 | 3.5 Internal strategy | S | S | S | P | P | P | S | P | X | P | X |
+| 3.6 Operations/implementation | S | S | P | P | X | P | P | P | X | P | X |
+| 3.7 Public sector | S | P | P | P | P | P | S | P | P | P | P |
+| 3.8 Turnaround | P | P | S | S | X | P | P | X | X | X | X |
 
 #### [Product Management & Startups](reports/product-management-startups.md)
 
@@ -247,6 +273,10 @@ S = strong, P = possible, X = stretch. Columns are the 11 base backgrounds: Mgmt
 | 3.3 TPM & product ops | P | P | P | P | P | S | P | S | P | S | S |
 | 3.4 Startup operator | S | P | S | P | P | S | S | P | X | P | P |
 | 3.5 Founder | P | P | P | X | P | P | P | S | P | S | S |
+| 3.6 Product designer | X | X | X | X | P | P | X | S | X | X | P |
+| 3.7 UX researcher | P | X | X | X | S | S | P | P | X | P | P |
+| 3.8 Customer success | S | P | P | P | S | P | P | P | X | X | X |
+| 3.9 Venture builder | S | P | S | P | P | P | P | S | X | P | P |
 
 ## 4. Role families compared across branches
 
@@ -263,6 +293,12 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.4 HR / people professional | 38-45 (50+) | 3 | 5 | 2 | US n.r.d. at entry (BLS HR specialists median $76k) / UK £24-35k (NCS/TargetJobs £34k scheme) / Italy n.r.d. | 3 |
 | 3.5 Corporate strategy & BD (in-house) | 45-55 (60-70) | 3 | 4 | 4 | US n.r.d. at graduate level (early-career strategy manager ≈ $79-116k, Payscale) / UK n.r.d. / Italy n.r.d. | 4 |
 | 3.6 Public-sector & non-profit manager | 37-45 (50) | 2 | 3-4 | 2 | US n.r.d. / UK £31.6k (Fast Stream yr 1, 2025-26) / Italy n.r.d.; EU AD5 €6,153/month basic | 5 (Fast Stream, AD5); 2-3 (local gov., NGOs) |
+| 3.7 Retail store and area manager | 40-45 (50-55) | 3-4 | 5 | 2 | US $95k base plus $5k signing bonus on ALDI's District Manager scheme (advert, Oct 2026); BLS median for all retail supervisors $48.5k (2025; not a graduate figure) / UK £52k on Aldi's area-manager scheme (2027 intake); other retail schemes ≈ £29-50k, assistant posts £25-35k (Prospects) / Italy ≈ €28.4k RAL on Lidl's Graduate Program (secondary); CCNL third-level floor ≈ €28.3k | 4 (discounter schemes); 2 (store trainee) |
+| 3.8 Hospitality and hotel manager | 40-45 (50-55) | 3-4 | 5 | 2 | US n.r.d. at entry (BLS median for all lodging managers $69k, 10th percentile $40k, May 2025) / UK £30k starter (National Careers Service); £20-40k assistant general manager (Prospects) / Italy n.r.d.; CCNL Turismo floors ≈ €23.7-25.2k at levels 4-3 (May 2026, secondary) | 3 (international programmes); 2 (single hotels) |
+| 3.9 Healthcare manager | 37.5-42 (45-50) | 3-4 | 4 | 3 | US n.r.d. at entry (BLS median $124k, 10th percentile $73k, May 2025; experienced managers) / UK £31.3k (NHS graduate scheme; NHS Band 5 starts at £32.1k, 2026/27) / Italy n.r.d. | 4-5 (NHS scheme); 3 (direct posts) |
+| 3.10 Sustainability and corporate responsibility manager | 37-40 (45-50) | 2-3 | 4 | 3 | US n.r.d. at entry (managers with up to 3 years ≈ $126k at large firms, Trellis 2022, self-selected) / UK £25-33k graduate (Prospects, citing the professional body's survey) / Italy n.r.d. | 3 |
+| 3.11 Business analyst and process improvement specialist | 37-40 (45-50) | 2-3 | 4 | 3 | US n.r.d. at entry (BLS management analysts median $102k, 10th percentile $61k, May 2025) / UK £24-33k graduate or junior (Prospects, May 2026); £23k starter (National Careers Service) / Italy n.r.d. | 2-3 |
+| 3.12 Real estate and property manager (surveying route) | 35-40 (45-50) | 3 | 4 | 3 | US n.r.d. at graduate level (BLS median for all property managers $70k, May 2025) / UK £27-32k on 2027 graduate schemes (Savills, Knight Frank, CBRE) / Italy n.r.d. | 3-4 (large advisers); 2 (smaller firms) |
 
 #### [Logistics & Supply Chain](reports/logistics-supply-chain.md)
 
@@ -275,6 +311,9 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.5 Shipping and maritime (broking, chartering, liner ops) | 50-60 brokers; 40-50 liner (60+) | 4 | 5 (brokers) / 3 (liner) | 3 | US: no reliable data / GBP 25-28k plus bonus (regional trainee brokers; London no data) / no reliable data found | 4 (brokers) / 2-3 (liner) |
 | 3.6 Supply chain analyst / systems specialist | 38-45 (50) | 2-3 | 3 | 4 | US: no reliable data (ASCM analyst median US$85k) / GBP 27-37k (Prospects) / EUR 26-32k (weak) | 3 |
 | 3.7 Supply chain consultant | 50-60 (60-70) | 4 | 4 | 4 | US$78-112k Big 4 base (2026) / GBP 32-37k Big 4 base (2026) / about EUR 26-30k indicative (Indeed Italy) | 3-4 |
+| 3.8 Production planner and continuous-improvement specialist | 40-45 (longer at deadlines; no figure found) | 3 | 3 | 3 | US: no entry data (BLS medians, all levels, May 2025: US$59,650 planning clerks; US$102,440 industrial engineers) / GBP 32-34.8k base on graduate schemes (JLR, Toyota, 2026); about GBP 24k trainee outside them (Prospects, 2026) / Italy: no entry survey; metalworking contract floors EUR 2,065-2,370 a month (June 2026) | 2 |
+| 3.9 Customs and trade compliance specialist | 37-42 (peak: no figure found) | 3 | 3 | 3 | US: no entry data (BLS compliance officers, May 2025: lowest 10% under US$48,220; median US$80,730) / GBP 25k starter (National Careers Service, 2026) / Italy: no reliable data | 2-3 |
+| 3.10 Quality and supplier-quality engineer | 37-42 (peak: no figure found) | 3 | 3 | 4 | US: no entry data (BLS industrial engineers, May 2025: lowest 10% under US$74,370; median US$102,440) / GBP 32k base plus GBP 2k bonus (JLR graduate, 2026); GBP 23-28k outside schemes (Prospects, 2024) / Italy: no entry survey; metalworking contract floors as 3.8 | 2 |
 
 #### [Finance](reports/finance.md)
 
@@ -321,6 +360,8 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.5 Internal auditor | 38-45 (50-55) | 2-3 | 4 | 3 | USD ~89k advertised midpoint (weak) / n/a / n/a | 3 |
 | 3.6 Forensic accountant | 42-50 (55-70) | 3-4 | 3 | 4 | USD 89-125k (RH 2027, mid-level) / n/a / n/a | 4 |
 | 3.7 Sustainability reporting / ESG assurance | 40-48 (50-60) | 3 | 3 | 3 | n/a / n/a / n/a | 3 |
+| 3.8 Public-sector accountant and auditor | 35-39 (45-50) | 2 | 3 | 3 | USD 57.7k GS-7, 70.6k GS-9 federal base, Washington DC (OPM 2026; entry grade unverified) / GBP 28.9k Newcastle, 35.8k London (National Audit Office, 2026) / EUR 26.7k base plus 13th month, ministry graduate grade (ARAN contract, 2026) | 4 (national audit offices); 2-3 (local) |
+| 3.9 Fund accountant (fund administration) | 40-45 (50+) | 3 | 2 | 3 | USD 74-99.5k (RH 2027; one administrator posting from USD 52k) / GBP 35-45k London fund administrator, 0-3 yrs (Morgan McKinley 2026); Dublin EUR 30-35k / n/a; EUR 35.65k bank-contract minimum (2026, my arithmetic) | 2 |
 
 #### [Marketing (incl. sales)](reports/marketing.md)
 
@@ -334,6 +375,10 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.6 Market research / insights | 37-42 (45-50) | 2 | 3 | 4 | US: BLS median (all levels) $78,760 / UK: £22-28k (Prospects, Ipsos listing) / Italy: €30-38k band (analyst, <5 yrs) | 2 |
 | 3.7 Agency (account, planning, media) | 40-50 (55-65) | 4 | 5 (media 3) | 3 | US: no reliable data / UK: £20-26k (Prospects 2026) / Italy: €23-35k (media planner/trafficker) | 3 |
 | 3.8 Sales and BD | 40-50 (55-60) | 4 | 5 | 2 | US: SDR OTE ~$80k median (Bridge Group 2025) / UK: £25-28k base + commission (Prospects 2025) / Italy: €25-35k + 10-20% bonus (inside sales) | 2 (SDR) to 4 (FMCG KAM) |
+| 3.9 PR and corporate communications officer | 38-40 (50+) | 3 | 5 | 1-2 | US $74.8k median, all PR specialists; lowest tenth under $44.1k (BLS, May 2025) / UK £28-29k consultancy account executive average (Latte survey via PRmoment, 2025, mostly London); about £25.5k typical start (Prospects, 2026) / Italy €23-30k for under 5 yrs (digital PR, MP Italy 2026); no graduate figure | 3 |
+| 3.10 E-commerce manager | 40-45 (55) | 3 | 3 | 3 | US n.r.d. (no BLS e-commerce occupation) / UK £25k starter (National Careers Service); Tesco Ireland online graduate scheme €35k (2027 intake) / Italy €25-35k e-commerce specialist, under 5 yrs (MP Italy 2026) | 2-3 |
+| 3.11 Category and trade marketing manager | 40-45 (50-55) | 3 | 4 | 3 | US $77.7k median, all buyers and purchasing agents (BLS, May 2025; not entry) / UK £45k P&G sales graduate (2027 intake), £35k Unilever customer development (2026), £33k Tesco product scheme (2027) / Italy €30-38k analyst band, €35-45k category manager, under 5 yrs (MP Italy 2026) | 3 |
+| 3.12 Events and sponsorship manager | 37-45 (60+) | 3 | 5 | 2 | US $61.2k median, all event planners; lowest tenth under $36.8k (BLS, May 2025) / UK £23k starter (National Careers Service); legal full-time minimum about £24.8k from April 2026 / Italy €30-35k communication and event specialist, under 5 yrs (MP Italy 2026) | 3 |
 
 #### [Data Analytics](reports/data-analytics.md)
 
@@ -347,6 +392,8 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.6 People/HR analyst | 37-42 (45-50) | 2 | 4 | 3 | US $55-65k (weak source) / UK no data / Italy no data | 3 |
 | 3.7 Data governance, quality, steward | 36-42 (45-50) | 2 | 4 | 2 | US no reliable data / UK about £30-38k (2024 steward data) / Italy no data | 3 |
 | 3.8 Analytics consultant | 42-50 (55-65) | 4 | 4 | 3 | US about $75-95k (est.) / UK £31-38k London Big 4 (Learnsignal 2025/26) / Italy EUR 26-32k (Deloitte, SDG Group 2026 ads) | 3 |
+| 3.9 Pricing and revenue management analyst | 40-45 (50) | 3 | 3 | 4 | US no entry series, proxy $57k lowest decile of operations research analysts (BLS May 2025) / UK £30-34k on graduate insurance pricing schemes (NFU Mutual, Ageas adverts 2026) / Italy no reliable entry data | 3 |
+| 3.10 Fraud and credit risk analyst | 37-42 (45) | 2-3 | 3 | 3 | US $56-65k, 10th-25th percentile of credit analysts (BLS 2025) / UK £25-30k (Prospects 2025), bank graduate schemes £42-55.5k (2026 adverts) / Italy about EUR 35.7k gross bank-contract minimum (CCNL credito, March 2026) | 2 |
 
 #### [Economics](reports/economics.md)
 
@@ -359,6 +406,10 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.5 Tech-sector economist | 40-50 (55-60) | 3 | 4 | 5 | US: about USD 210-220k total (Amazon L4); UK: no reliable data found; Italy: no reliable data found | 5 |
 | 3.6 Think-tank researcher | 40-50 (50-60) | 3 | 4 | 3 | US: USD 58-66k (Brookings/PIIE); UK: GBP 45-57k (Resolution Foundation), GBP 65.6k with PhD (IFS); Italy: no reliable data found | 3 |
 | 3.7 Academic / pre-doc | Faculty 45-60; pre-doc 40-50 (peak at deadlines) | 3-4 | 3 | 5 | US: pre-doc USD 42-55k; assistant professor about USD 154k; UK: pre-doc GBP 36.5-43k; Italy: PhD borsa about EUR 18.4k gross | 3 (pre-doc) / 5 (faculty) |
+| 3.8 Markets economist and strategist | 50-60 (65+) | 3-4 | 4 | 4 | US n.r.d. at graduate level; $150-225k base for a PhD-level seat (Goldman Sachs, 2026) / UK n.r.d.; £25-35k for economists in all sectors (Prospects, 2025) / Italy n.r.d.; banking-contract floor ≈ €35.7k gross (2026, my arithmetic) | 5 |
+| 3.9 Regulator and competition-authority economist | 38-45 (50) | 2-3 | 3 | 4 | US $57.7-70.6k (FTC statistician, GS-7/9, 2026); $102.4k for a PhD economist (GS-12) / UK £36k London, £33k Leeds (FCA economics graduates, 2026) / Italy €1,500 gross a month allowance (AGCM traineeship, 2026); officials n.r.d. | 4 |
+| 3.10 Development economist and impact-evaluation researcher | 45-50 (60) | 3 | 3 | 4 | US $20-22 an hour ≈ $42-46k (university research assistant listed by J-PAL, 2026) / UK n.r.d.; ODI Fellowship ≈ £32.6k net in year 1 (secondary) / Italy n.r.d. | 4 |
+| 3.11 Health economist (HEOR and market access) | 40-45 (50-55) | 3 | 3 | 4 | US $75k, or $80k with a master's or PhD (Costello Medical, Boston, 2026) / UK £28.7-43.1k (York Health Economics Consortium, 2026); NHS Band 6 from £40.0k / Italy n.r.d. | 3 |
 
 #### [Computer Science](reports/computer-science.md)
 
@@ -405,6 +456,8 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.5 Data scientist in banking and insurance | 38-45 (50) | 3 | 3 | 4 | US: US$150k base at Barclays NY quant analytics grad (quant-risk, upper bound); UK: GBP 33-55.5k base; Italy: about EUR 36k (Generali junior listing) | 3 |
 | 3.6 Applied scientist / research data scientist | 40-50 (55-60) | 3 | 2 | 5 | US: US$247k total at Amazon L4; UK: no reliable data found; Italy: no reliable data found | 5 |
 | 3.7 Data science consultant | 45-55 (60+) | 4 | 4 | 4 | US: BCG data scientist ladder starts around US$166k total (Levels.fyi, 2025, thin); UK: no reliable data found; Italy: about EUR 29-42k (aggregators, not firm data) | 4 (Tier 1), 3 (others) |
+| 3.8 Actuary | 35-40 plus exam study (peaks: no reliable data found) | 3 | 3 | 5 | US: US$67-92k base plus bonus with two exams (Ezra Penland 2025-26, unit assumed; BLS 10th percentile US$79k, median US$130k); UK: GBP 32-36k base (2027 graduate schemes); Italy: no graduate figure found (EUR 40-55k for under five years, Michael Page 2026) | 4 |
+| 3.9 Bioinformatician and health data scientist | about 40 (peaks: no reliable data found) | 2-3 | 3 | 5 | US: US$50-70k base (Broad Institute entry post, 2026); UK: GBP 37-44k base (Sanger advert and NHS Band 6, 2026; AstraZeneca graduate programme, 2025); Italy: no reliable data found (legal floor EUR 22.5k for university research appointments) | 3 |
 
 #### [Artificial Intelligence](reports/artificial-intelligence.md)
 
@@ -431,6 +484,9 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.3 Specialist/boutique consultant | 50-65 (70-80) | 3-4 | 3 | 4 | US: $95-132k base (OW analysts); UK: £47-52k base at top boutiques (£34-41k at others); Italy: no reliable data found | 4 (top) / 3 |
 | 3.4 Technology/digital consultant (business-side) | 45-55 (60-70) | 3 | 4 | 3 | US: $78-112k base (up to ~$125k total at Accenture Strategy); UK: £33.5-37k base (Capgemini Invent £51k); Italy: ~€25-30k (indicative) | 3 |
 | 3.5 Internal strategy/corporate transformation | 42-50 (55-60) | 2-3 | 4 | 3 | US/UK/Italy: no reliable data found at graduate level (corporate graduate-programme market rate) | 3 (programmes) / 4 (strategy roles) |
+| 3.6 Operations and implementation consultant | 50-60 (65-70) | 3-4 | 4 | 3 | US $78-112k base (Big 4 and Accenture analyst scales, as 3.2); $95k Newton, $110k AlixPartners (firm-stated, 2026) / UK £32-37k (as 3.2); £48k Newton, £33k + £3.5k allowance PA (firm-stated, 2026) / Italy ~€26-30k gross (indicative, as 3.2) | 3-4 |
+| 3.7 Public-sector consultant | 45-55 (60-65) | 3 | 4 | 3 | US $78-112k base (as 3.2; no firm-published public-sector figure) / UK £32-37k (as 3.2); £33k + £3.5k allowance PA, £48k Newton, £27k Local Partnerships (firm-stated, 2026) / Italy ~€26-30k gross (indicative, as 3.2) | 3 (Big 4) / 5 (strategy firms) |
+| 3.8 Turnaround and restructuring consultant | 55-65 (70-80) | 4 | 4 | 4 | US ≈ $83-115k total (Glassdoor 2024; self-reported; weak); $110k AlixPartners performance analyst (firm-stated, 2027 start) / UK ≈ £35-49k (A&M analysts, Glassdoor 2026; self-reported; weak) / Italy n.r.d. | 4 |
 
 #### [Product Management & Startups](reports/product-management-startups.md)
 
@@ -441,6 +497,10 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 | 3.3 TPM and product operations | 45-55 (60+) | 3 | 4 | 3 | US: TPM median ~US$290-302k at Amazon/Google total (Levels.fyi); product ops no robust survey (vendor base US$85-105k) / UK: London TPM median £121.5k total, all levels (Levels.fyi 2026) / Italy: no reliable data found | 3 (product ops) to 4 (big-tech TPM) |
 | 3.4 Startup operator (founder's associate, CoS, bizops) | 50-60 (70+) | 4 | 4 | 3 | US: ~US$80-135k (vendor/recruiter estimates, unverified) / UK: no reliable data found; Europe seed junior business roles €50-70k cash plus options (Index 2018, stale) / Italy: no reliable data found (inferred €30-45k) | 3 |
 | 3.5 Founder / entrepreneur | 60-80 (80+) | 5 (3-4 in stable periods) | 5 | 3 | US: seed CEO median ~US$147-153k in funded companies (Kruze), often near zero in first year / UK: no reliable data found (EF London stipend £6,000) / Italy: no reliable data found; often unpaid at start | 2 to start; 5 for top accelerators |
+| 3.6 Product designer (UX/UI) | 37-39 (50) | 2-3 | 4 | 2-3 | US: lowest decile under $53,750, median $104,000 (BLS, May 2025); $75,050 median at 0-2 years (UXPA 2024, all UX titles) / UK: £32,000 starter (National Careers Service, 2026); £20-26k (Prospects, Dec 2024) / Italy: €1,315 net a month, design master's graduates one year on (AlmaLaurea 2025 survey, all design); Milan junior €34,000 gross (NettoCalc, aggregator; weak) | 4 |
+| 3.7 UX researcher | 37-42 (50) | 2 | 4 | 3 | US: n.r.d. official; $75,050 median at 0-2 years (UXPA 2024, all UX titles); Google PhD intern base $101-135k a year (2025 posting) / UK: £34,000 starter (National Careers Service, 2026); above £30,000 (Prospects, July 2026) / Italy: n.r.d. | 4 |
+| 3.8 Customer success manager | 40-45 (50) | 3 | 5 | 2 | US: $62,361 entry average base (Payscale, March 2025; self-reported; weak) / UK: £30,284 entry average base (Payscale, January 2024; self-reported; weak) / Italy: n.r.d. at entry; €45,305 all-level average, n=16 (Payscale, 2026; self-reported; weak) | 2-3 |
+| 3.9 Venture builder and corporate innovation associate | 45-55 (60) | 3 | 4 | 3 | US: n.r.d. / UK: n.r.d. / Italy: n.r.d. (no studio or talent investor opened publishes pay) | 4 |
 
 ## 5. Assumptions made
 
@@ -453,6 +513,7 @@ Hours are typical (peak) per week; stress, people, quant and entry difficulty us
 7. **Overall branch ratings** (section 3.1 above) are judgements that summarise the role-family matrix. A background rated "stretch" overall can still be "strong" for one role family (e.g. Logistics for commodity trading houses).
 8. **Dates.** All work is dated 9 October 2026. Sources from before October 2024 are used only when nothing newer was found, and are flagged in the reports.
 9. **Model use.** All 20 sub-agents ran on Sonnet: 18 research tasks plus 2 gap fixes, an AI part 2 rebalance and an Italy pay addendum. No Haiku agent was used, because format and consistency checks were done by script (`tools/collect.py`: 124 role families, no out-of-range ratings, all matrices complete). A Haiku agent would have spent budget on the same check.
+10. **Second pass, 11 October 2026.** Thirty role families were added to nine branches, taking the total from 124 to 154, so that a branch that opens many doors shows more of them: Management 6 to 12, Marketing 8 to 12, Economics 7 to 11, Product Management & Startups 5 to 9, Management Consulting 5 to 8, Logistics & Supply Chain 7 to 10, Data Science 7 to 9, Data Analytics 8 to 10, Accounting 7 to 9. Finance, Computer Science, Artificial Intelligence and Cybersecurity were left as they were. They were first written in a single quick pass, then re-researched on 11-12 October 2026 by one research agent per branch, each working from pages it opened and read (341 source links across the nine reports) and rewriting the sections to the length of the first 124. What is still weak: Italian entry pay is mostly a contract minimum or a recruiter band and often "no reliable data found"; US figures are often official medians or lowest-decile figures for a whole occupation, not graduate pay; peak hours are usually an estimate, labelled as such, because no hours survey exists for these roles; and many employer careers pages could not be opened, so some advertised salaries were read from job-board copies. Each report lists every source opened, and what was looked for and not found, under "Second pass" in its section 6. Background-fit ratings were reviewed against the new evidence and left as they were. Background ratings and Compass tags for the additions are judgements.
 
 ## 6. Gaps and low-confidence areas to verify
 

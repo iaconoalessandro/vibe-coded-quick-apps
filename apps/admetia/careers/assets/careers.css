@@ -28,6 +28,17 @@ html[lang="it"] .cx-en-note {
 .cx-meta a { color: var(--link); }
 .cx-scale { margin: 14px 0 0; max-width: 46em; font: 15px/1.5 var(--font-body); color: var(--ink-2); }
 
+/* A field's plate: beside the title on wide screens, absent on phones (the
+   markup does not fetch it there). */
+.cx-plate { display: none; }
+@media (min-width: 641px) {
+  .cx-head-plate { display: grid; grid-template-columns: minmax(0, 1fr) clamp(200px, 27vw, 300px); column-gap: 44px; align-items: start; }
+  .cx-head-plate > * { grid-column: 1; }
+  .cx-head-plate > .cx-plate { display: block; grid-column: 2; grid-row: 1 / span 4; }
+  .cx-plate img { display: block; width: 100%; height: auto; }
+}
+@media print { .cx-plate { display: none !important; } .cx-head-plate { display: block; } }
+
 .cx-sec-head { align-items: start; }
 .cx-sec-head .headline { font-size: clamp(40px, 5.6vw, 76px); }
 
@@ -77,6 +88,26 @@ html[lang="it"] .cx-en-note {
   font-size: clamp(25px, 2.5vw, 32px); line-height: 1.12; letter-spacing: -.015em; margin: 6px 0 14px;
 }
 .cx-sec h3 { font: var(--head-weight) 21px/1.25 var(--font-head); margin: 24px 0 10px; }
+
+/* A role's figure: beside the first paragraph on wide screens, above it on
+   phones. Every section clears, so a figure never reaches into the next. */
+.cx-sec { clear: both; }
+figure.cx-fig { margin: 0 0 18px; }
+.cx-fig img, .cx-diagram svg { display: block; width: 100%; height: auto; }
+figure.cx-fig figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+@media (min-width: 641px) { figure.cx-fig { float: right; width: 300px; margin: 6px 0 16px 32px; } figure.cx-fig-dg { width: 320px; } }
+.dg-box { fill: none; stroke: var(--ink); }
+.dg-tint { fill: var(--paper-2); }
+.dg-paper { fill: var(--paper); }
+.dg-line { fill: none; stroke: var(--ink); }
+.dg-dash { stroke-dasharray: 4 3; }
+.dg-teal { stroke: var(--link); stroke-width: 2; }
+.dg-mute { stroke: var(--muted); }
+.dg-on { stroke: var(--accent); stroke-width: 2; }
+.dg-t { font: 500 13px var(--font-ui); fill: var(--ink); }
+.dg-h { font-weight: 700; }
+.dg-note { fill: var(--ink-2); font-style: italic; }
+.dg-accent { fill: var(--accent); }
 [id] { scroll-margin-top: 60px; }
 
 /* Contents: a ruled list beside the text on a wide screen, folded above it

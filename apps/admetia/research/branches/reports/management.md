@@ -358,6 +358,282 @@ General management is the work of running parts of an organisation rather than d
 
 ---
 
+### 3.7 Retail store and area manager
+
+**What you actually do.** You run a shop, or as an area manager (district manager in the US) a group of them, as a business. Prospects lists the store-level duties: recruiting, training, appraising and motivating staff; managing stock, replenishment and forecasting; analysing sales figures; enforcing standards for quality, service and health and safety; handling complaints; planning promotions and displays; and improving the store's profitability (Prospects, Sept 2025). At area level the work shifts to control across stores: ALDI's US District Manager advert lists setting store staffing levels, recruiting and interviewing, managing store payroll budgets and losses, reviewing prices against competitors, and conducting inventory counts and cash audits across "multiple ALDI stores" (ALDI USA advert on UNC Charlotte's careers board, closed 7 Oct 2026). On a discounter's graduate scheme you first do every store job: Aldi UK's 2027 listing describes a two-week induction, intensive training that includes stacking shelves, then running your own store and a "£multi-million business" before taking an area (Higherin listing of Aldi's advert, read Oct 2026). Tools: the retailer's sales, stock and rota systems, and spreadsheets.
+
+**A typical day and week.** "You open at 6am for the delivery, redo the rota because two people are off sick, walk the floor with your deputy, settle a complaint, then go through last week's sales, waste and wage-cost figures on a call with the regional manager." As an area manager you drive between stores every day (ALDI describes travel as daily and local, with a company car), checking cash, stock and standards and coaching store managers. Prospects describes rotas with early starts, late finishes and shift work, and longer hours in peak periods such as Christmas (Prospects, Sept 2025).
+
+**Hours, stress and lifestyle.**
+- Hours: "usually between 40 and 45 per week" (Prospects, Sept 2025); 40 to 42 (National Careers Service, accessed Oct 2026). Peak about 50-55 at Christmas and stocktakes (my estimate; neither source puts a number on the peak). Area-manager hours are not stated in either Aldi advert: no reliable data found.
+- Stress: 3-4/5. Prospects calls the job "fast-paced" and says it "can be pressurised, especially at peak times"; results are weekly and visible, and staffing gaps land on you.
+- Lifestyle: evenings, weekends and bank holidays are standard (Prospects; National Careers Service). No remote work. Part-time work and job-sharing exist at some employers (Prospects).
+- Travel: little at store level; daily local driving as an area manager, and a driving licence may be required (Prospects; ALDI advert).
+
+**Human vs. quantitative profile.** People/communication: 5/5. Quantitative/technical: 2/5. Team leadership and customer service head Prospects' skills list; numeracy is on it too, but it means sales, margin, waste and wage-cost arithmetic and simple forecasting, not modelling.
+
+**Compensation (approximate).**
+- US: the official median for all first-line supervisors of retail sales workers is $48,520 (BLS 2025 data as published on O*NET, accessed Oct 2026). It covers 1.42 million jobs, and 52% of them ask only for a high-school diploma (O*NET), so it is not a graduate figure. The one advertised graduate-level figure opened: ALDI's District Manager role pays $95,000 plus a $5,000 signing bonus in year 1 (advertised as "$100,000, including" the bonus), $110,000 in year 2, $120,000 in year 3 and $130,000 in year 4, with a company car (advert closed 7 Oct 2026). Other US retailers' graduate pay: no reliable data found.
+- UK: Aldi's Graduate Area Manager listing for the 2027 intake shows £52,020 rising to up to £98,050 (advertised salary; Higherin listing, read Oct 2026). Prospects puts graduate schemes with large retailers at "around £29,000 to £50,000", with Aldi at the top; assistant or deputy managers at £25,000-£35,000; store managers at about £30,000-£45,000; and experienced area or national managers at £40,000-£80,000+ (guide figures, Sept 2025). The National Careers Service gives £26,000 for starters and £60,000 for experienced retail managers.
+- Italy: Lidl Italia's Graduate Program is a 12-month full-time contract (Lidl Italia careers page, accessed Oct 2026); the page gives no salary. A job-news site reports a RAL of €28,445.76 at the third level of the Confcommercio contract (Ti Consiglio, 28 July 2026; secondary). That is close to the contractual floor: third level €2,024.38 gross a month from 1 November 2026, paid in 14 instalments, so about €28,340 a year; first level €2,560.87 a month, about €35,850; quadro €3,047.05, about €42,660 (monthly figures from a Leggeinchiaro guide citing Filcams-CGIL tables, secondary; annual totals are my arithmetic). Actual store-manager and area-manager pay in Italy: no reliable data found.
+
+**Career path.** Trainee, assistant or deputy manager (0-2 years) → store manager (2-5) → area manager (4-8) → regional manager, or head-office roles in buying, training or operations (route from Prospects; years are my estimate). Prospects notes that in some organisations "you may run your own department within weeks and manage a store within 18 months". The discounters compress this: Aldi UK expects you to be ready for an area at the end of year one, and ALDI in the US hands over a district after a 44-week trainee programme.
+
+**Exit opportunities.**
+- After 2-3 years: head-office buying, training or operations (Prospects); customer service, training or supply chain specialisms (National Careers Service); operations roles in logistics; other retailers.
+- After 7-10 years: regional or operations director, a franchise or your own shop (both sources list this), general management outside retail.
+
+**Tier list of employers.**
+- Tier 1: the discounters' area-manager schemes (Aldi in the UK and US, Lidl), for pay and early responsibility.
+- Tier 2: graduate schemes at large grocers, department stores, DIY and fashion chains, which make up Prospects' £29,000-£50,000 range; not individually checked.
+- Tier 3: store-level management at small chains, independents and charity shops.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: "open to graduates and HND holders from all disciplines"; business, retail and marketing subjects help; graduate schemes usually ask for a 2:2 and some for a 2:1 (Prospects). ALDI in the US asks for a bachelor's degree in business or a related field. Lidl Italia takes recent graduates of all faculties with no experience.
+- Programmes: Aldi Graduate Area Manager (UK, 12 months); ALDI District Manager (US, 44 weeks of training); Lidl Italia Graduate Program (12 months, with on-the-job rotation and a final project; tracks in sales under the name Generazione Talenti Vendite, logistics, goods flow, and junior roles in real estate and buying).
+- Calendar: the Aldi 2027 listing read closes on 31 October 2026 and warns it may close early. ALDI US and Lidl Italia advertise by region; no fixed cycle found.
+- Assessment: not published on the pages read, and Aldi's own careers pages returned errors: no reliable data found.
+- Apprenticeships (UK): Level 4 Retail Manager and Level 6 Retail Leadership degree apprenticeship (Prospects).
+- Common mistakes: applying for the salary without accepting the store hours; having no retail experience at all (Prospects says employers expect some, and part-time or holiday work counts).
+- Non-target routes: start as a sales assistant and move up, or move across from management in hospitality or a call centre (Prospects).
+- Entry difficulty: 4/5 for the discounters' graduate schemes; 2/5 for store-level trainee roles.
+
+**Honest downsides and who it is NOT a good fit for.** Weekend, evening and bank-holiday work for years; physical days on the shop floor; and, outside the top schemes, starting pay of £25,000-£35,000 that is not far above the staff you manage. The headline discounter salaries buy a job with daily driving and accountability for every store in the area. BLS projects US employment of retail supervisors to decline between 2025 and 2035 (O*NET). Poor fit: people who want office hours, or analytical rather than people work.
+
+---
+
+### 3.8 Hospitality and hotel manager
+
+**What you actually do.** You run a hotel department and later a whole property. Prospects lists the duties: planning and organising accommodation, catering and other services; setting pricing, marketing and revenue strategies to raise occupancy; managing budgets and keeping financial records; meeting sales and profit targets; recruiting, training and scheduling staff; handling guest complaints; overseeing events, maintenance, suppliers and contractors; and checking compliance with licensing and health-and-safety rules (Prospects, Feb 2026). On a graduate programme you rotate through the operating departments, which Prospects names as restaurants and bars, room service, conferences and banqueting, reception and reservations, guest relations, housekeeping and night management. Revenue management (setting room prices day by day against demand) is the most numerical track. Tools: the hotel's reservations and property-management system, rota software, guest-review data.
+
+**A typical day and week.** "A morning briefing on arrivals and occupancy, a walk of the floors and kitchen, a group that wants to move its dinner, a complaint about a room, a rate meeting, then the evening as duty manager, the senior person in the building." BLS notes that because hotels operate around the clock, some managers are on call 24 hours a day, and that most work evenings, weekends and holidays (BLS, May 2025 edition). Prospects says some of the work is office-based but most of the day is spent with guests and staff.
+
+**Hours, stress and lifestyle.**
+- Hours: 40 to 45 a week (National Careers Service, accessed Oct 2026). Prospects gives no number but says the job "typically involves unsocial hours" and that hours "can be long, especially in busy periods". Peak about 50-55 (my estimate; not sourced).
+- Stress: 3-4/5. BLS says coordinating many activities, turning a profit and handling dissatisfied guests "may be stressful"; Prospects calls the work fast-paced, demanding and high-responsibility.
+- Lifestyle: late nights, weekends and bank holidays are common (Prospects). Live-in accommodation and meals on duty are possible benefits. No remote work.
+- Travel: little day to day, but employers "often expect willingness to relocate, including overseas placements" (Prospects).
+
+**Human vs. quantitative profile.** People/communication: 5/5. Quantitative/technical: 2/5 (3/5 on the revenue-management track). Prospects asks for a friendly manner, calm decisions under pressure, cultural awareness and patience, plus numeracy for budgets and targets.
+
+**Compensation (approximate).**
+- US: the official median for all lodging managers is $69,250 (BLS, May 2025); the lowest 10% earn under $40,070 and the highest 10% over $128,880; the median in traveller accommodation is $67,550. This covers experienced managers, and the typical entry requirement is a high-school diploma plus several years in a hotel. Graduate-programme pay: no reliable data found.
+- UK: Prospects gives £20,000-£40,000 as the starting range for assistant general managers, about £25,000-£50,000 for managers of small hotels or deputies in larger ones, and £50,000-£60,000 for general managers, with more in prestigious London or international hotels (guide figures, Feb 2026). The National Careers Service gives £30,000 for starters and £60,000 for experienced managers. Advertised salaries on hotel groups' graduate programmes: no reliable data found (the adverts I tried returned errors).
+- Italy: no reliable role-level data found. The contractual floors of the hotel-sector agreement signed by Federalberghi (CCNL Turismo) in force from 1 May 2026 are €1,695.69 a month at level 4, €1,797.04 at level 3, €1,905.40 at level 2 and €2,084.71 at level 1, paid in 14 instalments for a 40-hour week (Ilccnl.it table; aggregator, secondary). That is about €23,740, €25,160, €26,680 and €29,190 a year (my arithmetic). Which level a graduate trainee is placed at, and what general managers earn under individual contracts: no reliable data found.
+
+**Career path.** Graduate trainee (1-2 years) → assistant front-of-house or food-and-beverage manager → deputy manager or head of department (3-6 years) → general manager (8-12) → cluster or regional manager, or head office (sequence from Prospects; years are my estimate). Prospects says promotion to management "can often happen within a few years", while reaching general manager takes several more and may mean relocating or changing employer. An MBA may speed things up but is not essential.
+
+**Exit opportunities.**
+- After 2-3 years: revenue management and pricing, events, sales, other service businesses such as airlines and travel companies.
+- After 7-10 years: general manager; head-office or regional posts; strategic roles in marketing, HR or finance, sometimes needing extra qualifications; management consultancy or training (Prospects); your own hotel (21% of US lodging managers are self-employed, BLS).
+
+**Tier list of employers.**
+- Tier 1: international groups with structured graduate programmes of one to two years (Prospects). Marriott's Voyage is the best-known example; the first pass of this report read its listings as a 12-18 month programme by discipline, but Marriott's careers pages and the Bright Network listing returned errors on 11 Oct 2026, so those details are not re-verified.
+- Tier 2: national hotel and restaurant groups, resorts, country clubs.
+- Tier 3: independent and family-owned hotels, where Prospects notes pay is often lower.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: open to all graduates and HND holders; hotel and hospitality management, business or management, business with languages, and travel or tourism degrees help; some group schemes ask for a 2:2 (Prospects). In the US, full-service hotels may prefer a bachelor's degree in hospitality or hotel management, and degree holders usually start through internships or management-trainee posts (BLS).
+- Without a degree: possible, since employers value experience; the UK has a Level 4 Hospitality Manager apprenticeship (Prospects; National Careers Service).
+- Programmes: hotel groups' graduate programmes of one to two years, with a senior manager overseeing you, regular reviews and a personal development plan (Prospects).
+- Calendar: no common recruiting calendar found; larger chains advertise on their own sites (Prospects).
+- Assessment: no reliable data found.
+- Languages: "a bonus, not essential" (Prospects).
+- Work experience: hotel experience helps but is not required; customer-facing work in catering, bars or retail is valued (Prospects).
+- Common mistakes: aiming for general manager without accepting the shift years; refusing to relocate.
+- Non-target routes: start in reception, food and beverage or guest services and move up (National Careers Service).
+- Entry difficulty: 3/5 for international graduate programmes; 2/5 for trainee roles at single hotels.
+
+**Honest downsides and who it is NOT a good fit for.** Low starting pay for the hours (UK starting range from £20,000; Italian contract floors of about €24,000-€25,000), shifts on every holiday, on-call duty, and promotion that often requires moving city or country. Prospects also notes that women are still under-represented in senior hospitality management. Poor fit: people who need predictable evenings, or who dislike service work.
+
+---
+
+### 3.9 Healthcare manager
+
+**What you actually do.** You manage the non-clinical side of a hospital or health service. Prospects lists the duties: overseeing the daily operation of an organisation, department or service; managing clinical, administrative and support staff; planning and delivering service changes; setting and managing budgets; gathering and analysing data to track performance; ensuring compliance with policy and quality standards; managing contracts with outside providers; and reporting to senior managers or the board (Prospects, Oct 2025). NHS Health Careers adds scale: a general manager may be responsible for "a whole service division of staff and a multi-million pound budget" (accessed Oct 2026). In England the main graduate route is the NHS Graduate Management Training Scheme, with specialisms in general management, human resources, finance, digital and health informatics, and estates engineering management (TargetJobs employer profile, read Oct 2026). Tools: activity and waiting-list data, spreadsheets, business cases.
+
+**A typical day and week.** "An 8.30am bed meeting, then a session with consultants about a clinic that keeps overrunning, an hour on the month's budget report, interviews for a ward clerk, and a draft business case for an extra theatre list." Prospects describes the work as mostly office-based, with time on wards and at other sites, and warns of extra hours in busy periods. BLS notes that in round-the-clock settings such as hospitals, managers may work evenings or weekends and be on call for emergencies (BLS, May 2025 edition).
+
+**Hours, stress and lifestyle.**
+- Hours: "around 37.5 hours a week", with occasional evening or weekend on-call (Prospects, Oct 2025); 37 to 42, sometimes on a rota (National Careers Service, accessed Oct 2026). In the US most work full time and "some work more than 40 hours per week" (BLS). Peak about 45-50 in winter or around inspections (my estimate; not sourced).
+- Stress: 3-4/5. Prospects: the role "can be demanding", performance is "often subject to public and political scrutiny", and managers face competing priorities from clinicians, senior management and outside bodies.
+- Lifestyle: flexible options, including part-time work and job shares, are often available (Prospects). Trainees are placed across a region, so relocation helps.
+- Travel: between sites within a region.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5 (4/5 on the finance and informatics specialisms). You persuade clinicians you do not manage; you also read activity, cost and staffing data every week.
+
+**Compensation (approximate).**
+- US: the official median for medical and health services managers is $123,860 (BLS, May 2025); the lowest 10% earn under $73,390 and the highest 10% over $224,340; the median is $133,580 in hospitals and $105,770 in physicians' offices. Employers often require prior administrative or clinical experience, so this is not a graduate figure. Entry-level pay: no reliable data found.
+- UK: the NHS scheme advertises a minimum starting salary of £31,276, plus the High Cost Area Supplement where the placement qualifies, rising in the second year; trainees earn about £44,000 on average in their first NHS job afterwards (TargetJobs employer profile, read Oct 2026). Prospects' older page gives £30,277 rising to £32,606 for the 2026 intake. For scale, the 2026/27 Agenda for Change bands from 1 April 2026 are: Band 5 £32,073-£39,043, Band 6 £39,959-£48,117, Band 7 £49,387-£56,515, Band 8a £57,528-£64,750, Band 8b £66,582-£77,368, Band 8c £79,504-£91,609, Band 8d £94,356-£108,814, Band 9 £112,782-£129,783; the supplement is 20% in inner London, 15% in outer London and 5% in the fringe (NHS Employers, 2026/27 pay scales). So the trainee salary sits just under Band 5 and the £44,000 average sits in Band 6 (my reading). The National Careers Service gives £32,000 for starters and £77,000 for experienced managers.
+- Italy: no reliable data found. Management posts in the public health service are filled by public competition (concorso) (general knowledge; not sourced here).
+
+**Career path.** Trainee (2 years; 2.5 for finance and estates) → first management post at about £44,000 (years 2-4) → service or general manager, Bands 8a-8b (5-10 years) → deputy director or director, Bands 8c-9 (10-15) → chief operating officer or chief executive of a trust, paid outside the bands. Band values are NHS Employers'; the match of titles and years to bands is my reading, since trusts grade posts individually. Prospects says leadership responsibility starts early and that director and chief-executive pay "can exceed £100,000". The scheme does not guarantee a job at the end, though many trainees secure permanent NHS roles soon after (Prospects).
+
+**Exit opportunities.**
+- After 2-3 years: private healthcare providers, health consulting, health technology and pharmaceutical companies, policy or service-improvement roles (Prospects lists policy, service improvement and planning as options inside the NHS).
+- After 7-10 years: director-level NHS roles, senior roles in private hospital groups or insurers, consulting.
+
+**Tier list of employers.**
+- Tier 1: the NHS Graduate Management Training Scheme (around 250 graduates join each year, TargetJobs); separate schemes in Scotland, Wales and Northern Ireland (Prospects).
+- Tier 2: private providers, some with their own graduate schemes (Prospects names BUPA); direct entry to junior management posts in NHS trusts; in the US, hospitals and health systems, which pay the highest median among the industries BLS lists after government.
+- Tier 3: GP surgeries, care homes, small clinics and charities (BLS: nursing and residential care median $100,520, the lowest of the industries listed).
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: the NHS scheme takes a 2:2 or above in any subject; for finance and health informatics there is no formal numeracy requirement, but accountancy, economics, IT, mathematics or any degree with statistics is useful (Prospects; TargetJobs). The National Careers Service page says an upper second is usual, which conflicts with the scheme's own listing. In the US a bachelor's degree is typical and some employers prefer a master's (BLS).
+- Programmes: NHS scheme, two years (2.5 for finance and estates engineering), salaried, with a funded professional or postgraduate qualification that depends on the specialism (Prospects). You choose one specialism per intake.
+- Calendar: no reliable data found in this pass: the scheme's own site (graduates.nhs.uk) returned an error and the listing read gives no dates. The first pass of this report recorded an autumn 2026 application window for a September 2027 start; check the scheme's site.
+- Assessment: online application, then online assessments, then a half-day virtual assessment centre (Prospects, Oct 2025).
+- Work experience: not required, but you need "a good understanding of current NHS issues"; volunteering or an administrative job in a hospital, GP surgery or care organisation helps at interview (Prospects).
+- Common mistakes: treating it as a generic management scheme; no knowledge of how the NHS is organised and funded.
+- Non-target routes: administrative or support roles in a trust, then promotion; a Level 6 Chartered Manager degree apprenticeship; clinical staff moving into management; managers moving in from other sectors (Prospects; National Careers Service).
+- Entry difficulty: 4-5/5 for the NHS scheme (about 250 places a year and "competition is strong", Prospects; applicant numbers: no reliable data found); 3/5 for direct junior posts.
+
+**Honest downsides and who it is NOT a good fit for.** Public-sector pay on fixed bands: the trainee salary of £31,276 is below the Band 5 starting point of £32,073. Constant financial and political scrutiny, responsibility for problems you cannot fix alone, and no guaranteed post after the scheme. Poor fit: people who want fast pay growth or clear individual credit.
+
+---
+
+### 3.10 Sustainability and corporate responsibility manager (in-house)
+
+**What you actually do.** You run a company's environmental and social programme from the inside. Prospects' profile of the environmental or sustainability manager lists: developing environmental strategies and action plans and setting targets; leading on sustainable procurement, waste, pollution control and energy; ensuring compliance with environmental legislation; auditing, analysing and reporting performance to internal and external stakeholders; building environmental management systems; training staff; and dealing with regulators and the board (Prospects, Feb 2025). O*NET's task list for US sustainability specialists adds tracking indicators such as energy use, waste and recycling, evaluating proposed initiatives for cost and technical feasibility, and writing reports and grant or rebate applications (O*NET, accessed Oct 2026). The reporting side overlaps with the accounting branch's sustainability-reporting role; this one sits in the business, not in an audit firm. Tools: spreadsheets, carbon-accounting and reporting software, supplier questionnaires.
+
+**A typical day and week.** "Chasing three plants for last quarter's energy and waste figures, a meeting with procurement about a supplier that failed an audit, an afternoon on the emissions section of the annual report, and a customer questionnaire due on Friday." The year peaks at the reporting deadline. Prospects says the work means collaborating with engineers, lawyers, policy specialists and business colleagues, and that hybrid and remote working is increasingly available.
+
+**Hours, stress and lifestyle.**
+- Hours: public-sector posts "typically work 9am to 5pm, Monday to Friday"; private-sector hours vary more and may include some weekend work (Prospects, Feb 2025). The nearest official profile, environmental consultant, gives 37 to 39 a week (National Careers Service, accessed Oct 2026). Typical 37-40; peak about 45-50 before the report (my estimate; not sourced).
+- Stress: 2-3/5. Deadlines are annual and known in advance; the strain is in depending on other departments for data and action.
+- Lifestyle: office-based with site visits; hybrid work is increasingly available; flexitime and part-time work are possible in some organisations (Prospects).
+- Travel: site and supplier visits; some roles involve overseas work (Prospects).
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. You need other people's data and other people's budgets; the technical side is measurement, auditing and regulation, not advanced mathematics.
+
+**Compensation (approximate).**
+- US: no official figure exists for this job alone. O*NET shows a 2025 median of $83,050, but that is BLS data for the much wider group "business operations specialists, all other". Trellis's State of the Sustainability Profession 2024 (1,185 respondents, mostly at US companies with revenue over $1 billion) reports average total compensation of $159,430 for sustainability managers, $244,649 for directors and $471,933 for vice presidents (as summarised by NYU Stern, 14 Oct 2024; secondary). The 2022 edition put managers with three or fewer years' experience at $126,000 (Trellis, May 2022). These are self-selected samples at large firms. Entry-level analyst pay: no reliable data found.
+- UK: graduate environmental managers "usually range between £25,000 and £33,000"; environmental managers generally start at £42,000-£45,000, rising to about £57,000 as a chartered environmentalist; Fellows of the professional body earn around £80,000; and practitioners in business and industry earn significantly more than those elsewhere (Prospects, Feb 2025, citing the professional body's State of the Profession survey). Sustainability consultants start at £20,000-£28,000 (Prospects, Dec 2024), and the National Careers Service gives £25,000 to £50,000 for environmental consultants. The body's own 2026 survey could not be opened.
+- Italy: no reliable data found.
+
+**Career path.** Sustainability officer, analyst or graduate environmental manager (0-3 years) → sustainability manager (3-7) → head of sustainability (7-12) → director or chief sustainability officer, or a move into operations or strategy (years are my estimate). On the consulting side Prospects says senior roles "usually take around five years"; consultants often move in-house with a former client. Chartered environmentalist status and the professional body's grades mark the steps in the UK.
+
+**Exit opportunities.**
+- After 2-3 years: sustainability consulting, ESG assurance, procurement, policy work in the public sector.
+- After 7-10 years: head of sustainability, strategy or operations leadership, freelance consulting, NGOs, teaching or research (Prospects).
+
+**Tier list of employers.**
+- Tier 1: large companies with dedicated teams; Prospects notes that many environment professionals work in organisations of more than 1,000 staff and that business and industry pay best; Trellis's US figures come from this group.
+- Tier 2: mid-sized manufacturers, construction and engineering firms, retailers; local authorities, universities and statutory agencies.
+- Tier 3: one-person functions in small firms; NGOs, which Prospects says pay less and are highly competitive.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: open to all graduates; environmental sciences, environmental management, energy, ecology, earth sciences and sustainability-focused engineering are the relevant subjects, but "a business qualification or experience may be as valued as environmental knowledge"; many professionals hold a master's (Prospects). In the US, 52% of O*NET respondents say a bachelor's degree is required and 39% a master's.
+- Programmes: no dedicated graduate schemes found; most first jobs are officer or analyst posts, or graduate roles in a consultancy.
+- Calendar: year-round hiring; no reliable data found on a cycle.
+- Certifications: membership of the UK professional body for environment and sustainability (IEMA, whose site now redirects to ISEP) and chartered environmentalist status; employers "value professional body membership" (Prospects). The UK also has a Level 6 Environmental Practitioner degree apprenticeship (National Careers Service).
+- Work experience: competition is strong, so placements, summer internships and energy, waste or recycling projects count (Prospects, consultant profile).
+- Common mistakes: expecting strategy work at entry (the first years are data collection and audits); no evidence of handling numbers.
+- Non-target routes: move across from operations, procurement, health and safety, or audit; or from consultancy to a client.
+- Entry difficulty: 3/5; few seats per company and strong competition.
+
+**Honest downsides and who it is NOT a good fit for.** Small teams, influence without authority, and dependence on budgets that others control: in Trellis's 2024 survey the share of respondents reporting a budget increase fell to 57% from 74% two years earlier, and the share reporting cuts rose from 4% to 9% (NYU Stern summary). Much of the work is reporting and compliance. The high US averages come from large companies and include bonuses. Poor fit: people who want to see fast, direct change.
+
+---
+
+### 3.11 Business analyst and process improvement specialist
+
+**What you actually do.** You work out what part of an organisation needs and how its process or system should change, then see the change through. Prospects lists: working with colleagues and outside stakeholders to understand needs; analysing findings with data-modelling and business-analysis techniques and recommending improvements; weighing the opportunities and risks of each option; identifying the processes and technology required; winning senior approval; supporting staff through the change; writing documentation; and evaluating the impact (Prospects, May 2026). The National Careers Service adds documenting how the business operates, explaining costs, benefits and risks, and organising testing and quality checks. In manufacturing and services the same job runs under Lean or continuous-improvement titles (section 3.2). It differs from the data analyst in the analytics branch: the output is a changed process, not a report. Tools: process maps, requirements documents, spreadsheets, workflow and ticketing tools.
+
+**A typical day and week.** "A morning workshop with the claims team to map how a refund is approved, two hours writing it up as requirements, a stand-up with the developers, an afternoon testing last week's release, and on Thursday a meeting to tell the sponsor what the change will cost." You work alongside project managers, developers and specialists (Prospects). Prospects describes standard full-time hours, Monday to Friday, with occasional evenings or overtime near project deadlines or during organisational change.
+
+**Hours, stress and lifestyle.**
+- Hours: 37 to 39 a week, evenings occasionally (National Careers Service, accessed Oct 2026); standard full-time hours (Prospects, May 2026). In the US, management analysts, the nearest official occupation, often work under tight deadlines and "some work more than 40 hours per week" (BLS, May 2025 edition). Peak about 45-50 at go-live (my estimate; not sourced).
+- Stress: 2-3/5. Deadline pressure comes in bursts around releases; contractors may work longer weekday hours and sometimes weekends to meet agreed timescales (Prospects).
+- Lifestyle: office or hybrid; some roles offer flexible working (Prospects). Contract work is common later on.
+- Travel: low in-house; frequent for consultants, who split time between office and client sites (BLS).
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. Prospects puts communication first, including explaining technical information to non-technical people, then analytical skills and a good understanding of IT systems. You need to read data and systems; you do not need to build them.
+
+**Compensation (approximate).**
+- US: the official median for management analysts, the nearest BLS occupation, is $101,860 (May 2025); the lowest 10% earn under $60,640 and the highest 10% over $171,640; the median is $107,330 in professional and technical services and $100,300 in finance and insurance. BLS notes many enter with several years of related experience, so the median is not an entry figure. Entry-level pay: no reliable data found.
+- UK: graduate or junior business analysts earn "in the region of £24,000 to £33,000"; with a few years' experience £35,000-£65,000; experienced analysts up to £80,000 and in some cases over £100,000; experienced contractors charge £400-£550 a day; pay is higher in London and in finance, technology and consulting (Prospects, May 2026; guide figures). The National Careers Service gives £23,000 for starters and £55,000 for experienced analysts.
+- Italy: no reliable data found (the Hays Italia Salary Guide 2026 is released only through a contact form and was not obtained).
+- Survey data: the IIBA's 2026 Global State of Business Analysis report (2,120 respondents in 122 countries) keeps its salary benchmarks by role, region and experience for members; the public page names professional services and consulting, healthcare and life sciences, and energy and utilities as the top-paying industries (IIBA, 2026).
+
+**Career path.** Junior business analyst (0-2 years) → business analyst (2-5) → senior or lead analyst (5-8) → product owner, project manager, or head of change or continuous improvement (years are my estimate; Prospects gives no timings). The National Careers Service names business project manager as the standard next step. Prospects adds specialising in data analytics, digital transformation or consultancy, and freelance work "once you've gained some relevant experience".
+
+**Exit opportunities.**
+- After 2-3 years: project management, product roles, IT or management consulting, operations management.
+- After 7-10 years: head of change or transformation, director roles, independent contracting at £400-£550 a day in the UK (Prospects), your own consultancy.
+
+**Tier list of employers.**
+- Tier 1: graduate schemes at banks, insurers, technology firms and consultancies; Prospects says pay is highest in finance, technology and consulting, and the highest US industry median BLS lists is professional and technical services.
+- Tier 2: government and public bodies (US government median $97,300, BLS), healthcare, utilities, retailers and manufacturers with continuous-improvement teams.
+- Tier 3: small firms' single-analyst roles and fixed-term project contracts.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: a degree is "a distinct advantage, as competition is high"; relevant subjects are business management, business information systems, computer science, data analytics, economics, finance, IT and mathematics; other degrees are considered if they show strong analytical and research skills (Prospects). In the US a bachelor's degree is the typical requirement and some employers prefer an MBA (BLS).
+- Programmes: graduate schemes at large employers; UK Level 4 Business Analyst apprenticeship and Level 6 Business Analyst degree apprenticeship (Prospects). No list of dedicated schemes found.
+- Calendar: junior roles hire year-round; large employers' schemes follow the usual autumn cycle (see 3.3).
+- Assessment: no reliable data found.
+- Certifications: not required. The IIBA's Entry Certificate in Business Analysis (ECBA) is sold as "the first step for aspiring business analysis professionals" at $395 or less including membership, the exam and a practice exam, with student rates from $315 (IIBA, accessed Oct 2026). BCS, the Chartered Institute for IT, also offers qualifications (Prospects); its certificate page could not be opened. IIBA reports that 76% of certified respondents saw a benefit within 12 months, which is self-reported by its own members and not evidence that a certificate gets a graduate hired. Lean Six Sigma belts serve the process-improvement side (see 3.2).
+- Work experience: improving a specific function for a small business or charity, a placement year, or work shadowing; student membership of IIBA UK (Prospects).
+- Common mistakes: presenting it as a data job; having no example of changing how something works.
+- Non-target routes: move from operations, customer service or finance onto a project, then into the analyst team; project-management experience also leads in (Prospects).
+- Entry difficulty: 2-3/5.
+
+**Honest downsides and who it is NOT a good fit for.** You depend on others to build what you specify, and projects are cancelled or re-scoped. Titles mean different things at different employers, and the official starter figure of £23,000 shows how junior some "analyst" posts are. No survey I could open gives entry pay outside the UK. Poor fit: people who want either pure analysis or direct authority.
+
+---
+
+### 3.12 Real estate and property manager (surveying route)
+
+**What you actually do.** You value, let, sell and manage buildings and land for owners and occupiers. Prospects lists the duties of a commercial or residential surveyor: valuing property using local market knowledge and accurate site measurements; assessing the viability of developments; writing reports for rent reviews, mortgage valuations and building surveys; negotiating rents and contracts; applying property and health-and-safety law; and assessing property for business rates, tax, acquisitions and disposals (Prospects, May 2026). On a firm's graduate programme you rotate through teams while working towards chartered status (MRICS) with the Royal Institution of Chartered Surveyors through its Assessment of Professional Competence (APC). The rotations named in 2027 adverts are valuations, capital markets and leasing at CBRE, and commercial valuation, office and industrial agency, capital markets, lease advisory and property asset management at Knight Frank (StudentJob and TargetJobs listings, read Oct 2026). Tools: valuation spreadsheets, lease documents, property databases, site inspections.
+
+**A typical day and week.** "Measuring and photographing a warehouse in the morning, a valuation model after lunch, a rent-review letter to a tenant's agent, a call with the client's solicitor, and an hour on Friday writing up the APC training record." Prospects describes regular site visits and client meetings, with patterns that vary by employer and specialism. The big firms' schemes are mostly office-based: CBRE's 2027 advert says every working day in the office, Knight Frank's says primarily office-based with hybrid possible.
+
+**Hours, stress and lifestyle.**
+- Hours: "around 35 to 40 hours" a week, with occasional extra hours in the private sector to meet deadlines; public-sector hours are more regular (Prospects, May 2026). Peak about 45-50 around deals, quarter-end valuations and the APC submission (my estimate; not sourced). In the US, property managers may answer emergencies outside normal hours or attend evening meetings (BLS, May 2025 edition).
+- Stress: 3/5. Agency work is target-driven, and you study for the APC on top of the job. In Macdonald & Company's 2026 survey of property professionals only 49% said they felt valued in their role, down from 59% a year earlier (RICS Modus, 5 Aug 2026).
+- Lifestyle: office plus site visits. Across that survey flexible or hybrid working fell to 71% from 92% in 2025, with an average office requirement of 2.9 days a week.
+- Travel: local, to inspect sites; a driving licence is desired for regional offices (CBRE advert).
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. Prospects asks for communication and negotiation first, then numeracy, analysis and attention to detail; valuation is spreadsheet finance, and agency is selling.
+
+**Compensation (approximate).**
+- US: the official median for property, real estate and community association managers is $69,990 (BLS, May 2025); the lowest 10% earn under $41,010 and the highest 10% over $139,680. The typical entry requirement is a high-school diploma and 31% are self-employed, so it is not a graduate benchmark. Graduate pay at the large US advisers: no reliable data found.
+- UK, advertised salaries for September 2027 graduate intakes: Savills £30,000 in London with a £1,500 sign-on bonus and £27,000 in most regions with £1,000, training and APC costs covered (TargetJobs listing, closing 19 Oct 2026); Knight Frank £30,000 plus £1,500 in London and £28,000 plus £1,000 in Birmingham (Higherin and TargetJobs listings); CBRE £30,000-£32,000 depending on location (StudentJob listing, closing 25 Oct 2026). Prospects gives £25,000-£35,000 for graduate or assistant surveyors, about £45,000 for associate members (AssocRICS), £45,000-£70,000 for chartered surveyors and £70,000-£100,000+ for senior surveyors and directors (guide figures, May 2026).
+- Survey data: Macdonald & Company's Salary, Rewards and Sentiments Report 2026 gives an average salary of £68,000 across all respondents worldwide and an average bonus of £11,180, down from £14,900; in the UK 75% had a pay rise and gaining a professional qualification brought an average rise of 20.4% (RICS Modus, 5 Aug 2026). All seniorities; no graduate breakdown published.
+- Italy: no reliable data found.
+
+**Career path.** Graduate surveyor (about 2 years to the APC) → chartered surveyor, MRICS (2-4 years) → associate (4-7) → director → partner or head of department; or a move to the client side (titles and years above MRICS are my estimate). The 2027 adverts make the two years concrete: Knight Frank graduates start in September 2027 and aim to qualify in November 2029, or March 2030 if they need the conversion master's. An older RICS article sets the graduate route at a minimum of 23 months of structured training and 400 days of practical experience (isurv, 2012; RICS's August 2026 candidate guide could not be read). Prospects: progression to senior, associate or partner roles is possible, particularly in large private firms.
+
+**Exit opportunities.**
+- After 2-3 years, once chartered: property funds and investors, developers, corporate real-estate teams, real-estate lending at banks; public-sector estates (councils, universities, NHS trusts, government departments, per Prospects).
+- After 7-10 years: fund or asset manager, development director, self-employed consultant or your own practice (Prospects).
+
+**Tier list of employers.**
+- Tier 1: the large international advisers' graduate programmes (Savills, Knight Frank and CBRE as read; JLL runs a comparable scheme for which no current details were found).
+- Tier 2: regional firms, property companies, housing associations, and the public sector; the Valuation Office Agency runs an annual graduate programme (Prospects).
+- Tier 3: small agencies and residential lettings.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: an RICS-accredited degree is the direct route. Graduates of other subjects need an RICS-accredited postgraduate qualification (Prospects), and the large firms now pay for it: CBRE fully funds a part-time accredited master's for "non-cognate" graduates of any discipline, and Knight Frank's commercial scheme takes a 2:1 in any discipline with the accredited MSc completed alongside the job. Both ask for a 2:1.
+- Programmes: two-year programmes built around the APC. Savills London has six four-month rotations in a commercial, residential, or planning and development pathway; its regional graduates usually stay in one team.
+- Calendar: apply in the autumn a year ahead. For September 2027 starts, Savills closes on 19 October 2026, CBRE on 25 October, Knight Frank London on 30 October and Knight Frank Birmingham on 13 November.
+- Assessment: online application, then an online test (SHL at Savills, Cappfinity at Knight Frank), a screening call or interview in November-December, and an assessment centre in December or January (adverts read Oct 2026).
+- Certifications: MRICS through the APC, which combines workplace training records, a written submission and a final interview (Prospects; isurv). Chartered members then log continuing professional development every year.
+- Work experience: valued; estate agencies, property-management and surveying firms, internships and insight days (Prospects).
+- Common mistakes: no work experience in a property firm; treating agency as a desk job.
+- Non-target routes: degree apprenticeships; entry with an HNC, HND or foundation degree plus experience (Prospects); a property-management or residential job with the conversion course part-time; a move from finance into a property fund.
+- Entry difficulty: 3-4/5 for the large advisers; 2/5 for smaller firms.
+
+**Honest downsides and who it is NOT a good fit for.** Starting pay of £27,000-£32,000 at the largest firms, below banking and consulting, for two years of work plus a professional exam, and more study if your degree is not accredited. Bonuses follow the property cycle: in the UK the average bonus fell to £10,000 in 2026 from £19,000 two years earlier (RICS Modus). Office attendance is rising. Poor fit: people who dislike selling, or want a purely analytical job.
+
+---
+
 ### Role family summary
 
 Entry pay is approximate and not like-for-like (base vs total, scheme vs market). "n.r.d." means no reliable data found.
@@ -370,6 +646,12 @@ Entry pay is approximate and not like-for-like (base vs total, scheme vs market)
 | 3.4 HR / people professional | 38-45 (50+) | 3 | 5 | 2 | US n.r.d. at entry (BLS HR specialists median $76k) / UK £24-35k (NCS/TargetJobs £34k scheme) / Italy n.r.d. | 3 |
 | 3.5 Corporate strategy & BD (in-house) | 45-55 (60-70) | 3 | 4 | 4 | US n.r.d. at graduate level (early-career strategy manager ≈ $79-116k, Payscale) / UK n.r.d. / Italy n.r.d. | 4 |
 | 3.6 Public-sector & non-profit manager | 37-45 (50) | 2 | 3-4 | 2 | US n.r.d. / UK £31.6k (Fast Stream yr 1, 2025-26) / Italy n.r.d.; EU AD5 €6,153/month basic | 5 (Fast Stream, AD5); 2-3 (local gov., NGOs) |
+| 3.7 Retail store and area manager | 40-45 (50-55) | 3-4 | 5 | 2 | US $95k base plus $5k signing bonus on ALDI's District Manager scheme (advert, Oct 2026); BLS median for all retail supervisors $48.5k (2025; not a graduate figure) / UK £52k on Aldi's area-manager scheme (2027 intake); other retail schemes ≈ £29-50k, assistant posts £25-35k (Prospects) / Italy ≈ €28.4k RAL on Lidl's Graduate Program (secondary); CCNL third-level floor ≈ €28.3k | 4 (discounter schemes); 2 (store trainee) |
+| 3.8 Hospitality and hotel manager | 40-45 (50-55) | 3-4 | 5 | 2 | US n.r.d. at entry (BLS median for all lodging managers $69k, 10th percentile $40k, May 2025) / UK £30k starter (National Careers Service); £20-40k assistant general manager (Prospects) / Italy n.r.d.; CCNL Turismo floors ≈ €23.7-25.2k at levels 4-3 (May 2026, secondary) | 3 (international programmes); 2 (single hotels) |
+| 3.9 Healthcare manager | 37.5-42 (45-50) | 3-4 | 4 | 3 | US n.r.d. at entry (BLS median $124k, 10th percentile $73k, May 2025; experienced managers) / UK £31.3k (NHS graduate scheme; NHS Band 5 starts at £32.1k, 2026/27) / Italy n.r.d. | 4-5 (NHS scheme); 3 (direct posts) |
+| 3.10 Sustainability and corporate responsibility manager | 37-40 (45-50) | 2-3 | 4 | 3 | US n.r.d. at entry (managers with up to 3 years ≈ $126k at large firms, Trellis 2022, self-selected) / UK £25-33k graduate (Prospects, citing the professional body's survey) / Italy n.r.d. | 3 |
+| 3.11 Business analyst and process improvement specialist | 37-40 (45-50) | 2-3 | 4 | 3 | US n.r.d. at entry (BLS management analysts median $102k, 10th percentile $61k, May 2025) / UK £24-33k graduate or junior (Prospects, May 2026); £23k starter (National Careers Service) / Italy n.r.d. | 2-3 |
+| 3.12 Real estate and property manager (surveying route) | 35-40 (45-50) | 3 | 4 | 3 | US n.r.d. at graduate level (BLS median for all property managers $70k, May 2025) / UK £27-32k on 2027 graduate schemes (Savills, Knight Frank, CBRE) / Italy n.r.d. | 3-4 (large advisers); 2 (smaller firms) |
 
 ---
 
@@ -419,19 +701,19 @@ The same management role feels different depending on where it sits. Ratings bel
 
 S = strong fit, P = possible, X = stretch.
 
-| Background | 3.1 MT → GM | 3.2 Operations | 3.3 Project/Programme | 3.4 HR/People | 3.5 Strategy & BD | 3.6 Public/Non-profit |
-|---|---|---|---|---|---|---|
-| Management | S | S | S | S | P | S |
-| Logistics & Supply Chain | S | S | S | P | P | P |
-| Finance | P | P | P | X | S | P |
-| Accounting | P | P | P | X | P | P |
-| Marketing | S | P | P | P | P | P |
-| Data Analytics | P | S | P | P | S | P |
-| Economics | P | P | P | P | S | S |
-| Computer Science | P | P | S | X | P | P |
-| Cybersecurity | X | X | P | X | X | P |
-| Data Science | X | P | P | X | P | P |
-| Artificial Intelligence | X | X | P | X | P | P |
+| Background | 3.1 MT → GM | 3.2 Operations | 3.3 Project/Programme | 3.4 HR/People | 3.5 Strategy & BD | 3.6 Public/Non-profit | 3.7 Retail | 3.8 Hospitality | 3.9 Healthcare | 3.10 Sustainability | 3.11 Business analyst | 3.12 Real estate |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Management | S | S | S | S | P | S | S | S | S | S | S | S |
+| Logistics & Supply Chain | S | S | S | P | P | P | S | P | P | S | S | P |
+| Finance | P | P | P | X | S | P | P | P | S | P | P | S |
+| Accounting | P | P | P | X | P | P | P | P | S | P | P | P |
+| Marketing | S | P | P | P | P | P | S | S | P | P | P | P |
+| Data Analytics | P | S | P | P | S | P | P | P | S | P | S | P |
+| Economics | P | P | P | P | S | S | P | P | S | S | P | S |
+| Computer Science | P | P | S | X | P | P | P | X | P | X | S | X |
+| Cybersecurity | X | X | P | X | X | P | X | X | X | X | P | X |
+| Data Science | X | P | P | X | P | P | X | X | P | P | P | X |
+| Artificial Intelligence | X | X | P | X | P | P | X | X | X | X | P | X |
 
 Notes: ratings are my judgement from employer requirements read above (Unilever "all disciplines", Amazon "supply chain, business, engineering", BLS HR "human resources, business, communications", Prospects project-manager "any subject") and do not reflect hiring statistics, which none of the sources provide.
 
@@ -497,5 +779,48 @@ All accessed October 2026 unless a date is given. Items marked (secondary) are s
 - Payscale, Corporate Strategy Manager: https://www.payscale.com/research/US/Job=Corporate_Strategy_Manager/Salary/99b9b755/Strategy-Development
 - Payscale, UK plant manager: https://www.payscale.com/research/UK/Job=Plant_Manager%2C_Manufacturing/Salary/71b20a10/Operations-Management
 - Lean Six Sigma pay: https://pe.gatech.edu/blog/industry-trends/Becoming-Lean-Six-Sigma-Green-Belt-Certified (Payscale 2025) ; https://leansixsigma.ucdavis.edu/?p=1601 (Lightcast)
+
+**Second pass, 11 October 2026: role families 3.7 to 3.12 (re-researched the same day from opened sources)**
+
+Every figure in sections 3.7 to 3.12 comes from a page opened and read on 11 October 2026 and listed here; statements marked "my estimate", "my arithmetic" or "my reading" are mine, and background ratings are my judgement.
+- Prospects, Retail manager (written Sept 2025): https://www.prospects.ac.uk/job-profiles/retail-manager
+- National Careers Service, Retail manager (accessed Oct 2026): https://nationalcareers.service.gov.uk/job-profiles/retail-manager
+- O*NET OnLine, First-Line Supervisors of Retail Sales Workers, 41-1011.00 (BLS 2025 wage data and 2025-35 projections; used because BLS's own OEWS occupation page returned only a navigation page): https://www.onetonline.org/link/summary/41-1011.00
+- Higherin, Aldi Graduate Area Manager 2027, Swindon (aggregator copy of the employer's advert; deadline 31 Oct 2026; secondary): https://higherin.com/jobs/44024/aldi/graduate-area-manager-2027-swindon
+- UNC Charlotte careers board, ALDI USA District Manager, VA and Eastern NC (university copy of the employer's advert; closed 7 Oct 2026; secondary): https://hireaniner.charlotte.edu/jobs/fa1e013297317520cb697a8fa3ba6ba8
+- Lidl Italia, Graduate Program (employer page, accessed Oct 2026): https://lavoro.lidl.it/lavoro-formazione/neolaureati/graduate-program
+- Ti Consiglio, Lidl Graduate Program "Generazione Talenti" (28 July 2026; job-news site; secondary): https://www.ticonsiglio.com/lidl-assunzioni-neolaureati-graduate-program-generazione-talenti/
+- Leggeinchiaro, CCNL Commercio (Confcommercio) minimums from 1 Nov 2025, 1 Nov 2026 and 1 Feb 2027 (guide citing Filcams-CGIL tables; secondary): https://leggeinchiaro.it/?p=54394
+- Prospects, Hotel manager (written Feb 2026): https://www.prospects.ac.uk/job-profiles/hotel-manager
+- National Careers Service, Hotel manager (accessed Oct 2026): https://nationalcareers.service.gov.uk/job-profiles/hotel-manager
+- BLS Occupational Outlook Handbook, Lodging Managers (May 2025 pay; 2025-35 projections): https://www.bls.gov/ooh/management/lodging-managers.htm
+- Ilccnl.it, CCNL Turismo Confcommercio, aziende alberghiere, table in force from 1 May 2026 (aggregator; the page's own dates are inconsistent and levels QA, QB and 5 are behind registration; secondary, weak): https://ilccnl.it/contratto/ccnl/turismo-confcommercio---aziende-alberghiere
+- Prospects, Health service manager (written Oct 2025): https://www.prospects.ac.uk/job-profiles/health-service-manager
+- National Careers Service, Health service manager (accessed Oct 2026): https://nationalcareers.service.gov.uk/job-profiles/health-service-manager
+- NHS Health Careers, General management (accessed Oct 2026): https://www.healthcareers.nhs.uk/explore-roles/management/roles-management/general-management
+- TargetJobs, NHS Graduate Management Training Scheme employer profile (read Oct 2026; secondary, the scheme's own site returned 403): https://targetjobs.co.uk/organisations/nhs-graduate-management-training-scheme-gmts
+- NHS Employers, Pay scales for 2026/27 (Agenda for Change, effective 1 April 2026): https://www.nhsemployers.org/articles/pay-scales-202627
+- BLS OOH, Medical and Health Services Managers (May 2025): https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm
+- Prospects, Environmental manager (written Feb 2025; cites the professional body's State of the Profession survey): https://www.prospects.ac.uk/job-profiles/environmental-manager
+- Prospects, Sustainability consultant (written Dec 2024): https://www.prospects.ac.uk/job-profiles/sustainability-consultant
+- National Careers Service, Environmental consultant (accessed Oct 2026): https://nationalcareers.service.gov.uk/job-profiles/environmental-consultant
+- O*NET OnLine, Sustainability Specialists, 13-1199.05 (tasks and education; the wage shown is BLS 2025 data for the wider group "business operations specialists, all other"): https://www.onetonline.org/link/summary/13-1199.05
+- NYU Stern, summary of Trellis's State of the Sustainability Profession 2024 (14 Oct 2024; secondary, self-selected survey): https://www.stern.nyu.edu/sustainability-careers-2024-growth-challenges-and-opportunities-trellis
+- Trellis, "Higher salaries, hot jobs and restless employees" (9 May 2022, on the 2022 State of the Profession report; self-selected survey): https://trellis.net/article/higher-salaries-hot-jobs-and-restless-employees/
+- Prospects, Business analyst (written May 2026): https://www.prospects.ac.uk/job-profiles/business-analyst
+- National Careers Service, Business analyst (accessed Oct 2026): https://nationalcareers.service.gov.uk/job-profiles/business-analyst
+- BLS OOH, Management Analysts (May 2025): https://www.bls.gov/ooh/business-and-financial/management-analysts.htm
+- IIBA, The Global State of Business Analysis 2026 (public summary page; salary tables are members-only): https://www.iiba.org/career-resources/the-global-state-of-business-analysis/the-global-state-of-business-analysis-reports-and-surveys/the-global-state-of-business-analysis-2026/
+- IIBA, Entry Certificate in Business Analysis (accessed Oct 2026): https://www.iiba.org/business-analysis-certifications/ecba/
+- Prospects, Commercial/residential surveyor (written May 2026): https://www.prospects.ac.uk/job-profiles/commercial-residential-surveyor
+- TargetJobs, Savills Graduate Programme 2027, surveying (copy of the employer's advert; closes 19 Oct 2026; secondary): https://targetjobs.co.uk/jobs/2027-savills-graduate-programme-surveying-244755
+- TargetJobs, Knight Frank Commercial Property Graduate Programme, Birmingham (closes 13 Nov 2026; secondary): https://targetjobs.co.uk/jobs/commercial-property-graduate-programme-birmingham-244945
+- Higherin, Knight Frank Graduate Building Surveying Programme, London 2027 (secondary): https://higherin.com/jobs/44965/knight-frank/graduate-building-surveying-programme-london-2027
+- StudentJob, CBRE 2027 Graduate Scheme, Commercial Real Estate (copy of the employer's advert; closes 25 Oct 2026; secondary): https://www.studentjob.co.uk/vacancies/8451155-2027-graduate-scheme-commercial-real-estate
+- RICS Modus, on Macdonald & Company's Salary, Rewards and Sentiments Report 2026 (5 Aug 2026; all seniorities, mostly global figures): https://ww3.rics.org/uk/en/modus/business-and-skills/better-business/paid-built-environment-salary-survey-2026.html
+- isurv (RICS), "APC: process explained" (24 Feb 2012; old): https://www.isurv.com/info/390/features/6450/apc_process_explained
+- BLS OOH, Property, Real Estate, and Community Association Managers (May 2025): https://www.bls.gov/ooh/management/property-real-estate-and-community-association-managers.htm
+- Could not be opened, so not cited as read: Aldi UK and ALDI US careers pages (404); Lidl GB (vacancy filled, graduate page 404); Marriott careers pages (404) and the Bright Network Voyage listing (403); graduates.nhs.uk (403) and the Gradcracker listing (403); ISEP's State of the Profession page and two press write-ups of it (403); BCS's business-analysis certificate page (404); Savills' own graduate page (429, then 404); the RICS APC Candidate Guide of August 2026 (PDF could not be parsed) and RICS's MRICS page (404); Michael Page Italia's salary guide (404); the Hays Italia Salary Guide 2026 (released only through a contact form); the American College of Healthcare Executives' fellowships page (404); two UK hotel graduate adverts (503 and 404).
+- Not found: Italian pay for store, area, hotel, healthcare, sustainability, business-analyst or property managers beyond contract floors (the web-search allowance ran out before JobPricing, AlmaLaurea field tables and ISTAT could be searched, and AlmaLaurea's survey landing page carries no figures); US graduate-level pay other than ALDI's advert; UK ONS ASHE occupation tables (spreadsheet downloads, not opened); published salaries on hotel groups' graduate programmes; NHS scheme applicant numbers and 2026 application dates; graduate pay at JLL; any hours survey for these six roles (peak hours are my estimates); selection-process details for Aldi and hotel programmes.
 
 **Data limits.** Recruiter salary guides (Hays, Michael Page, Robert Walters, Cooper Fitch), CIPD reward surveys and PMI's interactive tool could not be opened, so Italian graduate pay, Gulf/Asian operations and HR pay, and non-US strategy pay are marked "no reliable data found". Hours and stress ratings beyond the cited BLS, Prospects and National Careers Service statements are practitioner-consensus estimates.

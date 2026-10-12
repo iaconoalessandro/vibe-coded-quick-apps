@@ -384,6 +384,10 @@
       tb.appendChild(row);
     });
     t.appendChild(tb);
+    /* For a reader who hears the table: which way each header reads, and
+     * what the table is (the page's own title). */
+    Array.prototype.forEach.call(t.querySelectorAll('th'), function (h) { h.scope = h.parentNode.parentNode.tagName === 'THEAD' ? 'col' : 'row'; });
+    t.setAttribute('aria-labelledby', 'hiring-title');
     var wrap = el('div', 'life-scroll');
     wrap.appendChild(t);
     box.appendChild(wrap);

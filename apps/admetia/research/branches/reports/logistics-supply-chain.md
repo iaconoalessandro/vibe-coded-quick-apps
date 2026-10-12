@@ -260,6 +260,136 @@ Logistics and supply chain work is about getting the right goods, in the right q
 
 **Honest downsides and who it is NOT a good fit for:** Long hours and travel, an up-or-out culture, work on slides rather than operations, and a slowdown since 2023 with AI changing junior work (management consulting report). Not a good fit for people who want to own a real operation, need stable hours, or dislike presenting.
 
+---
+
+### 3.8 Production planner and continuous-improvement specialist
+
+**What you actually do.** Inside a factory you decide what is made, when and on which line (section 2.5): you turn the supply plan into a daily and weekly schedule, check materials and capacity, re-plan when a machine stops or a supplier is late, and report output against plan. US statistics describe the planning half as setting schedules, tracking materials and reporting on production problems, and the improvement half as industrial engineering: time studies, process data, and changes agreed with other departments (BLS Occupational Outlook Handbook, May 2025 data). The planner in 3.2 works at company level; this role works at the plant. Tools: the ERP and manufacturing-execution systems, spreadsheets, Lean methods. Example: a filling machine breaks down at 10:00, so you move a two-day run to the second line, pull forward an order whose materials are in stock, and tell customer service which deliveries slip.
+
+**A typical day and week.** No careers-service profile exists for "production planner"; the nearest is the production manager, the job a planner feeds. Its listed tasks: drawing up production plans, monitoring runs and adjusting when problems occur, working with suppliers, sales, buyers and quality control, and writing production reports (National Careers Service, read October 2026). The day starts with the production meeting; the week adds next week's plan, an improvement workshop and the adherence report (illustrative; not sourced).
+
+**Hours, stress and lifestyle.**
+- Hours: 40-45 a week in UK production management, sometimes starting before 7am, with shifts, extended hours when targets are missed and possible weekend on-call (Prospects, May 2026; the National Careers Service agrees). No survey of planners or of peak weeks was found.
+- Stress: 3/5 (my judgement; higher when a line is down).
+- Lifestyle: on site. Toyota's UK graduates work at Burnaston (Derbyshire) or Deeside (North Wales), JLR's at West Midlands sites or Halewood (employer pages, 2026).
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 3/5. The numbers are capacity, run rates, changeover times and stock cover; the people part is getting supervisors, purchasing and maintenance to accept a changed plan.
+
+**Compensation (approximate).**
+- UK: Toyota Manufacturing UK pays graduates, including its Production Control (Supply Chain) stream, GBP 34,756 plus overtime, and about GBP 40,800 after the 25-month programme (company page, read October 2026). JLR pays manufacturing graduates GBP 32,000 plus a GBP 2,000 joining bonus, then GBP 39,000 after two years (2026 intake). Outside schemes, trainee production managers start around GBP 24,000 (Prospects, May 2026).
+- US: production, planning and expediting clerks had a median of US$59,650 in May 2025, all levels; industrial engineers US$102,440, with the lowest 10% under US$74,370 (BLS). No entry-level figure for planners was found.
+- Italy: no entry survey for this role was found. The metalworking contract's monthly floors from 1 June 2026 are EUR 2,064.88 (level C2), 2,211.43 (C3) and 2,370.33 (B1) (FIM-CISL table published by Dottrina Lavoro, 16 June 2026); a graduate's level is the employer's choice and was not verified. Master's graduates of all subjects averaged EUR 1,495 net a month one year after the degree in 2025; AlmaLaurea's model adds about EUR 256 for industrial engineering degrees and EUR 217 for metalworking firms (AlmaLaurea, 2026 report).
+
+**Career path.** Production planner, materials controller or improvement engineer (0-3 years) → senior planner, shift or production supervisor (3-6) → production manager or site supply-chain manager (6-10) → plant manager or operations director (10+). The ladder follows Prospects; the years are my estimate.
+
+**Exit opportunities.**
+- After 2-3 years: supply planning (3.2), procurement, quality (3.10), operations consulting.
+- After 7-10 years: plant manager, operations director, supply-chain director.
+
+**Tier list of employers.**
+- Tier 1: large manufacturers with paid graduate schemes: Toyota Manufacturing UK and JLR (verified), the Unilever and P&G programmes in 3.2; in Italy Ferrero, Barilla, Brembo, Stellantis and Leonardo (general knowledge; programmes not verified).
+- Tier 2: mid-sized manufacturers, including the northern Italian districts named in section 2.5, hiring by direct application.
+- Tier 3: small plants where planning, purchasing and logistics are one job.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: an engineering degree is not required for planning. Toyota asks for a 2:1 and a relevant degree only for its engineering, environment, computer science and finance streams, not for Production Control. Improvement-engineer posts differ: BLS says industrial engineers typically need an industrial engineering or related bachelor's, and JLR's manufacturing engineering pathway takes engineering degrees only.
+- Certifications: not needed at entry. ASQ's Six Sigma Green Belt requires three years of paid work in the field, with no waiver for a degree (ASQ, read October 2026); belts sold by training providers were not checked.
+- Timing: Toyota's applications typically close at the end of December for a September start.
+- Languages: the plant's language is usually required (general knowledge; not sourced here).
+- Common mistakes: no time spent in a factory (the National Careers Service recommends an internship or placement year); treating planning as a spreadsheet job only.
+- Non-target routes: start as an engineering technician or quality control officer (National Careers Service), a materials controller or a production supervisor.
+- Entry difficulty: 2/5.
+
+**Honest downsides and who it is NOT a good fit for.** You are blamed for shortages you did not cause; the plant's location decides where you live; early starts and shifts are normal. The clerical end of planning is shrinking: BLS projects a 1% fall in US planning clerk jobs from 2025 to 2035, against 12% growth for industrial engineers, and pays clerks far less. Poor fit: people who want a city-centre office job or dislike constant interruption.
+
+---
+
+### 3.9 Customs and trade compliance specialist
+
+**What you actually do.** You make sure goods cross borders legally and at the right cost: classify products under the tariff, determine origin and customs value, prepare or check declarations, apply for duty reliefs, screen customers against sanctions lists, obtain export licences for controlled goods, and prepare the company for customs audits. The coordinator in 3.3 moves the shipment; you make it lawful. At a forwarder or broker the entry job is the declarant's: checking shipment documents against tax and customs rules and preparing invoices and certificates of origin (National Careers Service, import-export clerk, read October 2026). In-house you also protect the company's Authorised Economic Operator status; its EU customs form requires a clean compliance record, proper records, solvency and proven competence or professional qualifications (European Commission, AEO page). Tools: declaration software, the tariff database, the ERP, export-control lists. Example: a supplier moves production from China to Vietnam; you check whether the origin really changes, correct the supplier's declaration and recalculate the duty before the first container is declared.
+
+**A typical day and week.** At a broker: a queue of import and export entries, documents to chase and discrepancies to resolve before a lorry can move, which is what Kuehne+Nagel trains its customs apprentices on (advert, September 2026 start). In-house: classification queries from purchasing, a blocked shipment, a supplier's origin declaration, a new tariff measure, a monthly review of the broker's declarations (illustrative; not sourced).
+
+**Hours, stress and lifestyle.**
+- Hours: 37-42 a week, between 8am and 6pm on a rota (National Careers Service); Kuehne+Nagel's customs apprenticeship is Monday to Friday, 9am to 5.15pm. BLS says most compliance officers work standard schedules, longer during investigations. No figure for peak weeks was found.
+- Stress: 3/5 (my judgement).
+- Lifestyle: office-based and stable; broker desks sit where the freight is (Kuehne+Nagel's is at Kegworth, East Midlands). Hybrid working: no reliable data found.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 3/5 (rule-reading more than mathematics). The Italian licence exam shows the mix: private, tax, customs and EU law, a practical customs case, commodity science and English (2026 notice, as reproduced by Concorsipubblici.com).
+
+**Compensation (approximate).**
+- UK: import-export clerks earn GBP 25,000 as starters and GBP 40,000 when experienced (National Careers Service, read October 2026). Kuehne+Nagel's two-year customs apprenticeship paid GBP 15,500 (September 2026 start; a school-leaver wage). A first-pass advert, not re-opened, offered GBP 36,000-40,000 with experience (Michael Page, September 2026).
+- US: compliance officers of all kinds had a median of US$80,730 in May 2025, with the lowest 10% under US$48,220 (BLS Occupational Outlook Handbook). The category is broad, and no figure for customs staff or for entry was found.
+- Italy: no reliable data found. One secondary summary of the logistics and forwarding contract gives a 38-hour week, thirteenth and fourteenth monthly payments and about EUR 1,960-2,174 a month at levels 3 and 3 Super (Coverflex, August 2026; weak: the table's date is unclear and a junior declarant's level was not verified).
+
+**Career path.** Customs clerk or declarant (0-2 years) → trade compliance specialist or licensed broker (2-5) → trade compliance manager (5-10) → head of customs and trade, or a move into indirect tax. The ladder follows the National Careers Service (supervisor or manager, then senior compliance, customs-control and sanctions roles); the years are my estimate.
+
+**Exit opportunities.**
+- After 2-3 years: from a forwarder's desk to an in-house team, Big Four indirect tax, logistics management.
+- After 7-10 years: head of trade compliance, export-control officer, consulting; in Italy, practice as a self-employed doganalista.
+
+**Tier list of employers.**
+- Tier 1: multinationals with dedicated trade-compliance teams (industrial, chemicals, defence, technology) and Big Four indirect-tax practices (KPMG UK's 2027 tax graduate programme covers indirect taxes and states no salary; no scheme named for customs was found).
+- Tier 2: forwarders and customs brokers: Kuehne+Nagel, DSV, DHL, Dachser, Maersk (customs pathway, see 3.3); in Italy Savino Del Bene and licensed doganalisti firms.
+- Tier 3: small importers and exporters where it is part of a logistics job.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: none is required at a broker's desk: the National Careers Service routes are a degree (transport, logistics, business, or business with a language) plus a freight company's training scheme, a Level 3 freight forwarding apprenticeship, or starting as an administrator. In-house compliance posts typically need a bachelor's degree (BLS).
+- Licences, Italy: the patente di spedizioniere doganale needs 12 months of traineeship with a broker registered for at least five years, then a state exam called by the customs agency, yearly for graduates. Graduates in law, economics or equivalent subjects sit only the oral; others also sit a written and a practical test (Consiglio Nazionale degli Spedizionieri Doganali; 2026 notice in Gazzetta Ufficiale no. 2, 9 January 2026).
+- Licences, US: the Customs Broker License Exam has 80 questions and runs each April and October (next: 28 October 2026). Pass rates before appeals were 22% in April 2026, 12% in October 2025 and 30% in April 2025. Candidates must be US citizens aged 21 or over (CBP).
+- Licences, UK: the guidance on appointing a customs agent states no licence or qualification requirement (GOV.UK, updated 6 February 2025).
+- Certifications: the Chartered Institute of Export & International Trade and CILT (named by the National Careers Service; the Institute's page could not be opened).
+- Common mistakes: expecting a strategy role; the work is detailed and rule-bound.
+- Non-target routes: a forwarder's customs desk (3.3), then a move in-house.
+- Entry difficulty: 2-3/5. Whether new tariffs have raised demand for graduates: no reliable data found.
+
+**Honest downsides and who it is NOT a good fit for.** Repetitive, detail-heavy work in which errors cost money: HMRC's guidance says an importer stays responsible for due diligence on its declarations even after appointing an agent. Licences do not travel between countries, the US one is closed to non-citizens, and 70-88% of candidates failed its last three exams. Starting pay at broker desks is low. Poor fit: people who dislike regulation or want variety.
+
+---
+
+### 3.10 Quality and supplier-quality engineer
+
+**What you actually do.** You keep products and bought-in parts within specification: write inspection plans, analyse defects and customer complaints to their root cause, audit production processes and suppliers, approve new parts before production, and maintain the quality-management system for certification. Prospects lists the core as setting procedures and specifications, monitoring performance with statistical reports, leading lean and Six Sigma improvement and ensuring compliance with standards such as ISO 9001:2015 (December 2024). Supplier-quality engineers do this at suppliers' plants: JLR's Supplier Technical Assistance team answers for supplier quality across its vehicles (JLR, 2026). US occupational data file "quality engineer" and "supplier quality engineer" under validation engineers, a branch of industrial engineering (O*NET, 2025). Tools: statistical process control, root-cause methods, measurement equipment, audit checklists. Example: a customer returns brackets with cracked welds; you quarantine the stock, trace the batch to one welding cell, find a worn fixture, agree the fix with production and send the customer the corrective-action report.
+
+**A typical day and week.** Sourced tasks at officer level: inspecting and testing products and processes, checking that standards are met, recording and reporting findings, updating quality procedures and assessing the effect of process changes (National Careers Service, quality control officer, read October 2026). An engineer's week adds the morning review of yesterday's defects, a containment action on the line, a call or visit to a supplier about a failed batch, an internal audit and a customer report (illustrative; not sourced).
+
+**Hours, stress and lifestyle.**
+- Hours: 37-42 a week, with evenings and weekends on shifts (National Careers Service). Prospects says early starts, late finishes and shift work are common in manufacturing; BLS notes overtime to meet production deadlines. No figure for incident weeks was found.
+- Stress: 3/5 (my judgement).
+- Lifestyle: on site. Supplier-quality roles travel to suppliers; how often: no reliable data found.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 4/5. The technical side is statistics (process capability, sampling, measurement error) and reading drawings; the people side is telling a production manager or a supplier that a batch does not ship.
+
+**Compensation (approximate).**
+- UK: JLR's graduate programme, which contains the supplier-quality pathway, pays GBP 32,000 plus a GBP 2,000 joining bonus, then GBP 39,000 after two years (2026 intake, closed). Toyota Manufacturing UK graduates start on GBP 34,756 plus overtime (no separate quality scheme is listed). Outside schemes: quality control officers earn GBP 25,000 as starters and GBP 40,000 when experienced (National Careers Service); quality managers start at GBP 23,000-28,000 and can pass GBP 60,000 in manufacturing, aerospace and automotive (Prospects, December 2024).
+- US: industrial engineers, the group that contains quality engineers, had a median of US$102,440 in May 2025, with the lowest 10% under US$74,370 (BLS; not an entry figure). Quality control inspectors, the job that needs no degree, had a median of US$48,570. ASQ's 2025 salary survey is for members only and could not be opened.
+- Italy: no entry survey for this role was found; the metalworking floors and AlmaLaurea averages in 3.8 apply.
+
+**Career path.** Quality technician or engineer (0-3 years) → senior or supplier-quality engineer (3-6) → quality manager (6-10) → head of quality or plant management. The ladder follows Prospects, which says appointments reach board level; the years are my estimate.
+
+**Exit opportunities.**
+- After 2-3 years: procurement (supplier development), production management, continuous improvement (3.8).
+- After 7-10 years: quality director, plant manager, certification bodies and auditing, self-employed consultancy (Prospects).
+
+**Tier list of employers.**
+- Tier 1: automotive, aerospace, medical-device and pharmaceutical manufacturers, where quality is regulated or audited by the customer: JLR and Toyota (verified); Rolls-Royce, Airbus, Bosch, Brembo and Leonardo (general knowledge; not verified).
+- Tier 2: food, consumer-goods and electronics manufacturers.
+- Tier 3: small suppliers with a single quality person.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: for the engineer title, a STEM degree in practice. JLR's supplier-quality pathway takes a 2.2 in engineering, materials science, manufacturing or any STEM discipline, and does not sponsor visas; its manufacturing engineering pathway takes engineering degrees only; 90% of O*NET respondents say a bachelor's degree is required. Quality management more widely is open to all graduates according to Prospects, which prefers engineering, food science, applied science or business with quality modules. Business and economics graduates therefore enter through quality-systems, audit and food or service-sector assurance roles, not as engineers.
+- Certifications: these come later. ASQ's Certified Quality Engineer requires eight years of experience, of which a bachelor's degree waives four and a master's five (exam fee US$550; ASQ, read October 2026). The CQI's practitioner grade needs two years of quality work and 30 hours of training (Prospects; the CQI's own page could not be opened). Auditor courses for ISO 9001 or IATF 16949 help (general knowledge; not sourced here).
+- Common mistakes: expecting design work; quality is about process discipline.
+- Non-target routes: start as a quality control assistant or technician, or take the UK Level 4 Quality Practitioner apprenticeship (National Careers Service).
+- Entry difficulty: 2/5.
+
+**Honest downsides and who it is NOT a good fit for.** You stop shipments other departments want to send, and the job is noticed mainly when something fails. Shifts follow production. Inspection itself is being automated: BLS expects 3% growth for quality control inspectors from 2025 to 2035 as technology takes over inspection tasks, so the secure work is in analysis, supplier management and audits. Many starting posts expect prior quality or industry experience (Prospects). Poor fit: people who avoid conflict or dislike documentation.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -271,6 +401,9 @@ Logistics and supply chain work is about getting the right goods, in the right q
 | 3.5 Shipping and maritime (broking, chartering, liner ops) | 50-60 brokers; 40-50 liner (60+) | 4 | 5 (brokers) / 3 (liner) | 3 | US: no reliable data / GBP 25-28k plus bonus (regional trainee brokers; London no data) / no reliable data found | 4 (brokers) / 2-3 (liner) |
 | 3.6 Supply chain analyst / systems specialist | 38-45 (50) | 2-3 | 3 | 4 | US: no reliable data (ASCM analyst median US$85k) / GBP 27-37k (Prospects) / EUR 26-32k (weak) | 3 |
 | 3.7 Supply chain consultant | 50-60 (60-70) | 4 | 4 | 4 | US$78-112k Big 4 base (2026) / GBP 32-37k Big 4 base (2026) / about EUR 26-30k indicative (Indeed Italy) | 3-4 |
+| 3.8 Production planner and continuous-improvement specialist | 40-45 (longer at deadlines; no figure found) | 3 | 3 | 3 | US: no entry data (BLS medians, all levels, May 2025: US$59,650 planning clerks; US$102,440 industrial engineers) / GBP 32-34.8k base on graduate schemes (JLR, Toyota, 2026); about GBP 24k trainee outside them (Prospects, 2026) / Italy: no entry survey; metalworking contract floors EUR 2,065-2,370 a month (June 2026) | 2 |
+| 3.9 Customs and trade compliance specialist | 37-42 (peak: no figure found) | 3 | 3 | 3 | US: no entry data (BLS compliance officers, May 2025: lowest 10% under US$48,220; median US$80,730) / GBP 25k starter (National Careers Service, 2026) / Italy: no reliable data | 2-3 |
+| 3.10 Quality and supplier-quality engineer | 37-42 (peak: no figure found) | 3 | 3 | 4 | US: no entry data (BLS industrial engineers, May 2025: lowest 10% under US$74,370; median US$102,440) / GBP 32k base plus GBP 2k bonus (JLR graduate, 2026); GBP 23-28k outside schemes (Prospects, 2024) / Italy: no entry survey; metalworking contract floors as 3.8 | 2 |
 
 ## 4. Banks vs. other employer types
 
@@ -313,19 +446,19 @@ The template heading is shared across branches; here the comparison is between e
 
 ### (b) Matrix: background by role family (S = strong, P = possible, X = stretch/unlikely)
 
-| Background | 3.1 Buyer/procurement | 3.2 Planner/S&OP | 3.3 Logistics/transport/forwarding | 3.4 Warehouse/distribution ops | 3.5 Shipping/maritime | 3.6 Analyst/systems | 3.7 Consultant |
-|---|---|---|---|---|---|---|---|
-| Management | S | S | S | S | P | P | P |
-| Logistics & Supply Chain | S | S | S | S | S | S | P |
-| Finance | P | P | P | X | P | P | P |
-| Accounting | P | P | P | X | P | P | P |
-| Marketing | P | P | P | P | X | X | P |
-| Data Analytics | P | S | P | X | X | S | P |
-| Economics | P | P | P | X | P | P | S |
-| Computer Science | X | P | X | X | X | S | P |
-| Cybersecurity | X | X | X | X | X | P | X |
-| Data Science | X | S | X | X | X | S | P |
-| Artificial Intelligence | X | P | X | X | X | S | P |
+| Background | 3.1 Buyer/procurement | 3.2 Planner/S&OP | 3.3 Logistics/transport/forwarding | 3.4 Warehouse/distribution ops | 3.5 Shipping/maritime | 3.6 Analyst/systems | 3.7 Consultant | 3.8 Production/lean | 3.9 Customs/trade compliance | 3.10 Quality |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Management | S | S | S | S | P | P | P | S | P | P |
+| Logistics & Supply Chain | S | S | S | S | S | S | P | S | S | S |
+| Finance | P | P | P | X | P | P | P | P | P | X |
+| Accounting | P | P | P | X | P | P | P | P | P | X |
+| Marketing | P | P | P | P | X | X | P | X | X | X |
+| Data Analytics | P | S | P | X | X | S | P | P | P | P |
+| Economics | P | P | P | X | P | P | S | P | P | X |
+| Computer Science | X | P | X | X | X | S | P | P | X | P |
+| Cybersecurity | X | X | X | X | X | P | X | X | X | X |
+| Data Science | X | S | X | X | X | S | P | P | X | P |
+| Artificial Intelligence | X | P | X | X | X | S | P | X | X | X |
 
 Notes: Ratings are my judgement from role descriptions and entry requirements (Prospects: roles are open to all graduates; Unilever lists STEM and supply chain degrees), not a market statistic. Engineering and mathematics, outside the 11 base backgrounds, are also strong for planning and manufacturing operations.
 
@@ -349,3 +482,35 @@ All accessed October 2026 unless a date is given. Secondary and aggregator sourc
 - Admetia internal notes: management-consulting.md, data-analytics.md (sibling reports), careers/industrial-automotive-defence.md (leads only).
 
 **Data-limit notes.** (1) The search allowance was limited, so many pay points come from postings, training sites or secondary summaries; Hays/CIPS 2026, Michael Page and Robert Walters guides were gated and not read. (2) No reliable Italian recruiter salary guide for 2025-26, no US/Italy entry data for ship brokers, and no Singapore/Dubai graduate pay for most roles were found. (3) Tier lists are my synthesis of sources and industry perception, except Gartner Top 25, Alphaliner and Armstrong & Associates, which are cited. (4) Items marked "unverified" come from background knowledge. (5) Tariff, Hormuz and Red Sea conditions change weekly; figures are as of early October 2026 at best.
+
+**Second pass, 11 October 2026: role families 3.8 to 3.10 (re-researched the same day from opened sources)**
+
+Every figure in 3.8 to 3.10 comes from a page that was opened and read on 11 October 2026 unless the text says otherwise; scores, typical days marked "illustrative", ladder years and tier lists are my judgement.
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, Material Recording Clerks (production, planning and expediting clerks; May 2025 wages, 2025-35 projections): https://www.bls.gov/ooh/office-and-administrative-support/material-recording-clerks.htm
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, Industrial Engineers (May 2025 wages, 2025-35 projections): https://www.bls.gov/ooh/architecture-and-engineering/industrial-engineers.htm
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, Quality Control Inspectors (May 2025 wages, 2025-35 projections): https://www.bls.gov/ooh/production/quality-control-inspectors.htm
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, Compliance Officers (May 2025 wages, 2025-35 projections): https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm
+- O*NET OnLine, Validation Engineers 17-2112.02 (job titles include quality engineer and supplier quality engineer; 2025): https://www.onetonline.org/link/summary/17-2112.02
+- Prospects (Jisc), Production manager job profile (May 2026): https://www.prospects.ac.uk/job-profiles/production-manager
+- Prospects (Jisc), Quality manager job profile (December 2024; quotes the CQI's membership rules): https://www.prospects.ac.uk/job-profiles/quality-manager
+- National Careers Service, Production manager (manufacturing) (read October 2026): https://nationalcareers.service.gov.uk/job-profiles/production-manager-manufacturing-
+- National Careers Service, Quality control officer (read October 2026): https://nationalcareers.service.gov.uk/job-profiles/quality-control-assistant
+- National Careers Service, Import-export clerk (read October 2026): https://nationalcareers.service.gov.uk/job-profiles/import-export-clerk
+- Toyota Manufacturing UK, Graduates page (current starting salary, read October 2026): https://recruitment.toyotauk.com/graduates/
+- JLR, Manufacturing Engineering / Procurement Graduate Programme, including Supplier Technical Assistance (2026 intake, closed): https://careers.jlr.com/early-careers/graduates/graduate-manufacturing-engineering-procurement
+- ASQ, Certified Quality Engineer and Certified Six Sigma Green Belt requirements (read October 2026): https://www.asq.org/cert/quality-engineer ; https://www.asq.org/cert/six-sigma-green-belt
+- Dottrina Lavoro, CCNL Metalmeccanica Industria, minimum pay table from 1 June 2026 (16 June 2026; secondary, reproducing the FIM-CISL table): https://www.dottrinalavoro.it/notizie-c/ccnl-metalmeccanica-industria-nuovi-minimi-tabellari-giugno-2026
+- AlmaLaurea, Sintesi del Rapporto 2026 sugli Esiti occupazionali della laurea (XXVIII Indagine; 2025 survey of 2024 graduates; published 11 June 2026): https://www.almalaurea.it/document-download/sintesi-rapporto-almalaurea-2026-sugli-esiti-occupazionali-della-laurea
+- US Customs and Border Protection, Customs Broker License Examination notice (pass rates April 2025 to April 2026; next exam 28 October 2026) and Becoming a Customs Broker: https://www.cbp.gov/trade/programs-administration/customs-brokers/license-examination-notice-examination ; https://www.cbp.gov/trade/programs-administration/customs-brokers/becoming-customs-broker
+- Consiglio Nazionale degli Spedizionieri Doganali, Accesso alla professione (read October 2026): https://www.cnsd.it/professione/accesso-alla-professione
+- Concorsipubblici.com, ADM exam notice for the patente di spedizioniere doganale, Gazzetta Ufficiale no. 2 of 9 January 2026 (secondary, reproducing the notice): https://www.concorsipubblici.com/agenzia-delle-dogane-e-dei-monopoli-avviso-spedizioniere-doganale-tutta-italia-2026
+- Agenzia delle Dogane e dei Monopoli, press release on the exam, 31 July 2020 (dated: it gives an 18-month traineeship, where the CNSD page and the 2026 notice give 12): https://adm.gov.it/portale/documents/20182/5873968/cre-s-20200731-ADM+OPEN+HEARING+ESAME+SPEDIZIONIERE+DOGANALE.pdf/65e0b08b-345b-455d-a41e-3b0b8f8bacfe
+- European Commission, What is AEO? (criteria for AEOC and AEOS): https://taxation-customs.ec.europa.eu/customs-4/aeo-authorised-economic-operator/what-aeo_en
+- GOV.UK (HMRC), Get someone to deal with customs for you (updated 6 February 2025): https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf
+- Kuehne+Nagel, Customs Team Apprenticeship, Kegworth (September 2026 start; expired listing on FE Choices): https://fechoices.justapply.co.uk/apprenticeships/96353/customs_team_apprenticeship.html
+- Dachser, Trainee Customs Declarant, Northampton (filled; only the title could be read): https://careers.dachser.com/86855/job/Northampton-Trainee-Customs-Declarant-NN4-7HT/1354450155/
+- KPMG 2027 Tax Graduate Programme, London (TARGETjobs listing, closes 14 October 2026; secondary): https://targetjobs.co.uk/jobs/kpmg-2027-tax-graduate-programme-london-243575
+- Coverflex, summary of the CCNL Logistica, Trasporto Merci e Spedizione (August 2026; secondary, weak: the table's validity date is unclear): https://www.coverflex.com/it/blog/ccnl-logistica-trasporto-merci-e-spedizione-livelli-mansioni-tabelle-retributive
+- Kept from the first pass and not re-opened: Michael Page advert for a customs and trade compliance specialist (September 2026): https://www.michaelpage.co.uk/job-detail/customs-and-trade-compliance-specialist/ref/jn-092026-7110158
+- Pages that could not be opened or gave nothing usable: BLS OEWS occupation pages for 43-5061 and 13-1041 (an index page was served); ASQ salary survey and the CQI membership pages (HTTP 403); Chartered Institute of Export & International Trade qualifications (403); ASCM CPIM pages (empty); AIAG core tools and Rolls-Royce graduates (404); DWP Find a Job advert 17042993 for a graduate customs analyst (503); a DSV declarant vacancy (redirected to the general careers page); the ilccnl.it table for the logistics contract (apprentice rows only). The AlmaLaurea full report was not opened, only its summary.
+- Not found: entry-level pay for production planners, customs staff or quality engineers in the US; any Italian pay survey for the three roles and the primary pay table of the logistics contract; a Prospects or National Careers Service profile for "production planner"; a Big Four graduate scheme named for customs or global trade; a 2025 ASQ pay figure for quality engineers in any open source; surveys of hours or peak weeks for any of the three roles; how often supplier-quality engineers travel; evidence on whether new tariffs have raised graduate hiring in customs. Not searched before the search allowance ran out: JobPricing, ISTAT, UK ONS ASHE occupation tables, the CILT and WCO pages, the Lean Enterprise Institute, and Italian employers' graduate programmes for these roles.

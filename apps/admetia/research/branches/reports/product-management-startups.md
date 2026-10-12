@@ -168,6 +168,183 @@ Product management (PM) is the job of deciding what a software product or digita
 - **How to enter:** *How first-time founders realistically start:* (1) work on a problem you know from a job or university; (2) find a co-founder (EF says 80% of participants find one within 8 weeks, employer-stated); (3) build the smallest working version, increasingly with AI tools, and get ten paying or committed users before raising; (4) apply to an accelerator or angels only with traction; (5) keep personal runway for 12-18 months. *Backgrounds:* computer science, data science and AI graduates have the easiest route (EF explicitly prefers technical founders); business graduates should pair with a technical co-founder. *Calendar:* YC runs batches throughout the year (Fall 2026 applications closed 27 July); Techstars and EF cohorts have set dates; no gatekeepers for bootstrapping. *Interviews:* founder pitches and investor interviews, not exam-style. *Visas:* see 2.6 (UK Innovator Founder endorsement £1,000 and fee £1,357; Italia Startup Visa with €50,000 funds; Singapore EntrePass; Japan Startup Visa; UAE and Saudi programmes). *Certifications:* none matter. *Skills and portfolio:* shipped product, customer discovery notes, early revenue, fluent writing and selling. *Common mistakes:* building without customer contact; raising too early; giving away equity in unequal splits or without vesting; running out of runway; accepting terms without legal advice. *Alternative routes:* join an early-stage startup first (3.4), a venture studio, or a corporate innovation unit. Entry difficulty: **2/5** to start a company (no gatekeeper) but **5/5** to reach YC-level funding or a funded outcome.
 - **Honest downsides and who it is NOT a good fit for:** Most companies fail; you may earn less than a graduate job for years, carry personal financial risk, and lose co-founder friendships; stress can be extreme. Dilution means even successful founders can own a small percentage. Not for you if you need income stability or have large debts, dislike selling, or want work-life balance in the first years.
 
+---
+
+### 3.6 Product designer (UX/UI)
+
+**What you actually do.** You design how a digital product works and looks. The UK National Careers Service profile (read 11 October 2026) lists the tasks: work with researchers to understand users' needs, collect business requirements, design and test prototypes, write specifications for developers, check designs against accessibility standards and explain design decisions to stakeholders. Prospects (profile written December 2024) names the artefacts: personas, user journeys, wireframes, prototypes and user flows in Figma, Sketch or the Adobe suite. The product manager of 3.1 decides what to build; you decide how it works for the user. Nielsen Norman Group's State of UX 2026 (16 January 2026) says employers are folding specialist duties into one role, and that designers who only assemble screens from a ready-made component library can already be replaced by AI tools.
+
+**A typical day and week.** A stand-up with engineers, design time on one flow, a critique with other designers, a usability session, and developers' questions about edge cases before a release. Across a week Prospects adds a stakeholder workshop, progress meetings and a test round planned with the research team.
+
+**Hours, stress and lifestyle.**
+- Hours: 37-39 a week, Monday to Friday, with occasional evenings or weekends for tight deadlines (Prospects; the National Careers Service gives the same). No survey of peaks was found; a peak of about 50 is my estimate.
+- Stress: 2-3/5. The work is steady; the strain is job security. In the UXPA 2024 salary survey (n=444, April-October 2024) 37% said their company had layoffs and 9% had been laid off. In User Interviews' State of User Research 2025 (n=485, July-August 2025) 26% said their company had laid off product or UX designers.
+- Lifestyle: desk work in an office or hybrid, sometimes at a client's site. Short-term agency contracts are common and freelance day rates run £250-£650 (Prospects).
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 2/5 to 3/5. The technical side is prototyping tools, accessibility standards and enough HTML, CSS and JavaScript to talk to engineers (Prospects).
+
+**Compensation (approximate).**
+- US: BLS Occupational Outlook Handbook (May 2025 wages): web and digital interface designers, median $104,000; the lowest 10% earned under $53,750, the nearest official proxy for entry pay. UXPA 2024 survey (all UX titles, 67% US respondents): median $75,050 with 0-2 years' experience. One employer posting: Microsoft "Product Designer", level IC2, Redmond, base $84,200-$165,200, asking for a bachelor's degree or equivalent and one year with design tools (posted 9 October 2025, closed; read on a job-board mirror).
+- UK: National Careers Service: £32,000 starter, £65,000 experienced (read October 2026). Prospects (December 2024): £20,000-£26,000 junior, £35,000-£55,000 experienced. Adverts support the higher starting figure: ITJobsWatch, permanent adverts naming "UX Designer", six months to 11 October 2026: median £60,000, 10th percentile £35,000 (135 salaried adverts of 228).
+- Italy: no official UX figure found. AlmaLaurea 2025 survey (published 2026), design master's graduates (class LM-12, 405 respondents) one year after the degree: €1,315 net a month on average, 76.5% employed, 18.1% on permanent contracts. Only 2.3% worked in the IT sector, so this describes design in general. NettoCalc (aggregator of Glassdoor and Jobbydoo estimates, 2026; weak): UX designer in Milan, €34,000 gross for 0-3 years, median €49,000.
+
+**Career path.** Junior, trainee or graduate designer (0-2 years) → UX or product designer (Prospects expects this step within about two years) → senior designer or head of UX after around five years → design manager, creative director or self-employed consultant. In the UXPA 2024 survey 78% of the 78 respondents promoted in 2023-24 said it had taken one to two years.
+
+**Exit opportunities.**
+- After 2-3 years: service design, a development role if you can program, or contracting (National Careers Service); UX research (3.7); product management (practitioner view; not sourced here).
+- After 7-10 years: head of UX or design management; consultancy (Prospects); founding a product company (practitioner view; not sourced here).
+
+**Tier list of employers.**
+- Tier 1: large technology companies with design ladders and published pay bands: Microsoft (the IC2 band above), Google, Meta, Apple, Spotify; in Italy, Bending Spoons (Milan and London; its careers page says pay is set at the top end of the market, without a figure; its job board listed no openings on 11 October 2026). Google, Meta and Apple are named on reputation: their job pages could not be opened or were not checked.
+- Tier 2: in-house teams at banks and fintechs, retailers, telecoms, media and public digital services (the sectors Prospects lists), and design consultancies.
+- Tier 3: small agencies, web-development shops and one-designer start-ups; freelance work, which Prospects says is common but lacks income security.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: a degree is usually expected. Prospects names computer science, digital design, graphic design, web design and digital marketing; the National Careers Service names UX design, human-computer interaction (HCI) and digital media, or the level 6 Digital UX Professional degree apprenticeship. In the UXPA 2024 sample 46% held a master's. Business graduates enter through a short course or an HCI or UX master's, plus a portfolio.
+- Portfolio: decisive. Microsoft's entry-level posting included a portfolio review presentation in the interviews; Prospects asks for sketches, wireframes, user journeys and prototypes.
+- Courses and bootcamps: Prospects names General Assembly, Ironhack and The School of UX; no audited placement rates were found.
+- Schemes and timing: few. Spotify's 10-week summer internship (London, Stockholm, New York; final-year or penultimate-year students) names business, product and technical teams, not design. Most junior hiring is ad hoc, all year.
+- How scarce junior posts are: Nielsen Norman Group (January 2026) says senior and generalist roles are recovering faster than entry-level ones, and expects people trying to enter UX to keep outnumbering open roles. ITJobsWatch counted 228 permanent UK adverts in six months, with the 10th percentile at £35,000, so few are junior.
+- Common mistakes: a portfolio of finished screens with no problem, research or result; confusing graphic design with product design.
+- Non-target routes: graphic or web design, front-end development, a first post as information architect or junior researcher (Prospects), an apprenticeship.
+- Entry difficulty: 4/5 at junior level.
+
+**Honest downsides and who it is NOT a good fit for.** The junior market is crowded and routine production work is the part most exposed to AI tools. Entry pay outside large technology firms is modest: £20,000-£32,000 in the UK guides, about €1,300 net a month for Italian design master's graduates, few of whom reach software at all. Your decisions are often overruled by deadlines, data or a senior stakeholder. Poor fit: people who want sole authorship of their work, and people who expect a business degree alone, without a portfolio, to open the door.
+
+---
+
+### 3.7 UX researcher
+
+**What you actually do.** You find out what users need and whether a product or service works for them. Prospects (profile written July 2026) lists the work: agree priorities with designers and product managers; plan and run qualitative and quantitative studies; analyse the data and turn it into findings that designers and developers can act on; run usability tests before launch; present to product teams and senior leaders. The UK government's digital and data capability framework (updated 29 August 2025) defines the job as research that informs policy, service, content and interaction design. A Google research internship posting names the methods: usability studies, contextual inquiry, field visits, surveys, benchmark studies, server logs and A/B tests. In User Interviews' State of User Research 2025 (n=485, July-August 2025) 80% of researchers used AI tools, up 24 points in a year, and 91% worried about the accuracy of the output.
+
+**A typical day and week.** A study runs for weeks, not days: agree the question with the product manager and the designer, recruit participants, run the sessions or field the survey, analyse, present. In the User Interviews 2025 survey the median respondent completed three qualitative, two mixed-method and one quantitative study in six months, about one a month (my arithmetic). A typical week holds participant sessions, synthesis, a readout to the product team and planning for the next study.
+
+**Hours, stress and lifestyle.**
+- Hours: 37-42 a week with occasional evenings (National Careers Service, read October 2026); Prospects says 9am to 5pm, Monday to Friday, with occasional evening or weekend work near deadlines. No survey of peaks was found; a peak of about 50 is my estimate.
+- Stress: 2/5 for the daily work; the evidence on job security points higher. In the User Interviews 2025 survey 21% said their company had laid off researchers and 11% had been laid off themselves; 67% felt negative about career opportunities, up 21 points.
+- Lifestyle: office or hybrid; travel to clients and for field research is a normal part of the job (Prospects). Short-term, part-time and freelance work exist.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5 (4/5 for quantitative researchers). Prospects lists qualitative and quantitative analysis as core skills; Google's posting prefers statistics and experimental design.
+
+**Compensation (approximate).**
+- US: no official figure: no BLS occupation matching UX research was found. UXPA 2024 salary survey (n=444, 67% US respondents): median $75,050 with 0-2 years' experience across all UX titles; title "user researcher" median $120,000, lower quartile $85,000. User Interviews 2025: global median $105,500. One employer posting: Google "User Experience Research Intern, PhD, Summer 2026", US base range $101,000-$135,000 a year (closed 31 October 2025; read on a job-board mirror). That is a doctoral student's rate, not a bachelor's graduate's.
+- UK: National Careers Service: £34,000 starter, £68,000 experienced. Prospects (July 2026): starting pay typically above £30,000, some almost £40,000; mid-level £38,000-£58,000. ITJobsWatch, permanent adverts naming "User Researcher", six months to 11 October 2026: median £62,500, 10th percentile £44,972 (157 salaried adverts of 238). User Interviews salary report (2023-24 responses, pay including bonuses): UK researchers' median £67,424, n=98, all levels.
+- Italy: no reliable data found. The User Interviews report shows continental pay well below the UK (median $76,027 in Germany, n=68; $51,141 in France, n=25) and has no Italian figure.
+
+**Career path.** The UK government framework sets out six levels: associate user researcher (a trainee who needs guidance) → junior user researcher → user researcher (plans and runs research independently) → senior (leads research in larger teams, supervises others) → lead (aligns research across several teams) → head of user research. It gives no years. In the User Interviews 2025 data senior individual contributors and managers earn about the same ($122,000 and $120,000), so staying a specialist carries no clear pay penalty.
+
+**Exit opportunities.**
+- After 2-3 years: UX design or data analysis (Prospects); business analyst, product designer or service designer (National Careers Service); market research (see the marketing branch); product management (practitioner view; not sourced here).
+- After 7-10 years: head of UX or research (National Careers Service); freelance consultant (Prospects); research operations, which 35% of respondents' organisations had in the User Interviews 2025 survey.
+
+**Tier list of employers.**
+- Tier 1: large technology companies with research ladders and doctoral pipelines: Google (the PhD internship above), Meta, Microsoft, Spotify. Meta's job pages could not be opened; it is named on reputation.
+- Tier 2: banks and fintechs, the UK Government Digital Service and the NHS, retailers, telecoms, media and universities (the employers Prospects lists); research and design agencies.
+- Tier 3: firms with no dedicated researcher, where a designer or product manager does the research: 14% of respondents in the User Interviews 2025 survey said their company had none.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: Prospects names anthropology, psychology, social science, human-computer interaction (HCI), information science, computing and product design. The field is highly qualified: in the UXPA 2024 sample 46% held a master's and 14% a doctorate. Google's research internship required current enrolment in a PhD in human factors, psychology, HCI, cognitive science, computer science or information science.
+- Schemes and timing: Google's internship for summer 2026 closed on 31 October 2025, about eight months ahead. In the UK public sector the entry grade is associate user researcher; the level 6 Digital UX Professional degree apprenticeship takes about four years (National Careers Service).
+- What to show: one study taken from question to recommendation. Prospects suggests a placement year, volunteering at research sessions and asking to shadow a researcher; no evidence was found that the certificates it lists substitute for research training.
+- How scarce junior posts are: the share of junior respondents fell 8.5 points in the User Interviews 2025 survey, and Nielsen Norman Group (January 2026) calls entry-level UX roles scarce.
+- Common mistakes: no example of a study run end to end; presenting a design portfolio for a research job.
+- Non-target routes: start in UX design, data analytics, market research or customer experience and move across (Prospects); academic research assistance.
+- Entry difficulty: 4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Teams are small and exposed: one respondent in nine had been laid off in the 2025 survey, two in three felt negative about career opportunities, and 63% feared AI could devalue human insight. The best-paid entry route asks for a doctorate. Pay in continental Europe is far below UK and US levels, and no Italian figure exists. Poor fit: people who need to see their own work shipped, people who dislike recruiting and interviewing strangers, and graduates with no research-methods training.
+
+---
+
+### 3.8 Customer success manager
+
+**What you actually do.** At a subscription software company you look after customers after the sale so that they keep paying and buy more. Gainsight, a vendor of customer-success software, defines the function in its 2026 guide as proactive and outcome-focused, distinct from support (which reacts to problems) and from account management (renewals and upsells); the manager guides onboarding, adoption, renewal and expansion. The scorecard is retention: net revenue retention (renewals plus expansion, minus contraction) and churn, tracked with a health score that blends product usage, engagement and sentiment. In practice the line with sales is thin. HubSpot's Customer Success Manager postings (Dublin, 3 October 2026; London, 9 July 2026) give each manager a book of 150-180 customers, ask them to work with other teams on onboarding, upselling, cross-selling and renewals, and require negotiation skills and comfort with financial conversations and cancellations.
+
+**A typical day and week.** HubSpot's posting is specific: four or five scheduled deep-dive meetings a day, each reviewing one customer's progress and making recommendations, plus reactive work such as invoice and how-to questions, and spotting customers who could adopt more products. With 150-180 customers that is one deep-dive per customer every six to nine weeks (my arithmetic). The day differs by segment: Gainsight describes high-touch books (a dedicated manager for enterprise accounts), low-touch books (webinars and group training) and digital-led programmes (in-app guidance and automated journeys).
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found; no survey of hours was located. A week of 40-45 with peaks of about 50 at quarter-end renewals is my estimate from the job content.
+- Stress: 3/5. Part of pay depends on renewals and expansion: HubSpot's posting mentions on-target commission for eligible roles and annual bonus targets, and Payscale's UK entry-level page shows commission of £2,000-£14,000 on top of base pay (self-reported; weak). Cancellation conversations are written into the job description.
+- Lifestyle: office, flexible or remote within the country (HubSpot, Dublin and London postings); customers' time zones shape the day.
+
+**Human vs. quantitative profile.** People/communication: 5/5. Quantitative/technical: 2/5. The numbers are arithmetic, not statistics: renewal forecasts, usage data, pricing and discount conversations.
+
+**Compensation (approximate).**
+- US: no official figure: no BLS occupation for customer success was found. Payscale, entry-level customer success manager: average base $62,361, 10th-90th percentile $46,000-$81,000, total pay with bonus and commission $46,000-$89,000 (858 profiles, updated 1 March 2025; self-reported; weak).
+- UK: Payscale, entry level: average base £30,284, 10th-90th percentile £23,000-£43,000, total pay £24,000-£49,000 (94 profiles, last updated 7 January 2024, so stale; self-reported; weak). Customer Success Collective (vendor community survey, 2024 report; page of 11 March 2025; sample described only as "hundreds"): UK median for all levels US$52,937, against a global median of US$75,000. Nearest employer figure: HubSpot's Dublin posting stated a base range of €56,900-€78,235 plus equity (posted 9 July 2026), for a role that requires two or more years' client-facing experience and sits in Ireland, not the UK.
+- Italy: no reliable data found at entry level. Payscale, Italy, all levels: average base €45,305, 10th-90th percentile €29,000-€82,000, from 16 profiles (updated 1 March 2026; self-reported; weak, very small sample).
+
+**Career path.** Customer success associate or small-business book (0-2 years) → customer success manager (2-4) → senior, enterprise or strategic-account manager → team lead → head or vice-president of customer success. The titles are those used in employer postings; the years are my estimate, since no survey of time per level was found.
+
+**Exit opportunities.**
+- After 2-3 years: account management or sales (upselling, cross-selling and renewals are already part of the HubSpot role); onboarding or implementation; solutions consulting; product management (practitioner view; not sourced here).
+- After 7-10 years: head or vice-president of customer success, chief customer officer, revenue operations (practitioner view; not sourced here).
+
+**Tier list of employers.**
+- Tier 1: large software vendors with segmented teams and published pay ranges: HubSpot (above), Salesforce, Microsoft, Adobe, and Gainsight itself. Only HubSpot's postings were opened; the others are named on reputation.
+- Tier 2: venture-backed scale-ups, where one manager holds a large book and the processes are still being built.
+- Tier 3: early start-ups, where the role mixes support, sales and onboarding and may have no variable pay plan.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: any. Neither HubSpot posting names a degree.
+- Experience: the title is rarely a first job at a large vendor. HubSpot asks for two or more years in a client-facing or account-management role even for its 150-180-customer book. Graduates usually start in support, onboarding, sales development or as a customer success associate at a smaller firm (practitioner view; not sourced here).
+- Schemes and timing: hiring is year round. The one scheme found was Sage's Customer Success Apprentice in Newcastle, listed on the UK government's apprenticeship service and closed on 1 September 2026; no graduate scheme for this role was found.
+- Languages: the Dublin and London postings ask only for fluent English.
+- Skills: consultative problem solving, negotiation and product knowledge; HubSpot now also asks for knowledge of how AI search and large language models change marketing, or the ability to learn it fast.
+- Common mistakes: presenting it as customer service; showing no interest in the product itself; ignoring the commercial target.
+- Non-target routes: support, sales development (see the sales role in the marketing branch), implementation.
+- Entry difficulty: 2-3/5 for associate and support-adjacent posts; the manager title itself usually needs prior client-facing experience.
+
+**Honest downsides and who it is NOT a good fit for.** You carry a revenue number for outcomes that depend on the product and on the customer's own business. A book of 150-180 customers means shallow relationships and back-to-back calls. Gainsight calls digital-led programmes the dominant modern model, and those automate the low-touch books where juniors start. Pay evidence is thin: no official statistics, only self-reported sites and vendor surveys with undisclosed samples. Poor fit: people who dislike commercial targets, people who find conversations about money and cancellations draining, and people who want deep technical or analytical work.
+
+---
+
+### 3.9 Venture builder and corporate innovation associate
+
+**What you actually do.** Three different jobs share this label. At a venture studio you help start companies in-house: research a market, test an idea with customers, build a first version with a small team, then recruit founders and prepare a funding round. Mamazen in Turin, for example, says it neither accelerates nor incubates and does not work on outside ideas; it builds two to four start-ups a year from scratch (11 built, 11 team members; site read 11 October 2026). A consultancy's build unit does the same for a corporate client: BCG X (3,000+ people) says it builds new products, business lines and standalone companies with partner organisations. At a talent investor the junior job is finding and judging founders and running the programme, closer to venture capital than to building: Entrepreneur First's talent investors run events, campus visits and screening calls and advise founders; Antler's Visiting Investment Analyst scouts founders, organises events and works on due diligence and investment memos. At a corporate innovation unit you run acceleration programmes, start-up partnerships and pilots for a parent company (section 2.7): Intesa Sanpaolo Innovation Center lists start-up acceleration, open innovation for client companies and applied research labs.
+
+**A typical day and week.** At a studio: customer interviews, a market model, a landing-page test, a pitch to the studio's partners, and work with a designer and an engineer on a prototype (a composite of role descriptions; no studio publishes a typical week). At a talent investor: outreach to possible founders, screening calls, an event, a memo for the investment committee and time with portfolio founders (Antler's Berlin posting). Most of the week goes on ideas that are dropped: Italian studios evaluated 1,674 ideas in 2024 and co-founded about 80 start-ups, about one in twenty (Social Innovation Monitor and Politecnico di Torino, September 2025; the ratio is my arithmetic).
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found. A week of 45-55 with peaks of about 60 before pitches is my estimate from start-up work in general (see 3.4).
+- Stress: 3/5.
+- Lifestyle: project-based, in small teams and mostly in person: Antler's Berlin track is 100% in the office. Italy's 56 studios employed about 490 people in 2024, about nine each (Social Innovation Monitor; the average is my arithmetic).
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. The numbers are market sizing and unit economics. Antler strongly prefers technical backgrounds for its investment track.
+
+**Compensation (approximate).**
+- US: no reliable data found. A BCG X associate posting with a US base range appeared in search results but could not be opened (HTTP 403), so no figure is given.
+- UK: no reliable data found. Founders Factory's job board returned no readable listings on 11 October 2026, and the expired listing cited in the first version of this section could not be re-opened.
+- Italy: no reliable data found. Mamazen's site gives no salary or equity terms.
+- Elsewhere: the two German listings cited in the first version returned HTTP 410 and 403 on 11 October 2026 and are withdrawn. Antler's Berlin "Investment Team (Founder Track)" posting states a fixed salary it calls competitive, plus carry (a share of the fund's profit), with no figure.
+
+**Career path.** No studio opened here publishes a ladder; talent investors show one through their job titles. Entrepreneur First: analyst → associate (recent graduates with 0-3 years' experience) → senior associate → principal. Antler: visiting investment analyst (a 3-6 month internship) → investment team (a two-year track) → principal → associate partner → partner. At studios the usual shape is analyst or associate (0-3 years) → venture lead or founder of a studio company → partner (practitioner view; not sourced here).
+
+**Exit opportunities.**
+- After 2-3 years: founding a company. Antler's two-year track is built for it: you develop your own idea alongside the job and Antler may be the first investor. Also early employee of a spun-out company, venture capital, product management or corporate strategy (practitioner view; not sourced here).
+- After 7-10 years: studio partner, founder, head of innovation at a corporate (practitioner view; not sourced here).
+
+**Tier list of employers.**
+- Tier 1: international studios and talent investors: Antler (more than 25 cities), Entrepreneur First, Founders Factory (which claims 500+ start-ups and 60+ operators, with corporate partners such as Aviva, Rio Tinto and HSBC), Rocket Internet (Berlin); and consultancies' build units: BCG X, and McKinsey's Leap (its page timed out and was not read).
+- Tier 2: corporate innovation and venture units of banks, telecoms, energy and industrial groups, for example Intesa Sanpaolo Innovation Center.
+- Tier 3: small national studios and accelerators (Mamazen has 11 people). In Italy the whole sector was 56 organisations in 2024, 45% of them in Lombardy (Social Innovation Monitor).
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: no posting opened here names a degree. Antler strongly prefers full technical backgrounds (software, hardware or research); Entrepreneur First says deep technical knowledge is not required but curiosity about technology is.
+- Experience: true graduate posts are rare. Antler's own job board listed nine openings worldwide on 11 October 2026, one of them at intern level; its two-year track asks for two or more years in key roles at early-stage start-ups. Entrepreneur First's associate level is for recent graduates with 0-3 years' experience, and it offers holiday internships to current students.
+- Timing: ad hoc. Antler's analyst internship starts between October and December 2026 and lasts three to six months; there is no annual graduate cycle.
+- What to show: Antler asks interns for start-up, consulting or venture-capital experience, or side projects that show initiative.
+- Common mistakes: applying with no project of your own; expecting venture-capital work at a studio, or building work at a talent investor.
+- Non-target routes: start-up operator roles (3.4), consulting, a student venture.
+- Entry difficulty: 4/5; few posts, small teams.
+
+**Honest downsides and who it is NOT a good fit for.** About nineteen ideas in twenty are stopped. Teams average nine people in Italy, so posts and promotions are few, and the bottom rung is often a three- to six-month internship. Pay is not published anywhere reliable: no survey exists and postings say "competitive". Equity and carry terms vary and are rarely disclosed before an offer. Poor fit: people who want a defined job and a stable team, people who need a known salary band before applying, and people who want to be investors: a studio is not a fund.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -177,6 +354,10 @@ Product management (PM) is the job of deciding what a software product or digita
 | 3.3 TPM and product operations | 45-55 (60+) | 3 | 4 | 3 | US: TPM median ~US$290-302k at Amazon/Google total (Levels.fyi); product ops no robust survey (vendor base US$85-105k) / UK: London TPM median £121.5k total, all levels (Levels.fyi 2026) / Italy: no reliable data found | 3 (product ops) to 4 (big-tech TPM) |
 | 3.4 Startup operator (founder's associate, CoS, bizops) | 50-60 (70+) | 4 | 4 | 3 | US: ~US$80-135k (vendor/recruiter estimates, unverified) / UK: no reliable data found; Europe seed junior business roles €50-70k cash plus options (Index 2018, stale) / Italy: no reliable data found (inferred €30-45k) | 3 |
 | 3.5 Founder / entrepreneur | 60-80 (80+) | 5 (3-4 in stable periods) | 5 | 3 | US: seed CEO median ~US$147-153k in funded companies (Kruze), often near zero in first year / UK: no reliable data found (EF London stipend £6,000) / Italy: no reliable data found; often unpaid at start | 2 to start; 5 for top accelerators |
+| 3.6 Product designer (UX/UI) | 37-39 (50) | 2-3 | 4 | 2-3 | US: lowest decile under $53,750, median $104,000 (BLS, May 2025); $75,050 median at 0-2 years (UXPA 2024, all UX titles) / UK: £32,000 starter (National Careers Service, 2026); £20-26k (Prospects, Dec 2024) / Italy: €1,315 net a month, design master's graduates one year on (AlmaLaurea 2025 survey, all design); Milan junior €34,000 gross (NettoCalc, aggregator; weak) | 4 |
+| 3.7 UX researcher | 37-42 (50) | 2 | 4 | 3 | US: n.r.d. official; $75,050 median at 0-2 years (UXPA 2024, all UX titles); Google PhD intern base $101-135k a year (2025 posting) / UK: £34,000 starter (National Careers Service, 2026); above £30,000 (Prospects, July 2026) / Italy: n.r.d. | 4 |
+| 3.8 Customer success manager | 40-45 (50) | 3 | 5 | 2 | US: $62,361 entry average base (Payscale, March 2025; self-reported; weak) / UK: £30,284 entry average base (Payscale, January 2024; self-reported; weak) / Italy: n.r.d. at entry; €45,305 all-level average, n=16 (Payscale, 2026; self-reported; weak) | 2-3 |
+| 3.9 Venture builder and corporate innovation associate | 45-55 (60) | 3 | 4 | 3 | US: n.r.d. / UK: n.r.d. / Italy: n.r.d. (no studio or talent investor opened publishes pay) | 4 |
 
 ---
 
@@ -228,19 +409,19 @@ Banks do not employ this branch's roles in large numbers, so this section compar
 
 ### (b) Matrix (S = strong, P = possible, X = stretch)
 
-| Background | 3.1 Product manager | 3.2 APM/RPM | 3.3 TPM & product ops | 3.4 Startup operator | 3.5 Founder |
-|---|---|---|---|---|---|
-| Management | P | X | P | S | P |
-| Logistics & Supply Chain | P | X | P | P | P |
-| Finance | P | X | P | S | P |
-| Accounting | X | X | P | P | X |
-| Marketing | P | X | P | P | P |
-| Data Analytics | S | P | S | S | P |
-| Economics | P | X | P | S | P |
-| Computer Science | S | S | S | P | S |
-| Cybersecurity | P | P | P | X | P |
-| Data Science | S | S | S | P | S |
-| Artificial Intelligence | S | S | S | P | S |
+| Background | 3.1 Product manager | 3.2 APM/RPM | 3.3 TPM & product ops | 3.4 Startup operator | 3.5 Founder | 3.6 Product designer | 3.7 UX researcher | 3.8 Customer success | 3.9 Venture builder |
+|---|---|---|---|---|---|---|---|---|---|
+| Management | P | X | P | S | P | X | P | S | S |
+| Logistics & Supply Chain | P | X | P | P | P | X | X | P | P |
+| Finance | P | X | P | S | P | X | X | P | S |
+| Accounting | X | X | P | P | X | X | X | P | P |
+| Marketing | P | X | P | P | P | P | S | S | P |
+| Data Analytics | S | P | S | S | P | P | S | P | P |
+| Economics | P | X | P | S | P | X | P | P | P |
+| Computer Science | S | S | S | P | S | S | P | P | S |
+| Cybersecurity | P | P | P | X | P | X | X | X | X |
+| Data Science | S | S | S | P | S | X | P | X | P |
+| Artificial Intelligence | S | S | S | P | S | P | P | X | P |
 
 Notes: 3.2 is X or P for most business backgrounds because programmes skew technical; 3.5 reflects that anyone can start a company, but EF and many investors prefer technical founders.
 
@@ -276,5 +457,32 @@ Notes: 3.2 is X or P for most business backgrounds because programmes skew techn
 24. Singapore EntrePass https://www.one-visa.com/singapore-visa-resources/entrepass-singapore/ and Japan Startup Visa https://www.roundfunded.com/en/visa/japan (consultancy summaries, 2026); BLS survival note https://www.bls.gov/opub/ted/2024/34-7-percent-of-business-establishments-born-in-2013-were-still-operating-in-2023.htm (via secondary summary).
 25. Index Ventures, Rewarding Talent (2018 data; 2021 seed research). https://www.indexventures.com/rewardingtalent/ ; Product-Led Alliance, State of Product Ops (2022) https://www.productledalliance.com/state-of-product-ops/
 26. Admetia prior research, "Careers in tech, scale-ups, startups, VC and AI companies (business roles)", 30 September 2026 (LBS MiM reports 2024-25, Bending Spoons, Revolut, AI-lab job boards, Crunchbase layoffs tracker). /Users/alessandro/Documents/Vibe Coding Projects/admetia/research/careers/tech-business-and-startups.md
+
+**Second pass, 11 October 2026: role families 3.6 to 3.9 (re-researched the same day from opened sources)**
+
+Every figure in 3.6 to 3.9 comes from a page that was opened and read on 11 or 12 October 2026; lines marked "not sourced here" or "my estimate" have no source, and search-result snippets were not used as evidence. Background ratings are my judgement.
+- UK National Careers Service, job profiles "UX designer" and "User researcher" (pay, hours, entry routes; read 11 October 2026): https://nationalcareers.service.gov.uk/job-profiles/ux-designer ; https://nationalcareers.service.gov.uk/job-profiles/user-researcher
+- Prospects, job profiles "UX designer" (written December 2024) and "UX researcher" (written July 2026): https://www.prospects.ac.uk/job-profiles/ux-designer ; https://www.prospects.ac.uk/job-profiles/ux-researcher
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, "Web Developers and Digital Designers" (May 2025 wages; page updated 27 August 2026): https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm
+- UK Government Digital and Data Profession Capability Framework, "User researcher" (updated 29 August 2025): https://understand-digital-data-roles-skills.service.gov.uk/role/user-researcher
+- UXPA, 2024 UX Salary Survey (n=444, April-October 2024; full PDF read): https://uxpa.org/wp-content/uploads/sites/9/2024/11/UXPA_SalarySurvey_2024_v1.pdf ; MeasuringU analysis of the same data (19 November 2024): https://measuringu.com/salary-survey2024/
+- User Interviews, State of User Research 2025 (n=485, 25 July-9 August 2025; published 10 September 2025): https://www.userinterviews.com/state-of-user-research/survey ; UX Salary Report 2024 (2023-24 responses): https://www.userinterviews.com/ux-salary-report-2024
+- Nielsen Norman Group, "State of UX 2026" (16 January 2026): https://www.nngroup.com/articles/state-of-ux-2026/
+- AlmaLaurea, graduates' employment survey 2025, class LM-12 Design, one year after the master's (national column; read in the IUAV quality office sheet, July 2026; secondary host of primary data): https://www.iuav.it/sites/default/files/2026-08/LM12_Almalaurea_cond_occ_indagine_2025.pdf
+- ITJobsWatch, UK permanent adverts, six months to 11 October 2026 (advert-based; skews experienced): https://www.itjobswatch.co.uk/jobs/uk/ux%20designer.do ; https://www.itjobswatch.co.uk/jobs/uk/user%20researcher.do
+- Employer postings read on job-board mirrors (secondary copies of primary postings, both closed): Microsoft "Product Designer" IC2, Redmond, posted 9 October 2025: https://jobs.anitab.org/companies/microsoft/jobs/60245992-product-designer ; Google "User Experience Research Intern, PhD, Summer 2026", closed 31 October 2025: https://jobs.anitab.org/companies/google-24698/jobs/58230981-user-experience-research-intern-phd-summer-2026
+- Spotify, students and internships page (read 11 October 2026): https://www.lifeatspotify.com/students ; Bending Spoons, careers page and job board (read 11 October 2026): https://bendingspoons.com/careers ; https://jobs.bendingspoons.com/
+- HubSpot "Customer Success Manager" postings, Dublin (9 July and 3 October 2026) and London (9 July 2026), read on an investor's job-board mirror (secondary copies of primary postings): https://jobs.generalcatalyst.com/companies/hubspot/jobs/95727870-customer-success-manager-uki ; https://jobs.generalcatalyst.com/companies/hubspot/jobs/85779311-customer-success-manager ; https://jobs.generalcatalyst.com/companies/hubspot/jobs/85779314-customer-success-manager
+- Gainsight, "The Essential Guide to Customer Success", 2026 edition (vendor guide; definitions only): https://www.gainsight.com/guides/the-essential-guide-to-customer-success/
+- UK government Find an apprenticeship service, Sage "Customer Success Apprentice" (closed 1 September 2026; only title, employer and dates readable): https://www.findapprenticeship.service.gov.uk/apprenticeship/VAC2000047911
+- Payscale, Customer Success Manager: UK entry level (updated 7 January 2024), US entry level (updated 1 March 2025), Italy (updated 1 March 2026, 16 profiles) (self-reported; weak): https://www.payscale.com/research/UK/Job=Customer_Success_Manager/Salary/59226422/Entry-Level ; https://www.payscale.com/research/US/Job=Customer_Success_Manager/Salary/db047e96/Entry-Level ; https://www.payscale.com/research/IT/Job=Customer_Success_Manager/Salary
+- Customer Success Collective, "How much do customer success managers earn in the United Kingdom?" (11 March 2025; figures from its 2024 salary report; sample not disclosed; weak): https://www.customersuccesscollective.com/customer-success-manager-salary-uk/
+- NettoCalc, UX designer salary, Milan, 2026 (aggregator of Glassdoor and Jobbydoo estimates; weak): https://nettocalc.com/it/stipendio/designer-ux/milano
+- Politecnico di Torino press office, on Social Innovation Monitor's "Report sugli Startup Studio e Venture Builder Italiani 2025" (2024 data; published 26 September 2025): https://www.polito.it/ateneo/comunicazione-e-ufficio-stampa/poliflash/presentato-alla-camera-dei-deputati-il-nuovo-report-di
+- Antler, own job board and two postings (read 11 October 2026): https://antler.applytojob.com/apply ; https://antler.applytojob.com/apply/OjywEuPL4R/Investment-Team-Founder-Track ; https://antler.applytojob.com/apply/NEXFyXOfGB/Visiting-Investment-Analyst ; careers page: https://www.antler.co/careers
+- Entrepreneur First, careers page (read 11 October 2026): https://www.joinef.com/careers/ ; Founders Factory, home and join-us pages: https://foundersfactory.com/ ; https://foundersfactory.com/join-us/ ; Mamazen, home page: https://mamazen.it/ ; BCG X, unit page: https://www.bcg.com/x ; Rocket Internet, careers page (benefits only, no roles shown): https://www.rocket-internet.com/careers ; Intesa Sanpaolo Innovation Center, home page: https://www.intesasanpaoloinnovationcenter.com/en/
+- Opened but not used in the text: Levels.fyi product designer pages for London (n=104) and Italy (n=16) (self-reported; weak); the Customer Success Collective 2025 report landing page (figures behind a form).
+- Could not be opened, so not used as evidence: Meta and Google careers sites (empty or 404); Spotify's Lever postings (404); the BLS wage-profile page for web and digital interface designers; Bending Spoons FAQ (404); RepVue (403); Gainsight's job board (404); Founders Factory's Ashby board and Entrepreneur First's job board (empty); McKinsey Leap (timeout); a BCG X associate posting on Vault (403); Financecommunity's article on the 2026 Italian venture-studio report (403); UK Civil Service designer and researcher adverts (removed, 503 or unreadable); a UK recruiter's customer-success adverts (404); and the two German listings and the entrepreneur-in-residence listing cited in the first version of 3.9 (410 and 403), which are withdrawn.
+- Not found: an official US or UK statistical series for UX researchers, customer success managers or venture-studio staff; ONS ASHE pay for web design professionals (table not located); Italian pay for UX researchers, entry-level customer success managers and venture-studio staff; a JobPricing, Hays or Michael Page Italia figure for any of the four (searched; only older or foreign editions surfaced); Gainsight or TSIA compensation reports; any survey of weekly hours for the four roles; a pay survey for venture studios or corporate innovation units; audited bootcamp placement rates; the number of junior posts as a share of adverts. Web search ran out part-way through the first session, so some of these were searched only once.
 
 **Data limits.** Not found or unverified: Amsterdam, Stockholm, Hong Kong, Tokyo and Riyadh pay figures; Italian APM or TPM pay; founder's-associate and product-ops pay surveys; a measured failure rate for venture-backed startups; the primary Crunchbase Q3 2026 and Carta seed-to-Series A pages (403/404 on fetch); current GOV.UK funds requirement for the Innovator Founder visa; Techstars European programme closures; certification value (practitioner opinion only); Italian tax treatment of startup employee equity (not checked).

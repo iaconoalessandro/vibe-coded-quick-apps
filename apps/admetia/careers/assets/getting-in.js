@@ -242,7 +242,7 @@
       var t = $('[data-iv-cover]', box);
       t.innerHTML = '';
       var head = el('thead'), tr = el('tr');
-      tr.appendChild(el('th', null, T('Criterion')));
+      tr.appendChild(el('th', null, T('Criterion'))).scope = 'col';
       tabs.forEach(function (tab) { var th = el('th', null, NAMES[tab.getAttribute('data-iv-tab')]); th.scope = 'col'; tr.appendChild(th); });
       head.appendChild(tr); t.appendChild(head);
       var body = el('tbody');

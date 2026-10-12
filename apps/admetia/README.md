@@ -17,7 +17,7 @@ Around the calculators it is also a reference for the decisions next to them, or
 | Section | Hub | What is in it |
 |---|---|---|
 | **Choose a master's** | `study.html` | Programme Directory, the seven calculators, which track leads to which career field |
-| **Explore careers** | `careers/index.html` | 124 role families in 13 fields, Career Compass, compare, Italian pay |
+| **Explore careers** | `careers/index.html` | 154 role families in 13 fields, Career Compass, compare, Italian pay |
 | **Find an internship or job** | `jobs.html` | Hiring by country (planner and table), recruiting calendar, application toolkit, interview prep |
 | **Plan a move** | `map.html` | 46 countries: each guide in views (cities, getting hired, visas, working, life, first weeks, sources) or whole on one page |
 | **Sources and method** | `method.html` | How each part was researched and checked, the research library, privacy, credits |
@@ -142,6 +142,8 @@ css/app.css         The City newspaper layout
 css/fonts.css       @font-face rules for the typefaces in fonts/ (all SIL OFL)
 fonts/              The typefaces, with their licences
 img/photo/          Photographs: JPEG masters plus 480/800/1240px WebP (tools/build-images.sh)
+img/plates/         Illustrations: field plates, role scenes and Atlas overviews, 400/800px WebP
+                    (tools/build-plates.sh; see CREDITS.md)
 img/                Favicon, touch icon, link-preview card and the section marks (mark-*.svg)
 
 js/ — what runs in the page
@@ -193,6 +195,8 @@ tools/atlas-stats.js  Rebuilds data/atlas/stats.js from the IMF DataMapper API
 tools/atlas-outcomes.js  Rebuilds data/atlas/outcomes.js (Eurostat API, World Bank API, research/outcomes/researched.json)
 tools/hiring-check.js  Checks every country's hiring file and Working there rows against the full plan
 tools/build-images.sh   WebP copies of the photographs
+tools/build-plates.sh   WebP copies of the illustrations, from masters kept outside the repository
+tools/careers/figures.js  Which career pages carry a drawing or a diagram, and the diagrams themselves
 tools/build-brand.py    Favicon, touch icon and link card (needs .venv, see the file)
 tools/data-collection/  One-off collectors behind data/computing-evidence.js — not part of
                     the everyday workflow

@@ -12,6 +12,8 @@
  *              calendar page draws in full.
  *   countries  The 46 countries, by region, each with its hiring view.
  *              data/atlas/index.js.
+ *   programmes The directory's programmes, named for search engines (the
+ *              page itself draws them with script). data/*-model.js.
  * ------------------------------------------------------------------------- */
 
 'use strict';
@@ -150,6 +152,21 @@ ${list.slice().sort((a, b) => a.name.localeCompare(b.name)).map((c) => `      <l
 </div>`;
 }
 
+/* ---------------------------------------------------------- programmes */
+
+/* Every programme the directory lists, with the school that runs it, as a
+ * schema.org list: the names the page prints, and nothing it does not. */
+function programmes() {
+  const m = { window: {}, Math, console, Object, String, Number, parseFloat, isNaN, Infinity };
+  vm.createContext(m);
+  for (const f of ['data/masters-model.js', 'data/computing-model.js', 'data/mba-model.js']) vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), m, { filename: f });
+  const W = m.window;
+  const item = (name, school) => ({ '@type': 'EducationalOccupationalProgram', name, provider: { '@type': 'CollegeOrUniversity', name: school } });
+  const list = [...W.MASTERS_MODEL.schools, ...W.IT_MODEL.schools].map((s) => item(s.name, s.name.split(' — ')[0]))
+    .concat([...W.MBA_MODEL.generalSchools, ...W.MBA_MODEL.adjustedSchools].map((s) => item(s.name + ' MBA', s.name)));
+  return { '@type': 'ItemList', numberOfItems: list.length, itemListElement: list };
+}
+
 /* The interface strings these blocks print, for the Italian checks. */
 function strings() {
   const C = require('./careers/calendar');
@@ -161,4 +178,4 @@ function strings() {
   return [...out];
 }
 
-module.exports = { pathways, timeline, countries, atlas, strings, TRACKS };
+module.exports = { pathways, timeline, countries, programmes, atlas, strings, TRACKS };

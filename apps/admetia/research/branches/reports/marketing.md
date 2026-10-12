@@ -393,6 +393,185 @@ Entry difficulty: 2/5 for SDR/inside sales; 4/5 for FMCG graduate sales schemes 
 **Honest downsides and who it is NOT a good fit for**
 Variable pay and rejection; a 48% attainment rate for AEs and 60% for SDRs means many people miss targets (Bridge Group); SDR roles are the most exposed to AI automation (AI SDRs were first measured at 1% of respondents in 2025, a trend to watch). Not for people who need stable income, dislike targets or cold outreach, or want little interpersonal conflict.
 
+---
+
+### 3.9 PR and corporate communications officer
+
+**What you actually do.** You manage how an organisation is described by people it does not control: journalists, investors, employees, politicians, the public. The US Bureau of Labor Statistics (BLS) lists the core tasks: write press releases and prepare information for the media, answer media requests, draft speeches and arrange interviews for executives, and track public opinion on social media (Occupational Outlook Handbook, May 2025 data). Prospects (August 2026) adds planning campaigns, running events, managing web and social content, researching new business and handling a crisis. In a consultancy you serve several clients; in-house you serve one employer. Media relations is no longer the whole job: in the CIPR State of the Profession survey (2,016 UK responses, April 2024) copywriting and editing was the most common activity, then stakeholder relations, media relations and crisis management, and the most junior grade most often reported stakeholder relations, media relations and events. Tools: media databases and monitoring services, a content calendar, slides.
+
+**A typical day and week.** Morning: scan overnight coverage and social media and send a summary. Then draft a release or statement and clear it with legal and the business, pitch journalists by phone and email, update the client or the management team, and log the coverage. Weekly in a consultancy: client status calls, a new-business pitch, a report. Launches, results days and press events bring evenings. This sequence is my reading of the Prospects and BLS task lists, not an observed diary.
+
+**Hours, stress and lifestyle.**
+- Hours: 38-40 a week (National Careers Service) or 9am to 5.30pm (Prospects, August 2026), longer around client deadlines, press launches, crises and pitches. 37% of UK practitioners said their hours had risen in the previous 12 months (CIPR 2024). The only weekly figure found is for senior US staff: 49 hours on average (PRCA US Census, 112 respondents, late 2023). Peaks 50+ (practitioner estimate).
+- Stress: 3/5; 4/5 in a crisis or in a consultancy during pitches. No direct measure found. 21% of CIPR respondents put practitioners' mental health among the profession's main challenges (2024); in the PRCA UK Census 2025, 58% of women and 80% of men rated their mental health at work as good or very good.
+- Lifestyle: 67% of UK practitioners work hybrid and 17% fully on site (CIPR 2024); FGS Global wants graduates in the London office full time at first. Travel to media and client events; you are on call when news breaks.
+
+**Human vs. quantitative profile.** People/communication: 5/5. Quantitative/technical: 1/5 to 2/5. The entry test is writing and persuading; numbers appear in coverage reports and budgets. Financial and transaction communications (the Brunswick and FGS Global kind of work) requires reading company results and sits nearer 3/5. Measurement is a weak point of the trade: 37% of UK respondents still use advertising value equivalents (PRCA 2025).
+
+**Compensation (approximate).**
+- UK entry: consultancy account executives averaged £28,000 in consumer PR and £29,000 in corporate and B2B technology PR, range £25,000-£33,000 (Latte recruiter survey of 440+ PR staff, 89% in London, published by PRmoment, August 2025). Prospects gives typical starting salaries of about £25,500 (August 2026). The National Careers Service starter figure of £22,000 is below the legal minimum for a full-time adult, about £24,800 a year (my arithmetic: £12.71 an hour from 1 April 2026, GOV.UK, for 37.5 hours), so treat it as out of date. The CIPR average of £36,940 for interns, trainees, assistants and executives (2024) covers everyone holding those grades, not starters. FGS Global publishes no figure for its graduate programme.
+- UK later (Latte 2025 survey averages): senior account executive £32,000-£33,000, account manager £36,000-£39,000, account director £51,000-£54,000, director £75,000-£89,000; in-house PR or communications manager £60,000, with a very wide range. CIPR 2024 averages for full-time practitioners: £53,052 overall (down from £56,340 in 2022), consultancy £59,718, in-house private sector £54,117, directors and partners £91,828.
+- US: public relations specialists had a median of $74,750 in May 2025; the lowest tenth earned under $44,110 and the highest tenth over $135,150; advertising and PR firms $77,480; public relations managers $136,470 (BLS; official figures for the whole occupation). Entry-level pay: no reliable data found.
+- Italy (Michael Page Italy, Studi di retribuzione 2026, gross annual RAL): digital PR and influencer marketing €23,000-€30,000 under 5 years' experience and €30,000-€45,000 at 5-10 years; communication and PR manager in fashion and luxury €45,000-€55,000 under 5 years, over €70,000 after 10, bonus 10-20%; head of communication at an insurer €50,000-€70,000 rising to over €90,000. Graduate starting pay: no reliable data found.
+
+**Career path.** Assistant or junior account executive (0-2 years) → account executive or PR officer (1-3) → senior account executive or account manager (3-5) → account director or communications manager (5-10) → director, partner or head of communications. Prospects (August 2026) gives one to two years at the first grade and a further two to three to manager level.
+
+**Exit opportunities.**
+- After 2-3 years: in-house communications, public affairs, internal communications, content and social roles, marketing.
+- After 7-10 years: head or director of communications, investor relations, public affairs lead, or your own consultancy (independent practitioners averaged £65,971 in the CIPR 2024 survey).
+
+**Tier list of employers.**
+- Tier 1: global consultancies (Edelman, Weber Shandwick, Burson, FleishmanHillard), the financial and corporate advisers (Brunswick, FGS Global, Teneo), and the communications teams of listed companies and major institutions.
+- Tier 2: mid-sized and specialist agencies, including the Milan corporate firms (for example Barabino & Partners, Community, Comin & Partners, SEC Newgate Italia); public bodies, universities, charities.
+- Tier 3: small agencies and single-person in-house roles.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact. Firm names are from general knowledge; the PRovoke agency ranking could not be opened.
+
+**How to enter.**
+- Degrees: no set subject. Prospects lists business, communication and media, English, journalism, marketing, politics and PR as helpful. FGS Global states no subject or grade requirement. 35% of UK respondents hold a master's (PRCA 2025), but no scheme read requires one.
+- Programmes: FGS Global UK Graduate Programme, London, with three pathways (core consulting, digital and creative, UK public affairs). For the 2026 intake applications closed on 15 January 2026, interviews ran from 2 February to 6 March, the assessment day was 24 April and work began on 8 September. Stage one is a presentation task, a form and a CV, reviewed anonymously; graduates become Associates after six months of training. Most other entry is direct into assistant or account executive jobs, all year.
+- Qualifications: CIPR Foundation Certificate for beginners and Professional PR Certificate for graduates (National Careers Service); UK Level 4 PR and Communications Assistant apprenticeship (Prospects). BLS says certification is not typically required.
+- Languages: FGS Global requires English of native standard. Writing in the working language is the entry test, which makes this one of the least portable roles for someone working in a second language.
+- Experience: Prospects calls work experience essential: placements, internships, student media, volunteering for a charity.
+- Common mistakes: no writing samples; confusing PR with advertising; applying to financial PR without following company news.
+- Non-target routes: student journalism, an agency internship, a marketing-assistant job, the apprenticeship.
+- Entry difficulty: 3/5.
+
+**Honest downsides and who it is NOT a good fit for.** Starting pay is modest (London account executives at £28,000-£29,000 against £35,000 on the FMCG schemes in 3.1). Average income fell between 2022 and 2024 while hours rose (CIPR 2024), and the PRCA 2025 census reports a 17% gender pay gap. Results depend on journalists you do not control, and you are on call when news breaks. Practitioners rank AI as the profession's main challenge (38%, CIPR 2024), and BLS projects US employment growth of only 2% from 2025 to 2035. Poor fit: people who dislike writing to order, being on call, or defending a position they did not choose.
+
+---
+
+### 3.10 E-commerce manager
+
+**What you actually do.** You run an online shop, or a brand's sales on other companies' sites, as a business line with a sales target. The National Careers Service lists the tasks: plan how to raise online sales, develop the retail platform, analyse and report on website performance, work with marketing on campaigns, manage budgets, watch competitors, and keep the site within data-protection rules. Tesco's online graduate programme names the working disciplines: online trading, the digital customer experience, online operations and fulfilment, website and app performance, customer-journey optimisation, digital marketing, and data analytics and reporting (Tesco Ireland advert, 2027 intake). There are two variants: your own site (direct to consumer), and marketplaces or retailers' sites, where the work is listings, prices, stock availability and paid placement; Michael Page Italy lists "Marketplace Advertising Specialist" as a job of its own (2026). You sit between marketing, which brings the traffic, and operations, which ships the order. Tools: the e-commerce platform, web analytics, spreadsheets, marketplace dashboards.
+
+**A typical day and week.** Morning trading check: yesterday's sales, traffic, conversion rate and out-of-stock lines against plan. Then fix what the numbers show: a listing with the wrong price or image, a checkout fault with the developers, a best-seller out of stock with the supply team. Set up next week's promotion and brief marketing. A weekly trading meeting with the commercial director; the year is built around sale events. (My reading of the task lists above; no diary source found.)
+
+**Hours, stress and lifestyle.**
+- Hours: 40-45 a week, with a working pattern given as days, nights and weekends as customers demand (National Careers Service). Peaks about 55 around sale periods (practitioner estimate; no survey found).
+- Stress: 3/5. A daily sales number is visible to everyone. No measured data found.
+- Lifestyle: 64% of digital professionals in Italy work hybrid (Michael Page Italy 2026), and Tesco's head-office roles are hybrid. Tesco's UK online scheme begins with 12 weeks in a store (Prospects, April 2026). Peak trading in late November and December limits holidays (practitioner knowledge).
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 3/5. Every description read puts analysis at the centre (website performance, conversion, reporting), and Michael Page Italy says the digital market wants analytical, data-driven profiles, so the first years are nearer 4/5 on numbers. The people side grows with seniority, when you negotiate with marketplaces, agencies and the supply team.
+
+**Compensation (approximate).**
+- UK: £25,000 starter to £60,000 experienced (National Careers Service; a careers-profile range, undated). No UK graduate-scheme salary specific to e-commerce was found; for scale, Tesco's UK product scheme (buying and merchandising) pays £33,000 plus a bonus of up to 10% for the 2027 intake.
+- Ireland: €35,000 on Tesco's 18-month Online Graduate Programme in Dublin, starting 6 September 2027 (advertised starting salary).
+- Italy (Michael Page Italy 2026, gross annual RAL): e-commerce specialist €25,000-€35,000 under 5 years' experience in grocery and specialist retail (bonus 5-10%) and €25,000-€30,000 in fashion and luxury; marketplace advertising specialist €30,000-€40,000; e-commerce manager €35,000-€45,000 under 5 years, €45,000-€60,000 at 5-10 years, €60,000-€80,000 beyond, bonus 10-20%; head of digital €65,000-€80,000 after 10 years.
+- US: no reliable data found. BLS has no separate e-commerce occupation. Employers projected an average starting salary of $66,994 for 2026 marketing graduates in general (NACE Winter 2026 survey, 150 employers, base pay only), which is not specific to this role.
+
+**Career path.** E-commerce assistant or specialist (0-3 years) → e-commerce or marketplace manager (3-6) → head of e-commerce or omnichannel manager (6-10) → digital or commercial director. No source gives promotion timing; the years are my reading of Michael Page Italy's experience bands, where omnichannel manager appears only from 5 years. The National Careers Service names sales director or chief executive as the senior steps.
+
+**Exit opportunities.**
+- After 2-3 years: performance marketing, CRM, category management or buying, marketplace account roles at brands, product management at retail-technology firms.
+- After 7-10 years: head of digital, sales director or general management, e-commerce consultant, your own online business (the last three are listed by the National Careers Service).
+
+**Tier list of employers.**
+- Tier 1: marketplaces and online-only retailers (Amazon, Zalando, eBay, ASOS, Ocado) and large retailers with their own online operations (Tesco, Sainsbury's, John Lewis, Marks & Spencer, Next), plus the direct-to-consumer teams of consumer-goods and fashion groups. Most UK names are from the Prospects employer list (April 2026).
+- Tier 2: mid-sized brands, and agencies that run shops and marketplace accounts for clients.
+- Tier 3: small online retailers, where one person does everything. Italy had about 87,000 active e-commerce firms in 2026, 4.4% fewer than in 2025 (Osservatorio eCommerce B2c Netcomm-Politecnico di Milano, 19 May 2026, reported by PagamentiDigitali).
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: any. Prospects (April 2026) lists marketing, retail management, logistics, computing and buying degrees, says some retailers accept any discipline, and reports that a 2:1 is preferred and a 2:2 widely accepted.
+- Programmes: retailer graduate schemes with an online stream at Asda, Morrisons, Sainsbury's and Tesco (Prospects); most start on the shop floor before head-office roles. Tesco Ireland's online programme has two placements, one outside your own discipline, and closes on 31 October 2026 for a September 2027 start. Most entry is direct, as assistant or specialist.
+- Demand: "E-commerce Manager / Head of E-commerce" heads Michael Page Italy's five most requested digital roles for 2026. Italians' online purchases of products reached €42.6 billion in 2026 (+6%), 11.5% of retail spending (Netcomm-Politecnico di Milano); 28.3% of UK retail sales were online in February 2026 (Retail Gazette, cited by Prospects).
+- Skills: web analytics, basic SEO, spreadsheets, commercial awareness (Prospects). The National Careers Service direct route asks for experience in digital marketing, web analytics and SEO, or project management.
+- Common mistakes: presenting only social-media experience; no evidence of working with sales numbers.
+- Non-target routes: run a small online shop or marketplace account yourself; move across from merchandising, buying, customer service or digital marketing; UK degree apprenticeships such as Digital Marketer or Retail Leadership (National Careers Service).
+- Entry difficulty: 2-3/5.
+
+**Honest downsides and who it is NOT a good fit for.** You answer for a sales number that depends on stock, price and traffic you only partly control, and trading never closes: the official profile's working pattern includes nights and weekends. The market is maturing: Italian online sales grow about 6% a year and the number of active sellers is falling. Only 47% of digital professionals in Italy are satisfied with their pay and 54% are considering a move within 12 months (Michael Page Italy 2026). Poor fit: people who want purely creative work, or who dislike a daily scoreboard.
+
+---
+
+### 3.11 Category and trade marketing manager
+
+**What you actually do.** At a consumer-goods company you plan how the product range is sold through retailers. Two jobs share this section. In category management you use sales and shopper data to advise a retailer on which products to stock, where they sit on the shelf, at what price and with which promotions, for the whole category. In trade marketing you turn brand plans into what happens in the retailer's stores and site: promotions, displays, leaflets, and the budget for them. On the retailer's side the matching job is buyer or category manager, who takes the decision. Tesco's commercial graduate programme lists the content: buying and category management; space, range and merchandising planning; pricing, promotions and profitability analysis; supplier relationships; customer insight (Tesco Ireland advert, 2027 intake). P&G's UK sales graduates manage one retailer's account from the first day and build its business plan from analytics and shopper insights (advert, 2027 intake). BLS defines wholesale and retail buyers as people who buy goods for resale; "category manager" is also a procurement title for buying a company's own supplies, a different job, so read the advert (the second point is general knowledge). Tools: retailer data portals, market and shopper panels (NielsenIQ, Circana, Kantar), spreadsheets, slides.
+
+**A typical day and week.** Monday: pull last week's sales and market share by retailer and work out what moved and why (price, promotion, distribution, a competitor's launch). Midweek: build the range-review or promotion-evaluation deck with the account manager and brief marketing and supply on next month's promotion. Then the meeting with the retailer's buyer. The year runs on the retailers' range reviews, the annual joint business plan and seasonal peaks. This is my reading of the adverts above; no diary source was found.
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found for this role. Typical 40-45, peaks 50-55 before range reviews and annual negotiations (practitioner estimate). The nearest official profile, retail buyer, says hours often run beyond 9 to 5, with early starts and late finishes at Christmas, summer sales and new-season launches (Prospects, September 2025); BLS says most buyers work full time and some more than 40 hours.
+- Stress: 3/5. Deadlines follow the retailer's calendar. No measured data found.
+- Lifestyle: hybrid for 51% of sales and marketing professionals in Italy and 43% in retail (Michael Page Italy 2026); Tesco asks for 60% of the week on site, and the Michael Page UK advert was five days on site. Travel to retailers' head offices; P&G requires a driving licence from the first day.
+
+**Human vs. quantitative profile.** People/communication: 4/5. Quantitative/technical: 3/5. You persuade a buyer who can say no, and the argument is built from data. The analyst years are more numerical than the title suggests, nearer 4/5 (market data, promotion returns, profitability); the manager years are more negotiation.
+
+**Compensation (approximate).**
+- UK entry (advertised graduate salaries): P&G Sales Graduate Role £45,000 plus bonus, pension and shares (2027 intake; advert read on Built In London in October 2026); Unilever Future Leaders Programme, customer development stream, £35,000 plus bonus and a benefits allowance worth 25% of pensionable pay (2026 intake); Tesco product scheme (buying and merchandising) £33,000 plus a bonus of up to 10% (2027 intake). Tesco Ireland commercial programme: €35,000 (2027 intake).
+- UK later: junior category manager or category manager at a branded food firm £35,000-£55,000 (Michael Page UK, single advert, 2026); category manager typically £45,000-£65,000 base (Coburg Banks hiring guide, July 2026; recruiter, method not stated, weak). Retail side: junior buyer £25,000-£35,000, buyer £30,000-£45,000, senior buyer £45,000-£65,000, head of buying £70,000-£90,000 or more (Prospects, September 2025).
+- Italy (Michael Page Italy 2026, gross annual RAL): category manager in grocery and specialist retail €35,000-€45,000 under 5 years, €45,000-€65,000 at 5-10 years, over €70,000 beyond, bonus 10-15%; trade marketing manager €50,000-€55,000 under 5 years in consumer goods (€40,000-€50,000 in retail, €30,000-€40,000 in wine), rising to over €65,000; key account manager €45,000-€55,000 to over €70,000, bonus 10-20%; national account manager €65,000-€75,000 to over €85,000, bonus 15-25%. Nearest analyst bands: marketing analyst €30,000-€38,000, retail marketing analyst €28,000-€35,000. Graduate-scheme pay: no reliable data found.
+- US: entry pay: no reliable data found. Official medians for the retailer-side occupation: buyers and purchasing agents $77,710, lowest tenth under $48,380; purchasing managers $148,080 (BLS, May 2025; whole occupation, all industries).
+
+**Career path.** Category analyst or sales graduate (0-2 years) → category executive, junior category manager or account manager (2-4) → category manager, trade marketing manager or key account manager (4-7) → national account manager or head of category (7-10) → commercial or sales director. Prospects gives two to three years per step in buying; other timings are my estimate. People move sideways between category, trade marketing and account roles.
+
+**Exit opportunities.**
+- After 2-3 years: account manager, brand management, buying at a retailer, shopper insights, e-commerce or retail media.
+- After 7-10 years: commercial or sales director (in Italy €85,000-€95,000 rising to over €130,000, bonus 25-35%), category director at a retailer (€80,000-€100,000 rising to over €150,000; both Michael Page Italy 2026), general management.
+
+**Tier list of employers.**
+- Tier 1: commercial graduate entry at the large consumer-goods groups (P&G, Unilever, Nestle, Mondelez, Mars, PepsiCo, L'Oreal; in Italy Ferrero, Barilla, Lavazza) and the head offices of the largest grocers (Tesco, Sainsbury's; in Italy Esselunga, Coop, Conad).
+- Tier 2: mid-sized food, drink and household manufacturers; discounters and specialist chains; the data firms that supply category teams (NielsenIQ, Circana, Kantar).
+- Tier 3: small suppliers where one person covers sales, trade marketing and category.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: Unilever accepts all disciplines for customer development; P&G names no subject and asks for leadership evidence, a driving licence and the right to work in the UK; Prospects says retail graduate programmes usually ask for a 2:2 or better. Business, economics or a numerate degree fits the analyst work.
+- Programmes and calendar: P&G UK Sales Graduate Role: apply by 30 October 2026, online tests by 9 November, interviews until December, a two-day assessment in Harrogate on 14-15 December, start from January 2027; no rotations, one retailer account from the start. Unilever Future Leaders Programme: opens around the fourth quarter with a rolling close, starts in September, four stages; you choose one function and only your first application counts. Tesco UK product scheme and Tesco Ireland commercial programme: apply by 31 October 2026 for 6 September 2027.
+- Italy: adverts usually say sales, trade marketing or customer development; national account manager is among the five most requested sales and marketing roles (Michael Page Italy 2026). No Italian scheme page with dates or pay could be opened.
+- Skills: spreadsheets to a high standard, reading market-share and promotion data, a structured recommendation in slides.
+- Common mistakes: applying to "marketing" and not knowing this commercial side exists; weak numeracy; no driving licence where field sales comes first.
+- Non-target routes: sales support or field sales, shopper insights at a data firm, or a retailer's buying office, then across.
+- Entry difficulty: 3/5 for direct analyst jobs; the Tier 1 schemes are as selective as brand management (see 3.1).
+
+**Honest downsides and who it is NOT a good fit for.** The retailer decides and you persuade; a delisting or a lost promotion slot can undo a year's plan. The work repeats around review cycles and is largely confined to consumer goods and retail. It is head-office work in specific places, sometimes five days on site, sometimes after a spell in field sales. Italian titles say "manager" early, but the analyst bands start around €30,000. Poor fit: people who want creative campaign work, who dislike negotiating, or who avoid spreadsheets.
+
+---
+
+### 3.12 Events and sponsorship manager
+
+**What you actually do.** You plan and deliver events (conferences, trade fairs, product launches, festivals, sports hospitality), or you manage sponsorship: selling a rights holder's packages to brands, or running a brand's sponsorships so that it receives what it paid for. Prospects (November 2024) lists the event work: agree the brief and a detailed proposal (timeline, venue, suppliers, legal duties, staffing, budget); negotiate with venues and contractors; manage catering, travel and accommodation; promote the event with sales and marketing; brief staff and solve problems on the day; meet insurance and health-and-safety requirements; oversee dismantling and write the evaluation. The National Careers Service adds selling exhibition space and arranging sponsorship. A conference producer at an organiser researches topics, builds the programme, recruits speakers and supports sponsor sales (Informa advert, Boston, 2025). Sponsorship is a large market: €34.45 billion in Europe in 2025, 72% of it in sport; Italy €2.01 billion (Nielsen Sports for the European Sponsorship Association, March 2026). Tools: budget spreadsheets, registration and ticketing systems, supplier contracts, floor plans.
+
+**A typical day and week.** Between events: supplier calls, site visits, budget updates and client or sponsor meetings in office hours. In the final fortnight: daily checks on registrations, schedules and deliveries. On site: the build, long shifts while the event runs, the breakdown, then invoices to reconcile and a report to write. BLS notes that planners often run several events at once and review the bills afterwards.
+
+**Hours, stress and lifestyle.**
+- Hours: 37-39 a week on paper, with evening, weekend and bank-holiday work described as common (National Careers Service). BLS: most planners work full time, many more than 40 hours, with extra hours as an event approaches and weekends during it (2025). Typical 37-45; peaks 60+ in event weeks (practitioner estimate; no survey figure found).
+- Stress: 3/5, 4/5 in event weeks. BLS describes the work as fast paced and demanding, with many deadlines and several events at once. No measured data found: the industry salary survey that covers mental health and work-life balance (You Search & Select, over 1,300 respondents) sits behind a form and was not read.
+- Lifestyle: frequent travel, nights away and physically active work (National Careers Service); a driving licence is usually required (Prospects). In office weeks two to three office days are standard (Live Recruitment, March 2026). Seasonal peaks.
+
+**Human vs. quantitative profile.** People/communication: 5/5. Quantitative/technical: 2/5. Clients, suppliers, venues, sponsors and temporary staff all need managing at once. The numbers are budgets, quotes and attendance, plus audience and media-value figures in sponsorship.
+
+**Compensation (approximate).**
+- UK: £23,000 starter to £40,000 experienced (National Careers Service). Prospects (November 2024) gives £18,000-£22,000 at entry and £22,000-£26,000 with experience, but those figures are now below the legal minimum for a full-time adult, about £24,800 a year (my arithmetic: £12.71 an hour from 1 April 2026, GOV.UK, for 37.5 hours). Expect entry pay at or just above that floor. Event managers about £28,000 to over £40,000 (Prospects). Specialist roles pay more: conference producers £50,000-£65,000 or more, senior producers £60,000-£80,000 or more (Live Recruitment, March 2026; recruiter, method not stated, weak).
+- US: meeting, convention and event planners had a median of $61,160 in May 2025; the lowest tenth earned under $36,830 and the highest tenth over $101,700 (BLS; whole occupation). One Informa advert for a conference producer in Boston with 1-3 years' experience offered $70,000-$75,000 (2025; single advert).
+- Italy (Michael Page Italy 2026, gross annual RAL): communication and event specialist in fashion and luxury €30,000-€35,000 under 5 years' experience and €35,000-€50,000 at 5-10 years, bonus 0-10%; hotel event manager €30,000-€40,000 under 5 years, €40,000-€50,000 at 5-10 years, over €50,000 beyond, bonus 15-25%. Agencies and trade-fair organisers: no reliable data found.
+- Sponsorship roles, any country: no reliable data found.
+
+**Career path.** Events assistant or coordinator (0-2 years) → events executive or project manager (2-5) → events manager, producer or account manager (5-8) → senior manager, account director, or head of events or sponsorship. Prospects describes the same ladder (assistant, team leader, manager, senior manager, director) and says progress usually means changing employer or going freelance; the years are my estimate.
+
+**Exit opportunities.**
+- After 2-3 years: brand and partnership marketing, PR, venue or hospitality management, charity fundraising, sales at an organiser.
+- After 7-10 years: head of events or partnerships, agency director, freelance work or your own agency (about 10% of US planners are self-employed; BLS, 2025).
+
+**Tier list of employers.**
+- Tier 1: exhibition and conference organisers (Informa, RX, Clarion; in Italy Fiera Milano and Italian Exhibition Group), sports and entertainment agencies (IMG, Wasserman, Octagon, Sportfive), and the events and sponsorship teams of large brands and rights holders (leagues, clubs, federations, festivals).
+- Tier 2: venues, hotels, conference centres, universities, charities, local authorities, PR agencies with events teams (employer types from Prospects).
+- Tier 3: small agencies and freelance work.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact. Firm names are from general knowledge.
+
+**How to enter.**
+- Degrees: none required. Prospects says employers weigh skills and experience above the subject and lists events, hospitality, tourism, marketing and sport management as useful. BLS: a bachelor's degree is typical in the US, and event or hospitality study can bring more responsibility earlier.
+- Experience: Prospects calls paid or voluntary experience essential: student-society or charity events, volunteering at large events, hotel, sales or customer-service jobs, placements.
+- Routes: assistant jobs all year; the UK Level 3 Event Assistant apprenticeship. No large graduate scheme with published pay was found. Vacancy sources: the Association of Event Organisers, Campaign Jobs, specialist recruiters (Prospects).
+- Qualifications: voluntary. In sponsorship the European Sponsorship Association runs an Introduction to Sponsorship course, a Sponsorship Sales Certificate and a Diploma (2027 intake open), and a jobs board. BLS notes voluntary certifications for meeting planners.
+- Common mistakes: applying for the glamour; no evidence of handling a budget or a supplier.
+- Non-target routes: venue or hotel operations, an agency assistant job, exhibition or sponsorship sales at an organiser.
+- Entry difficulty: 3/5; Prospects calls the field competitive.
+
+**Honest downsides and who it is NOT a good fit for.** UK entry pay sits at the legal minimum, the hours are unsocial exactly when friends are free, and one bad day can undo months of work. Progress often means changing employer, and freelance income is less predictable (Prospects). The work is physical and involves time away from home. Poor fit: people who need routine or predictable hours, or who want early pay growth.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -405,6 +584,10 @@ Variable pay and rejection; a 48% attainment rate for AEs and 60% for SDRs means
 | 3.6 Market research / insights | 37-42 (45-50) | 2 | 3 | 4 | US: BLS median (all levels) $78,760 / UK: £22-28k (Prospects, Ipsos listing) / Italy: €30-38k band (analyst, <5 yrs) | 2 |
 | 3.7 Agency (account, planning, media) | 40-50 (55-65) | 4 | 5 (media 3) | 3 | US: no reliable data / UK: £20-26k (Prospects 2026) / Italy: €23-35k (media planner/trafficker) | 3 |
 | 3.8 Sales and BD | 40-50 (55-60) | 4 | 5 | 2 | US: SDR OTE ~$80k median (Bridge Group 2025) / UK: £25-28k base + commission (Prospects 2025) / Italy: €25-35k + 10-20% bonus (inside sales) | 2 (SDR) to 4 (FMCG KAM) |
+| 3.9 PR and corporate communications officer | 38-40 (50+) | 3 | 5 | 1-2 | US $74.8k median, all PR specialists; lowest tenth under $44.1k (BLS, May 2025) / UK £28-29k consultancy account executive average (Latte survey via PRmoment, 2025, mostly London); about £25.5k typical start (Prospects, 2026) / Italy €23-30k for under 5 yrs (digital PR, MP Italy 2026); no graduate figure | 3 |
+| 3.10 E-commerce manager | 40-45 (55) | 3 | 3 | 3 | US n.r.d. (no BLS e-commerce occupation) / UK £25k starter (National Careers Service); Tesco Ireland online graduate scheme €35k (2027 intake) / Italy €25-35k e-commerce specialist, under 5 yrs (MP Italy 2026) | 2-3 |
+| 3.11 Category and trade marketing manager | 40-45 (50-55) | 3 | 4 | 3 | US $77.7k median, all buyers and purchasing agents (BLS, May 2025; not entry) / UK £45k P&G sales graduate (2027 intake), £35k Unilever customer development (2026), £33k Tesco product scheme (2027) / Italy €30-38k analyst band, €35-45k category manager, under 5 yrs (MP Italy 2026) | 3 |
+| 3.12 Events and sponsorship manager | 37-45 (60+) | 3 | 5 | 2 | US $61.2k median, all event planners; lowest tenth under $36.8k (BLS, May 2025) / UK £23k starter (National Careers Service); legal full-time minimum about £24.8k from April 2026 / Italy €30-35k communication and event specialist, under 5 yrs (MP Italy 2026) | 3 |
 
 Italian figures are gross annual RAL bands for "under 5 years' experience", so true entry is at or below the lower part of each band (Michael Page Italy, Studi di retribuzione 2026).
 
@@ -492,5 +675,33 @@ These ratings are the report author's judgement from the entry criteria above, n
 - Imperial College Business School, MSc Strategic Marketing employment report (class of 2024), https://www.imperial.ac.uk/business-school/programmes/msc-strategic-marketing/career-impact/employment-report/.
 - travail-industrie.com salary simulator for junior luxury product manager (France), https://travail-industrie.com/simulateur-salaire/luxe-mode/chef-de-produit-mode/junior (weak, anecdotal); service-public.gouv.fr, intern minimum gratification, https://www.service-public.gouv.fr/particuliers/vosdroits/F32131 (verified 1 Jan 2026); Assolombarda, Lombardy tirocini rules (2018), https://www.assolombarda.it/servizi/formazione/informazioni/pubblicati-i-nuovi-indirizzi-regionali-sui-tirocini-della-regione-lombardia-1.
 - Prior project research: research/careers/marketing.md and research/careers/luxury-and-fashion.md (October 2026), used for leads; items re-verified are cited above, others (P&G and Unilever job-cut figures, P&G cuts) rest on secondary summaries.
+
+**Second pass, 11 October 2026: role families 3.9 to 3.12 (re-researched the same day from opened sources)**
+
+Every figure in sections 3.9 to 3.12 comes from a page or document that was opened and read on 11 October 2026; search results were used only to locate pages, and anything marked "practitioner estimate", "my reading" or "my arithmetic" is judgement, not data.
+- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, "Public Relations Specialists" (May 2025 wages, 2025 employment, 2025-35 projection; page last modified 27 August 2026): https://www.bls.gov/ooh/media-and-communication/public-relations-specialists.htm
+- BLS, Occupational Outlook Handbook, "Meeting, Convention, and Event Planners" (May 2025 wages; last modified 27 August 2026): https://www.bls.gov/ooh/business-and-financial/meeting-convention-and-event-planners.htm
+- BLS, Occupational Outlook Handbook, "Purchasing Managers, Buyers, and Purchasing Agents" (May 2025 wages; last modified 27 August 2026): https://www.bls.gov/ooh/business-and-financial/purchasing-managers-buyers-and-purchasing-agents.htm
+- CIPR, "State of the Profession 2024" (Chalkstream survey, fieldwork 3-24 April 2024, 2,016 responses; PDF pages 5, 8, 21-22, 47, 60-61, 63): https://cipr.co.uk/common/Uploaded%20files/Policy/State%20of%20Prof/CIPR_State_of_the_Profession_2024.pdf
+- PRCA, "PRCA 2025 UK Census Highlights Strategic Growth and Stalled DEI Progress" (press release, 3 December 2025; the release only, the full census PDF was too large to open): https://prca-uk.prezly.com/prca-2025-uk-census-highlights-strategic-growth-and-stalled-dei-progress
+- PRCA, "The PRCA U.S. Census reveals concern on over-reliance on AI in the PR industry" (press release, 17 April 2024; 112 senior US respondents, fieldwork September-December 2023): https://prca-uk.prezly.com/the-prca-us-census-reveals-concern-on-over-reliance-on-ai-in-the-pr-industry-3317153
+- PRmoment, "UK PR's updated salary bands for 2025" (28 August 2025; Latte recruiter survey of 440+ UK PR staff, 89% in London; a recruiter survey, not official data): https://www.prmoment.com/podcasts/uk-prs-updated-salary-bands-for-2025
+- FGS Global, "U.K. Graduate Programme" (2026 intake; employer page): https://fgsglobal.com/join-us/uk-graduate-programme
+- Prospects (Graduate Futures Institute), "Public relations officer" (August 2026): https://www.prospects.ac.uk/job-profiles/public-relations-officer ; "Event manager" (November 2024): https://www.prospects.ac.uk/job-profiles/event-manager ; "Retail buyer" (September 2025): https://www.prospects.ac.uk/job-profiles/retail-buyer ; "How to get a job in ecommerce" (April 2026; its online-share figure is quoted from Retail Gazette, secondary): https://www.prospects.ac.uk/jobs-and-work-experience/job-sectors/retail/how-to-get-a-job-in-ecommerce
+- National Careers Service (undated careers profiles), "Public relations officer": https://nationalcareers.service.gov.uk/job-profiles/public-relations-officer ; "E-commerce manager": https://nationalcareers.service.gov.uk/job-profiles/e-commerce-manager ; "Events manager": https://nationalcareers.service.gov.uk/job-profiles/events-manager
+- GOV.UK, "National Minimum Wage and National Living Wage rates" (rates from 1 April 2026): https://www.gov.uk/national-minimum-wage-rates
+- Michael Page Italy, "Studi di retribuzione 2026" (pages 9-10, 25, 33-34, 36-37 and 45; hosted PDF; recruiter guide, bands by years of experience): https://www.qualenergia.it/wp-content/uploads/2026/05/Studi-di-retribuzione-2026-Michael-Page-Italy.pdf
+- Unilever, UK & Ireland Future Leaders Programme 2026 (employer page): https://careers.unilever.com/uk-and-ireland-unilever-future-leaders-programme-2026
+- P&G, "Sales Graduate Role 2027" (Harrogate), advert text as carried by Built In London (secondary copy of the employer's advert; P&G's own page returned an error): https://builtinlondon.uk/job/sales-graduate-role-2027/11463357
+- Tesco, employer listings on targetjobs for the 2027 intake (secondary copies; Tesco's own job pages returned errors): "Product - Home and Clothing Graduate Scheme": https://targetjobs.co.uk/jobs/product-home-and-clothing-graduate-scheme-245091 ; "Commercial Graduate Programme - Tesco Ireland": https://targetjobs.co.uk/jobs/commercial-graduate-programme-tesco-ireland-245165 ; "Online Graduate Programme - Tesco Ireland": https://targetjobs.co.uk/jobs/online-graduate-programme-tesco-ireland-245177
+- Michael Page UK, "Junior Category or Category Manager" advert (2026; single advert, weak): https://www.michaelpage.co.uk/job-detail/junior-category-or-category-manager/ref/jn-072026-7062980
+- Coburg Banks, "How to Hire a Category Manager in the UK (2026)" (13 July 2026; recruiter hiring guide, method not stated, weak): https://www.coburgbanks.co.uk/hiring/category-manager
+- Osservatorio eCommerce B2c Netcomm-Politecnico di Milano, figures released 19 May 2026, as reported by PagamentiDigitali (secondary; the Osservatorio's own release was not found): https://www.pagamentidigitali.it/ecommerce/ecommerce-b2c-nel-2026-litalia-vale-426-mld/
+- NACE, "Salaries Expected to Climb for Class of 2026 Grads Despite Flat Hiring" (press release, 12 February 2026; Winter 2026 Salary Survey, 150 employers, base pay): https://naceweb.org/about-us/press/2026/salaries-expected-to-climb-for-class-of-2026-grads-despite-flat-hiring
+- European Sponsorship Association, "European sponsorship market reaches €34.45bn in 2025" (12 March 2026; ESA Sponsorship Market Overview 2026 by Nielsen Sports): https://sponsorship.org/european-sponsorship-market-reaches-e34-45bn-in-2025-as-growth-continues-across-all-sectors/ ; ESA home page for its courses: https://sponsorship.org/
+- Informa, "Conference Producer" (Boston) advert as carried by Built In Boston (removed October 2025; single advert, secondary copy): https://www.builtinboston.com/job/conference-producer/7341064
+- Live Recruitment, "The salary shake-up: what's really changing for events professionals in 2026" (March 2026; recruiter blog, method not stated, weak): https://www.live-recruitment.co.uk/blog/2026/03/the-salary-shake-up-whats-really-changing-for-events-professionals-in-2026
+- Cvent, page for the You Search & Select "Annual Events Industry Salary Survey" (only the description could be read; no figures used): https://www.cvent.com/uk/resource/event/annual-events-industry-salary-survey
+- Not found: entry-level pay in the US for any of the four roles; graduate starting pay in Italy for any of the four (no employer scheme page with pay, no AlmaLaurea table by subject group, no CCNL Terziario minimum table could be reached); a UK graduate-scheme salary specific to e-commerce; an hours or stress survey for e-commerce, category or events roles; any pay data for sponsorship roles; a trade-body definition of category management (ECR, IGD, GS1); UK official earnings by occupation (ONS ASHE). Pages that could not be opened and are therefore not cited: Edelman UK entry scheme and its internship listing, the PRovoke agency ranking, the PRCA UK Census 2025 full PDF, P&G's and Tesco's own job pages, Unilever's sales job page, Amazon's graduate Brand Specialist page, Ferrero's graduate pages, CIPS. The web-search allowance for the session ran out before the last three searches.
 
 **Data limits.** Searches ran out before US entry-level marketing pay, Tokyo pay, Paris luxury pay from a primary salary survey, UK product marketing pay, and the Hays and Reed guides could be obtained. RepVue figures and Bridge Group 2024 AE details are from secondary summaries. Hours for most marketing roles are practitioner estimates, not measured data.

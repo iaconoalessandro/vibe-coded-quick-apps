@@ -79,8 +79,8 @@ for (const r of data.roles) {
   for (const tp of P.TEMPLATE) {
     const at = html.indexOf(`<section id="${tp.anchor}" class="cx-sec" data-src="${tp.key}"`);
     if (at < 0) { missing.push(`${r.id} ${tp.key}`); continue; }
-    const el = element(html, at);
-    const body = el.replace(/<h2>[\s\S]*?<\/h2>/, '');
+    const el = element(html, at).replace(/<figure class="fig cx-fig[\s\S]*?<\/figure>/, '');
+    const body = el.replace(/<h2[^>]*>[\s\S]*?<\/h2>/, '');
     if (M.countWords(text(body)) === 0) emptyS.push(`${r.id} ${tp.key}`);
     got += M.countWords(text(el));
     want += M.words(r.sections[tp.key].label) + M.words(r.sections[tp.key].md);
@@ -106,6 +106,31 @@ for (const r of data.roles) {
   if (Math.abs(got - want) > tol) words.push(`${r.id}: ${got} rendered vs ${want} in the source`);
 }
 t('every role page has all ten template sections', missing.length === 0, missing.slice(0, 5).join(', '));
+
+/* -------------------------------------------------------------- figures --- */
+const FIG = require('../tools/careers/figures');
+const onDisk = (f) => fs.existsSync(path.join(APP, f.s400)) && fs.existsSync(path.join(APP, f.s800));
+t('every field page has its plate, and the drawing exists', data.fields.every((f) => onDisk(FIG.field(f.slug)) && read(`careers/fields/${f.slug}.html`).includes(`img/plates/field-${f.slug}-800.webp`)));
+const figRoles = Object.keys(FIG.ROLE);
+t('every role with a figure is a role family', figRoles.every((s) => data.roles.some((r) => r.slug === s)), figRoles.filter((s) => !data.roles.some((r) => r.slug === s)).join(', '));
+const figBad = figRoles.filter((s) => {
+  const f = FIG.role(s), html = read(`careers/roles/${s}.html`), n = (html.match(/<figure class="fig cx-fig/g) || []).length;
+  return n !== 1 || !f.alt || !f.cap || (f.img ? !onDisk(f.img) : !/<text /.test(f.svg));
+});
+t('each of them has one figure with a caption, alternative text and its drawing or diagram', figBad.length === 0, figBad.join(', '));
+/* A diagram may only use words its own role's paragraph contains. */
+const loose = [];
+for (const s of figRoles) {
+  const f = FIG.role(s);
+  if (!f.svg) continue;
+  /* One diagram can serve neighbouring roles, each marked "this page". */
+  const src = figRoles.filter((x) => FIG.ROLE[x][0] === FIG.ROLE[s][0]).map((x) => data.roles.find((r) => r.slug === x)).map((r) => r.title + ' ' + r.sections.what.md).join(' ') + ' this page';
+  const have = new Set(src.toLowerCase().match(/[a-z&]+/g));
+  const used = [...f.svg.matchAll(/<text [^>]*>([^<]*)<\/text>/g)].flatMap((m) => m[1].replace(/&amp;/g, '&').toLowerCase().match(/[a-z&]+/g) || []);
+  const extra = [...new Set(used)].filter((w) => w.length > 3 && !have.has(w) && !have.has(w + 's') && !have.has(w.replace(/s$/, '')));
+  if (extra.length) loose.push(s + ': ' + extra.join(' '));
+}
+t('diagram labels come from the role\u2019s own text', loose.length === 0, loose.join(' | '));
 t('no template section is empty', emptyS.length === 0, emptyS.slice(0, 5).join(', '));
 t('every role page carries its source’s words (within 1%)', words.length === 0, words.slice(0, 5).join(' | '));
 
@@ -178,7 +203,12 @@ t('nothing is loaded from another host', external.length === 0, external.slice(0
 /* --------------------------------------------------------------- weight --- */
 const LIMIT = 400 * 1024;
 const sizes = htmlFiles.map((f) => [f, fs.statSync(path.join(APP, f)).size]).sort((a, b) => b[1] - a[1]);
-t(`no page is over ${LIMIT / 1024} KB (largest: ${sizes[0][0]}, ${(sizes[0][1] / 1024).toFixed(0)} KB)`, sizes[0][1] <= LIMIT);
+/* The source list is the one page that grows with every source cited (all 13
+ * reports on one page, text only, about 100 KB gzipped), so it has its own cap. */
+const SOURCES = 'careers/sources.html', SOURCES_LIMIT = 520 * 1024;
+const big = sizes.find(([f]) => f !== SOURCES);
+t(`no page is over ${LIMIT / 1024} KB (largest: ${big[0]}, ${(big[1] / 1024).toFixed(0)} KB)`, big[1] <= LIMIT);
+t(`the source list stays under ${SOURCES_LIMIT / 1024} KB (${(fs.statSync(path.join(APP, SOURCES)).size / 1024).toFixed(0)} KB)`, fs.statSync(path.join(APP, SOURCES)).size <= SOURCES_LIMIT);
 const roleMax = sizes.find(([f]) => f.startsWith('careers/roles/') && !f.endsWith('/index.html'));
 t(`role pages stay under 120 KB (largest ${(roleMax[1] / 1024).toFixed(0)} KB)`, roleMax[1] <= 120 * 1024);
 t('the search index stays under 200 KB', fs.statSync(path.join(APP, 'careers/data/search-index.json')).size <= 200 * 1024);

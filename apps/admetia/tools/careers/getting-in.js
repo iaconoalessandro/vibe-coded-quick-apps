@@ -24,7 +24,7 @@ const TPL = require('./templates');
 const IV = require('./interview');
 const DOCX = require('./docx');
 
-const SITE = 'https://iaconoalessandro.github.io/admetia/';
+const SITE = require('../shell').SITE;
 const READ_ON = '10 October 2026';
 
 function build(ctx) {

@@ -383,7 +383,7 @@
     row.dataset.key = p.key;
     if (has(state.pick, p.key)) row.classList.add('pg-picked');
     var name = el('div', 'name');
-    name.appendChild(document.createTextNode(p.name));
+    name.appendChild(SchoolLogos.heading(p.key, p.name));
     var meta = el('small', null, T(p.place));
     p.tracks.forEach(function (t) { meta.appendChild(el('span', 'chip-emph pg-track', trackLabel(t))); });
     name.appendChild(meta);
@@ -490,7 +490,9 @@
     picked.forEach(function (p) {
       var th = el('th');
       th.setAttribute('scope', 'col');
-      th.appendChild(el('span', 'pg-side-name', p.name));
+      var schoolName = el('span', 'pg-side-name');
+      schoolName.appendChild(SchoolLogos.heading(p.key, p.name));
+      th.appendChild(schoolName);
       var rm = el('button', 'filter-clear', T('Remove'));
       rm.type = 'button';
       rm.addEventListener('click', function () { state.pick = state.pick.filter(function (k) { return k !== p.key; }); update(true); });

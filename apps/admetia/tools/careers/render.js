@@ -18,9 +18,10 @@ const path = require('path');
 const M = require('./md');
 const P = require('./parse');
 const SH = require('../shell');
+const FIG = require('./figures');
 
 const esc = M.escHtml;
-const SITE = 'https://iaconoalessandro.github.io/admetia/';
+const SITE = SH.SITE;
 const LEVEL = { S: 'strong', P: 'possible', X: 'stretch' };
 const LEVEL_NAME = { S: 'Strong fit', P: 'Possible fit', X: 'Stretch' };
 
@@ -35,6 +36,20 @@ function site(ROOT, data) {
   };
   /* Names from the research (fields, backgrounds, roles) stay in English. */
   const nm = (s) => `<span translate="no">${esc(s)}</span>`;
+
+  /* Figures (tools/careers/figures.js). A field's plate is decorative and is
+   * not fetched on phones, where it is hidden: the <img> itself is a 1px
+   * blank and only the wide-screen <source> names the drawing. */
+  const BLANK = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+  const srcset = (from, f) => `${rel(from, f.s400)} 400w, ${rel(from, f.s800)} 800w`;
+  const fieldPlate = (from, slug) => { const f = FIG.field(slug); return `<picture class="cx-plate"><source media="(min-width: 641px)" type="image/webp" srcset="${srcset(from, f)}" sizes="300px"><img src="${BLANK}" alt="" width="800" height="533" decoding="async"></picture>`; };
+  function roleFigure(from, slug) {
+    const f = FIG.role(slug);
+    if (!f) return '';
+    const pic = f.svg ? `<div class="cx-diagram" role="img" aria-label="${ui(f.alt)}">${f.svg}</div>`
+      : `<img src="${rel(from, f.img.s400)}" srcset="${srcset(from, f.img)}" sizes="(max-width: 640px) 100vw, 300px" alt="${ui(f.alt)}" width="800" height="533" loading="lazy" decoding="async">`;
+    return `<figure class="fig cx-fig${f.svg ? ' cx-fig-dg' : ''}">${pic}<figcaption>${ui(f.cap)}</figcaption></figure>\n`;
+  }
 
   const roleById = new Map(data.roles.map((r) => [r.id, r]));
   const fieldBySlug = new Map(data.fields.map((f) => [f.slug, f]));
@@ -113,12 +128,13 @@ function site(ROOT, data) {
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(page.description)}">
-<link rel="canonical" href="${SITE}${from.replace(/(^|\/)index\.html$/, '$1')}">
+<link rel="canonical" href="${SH.url(from)}">
+${SH.ld({ path: from, section, crumbs, title, description: page.description })}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Admetia">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(page.description)}">
-<meta property="og:url" content="${SITE}${from.replace(/(^|\/)index\.html$/, '$1')}">
+<meta property="og:url" content="${SH.url(from)}">
 <meta property="og:image" content="${SITE}img/og-admetia.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -445,10 +461,11 @@ ${f.roles.map((id) => { const r = roleById.get(id); const tl = (l) => `<span cla
     const s1 = paras.filter((x) => !isScope(x)).join('\n\n');
     function s1Title(n) { return ['', '1. What this branch is', '2. Map of areas and sectors', '3. Role families', '4. Banks vs. other employer types', '5. Which backgrounds fit this branch', '6. Sources'][n]; }
 
-    const body = `<header class="cx-head">
+    const body = `<header class="cx-head cx-head-plate">
   <p class="kicker"><span>${ui('Field')}</span> · <span translate="no" lang="en">${esc(f.depth)}</span> · <span>${f.roles.length}</span> <span>${ui('role families')}</span></p>
   <h1 class="headline cx-h1" translate="no" lang="en">${esc(f.name)}</h1>
   <p class="standfirst" translate="no" lang="en">${mdInline(from, f.what)}</p>
+  ${fieldPlate(from, f.slug)}
 </header>
 ${verifyBox(from, f.gaps, 'Parts of this field to check first')}
 <div class="cx-layout">
@@ -515,6 +532,11 @@ ${discHtml('sources', 2, esc(s1Title(6)), wordsNote(nWords(s[6])), `<div class="
 
     const secs = T.map((t) => {
       const s = r.sections[t.key];
+      /* The figure's caption is interface text, so on its section the
+       * "research, not translated" mark moves from the section to its parts. */
+      const fig = t.key === 'what' ? roleFigure(from, r.slug) : '';
+      if (fig) return `<section id="${t.anchor}" class="cx-sec" data-src="${t.key}"><h2 translate="no" lang="en">${mdInline(from, s.label)}</h2>
+${fig}<div class="cx-prose" translate="no" lang="en">${md(from, s.md, { headingId: sl, headingShift: 1 })}</div></section>`;
       return `<section id="${t.anchor}" class="cx-sec" data-src="${t.key}" translate="no" lang="en"><h2>${mdInline(from, s.label)}</h2>
 <div class="cx-prose">${md(from, s.md, { headingId: sl, headingShift: 1 })}</div></section>`;
     }).join('\n');
@@ -747,7 +769,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
     const body = `<header class="cx-head">
   <p class="kicker">${ui('Career Compass · for when you have not decided yet')}</p>
   <h1 class="headline cx-h1">${ui('Career Compass')}</h1>
-  <p class="standfirst">${ui('A short questionnaire that ranks all 124 role families in the Career Explorer against what you studied, what you would enjoy doing and how you want to work, and shows the reasons, the obstacles and the research behind each one.')}</p>
+  <p class="standfirst">${ui('A short questionnaire that ranks all 154 role families in the Career Explorer against what you studied, what you would enjoy doing and how you want to work, and shows the reasons, the obstacles and the research behind each one.')}</p>
 </header>
 <div class="cc-app" data-cc-app>
 <div class="cc-intro" data-cc-intro>
@@ -797,7 +819,7 @@ ${Object.entries(I.branches).map(([bname, sec]) => {
 </div>`;
     add({ path: from, title: 'Career Compass', static: true, crumbs: [{ href: U.home, label: 'Career Explorer' }, { label: 'Career Compass' }],
       scripts: ['careers/data/compass-data.js', 'careers/assets/compass-core.js', 'careers/assets/compass.js'],
-      description: 'A short questionnaire for undecided students: ranks 124 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.', body });
+      description: 'A short questionnaire for undecided students: ranks 154 graduate role families against your degree, interests and constraints, and shows why, what stands in the way, and what to check next.', body });
   }());
 
   /* Getting in: recruiting calendar, application toolkit, interview prep,

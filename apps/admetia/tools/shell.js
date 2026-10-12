@@ -28,6 +28,11 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 
 const MOTTO = 'The way in — independent guides to master’s admissions, careers and working abroad';
 
+/* Where the site is published. A page's address: a folder's index.html is
+ * the folder itself. */
+const SITE = 'https://iaconoalessandro.github.io/admetia/';
+const url = (p) => SITE + p.replace(/(^|\/)index\.html(?=$|[?#])/, '$1');
+
 /* The five sections. The label is the task a reader arrives with. */
 const SECTIONS = [
   { id: 'study', label: 'Masters', href: 'study.html',
@@ -87,16 +92,18 @@ const LOCAL = {
 
 /* The hand-written root pages and what each one is. `ticker`: the page
  * carries the moving Admissions Index (the master's pages only). `intro`:
- * the opening titles may play on arrival from another site. */
+ * the opening titles may play on arrival from another site. `kind`: what
+ * the page is, for its structured data (ld below): a calculator, or the
+ * directory of programmes. */
 const ROOT_PAGES = {
   'index.html': { section: null, strip: 'The way in', full: true },
   'study.html': { section: 'study', current: 'study', ticker: true, intro: true, crumbs: [] },
-  'programmes.html': { section: 'study', current: 'programmes', ticker: true, crumbs: [['Programme Directory']] },
+  'programmes.html': { section: 'study', current: 'programmes', ticker: true, crumbs: [['Programme Directory']], kind: 'directory' },
   'business.html': { section: 'study', current: 'business', ticker: true, intro: true, crumbs: [['Business calculators']] },
   'it.html': { section: 'study', current: 'it', ticker: true, intro: true, crumbs: [['Computing calculators']] },
-  'mba.html': { section: 'study', current: 'mba', ticker: true, crumbs: [['Business calculators', 'business.html'], ['MBA calculator']] },
-  'masters.html': { section: 'study', current: null, ticker: true, crumbs: [['Business calculators', 'business.html'], ['Master’s calculator']] },
-  'computing.html': { section: 'study', current: null, ticker: true, crumbs: [['Computing calculators', 'it.html'], ['Computing calculator']] },
+  'mba.html': { section: 'study', current: 'mba', ticker: true, crumbs: [['Business calculators', 'business.html'], ['MBA calculator']], kind: 'calculator' },
+  'masters.html': { section: 'study', current: null, ticker: true, crumbs: [['Business calculators', 'business.html'], ['Master’s calculator']], kind: 'calculator' },
+  'computing.html': { section: 'study', current: null, ticker: true, crumbs: [['Computing calculators', 'it.html'], ['Computing calculator']], kind: 'calculator' },
   'jobs.html': { section: 'jobs', current: 'jobs', crumbs: [] },
   'hiring.html': { section: 'jobs', current: 'hiring', crumbs: [['Hiring by country']] },
   'map.html': { section: 'move', current: null, crumbs: [], dynamicCrumbs: true },
@@ -108,6 +115,52 @@ function rel(from, to) {
   let r = path.posix.relative(path.posix.dirname(from), m[1]);
   if (!r) r = path.posix.basename(m[1]);
   return r + m[2];
+}
+
+function sectionLinks(opts, list) {
+  const r = (to) => rel(opts.path, to);
+  const t = opts.t || esc;
+  const cur = (key) => (key === opts.current ? ' class="on" aria-current="page"' : '');
+  const item = (x) => `<a href="${r(x.href)}" data-sec="${x.key}"${cur(x.key)}>${t(x.label)}</a>`;
+  return list.map((x) => x.items
+    ? `    <div class="sec-cluster">
+      <a class="sec-group${x.key === opts.current ? ' on' : ''}" href="${r(x.href)}" data-sec="${x.key}"${x.key === opts.current ? ' aria-current="page"' : ''}>${t(x.label)}</a>
+      <span class="sec-items">
+${x.items.map((y) => '        ' + item(y)).join('\n')}
+      </span>
+    </div>`
+    : '    ' + item(x)).join('\n');
+}
+
+/* Every page carries every section's destinations, with paths resolved for
+ * that page. Sections without a local strip use their existing site index. */
+function sectionMenus(opts) {
+  const t = opts.t || esc;
+  return SECTIONS.map((s) => {
+    const list = LOCAL[s.id].length ? LOCAL[s.id] : [
+      { key: s.id, label: 'Overview', href: s.href },
+      ...FOOT.find(([id]) => id === s.id)[1].map(([label, href]) => ({ key: href, label, href }))
+    ];
+    const current = opts.section === s.id ? (opts.current || s.id) : null;
+    return `<nav class="sections" data-section-menu="${s.id}" id="site-section-${s.id}" aria-label="${t(s.label)}" hidden>
+  <div class="sections-inner">
+${sectionLinks({ ...opts, current }, list)}
+  </div>
+</nav>`;
+  }).join('\n\n');
+}
+
+/* The page's trail: Home, the section, then the page's own steps, as
+ * { label, href, name }. A step with no href is not a link: the page itself,
+ * or the section when it is the page. The breadcrumbs print it and the
+ * structured data repeats it, so the two cannot disagree. */
+function trail(opts) {
+  const sec = opts.section ? sectionById[opts.section] : null;
+  if (!sec || !opts.crumbs) return [];
+  const out = [{ label: 'Home', href: 'index.html' }, { label: sec.label, href: sec.href }];
+  for (const c of opts.crumbs) out.push(Array.isArray(c) ? { label: c[0], href: c[1] } : { label: c.label, href: c.href, name: c.name });
+  if (opts.dynamicCrumbs || !opts.crumbs.length) delete out[out.length - 1].href;
+  return out;
 }
 
 /* opts:
@@ -153,18 +206,9 @@ ${SECTIONS.map((s) => `    <li><a href="${r(s.href)}" data-section="${s.id}"${se
   </ul>
 </nav>`;
 
-  const cur = (key) => (key === opts.current ? ' class="on" aria-current="page"' : '');
-  const item = (x) => `<a href="${r(x.href)}" data-sec="${x.key}"${cur(x.key)}>${t(x.label)}</a>`;
   const local = sec && LOCAL[sec.id].length ? `<nav class="sections" aria-label="${t(sec.label)}">
   <div class="sections-inner">
-${LOCAL[sec.id].map((x) => x.items
-    ? `    <div class="sec-cluster">
-      <a class="sec-group${x.key === opts.current ? ' on' : ''}" href="${r(x.href)}" data-sec="${x.key}"${x.key === opts.current ? ' aria-current="page"' : ''}>${t(x.label)}</a>
-      <span class="sec-items">
-${x.items.map((y) => '        ' + item(y)).join('\n')}
-      </span>
-    </div>`
-    : '    ' + item(x)).join('\n')}
+${sectionLinks(opts, LOCAL[sec.id])}
   </div>
 </nav>` : '';
 
@@ -172,17 +216,10 @@ ${x.items.map((y) => '        ' + item(y)).join('\n')}
    * hub itself shows only "Home › section" when it has a trail to anchor
    * (the Atlas fills its own when a country is open). */
   let crumbs = '';
-  if (sec && opts.crumbs) {
-    const trail = [[t('Home'), 'index.html']];
-    if (opts.crumbs.length || opts.dynamicCrumbs) trail.push([t(sec.label), sec.href]);
-    else trail.push([t(sec.label)]);
-    for (const c0 of opts.crumbs) {
-      const c = Array.isArray(c0) ? { label: c0[0], href: c0[1] } : c0;
-      trail.push([c.name ? (opts.name || esc)(c.label) : t(c.label), c.href]);
-    }
-    if (opts.dynamicCrumbs) trail[trail.length - 1].length = 1;
-    crumbs = `<nav class="trail" aria-label="${t('Breadcrumb')}"><ol id="trail">` + trail.map((c, i) => {
-      const last = i === trail.length - 1;
+  const steps = trail(opts).map((c) => [c.name ? (opts.name || esc)(c.label) : t(c.label), c.href]);
+  if (steps.length) {
+    crumbs = `<nav class="trail" aria-label="${t('Breadcrumb')}"><ol id="trail">` + steps.map((c, i) => {
+      const last = i === steps.length - 1;
       return last || !c[1] ? `<li><span${last ? ' aria-current="page"' : ''}>${c[0]}</span></li>` : `<li><a href="${r(c[1])}">${c[0]}</a></li>`;
     }).join('') + '</ol></nav>';
   }
@@ -194,7 +231,9 @@ ${strip}
 ${mast}
 
 ${globalNav}
-${local ? '\n' + local + '\n' : ''}${crumbs ? '\n' + crumbs + '\n' : ''}`;
+${local ? '\n' + local + '\n' : ''}
+${sectionMenus(opts)}
+${crumbs ? '\n' + crumbs + '\n' : ''}`;
 }
 
 /* The footer's site index: every section with the pages a reader is most
@@ -220,6 +259,41 @@ ${links.map(([l, h]) => `      <li><a href="${r(h)}">${t(l)}</a></li>`).join('\n
 </nav>`;
 }
 
+/* What a search engine is told about a page, in <head>: its one address,
+ * and structured data (schema.org, JSON-LD) saying what the page is, the
+ * site it belongs to and where it sits, by the same trail the breadcrumbs
+ * print. Nothing here is shown to a reader, and nothing is claimed that
+ * the page does not show.
+ *
+ * opts: path, section, crumbs, dynamicCrumbs as for top(), and
+ *   title, description   the page's own, as plain text
+ *   kind                 'calculator' for a free tool that runs in the page
+ *   main                 the page's main entity, if it has one to name
+ */
+function ld(opts) {
+  const page = url(opts.path);
+  const site = { '@type': 'WebSite', '@id': SITE + '#website', url: SITE, name: 'Admetia' };
+  const graph = [];
+  if (!opts.section) {
+    graph.push({ ...site, alternateName: 'Admetia — the way in', description: opts.description, inLanguage: ['en', 'it'] });
+  } else {
+    const steps = trail(opts);
+    const node = { '@type': opts.main ? 'CollectionPage' : 'WebPage', '@id': page + '#page', url: page, name: opts.title, description: opts.description,
+      inLanguage: 'en', isPartOf: site, breadcrumb: { '@id': page + '#trail' } };
+    if (opts.kind === 'calculator') {
+      node.mainEntity = { '@type': 'WebApplication', name: opts.title, url: page, applicationCategory: 'EducationalApplication',
+        operatingSystem: 'Any', browserRequirements: 'Requires JavaScript', isAccessibleForFree: true,
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' } };
+    }
+    if (opts.main) node.mainEntity = opts.main;
+    graph.push(node);
+    graph.push({ '@type': 'BreadcrumbList', '@id': page + '#trail',
+      itemListElement: steps.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: c.href ? url(c.href) : page })) });
+  }
+  /* "<" is written as an escape so no text in the data can close the script. */
+  return '<script type="application/ld+json">' + JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c') + '</script>';
+}
+
 /* Every interface string this file prints, for the Italian checks. */
 function strings() {
   const out = new Set(['Skip to content', 'Admissions index', 'Pause', 'Play', 'Display settings', 'Main', 'Menu', 'Home', 'Breadcrumb', 'Site index', MOTTO, 'The way in']);
@@ -230,4 +304,4 @@ function strings() {
   return [...out];
 }
 
-module.exports = { SECTIONS, LOCAL, ROOT_PAGES, FOOT, MOTTO, top, foot, rel, esc, strings, sectionById };
+module.exports = { SECTIONS, LOCAL, ROOT_PAGES, FOOT, MOTTO, SITE, url, top, foot, trail, ld, rel, esc, strings, sectionById, sectionMenus };

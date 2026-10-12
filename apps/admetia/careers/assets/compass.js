@@ -1009,7 +1009,7 @@
     d.appendChild(el('p', null, T('Then, each shown on the role: +4 for a sector you chose; up to −8 where the local language is usually required and you lack it; −5 for employers that rarely sponsor visas when every place you chose needs one; −6 where citizenship conditions are common and you are not an EU citizen; up to −6 for AI exposure if it worries you; −4 for PhD-gated roles unless you would consider a PhD; up to ±12 for roles like the ones you marked.')));
 
     d.appendChild(el('h3', 'cc-h3', T('What is research and what is our reading')));
-    d.appendChild(el('p', null, T('Hours, stress, people, quant, entry difficulty, background fit and pay come from the thirteen branch reports (research/branches/index.md). Every quoted passage comes from the file named under it. What each role mostly involves, the kind of employer, relative pay, upside, exits, stability, AI exposure and language need are our reading of each role’s research page, made once for all 124 roles and listed in tools/careers/compass.js.')));
+    d.appendChild(el('p', null, T('Hours, stress, people, quant, entry difficulty, background fit and pay come from the thirteen branch reports (research/branches/index.md). Every quoted passage comes from the file named under it. What each role mostly involves, the kind of employer, relative pay, upside, exits, stability, AI exposure and language need are our reading of each role’s research page, made once for all 154 roles and listed in tools/careers/compass.js.')));
 
     d.appendChild(el('h3', 'cc-h3', T('Limits')));
     var ul = el('ul');

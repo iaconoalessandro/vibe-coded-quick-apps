@@ -33,6 +33,19 @@ const PAGES = Object.keys(S.ROOT_PAGES);
 /* ------------------------------------------------------------- shell --- */
 const stale = PAGES.filter((p) => stamp(p, read(p)) !== read(p));
 t('every root page carries the current shell and figures (run `npm run shell`)', stale.length === 0, stale.join(', '));
+const menuPages = [...PAGES];
+(function walk(dir) {
+  for (const entry of fs.readdirSync(path.join(APP, dir), { withFileTypes: true })) {
+    const file = dir + '/' + entry.name;
+    if (entry.isDirectory()) walk(file);
+    else if (entry.name.endsWith('.html')) menuPages.push(file);
+  }
+})('careers');
+const missingMenus = menuPages.filter((p) => {
+  const html = read(p);
+  return S.SECTIONS.some((s) => !html.includes(`data-section-menu="${s.id}"`));
+});
+t('every page, including Home and nested subsections, offers all five section menus', missingMenus.length === 0, missingMenus.join(', '));
 PAGES.forEach((p) => {
   const h = read(p);
   const nav = /<nav class="site-nav" aria-label="Main">[\s\S]*?<\/nav>/.exec(h);
@@ -56,6 +69,28 @@ t('the ticker can be paused, and stays still for readers who ask for less motion
 t('the global navigation folds behind a Menu button only with script, and Escape closes it',
   /btn\.hidden = false;\s*nav\.classList\.add\('has-toggle'\)/.test(read('js/theme.js')) && /e\.key === 'Escape'/.test(read('js/theme.js')) && /class="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-list" hidden/.test(read('index.html')));
 t('the Career Explorer is built with the same shell', /const SH = require\('\.\.\/shell'\)/.test(read('tools/careers/render.js')) && /SH\.top\(\{ path: from, section, current, crumbs/.test(read('tools/careers/render.js')));
+/* What search engines are told: one address a page, and structured data
+ * that says no more than the page does. */
+const ldOf = (h) => { const m = /<script type="application\/ld\+json">(.*?)<\/script>/.exec(h); try { return m && JSON.parse(m[1])['@graph']; } catch (e) { return null; } };
+const plain = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&');
+const seoBad = PAGES.concat(['careers/index.html', 'careers/roles/index.html', 'careers/fields/finance.html', 'careers/toolkit.html']).filter((p) => {
+  const h = read(p), g = ldOf(h);
+  const canon = (/<link rel="canonical" href="([^"]+)">/.exec(h) || [])[1], og = (/<meta property="og:url" content="([^"]+)">/.exec(h) || [])[1];
+  if (!g || canon !== S.url(p) || canon !== og || (h.match(/rel="canonical"/g) || []).length !== 1) return true;
+  if (p === 'index.html') return g.length !== 1 || g[0]['@type'] !== 'WebSite' || g[0].url !== S.SITE;
+  /* The breadcrumbs a reader sees and the ones a crawler is given are the same. */
+  const seen = [...(/<ol id="trail">(.*?)<\/ol>/.exec(h) || ['', ''])[1].matchAll(/<li>(.*?)<\/li>/g)].map((x) => plain(x[1]));
+  const told = (g.find((x) => x['@type'] === 'BreadcrumbList') || { itemListElement: [] }).itemListElement;
+  return !seen.length || seen.join('|') !== told.map((x) => x.name).join('|') || told.some((x, i) => x.position !== i + 1 || !x.item.startsWith(S.SITE)) ||
+    g[0].url !== canon || g[0].name !== plain((/<title>(.*?)<\/title>/.exec(h) || [])[1]);
+});
+t('every page names its one address, and its structured data matches its title and breadcrumbs', seoBad.length === 0, seoBad.join(', '));
+const dirLd = ldOf(read('programmes.html'))[0].mainEntity;
+t('the directory names every programme for search engines, and no page claims to be a school', dirLd['@type'] === 'ItemList' && dirLd.itemListElement.length === dirLd.numberOfItems &&
+  PAGES.every((p) => !/"@type":"(EducationalOrganization|CollegeOrUniversity)","@id"/.test(read(p))));
+t('robots.txt shuts nothing out and names the sitemap', /^User-agent: \*\nAllow: \/$/m.test(read('robots.txt')) && !/^Disallow: \S/m.test(read('robots.txt')) && read('robots.txt').includes('Sitemap: ' + S.SITE + 'sitemap.xml'));
+t('tables drawn by script say which way their headers read', /h\.scope = h\.parentNode\.parentNode\.tagName === 'THEAD' \? 'col' : 'row'/.test(read('js/page-map.js')) && /h\.scope = /.test(read('js/page-hiring.js')));
+t('a questionnaire step sits under the page’s own headline', /title\.setAttribute\('aria-level', '2'\)/.test(read('js/engine.js')));
 t('the service worker keeps the new pages offline', ['study.html', 'jobs.html', 'method.html'].every((p) => read('sw.js').includes(`'${p}'`)));
 
 /* ------------------------------------------------------------ routes --- */
@@ -149,7 +184,9 @@ else {
   t('no page was removed', L.pages.every((p) => fs.existsSync(path.join(APP, p.file))));
 }
 const ex = JSON.parse(read('docs/ux-refactor/content-exceptions.json'));
-t('every exception to the ledger gives its reason, and is a label or decoration', Object.values(ex.blocks).concat(Object.values(ex.strings)).every((r) => /^(Interface label|Decoration|Not a string)/.test(r)) && !Object.keys(ex.links).length);
+/* "Recounted": a count, or a list worked out from the scores, that changed
+ * when role families were added; what it counts is still published. */
+t('every exception to the ledger gives its reason, and is a label, decoration or a count', Object.values(ex.blocks).concat(Object.values(ex.strings)).every((r) => /^(Interface label|Decoration|Not a string|Recounted)/.test(r)) && !Object.keys(ex.links).length);
 const retiredFiles = [
   'fonts/OFL-noto-serif-display.txt', 'fonts/OFL-roboto-serif.txt',
   'fonts/noto-serif-display.woff2', 'fonts/roboto-serif-condensed.woff2',
@@ -157,11 +194,28 @@ const retiredFiles = [
   'img/wordmark/README.md', 'img/wordmark/fbi-watchlist.png',
   'img/wordmark/fbi-watchlist.webp', 'img/wordmark/wall-street.png', 'img/wordmark/wall-street.webp'
 ];
-t('file exceptions cover only updated credits and explicitly retired template assets',
-  Object.keys(ex.files).sort().join() === ['CREDITS.md','fonts/README.md',...retiredFiles].sort().join() &&
+/* Research that gained role families (11 October 2026), and the two files
+ * the Career Explorer build makes from it. */
+const extended = Object.keys(ex.files).filter((f) => /^Extended: /.test(ex.files[f]));
+const regenerated = ['careers/data/compass-data.js', 'careers/data/search-index.json'];
+t('file exceptions cover only updated credits, retired template assets and extended research',
+  Object.keys(ex.files).sort().join() === ['CREDITS.md','fonts/README.md',...retiredFiles,...extended,...regenerated].sort().join() &&
+  extended.length > 0 && extended.every((f) => /^research\/branches\/(index|reports\/[a-z-]+)\.md$/.test(f)) &&
+  regenerated.every((f) => /^Regenerated: /.test(ex.files[f])) &&
   ['CREDITS.md','fonts/README.md'].every(f=>/^Updated: /.test(ex.files[f])) &&
   retiredFiles.every(f=>/^Removed: /.test(ex.files[f])&&!fs.existsSync(path.join(APP,f))) &&
   ['Pexels 37758542', 'Pexels 8730981', 'Pexels 7683734', 'CC0'].every(x=>read('CREDITS.md').includes(x)));
+if (haveBase) {
+  /* Extended, not rewritten: each earlier line is still there, or starts a
+   * current line once digits are ignored (a row that gained cells, a count). */
+  const nd = (x) => x.replace(/\d+/g, '#');
+  const lost = extended.filter((f) => {
+    const now = read(f).split('\n'), set = new Set(now), nows = now.map(nd);
+    return execFileSync('git', ['show', BASE + ':' + f], { cwd: APP, encoding: 'utf8', maxBuffer: 1 << 28 }).split('\n')
+      .some((l) => l.trim() && !set.has(l) && !nows.some((x) => x.startsWith(nd(l).replace(/\s*\|?\s*$/, ''))));
+  });
+  t('extended research files keep every line they had (' + extended.length + ')', lost.length === 0, lost.join(', '));
+}
 
 /* ------------------------------------------------------------- facts --- */
 const m = { window: {}, Math, console, Object, String, Number, parseFloat, isNaN, Infinity };
@@ -207,7 +261,7 @@ t('every string the shell and the figures print has Italian', noIt.length === 0,
 const viewWords = [...viewsSrc[1].matchAll(/(?:nav|about): '((?:[^'\\]|\\.)+)'/g)].map((x) => x[1]);
 const noIt2 = viewWords.filter((k) => dict[k] === undefined);
 t(`every view’s name and description has Italian (${viewWords.length})`, viewWords.length >= 15 && noIt2.length === 0, noIt2.slice(0, 3).join(' | '));
-['Open every part', 'Fold the optional parts', 'Read the whole guide on one page', 'In this guide', 'What do you need to know?', 'Show routes for', 'Every path', 'The way in', 'Not covered yet', 'Read the advice',
+['Open every part', 'Fold the optional parts', 'Read the whole guide on one page', 'What do you need to know?', 'Show routes for', 'Every path', 'The way in', 'Not covered yet', 'Read the advice',
   'Where to go next', 'Pause', 'Play', 'Menu', 'Pick up where you left off', '{name} calculator: see your results'].forEach((k) => t('Italian for "' + k + '"', dict[k] !== undefined));
 t('the Italian motto is the masthead’s', dict[S.MOTTO] !== undefined && read('js/intro.js').includes(dict[S.MOTTO]));
 

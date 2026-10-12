@@ -186,7 +186,7 @@
       var r = el('div', 'row');
 
       var name = el('div', 'name');
-      name.appendChild(document.createTextNode(school.name));
+      name.appendChild(SchoolLogos.heading(KEY(school.name), school.name));
       var detail = T('{region} · Stretch {stretch} · Competitive {competitive} · Strong {strong}',
         { region: T(school.region), stretch: school.stretch, competitive: school.competitive, strong: school.strong });
       if (notes.length) detail += ' — ' + notes.join(', ');
@@ -229,7 +229,7 @@
         var r = el('div', 'row');
 
         var name = el('div', 'name');
-        name.appendChild(document.createTextNode(school.name));
+        name.appendChild(SchoolLogos.heading(KEY(school.name), school.name));
         name.appendChild(el('small', null, T('{region} · needs {points} points', { region: T(school.region), points: school.points })));
         addDeadline(name, school.name);
 

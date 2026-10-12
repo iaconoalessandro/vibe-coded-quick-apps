@@ -83,13 +83,104 @@
     if (!btn) return;
     btn.hidden = false;
     nav.classList.add('has-toggle');
+    var dropdowns = [];
+    function closeSections() {
+      dropdowns.forEach(function (dropdown) { dropdown.set(false); });
+    }
     function set(open) {
       nav.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (!open) closeSections();
     }
     btn.addEventListener('click', function () { set(!nav.classList.contains('open')); });
     nav.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); }
+    });
+
+    /* All five menus are stamped by tools/shell.js, including on the front
+     * page. Keep the local strip as a no-script fallback until setup succeeds. */
+    var local = document.querySelector('.site-nav + .sections:not([data-section-menu])');
+    Array.prototype.forEach.call(nav.querySelectorAll('.site-nav-list a[data-section]'), function (link) {
+      var sections = document.querySelector('[data-section-menu="' + link.getAttribute('data-section') + '"]');
+      if (!sections) return;
+      var item = link.parentNode;
+      var toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'site-subnav-toggle';
+      toggle.innerHTML = link.innerHTML;
+      toggle.setAttribute('data-section', link.getAttribute('data-section'));
+      if (link.hasAttribute('aria-current')) toggle.setAttribute('aria-current', link.getAttribute('aria-current'));
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', sections.id);
+      sections.classList.add('site-subnav');
+      sections.hidden = true;
+      item.classList.add('site-subnav-item');
+      item.replaceChild(toggle, link);
+      item.appendChild(sections);
+      var timer;
+      var hoverOpened = false;
+      var keyboard = false;
+      var dropdown = { set: sectionSet };
+      dropdowns.push(dropdown);
+
+      function sectionSet(open) {
+        clearTimeout(timer);
+        if (open) dropdowns.forEach(function (other) { if (other !== dropdown) other.set(false); });
+        sections.hidden = !open;
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) {
+          /* Keep the attached panel inside the viewport even in Italian. */
+          sections.style.setProperty('--subnav-shift', '0px');
+          var box = sections.getBoundingClientRect();
+          var width = document.documentElement.clientWidth;
+          var shift = box.left < 8 ? 8 - box.left : (box.right > width - 8 ? width - 8 - box.right : 0);
+          sections.style.setProperty('--subnav-shift', shift + 'px');
+          sections.style.setProperty('--subnav-top', box.top + 'px');
+        }
+      }
+      toggle.addEventListener('click', function () {
+        sectionSet(hoverOpened || sections.hidden);
+        hoverOpened = false;
+      });
+      item.addEventListener('pointerenter', function (e) {
+        if (e.pointerType !== 'mouse' || !window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 761px)').matches) return;
+        keyboard = false;
+        hoverOpened = sections.hidden;
+        sectionSet(true);
+      });
+      item.addEventListener('pointerleave', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        timer = setTimeout(function () {
+          if (!keyboard || !item.contains(document.activeElement)) sectionSet(false);
+        }, 150);
+      });
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          sectionSet(true);
+          sections.querySelector('a').focus();
+        }
+      });
+      item.addEventListener('keydown', function (e) {
+        keyboard = true;
+        if (e.key === 'Escape' && !sections.hidden) {
+          e.preventDefault();
+          e.stopPropagation();
+          sectionSet(false);
+          toggle.focus();
+        }
+      });
+      item.addEventListener('focusout', function (e) {
+        if (e.relatedTarget && !item.contains(e.relatedTarget)) sectionSet(false);
+      });
+      document.addEventListener('click', function (e) {
+        if (!item.contains(e.target)) sectionSet(false);
+      });
+    });
+    if (local && dropdowns.length) local.parentNode.removeChild(local);
+    window.addEventListener('resize', closeSections);
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target)) set(false);
     });
   }
 

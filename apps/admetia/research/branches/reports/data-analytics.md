@@ -275,6 +275,92 @@ In Italy such roles are concentrated in Milan scale-ups, consultancies and a few
 
 **Honest downsides and who it is NOT a good fit for**: Long hours at peaks, utilisation pressure, travel, and work that may be repetitive or politically constrained; many projects end before you see results. Offshore delivery work is often narrower and lower paid. Not for: those wanting deep ownership of one data product or predictable hours.
 
+---
+
+### 3.9 Pricing and revenue management analyst
+
+**What you actually do.** You set and adjust prices from data. In airlines and hotels this is revenue management: forecast demand for each flight or night, decide how much capacity to sell at each price, and react to bookings and competitors; Southwest Airlines splits the department into Pricing, Yield Management, Revenue Performance and Analysis, and Operations Research (2026 internship advert). In insurance and retail it is pricing analysis: NFU Mutual's graduate advert (2026) lists "extracting, cleaning and analysing data to support pricing models", running the models and "developing rating logic". Tools named in adverts: Excel, SQL, Python and R; Emblem and Radar in insurance (NFU Mutual); ATPCO, Amadeus, Alteryx and Tableau in airlines (Southwest).
+
+**A typical day and week.** Check yesterday's bookings or sales against forecast, change prices or availability on the routes or products you own, analyse a competitor's move, present the week's performance. Insurance runs on a slower cycle of pricing reviews: data extraction, model refresh, testing, implementation (Ageas and NFU Mutual adverts). No time-use data found.
+
+**Hours, stress and lifestyle.**
+- Hours: no reliable data found for this role; 40-45 with peaks of 50 around seasonal launches is my estimate.
+- Stress: 3/5; results are visible daily (my judgement).
+- Lifestyle: hybrid in UK insurance (Admiral asks for one office day a week in Cardiff); on site at US airline headquarters (Southwest, Dallas).
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 4/5. The work is statistical modelling plus explaining a price change to commercial managers.
+
+**Compensation (approximate).**
+- US: official statistics have no pricing-analyst occupation. Closest BLS group: operations research analysts, who may help managers "set prices", median $88,940, lowest 10% under $57,060 (May 2025). Professional Pricing Society survey (December 2023, 752 responses, all experience levels): analysts average $107,872, managers $135,126; only 4% of respondents had two years' experience or less, so this is not an entry figure. An Alaska Airlines analyst advert showed $80,000-$149,000 across levels (aggregator copy, 2026; weak).
+- UK: graduate insurance pricing schemes advertise £33,000 plus up to 10% bonus (NFU Mutual, starting September 2027) and £30,000-£34,000 (Ageas, advert closed 10 August 2026). All pricing-analyst adverts: median £46,500, 10th percentile £31,000 (ITJobsWatch, 30 adverts, 6 months to 11 Oct 2026, all levels).
+- Italy: no reliable entry-level data found. Indeed Italy's job-advert average for pricing analysts is EUR 36,416 (23 salaries, all levels, 4 October 2026; weak). Baselines for all graduates: EUR 1,495 net a month one year after a second-level degree (AlmaLaurea 2026 report); EUR 34,445 gross a year at ages 25-34 (JobPricing University Report 2026, via Studenti.it, secondary).
+
+**Career path.** Pricing or revenue analyst (0-3 years) → senior analyst (3-5) → pricing or revenue manager → head of pricing, commercial director. Year bands are my estimate; PPS reports pay by title, not by years.
+
+**Exit opportunities.**
+- After 2-3 years: commercial finance, category management, data science, strategy, pricing consulting.
+- After 7-10 years: head of pricing or revenue, commercial director, pricing consulting.
+
+**Tier list of employers.**
+- Tier 1: airline revenue management departments (Ryanair, easyJet, IAG, Lufthansa, Southwest), hotel groups' central revenue teams (Marriott, Hilton, Accor, IHG), online travel companies, and pricing teams at large insurers (Admiral, Ageas, NFU Mutual, Direct Line; in Italy Generali, UnipolSai).
+- Tier 2: retailers, consumer-goods and industrial companies; pricing consultancies (Simon-Kucher, over 2,200 staff in 30+ countries).
+- Tier 3: single hotels and small firms where pricing is part of a finance or sales job.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: Admiral asks for a 2:1 in a mathematical degree; Ageas for mathematics, statistics, economics or data science; NFU Mutual accepts any subject with strong numerical components.
+- Schemes and timing: UK insurers recruit about a year ahead (NFU Mutual closes 8 November 2026 for September 2027: online assessment, video interview, assessment centre). Admiral's is a direct job, not a rotation: a numerical reasoning test, then one interview. Airlines offer internships more than graduate schemes: Southwest (12 weeks, $22-$25 an hour, applications closed January 2026), Finnair's revenue unit (4-6 months).
+- Certifications: none is needed at entry; all are mid-career signals. HSMAI's CRME (hotels): a 50-point experience application plus an online exam, $500-$675. Cornell's online hotel revenue management certificate: five courses, about three months, $3,750. Professional Pricing Society CPP: six course credits plus an exam.
+- Common mistakes: no SQL; no view on how price affects demand.
+- Non-target routes: general data analyst (3.1), commercial finance, a hotel's reservations or revenue office.
+- Entry difficulty: 3/5.
+
+**Honest downsides and who it is NOT a good fit for.** A narrow lever, constant monitoring, and blame when revenue misses forecast. True entry posts are scarce outside insurance: the one European airline opening I could read was a 4-6 month traineeship (Finnair), and 55% of PPS respondents have more than ten years' experience. Hospitality and retail are among the lowest-paying industries in the PPS survey. Poor fit: people who want open-ended analysis, or who dislike being measured against a daily number.
+
+---
+
+### 3.10 Fraud and credit risk analyst
+
+**What you actually do.** You use data to decide whom to lend to and which transactions to stop. Fraud analysts review flagged payments and applications, find new fraud patterns, write and tune the detection rules and report losses. Credit risk analysts assess applicants, monitor arrears, set lending rules and limits and report the quality of the loan book. Capital One's UK graduate advert (2026) describes the strategy end: adapting "lending policy to a changing macroeconomic environment" and protecting customers from fraud. The model-building version of this work is the data scientist in banking and insurance in the data-science branch; this role runs the rules and the reporting. Tools (O*NET, the US occupational database): SQL, SAS, Python, R, Excel, Tableau, plus credit-bureau and decision systems. EU lenders must follow the EBA Guidelines on loan origination and monitoring (applied since 30 June 2021).
+
+**A typical day and week.** A queue of alerts or applications, an investigation of an unusual pattern, a change to a rule and its test, a weekly loss or arrears report. No time-use data found.
+
+**Hours, stress and lifestyle.**
+- Hours: 37-42, peaks 45 (my estimate). Credit risk: regular extra hours are typical "but not weekends or shifts" (Prospects, financial risk analyst profile, June 2025). Italian bank contracts set 37 hours a week (CCNL credito, from 1 July 2024; FABI). Fraud and financial-crime operations run shifts: Monzo's are 8.5 hours between 07:00 and 18:30 with one weekend in four, or 12:00-20:30 (2026 advert).
+- Stress: 2-3/5; Prospects notes pressure to meet deadlines.
+- Lifestyle: office or hybrid; stable. Lloyds expects two office days a week, Capital One three.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 3/5. Queue work is procedural; credit-strategy adverts ask for scorecards, logistic regression and decision trees (ITJobsWatch, 6 adverts, 6 months to 11 Oct 2026).
+
+**Compensation (approximate).**
+- US: BLS credit analysts (2025 wage data, read on O*NET): median $83,510, 10th percentile $56,250, 25th $65,210. Fraud analysts have no own series: they sit in "financial specialists, all other", median $81,100. Top of the market: Capital One's Business Analyst Associate programme, $109,000 in McLean, $99,000 in Richmond (advert dated 9 July 2025, job-board copy).
+- UK: Prospects gives £25,000-£30,000 for starting risk technicians and £35,000-£50,000 with up to five years (June 2025). Graduate schemes pay more: Lloyds risk £42,000 (2026 round); Capital One Strategy Analyst £55,500 plus £5,000 joining bonus (September 2027 start, job-board copy). Fraud: Morgan McKinley's 2026 guide models London fraud analysts at £35,000-£40,000 for 0-3 years; Monzo pays senior financial crime investigators £31,100-£39,350 (2026 advert). Entry-level fraud operations pay: no reliable data found.
+- Italy: no role-specific data found. Banks pay by the national contract: the minimum for 3a area professionale, 1° livello is EUR 2,742.34 gross a month from 1 March 2026 (CCNL credito tables, read on ilCCNL and edotto), about EUR 35,650 a year over 13 instalments (my arithmetic); the level a graduate is hired at was not verified. Other lenders and fintechs: no reliable data found.
+
+**Career path.** Analyst (0-3 years) → senior analyst or strategy analyst (3-5) → fraud or credit risk manager → head of fraud or credit risk. Prospects gives the same ladder for banks; the year bands follow Morgan McKinley's.
+
+**Exit opportunities.**
+- After 2-3 years: credit and fraud modelling (data science), compliance and financial crime, risk consulting.
+- After 7-10 years: head of risk function, chief risk officer track at a lender.
+
+**Tier list of employers.**
+- Tier 1: large banks, card issuers, card networks and payment companies (Capital One, American Express, Barclays, Lloyds, NatWest, HSBC, Visa, Mastercard; in Italy Intesa Sanpaolo, UniCredit).
+- Tier 2: consumer lenders, fintechs, insurers, credit bureaus (Monzo, Revolut, Klarna, Experian, Equifax, CRIF, FICO).
+- Tier 3: retailers' finance arms and outsourced operations centres.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: Capital One requires a STEM or economics degree plus A-level maths; Lloyds sets no minimum class. Prospects: a degree is not strictly required, but most entrants are graduates.
+- Schemes and timing: Lloyds (two years, three eight-month placements, one in Credit and Customer) opened 10 September and closes between 4 October and 8 November by city. Capital One closed 6 September 2026 for September 2027: online tests, a case interview, an assessment day.
+- Certifications: not needed to start. FRM (GARP): two exams, about 240 study hours, USD 400 enrolment plus USD 600-800 per part (2027 fees); Lloyds pays for it. CFE (ACFE): a three-part exam, then two years' fraud-related experience to certify.
+- Common mistakes: expecting modelling work at entry; no SQL.
+- Non-target routes: customer operations or collections at a lender, then a move into the analyst team.
+- Entry difficulty: 2/5 (operations posts 2; bank and card-issuer graduate schemes 4).
+
+**Honest downsides and who it is NOT a good fit for.** Repetitive queues and shift work at the junior end of fraud operations. US employment of credit analysts is projected to decline over 2025-35 (BLS projection shown on O*NET). UK payment fraud reached £1.28 billion in 2025, up 4% (UK Finance, June 2026), and scams that manipulate the payer are rising across the EEA (EBA and ECB, December 2025). Poor fit: people who want pure analysis from day one, or who dislike rule-bound, audited work.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -287,6 +373,8 @@ In Italy such roles are concentrated in Milan scale-ups, consultancies and a few
 | 3.6 People/HR analyst | 37-42 (45-50) | 2 | 4 | 3 | US $55-65k (weak source) / UK no data / Italy no data | 3 |
 | 3.7 Data governance, quality, steward | 36-42 (45-50) | 2 | 4 | 2 | US no reliable data / UK about £30-38k (2024 steward data) / Italy no data | 3 |
 | 3.8 Analytics consultant | 42-50 (55-65) | 4 | 4 | 3 | US about $75-95k (est.) / UK £31-38k London Big 4 (Learnsignal 2025/26) / Italy EUR 26-32k (Deloitte, SDG Group 2026 ads) | 3 |
+| 3.9 Pricing and revenue management analyst | 40-45 (50) | 3 | 3 | 4 | US no entry series, proxy $57k lowest decile of operations research analysts (BLS May 2025) / UK £30-34k on graduate insurance pricing schemes (NFU Mutual, Ageas adverts 2026) / Italy no reliable entry data | 3 |
+| 3.10 Fraud and credit risk analyst | 37-42 (45) | 2-3 | 3 | 3 | US $56-65k, 10th-25th percentile of credit analysts (BLS 2025) / UK £25-30k (Prospects 2025), bank graduate schemes £42-55.5k (2026 adverts) / Italy about EUR 35.7k gross bank-contract minimum (CCNL credito, March 2026) | 2 |
 
 ## 4. Banks vs. other employer types
 
@@ -369,3 +457,26 @@ All accessed October 2026 unless stated. Aggregator, blog and vendor sources are
 25. Prior project research: research/careers/tech-data-and-ai.md (Oct 2026) used for leads only.
 
 Data limits: no Robert Walters, Michael Page, or Hays tables could be read for 2026 data/BI roles; no reliable entry-level US data-analyst series; Italy has no analytics-engineer, marketing-analyst, HR-analyst, governance or supply-chain-analyst data; UK steward data rests on one 2026 advert and 18 in 2024. Tier lists, hours and stress ratings are practitioner perception.
+
+**Second pass, 11 October 2026: role families 3.9 and 3.10 (re-researched the same day from opened sources)**
+
+Every figure in 3.9 and 3.10 comes from a page that was opened and read on 11-12 October 2026; lines marked "my estimate", "my judgement" or "my arithmetic" are mine, and job-board copies of employer adverts are labelled as such.
+- US Bureau of Labor Statistics, Occupational Outlook Handbook, Operations Research Analysts (pay May 2025; used as the proxy for pricing analysts): https://www.bls.gov/ooh/math/operations-research-analysts.htm
+- O*NET OnLine (US Department of Labor), Credit Analysts 13-2041.00, summary and national wages (BLS OEWS 2025 wage data, projections 2025-35; used as the US series for 3.10): https://www.onetonline.org/link/summary/13-2041.00 and https://www.onetonline.org/link/localwages/13-2041.00 ; Fraud Examiners, Investigators and Analysts 13-2099.04 (wage is for "financial specialists, all other"): https://www.onetonline.org/link/summary/13-2099.04
+- Professional Pricing Society, "PPS December 2023 Survey of Today's Pricing Professional" (752 responses, published 31 March 2024; averages, bonus treatment not stated): https://publications.pricingsociety.com/pps-december-2023-survey-of-todays-pricing-professional/ ; CPP certification page (2026): https://www.pricingsociety.com/cpp
+- NFU Mutual, Insurance Pricing Analyst Graduate Scheme (closes 8 November 2026; job-board copy on TargetJobs): https://targetjobs.co.uk/jobs/insurance-pricing-analyst-graduate-scheme-247875 ; Ageas, Graduate Pricing Analyst (closed 10 August 2026; job-board copy on TargetJobs): https://targetjobs.co.uk/jobs/graduate-pricing-analyst-234185 ; Admiral, Graduate Pricing Analyst, Cardiff (expired 2026 advert, no salary): https://www.admiraljobs.co.uk/job/graduate-pricing-analyst-in-cardiff-jid-3270
+- ITJobsWatch, Pricing Analyst, Credit Risk Analyst and Fraud Analyst pages (permanent adverts, 6 months to 11 October 2026; 30, 6 and 4 adverts, so thin): https://www.itjobswatch.co.uk/jobs/uk/pricing%20analyst.do , https://www.itjobswatch.co.uk/jobs/uk/credit%20risk%20analyst.do , https://www.itjobswatch.co.uk/jobs/uk/fraud%20analyst.do
+- Southwest Airlines, Revenue Management Analyst Summer 2026 Internship (aggregator copy on Runway): https://app.joinrunway.io/explore/job/cmkc56xoe001tl404gysufz61 ; Finnair, Trainee, Revenue Unit (2026): https://company.finnair.com/en/trainee--revenue-unit-4056970 ; Alaska Airlines, Revenue Management Analyst (aggregator copy, pay range only; weak): https://jobs.weekday.works/horizon-air-revenue-management-analyst
+- HSMAI, Certified Revenue Management Executive (CRME) page (fees as shown October 2026): https://americas.hsmai.org/certification/certified-hospitality-revenue-management-executive-crme-certification/ ; eCornell, Advanced Hospitality Revenue Management certificate: https://ecornell.cornell.edu/certificates/hospitality-and-foodservice-management/advanced-hospitality-revenue-management-pricing-and-demand-strategies/ ; Simon-Kucher, Careers: https://www.simon-kucher.com/en/careers
+- Indeed Italy, Pricing analyst salaries (23 salaries from job adverts, updated 4 October 2026; weak): https://it.indeed.com/career/pricing-analyst/salaries
+- AlmaLaurea, press release on the XXVIII Rapporto (11 June 2026; graduates of 2024 interviewed one year on): https://www.almalaurea.it/sites/default/files/comunicati/2026/cs-rapporto-almalaurea-2026.pdf
+- Osservatorio JobPricing, University Report 2026, as reported by Studenti.it (30 July 2026; secondary, report itself not read): https://www.studenti.it/lauree-piu-pagate-nel-2026-la-classifica-censis-e-jobpricing-sugli-stipendi-dei-neolaureati.html
+- Prospects (Jisc), Financial risk analyst job profile (June 2025): https://www.prospects.ac.uk/job-profiles/financial-risk-analyst
+- Lloyds Banking Group, Risk Graduate Scheme (2026 recruitment round): https://www.lloydsbankinggrouptalent.com/our-opportunities/graduates/risk-graduate-scheme/
+- Capital One UK, Strategy Analyst Graduate (posted 27 August 2026; job-board copy on AnitaB.org): https://jobs.anitab.org/companies/capital-one/jobs/91316629-strategy-analyst-graduate ; Capital One US, Business Analyst Associate, February 2026 cohort (advert dated 9 July 2025; job-board copy): https://www.blackcareernetwork.com/job/business-analyst-associate-february-2026
+- Monzo, Senior Financial Crime Investigator, EU (own advert, start January 2027): https://job-boards.greenhouse.io/monzo/jobs/8207682
+- Morgan McKinley, 2026 UK Salary Guide, Fraud Analyst, London (modelled from the firm's own data; secondary): https://www.morganmckinley.com/uk/salary-guide/data/fraud-analyst/london
+- GARP, FRM programme and fees pages (May 2027 exam fees): https://www.garp.org/frm and https://www.garp.org/frm/fees-payments ; ACFE, CFE eligibility and exam pages: https://www.acfe.com/cfe-credential/eligibility and https://www.acfe.com/cfe-credential/about-the-cfe-exam
+- UK Finance, Annual Fraud Report 2026 (15 June 2026; landing page only): https://www.ukfinance.org.uk/policy-and-guidance/reports-and-publications/annual-fraud-report-2026 ; EBA, press release on the joint EBA-ECB report on payment fraud (15 December 2025; data to 2024): https://www.eba.europa.eu/publications-and-media/press-releases/joint-eba-ecb-report-payment-fraud-strong-authentication-remains-effective-fraudsters-are-adapting ; EBA, Guidelines on loan origination and monitoring (EBA/GL/2020/06): https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring
+- CCNL credito (ABI): pay tables in force from 1 March 2026 on ilCCNL (secondary): https://ilccnl.it/ccnl/credito---abi/credito---abi-dal-011099/tabelleretributive ; edotto, summary of the coordinated text of 14 July 2025 (secondary): https://edotto.com/articolo/ccnl-credito-definito-il-testo-coordinato ; FABI, press release of 23 November 2023 (37-hour week): https://www.fabi.it/wp-content/uploads/2023/11/ComSt_FABI_20231123_CcnlAbi.pdf
+- Not found: an entry-level pay series for pricing or revenue analysts in any country; any Italian entry pay for either role (no JobPricing, ISTAT or employer advert with a stated RAL was opened); entry-level fraud operations pay; hours or time-use surveys; UK ONS ASHE figures for these roles. Pages that could not be opened: Ryanair analyst adverts (filled or 404), easyJet and British Airways graduate pages (404), Marriott, Accor and Hilton revenue adverts (404), Alaska Airlines' own adverts (410), Capital One's own UK advert (404; Gradcracker and Bright Network copies 403), BLS Credit Analysts handbook page (403), Prospects and National Careers Service credit analyst profiles (404), UK Finance's full report PDF, ACFE's full Compensation Guide (members only). Michael Page Italia's 2022 salary study downloaded as an unreadable PDF. Opened but not used: Payscale's UK entry-level fraud investigator page (the first pass's £20,400; 35 profiles last updated March 2020) and Payscale Italy credit risk analyst (one survey response); the first pass's other secondary figures were dropped.

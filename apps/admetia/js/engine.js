@@ -488,6 +488,9 @@ window.Wizard = (function () {
       var head = el('div', 'step-head');
       head.appendChild(el('p', 'kicker', T('Part {n} of {total}', { n: roman(current + 1), total: roman(steps.length) })));
       var title = el('h1', null, step.title);
+      /* The page's own headline is the first-level heading; this one sits
+       * under it, and the questions (h3) under this. */
+      title.setAttribute('aria-level', '2');
       title.tabIndex = -1;       // focus target when moving between steps
       head.appendChild(title);
       /* A drop cap only where there is enough text to wrap round it. */

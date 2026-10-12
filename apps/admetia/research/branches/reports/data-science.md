@@ -282,6 +282,93 @@ Net reading: tools like AutoML and LLM coding assistants have made writing a bas
   - Entry difficulty: 4/5 at Tier 1; 3/5 elsewhere.
 - **Honest downsides and who it is NOT a good fit for**: Long hours and travel; the project-based work means shallow involvement in the final product; many projects stop at proofs of concept; pay at Tier 3 firms is low for the workload. Not a good fit if you want depth in one domain or predictable hours.
 
+---
+
+### 3.8 Actuary
+
+**What you actually do.** You put a price on uncertain future events for insurers, pension funds and the consultancies that advise them: estimate the probability and cost of death, sickness, accidents or natural disasters, design and test insurance policies, calculate the reserves needed to pay claims, and explain the results to executives, regulators and clients (BLS Occupational Outlook Handbook). A UK pensions trainee does calculations for defined benefit pension schemes, validates valuation data, drafts client reports and attends client meetings (Barnett Waddingham, 2027 listing). In Italy actuaries also certify the accounts of insurers and pension funds (Ordine degli Attuari). The data scientist in insurance (3.5) builds pricing models; the actuary carries the professional sign-off. Tools: spreadsheets, R (examined in the IFoA's CS1 and CS2), Python, SQL, actuarial modelling software.
+
+**A typical day and week.** About half the week on calculations, data checks and model runs, a quarter on reports, the rest in meetings with underwriters, finance teams or pension trustees (my estimate, not survey data). Exam study sits on top; the Institute and Faculty of Actuaries (IFoA) holds sittings in April and September.
+
+**Hours, stress and lifestyle.**
+- Hours: 35-40 a week, occasional extra hours, no routine weekend work (Prospects, February 2026); in the US most actuaries work full time and some more than 40 hours (BLS). No hours survey found. Peaks at reserving and valuation deadlines, and weekly study hours: no reliable data found.
+- Stress: 3/5; the exams are the main pressure. Balancing work, study and personal life is difficult early on, and pay progression is tied to exam success (Prospects).
+- Lifestyle: hybrid is common in the listings read. Evenings and weekends go to study until you qualify.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 5/5.
+
+**Compensation (approximate).**
+- US: base plus bonus at 0-1 years' experience with two exams passed: 71-92 in property and casualty, 68-88 in life, 67-90 in health, 70-85 in pensions (Ezra Penland 2025-2026 survey of questionnaire responses and the recruiter's placement data, middle 85% of packages; no unit given, read as US$ thousands). All actuaries: median US$130,000, lowest 10% under US$78,570 (BLS, May 2025).
+- UK: employer-stated graduate salaries for September 2027 starts (read October 2026): Hymans Robertson GBP 32,500; NFU Mutual GBP 33,000 plus up to 10% bonus and GBP 400-4,825 for each exam pass; Barnett Waddingham (part of Howden) GBP 32,000-34,000, or GBP 33,000-36,000 in the text of its London advert. Prospects (February 2026): part-qualified GBP 40,000-60,000, qualified GBP 65,000-90,000.
+- Italy: no employer-stated graduate figure found. Michael Page Italia's 2026 guide gives EUR 40-55k for an employed actuary with under five years' experience and EUR 55-75k at 5-10 years (per this project's italy-pay-addendum.md; the PDF's insurance page could not be re-read). Minimums under the ANIA national insurance contract: not retrieved.
+
+**Career path.** UK: trainee (0-3 years) → Associate (24 months of recorded work experience; 3-6 years per Prospects) → Fellow (a further 12 months; a further 3-6 years per Prospects, though EY says qualifying typically takes 3-5 years in total) → senior actuary → chief actuary, partner or chief risk officer. The IFoA curriculum has seven Core Principles subjects, required for both grades, three Core Practices subjects and a choice of Specialist subjects. The IFoA had 15,380 student members in 2024/25; 983 people became Fellows in the year to February 2025 (IFoA annual report). US: Associate of the Society of Actuaries (six exams plus modules), then Fellow; associate level can take up to seven years (BLS).
+
+**Exit opportunities.**
+- After 2-3 years: insurance pricing and data science (3.5), risk management, investment or pensions roles; moves between specialisms are common (Prospects).
+- After 7-10 years: chief actuary, consulting partner, chief risk officer, or strategy and product roles (Prospects).
+
+**Tier list of employers.**
+- Tier 1: global consultancies (WTW, Aon, Mercer, Milliman, LCP, Hymans Robertson) and large insurers and reinsurers (Aviva, Legal & General, Allianz, AXA, Generali, Munich Re, Swiss Re).
+- Tier 2: the Big Four's actuarial practices (EY's programme rotates through life, non-life and pensions), mid-sized consultancies and mutuals (Barnett Waddingham, NFU Mutual, Royal London) and public bodies (the UK Government Actuary's Department, INPS in Italy).
+- Tier 3: small pension administrators, niche consultancies and, in Italy, freelance practice.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: most people start with a maths-based degree at 2:1 or above, and A-level maths is often an employer requirement (IFoA). Barnett Waddingham wants a 2:1 in any subject plus an A in A-level maths, NFU Mutual a 2:1 in a mathematical subject, Hymans Robertson any degree. A master's is not required in the UK or the US (BLS: a bachelor's is typical).
+- Italy: a master's is required. Section A of the Albo (title Attuario) needs a laurea magistrale in class LM-83, LM-82 or LM-16, then the Esame di Stato: two written papers, a practical and an oral, held twice a year at Sapienza in Rome, Trieste and, from 2025, the Cattolica in Milan; no traineeship is required (Ordine degli Attuari; 2026 application deadlines 24 June and 21 October).
+- Exams: accredited degrees give exemptions from some IFoA exams, depending on modules and grades (IFoA). Pass rates: Society of Actuaries Exam P 46.7% (1,366 of 2,925 candidates, July 2026); Casualty Actuarial Society MAS-I between 40% and 55% at each sitting from 2019 to summer 2026. IFoA pass rates by subject: no reliable data found.
+- Calendar: UK schemes for September 2027 recruit in autumn 2026 (Barnett Waddingham London closes 13 October, Hymans Robertson 5 November).
+- Common mistakes: underestimating the years of study; in the US, applying with no exams passed (many employers expect one or two; BLS).
+- Non-target routes: start as a pricing or reserving analyst and begin the exams (CS1 and CM1 are open to non-members; Prospects); apprenticeships (IFoA).
+- Entry difficulty: 4/5.
+
+**Honest downsides and who it is NOT a good fit for.** Years of exams on top of a full-time job, with pass rates near one in two at the first US exams and pay rises that depend on passing, in a narrow group of industries. UK graduate pay starts in the low GBP 30,000s, at the bottom of the range for the bank schemes in 3.5; Hymans Robertson says its salary is under the Skilled Worker visa threshold and NFU Mutual does not sponsor, which matters for EU graduates. Listings call study leave "generous" without giving days: no reliable data found. Poor fit: people who want variety or dislike long structured study.
+
+---
+
+### 3.9 Bioinformatician and health data scientist
+
+**What you actually do.** You analyse biological and health data for the laboratory scientists and clinicians who generate it: analyse large molecular datasets, build and test pipelines and software, design algorithms, maintain genomic databases and advise researchers on methods (O*NET tasks for bioinformatics scientists, 2025). In an NHS genomics laboratory the clinical bioinformatician builds sequencing pipelines, automates analysis, designs databases and keeps patient data secure (NHS Health Careers). At a research institute much of the job is support: a Wellcome Sanger Institute advert lists daily support of faculty, tailoring workflows to projects and guiding PhD students and postdocs. The biostatistician in 3.4, by contrast, designs and analyses trials under regulatory rules. Tools: Python and R, workflow managers, a high-performance cluster or cloud, public genome databases.
+
+**A typical day and week.** About half the week writing and debugging pipelines and analyses, a fifth on quality checks of new sample batches, the rest in meetings with the laboratory group and on figures for papers (my estimate, not survey data).
+
+**Hours, stress and lifestyle.**
+- Hours: no survey found. Posts are full time: the Broad Institute quotes pay for a 40-hour week, and most US medical scientists work full time, some more than 40 hours (BLS). Peaks before grant and paper deadlines: no reliable data found.
+- Stress: 2-3/5; pressure comes from contract renewals and publication deadlines more than from daily hours (my judgement; no survey).
+- Lifestyle: office or hybrid. Fixed-term contracts dominate: of 170 jobs that jobs.ac.uk listed as similar to an expired bioinformatics advert on 11 October 2026, 145 were fixed-term or contract.
+
+**Human vs. quantitative profile.** People/communication: 3/5. Quantitative/technical: 5/5. Most requests come from biologists and clinicians who do not code.
+
+**Compensation (approximate).**
+- UK: NHS Scientist Training Programme trainees are paid at Agenda for Change Band 6, GBP 39,959 from 1 April 2026, for three years, and are eligible for Band 7 posts (GBP 49,387) once registered as clinical scientists (National School of Healthcare Science; NHS Employers). Wellcome Sanger Institute bioinformatician: GBP 36,924-43,867 on a two-year contract (advert closing 17 March 2026). EMBL-EBI bioinformatician, grade 5 or 6: "from GBP 3,303.40 or 3,695.61 after tax" (advert closing 17 June 2026; period not stated, read as monthly net). AstraZeneca's two-year R&D Data Sciences and AI graduate programme in Cambridge: GBP 37,800 (listing of 9 December 2024 for a September 2025 start). Tax-free PhD stipends: UKRI minimum GBP 21,805 from 1 October 2026; Sanger four-year PhD GBP 25,649 in year one.
+- US: Broad Institute Computational Associate I, for new bachelor's graduates: US$50,000-70,000 (posted 17 September 2026). NIH postdoctoral stipend US$63,480 in year 0, predoctoral US$29,364 (notice NOT-OD-26-044, 18 March 2026, read in the University of Iowa's copy). All experience levels: median US$98,920 for "biological scientists, all other", the BLS category O*NET uses for bioinformatics scientists (2025). US pharma entry pay: no reliable data found.
+- Italy: no reliable data found for bioinformatician pay as such. Anchors: the legal minimum for a university research appointment (incarico di ricerca) is EUR 22,500 a year (ministerial decree of 6 August 2025, per Fisco e Tasse, 3 October 2025); a level III researcher at a public research body starts at EUR 34.7k tabular from 1 January 2026 (Gazzetta Ufficiale, 14 July 2026, per this project's italy-pay-addendum.md); Human Technopole in Milan offers up to EUR 58,000 for an AI scientist with a PhD and four years' research experience (Nature Careers, closing 11 November 2026).
+
+**Career path.** Research: research assistant or computational associate (0-2 years) → PhD (four years at Sanger) or staff bioinformatician → postdoc or senior bioinformatician → group leader or head of bioinformatics. NHS: trainee at Band 6 (three years) → clinical scientist at Band 7 → Band 8a → consultant clinical scientist, Bands 8a-8d (NHS Health Careers). Industry: analyst → scientist → principal scientist; years per step: no reliable data found.
+
+**Exit opportunities.**
+- After 2-3 years: a PhD, pharmaceutical and biotechnology companies, genomics and diagnostics firms, or general data science (3.2).
+- After 7-10 years: head of bioinformatics or data science in a biotech, principal scientist, consultant clinical scientist.
+
+**Tier list of employers.**
+- Tier 1: international research institutes (EMBL-EBI, Wellcome Sanger Institute, Broad Institute, Human Technopole) and the computational groups of large pharmaceutical companies (AstraZeneca, GSK, Roche, Novartis).
+- Tier 2: NHS genomic laboratories (through the Scientist Training Programme), Genomics England, university core facilities, sequencing and tools companies (Illumina, 10x Genomics), CROs such as IQVIA.
+- Tier 3: short grant-funded posts in single research groups; in Italy, fixed-term university research and post-doc appointments.
+- Tier groupings reflect industry consensus and practitioner perception, not objective fact.
+
+**How to enter.**
+- Degrees: a PhD is not required to enter. O*NET respondents (2025) said new hires need a master's in 42% of cases and a doctorate in 28%; the Broad hires final-year undergraduates with a year of independent research; AstraZeneca's programme takes a bachelor's or master's in a quantitative science; the NHS programme takes a first or 2:1 in a relevant science, or a 2:2 plus a relevant higher degree, and calls research experience desirable (National School of Healthcare Science, December 2025). A PhD is expected for scientist and group-leader posts: a doctorate is the typical entry level for US medical scientists (BLS), Human Technopole's scientist advert requires one, and Italian post-doc appointments (one to three years) require a PhD or a medical specialisation (University of Bologna).
+- Programmes and calendar: the NHS programme starts each September and includes a funded part-time MSc (Manchester's includes software engineering, diagnostic sequencing and applied statistics). AstraZeneca's listing ran from 9 December to 5 January. The Sanger PhD has 12 funded places; applications for 2027 close 24 November 2026.
+- Skills: Python or R, statistics, cluster work, and enough biology to question the data.
+- Common mistakes: a pure biology profile with no code to show, or the reverse; assuming a staff post is permanent.
+- Non-target routes: a master's conversion course; a laboratory research-assistant post with growing analysis work.
+- Entry difficulty: 3/5 with a relevant master's. Competition ratios for the NHS programme: not retrieved.
+
+**Honest downsides and who it is NOT a good fit for.** Contracts are short (two and four years in the Sanger and Human Technopole adverts read) and pay sits well below the technology employers in 3.1. Independent research runs through a PhD on a stipend of GBP 21,805-25,649 and then a postdoc, and Italian pay floors are low (EUR 22,500). Poor fit: people who want commercial pace, high early pay or a permanent contract in their twenties.
+
+---
+
 ### Role family summary
 
 | Role family | Typical hours/week (peak) | Stress 1-5 | People 1-5 | Quant 1-5 | Entry comp: US / UK / Italy (approx., currency, base or total) | Entry difficulty 1-5 |
@@ -293,6 +380,8 @@ Net reading: tools like AutoML and LLM coding assistants have made writing a bas
 | 3.5 Data scientist in banking and insurance | 38-45 (50) | 3 | 3 | 4 | US: US$150k base at Barclays NY quant analytics grad (quant-risk, upper bound); UK: GBP 33-55.5k base; Italy: about EUR 36k (Generali junior listing) | 3 |
 | 3.6 Applied scientist / research data scientist | 40-50 (55-60) | 3 | 2 | 5 | US: US$247k total at Amazon L4; UK: no reliable data found; Italy: no reliable data found | 5 |
 | 3.7 Data science consultant | 45-55 (60+) | 4 | 4 | 4 | US: BCG data scientist ladder starts around US$166k total (Levels.fyi, 2025, thin); UK: no reliable data found; Italy: about EUR 29-42k (aggregators, not firm data) | 4 (Tier 1), 3 (others) |
+| 3.8 Actuary | 35-40 plus exam study (peaks: no reliable data found) | 3 | 3 | 5 | US: US$67-92k base plus bonus with two exams (Ezra Penland 2025-26, unit assumed; BLS 10th percentile US$79k, median US$130k); UK: GBP 32-36k base (2027 graduate schemes); Italy: no graduate figure found (EUR 40-55k for under five years, Michael Page 2026) | 4 |
+| 3.9 Bioinformatician and health data scientist | about 40 (peaks: no reliable data found) | 2-3 | 3 | 5 | US: US$50-70k base (Broad Institute entry post, 2026); UK: GBP 37-44k base (Sanger advert and NHS Band 6, 2026; AstraZeneca graduate programme, 2025); Italy: no reliable data found (legal floor EUR 22.5k for university research appointments) | 3 |
 
 ---
 
@@ -339,19 +428,19 @@ Commentary:
 
 ### (b) Matrix: background by role family (S = strong, P = possible, X = stretch/unlikely without retraining)
 
-| Background | 3.1 Product DS | 3.2 ML DS | 3.3 Decision sci./OR | 3.4 Biostat | 3.5 Bank/insurance DS | 3.6 Applied scientist | 3.7 DS consultant |
-|---|---|---|---|---|---|---|---|
-| Management | X | X | P | X | X | X | P |
-| Logistics & Supply Chain | X | P | S | X | X | X | P |
-| Finance | X | P | X | X | S | X | P |
-| Accounting | X | X | X | X | P | X | P |
-| Marketing | P | X | X | X | X | X | P |
-| Data Analytics | S | P | P | P | S | X | S |
-| Economics | S | P | P | P | S | S | S |
-| Computer Science | P | S | P | P | P | S | S |
-| Cybersecurity | X | P | X | X | P | X | X |
-| Data Science | S | S | S | P | S | S | S |
-| Artificial Intelligence | P | S | P | X | P | S | P |
+| Background | 3.1 Product DS | 3.2 ML DS | 3.3 Decision sci./OR | 3.4 Biostat | 3.5 Bank/insurance DS | 3.6 Applied scientist | 3.7 DS consultant | 3.8 Actuary | 3.9 Bioinformatics |
+|---|---|---|---|---|---|---|---|---|---|
+| Management | X | X | P | X | X | X | P | X | X |
+| Logistics & Supply Chain | X | P | S | X | X | X | P | X | X |
+| Finance | X | P | X | X | S | X | P | P | X |
+| Accounting | X | X | X | X | P | X | P | P | X |
+| Marketing | P | X | X | X | X | X | P | X | X |
+| Data Analytics | S | P | P | P | S | X | S | P | P |
+| Economics | S | P | P | P | S | S | S | S | X |
+| Computer Science | P | S | P | P | P | S | S | P | S |
+| Cybersecurity | X | P | X | X | P | X | X | X | X |
+| Data Science | S | S | S | P | S | S | S | S | S |
+| Artificial Intelligence | P | S | P | X | P | S | P | P | S |
 
 Notes: "S" indicates a typical entry background; "P" means possible with extra statistics, coding or domain training; "X" means usually requires retraining or a master's. Biostatistics and applied science are the most credential-gated (formal statistics master's; PhD respectively).
 
@@ -391,3 +480,39 @@ All accessed 9 October 2026 unless a date is given. Levels.fyi pages are self-re
 28. Not obtained: ASA/Amstat salary data for industry statisticians (latest public report from 2015), PSI salary survey (none found), Eurostat and ISTAT pay scales, Michael Page/Robert Walters/Hays data science salary tables (gated). The New York Fed College Labor Market page (accessed 9 October 2026) gives 5.6% unemployment and 42% underemployment for recent graduates in Q2 2026 but major-level figures were not retrievable. https://www.newyorkfed.org/research/college-labor-market
 
 Data limits: no reliable entry-level compensation was found for operations research or applied science outside the US, nor for consulting data scientists, and no systematic hours or stress survey by role family. Levels.fyi city pages for Hong Kong, Tokyo, Dubai and Italy rest on 12-23 submissions. Searches ran to about 28 queries plus page fetches.
+
+**Second pass, 11 October 2026: role families 3.8 and 3.9 (re-researched the same day from opened sources)**
+
+Every figure in 3.8 and 3.9 comes from a page opened and read on 11 or 12 October 2026 unless the text says it is taken from this project's own research files; ratings and time splits are my judgement, and the shared web-search allowance ran out before every lead could be followed.
+- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Actuaries (May 2025 wages, 2025-35 projections): https://www.bls.gov/ooh/math/actuaries.htm
+- U.S. Bureau of Labor Statistics, Occupational Outlook Handbook, Medical Scientists (May 2025): https://www.bls.gov/ooh/life-physical-and-social-science/medical-scientists.htm
+- O*NET OnLine, Bioinformatics Scientists 19-1029.01 (tasks, education of new hires; 2025 wage shown is for BLS "Biological Scientists, All Other"): https://www.onetonline.org/link/summary/19-1029.01
+- Prospects, Actuary job profile (February 2026; careers-service profile, secondary): https://www.prospects.ac.uk/job-profiles/actuary
+- Institute and Faculty of Actuaries: route to becoming an actuary; curriculum; curriculum FAQ; personal and professional development; exam exemptions (undated pages): https://actuaries.org.uk/qualify/become-an-actuary/route-to-becoming-an-actuary/ ; https://actuaries.org.uk/qualify/curriculum/ ; https://actuaries.org.uk/qualify/curriculum/frequently-asked-questions/ ; https://actuaries.org.uk/qualify/personal-and-professional-development/ ; https://actuaries.org.uk/qualify/exam-exemptions/
+- Institute and Faculty of Actuaries, Annual Report 2024/2025, "The year in numbers" (membership; qualifiers March 2024 to February 2025): https://ifoa.foleon.com/annualreport/2024-2025/the-year-in-numbers
+- Society of Actuaries, ASA requirements (undated) and July 2026 Exam P results (2 October 2026): https://www.soa.org/education/exam-req/edu-asa-req/ ; https://www.soa.org/globalassets/assets/files/exam-results/2026/edu-2026-07-p-percents-pqbb5w6x.pdf
+- Casualty Actuarial Society, Summary of CAS Examination Statistics, 2011 to summer 2026 (PDF; text extracted locally, column alignment by sitting uncertain, so only the range is used): https://www.casact.org/sites/default/files/2026-09/Exam_Statistics_from_2011-Present_Summer_2026.pdf
+- Ezra Penland Actuarial Recruitment, Actuarial Salary Surveys 2025-2026 (recruiter survey; method stated, unit not stated): https://www.ezrapenland.com/salary/
+- Ordine degli Attuari: Chi è l'attuario; Come si diventa; Esame di Stato (2026 deadlines): https://www.ordineattuari.it/attuario/chi-e/ ; https://www.ordineattuari.it/attuario/come-si-diventa/ ; https://www.ordineattuari.it/attuario/esame/
+- Barnett Waddingham, 2027 Graduate Trainee Actuarial Consultant, Retirement (employer posting on Workable, Leeds; TargetJobs copy for London, deadline 13 October 2026): https://jobs.workable.com/jobs/5d12a3f3-db63-4ffc-ad8b-4297920a43bc.md ; https://targetjobs.co.uk/jobs/trainee-actuarial-consultant-retirement-london-246069
+- Hymans Robertson, Actuarial Consulting and Analytics Graduate Programme (Higherin listing, deadline 5 November 2026; job board, secondary): https://higherin.com/jobs/45225/hymans-robertson/actuarial-consulting-analytics-graduate-programme
+- NFU Mutual, Actuarial Graduate Scheme, September 2027 start (Flexa listing; job board, secondary): https://flexa.careers/jobs/nfumutual-actuarial-graduate-scheme-6ab691aa5995c8ea607c5c66
+- EY, Actuarial Graduate Programme, September 2027 intake (Flexa listing; salary "competitive"): https://flexa.careers/jobs/ey-actuarial-graduate-programme-september-2027-intake-6abe40325ff9de5a7c6204b9
+- Concorsando, INPS 2026 competition for one statistical-actuarial professional (2 September 2026; secondary, pay not stated): https://www.concorsando.it/blog/concorso-professionista-statistico-attuariale-inps-2026/
+- Project research file italy-pay-addendum.md (Michael Page Italia, Studi di retribuzione 2026, actuary rows; Gazzetta Ufficiale no. 161 of 14 July 2026, research-body pay table). The Michael Page PDF was re-opened but only its first pages were readable: https://www.qualenergia.it/wp-content/uploads/2026/05/Studi-di-retribuzione-2026-Michael-Page-Italy.pdf
+- National School of Healthcare Science, Scientist Training Programme advert (September 2026 intake) and entry requirements (updated 23 December 2025): https://nshcs.hee.nhs.uk/publications/scientist-training-programme-trainee-clinical-scientist-advert/html/ ; https://nshcs.hee.nhs.uk/programmes/stp/applicants/entry-requirements/
+- NHS Employers, Pay scales for 2026/27 (from 1 April 2026), checked against NHS Health Careers, Agenda for Change pay rates: https://www.nhsemployers.org/articles/pay-scales-202627 ; https://www.healthcareers.nhs.uk/working-health/working-nhs/nhs-pay-and-benefits/agenda-change-pay-rates/agenda-change-pay-rates
+- NHS Health Careers, Clinical bioinformatics (genomics): https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/clinical-bioinformatics/clinical-bioinformatics-genomics
+- University of Manchester, NHS Scientist Training Programme, Clinical Bioinformatics Genomics: https://bmh.manchester.ac.uk/study/nhs-scientist-training-programme/clinical-bioinformatics-genomics
+- Wellcome Sanger Institute, Bioinformatician, Cellular Genomics Informatics (One Nucleus copy of the advert, closing 17 March 2026; secondary, job specification not included): https://onenucleus.com/bioinformatician-cellular-genomics-informatics
+- EMBL-EBI, Computational Biologist / Bioinformatician, Chemical Biology Services (One Nucleus copy, closing 17 June 2026; secondary, pay period not stated): https://onenucleus.com/computational-biologist-bioinformatician-chemical-biology-services
+- AstraZeneca, R&D Data Sciences and AI Graduate Programme, UK (WORK180 listing posted 9 December 2024, September 2025 start, closed; job board, secondary): https://work180.com/en-gb/for-women/employer/astrazeneca-uk/job/665462/rd-data-sciences-ai-graduate-programme---uk
+- Wellcome Sanger Institute, 4-year PhD programme (stipends as of October 2026): https://www.sanger.ac.uk/about/study/phd-programmes/4-year-phd-programme/
+- UKRI, Get a studentship to fund your doctorate (updated 5 October 2026): https://www.ukri.org/apply-for-funding/studentships-and-doctoral-training/get-a-studentship-to-fund-your-doctorate/
+- Broad Institute, Early Career Researchers, Computational Associate I (Xtalks copy of the posting, 17 September 2026; secondary): https://xtalks.com/job/early-career-researchers-computational-associate-i-broad-wide-openings/
+- NIH notice NOT-OD-26-044, NRSA stipends for fiscal year 2026 (18 March 2026), read in the University of Iowa's copy because the NIH page returned an error (secondary): https://apps.its.uiowa.edu/dispatch/messages/view/adfb1480-9d8c-4061-bdbd-886d023a0bc0
+- Human Technopole, AI Scientist, Health Data Science Centre (Nature Careers, closing 11 November 2026): https://www.nature.com/naturecareers/job/12865208/ai-scientist/
+- Fisco e Tasse, minimum pay for post-doc and research appointments under the ministerial decree of 6 August 2025 (3 October 2025; secondary to the decree) and Università di Bologna, Incarichi post-doc: https://www.fiscoetasse.com/new-rassegna-stampa/2885-trattamento-minimo-per-incarichi-post-doc-e-di-ricerca-il-decreto-mur-2025.html ; https://www.unibo.it/it/ateneo/lavora-con-noi/incarichi-post-doc
+- jobs.ac.uk, list of jobs similar to an expired bioinformatics advert (contract-type counts, 11 October 2026): https://www.jobs.ac.uk/job/CYR327
+- Could not be opened (not cited as read): Prospects and National Careers Service bioinformatician profiles (404); Aviva and Royal London actuarial graduate pages and a Generali Italia junior listing (403); the NIH notice page (403); a Human Technopole bioinformatician posting and an Allianz Trieste junior actuary posting (withdrawn); a Cardiff bioinformatician advert on Find a Job (503); two other copies of the AstraZeneca listing (403, 404); the IFoA qualification handbook (PDF download only); the three jobs.ac.uk adverts and the Biostars advert used in the first pass (expired or 403), whose figures were therefore removed; the Sanger vacancy site (empty page).
+- Not found: IFoA pass rates by subject; AlmaLaurea pay at one year for LM-83 graduates (only all-degree press releases surfaced); a published number of study-leave days; hours or stress surveys for either role; UK ONS ASHE figures for actuaries or bioinformaticians; an Italian actuarial graduate salary and the ANIA contract minimums by level (Business Online, 20 May 2026, and ilccnl.it gave only the size of the 2026 increase and level 1); the Actuarial Association of Europe's mutual recognition terms (its "How to become an actuary" page covers only the core syllabus); DW Simpson and Star Actuarial figures by exam; US entry pay at pharmaceutical companies and UK entry pay at GSK, Roche and Novartis; pay at Genomics England, Illumina, 10x Genomics and IQVIA; Italian bioinformatician pay in companies; competition ratios for the NHS programme; career material from ISCB, ELIXIR and Health Data Research UK and the Nature salary survey (not reached before the search allowance ran out).
