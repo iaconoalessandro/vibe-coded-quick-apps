@@ -48,6 +48,12 @@
       loading: 'Loading', skip: 'Skip',
       motto: 'The way in — independent guides to master’s admissions, careers and working abroad'
     },
+    fr: {
+      lines: [['INSEAD ?', 'LBS ?', 'BOCCONI ?', 'ET VOUS ?'], ['TEST', 'NOTES', 'PARCOURS', 'RÉSULTAT'], ['QUELLES', 'SONT', 'VOS', 'CHANCES ?']],
+      data: COUNT.programmes + '+ formations en gestion · ' + COUNT.mba + ' écoles proposant un master en gestion d’entreprise (MBA) · ' + COUNT.computing + ' formations en informatique',
+      loading: 'Chargement', skip: 'Passer',
+      motto: 'La porte d’entrée — des guides indépendants sur les admissions en master, les métiers et le travail à l’étranger'
+    },
     it: {
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT', 'MEDIA', 'CV', 'VERDETTO'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
       data: COUNT.programmes + '+ programmi business · ' + COUNT.mba + ' scuole MBA · ' + COUNT.computing + ' informatica',
@@ -92,7 +98,7 @@
   };
 
   var ed = 'city';
-  var T = TXT[root.lang === 'it' ? 'it' : 'en'];
+  var T = TXT[root.lang] || TXT.en;
 
   var UI = '"Hanken Grotesk", Helvetica, Arial, sans-serif';
   var RISE = 'cubic-bezier(.2,.9,.1,1)', SWEEP = 'cubic-bezier(.6,0,.2,1)', MOVE = 'cubic-bezier(.75,0,.2,1)';

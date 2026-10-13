@@ -82,7 +82,7 @@ const seoBad = PAGES.concat(['careers/index.html', 'careers/roles/index.html', '
   const seen = [...(/<ol id="trail">(.*?)<\/ol>/.exec(h) || ['', ''])[1].matchAll(/<li>(.*?)<\/li>/g)].map((x) => plain(x[1]));
   const told = (g.find((x) => x['@type'] === 'BreadcrumbList') || { itemListElement: [] }).itemListElement;
   return !seen.length || seen.join('|') !== told.map((x) => x.name).join('|') || told.some((x, i) => x.position !== i + 1 || !x.item.startsWith(S.SITE)) ||
-    g[0].url !== canon || g[0].name !== plain((/<title>(.*?)<\/title>/.exec(h) || [])[1]);
+    g[0].url !== canon || g[0].name !== plain((/<title\b[^>]*>(.*?)<\/title>/.exec(h) || [])[1]);
 });
 t('every page names its one address, and its structured data matches its title and breadcrumbs', seoBad.length === 0, seoBad.join(', '));
 const dirLd = ldOf(read('programmes.html'))[0].mainEntity;
@@ -186,7 +186,7 @@ else {
 const ex = JSON.parse(read('docs/ux-refactor/content-exceptions.json'));
 /* "Recounted": a count, or a list worked out from the scores, that changed
  * when role families were added; what it counts is still published. */
-t('every exception to the ledger gives its reason, and is a label, decoration or a count', Object.values(ex.blocks).concat(Object.values(ex.strings)).every((r) => /^(Interface label|Decoration|Not a string|Recounted)/.test(r)) && !Object.keys(ex.links).length);
+t('every exception to the ledger explains a label, decoration, count or translation correction', Object.values(ex.blocks).concat(Object.values(ex.strings)).every((r) => /^(Interface label|Decoration|Not a string|Recounted|Translation correction:)/.test(r)) && !Object.keys(ex.links).length);
 const retiredFiles = [
   'fonts/OFL-noto-serif-display.txt', 'fonts/OFL-roboto-serif.txt',
   'fonts/noto-serif-display.woff2', 'fonts/roboto-serif-condensed.woff2',
@@ -198,8 +198,12 @@ const retiredFiles = [
  * the Career Explorer build makes from it. */
 const extended = Object.keys(ex.files).filter((f) => /^Extended: /.test(ex.files[f]));
 const regenerated = ['careers/data/compass-data.js', 'careers/data/search-index.json'];
-t('file exceptions cover only updated credits, retired template assets and extended research',
-  Object.keys(ex.files).sort().join() === ['CREDITS.md','fonts/README.md',...retiredFiles,...extended,...regenerated].sort().join() &&
+const translated = ['data/i18n-it-models.js'];
+const sourceCorrected = ['data/atlas/gr.js'];
+t('file exceptions cover updated credits, retired assets, extended research, Italian and verified source corrections',
+  Object.keys(ex.files).sort().join() === ['CREDITS.md','fonts/README.md',...retiredFiles,...extended,...regenerated,...translated,...sourceCorrected].sort().join() &&
+  translated.every((f) => /^Translation correction: /.test(ex.files[f])) &&
+  sourceCorrected.every((f) => /^Source correction: /.test(ex.files[f])) &&
   extended.length > 0 && extended.every((f) => /^research\/branches\/(index|reports\/[a-z-]+)\.md$/.test(f)) &&
   regenerated.every((f) => /^Regenerated: /.test(ex.files[f])) &&
   ['CREDITS.md','fonts/README.md'].every(f=>/^Updated: /.test(ex.files[f])) &&

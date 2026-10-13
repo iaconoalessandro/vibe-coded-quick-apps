@@ -37,7 +37,7 @@
     if (text !== undefined && text !== null) n.textContent = text;
     return n;
   }
-  function L(pair) { return Array.isArray(pair) ? (IT && pair[1] ? pair[1] : pair[0]) : T(pair); }
+  function L(pair) { return Array.isArray(pair) ? (IT && pair[1] ? pair[1] : T(pair[0])) : T(pair); }
   function vocab(list, id) { return (list || []).filter(function (x) { return x.id === id; })[0]; }
   function custom(e, k) { return (e.customs || []).filter(function (x) { return x.k === k; })[0]; }
   function customName(k, v) {
@@ -60,15 +60,16 @@
 
   var loadingEntry = {};
   function loadEntry(id) {
-    if (A.entries[id]) return Promise.resolve(A.entries[id]);
-    if (loadingEntry[id]) return loadingEntry[id];
-    loadingEntry[id] = new Promise(function (ok) {
-      var s = document.createElement('script');
-      s.src = A.entryFile(id);
-      s.onload = function () { ok(A.entries[id] || null); };
-      s.onerror = function () { delete loadingEntry[id]; ok(null); };
-      document.head.appendChild(s);
-    });
+    if (!loadingEntry[id]) {
+      var source = A.entries[id] ? Promise.resolve(A.entries[id]) : new Promise(function (ok) {
+        var s = document.createElement('script');
+        s.src = A.entryFile(id);
+        s.onload = function () { ok(A.entries[id] || null); };
+        s.onerror = function () { delete loadingEntry[id]; ok(null); };
+        document.head.appendChild(s);
+      });
+      loadingEntry[id] = Promise.all([source, window.I18N ? I18N.countryLanguage(id) : Promise.resolve()]).then(function (got) { return got[0]; });
+    }
     return loadingEntry[id];
   }
   var loadingRec = {};

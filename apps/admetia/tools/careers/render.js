@@ -35,7 +35,7 @@ function site(ROOT, data) {
     return s;
   };
   /* Names from the research (fields, backgrounds, roles) stay in English. */
-  const nm = (s) => `<span translate="no">${esc(s)}</span>`;
+  const nm = (s) => `<span translate="no" data-i18n-name="${esc(s)}">${esc(s)}</span>`;
 
   /* Figures (tools/careers/figures.js). A field's plate is decorative and is
    * not fetched on phones, where it is hidden: the <img> itself is a 1px
@@ -123,14 +123,18 @@ function site(ROOT, data) {
     const crumbs = (page.crumbs || []).filter((c) => c.href !== U.home);
     const top = SH.top({ path: from, section, current, crumbs, t: ui, name: nm });
     const title = page.title === 'Career Explorer' ? 'Career Explorer — Admetia' : `${page.title} — Career Explorer — Admetia`;
+    const metadataAttrs = (template, vars) => template
+      ? ` data-i18n="${ui(template)}" data-i18n-vars="${esc(JSON.stringify(vars))}"` : '';
+    const titleAttrs = page.static ? '' : metadataAttrs(page.titleTemplate || '{name} — Career Explorer — Admetia', page.metadataVars || { name: page.title });
+    const descriptionAttrs = metadataAttrs(page.descriptionTemplate, page.metadataVars);
     if (page.static) { used.add(title); used.add(page.description); }
     return `<!doctype html>
 <html data-theme="city" lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>${esc(title)}</title>
-<meta name="description" content="${esc(page.description)}">
+<title${titleAttrs}>${esc(title)}</title>
+<meta name="description" content="${esc(page.description)}"${descriptionAttrs}>
 <link rel="canonical" href="${SH.url(from)}">
 ${SH.ld({ path: from, section, crumbs, title, description: page.description })}
 <meta property="og:type" content="website">
@@ -163,6 +167,7 @@ ${footer(from)}
 
 <script defer src="${r('js/i18n.js')}"></script>
 <script defer src="${r('js/i18n-it.js')}"></script>
+<script defer src="${r('js/i18n-fr.js')}"></script>
 <script defer src="${r('js/stats.js')}"></script>
 <script defer src="${r('careers/assets/careers.js')}"></script>
 ${(page.scripts || []).map((s) => `<script defer src="${r(s)}"></script>`).join('\n')}${page.scripts ? '\n' : ''}</body>
@@ -282,7 +287,7 @@ ${entries.map(([id, text]) => `<li><a href="#${id}">${text}</a></li>`).join('\n'
   function roleItem(from, id, opts = {}) {
     const r = roleById.get(id);
     const f = fieldBySlug.get(r.field);
-    return `<li class="cx-roleitem"><a class="cx-roleitem-t" href="${rel(from, U.role(id))}" translate="no" lang="en">${esc(r.title)}</a>` +
+    return `<li class="cx-roleitem"><a class="cx-roleitem-t" href="${rel(from, U.role(id))}" translate="no" lang="en" data-i18n-name="${esc(r.title)}">${esc(r.title)}</a>` +
       `${opts.field ? `<span class="cx-roleitem-f" translate="no">${esc(f.name)}</span>` : ''}${opts.scores !== false ? miniScores(r) : ''}${opts.note || ''}</li>`;
   }
 
@@ -415,6 +420,8 @@ ${sections}
   ${next ? `<a rel="next" href="${rel(from, U.bg(next.slug))}"><span>${ui('Next background')}</span>${nm(next.name)}</a>` : '<span></span>'}
 </nav>`;
     add({ path: from, title: `If you studied ${b.name}`, crumbs: [{ href: U.home, label: 'Career Explorer' }, { href: U.home + '#backgrounds', label: 'By what you studied' }, { label: b.name, name: true }],
+      titleTemplate: 'If you studied {name} — Career Explorer — Admetia', metadataVars: { name: b.name },
+      descriptionTemplate: 'Which fields and role families a {name} background leads to, rated strong, possible or stretch, with the reason for each.',
       description: `Which fields and role families a ${b.name} background leads to, rated strong, possible or stretch, with the reason for each.`, body });
   });
 
@@ -465,8 +472,8 @@ ${f.roles.map((id) => { const r = roleById.get(id); const tl = (l) => `<span cla
     function s1Title(n) { return ['', '1. What this branch is', '2. Map of areas and sectors', '3. Role families', '4. Banks vs. other employer types', '5. Which backgrounds fit this branch', '6. Sources'][n]; }
 
     const body = `<header class="cx-head cx-head-plate">
-  <p class="kicker"><span>${ui('Field')}</span> · <span translate="no" lang="en">${esc(f.depth)}</span> · <span>${f.roles.length}</span> <span>${ui('role families')}</span></p>
-  <h1 class="headline cx-h1" translate="no" lang="en">${esc(f.name)}</h1>
+  <p class="kicker"><span>${ui('Field')}</span> · <span translate="no" lang="en" data-i18n-name="${esc(f.depth)}">${esc(f.depth)}</span> · <span>${f.roles.length}</span> <span>${ui('role families')}</span></p>
+  <h1 class="headline cx-h1" translate="no" lang="en" data-i18n-name="${esc(f.name)}">${esc(f.name)}</h1>
   <p class="standfirst" translate="no" lang="en">${mdInline(from, f.what)}</p>
   ${fieldPlate(from, f.slug)}
 </header>
@@ -595,8 +602,8 @@ ${r.calculators.length ? `<h3>${ui('Master’s calculators on this site')}</h3>
     const tocE = [...T.map((t) => [t.anchor, mdInline(from, r.sections[t.key].label)]), ['italy-pay', ui('Italy pay (add-on)')], ['connections', ui('Where this role connects')], ['getting-hired', ui('Getting hired in this role')]];
     const body = `<article class="cx-role">
 <header class="cx-head">
-  <p class="kicker"><a href="${rel(from, U.field(f.slug))}">${nm(f.name)}</a>${r.part ? ` · <span translate="no" lang="en">${esc(r.part)}</span>` : ''}</p>
-  <h1 class="headline cx-h1" translate="no" lang="en">${esc(r.title)}</h1>
+  <p class="kicker"><a href="${rel(from, U.field(f.slug))}">${nm(f.name)}</a>${r.part ? ` · <span translate="no" lang="en" data-i18n-name="${esc(r.part)}">${esc(r.part)}</span>` : ''}</p>
+  <h1 class="headline cx-h1" translate="no" lang="en" data-i18n-name="${esc(r.title)}">${esc(r.title)}</h1>
   <p class="cx-meta"><span>${ui('Role family')}</span> <span translate="no">${esc(r.num)}</span> · <a href="${rel(from, U.field(f.slug))}#roles"><span>${ui('All roles in')}</span> ${nm(f.name)}</a>${prev ? ` · <a href="${rel(from, U.role(prev))}" rel="prev">${ui('previous')}</a>` : ''}${next ? ` · <a href="${rel(from, U.role(next))}" rel="next">${ui('next')}</a>` : ''}</p>
 </header>
 ${glance}
@@ -614,11 +621,13 @@ ${conn}
 </div>
 </div>
 <nav class="cx-pager" aria-label="${ui('Other roles in this field')}">
-  ${prev ? `<a rel="prev" href="${rel(from, U.role(prev))}"><span>${ui('Previous role')}</span><span translate="no" lang="en">${esc(roleById.get(prev).title)}</span></a>` : `<a href="${rel(from, U.field(f.slug))}#roles"><span>${ui('Back to')}</span>${nm(f.name)}</a>`}
-  ${next ? `<a rel="next" href="${rel(from, U.role(next))}"><span>${ui('Next role')}</span><span translate="no" lang="en">${esc(roleById.get(next).title)}</span></a>` : `<a href="${rel(from, U.field(f.slug))}#roles"><span>${ui('Back to')}</span>${nm(f.name)}</a>`}
+  ${prev ? `<a rel="prev" href="${rel(from, U.role(prev))}"><span>${ui('Previous role')}</span><span translate="no" lang="en" data-i18n-name="${esc(roleById.get(prev).title)}">${esc(roleById.get(prev).title)}</span></a>` : `<a href="${rel(from, U.field(f.slug))}#roles"><span>${ui('Back to')}</span>${nm(f.name)}</a>`}
+  ${next ? `<a rel="next" href="${rel(from, U.role(next))}"><span>${ui('Next role')}</span><span translate="no" lang="en" data-i18n-name="${esc(roleById.get(next).title)}">${esc(roleById.get(next).title)}</span></a>` : `<a href="${rel(from, U.field(f.slug))}#roles"><span>${ui('Back to')}</span>${nm(f.name)}</a>`}
 </nav>
 </article>`;
     add({ path: from, title: r.title, crumbs: [{ href: U.home, label: 'Career Explorer' }, { href: U.field(f.slug), label: f.name, name: true }, { label: r.title, name: true }],
+      metadataVars: { name: r.title, field: f.name },
+      descriptionTemplate: '{name} ({field}): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in.',
       description: `${r.title} (${f.name}): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in.`, body });
   }));
 
@@ -639,7 +648,7 @@ ${f.roles.map((id) => { const r = roleById.get(id); return roleItem(from, id).re
   <div class="cx-f-q"><label class="cx-label" for="rq">${ui('Search')}</label>
   <input id="rq" class="cx-input" type="search" name="q" placeholder="${ui('Job title, employer or skill')}" autocomplete="off" data-cx-search="${rel(from, 'careers/data/search-index.json')}" data-cx-base="${rel(from, U.home).replace(/index\.html$/, '')}" data-cx-inline></div>
   <div><label class="cx-label" for="rf">${ui('Field')}</label>
-  <select id="rf" class="cx-input" name="field"><option value="">${ui('All fields')}</option>${data.fields.map((f) => `<option value="${f.slug}" translate="no">${esc(f.name)}</option>`).join('')}</select></div>
+  <select id="rf" class="cx-input" name="field"><option value="">${ui('All fields')}</option>${data.fields.map((f) => `<option value="${f.slug}" translate="no" data-i18n-name="${esc(f.name)}">${esc(f.name)}</option>`).join('')}</select></div>
   <div><label class="cx-label" for="rd">${ui('Entry difficulty at most')}</label>
   <select id="rd" class="cx-input" name="difficulty"><option value="">${ui('Any')}</option>${[1, 2, 3, 4].map((n) => `<option value="${n}">${n}</option>`).join('')}</select></div>
   <div><label class="cx-label" for="rs">${ui('Stress at most')}</label>
@@ -665,7 +674,7 @@ ${items}
       const f = fieldBySlug.get(r.field);
       return `<tr data-id="${esc(r.slug)}" data-field="${r.field}" data-hours="${r.scores.hours[0]}" data-stress="${r.scores.stress[0]}" data-people="${r.scores.people[0]}" data-quant="${r.scores.quant[0]}" data-difficulty="${r.scores.difficulty[0]}" data-name="${esc(r.title.toLowerCase())}" data-fname="${esc(f.name)}">
 <td class="cx-pick"><input type="checkbox" id="pk-${esc(r.slug)}" value="${esc(r.slug)}" aria-labelledby="pkl pt-${esc(r.slug)}"></td>
-<th scope="row"><a id="pt-${esc(r.slug)}" href="${rel(from, U.role(r.id))}" translate="no" lang="en">${esc(r.title)}</a></th>
+<th scope="row"><a id="pt-${esc(r.slug)}" href="${rel(from, U.role(r.id))}" translate="no" lang="en" data-i18n-name="${esc(r.title)}">${esc(r.title)}</a></th>
 <td translate="no">${esc(f.name)}</td>
 <td translate="no" lang="en">${mdInline(from, r.compare.hours)}</td>
 ${['stress', 'people', 'quant'].map((k) => `<td class="cx-n">${pips(r.scores[k])} <span translate="no" lang="en">${mdInline(from, r.compare[k])}</span></td>`).join('')}
@@ -681,7 +690,7 @@ ${['stress', 'people', 'quant'].map((k) => `<td class="cx-n">${pips(r.scores[k])
 <div class="cx-prose cx-note" translate="no" lang="en">${md(from, data.index.compareIntro)}</div>
 <form class="cx-filters" data-cx-compare-filters aria-label="${ui('Filter the table')}" hidden>
   <div class="cx-f-q"><label class="cx-label" for="cq">${ui('Role name')}</label><input id="cq" class="cx-input" type="search" name="q" autocomplete="off"></div>
-  <div><label class="cx-label" for="cf">${ui('Field')}</label><select id="cf" class="cx-input" name="field"><option value="">${ui('All fields')}</option>${data.fields.map((f) => `<option value="${f.slug}" translate="no">${esc(f.name)}</option>`).join('')}</select></div>
+  <div><label class="cx-label" for="cf">${ui('Field')}</label><select id="cf" class="cx-input" name="field"><option value="">${ui('All fields')}</option>${data.fields.map((f) => `<option value="${f.slug}" translate="no" data-i18n-name="${esc(f.name)}">${esc(f.name)}</option>`).join('')}</select></div>
   <div><label class="cx-label" for="cd">${ui('Entry difficulty at most')}</label><select id="cd" class="cx-input" name="difficulty"><option value="">${ui('Any')}</option>${[1, 2, 3, 4].map((n) => `<option value="${n}">${n}</option>`).join('')}</select></div>
   <div><label class="cx-label" for="cs">${ui('Stress at most')}</label><select id="cs" class="cx-input" name="stress"><option value="">${ui('Any')}</option>${[1, 2, 3, 4].map((n) => `<option value="${n}">${n}</option>`).join('')}</select></div>
   <div><label class="cx-label" for="cl">${ui('Leans')}</label><select id="cl" class="cx-input" name="lean"><option value="">${ui('Either way')}</option><option value="quant">${ui('More quantitative than people')}</option><option value="people">${ui('More people than quantitative')}</option><option value="even">${ui('Even')}</option></select></div>

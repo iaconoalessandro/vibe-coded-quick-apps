@@ -63,7 +63,7 @@ I18N.add('it', {
   'Three calculators. A points-based MBA admissions model; a purpose-built model for pre-experience business master’s degrees; and a rule-first model for IT &amp; computing master’s in the UK, Europe and the US.':
     'Tre calcolatori. Un modello di ammissione MBA a punti; un modello costruito apposta per i master in business per neolaureati; e un modello basato sulle regole per i master in informatica nel Regno Unito, in Europa e negli Stati Uniti.',
   'Two university students at desks, heads down, writing an exam paper.': 'Due studenti universitari ai banchi, a testa bassa, durante un esame scritto.',
-  'Most published requirements at master’s level are pass/fail.': 'A livello di master, la maggior parte dei requisiti pubblicati è promosso/bocciato.',
+  'Most published requirements at master’s level are pass/fail.': "A livello di master, la maggior parte dei requisiti pubblicati si considera soddisfatta o non soddisfatta.",
   'Choose your field': 'Scegli il tuo ambito',
   'Graduating students throwing their caps in the air outside a business school.': 'Neolaureati che lanciano il tocco in aria davanti a una business school.',
   'MBA, Master in Finance, Master in Management and Master in Marketing. Scored against more than 110 programmes in Europe, the US and Asia.':
@@ -81,14 +81,14 @@ I18N.add('it', {
   'Three things this does that a generic calculator does not.': 'Tre cose che fa e che un calcolatore generico non fa.',
   'Hard rules first': 'Prima i requisiti vincolanti',
   'Most published requirements at master’s level are pass/fail: ECTS prerequisites, experience caps, test floors. A school you fail one of is reported ineligible rather than merely scored low — a 780 GMAT does not buy back a missing statistics module.':
-    'A livello di master la maggior parte dei requisiti pubblicati è promosso/bocciato: prerequisiti in ECTS, tetti all\'esperienza, punteggi minimi ai test. Una scuola di cui non rispetti un requisito risulta non ammissibile, non semplicemente con un punteggio basso: un GMAT da 780 non compra un esame di statistica che manca.',
+    "A livello di master, la maggior parte dei requisiti pubblicati si considera soddisfatta o non soddisfatta: prerequisiti in ECTS, limiti all’esperienza lavorativa, punteggi minimi ai test. Se non soddisfi anche solo uno dei requisiti di una scuola, risulti non ammissibile anziché ricevere semplicemente un punteggio basso: un GMAT da 780 non compensa un esame di statistica mancante.",
   'Weighed school by school': 'Pesato scuola per scuola',
   'Bocconi runs no interview, takes no reference letters and names GPA as a compulsory pillar — grades and the test are close to the whole ranking there. HEC and IE read essays and interview you instead. Each programme is scored under its own weighting, not one average.':
     'La Bocconi non fa colloqui, non prende lettere di referenza e indica il GPA come pilastro obbligatorio: lì voti e test sono quasi tutta la graduatoria. HEC e IE invece leggono gli essay e ti fanno un colloquio. Ogni programma viene valutato con i propri pesi, non con una media unica.',
   'Every number sourced': 'Ogni numero ha una fonte',
   'Facts are tagged by where they came from — the school’s own page, a school document, a third-party aggregator, an FOI disclosure — and the tool says plainly when a school publishes nothing at all, which is most of them.':
     'Ogni dato indica da dove viene — la pagina della scuola, un suo documento, un aggregatore di terzi, una richiesta FOI — e lo strumento dice chiaramente quando una scuola non pubblica nulla, cioè quasi sempre.',
-  'A 780 GMAT does not buy back a missing statistics module.': 'Un GMAT da 780 non compra un esame di statistica che manca.',
+  'A 780 GMAT does not buy back a missing statistics module.': "Un GMAT da 780 non compensa un esame di statistica mancante.",
   'On why eligibility is checked before anything is scored': 'Sul perché l\'ammissibilità si controlla prima di dare qualsiasi punteggio',
   '<b class="rubric-in">Colophon</b>Runs in your browser. No accounts, no cookies and no lead capture; visits are counted anonymously — which page, never what you type.':
     '<b class="rubric-in">Colophon</b>Funziona nel tuo browser. Niente account, niente cookie e nessuna raccolta di contatti; le visite sono contate in forma anonima — quale pagina, mai cosa scrivi.',
@@ -310,17 +310,17 @@ I18N.add('it', {
   'in {n} weeks': 'tra {n} settimane',
   'then {round}, {date}': 'poi {round}, {date}',
   'This cycle’s listed deadlines have passed': 'Le scadenze indicate per questo ciclo sono passate',
-  'Rolling admission — earlier is better': 'Ammissione a scorrimento: prima è meglio',
+  'Rolling admission — earlier is better': "Ammissioni a ciclo continuo: prima ti candidi, meglio è",
   'Average out of 30:': 'Media su 30:',
   'Weighted exam average, out of 30': 'Media ponderata degli esami, su 30',
   'Enter a value between 18 and 30, for example 27.4.': 'Inserisci un valore tra 18 e 30, per esempio 27.4.',
   'US GPA equivalent, roughly:': 'Equivalente in GPA statunitense, all\'incirca:',
-  'Place in a typical Italian cohort:': 'Posizione in un tipico corso italiano:',
+  'Place in a typical Italian cohort:': "Posizione rispetto agli studenti di una tipica coorte italiana:",
   'the top ~5%': 'il ~5% migliore',
   'the top ~10%': 'il ~10% migliore',
   'the top ~25%': 'il ~25% migliore',
   'the top half': 'la metà superiore',
-  'Both are indicative. The cohort estimate takes about 26/30 as the typical average, which is what AlmaLaurea\'s national figures imply; faculties differ, and engineering grades lower than economics. Some schools, Bocconi among them, recalculate your GPA from the transcript themselves.': 'Sono entrambi indicativi. La stima sul corso prende circa 26/30 come media tipica, come indicano i dati nazionali di AlmaLaurea; le facoltà sono diverse, e a ingegneria i voti sono più bassi che a economia. Alcune scuole, tra cui la Bocconi, ricalcolano da sé il GPA dal piano di studi.',
+  'Both are indicative. The cohort estimate takes about 26/30 as the typical average, which is what AlmaLaurea\'s national figures imply; faculties differ, and engineering grades lower than economics. Some schools, Bocconi among them, recalculate your GPA from the transcript themselves.': "Entrambi i valori sono indicativi. La stima della posizione nella coorte assume circa 26/30 come media tipica, come suggeriscono i dati nazionali di AlmaLaurea; le facoltà differiscono e i voti di ingegneria sono più bassi di quelli di economia. Alcune scuole, tra cui la Bocconi, ricalcolano autonomamente il GPA dal certificato degli esami.",
   'around the median': 'intorno alla mediana',
   'below the median': 'sotto la mediana',
   'Show all details': 'Mostra tutti i dettagli',
@@ -328,9 +328,9 @@ I18N.add('it', {
   'How to close the gap, and what this school weighs': 'Come colmare la distanza, e cosa conta per questa scuola',
   'What this school weighs and publishes': 'Cosa conta per questa scuola e cosa pubblica',
   'Every programme below is scored under its own weighting, because schools judge the same file differently.': 'Ogni programma qui sotto è valutato con i suoi pesi, perché le scuole giudicano lo stesso profilo in modo diverso.',
-  'How the schools weigh differently': 'Come pesano le scuole, una per una',
+  'How the schools weigh differently': "Come cambiano i pesi dei criteri da una scuola all’altra",
   'Closest: {name}, {n} points short of Competitive.': 'Il più vicino: {name}, a {n} punti da Competitivo.',
-  'Closest: {name} and {k} others, {n} points short of Competitive.': 'I più vicini: {name} e altre {k}, a {n} punti da Competitivo.',
+  'Closest: {name} and {k} others, {n} points short of Competitive.': "I più vicini: {name} e altri {k}, a {n} punti da Competitivo.",
   'How to close the gap': 'Come colmare la distanza',
   'How to close the gap, and how this programme reads a file': 'Come colmare la distanza, e come questo programma legge un profilo',
   'How this programme reads a file, and what it publishes': 'Come questo programma legge un profilo, e cosa pubblica',
@@ -424,7 +424,7 @@ I18N.add('it', {
   'Programme': 'Programma',
   'Region': 'Area',
   'Verdict': 'Verdetto',
-  'Rolling': 'A scorrimento',
+  'Rolling': "A ciclo continuo",
   'Passed this cycle': 'Passata per questo ciclo',
   'See school’s page': 'Vedi la pagina della scuola',
   'Your file': 'Il tuo profilo',
@@ -592,7 +592,7 @@ I18N.add('it', {
 
   /* ---------------------------------------------------- results: computing */
 
-  'Degree class': 'Classe di laurea',
+  'Degree class': "Classificazione del voto di laurea",
   'Undergraduate institution': 'Università della triennale',
   'Computing foundations': 'Basi di informatica',
   'Mathematics': 'Matematica',
@@ -611,13 +611,13 @@ I18N.add('it', {
   'a rule, not a judgement': 'una regola, non un giudizio',
   'nothing blocks you': 'niente ti blocca',
   'Read the gates before the score. Computing programmes publish hard entry rules — named modules, credit floors, degree classes — and enforce them. Being ruled out is not the same as scoring badly, and a strong profile does not buy a missing prerequisite. Where you are blocked, the score is still shown so you can see whether the prerequisite is worth going and getting.':
-    'Leggi i requisiti prima del punteggio. I programmi di informatica pubblicano regole d\'ingresso vincolanti — esami precisi, minimi di crediti, classi di laurea — e le applicano. Essere esclusi non è come avere un punteggio basso, e un profilo forte non compra un prerequisito che manca. Dove sei bloccato il punteggio viene comunque mostrato, così puoi capire se vale la pena andarsi a prendere quel prerequisito.',
+    'Leggi i requisiti prima del punteggio. I programmi di informatica pubblicano regole d\'ingresso vincolanti — esami precisi, minimi di crediti, classificazioni del voto di laurea — e le applicano. Essere esclusi non è come avere un punteggio basso, e un profilo forte non compra un prerequisito che manca. Dove sei bloccato il punteggio viene comunque mostrato, così puoi capire se vale la pena andarsi a prendere quel prerequisito.',
   'No published rule blocks you on the answers so far': 'Con le risposte date finora nessuna regola pubblicata ti blocca',
   'You meet the published requirements': 'Rispetti i requisiti pubblicati',
   'Every modelled programme on this track has a published rule you do not currently meet. The list below says which rule, for each one.':
     'Ogni programma modellato in questo percorso ha una regola pubblicata che al momento non rispetti. L\'elenco qui sotto dice quale, per ognuno.',
   'These are not "low chance" — they are rules the programme publishes and applies. Some are permanent, like a degree class. Others are a module you could go and take before the next cycle, which is worth knowing separately.':
-    'Queste non sono "poche possibilità": sono regole che il programma pubblica e applica. Alcune sono definitive, come la classe di laurea. Altre sono un esame che potresti andare a fare prima del prossimo ciclo, ed è utile saperlo a parte.',
+    'Queste non sono "poche possibilità": sono regole che il programma pubblica e applica. Alcune sono definitive, come la classificazione del voto di laurea. Altre sono un esame che potresti andare a fare prima del prossimo ciclo, ed è utile saperlo a parte.',
   'Not modelled': 'Non modellato',
   'The score is a ranking device, not a probability. No computing programme publishes a points requirement, and unlike the business calculators there is no admitted-student profile to anchor the thresholds against either — so every threshold here is calibration. What is not calibration is the rules: those are quoted, and each one says where it came from.':
     'Il punteggio serve a fare una classifica, non è una probabilità. Nessun programma di informatica pubblica un requisito in punti, e a differenza dei calcolatori business non c\'è nemmeno un profilo degli ammessi su cui ancorare le soglie: quindi ogni soglia qui è una calibrazione. Le regole invece no: sono citate, e ognuna dice da dove viene.',
@@ -630,7 +630,7 @@ I18N.add('it', {
   'You are {n} points short of the Competitive threshold used here, which is {threshold}.': 'Ti mancano {n} punti alla soglia Competitivo usata qui, che è {threshold}.',
   'On score you clear the threshold used here by {n} points.': 'Con il punteggio superi la soglia usata qui di {n} punti.',
   'The rule above is what blocks you. Closing the points gap will not change that — but if the rule is a module rather than a degree class, it is worth reading the two together.':
-    'A bloccarti è la regola qui sopra. Colmare la distanza in punti non lo cambierà — ma se la regola riguarda un esame e non la classe di laurea, vale la pena leggere le due cose insieme.',
+    'A bloccarti è la regola qui sopra. Colmare la distanza in punti non lo cambierà — ma se la regola riguarda un esame e non la classificazione del voto di laurea, vale la pena leggere le due cose insieme.',
   'Applying earlier in the cycle would be worth {n} points here.': 'Candidarti prima nel ciclo qui varrebbe {n} punti.',
   'Even together these do not close the gap. This programme is a genuine stretch on the profile as it stands.': 'Nemmeno insieme questi colmano la distanza. Con il profilo così com\'è, questo programma è davvero difficile.',
   'Nothing in the answers you gave can be changed to close this gap — what is short here is fixed by your degree.': 'Niente nelle risposte che hai dato si può cambiare per colmare questa distanza: quello che manca qui dipende dalla tua laurea.',
@@ -698,7 +698,7 @@ I18N.add('it', {
   'Every programme in this track is blocked by a hard rule. See below.': 'Ogni programma di questo percorso è bloccato da un requisito vincolante. Vedi sotto.',
   'These are not "low chance" — they are rules that a stronger profile cannot compensate for. An experience cap or a missing ECTS prerequisite disqualifies regardless of your test score. Each one still shows where your profile would land on score alone, so you can see whether the blocking requirement is worth going and satisfying.':
     'Queste non sono "poche possibilità": sono regole che un profilo più forte non può compensare. Un tetto all\'esperienza o un prerequisito in ECTS mancante ti esclude qualunque sia il tuo punteggio al test. Ognuna mostra comunque dove arriverebbe il tuo profilo con il solo punteggio, così puoi capire se vale la pena soddisfare il requisito che ti blocca.',
-  'How your {score} was calculated': 'Come è stato calcolato il tuo {score}',
+  'How your {score} was calculated': "Come è stato calcolato il tuo punteggio di {score}",
   'Read the score as a ranking device, not a probability. The thresholds are my calibration — no school publishes a points requirement, and only four programmes in this entire dataset publish a real acceptance rate (LSE Management, LSE Finance & Economics via FOI, Princeton, and WU Vienna). Everything else marketed as an "acceptance rate" for these programmes is an estimate.':
     'Leggi il punteggio come uno strumento di classifica, non come una probabilità. Le soglie sono una mia calibrazione: nessuna scuola pubblica un requisito in punti, e in tutto questo insieme di dati solo quattro programmi pubblicano un vero tasso di ammissione (LSE Management, LSE Finance & Economics tramite FOI, Princeton e WU Vienna). Tutto il resto spacciato per "tasso di ammissione" per questi programmi è una stima.',
   'A profile score of {score} on the {track} weighting, before any school’s own emphasis.': 'Un punteggio del profilo di {score} con i pesi del percorso {track}, prima delle priorità di ogni scuola.',
@@ -964,8 +964,8 @@ I18N.add('it', {
     'Le strade per un primo lavoro sono tante. Questa è quella che la maggior parte dei laureati qui segue davvero, e raramente è “candidarsi su LinkedIn dall’estero e sperare”.',
   'This research is past its review date ({date}): hiring habits may have changed since.':
     'Questa ricerca ha superato la data di revisione ({date}): le abitudini di assunzione potrebbero essere cambiate.',
-  'Most people get in through': 'Quasi tutti entrano attraverso',
-  'When the economy turns': 'Quando l’economia gira', 'Where a field works differently': 'Dove un settore funziona diversamente',
+  'Most people get in through': "La maggior parte delle persone entra attraverso",
+  'When the economy turns': "Quando cambia la congiuntura economica", 'Where a field works differently': 'Dove un settore funziona diversamente',
   'Schools and people that open doors': 'Scuole e persone che aprono porte', 'Where students meet employers': 'Dove studenti e aziende si incontrano',
   'How to apply': 'Come candidarsi',
   'No field-specific account found for: {list}. The general route above applies as far as the research knows.':
@@ -1072,7 +1072,7 @@ I18N.add('it', {
   'I know where I want to end up':
     'So dove voglio arrivare',
   'Find the role you want and read how people get there: the degrees, the programmes, the timeline and the exits.':
-    'Trova il ruolo che vuoi e leggi come ci si arriva: le lauree, i programmi, i tempi e le uscite.',
+    "Trova il ruolo che vuoi e leggi come ci si arriva: le lauree, i programmi, i tempi e gli sbocchi professionali.",
   'All role families, searchable':
     'Tutte le famiglie di ruoli, con ricerca',
   'Compare roles: hours, stress, pay, entry':
@@ -1102,7 +1102,7 @@ I18N.add('it', {
   'Career Explorer — Admetia':
     'Esplora le carriere — Admetia',
   'What 154 graduate jobs in 13 fields are really like: the work, hours, stress, pay by region, the way in and the exits. Start from your degree, a field or the job you want.':
-    'Come sono davvero 124 lavori per laureati in 13 settori: il lavoro, le ore, lo stress, lo stipendio per area, come si entra e le uscite. Parti dalla tua laurea, da un settore o dal lavoro che vuoi.',
+    "Come sono davvero 154 lavori per laureati in 13 settori: il lavoro, le ore, lo stress, lo stipendio per area, come si entra e gli sbocchi professionali. Parti dalla tua laurea, da un settore o dal lavoro che vuoi.",
   'Skip to content':
     'Vai al contenuto',
   'Career Explorer sections':
@@ -1230,13 +1230,13 @@ I18N.add('it', {
   'Where this role connects':
     'Dove porta questo ruolo',
   'Roles named in its exit opportunities':
-    'Ruoli citati tra le sue uscite',
+    "Ruoli citati tra i suoi sbocchi professionali",
   'named as':
     'citato come',
   'Roles whose exits lead here':
-    'Ruoli le cui uscite portano qui',
+    "Ruoli i cui sbocchi professionali portano qui",
   'No other role family names this one in its exits.':
-    'Nessun’altra famiglia di ruoli cita questa tra le sue uscite.',
+    "Nessun’altra famiglia di ruoli cita questa tra i propri sbocchi professionali.",
   'Other roles in':
     'Altri ruoli in',
   'Similar scores in other fields':
@@ -1284,7 +1284,7 @@ I18N.add('it', {
   'The Italy pay add-on has no row for this role family. The Italian figures the report itself found, if any, are under the pay section above.':
     'L’appendice sugli stipendi in Italia non ha righe per questa famiglia di ruoli. Le cifre italiane trovate dal rapporto, se ci sono, sono nella sezione sullo stipendio più sopra.',
   'None of the exits above names another role family exactly. Read them in full, or browse the related roles below.':
-    'Nessuna delle uscite qui sopra nomina esattamente un’altra famiglia di ruoli. Leggile per intero, o sfoglia i ruoli collegati qui sotto.',
+    "Nessuno degli sbocchi professionali qui sopra cita esattamente un’altra famiglia di ruoli. Leggili per intero, oppure esplora i ruoli collegati qui sotto.",
   'From the add-on’s table for':
     'Dalla tabella dell’appendice per',
   'All role families':
@@ -1668,7 +1668,7 @@ I18N.add('it', {
   'Only roles above what you accept lose points; a calmer role never does.':
     'Perdono punti solo i ruoli sopra quello che accetti; un ruolo più tranquillo mai.',
   'How competitive a door are you ready to try?':
-    'Quanto è competitiva la porta che sei pronto a tentare?',
+    "Quanto sei disposto ad affrontare una selezione competitiva?",
   'Entry difficulty is scored 1 to 5. A hard door is not a reason to skip a role: the results pair each one with a door that is still open.':
     'La difficoltà d’ingresso va da 1 a 5. Una porta difficile non è un motivo per scartare un ruolo: i risultati affiancano a ciascuna una porta ancora aperta.',
   'What matters most to you?':
@@ -2529,7 +2529,7 @@ I18N.add('it', {
   'Several bank, McKinsey and BCG pages could not be read by the researchers, so some opening dates rest on careers-service and practitioner consensus (flag M). The Paris, Frankfurt, Milan and Zurich stage windows are practitioner consensus only (flag L).':
     'Diverse pagine di banche, McKinsey e BCG non erano leggibili per i ricercatori, quindi alcune date di apertura si basano sul consenso di career service e professionisti (livello M). Le finestre degli stage a Parigi, Francoforte, Milano e Zurigo sono solo consenso dei professionisti (livello L).',
   'Recruiting calendar — Career Explorer — Admetia':
-    'Calendario delle selezioni — Career Explorer — Admetia',
+    'Calendario delle selezioni — Esplora le carriere — Admetia',
   'When to apply for internships, graduate schemes and six-month stages in banking, consulting, Big 4, FMCG and tech across London, Paris, Frankfurt, Milan, Zurich and the US, with official portals.':
     'Quando candidarsi a stage, graduate programme e tirocini di sei mesi in banca, consulenza, Big 4, FMCG e tech a Londra, Parigi, Francoforte, Milano, Zurigo e negli Stati Uniti, con i portali ufficiali.',
   'Template':
@@ -2735,7 +2735,7 @@ I18N.add('it', {
   'Employers and schools allow AI for research, structure and proofreading, and ban it for writing answers in assessments and interviews. Detectors misread non-native English, so the practical risk is a follow-up question about a sentence you cannot explain.':
     'Datori di lavoro e scuole permettono l’IA per ricerca, struttura e correzione, e la vietano per scrivere le risposte in prove e colloqui. I rilevatori fraintendono l’inglese dei non madrelingua, quindi il rischio pratico è una domanda di approfondimento su una frase che non sai spiegare.',
   'Application toolkit — Career Explorer — Admetia':
-    'Kit per le candidature — Career Explorer — Admetia',
+    'Kit per le candidature — Esplora le carriere — Admetia',
   'Free one-column CV templates in Word and LaTeX for banking, consulting, tech and master’s applications, and motivation-letter skeletons sized to Bocconi, Imperial, LSE and ESCP limits.':
     'Modelli gratuiti di CV a una colonna in Word e LaTeX per banca, consulenza, tech e candidature ai master, e schemi di lettera motivazionale calibrati sui limiti di Bocconi, Imperial, LSE ed ESCP.',
   'Always':
@@ -2945,7 +2945,7 @@ I18N.add('it', {
   'From research/getting-in/applications-and-interviews.md. The frequencies and official cases on this page are from research/getting-in/interview-cases.md, read on 10 October 2026.':
     'Da research/getting-in/applications-and-interviews.md. Le frequenze e i casi ufficiali in questa pagina vengono da research/getting-in/interview-cases.md, letto il 10 ottobre 2026.',
   'Interview prep — Career Explorer — Admetia':
-    'Preparare i colloqui — Career Explorer — Admetia',
+    'Preparare i colloqui — Esplora le carriere — Admetia',
   'What consulting, banking, trading, PE, Big 4, FMCG and tech interviews ask and how often, a STAR story builder, finance technical flashcards, a consulting case primer and practice cases.':
     'Cosa chiedono i colloqui di consulenza, banca, trading, PE, Big 4, FMCG e tech e con che frequenza, un costruttore di storie STAR, flashcard di finanza, una guida ai case di consulenza e casi di prova.',
   '{p}% of {b}':
@@ -3225,7 +3225,7 @@ I18N.add('it', {
   '<a href="hiring.html#compare">Compare all 46 countries in one table</a>, filterable by route, role family, language at work, master’s and sponsorship.': '<a href="hiring.html#compare">Confronta tutti i 46 paesi in un’unica tabella</a>, filtrabile per via d’ingresso, famiglia di ruoli, lingua sul lavoro, master e sponsorizzazione.',
   'Four one-page CV templates (banking and markets, consulting, software and data, academic) in Word and LaTeX; CV rules by country; how to write the bullets; motivation letters by school; and a draft checker that runs in your browser.': 'Quattro modelli di CV di una pagina (banche e mercati, consulenza, software e dati, accademico) in Word e LaTeX; le regole del CV per paese; come scrivere i punti elenco; le lettere motivazionali per scuola; e un verificatore di bozze che funziona nel tuo browser.',
   'What you will face by career area, free official practice material, a builder for your five stories, finance technical cards, a consulting case primer and seven practice cases.': 'Che cosa ti aspetta per area di carriera, materiale ufficiale gratuito per esercitarti, uno strumento per costruire le tue cinque storie, schede tecniche di finanza, un’introduzione ai case di consulenza e sette casi di pratica.',
-  'Most windows are rolling: places fill as applications arrive. The calendar explains what the evidence supports and what it does not.': 'La maggior parte delle finestre è a scorrimento: i posti si riempiono man mano che arrivano le candidature. Il calendario spiega che cosa le prove sostengono e che cosa no.',
+  'Most windows are rolling: places fill as applications arrive. The calendar explains what the evidence supports and what it does not.': "La maggior parte delle selezioni è a ciclo continuo: i posti vengono assegnati man mano che arrivano le candidature. Il calendario spiega quali conclusioni sono sostenute dalle fonti e quali no.",
   'Not sure which role to aim for?': 'Non sai a quale ruolo puntare?',
   '154 role families with what the work is like, pay, hours and how people get in.': '154 famiglie di ruoli con com’è il lavoro, retribuzioni, orari e come si entra.',
   'Need a visa to work there?': 'Serve un visto per lavorarci?',
@@ -3514,5 +3514,58 @@ I18N.add('it', {
   'The pipeline, with this role’s stretch marked.': 'La pipeline, con il tratto di questo ruolo evidenziato.',
   'Diagram: a data pipeline from sources, through pipelines and the warehouse, to the transformation layer and its users. The analytics engineer owns the transformation layer, which turns source tables into clean marts.': 'Schema: una pipeline di dati dalle fonti, attraverso i caricamenti e il data warehouse, fino al livello di trasformazione e ai suoi utenti. L’analytics engineer si occupa del livello di trasformazione, che ricava tabelle pulite da quelle di origine.',
   'Diagram: a monthly planning loop. The demand planner produces the forecast; the supply planner turns it into a production and purchasing plan; the S&OP analyst prepares the gap analysis, scenarios and financial view; then the cycle repeats.': 'Schema: un ciclo di pianificazione mensile. Il demand planner prepara la previsione; il supply planner la trasforma in un piano di produzione e di acquisto; l’analista S&OP prepara l’analisi degli scostamenti, gli scenari e la lettura finanziaria; poi il ciclo ricomincia.',
-  'The three jobs in this family, as one cycle.': 'I tre mestieri di questa famiglia, in un unico ciclo.'
+  'The three jobs in this family, as one cycle.': 'I tre mestieri di questa famiglia, in un unico ciclo.',
+
+  /* Website translation audit: navigation and generated metadata. */
+  "Choose a master’s": "Scegli un master",
+  "Choose a master’s: go straight to": "Scegli un master: vai direttamente a",
+  "Choose a master’s — Admetia": "Scegli un master — Admetia",
+  "Plan a move": "Organizza il trasferimento",
+  "Plan a move: go straight to": "Organizza il trasferimento: vai direttamente a",
+  "How graduates really get hired in 46 countries: the usual routes in, whether a master’s is expected, the language at work, the customs of applying and how many graduates find work. Compare countries side by side and plan your own route. Free and private.": "Come i laureati trovano davvero lavoro in 46 paesi: i percorsi d’ingresso più comuni, se serve un master, la lingua sul lavoro, le consuetudini delle candidature e quanti laureati trovano un impiego. Confronta i paesi e pianifica il tuo percorso. Gratuito e privato.",
+  "{name} — Career Explorer — Admetia": "{name} — Esplora le carriere — Admetia",
+  "If you studied {name} — Career Explorer — Admetia": "Se hai studiato {name} — Esplora le carriere — Admetia",
+  "Which fields and role families a {name} background leads to, rated strong, possible or stretch, with the reason for each.": "I settori e le famiglie di ruoli a cui porta un percorso di studi in {name}, classificati come adatti, possibili o difficili, con una spiegazione per ciascuno.",
+  "{name} ({field}): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in.": "{name} ({field}): le attività, le ore e lo stress, gli stipendi per area con le fonti, il percorso di carriera, gli sbocchi professionali, i datori di lavoro e come entrare.",
+  "1. What this branch is": "1. Che cos’è questo settore",
+  "2. Map of areas and sectors": "2. Mappa delle aree e dei settori",
+  "3. Role families": "3. Famiglie di ruoli",
+  "4. Banks vs. other employer types": "4. Banche e altri tipi di datori di lavoro",
+  "5. Which backgrounds fit this branch": "5. Quali percorsi di studi sono adatti a questo settore",
+  "6. Sources": "6. Fonti",
+  "What you actually do": "Che cosa fai concretamente",
+  "A typical day and week": "Una giornata e una settimana tipiche",
+  "Hours, stress and lifestyle": "Orari, stress e stile di vita",
+  "Human vs. quantitative profile": "Componente relazionale e quantitativa",
+  "Compensation (approximate)": "Retribuzione indicativa",
+  "Compensation (approximate; employers do not publish totals)": "Retribuzione indicativa; i datori di lavoro non pubblicano gli importi totali",
+  "Career path": "Percorso di carriera",
+  "Exit opportunities": "Sbocchi professionali",
+  "Tier list of employers": "Classifica dei datori di lavoro per fascia",
+  "Tier list of employers (alphabetical within each tier)": "Classifica dei datori di lavoro per fascia, in ordine alfabetico all’interno di ciascuna",
+  "Tier list of employers (alphabetical within each tier; no ranking implied inside a tier)": "Classifica dei datori di lavoro per fascia; ordine alfabetico e nessuna graduatoria all’interno di ciascuna fascia",
+  "Tier list of employers (alphabetical within each group)": "Classifica dei datori di lavoro per fascia, in ordine alfabetico all’interno di ciascun gruppo",
+  "How to enter": "Come entrare",
+  "Honest downsides and who it is NOT a good fit for": "Svantaggi concreti e per chi questo lavoro non è adatto",
+  "Data Science &amp; AI master’s calculator": "Calcolatore per master in data science e IA",
+  "Corporate Finance & Investments": "Finanza aziendale e investimenti",
+  "Wealth & Asset Management": "Gestione patrimoniale e del risparmio",
+  "Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific.": "Registrare, verificare e rendicontare le informazioni finanziarie: revisione esterna, fiscalità, contabilità finanziaria e controllo di gestione, revisione interna, contabilità forense e rendicontazione di sostenibilità. Un settore legato alle qualifiche professionali e alle specificità locali.",
+  "Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; cro": "Sviluppo di sistemi di IA: machine learning, applicazioni LLM, MLOps e infrastrutture, visione artificiale, robotica, dati e feedback. Include ricerca, sicurezza, valutazioni, implementazione presso i clienti, governance, politiche e prodotti di IA. Retribuzioni molto elevate per una piccola élite.",
+  "Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade.": "Sviluppo di prodotti software e gestione dei sistemi sottostanti: backend, frontend, mobile, videogiochi, QA, ingegneria delle soluzioni, DevOps/SRE, cloud, sistemi embedded, data engineering, IT aziendale, consulenza e ricerca. Il settore con la maggiore variabilità salariale e il mercato più difficile per i principianti degli ultimi dieci anni.",
+  "Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite \"skills gap\" headlines.": "Protezione delle organizzazioni: monitoraggio SOC, risposta agli incidenti e analisi forense, threat intelligence, test di penetrazione, sicurezza di applicazioni e cloud, architettura, GRC e audit, sicurezza OT, consulenza e percorso CISO. Domanda concreta per i profili intermedi, ma un primo impiego difficile da ottenere nonostante i titoli sulla carenza di competenze.",
+  "Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door.": "Trasformazione dei dati aziendali in rapporti, dashboard e risposte: analisi dei dati e del business, sviluppo BI, analytics engineering, analisi di marketing, prodotto, operations e risorse umane, governance dei dati e consulenza. Il percorso tecnico d’ingresso più accessibile.",
+  "Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting.": "Uso della statistica e dei modelli per prendere decisioni: sperimentazione sui prodotti, machine learning, ricerca operativa, biostatistica, modelli di credito, frode e pricing in banche e assicurazioni, ricerca applicata con dottorato e consulenza.",
+  "Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top.": "Lavorare come economista in banche centrali, organizzazioni internazionali, amministrazioni pubbliche e istituti di statistica, consulenza economica, aziende tecnologiche, centri studi e università, anche con posizioni pre-dottorato. Nei ruoli di vertice prevalgono i dottorati.",
+  "Moving, pricing, investing and protecting money: investment banking and advisory (M&A, ECM, DCM/LevFin, restructuring), sales & trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and": "Trasferire, valutare, investire e proteggere il denaro: investment banking e consulenza finanziaria, M&A, ECM, DCM/LevFin, ristrutturazioni, sales & trading e ricerca, gestione del risparmio, hedge fund, PE, VC, credito privato, allocazione degli investimenti, private banking, finanza aziendale, rischio, compliance e finanza quantitativa.",
+  "Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting.": "Produzione, acquisto, stoccaggio e movimentazione delle merci: approvvigionamento, pianificazione della domanda e dell’offerta, logistica e spedizioni, magazzini, trasporto marittimo, analisi e sistemi della supply chain e consulenza.",
+  "Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy.": "Consulenza alle organizzazioni su strategia, operations e trasformazione: società MBB e di seconda fascia, Big 4/Accenture, boutique specializzate, consulenza tecnologica e strategia interna all’azienda.",
+  "General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management.": "Carriere aziendali nelle organizzazioni: programmi di formazione manageriale per neolaureati, gestione operativa, gestione di progetti e programmi, risorse umane, strategia interna e sviluppo commerciale, management nel settore pubblico e non profit.",
+  "Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development.": "Creare domanda e acquisire clienti: gestione del marchio, marketing digitale e performance, contenuti e social, marketing di prodotto, CRM, ricerche di mercato, ruoli in agenzia, vendite e sviluppo commerciale.",
+  "Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding).": "Decidere quali prodotti software sviluppare, con ruoli PM, programmi APM, TPM e product operations, e costruire nuove imprese, lavorando nelle startup o fondandole.",
+  /* French is now available alongside English and Italian. */
+  "Free, private admissions calculators for MBA, business master's and computing master's programmes in the UK, Europe, the US and Asia. Your answers never leave your browser. In English, Italian and French.": "Calcolatori di ammissione gratuiti e privati per MBA, master in business e master in informatica nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Le tue risposte non lasciano mai il browser. In inglese, italiano e francese.",
+  "Score your profile against MBA programmes and master's in Finance, Management and Marketing across the UK, Europe, the US and Asia. Free, private, in English, Italian and French.": "Valuta il tuo profilo rispetto ai programmi MBA e ai master in finanza, management e marketing nel Regno Unito, in Europa, negli Stati Uniti e in Asia. Gratuito, privato, in inglese, italiano e francese.",
+  "A free, independent reference for choosing a master’s, understanding careers, getting hired and moving country: 136 programmes, 154 role families and 46 countries, with every figure sourced. In English, Italian and French.": "Una guida gratuita e indipendente per scegliere un master, capire le carriere, farsi assumere e cambiare paese: 136 programmi, 154 famiglie di ruoli e 46 paesi, con la fonte di ogni cifra. In inglese, italiano e francese.",
+  "English, Italian and French": "Inglese e italiano"
 });

@@ -37,8 +37,9 @@
    * no flash of English. If that script never arrives, show the page anyway
    * — English is better than nothing. */
   try {
-    if (localStorage.getItem('admissions-calc:lang') === 'it') {
-      root.lang = 'it';
+    var storedLanguage = localStorage.getItem('admissions-calc:lang');
+    if (storedLanguage === 'it' || storedLanguage === 'fr') {
+      root.lang = storedLanguage;
       root.classList.add('i18n-wait');
       setTimeout(function () { root.classList.remove('i18n-wait'); }, 3000);
     }

@@ -32,23 +32,33 @@ const GLOBALS = ['MASTERS_MODEL', 'IT_MODEL', 'MBA_MODEL', 'IT_EVIDENCE', 'ADMIS
 /* The same prose fields js/i18n.js translates. */
 const ALLOW = new Set(['label', 'blurb', 'help', 'note', 'because', 'v', 'k', 'why', 'intro', 'heading', 'detail',
   'title', 'short', 'full', 'from', 'window', 'source', 'unit', 'name', 'items']);
-const PAGES = ['index.html', 'study.html', 'jobs.html', 'method.html', 'business.html', 'it.html', 'mba.html', 'masters.html', 'computing.html', 'map.html'];
+/* Include every published page, including generated career pages. */
+const PAGES = Object.keys(require('./shell').ROOT_PAGES);
+function careerPages(dir = 'careers') {
+  return fs.readdirSync(path.join(ROOT, dir), { withFileTypes: true }).flatMap((entry) => {
+    const file = dir + '/' + entry.name;
+    return entry.isDirectory() ? careerPages(file) : entry.name.endsWith('.html') ? [file] : [];
+  });
+}
+PAGES.push(...careerPages());
 
-function dictionary(files) {
+function dictionary(files, lang = 'it') {
   const dict = {};
   const ctx = { console };
   ctx.window = ctx;
-  ctx.I18N = { lang: 'it', add: (l, d) => Object.assign(dict, d), localize: () => {} };
+  ctx.I18N = { lang, add: (l, d) => { if (l === lang) Object.assign(dict, d); }, localize: () => {} };
   ctx.ATLAS = { add: () => {} };
   vm.createContext(ctx);
-  for (const f of files || ['js/i18n-it.js', 'data/i18n-it-models.js']) vm.runInContext(read(f), ctx, { filename: f });
+  for (const f of files || [`js/i18n-${lang}.js`, `data/i18n-${lang}-models.js`]) vm.runInContext(read(f), ctx, { filename: f });
   return dict;
 }
 
 /* The Atlas carries its Italian beside its English, one file per country
  * (data/atlas/). Those entries are checked here for broken placeholders and
  * tags; whether every sentence has one is tests/atlas-test.js's job. */
-function atlasFiles() {
+function atlasFiles(lang) {
+  if (lang === 'fr') return ['data/atlas/i18n-fr.js', ...fs.readdirSync(path.join(ROOT, 'data/atlas/fr'))
+    .filter((f) => f.endsWith('.js')).map((f) => 'data/atlas/fr/' + f)];
   return fs.readdirSync(path.join(ROOT, 'data/atlas')).filter((f) => f.endsWith('.js') && f !== 'geo.js')
     .map((f) => 'data/atlas/' + f);
 }
@@ -81,9 +91,10 @@ function modelStrings() {
  * the way the code joins them. */
 function scriptStrings() {
   const out = new Set();
-  const files = fs.readdirSync(path.join(ROOT, 'js')).filter((f) => f.endsWith('.js') && !/^i18n/.test(f));
+  const files = ['js', 'careers/assets'].flatMap((dir) => fs.readdirSync(path.join(ROOT, dir))
+    .filter((f) => f.endsWith('.js') && !/^i18n/.test(f)).map((f) => dir + '/' + f));
   for (const f of files) {
-    const src = read('js/' + f);
+    const src = read(f);
     const toks = [];
     for (let i = 0; i < src.length;) {
       const c = src[i];
@@ -138,8 +149,36 @@ function pagesText() {
 const placeholders = (s) => (String(s).match(/\{\w+\}/g) || []).sort().join(' ');
 const tags = (s) => (String(s).match(/<\/?[a-z][^>]*>/gi) || []).join('');
 
-function check() {
-  const dict = dictionary();
+/* These descriptions are rendered dynamically and are not calculator prose. */
+function supplementalStrings() {
+  const ctx = { console }; ctx.window = ctx;
+  vm.createContext(ctx);
+  for (const f of ['data/atlas/culture.js', 'data/atlas/outcomes.js', 'data/programme-fees.js'])
+    vm.runInContext(read(f), ctx, { filename: f });
+  const strings = new Set();
+  for (const country of Object.values(ctx.ATLAS_CULTURE.country))
+    for (const item of Object.values(country)) if (item && item.en) strings.add(item.en);
+  for (const country of Object.values(ctx.ATLAS_OUTCOMES.country))
+    for (const item of Object.values(country)) if (item && item.def) strings.add(item.def);
+  for (const item of Object.values(ctx.PROGRAMME_FEES)) if (item.note) strings.add(item.note);
+  ctx.ATLAS = { addEntry: (entry) => {
+    for (const programme of entry.programmes || []) {
+      strings.add(programme.n);
+      if (programme.lang) strings.add('Programme languages: ' + programme.lang);
+    }
+  } };
+  for (const file of fs.readdirSync(path.join(ROOT, 'data/atlas/entry')).filter((f) => /^[a-z]{2}\.js$/.test(f)))
+    vm.runInContext(read('data/atlas/entry/' + file), ctx, { filename: file });
+  for (const file of PAGES) {
+    for (const svg of read(file).matchAll(/<svg\b[^>]*\blang="en"[^>]*>([\s\S]*?)<\/svg>/g))
+      for (const label of svg[1].matchAll(/<text\b[^>]*>([\s\S]*?)<\/text>/g))
+        strings.add('Diagram label: ' + label[1].replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim());
+  }
+  return strings;
+}
+
+function check(lang = 'it') {
+  const dict = dictionary(undefined, lang);
   const models = modelStrings();
   const scripts = scriptStrings();
   const html = pagesText();
@@ -156,24 +195,32 @@ function check() {
   [...ctx.MASTERS_MODEL.excluded, ...ctx.IT_MODEL.excluded].forEach((x) => extra.add(x.name));
 
   const missing = [...models.keys()].filter((s) => dict[s] === undefined);
-  const stale = Object.keys(dict).filter((k) => !models.has(k) && !scripts.has(k) && !extra.has(k) && html.indexOf(k) === -1);
-  const atlas = dictionary(atlasFiles());
+  const supplemental = supplementalStrings();
+  const stale = Object.keys(dict).filter((k) => !models.has(k) && !scripts.has(k) && !extra.has(k) && !supplemental.has(k) && html.indexOf(k) === -1);
+  const atlas = dictionary(atlasFiles(lang), lang);
   const all = Object.assign({}, atlas, dict);
   const broken = Object.keys(all).filter((k) => placeholders(k) !== placeholders(all[k]) || tags(k) !== tags(all[k]));
-  return { dict, atlas, models, missing, stale, broken };
+  const supplementalMissing = lang === 'fr' ? [...supplemental].filter((k) => all[k] === undefined) : [];
+  return { dict, atlas, models, missing, stale, broken, supplementalMissing };
 }
 
 module.exports = { check };
 
 if (require.main === module) {
   const verbose = process.argv.includes('-v');
-  const r = check();
+  const lang = process.argv.includes('--lang=fr') ? 'fr' : 'it';
+  const language = lang === 'fr' ? 'French' : 'Italian';
+  const r = check(lang);
   const n = Object.keys(r.dict).length;
-  console.log(`Italian entries: ${n}`);
-  console.log(`Model prose without Italian: ${r.missing.length} of ${r.models.size} (names of schools, companies and tests are left in English on purpose)`);
+  console.log(`${language} entries: ${n}`);
+  console.log(`Model prose without ${language}: ${r.missing.length} of ${r.models.size} (names of schools, companies and tests are left in English on purpose)`);
   if (verbose) r.missing.forEach((s) => console.log('  missing  ' + JSON.stringify(s)));
   console.log(`Entries whose English no longer appears: ${r.stale.length}`);
   r.stale.forEach((s) => console.log('  stale    ' + JSON.stringify(s)));
   console.log(`Entries with mismatched {placeholders} or tags: ${r.broken.length}`);
+  if (lang === 'fr') {
+    console.log(`Culture, outcomes, fee notes, employer programmes and diagram labels without French: ${r.supplementalMissing.length}`);
+    r.supplementalMissing.forEach((s) => console.log('  missing supplemental  ' + JSON.stringify(s)));
+  }
   r.broken.forEach((s) => console.log('  broken   ' + JSON.stringify(s) + '\n        -> ' + JSON.stringify(r.dict[s])));
 }

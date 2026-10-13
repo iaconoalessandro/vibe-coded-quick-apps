@@ -24,6 +24,7 @@ var SHELL_FILES = [
   'index.html', 'study.html', 'jobs.html', 'method.html', 'business.html', 'it.html', 'computing.html', 'masters.html', 'mba.html', 'map.html', 'hiring.html', 'programmes.html',
   'css/fonts.css', 'css/app.css',
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
+  'js/i18n-fr.js', 'data/i18n-fr-models.js', 'data/atlas/i18n-fr.js',
   'data/conversions.js', 'data/masters-model.js', 'data/computing-model.js',
   'data/computing-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js', 'data/programme-fees.js',
   'js/theme.js', 'js/intro.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',

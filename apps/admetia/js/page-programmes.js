@@ -134,7 +134,7 @@
   var PER = { total: 'total', year: 'a year', semester: 'a semester' };
   function money(f) {
     var n = f[0] % 1 ? f[0].toLocaleString('en-GB', { minimumFractionDigits: 2 }) : f[0].toLocaleString('en-GB');
-    if (window.I18N && I18N.locale === 'it-IT') n = n.replace(/,/g, ' ').replace(/\./g, ',');
+    if (window.I18N && (I18N.locale === 'it-IT' || I18N.locale === 'fr-FR')) n = n.replace(/,/g, ' ').replace(/\./g, ',');
     return (f[0] === 0 ? T('Free') : CUR[f[1]] + n) + (f[0] === 0 ? '' : ' ' + T(PER[f[2]]));
   }
   function feeFor(p, passport) {

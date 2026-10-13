@@ -28,13 +28,13 @@ function sandbox(lang){
     localStorage:{getItem:k=>store[k]===undefined?null:store[k],setItem:(k,v)=>{store[k]=String(v);}}};
   s.window=s;
   vm.createContext(s);
-  const files=['js/i18n.js','js/i18n-it.js','data/conversions.js','data/masters-model.js','data/computing-model.js',
-    'data/computing-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js',
+  const files=['js/i18n.js','js/i18n-it.js','js/i18n-fr.js','data/conversions.js','data/masters-model.js','data/computing-model.js',
+    'data/computing-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js','data/i18n-fr-models.js',
     'js/score-masters.js','js/score-computing.js','js/score-mba.js'];
   for(const f of files) vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
   return s;
 }
-const EN=sandbox('en'), IT=sandbox('it');
+const EN=sandbox('en'), IT=sandbox('it'), FR=sandbox('fr');
 
 t('English readers get English',EN.I18N.lang==='en'&&EN.I18N.t('Me now')==='Me now');
 t('Italian readers get Italian',IT.I18N.lang==='it'&&IT.I18N.t('Me now')==='Io adesso');
@@ -45,6 +45,36 @@ t('plural picks the plural otherwise',IT.I18N.tn(3,'{n} published rule','{n} pub
 t('Italian keeps figures where English writes words',EN.I18N.words(3)==='three'&&IT.I18N.words(3)==='3');
 t('Italian ordinals',IT.I18N.ordinal(75)==='75º'&&EN.I18N.ordinal(73)==='73rd');
 t('Italian month names',IT.I18N.month(8)==='set'&&EN.I18N.month(8)==='Sep');
+t('French is a saved language with French number and date formatting',FR.I18N.lang==='fr'&&FR.I18N.locale==='fr-FR'&&FR.I18N.month(7)==='août'&&FR.I18N.ordinal(1)==='1er'&&FR.I18N.ordinal(2)==='2e');
+t('French has familiar labels and explains technical abbreviations',FR.I18N.t('Running score')==='Votre score actuel'&&FR.I18N.t('Data & AI')==='Données et intelligence artificielle'&&FR.I18N.t('GMAT').includes('Test d’admission'));
+t('French questions are translated before a calculator draws them',FR.MASTERS_MODEL.steps[0].title==='Votre diplôme');
+t('French templates preserve their variables',FR.I18N.t('in {n} days',{n:12})==='dans 12 jours');
+t('the language picker includes all three languages',FR.I18N.langs.map(x=>x.id).join(',')==='en,it,fr');
+
+/* Generated metadata uses shared templates, including names containing
+ * punctuation. It must translate without altering the English source. */
+function metadataDocument(template, vars) {
+  const title={getAttribute:k=>k==='data-i18n'?template:k==='data-i18n-vars'?vars:null};
+  const meta={getAttribute:k=>k==='content'?'English description':null,setAttribute:()=>{}};
+  const body={tagName:'BODY',getAttribute:()=>null,firstChild:null,firstElementChild:null};
+  return {title:'English title',body,querySelector:q=>q==='title'?title:meta};
+}
+IT.document=metadataDocument('If you studied {name} — Career Explorer — Admetia',JSON.stringify({name:'Finance'}));
+IT.I18N.translateDom();
+t('generated metadata translates its template and background name',IT.document.title==='Se hai studiato Finanza — Esplora le carriere — Admetia');
+IT.document=metadataDocument('{name} — Career Explorer — Admetia',JSON.stringify({name:'Analyst "A&B"'}));
+IT.I18N.translateDom();
+t('generated metadata preserves punctuation in untranslated role names',IT.document.title==='Analyst "A&B" — Esplora le carriere — Admetia');
+IT.document=metadataDocument('{name} — Career Explorer — Admetia','invalid JSON');
+IT.I18N.translateDom();
+t('malformed metadata variables retain the English fallback',IT.document.title==='English title');
+delete IT.document;
+const careersData=JSON.parse(fs.readFileSync(path.join(APP,'careers/data/careers.json'),'utf8'));
+t('all 154 career names have French descriptions for students',careersData.roles.every(r=>FR.I18N.t(r.title)!==r.title));
+t('French career descriptions avoid unexplained specialist labels',FR.I18N.t('Backend software engineer')==='Développeur des fonctions internes d’un logiciel'&&FR.I18N.t('SOC analyst (tier 1-3)')==='Analyste de sécurité informatique, niveaux 1 à 3');
+const summary=`What ${careersData.roles.length} graduate jobs in ${careersData.fields.length} fields are really like: the work, hours, stress, pay by region, the way in and the exits. Start from your degree, a field or the job you want.`;
+t('the Italian career summary preserves the current role and field counts',
+  IT.I18N.t(summary)!==summary&&IT.I18N.t(summary).includes(String(careersData.roles.length))&&IT.I18N.t(summary).includes(String(careersData.fields.length)));
 
 /* The models really are translated in place... */
 t('Italian models carry Italian questions',IT.MASTERS_MODEL.steps[0].title==='La tua laurea'&&EN.MASTERS_MODEL.steps[0].title==='Your degree');
@@ -89,6 +119,41 @@ for(let pick=0;pick<6;pick++){
   }
 }
 t('every score is the same in Italian as in English ('+n+' profile × track runs)',same);
+let sameFrench=true;
+for(let pick=0;pick<6;pick++){
+  for(const [model,scorer,tracks] of [['MASTERS_MODEL','MASTERS_SCORE',['mim','mif','marketing']],['IT_MODEL','IT_SCORE',['cs','dsai','conversion']]]){
+    for(const track of tracks){
+      const a=profile(EN[model],pick),x=EN[scorer].evaluate(a,track),y=FR[scorer].evaluate(a,track);
+      sameFrench=sameFrench&&x.score.total===y.score.total&&JSON.stringify(x.rows.map(r=>[r.school.id,r.adjusted,r.eligible,r.verdict.tone]))===JSON.stringify(y.rows.map(r=>[r.school.id,r.adjusted,r.eligible,r.verdict.tone]));
+    }
+  }
+  for(const mode of ['published','corrected']){
+    const a=profile(EN.MBA_MODEL,pick),x=EN.MBA_SCORE.score(a,mode),y=FR.MBA_SCORE.score(a,mode);
+    sameFrench=sameFrench&&x.base===y.base&&JSON.stringify(x.schools)===JSON.stringify(y.schools);
+  }
+}
+t('French preserves every score and eligibility result (48 profile × track runs)',sameFrench);
+const frenchReport=require('../tools/i18n-report.js').check('fr');
+t('French preserves all placeholders and HTML tags',frenchReport.broken.length===0,frenchReport.broken.slice(0,3).join(' | '));
+t('French covers culture, outcomes, fee notes, employer programmes and diagram labels',frenchReport.supplementalMissing.length===0,frenchReport.supplementalMissing.slice(0,5).join(' | '));
+const frenchScopeErrors=Object.entries({...frenchReport.dict,...frenchReport.atlas}).filter(([en,fr])=>
+  /non[- ]EU\b/i.test(en)&&!/non[- ]European\b/i.test(en)&&/non[- ]européen/i.test(fr));
+t('French keeps non-EU distinct from non-European',frenchScopeErrors.length===0,frenchScopeErrors.map(x=>x[0]).slice(0,3).join(' | '));
+t('French covers every existing Italian interface and model lookup key',Object.keys(report.dict).every(k=>frenchReport.dict[k]!==undefined));
+t('French covers the country vocabulary and all existing Italian country text',Object.keys(report.atlas).every(k=>frenchReport.atlas[k]!==undefined||frenchReport.dict[k]!==undefined));
+const countryPairs=new Set();
+function collectPairs(o){
+  if(!o||typeof o!=='object')return;
+  if(Array.isArray(o)&&typeof o[0]==='string'&&typeof o[1]==='string'&&/[a-z]{3}/.test(o[0]))countryPairs.add(o[0]);
+  Object.values(o).forEach(v=>{if(v&&typeof v==='object')collectPairs(v);});
+}
+const countryBox={console,ATLAS:{addEntry:collectPairs,addVisas:collectPairs,visaSources:()=>{}}};
+vm.createContext(countryBox);
+for(const dir of ['data/atlas/entry','data/atlas/visas']){
+  for(const f of fs.readdirSync(path.join(APP,dir)).filter(f=>/^[a-z]{2}\.js$/.test(f)))vm.runInContext(readCountry(dir+'/'+f),countryBox);
+}
+function readCountry(f){return fs.readFileSync(path.join(APP,f),'utf8');}
+t('French covers every hiring and visa sentence in all 46 guides',Array.from(countryPairs).every(k=>frenchReport.atlas[k]!==undefined||frenchReport.dict[k]!==undefined));
 
 /* ------------------------------------------------------------ the Atlas --- */
 /* Every sentence in a country record has Italian, in the same file; the
@@ -159,5 +224,29 @@ t('Atlas: country names, views, role families, levels and passports have Italian
 const shape=(A)=>JSON.stringify(Object.values(A.ATLAS.records).map(r=>[r.id,r.roles,r.hubs.map(h=>[h.id,h.lat,h.lon,h.demand,h.finance||null,(h.programmes||[]).map(p=>p.id),h.standing||null,h.metrics||null])]));
 t('Atlas: ratings, ids and coordinates are identical in both languages',shape(AEN)===shape(AIT)&&atlasFiles.length>0);
 
-console.log('\n'+pass+' passed, '+fail+' failed');
-process.exit(fail?1:0);
+/* A temporary country request failure must not leave French permanently
+ * unavailable, and simultaneous consumers share the same request. */
+async function finalChecks() {
+  const scripts=[];
+  FR.document={createElement:()=>({remove(){}}),head:{appendChild:s=>scripts.push(s)}};
+  const first=FR.I18N.countryLanguage('FR'),second=FR.I18N.countryLanguage('fr');
+  t('French country consumers share one request',first===second&&scripts.length===1);
+  scripts[0].onerror();
+  t('French country loading retries a temporary failure',scripts.length===2&&scripts[1].src.endsWith('data/atlas/fr/fr.js'));
+  scripts[1].onload();await first;
+  const failed=FR.I18N.countryLanguage('gb').then(()=>false,()=>true);
+  for(let i=2;i<5;i++)scripts[i].onerror();
+  t('French country loading rejects persistent failure instead of hanging',await failed);
+  const again=FR.I18N.countryLanguage('gb');
+  t('a failed French country request can be tried again',scripts.length===6);
+  scripts[5].onload();await again;
+
+  const label={textContent:'Fact table'};
+  const svg={tagName:'svg',getAttribute:k=>k==='lang'?'en':null,querySelectorAll:()=>[label],setAttribute:(k,v)=>{svg[k]=v}};
+  FR.document={querySelector:()=>null};FR.I18N.translateDom(svg);
+  t('French diagrams translate text without changing SVG geometry',label.textContent==='Table'&&svg.lang==='fr');
+  const original={...svg,lang:'en'};label.textContent='Fact table';EN.document=FR.document;EN.I18N.translateDom(original);
+  t('English diagram labels remain English',label.textContent==='Fact table');
+  console.log('\n'+pass+' passed, '+fail+' failed');process.exit(fail?1:0);
+}
+finalChecks().catch(e=>{console.error(e);process.exit(1)});

@@ -71,7 +71,9 @@
   function fmt(n) { return (Math.round(n * 10) / 10).toString(); }
 
   /* 1st, 2nd, 3rd, 4th … 11th, 12th, 13th … 21st (75º in Italian) */
-  function ordinal(n) { return I18N.ordinal(n); }
+  /* French explains percentiles as a percentage of people who took the
+   * test, so those templates need a plain figure rather than "75e". */
+  function ordinal(n) { return I18N.lang === 'fr' ? String(n) : I18N.ordinal(n); }
 
   /* Inline SVG rather than a CSS mask. A mask referencing an external SVG is
    * treated as a cross-origin image by Chrome, and every file:// document is

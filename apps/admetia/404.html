@@ -42,7 +42,8 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
   var lang = 'en';
   try {
     localStorage.removeItem('admissions-calc:theme');
-    if (localStorage.getItem('admissions-calc:lang') === 'it') lang = 'it';
+    var saved = localStorage.getItem('admissions-calc:lang');
+    if (saved === 'it' || saved === 'fr') lang = saved;
   } catch (e) { /* storage blocked */ }
   document.documentElement.setAttribute('data-theme', 'city');
   document.documentElement.lang = lang;
@@ -54,7 +55,7 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
 <header class="mast-band">
   <div class="wrap mast">
     <a href="index.html">Admetia</a>
-    <div class="slogan">The way in</div>
+    <div class="slogan" data-t="The way in">The way in</div>
   </div>
 </header>
 <div class="wrap" role="main">
@@ -111,16 +112,31 @@ h2 { margin: 0 0 10px; font: 700 12px/1.2 var(--ui); letter-spacing: .14em; text
     'Admetia — independent guides to master’s admissions, careers and working abroad.':
       'Admetia — guide indipendenti su ammissioni ai master, carriere e lavoro all’estero.'
   };
-  var it = window.LANG404 === 'it';
-  if (it) {
-    document.title = 'Pagina non trovata — Admetia';
+  var FR = {
+    'The way in': 'La porte d’entrée',
+    'Correction': 'Page introuvable',
+    'Errata corrige': 'Adresse à vérifier',
+    'This page never went to press.': 'Cette page n’existe pas.',
+    'The address may be mistyped, or the page has moved. Everything Admetia prints is in one of the sections below.': 'L’adresse contient peut-être une erreur, ou la page a changé d’adresse. Retrouvez les pages d’Admetia dans les rubriques ci-dessous.',
+    'Sections': 'Rubriques', 'Front page': 'Accueil', 'Finance': 'Finance',
+    'Computer Science': 'Informatique', 'Data & AI': 'Données et intelligence artificielle',
+    'Conversion': 'Changer de domaine', 'Masters': 'Masters',
+    'Explore careers': 'Découvrir les métiers', 'Find an internship or job': 'Trouver un stage ou un emploi',
+    'Map Intelligence': 'Étudier et travailler à l’étranger', 'Sources and method': 'Sources et méthode',
+    'Programme Directory': 'Liste des formations', 'Hiring by country': 'Trouver un emploi selon le pays',
+    'Admetia — independent guides to master’s admissions, careers and working abroad.': 'Admetia — des guides indépendants sur les admissions en master, les métiers et le travail à l’étranger.'
+  };
+  var lang = window.LANG404;
+  var translated = lang === 'it' ? IT : lang === 'fr' ? FR : null;
+  if (translated) {
+    document.title = lang === 'fr' ? 'Page introuvable — Admetia' : 'Pagina non trovata — Admetia';
     Array.prototype.forEach.call(document.querySelectorAll('[data-t]'), function (n) {
-      var tr = IT[n.getAttribute('data-t')];
+      var tr = translated[n.getAttribute('data-t')];
       if (tr) n.innerHTML = tr;
     });
   }
   try {
-    document.getElementById('date').textContent = new Date().toLocaleDateString(it ? 'it-IT' : 'en-GB',
+    document.getElementById('date').textContent = new Date().toLocaleDateString(lang === 'it' ? 'it-IT' : lang === 'fr' ? 'fr-FR' : 'en-GB',
       { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
   } catch (e) { /* old browser */ }
 }());

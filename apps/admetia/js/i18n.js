@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
- * Languages: English first, Italian second.
+ * Languages: English, Italian and simple French.
  *
  * English is the source everywhere — in the pages, the scripts and the
  * models — and a translation is a dictionary keyed by that English:
@@ -38,11 +38,15 @@ window.I18N = (function () {
   var KEY = 'admissions-calc:lang';
   var LANGS = [
     { id: 'en', label: 'EN', name: 'English' },
-    { id: 'it', label: 'IT', name: 'Italiano' }
+    { id: 'it', label: 'IT', name: 'Italiano' },
+    { id: 'fr', label: 'FR', name: 'Français' }
   ];
 
   function stored() {
-    try { return localStorage.getItem(KEY) === 'it' ? 'it' : 'en'; } catch (e) { return 'en'; }
+    try {
+      var saved = localStorage.getItem(KEY);
+      return saved === 'it' || saved === 'fr' ? saved : 'en';
+    } catch (e) { return 'en'; }
   }
 
   var lang = stored();
@@ -95,19 +99,21 @@ window.I18N = (function () {
    * figures: its number words change with the gender of the noun. */
   var WORDS = ['none', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
   function words(n) {
-    if (lang === 'it') return String(n);
+    if (lang !== 'en') return String(n);
     return WORDS[n] || String(n);
   }
 
   function ordinal(n) {
     if (lang === 'it') return n + 'º';
+    if (lang === 'fr') return n + (n === 1 ? 'er' : 'e');
     var s = ['th', 'st', 'nd', 'rd'], v = n % 100;
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
   var MONTHS = {
     en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    it: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+    it: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
+    fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
   };
   function month(i) { return (MONTHS[lang] || MONTHS.en)[i]; }
 
@@ -194,6 +200,53 @@ window.I18N = (function () {
   }
 
   function walkEl(el, record) {
+    /* Diagrams have short, context-specific labels; leave icon SVGs alone. */
+    if (lang === 'fr' && el.tagName.toLowerCase() === 'svg' && el.getAttribute('lang') === 'en' && el.getAttribute('translate') !== 'no') {
+      var dataPipeline = el.getAttribute('viewBox') === '0 0 320 319';
+      if (dataPipeline) {
+        /* Give the expanded explanations room without shrinking the type. */
+        el.setAttribute('viewBox', '0 0 320 336');
+        el.setAttribute('height', '336');
+        el.querySelectorAll('rect').forEach(function (box) {
+          if (box.getAttribute('y') === '268.5') box.setAttribute('height', '67');
+        });
+      }
+      el.querySelectorAll('text').forEach(function (label) {
+        var translated = lookup('Diagram label: ' + norm(label.textContent), false);
+        if (translated !== null) {
+          var key = norm(label.textContent);
+          label.textContent = '';
+          if (dataPipeline) {
+            label.style.fontSize = '12px';
+            if (key === 'Data engineer') label.setAttribute('y', '66');
+            if (key === 'applications, APIs, files') label.setAttribute('y', '34');
+            if (key === 'this page' && Number(label.getAttribute('y')) < 150) label.setAttribute('y', '104');
+          }
+          if (translated.indexOf('\n') < 0) {
+            label.textContent = translated;
+            return;
+          }
+          translated.split('\n').forEach(function (line, i) {
+            var span = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+            span.setAttribute('x', label.getAttribute('x'));
+            span.setAttribute('dy', i ? (key === 'applications, APIs, files' ? '12' : '17') : '0');
+            span.textContent = line;
+            label.appendChild(span);
+          });
+        }
+      });
+      el.setAttribute('lang', 'fr');
+      return;
+    }
+    /* French career names are plain descriptions of the work. Keep the
+     * original job title available for matching job adverts and research. */
+    var name = lang === 'fr' && el.getAttribute('data-i18n-name');
+    if (name && dict[name] !== undefined) {
+      el.textContent = dict[name];
+      el.setAttribute('title', name);
+      el.setAttribute('lang', 'fr');
+      return;
+    }
     if (SKIP[el.tagName] || el.getAttribute('translate') === 'no') return;
     attrs(el);
     var asBlock = ownText(el) && inlineOnly(el);
@@ -211,15 +264,66 @@ window.I18N = (function () {
     if (lang === 'en' || typeof document === 'undefined') return;
     root = root || document.body;
     if (root === document.body) {
-      var title = lookup(norm(document.title), true);
+      var titleEl = document.querySelector('title');
+      var title = metadata(titleEl, document.title);
       if (title !== null) document.title = title;
       var meta = document.querySelector('meta[name="description"]');
       if (meta) {
-        var d = lookup(norm(meta.getAttribute('content') || ''), true);
+        var d = metadata(meta, meta.getAttribute('content') || '');
         if (d !== null) meta.setAttribute('content', d);
       }
     }
     if (root) walkEl(root, true);
+    if (root === document.body) {
+      var researchNote = document.querySelector('.cx-en-note');
+      if (researchNote && lang === 'fr') researchNote.lang = 'fr';
+    }
+  }
+
+  /* Country translations follow the same on-demand loading as the guides.
+   * The source and built bundles both live in js/, one level below the root. */
+  var countryLoads = Object.create(null);
+  var base = '';
+  if (typeof document !== 'undefined' && document.currentScript && document.currentScript.src) {
+    base = new URL('../', document.currentScript.src).href;
+  }
+  function countryLanguage(id) {
+    if (lang !== 'fr') return Promise.resolve();
+    id = String(id).toLowerCase();
+    if (!/^[a-z]{2}$/.test(id)) return Promise.reject(new Error('Unknown country'));
+    if (!countryLoads[id]) countryLoads[id] = new Promise(function (resolve, reject) {
+      var attempts = 0;
+      function request() {
+        attempts++;
+        var script = document.createElement('script');
+        script.src = base + 'data/atlas/fr/' + id + '.js';
+        script.onload = resolve;
+        script.onerror = function () {
+          script.remove();
+          if (attempts < 3) request();
+          else { delete countryLoads[id]; reject(new Error('Country translation unavailable')); }
+        };
+        document.head.appendChild(script);
+      }
+      request();
+    });
+    return countryLoads[id];
+  }
+
+  /* Generated career pages share metadata templates. Keep the English
+   * content intact and translate the template with its page-specific names. */
+  function metadata(el, fallback) {
+    var key = el && el.getAttribute('data-i18n');
+    if (!key) return lookup(norm(fallback), true);
+    var translated = lookup(key, true);
+    if (translated === null) return lookup(norm(fallback), true);
+    var vars;
+    try { vars = JSON.parse(el.getAttribute('data-i18n-vars') || '{}'); }
+    catch (e) { return lookup(norm(fallback), true); }
+    Object.keys(vars).forEach(function (k) {
+      if (typeof vars[k] === 'string' && dict[vars[k]] !== undefined) vars[k] = dict[vars[k]];
+    });
+    return fill(translated, vars);
   }
 
   /* ------------------------------------------------------------------ */
@@ -288,7 +392,8 @@ window.I18N = (function () {
     ordinal: ordinal,
     month: month,
     cap: cap,
-    locale: lang === 'it' ? 'it-IT' : 'en-GB',
+    locale: lang === 'it' ? 'it-IT' : lang === 'fr' ? 'fr-FR' : 'en-GB',
+    countryLanguage: countryLanguage,
     localize: localize,
     translateDom: translateDom,
     /* For checking coverage from the console: what was looked up and not
@@ -299,9 +404,9 @@ window.I18N = (function () {
       var saved = misses, out;
       misses = Object.create(null);
       var title = doc.querySelector('title');
-      if (title) lookup(norm(title.textContent), true);
+      if (title) metadata(title, title.textContent);
       var meta = doc.querySelector('meta[name="description"]');
-      if (meta) lookup(norm(meta.getAttribute('content') || ''), true);
+      if (meta) metadata(meta, meta.getAttribute('content') || '');
       walkEl(doc.body, true);
       out = Object.keys(misses).filter(function (k) { return dict[k] === undefined; });
       misses = saved;

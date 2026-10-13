@@ -223,7 +223,7 @@
       var li = el('li');
       var a = el('a');
       a.href = TRACK_PAGE[x.track];
-      a.appendChild(el('span', 't', x.name));
+      a.appendChild(el('span', 't', T(x.name)));
       a.appendChild(el('span', 'm', T('{track} · bar {bar}', { track: T(TRACK_NAME[x.track]), bar: x.bar })));
       li.appendChild(a);
       list.appendChild(li);

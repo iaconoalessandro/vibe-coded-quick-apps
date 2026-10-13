@@ -255,15 +255,16 @@
 
   var loading = {};
   function load(id) {
-    if (A.records[id]) return Promise.resolve(A.records[id]);
-    if (loading[id]) return loading[id];
-    loading[id] = new Promise(function (ok, fail) {
-      var s = document.createElement('script');
-      s.src = A.file(id);
-      s.onload = function () { A.records[id] ? ok(A.records[id]) : fail(new Error(id)); };
-      s.onerror = function () { delete loading[id]; fail(new Error(id)); };
-      document.head.appendChild(s);
-    });
+    if (!loading[id]) {
+      var source = A.records[id] ? Promise.resolve(A.records[id]) : new Promise(function (ok, fail) {
+        var s = document.createElement('script');
+        s.src = A.file(id);
+        s.onload = function () { A.records[id] ? ok(A.records[id]) : fail(new Error(id)); };
+        s.onerror = function () { delete loading[id]; fail(new Error(id)); };
+        document.head.appendChild(s);
+      });
+      loading[id] = Promise.all([source, window.I18N ? I18N.countryLanguage(id) : Promise.resolve()]).then(function (got) { return got[0]; });
+    }
     return loading[id];
   }
 
@@ -1465,7 +1466,7 @@
         title: noteTitle(title, years.length === 1 ? years[0] : null, areas.length === 1 ? areas[0] : null),
         href: one ? xs[0].m.src : null,
         parts: xs.map(function (x) {
-          return { label: x.h.name + (years.length > 1 ? ' ' + x.m.year : ''), href: one ? null : x.m.src, tip: x.m.by };
+          return { label: T(x.h.name) + (years.length > 1 ? ' ' + x.m.year : ''), href: one ? null : x.m.src, tip: x.m.by };
         })
       });
     });
@@ -2023,7 +2024,7 @@
    * those sources, not guaranteed: the section says when it was checked,
    * when it is due again, and turns into a warning once that date passes. */
   var IT = window.I18N && I18N.lang === 'it';
-  function L(pair) { return Array.isArray(pair) ? (IT && pair[1] ? pair[1] : pair[0]) : T(pair); }
+  function L(pair) { return Array.isArray(pair) ? (IT && pair[1] ? pair[1] : T(pair[0])) : T(pair); }
   function forPassport(item, pid) { return (' ' + (item.p || '') + ' ').indexOf(' ' + pid + ' ') > -1; }
   function visaNotes(v, ids) {
     return String(ids || '').split(/\s+/).filter(Boolean).map(function (k) {
@@ -2254,15 +2255,15 @@
     th.appendChild(tr); t.appendChild(th);
     var tb = el('tbody');
     ps.forEach(function (x) {
-      var r = el('tr'), c0 = raw('th', null, x.n);
-      c0.appendChild(raw('span', 'prog-o', ' · ' + x.o));
+      var r = el('tr'), c0 = raw('th', null, T(x.n));
+      c0.appendChild(raw('span', 'prog-o', ' · ' + T(x.o)));
       if (x.ids) c0.appendChild(cite(entryNotes(e, x.ids)));
       r.appendChild(c0);
       var F = vocab(A.entryFields, x.f);
       r.appendChild(raw('td', null, F ? T(F.name) : '—'));
       r.appendChild(raw('td', null, x['in'] ? T('about {n} a year', { n: num(x['in']) }) : T('not stated')));
       r.appendChild(raw('td', null, x.w ? (x.w[0] === x.w[1] ? monthName(x.w[0]) : monthName(x.w[0]) + ' – ' + monthName(x.w[1])) : T('not stated')));
-      r.appendChild(raw('td', null, x.lang || '—'));
+      r.appendChild(raw('td', null, x.lang ? (window.I18N && I18N.lang === 'fr' ? T('Programme languages: ' + x.lang) : x.lang) : '—'));
       r.appendChild(raw('td', null, T(vname(A.entryIntl, x.intl || 'unknown'))));
       tb.appendChild(r);
     });
@@ -2552,7 +2553,7 @@
         var d = L.hub[rec.id + '/' + h.id];
         if (!d || (keep && !keep(d))) return;
         var r = el('tr');
-        r.appendChild(raw('th', null, h.name));
+        r.appendChild(raw('th', null, T(h.name)));
         cols.forEach(function (c) { r.appendChild(raw('td', null, c[1](d, h))); });
         tb.appendChild(r); n++;
       });
@@ -2599,7 +2600,7 @@
       if (!t) return;
       var key = [t.jan, t.jul, t.vsJan, t.vsJul].join('|');
       if (!tbyKey[key]) { tbyKey[key] = { t: t, hubs: [] }; tgroups.push(tbyKey[key]); }
-      tbyKey[key].hubs.push(h.name);
+      tbyKey[key].hubs.push(T(h.name));
     });
     function zoneText(t) {
       var u = t.jan === t.jul ? T('{u} all year', { u: utc(t.jan) }) : T('{a} in January and {b} in July', { a: utc(t.jan), b: utc(t.jul) });
@@ -2719,8 +2720,8 @@
       else if (lv && lv.days != null) line(oc, T('By law, at least {n} paid days of annual leave a year.', { n: num(lv.days) }), [cuNote(lv)]);
       else if (hd && hd.days != null) line(oc, T('{m} public holidays a year.', { m: num(hd.days, hd.days % 1 ? 1 : 0) }), [cuNote(hd)]);
       if (lv && lv.days == null && lv.none) line(oc, T('There is no national legal minimum of paid annual leave for private employers: it is set by the contract.'), [cuNote(lv)]);
-      if (CU.day) line(oc, CU.day[IT ? 'it' : 'en'], [cuNote(CU.day)]);
-      if (CU.style) line(oc, CU.style[IT ? 'it' : 'en'], [cuNote(CU.style)]);
+      if (CU.day) line(oc, IT ? CU.day.it : T(CU.day.en), [cuNote(CU.day)]);
+      if (CU.style) line(oc, IT ? CU.style.it : T(CU.style.en), [cuNote(CU.style)]);
       oc.appendChild(el('p', 'not-rated', 'Leave and holiday counts are legal minimums for a full-time job on a five-day week: contracts, regions and years of service often add days. The sentences on the working day and office style are what business guides report, not rules: workplaces differ.'));
     } else oc.appendChild(el('p', 'not-rated', 'Not researched yet for this country.'));
 
@@ -2947,7 +2948,7 @@
 
     rec.hubs.forEach(function (h) {
       var li = el('li');
-      var b = raw('button', 'hub-b', h.name);
+      var b = raw('button', 'hub-b', T(h.name));
       b.type = 'button';
       b.setAttribute('data-hub', h.id);
       b.appendChild(raw('span', 'hub-k', T(h.knownFor)));
@@ -3017,9 +3018,9 @@
         return b.size - a.size;
       });
       order.forEach(function (m) {
-        var lab = raw('span', 'mk-name', m.h.name);
+        var lab = raw('span', 'mk-name', T(m.h.name));
         m.node.appendChild(lab);
-        var lw = lab.offsetWidth || m.h.name.length * 7 + 8, lh = lab.offsetHeight || 18;
+        var lw = lab.offsetWidth || T(m.h.name).length * 7 + 8, lh = lab.offsetHeight || 18;
         var g = m.size / 2 + 5;
         var sides = [
           ['e', m.x + g, m.y - lh / 2], ['w', m.x - g - lw, m.y - lh / 2],
@@ -3141,11 +3142,11 @@
     var body = el('tbody');
     rec.hubs.forEach(function (h) {
       var tr = el('tr');
-      tr.appendChild(raw('th', 'dm-h', h.name));
+      tr.appendChild(raw('th', 'dm-h', T(h.name)));
       fams.forEach(function (r) {
         var d = (h.demand || {})[r.id], lv = Array.isArray(d) ? levelOf(d[0]) : null;
         var td = el('td', 'dm-c' + (lv ? ' lv-' + lv.id : ''));
-        var label = h.name + ' · ' + T(r.name) + ': ' + (lv ? T(lv.name) : T('not rated'));
+        var label = T(h.name) + ' · ' + T(r.name) + ': ' + (lv ? T(lv.name) : T('not rated'));
         td.title = label;
         td.appendChild(raw('span', 'vh', lv ? T(lv.name) : T('not rated')));
         tr.appendChild(td);
@@ -3190,7 +3191,7 @@
       if (h !== last) tr.className = 'first';
       /* The hub's name heads its first row only; the rows under it carry
        * a plain cell, not an empty header. */
-      tr.appendChild(raw(h === last ? 'td' : 'th', 'st-h', h === last ? '' : h.name));
+      tr.appendChild(raw(h === last ? 'td' : 'th', 'st-h', h === last ? '' : T(h.name)));
       last = h;
       tr.appendChild(el('td', 'st-f', A.roles.filter(function (r) { return r.id === st.f; })[0].name));
       st.s.forEach(function (n, i) {
@@ -3232,14 +3233,14 @@
     var ul = el('ul', 'bars');
     rows.forEach(function (x) {
       var li = el('li');
-      li.appendChild(raw('span', 'bar-k', x.h.name));
+      li.appendChild(raw('span', 'bar-k', T(x.h.name)));
       var tr = el('span', 'bar-track');
       var b = el('i', 'bar s1');
       b.style.width = Math.max(1, x.m.v / max * 100).toFixed(1) + '%';
       tr.appendChild(b);
       li.appendChild(tr);
       li.appendChild(raw('span', 'bar-v', metricText(k, x.m)));
-      li.title = x.h.name + ': ' + metricText(k, x.m) + ' (' + x.m.year + ')';
+      li.title = T(x.h.name) + ': ' + metricText(k, x.m) + ' (' + x.m.year + ')';
       ul.appendChild(li);
     });
     f.appendChild(ul);
@@ -3272,7 +3273,7 @@
     var used = [];
     hubs.forEach(function (h) {
       var li = el('li');
-      li.appendChild(raw('span', 'bar-k', h.name));
+      li.appendChild(raw('span', 'bar-k', T(h.name)));
       var tracks = el('span', 'bar-pair');
       [['wage', 's1'], ['rent', 's2']].forEach(function (x) {
         var m = h.metrics[x[0]];
@@ -3351,8 +3352,8 @@
   /* One hub: why it is a hub, who is there, and what it hires for. */
   function hubDetail(rec, h, solo) {
     var box = el('article', 'hub-card' + (solo ? ' solo' : ''));
-    box.setAttribute('data-notes', h.name);
-    var t = raw('h3', 'hub-title', h.name);
+    box.setAttribute('data-notes', T(h.name));
+    var t = raw('h3', 'hub-title', T(h.name));
     t.tabIndex = -1;
     box.appendChild(t);
     box.appendChild(el('p', 'hub-known', h.knownFor));
@@ -3520,7 +3521,7 @@
     }
     /* A path named on the hiring view (#de/hiring/intern) sets the filter. */
     if (sel.view === 'hiring' && sel.part && (A.entryPaths || []).some(function (P) { return P.id === sel.part; })) { state.path = sel.part; sel.part = 'routes'; }
-    Promise.all([load(sel.id), loadVisas(sel.id), loadEntry(sel.id)]).then(function (got) {
+    Promise.all([load(sel.id), loadVisas(sel.id), loadEntry(sel.id), window.I18N ? I18N.countryLanguage(sel.id) : Promise.resolve()]).then(function (got) {
       var rec = got[0];
       if (sel.view === 'hiring' && !got[2] && !sel.part) { /* no hiring file: the view says so */ }
       renderPage(rec, sel, got[1], got[2]);
