@@ -1,0 +1,1952 @@
+[
+ {
+  "source": "i18n/es/chunks/src/ui-01.json",
+  "target": "i18n/es/chunks/es/ui-01.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 140,
+  "words": 1488,
+  "status": "fixed",
+  "notes": "Translated before the & rule was added: check \"&\"/\"&amp;\" joining words becomes y/e (TI e informática, Datos e IA). ui.0105/0107 changed first person \"mine\" to impersonal."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-02.json",
+  "target": "i18n/es/chunks/es/ui-02.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 267,
+  "words": 1493,
+  "status": "fixed",
+  "notes": "ui.0157 \"TI &amp; informática\" should follow the glossary (TI e informática). ui.0265 softened a crude idiom."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-03.json",
+  "target": "i18n/es/chunks/es/ui-03.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 146,
+  "words": 1451,
+  "status": "fixed",
+  "notes": "ui.0483 \"Statement and motivation\" came out long for a label."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-04.json",
+  "target": "i18n/es/chunks/es/ui-04.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 150,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "SD→DT and PPP→PPA were localised; confirm."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-05.json",
+  "target": "i18n/es/chunks/es/ui-05.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 196,
+  "words": 1493,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-06.json",
+  "target": "i18n/es/chunks/es/ui-06.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 176,
+  "words": 1483,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-07.json",
+  "target": "i18n/es/chunks/es/ui-07.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 200,
+  "words": 1493,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-08.json",
+  "target": "i18n/es/chunks/es/ui-08.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 159,
+  "words": 1495,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-09.json",
+  "target": "i18n/es/chunks/es/ui-09.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 188,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "ui.1454/1455/1484 \"Required\" made feminine: check what it qualifies."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-10.json",
+  "target": "i18n/es/chunks/es/ui-10.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 129,
+  "words": 1493,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-11.json",
+  "target": "i18n/es/chunks/es/ui-11.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 200,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "ui.1945 Map Intelligence kept in English (glossary now says keep)."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-12.json",
+  "target": "i18n/es/chunks/es/ui-12.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 112,
+  "words": 1499,
+  "status": "fixed",
+  "notes": "ui.1979 Map Intelligence was translated: glossary says keep in English. ui.1998 Programme Directory → Directorio de programas."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-13.json",
+  "target": "i18n/es/chunks/es/ui-13.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 147,
+  "words": 1495,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-14.json",
+  "target": "i18n/es/chunks/es/ui-14.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 73,
+  "words": 1481,
+  "status": "fixed",
+  "notes": "ui.2254 Key → should be Leyenda if a map legend; ui.2221 flags."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-15.json",
+  "target": "i18n/es/chunks/es/ui-15.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 69,
+  "words": 1482,
+  "status": "fixed",
+  "notes": "pipeline rendered as flujo (glossary now: cantera, for hiring pipelines only)."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-16.json",
+  "target": "i18n/es/chunks/es/ui-16.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 168,
+  "words": 1498,
+  "status": "fixed",
+  "notes": "ui.2435 source is Italian; ui.2390 and ui.2396 are truncated keys in the source (kept as fragments). Job titles: check consistency."
+ },
+ {
+  "source": "i18n/es/chunks/src/ui-17.json",
+  "target": "i18n/es/chunks/es/ui-17.json",
+  "assembles_into": "js/i18n-es.js",
+  "english_from": "js/i18n-*.js",
+  "strings": 257,
+  "words": 1381,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-01.json",
+  "target": "i18n/es/chunks/es/models-01.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 184,
+  "words": 1499,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-02.json",
+  "target": "i18n/es/chunks/es/models-02.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 162,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-03.json",
+  "target": "i18n/es/chunks/es/models-03.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 138,
+  "words": 1497,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-04.json",
+  "target": "i18n/es/chunks/es/models-04.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 110,
+  "words": 1477,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-05.json",
+  "target": "i18n/es/chunks/es/models-05.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 121,
+  "words": 1490,
+  "status": "fixed",
+  "notes": "models.0595 superscore coined as superpuntuación (glossary now: superscore). models.0640 \"48 admits\" reworded: check meaning."
+ },
+ {
+  "source": "i18n/es/chunks/src/models-06.json",
+  "target": "i18n/es/chunks/es/models-06.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 140,
+  "words": 1471,
+  "status": "fixed",
+  "notes": "models.0855 \"Gathered field\" → \"Campo recopilado\" is wrong: glossary says evaluación conjunta."
+ },
+ {
+  "source": "i18n/es/chunks/src/models-07.json",
+  "target": "i18n/es/chunks/es/models-07.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 117,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "UK degree classes: glossary now keeps First / 2:1 unchanged; check \"primera clase con honores\"."
+ },
+ {
+  "source": "i18n/es/chunks/src/models-08.json",
+  "target": "i18n/es/chunks/es/models-08.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 99,
+  "words": 1476,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-09.json",
+  "target": "i18n/es/chunks/es/models-09.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 214,
+  "words": 1500,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/models-10.json",
+  "target": "i18n/es/chunks/es/models-10.json",
+  "assembles_into": "data/i18n-es-models.js",
+  "english_from": "data/i18n-*-models.js",
+  "strings": 10,
+  "words": 119,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-shared-01.json",
+  "target": "i18n/es/chunks/es/atlas-shared-01.json",
+  "assembles_into": "data/atlas/i18n-es.js",
+  "english_from": "data/atlas/i18n-*.js",
+  "strings": 204,
+  "words": 695,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ae-01.json",
+  "target": "i18n/es/chunks/es/atlas-ae-01.json",
+  "assembles_into": "data/atlas/es/ae.js",
+  "english_from": "data/atlas/<lang>/ae.js",
+  "strings": 75,
+  "words": 1490,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ae-02.json",
+  "target": "i18n/es/chunks/es/atlas-ae-02.json",
+  "assembles_into": "data/atlas/es/ae.js",
+  "english_from": "data/atlas/<lang>/ae.js",
+  "strings": 52,
+  "words": 1481,
+  "status": "fixed",
+  "notes": "atlas-ae.0092 \"transfer hiring\" unclear; atlas-ae.0097 first person singular. Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ae-03.json",
+  "target": "i18n/es/chunks/es/atlas-ae-03.json",
+  "assembles_into": "data/atlas/es/ae.js",
+  "english_from": "data/atlas/<lang>/ae.js",
+  "strings": 68,
+  "words": 1137,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-at-01.json",
+  "target": "i18n/es/chunks/es/atlas-at-01.json",
+  "assembles_into": "data/atlas/es/at.js",
+  "english_from": "data/atlas/<lang>/at.js",
+  "strings": 69,
+  "words": 1499,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-at-02.json",
+  "target": "i18n/es/chunks/es/atlas-at-02.json",
+  "assembles_into": "data/atlas/es/at.js",
+  "english_from": "data/atlas/<lang>/at.js",
+  "strings": 43,
+  "words": 1489,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-at-03.json",
+  "target": "i18n/es/chunks/es/atlas-at-03.json",
+  "assembles_into": "data/atlas/es/at.js",
+  "english_from": "data/atlas/<lang>/at.js",
+  "strings": 73,
+  "words": 1479,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-at-04.json",
+  "target": "i18n/es/chunks/es/atlas-at-04.json",
+  "assembles_into": "data/atlas/es/at.js",
+  "english_from": "data/atlas/<lang>/at.js",
+  "strings": 17,
+  "words": 403,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-au-01.json",
+  "target": "i18n/es/chunks/es/atlas-au-01.json",
+  "assembles_into": "data/atlas/es/au.js",
+  "english_from": "data/atlas/<lang>/au.js",
+  "strings": 80,
+  "words": 1449,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-au-02.json",
+  "target": "i18n/es/chunks/es/atlas-au-02.json",
+  "assembles_into": "data/atlas/es/au.js",
+  "english_from": "data/atlas/<lang>/au.js",
+  "strings": 47,
+  "words": 1470,
+  "status": "fixed",
+  "notes": "cadetships/clerkships and grade band \"credit\": check."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-au-03.json",
+  "target": "i18n/es/chunks/es/atlas-au-03.json",
+  "assembles_into": "data/atlas/es/au.js",
+  "english_from": "data/atlas/<lang>/au.js",
+  "strings": 68,
+  "words": 1385,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-be-01.json",
+  "target": "i18n/es/chunks/es/atlas-be-01.json",
+  "assembles_into": "data/atlas/es/be.js",
+  "english_from": "data/atlas/<lang>/be.js",
+  "strings": 75,
+  "words": 1466,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-be-02.json",
+  "target": "i18n/es/chunks/es/atlas-be-02.json",
+  "assembles_into": "data/atlas/es/be.js",
+  "english_from": "data/atlas/<lang>/be.js",
+  "strings": 48,
+  "words": 1498,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-be-03.json",
+  "target": "i18n/es/chunks/es/atlas-be-03.json",
+  "assembles_into": "data/atlas/es/be.js",
+  "english_from": "data/atlas/<lang>/be.js",
+  "strings": 69,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-be-04.json",
+  "target": "i18n/es/chunks/es/atlas-be-04.json",
+  "assembles_into": "data/atlas/es/be.js",
+  "english_from": "data/atlas/<lang>/be.js",
+  "strings": 30,
+  "words": 732,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-bg-01.json",
+  "target": "i18n/es/chunks/es/atlas-bg-01.json",
+  "assembles_into": "data/atlas/es/bg.js",
+  "english_from": "data/atlas/<lang>/bg.js",
+  "strings": 67,
+  "words": 1499,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-bg-02.json",
+  "target": "i18n/es/chunks/es/atlas-bg-02.json",
+  "assembles_into": "data/atlas/es/bg.js",
+  "english_from": "data/atlas/<lang>/bg.js",
+  "strings": 59,
+  "words": 1496,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-bg-03.json",
+  "target": "i18n/es/chunks/es/atlas-bg-03.json",
+  "assembles_into": "data/atlas/es/bg.js",
+  "english_from": "data/atlas/<lang>/bg.js",
+  "strings": 31,
+  "words": 724,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ca-01.json",
+  "target": "i18n/es/chunks/es/atlas-ca-01.json",
+  "assembles_into": "data/atlas/es/ca.js",
+  "english_from": "data/atlas/<lang>/ca.js",
+  "strings": 83,
+  "words": 1484,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ca-02.json",
+  "target": "i18n/es/chunks/es/atlas-ca-02.json",
+  "assembles_into": "data/atlas/es/ca.js",
+  "english_from": "data/atlas/<lang>/ca.js",
+  "strings": 44,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ca-03.json",
+  "target": "i18n/es/chunks/es/atlas-ca-03.json",
+  "assembles_into": "data/atlas/es/ca.js",
+  "english_from": "data/atlas/<lang>/ca.js",
+  "strings": 51,
+  "words": 1494,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ca-04.json",
+  "target": "i18n/es/chunks/es/atlas-ca-04.json",
+  "assembles_into": "data/atlas/es/ca.js",
+  "english_from": "data/atlas/<lang>/ca.js",
+  "strings": 46,
+  "words": 932,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ch-01.json",
+  "target": "i18n/es/chunks/es/atlas-ch-01.json",
+  "assembles_into": "data/atlas/es/ch.js",
+  "english_from": "data/atlas/<lang>/ch.js",
+  "strings": 82,
+  "words": 1488,
+  "status": "fixed",
+  "notes": "atlas-ch.0056 \"a single employee\" → \"soltero\": confirm tax-status reading. Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ch-02.json",
+  "target": "i18n/es/chunks/es/atlas-ch-02.json",
+  "assembles_into": "data/atlas/es/ch.js",
+  "english_from": "data/atlas/<lang>/ch.js",
+  "strings": 50,
+  "words": 1447,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ch-03.json",
+  "target": "i18n/es/chunks/es/atlas-ch-03.json",
+  "assembles_into": "data/atlas/es/ch.js",
+  "english_from": "data/atlas/<lang>/ch.js",
+  "strings": 59,
+  "words": 1481,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ch-04.json",
+  "target": "i18n/es/chunks/es/atlas-ch-04.json",
+  "assembles_into": "data/atlas/es/ch.js",
+  "english_from": "data/atlas/<lang>/ch.js",
+  "strings": 18,
+  "words": 446,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cn-01.json",
+  "target": "i18n/es/chunks/es/atlas-cn-01.json",
+  "assembles_into": "data/atlas/es/cn.js",
+  "english_from": "data/atlas/<lang>/cn.js",
+  "strings": 106,
+  "words": 1484,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cn-02.json",
+  "target": "i18n/es/chunks/es/atlas-cn-02.json",
+  "assembles_into": "data/atlas/es/cn.js",
+  "english_from": "data/atlas/<lang>/cn.js",
+  "strings": 48,
+  "words": 1495,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cn-03.json",
+  "target": "i18n/es/chunks/es/atlas-cn-03.json",
+  "assembles_into": "data/atlas/es/cn.js",
+  "english_from": "data/atlas/<lang>/cn.js",
+  "strings": 55,
+  "words": 1475,
+  "status": "fixed",
+  "notes": "atlas-cn.0206 \"free R visa\" was rendered as \"sin necesidad de empleador\": free means no fee (gratuito). Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cn-04.json",
+  "target": "i18n/es/chunks/es/atlas-cn-04.json",
+  "assembles_into": "data/atlas/es/cn.js",
+  "english_from": "data/atlas/<lang>/cn.js",
+  "strings": 24,
+  "words": 558,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cz-01.json",
+  "target": "i18n/es/chunks/es/atlas-cz-01.json",
+  "assembles_into": "data/atlas/es/cz.js",
+  "english_from": "data/atlas/<lang>/cz.js",
+  "strings": 75,
+  "words": 1500,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cz-02.json",
+  "target": "i18n/es/chunks/es/atlas-cz-02.json",
+  "assembles_into": "data/atlas/es/cz.js",
+  "english_from": "data/atlas/<lang>/cz.js",
+  "strings": 54,
+  "words": 1495,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-cz-03.json",
+  "target": "i18n/es/chunks/es/atlas-cz-03.json",
+  "assembles_into": "data/atlas/es/cz.js",
+  "english_from": "data/atlas/<lang>/cz.js",
+  "strings": 60,
+  "words": 1208,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-de-01.json",
+  "target": "i18n/es/chunks/es/atlas-de-01.json",
+  "assembles_into": "data/atlas/es/de.js",
+  "english_from": "data/atlas/<lang>/de.js",
+  "strings": 147,
+  "words": 1493,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-de-02.json",
+  "target": "i18n/es/chunks/es/atlas-de-02.json",
+  "assembles_into": "data/atlas/es/de.js",
+  "english_from": "data/atlas/<lang>/de.js",
+  "strings": 58,
+  "words": 1494,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-de-03.json",
+  "target": "i18n/es/chunks/es/atlas-de-03.json",
+  "assembles_into": "data/atlas/es/de.js",
+  "english_from": "data/atlas/<lang>/de.js",
+  "strings": 45,
+  "words": 1475,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-de-04.json",
+  "target": "i18n/es/chunks/es/atlas-de-04.json",
+  "assembles_into": "data/atlas/es/de.js",
+  "english_from": "data/atlas/<lang>/de.js",
+  "strings": 63,
+  "words": 1485,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-de-05.json",
+  "target": "i18n/es/chunks/es/atlas-de-05.json",
+  "assembles_into": "data/atlas/es/de.js",
+  "english_from": "data/atlas/<lang>/de.js",
+  "strings": 50,
+  "words": 1099,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-dk-01.json",
+  "target": "i18n/es/chunks/es/atlas-dk-01.json",
+  "assembles_into": "data/atlas/es/dk.js",
+  "english_from": "data/atlas/<lang>/dk.js",
+  "strings": 73,
+  "words": 1464,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-dk-02.json",
+  "target": "i18n/es/chunks/es/atlas-dk-02.json",
+  "assembles_into": "data/atlas/es/dk.js",
+  "english_from": "data/atlas/<lang>/dk.js",
+  "strings": 53,
+  "words": 1489,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-dk-03.json",
+  "target": "i18n/es/chunks/es/atlas-dk-03.json",
+  "assembles_into": "data/atlas/es/dk.js",
+  "english_from": "data/atlas/<lang>/dk.js",
+  "strings": 69,
+  "words": 1498,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-dk-04.json",
+  "target": "i18n/es/chunks/es/atlas-dk-04.json",
+  "assembles_into": "data/atlas/es/dk.js",
+  "english_from": "data/atlas/<lang>/dk.js",
+  "strings": 9,
+  "words": 197,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ee-01.json",
+  "target": "i18n/es/chunks/es/atlas-ee-01.json",
+  "assembles_into": "data/atlas/es/ee.js",
+  "english_from": "data/atlas/<lang>/ee.js",
+  "strings": 66,
+  "words": 1496,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ee-02.json",
+  "target": "i18n/es/chunks/es/atlas-ee-02.json",
+  "assembles_into": "data/atlas/es/ee.js",
+  "english_from": "data/atlas/<lang>/ee.js",
+  "strings": 46,
+  "words": 1460,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ee-03.json",
+  "target": "i18n/es/chunks/es/atlas-ee-03.json",
+  "assembles_into": "data/atlas/es/ee.js",
+  "english_from": "data/atlas/<lang>/ee.js",
+  "strings": 70,
+  "words": 1479,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ee-04.json",
+  "target": "i18n/es/chunks/es/atlas-ee-04.json",
+  "assembles_into": "data/atlas/es/ee.js",
+  "english_from": "data/atlas/<lang>/ee.js",
+  "strings": 10,
+  "words": 216,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-es-01.json",
+  "target": "i18n/es/chunks/es/atlas-es-01.json",
+  "assembles_into": "data/atlas/es/es.js",
+  "english_from": "data/atlas/<lang>/es.js",
+  "strings": 98,
+  "words": 1481,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-es-02.json",
+  "target": "i18n/es/chunks/es/atlas-es-02.json",
+  "assembles_into": "data/atlas/es/es.js",
+  "english_from": "data/atlas/<lang>/es.js",
+  "strings": 46,
+  "words": 1472,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-es-03.json",
+  "target": "i18n/es/chunks/es/atlas-es-03.json",
+  "assembles_into": "data/atlas/es/es.js",
+  "english_from": "data/atlas/<lang>/es.js",
+  "strings": 59,
+  "words": 1492,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-es-04.json",
+  "target": "i18n/es/chunks/es/atlas-es-04.json",
+  "assembles_into": "data/atlas/es/es.js",
+  "english_from": "data/atlas/<lang>/es.js",
+  "strings": 35,
+  "words": 863,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fi-01.json",
+  "target": "i18n/es/chunks/es/atlas-fi-01.json",
+  "assembles_into": "data/atlas/es/fi.js",
+  "english_from": "data/atlas/<lang>/fi.js",
+  "strings": 65,
+  "words": 1488,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fi-02.json",
+  "target": "i18n/es/chunks/es/atlas-fi-02.json",
+  "assembles_into": "data/atlas/es/fi.js",
+  "english_from": "data/atlas/<lang>/fi.js",
+  "strings": 53,
+  "words": 1496,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fi-03.json",
+  "target": "i18n/es/chunks/es/atlas-fi-03.json",
+  "assembles_into": "data/atlas/es/fi.js",
+  "english_from": "data/atlas/<lang>/fi.js",
+  "strings": 58,
+  "words": 1035,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fr-01.json",
+  "target": "i18n/es/chunks/es/atlas-fr-01.json",
+  "assembles_into": "data/atlas/es/fr.js",
+  "english_from": "data/atlas/<lang>/fr.js",
+  "strings": 106,
+  "words": 1488,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fr-02.json",
+  "target": "i18n/es/chunks/es/atlas-fr-02.json",
+  "assembles_into": "data/atlas/es/fr.js",
+  "english_from": "data/atlas/<lang>/fr.js",
+  "strings": 45,
+  "words": 1489,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fr-03.json",
+  "target": "i18n/es/chunks/es/atlas-fr-03.json",
+  "assembles_into": "data/atlas/es/fr.js",
+  "english_from": "data/atlas/<lang>/fr.js",
+  "strings": 47,
+  "words": 1467,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fr-04.json",
+  "target": "i18n/es/chunks/es/atlas-fr-04.json",
+  "assembles_into": "data/atlas/es/fr.js",
+  "english_from": "data/atlas/<lang>/fr.js",
+  "strings": 75,
+  "words": 1494,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-fr-05.json",
+  "target": "i18n/es/chunks/es/atlas-fr-05.json",
+  "assembles_into": "data/atlas/es/fr.js",
+  "english_from": "data/atlas/<lang>/fr.js",
+  "strings": 24,
+  "words": 665,
+  "status": "fixed",
+  "notes": "Translated before the style guide rule on English-named permits (translate into Spanish unless English is official in the country): apply it."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gb-01.json",
+  "target": "i18n/es/chunks/es/atlas-gb-01.json",
+  "assembles_into": "data/atlas/es/gb.js",
+  "english_from": "data/atlas/<lang>/gb.js",
+  "strings": 112,
+  "words": 1492,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gb-02.json",
+  "target": "i18n/es/chunks/es/atlas-gb-02.json",
+  "assembles_into": "data/atlas/es/gb.js",
+  "english_from": "data/atlas/<lang>/gb.js",
+  "strings": 63,
+  "words": 1471,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gb-03.json",
+  "target": "i18n/es/chunks/es/atlas-gb-03.json",
+  "assembles_into": "data/atlas/es/gb.js",
+  "english_from": "data/atlas/<lang>/gb.js",
+  "strings": 44,
+  "words": 1452,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gb-04.json",
+  "target": "i18n/es/chunks/es/atlas-gb-04.json",
+  "assembles_into": "data/atlas/es/gb.js",
+  "english_from": "data/atlas/<lang>/gb.js",
+  "strings": 48,
+  "words": 1480,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gb-05.json",
+  "target": "i18n/es/chunks/es/atlas-gb-05.json",
+  "assembles_into": "data/atlas/es/gb.js",
+  "english_from": "data/atlas/<lang>/gb.js",
+  "strings": 46,
+  "words": 877,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gr-01.json",
+  "target": "i18n/es/chunks/es/atlas-gr-01.json",
+  "assembles_into": "data/atlas/es/gr.js",
+  "english_from": "data/atlas/<lang>/gr.js",
+  "strings": 63,
+  "words": 1484,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gr-02.json",
+  "target": "i18n/es/chunks/es/atlas-gr-02.json",
+  "assembles_into": "data/atlas/es/gr.js",
+  "english_from": "data/atlas/<lang>/gr.js",
+  "strings": 53,
+  "words": 1460,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gr-03.json",
+  "target": "i18n/es/chunks/es/atlas-gr-03.json",
+  "assembles_into": "data/atlas/es/gr.js",
+  "english_from": "data/atlas/<lang>/gr.js",
+  "strings": 65,
+  "words": 1486,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-gr-04.json",
+  "target": "i18n/es/chunks/es/atlas-gr-04.json",
+  "assembles_into": "data/atlas/es/gr.js",
+  "english_from": "data/atlas/<lang>/gr.js",
+  "strings": 12,
+  "words": 239,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-hk-01.json",
+  "target": "i18n/es/chunks/es/atlas-hk-01.json",
+  "assembles_into": "data/atlas/es/hk.js",
+  "english_from": "data/atlas/<lang>/hk.js",
+  "strings": 56,
+  "words": 1458,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-hk-02.json",
+  "target": "i18n/es/chunks/es/atlas-hk-02.json",
+  "assembles_into": "data/atlas/es/hk.js",
+  "english_from": "data/atlas/<lang>/hk.js",
+  "strings": 44,
+  "words": 1495,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-hk-03.json",
+  "target": "i18n/es/chunks/es/atlas-hk-03.json",
+  "assembles_into": "data/atlas/es/hk.js",
+  "english_from": "data/atlas/<lang>/hk.js",
+  "strings": 38,
+  "words": 797,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ie-01.json",
+  "target": "i18n/es/chunks/es/atlas-ie-01.json",
+  "assembles_into": "data/atlas/es/ie.js",
+  "english_from": "data/atlas/<lang>/ie.js",
+  "strings": 66,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ie-02.json",
+  "target": "i18n/es/chunks/es/atlas-ie-02.json",
+  "assembles_into": "data/atlas/es/ie.js",
+  "english_from": "data/atlas/<lang>/ie.js",
+  "strings": 53,
+  "words": 1490,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ie-03.json",
+  "target": "i18n/es/chunks/es/atlas-ie-03.json",
+  "assembles_into": "data/atlas/es/ie.js",
+  "english_from": "data/atlas/<lang>/ie.js",
+  "strings": 76,
+  "words": 1465,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-il-01.json",
+  "target": "i18n/es/chunks/es/atlas-il-01.json",
+  "assembles_into": "data/atlas/es/il.js",
+  "english_from": "data/atlas/<lang>/il.js",
+  "strings": 57,
+  "words": 1471,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-il-02.json",
+  "target": "i18n/es/chunks/es/atlas-il-02.json",
+  "assembles_into": "data/atlas/es/il.js",
+  "english_from": "data/atlas/<lang>/il.js",
+  "strings": 39,
+  "words": 1494,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-il-03.json",
+  "target": "i18n/es/chunks/es/atlas-il-03.json",
+  "assembles_into": "data/atlas/es/il.js",
+  "english_from": "data/atlas/<lang>/il.js",
+  "strings": 38,
+  "words": 1462,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-il-04.json",
+  "target": "i18n/es/chunks/es/atlas-il-04.json",
+  "assembles_into": "data/atlas/es/il.js",
+  "english_from": "data/atlas/<lang>/il.js",
+  "strings": 27,
+  "words": 640,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-is-01.json",
+  "target": "i18n/es/chunks/es/atlas-is-01.json",
+  "assembles_into": "data/atlas/es/is.js",
+  "english_from": "data/atlas/<lang>/is.js",
+  "strings": 60,
+  "words": 1499,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-is-02.json",
+  "target": "i18n/es/chunks/es/atlas-is-02.json",
+  "assembles_into": "data/atlas/es/is.js",
+  "english_from": "data/atlas/<lang>/is.js",
+  "strings": 50,
+  "words": 1472,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-is-03.json",
+  "target": "i18n/es/chunks/es/atlas-is-03.json",
+  "assembles_into": "data/atlas/es/is.js",
+  "english_from": "data/atlas/<lang>/is.js",
+  "strings": 33,
+  "words": 823,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-it-01.json",
+  "target": "i18n/es/chunks/es/atlas-it-01.json",
+  "assembles_into": "data/atlas/es/it.js",
+  "english_from": "data/atlas/<lang>/it.js",
+  "strings": 103,
+  "words": 1477,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-it-02.json",
+  "target": "i18n/es/chunks/es/atlas-it-02.json",
+  "assembles_into": "data/atlas/es/it.js",
+  "english_from": "data/atlas/<lang>/it.js",
+  "strings": 69,
+  "words": 1475,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-it-03.json",
+  "target": "i18n/es/chunks/es/atlas-it-03.json",
+  "assembles_into": "data/atlas/es/it.js",
+  "english_from": "data/atlas/<lang>/it.js",
+  "strings": 47,
+  "words": 1478,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-it-04.json",
+  "target": "i18n/es/chunks/es/atlas-it-04.json",
+  "assembles_into": "data/atlas/es/it.js",
+  "english_from": "data/atlas/<lang>/it.js",
+  "strings": 66,
+  "words": 1490,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-it-05.json",
+  "target": "i18n/es/chunks/es/atlas-it-05.json",
+  "assembles_into": "data/atlas/es/it.js",
+  "english_from": "data/atlas/<lang>/it.js",
+  "strings": 2,
+  "words": 36,
+  "status": "reviewed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-jp-01.json",
+  "target": "i18n/es/chunks/es/atlas-jp-01.json",
+  "assembles_into": "data/atlas/es/jp.js",
+  "english_from": "data/atlas/<lang>/jp.js",
+  "strings": 70,
+  "words": 1480,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-jp-02.json",
+  "target": "i18n/es/chunks/es/atlas-jp-02.json",
+  "assembles_into": "data/atlas/es/jp.js",
+  "english_from": "data/atlas/<lang>/jp.js",
+  "strings": 41,
+  "words": 1488,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-jp-03.json",
+  "target": "i18n/es/chunks/es/atlas-jp-03.json",
+  "assembles_into": "data/atlas/es/jp.js",
+  "english_from": "data/atlas/<lang>/jp.js",
+  "strings": 40,
+  "words": 1494,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-jp-04.json",
+  "target": "i18n/es/chunks/es/atlas-jp-04.json",
+  "assembles_into": "data/atlas/es/jp.js",
+  "english_from": "data/atlas/<lang>/jp.js",
+  "strings": 39,
+  "words": 840,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kr-01.json",
+  "target": "i18n/es/chunks/es/atlas-kr-01.json",
+  "assembles_into": "data/atlas/es/kr.js",
+  "english_from": "data/atlas/<lang>/kr.js",
+  "strings": 57,
+  "words": 1492,
+  "status": "fixed",
+  "notes": "Check trillion → billones."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kr-02.json",
+  "target": "i18n/es/chunks/es/atlas-kr-02.json",
+  "assembles_into": "data/atlas/es/kr.js",
+  "english_from": "data/atlas/<lang>/kr.js",
+  "strings": 41,
+  "words": 1483,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kr-03.json",
+  "target": "i18n/es/chunks/es/atlas-kr-03.json",
+  "assembles_into": "data/atlas/es/kr.js",
+  "english_from": "data/atlas/<lang>/kr.js",
+  "strings": 63,
+  "words": 1391,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kw-01.json",
+  "target": "i18n/es/chunks/es/atlas-kw-01.json",
+  "assembles_into": "data/atlas/es/kw.js",
+  "english_from": "data/atlas/<lang>/kw.js",
+  "strings": 46,
+  "words": 1485,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kw-02.json",
+  "target": "i18n/es/chunks/es/atlas-kw-02.json",
+  "assembles_into": "data/atlas/es/kw.js",
+  "english_from": "data/atlas/<lang>/kw.js",
+  "strings": 39,
+  "words": 1454,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-kw-03.json",
+  "target": "i18n/es/chunks/es/atlas-kw-03.json",
+  "assembles_into": "data/atlas/es/kw.js",
+  "english_from": "data/atlas/<lang>/kw.js",
+  "strings": 33,
+  "words": 697,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lt-01.json",
+  "target": "i18n/es/chunks/es/atlas-lt-01.json",
+  "assembles_into": "data/atlas/es/lt.js",
+  "english_from": "data/atlas/<lang>/lt.js",
+  "strings": 60,
+  "words": 1493,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lt-02.json",
+  "target": "i18n/es/chunks/es/atlas-lt-02.json",
+  "assembles_into": "data/atlas/es/lt.js",
+  "english_from": "data/atlas/<lang>/lt.js",
+  "strings": 49,
+  "words": 1481,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lt-03.json",
+  "target": "i18n/es/chunks/es/atlas-lt-03.json",
+  "assembles_into": "data/atlas/es/lt.js",
+  "english_from": "data/atlas/<lang>/lt.js",
+  "strings": 41,
+  "words": 831,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lu-01.json",
+  "target": "i18n/es/chunks/es/atlas-lu-01.json",
+  "assembles_into": "data/atlas/es/lu.js",
+  "english_from": "data/atlas/<lang>/lu.js",
+  "strings": 59,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lu-02.json",
+  "target": "i18n/es/chunks/es/atlas-lu-02.json",
+  "assembles_into": "data/atlas/es/lu.js",
+  "english_from": "data/atlas/<lang>/lu.js",
+  "strings": 65,
+  "words": 1467,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-lu-03.json",
+  "target": "i18n/es/chunks/es/atlas-lu-03.json",
+  "assembles_into": "data/atlas/es/lu.js",
+  "english_from": "data/atlas/<lang>/lu.js",
+  "strings": 30,
+  "words": 742,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-mt-01.json",
+  "target": "i18n/es/chunks/es/atlas-mt-01.json",
+  "assembles_into": "data/atlas/es/mt.js",
+  "english_from": "data/atlas/<lang>/mt.js",
+  "strings": 59,
+  "words": 1468,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-mt-02.json",
+  "target": "i18n/es/chunks/es/atlas-mt-02.json",
+  "assembles_into": "data/atlas/es/mt.js",
+  "english_from": "data/atlas/<lang>/mt.js",
+  "strings": 45,
+  "words": 1480,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-mt-03.json",
+  "target": "i18n/es/chunks/es/atlas-mt-03.json",
+  "assembles_into": "data/atlas/es/mt.js",
+  "english_from": "data/atlas/<lang>/mt.js",
+  "strings": 54,
+  "words": 1162,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-my-01.json",
+  "target": "i18n/es/chunks/es/atlas-my-01.json",
+  "assembles_into": "data/atlas/es/my.js",
+  "english_from": "data/atlas/<lang>/my.js",
+  "strings": 62,
+  "words": 1456,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-my-02.json",
+  "target": "i18n/es/chunks/es/atlas-my-02.json",
+  "assembles_into": "data/atlas/es/my.js",
+  "english_from": "data/atlas/<lang>/my.js",
+  "strings": 50,
+  "words": 1481,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-my-03.json",
+  "target": "i18n/es/chunks/es/atlas-my-03.json",
+  "assembles_into": "data/atlas/es/my.js",
+  "english_from": "data/atlas/<lang>/my.js",
+  "strings": 34,
+  "words": 616,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nl-01.json",
+  "target": "i18n/es/chunks/es/atlas-nl-01.json",
+  "assembles_into": "data/atlas/es/nl.js",
+  "english_from": "data/atlas/<lang>/nl.js",
+  "strings": 79,
+  "words": 1484,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nl-02.json",
+  "target": "i18n/es/chunks/es/atlas-nl-02.json",
+  "assembles_into": "data/atlas/es/nl.js",
+  "english_from": "data/atlas/<lang>/nl.js",
+  "strings": 55,
+  "words": 1482,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nl-03.json",
+  "target": "i18n/es/chunks/es/atlas-nl-03.json",
+  "assembles_into": "data/atlas/es/nl.js",
+  "english_from": "data/atlas/<lang>/nl.js",
+  "strings": 65,
+  "words": 1492,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nl-04.json",
+  "target": "i18n/es/chunks/es/atlas-nl-04.json",
+  "assembles_into": "data/atlas/es/nl.js",
+  "english_from": "data/atlas/<lang>/nl.js",
+  "strings": 36,
+  "words": 958,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-no-01.json",
+  "target": "i18n/es/chunks/es/atlas-no-01.json",
+  "assembles_into": "data/atlas/es/no.js",
+  "english_from": "data/atlas/<lang>/no.js",
+  "strings": 69,
+  "words": 1471,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-no-02.json",
+  "target": "i18n/es/chunks/es/atlas-no-02.json",
+  "assembles_into": "data/atlas/es/no.js",
+  "english_from": "data/atlas/<lang>/no.js",
+  "strings": 53,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-no-03.json",
+  "target": "i18n/es/chunks/es/atlas-no-03.json",
+  "assembles_into": "data/atlas/es/no.js",
+  "english_from": "data/atlas/<lang>/no.js",
+  "strings": 49,
+  "words": 1025,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nz-01.json",
+  "target": "i18n/es/chunks/es/atlas-nz-01.json",
+  "assembles_into": "data/atlas/es/nz.js",
+  "english_from": "data/atlas/<lang>/nz.js",
+  "strings": 64,
+  "words": 1499,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nz-02.json",
+  "target": "i18n/es/chunks/es/atlas-nz-02.json",
+  "assembles_into": "data/atlas/es/nz.js",
+  "english_from": "data/atlas/<lang>/nz.js",
+  "strings": 45,
+  "words": 1475,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-nz-03.json",
+  "target": "i18n/es/chunks/es/atlas-nz-03.json",
+  "assembles_into": "data/atlas/es/nz.js",
+  "english_from": "data/atlas/<lang>/nz.js",
+  "strings": 42,
+  "words": 786,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-om-01.json",
+  "target": "i18n/es/chunks/es/atlas-om-01.json",
+  "assembles_into": "data/atlas/es/om.js",
+  "english_from": "data/atlas/<lang>/om.js",
+  "strings": 45,
+  "words": 1467,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-om-02.json",
+  "target": "i18n/es/chunks/es/atlas-om-02.json",
+  "assembles_into": "data/atlas/es/om.js",
+  "english_from": "data/atlas/<lang>/om.js",
+  "strings": 42,
+  "words": 1485,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-om-03.json",
+  "target": "i18n/es/chunks/es/atlas-om-03.json",
+  "assembles_into": "data/atlas/es/om.js",
+  "english_from": "data/atlas/<lang>/om.js",
+  "strings": 45,
+  "words": 1062,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pl-01.json",
+  "target": "i18n/es/chunks/es/atlas-pl-01.json",
+  "assembles_into": "data/atlas/es/pl.js",
+  "english_from": "data/atlas/<lang>/pl.js",
+  "strings": 72,
+  "words": 1446,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pl-02.json",
+  "target": "i18n/es/chunks/es/atlas-pl-02.json",
+  "assembles_into": "data/atlas/es/pl.js",
+  "english_from": "data/atlas/<lang>/pl.js",
+  "strings": 44,
+  "words": 1472,
+  "status": "fixed",
+  "notes": "atlas-pl.0109 \"Applications work\" and atlas-pl.0115 notice wording: check against English."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pl-03.json",
+  "target": "i18n/es/chunks/es/atlas-pl-03.json",
+  "assembles_into": "data/atlas/es/pl.js",
+  "english_from": "data/atlas/<lang>/pl.js",
+  "strings": 66,
+  "words": 1492,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pl-04.json",
+  "target": "i18n/es/chunks/es/atlas-pl-04.json",
+  "assembles_into": "data/atlas/es/pl.js",
+  "english_from": "data/atlas/<lang>/pl.js",
+  "strings": 6,
+  "words": 95,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pt-01.json",
+  "target": "i18n/es/chunks/es/atlas-pt-01.json",
+  "assembles_into": "data/atlas/es/pt.js",
+  "english_from": "data/atlas/<lang>/pt.js",
+  "strings": 68,
+  "words": 1488,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pt-02.json",
+  "target": "i18n/es/chunks/es/atlas-pt-02.json",
+  "assembles_into": "data/atlas/es/pt.js",
+  "english_from": "data/atlas/<lang>/pt.js",
+  "strings": 50,
+  "words": 1482,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pt-03.json",
+  "target": "i18n/es/chunks/es/atlas-pt-03.json",
+  "assembles_into": "data/atlas/es/pt.js",
+  "english_from": "data/atlas/<lang>/pt.js",
+  "strings": 70,
+  "words": 1479,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-pt-04.json",
+  "target": "i18n/es/chunks/es/atlas-pt-04.json",
+  "assembles_into": "data/atlas/es/pt.js",
+  "english_from": "data/atlas/<lang>/pt.js",
+  "strings": 23,
+  "words": 588,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-qa-01.json",
+  "target": "i18n/es/chunks/es/atlas-qa-01.json",
+  "assembles_into": "data/atlas/es/qa.js",
+  "english_from": "data/atlas/<lang>/qa.js",
+  "strings": 53,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-qa-02.json",
+  "target": "i18n/es/chunks/es/atlas-qa-02.json",
+  "assembles_into": "data/atlas/es/qa.js",
+  "english_from": "data/atlas/<lang>/qa.js",
+  "strings": 39,
+  "words": 1469,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-qa-03.json",
+  "target": "i18n/es/chunks/es/atlas-qa-03.json",
+  "assembles_into": "data/atlas/es/qa.js",
+  "english_from": "data/atlas/<lang>/qa.js",
+  "strings": 46,
+  "words": 1001,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ro-01.json",
+  "target": "i18n/es/chunks/es/atlas-ro-01.json",
+  "assembles_into": "data/atlas/es/ro.js",
+  "english_from": "data/atlas/<lang>/ro.js",
+  "strings": 73,
+  "words": 1490,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ro-02.json",
+  "target": "i18n/es/chunks/es/atlas-ro-02.json",
+  "assembles_into": "data/atlas/es/ro.js",
+  "english_from": "data/atlas/<lang>/ro.js",
+  "strings": 55,
+  "words": 1499,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ro-03.json",
+  "target": "i18n/es/chunks/es/atlas-ro-03.json",
+  "assembles_into": "data/atlas/es/ro.js",
+  "english_from": "data/atlas/<lang>/ro.js",
+  "strings": 54,
+  "words": 981,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ru-01.json",
+  "target": "i18n/es/chunks/es/atlas-ru-01.json",
+  "assembles_into": "data/atlas/es/ru.js",
+  "english_from": "data/atlas/<lang>/ru.js",
+  "strings": 52,
+  "words": 1497,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ru-02.json",
+  "target": "i18n/es/chunks/es/atlas-ru-02.json",
+  "assembles_into": "data/atlas/es/ru.js",
+  "english_from": "data/atlas/<lang>/ru.js",
+  "strings": 68,
+  "words": 1479,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-ru-03.json",
+  "target": "i18n/es/chunks/es/atlas-ru-03.json",
+  "assembles_into": "data/atlas/es/ru.js",
+  "english_from": "data/atlas/<lang>/ru.js",
+  "strings": 15,
+  "words": 304,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sa-01.json",
+  "target": "i18n/es/chunks/es/atlas-sa-01.json",
+  "assembles_into": "data/atlas/es/sa.js",
+  "english_from": "data/atlas/<lang>/sa.js",
+  "strings": 56,
+  "words": 1484,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sa-02.json",
+  "target": "i18n/es/chunks/es/atlas-sa-02.json",
+  "assembles_into": "data/atlas/es/sa.js",
+  "english_from": "data/atlas/<lang>/sa.js",
+  "strings": 36,
+  "words": 1464,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sa-03.json",
+  "target": "i18n/es/chunks/es/atlas-sa-03.json",
+  "assembles_into": "data/atlas/es/sa.js",
+  "english_from": "data/atlas/<lang>/sa.js",
+  "strings": 37,
+  "words": 1485,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sa-04.json",
+  "target": "i18n/es/chunks/es/atlas-sa-04.json",
+  "assembles_into": "data/atlas/es/sa.js",
+  "english_from": "data/atlas/<lang>/sa.js",
+  "strings": 50,
+  "words": 866,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-se-01.json",
+  "target": "i18n/es/chunks/es/atlas-se-01.json",
+  "assembles_into": "data/atlas/es/se.js",
+  "english_from": "data/atlas/<lang>/se.js",
+  "strings": 67,
+  "words": 1482,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-se-02.json",
+  "target": "i18n/es/chunks/es/atlas-se-02.json",
+  "assembles_into": "data/atlas/es/se.js",
+  "english_from": "data/atlas/<lang>/se.js",
+  "strings": 44,
+  "words": 1491,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-se-03.json",
+  "target": "i18n/es/chunks/es/atlas-se-03.json",
+  "assembles_into": "data/atlas/es/se.js",
+  "english_from": "data/atlas/<lang>/se.js",
+  "strings": 71,
+  "words": 1498,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-se-04.json",
+  "target": "i18n/es/chunks/es/atlas-se-04.json",
+  "assembles_into": "data/atlas/es/se.js",
+  "english_from": "data/atlas/<lang>/se.js",
+  "strings": 9,
+  "words": 183,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sg-01.json",
+  "target": "i18n/es/chunks/es/atlas-sg-01.json",
+  "assembles_into": "data/atlas/es/sg.js",
+  "english_from": "data/atlas/<lang>/sg.js",
+  "strings": 65,
+  "words": 1482,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sg-02.json",
+  "target": "i18n/es/chunks/es/atlas-sg-02.json",
+  "assembles_into": "data/atlas/es/sg.js",
+  "english_from": "data/atlas/<lang>/sg.js",
+  "strings": 50,
+  "words": 1468,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-sg-03.json",
+  "target": "i18n/es/chunks/es/atlas-sg-03.json",
+  "assembles_into": "data/atlas/es/sg.js",
+  "english_from": "data/atlas/<lang>/sg.js",
+  "strings": 34,
+  "words": 675,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-th-01.json",
+  "target": "i18n/es/chunks/es/atlas-th-01.json",
+  "assembles_into": "data/atlas/es/th.js",
+  "english_from": "data/atlas/<lang>/th.js",
+  "strings": 53,
+  "words": 1477,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-th-02.json",
+  "target": "i18n/es/chunks/es/atlas-th-02.json",
+  "assembles_into": "data/atlas/es/th.js",
+  "english_from": "data/atlas/<lang>/th.js",
+  "strings": 54,
+  "words": 1451,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-th-03.json",
+  "target": "i18n/es/chunks/es/atlas-th-03.json",
+  "assembles_into": "data/atlas/es/th.js",
+  "english_from": "data/atlas/<lang>/th.js",
+  "strings": 16,
+  "words": 377,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tr-01.json",
+  "target": "i18n/es/chunks/es/atlas-tr-01.json",
+  "assembles_into": "data/atlas/es/tr.js",
+  "english_from": "data/atlas/<lang>/tr.js",
+  "strings": 58,
+  "words": 1464,
+  "status": "fixed",
+  "notes": "TRY thousands of billions written as \"13.010,7 mil millones\": use billones (style guide)."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tr-02.json",
+  "target": "i18n/es/chunks/es/atlas-tr-02.json",
+  "assembles_into": "data/atlas/es/tr.js",
+  "english_from": "data/atlas/<lang>/tr.js",
+  "strings": 42,
+  "words": 1490,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tr-03.json",
+  "target": "i18n/es/chunks/es/atlas-tr-03.json",
+  "assembles_into": "data/atlas/es/tr.js",
+  "english_from": "data/atlas/<lang>/tr.js",
+  "strings": 59,
+  "words": 1217,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tw-01.json",
+  "target": "i18n/es/chunks/es/atlas-tw-01.json",
+  "assembles_into": "data/atlas/es/tw.js",
+  "english_from": "data/atlas/<lang>/tw.js",
+  "strings": 57,
+  "words": 1483,
+  "status": "fixed",
+  "notes": "NT$ thousands of billions written as \"1000 mil millones\": use billones (style guide)."
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tw-02.json",
+  "target": "i18n/es/chunks/es/atlas-tw-02.json",
+  "assembles_into": "data/atlas/es/tw.js",
+  "english_from": "data/atlas/<lang>/tw.js",
+  "strings": 45,
+  "words": 1484,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-tw-03.json",
+  "target": "i18n/es/chunks/es/atlas-tw-03.json",
+  "assembles_into": "data/atlas/es/tw.js",
+  "english_from": "data/atlas/<lang>/tw.js",
+  "strings": 44,
+  "words": 961,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-us-01.json",
+  "target": "i18n/es/chunks/es/atlas-us-01.json",
+  "assembles_into": "data/atlas/es/us.js",
+  "english_from": "data/atlas/<lang>/us.js",
+  "strings": 103,
+  "words": 1478,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-us-02.json",
+  "target": "i18n/es/chunks/es/atlas-us-02.json",
+  "assembles_into": "data/atlas/es/us.js",
+  "english_from": "data/atlas/<lang>/us.js",
+  "strings": 48,
+  "words": 1481,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-us-03.json",
+  "target": "i18n/es/chunks/es/atlas-us-03.json",
+  "assembles_into": "data/atlas/es/us.js",
+  "english_from": "data/atlas/<lang>/us.js",
+  "strings": 34,
+  "words": 1472,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-us-04.json",
+  "target": "i18n/es/chunks/es/atlas-us-04.json",
+  "assembles_into": "data/atlas/es/us.js",
+  "english_from": "data/atlas/<lang>/us.js",
+  "strings": 49,
+  "words": 1489,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-us-05.json",
+  "target": "i18n/es/chunks/es/atlas-us-05.json",
+  "assembles_into": "data/atlas/es/us.js",
+  "english_from": "data/atlas/<lang>/us.js",
+  "strings": 68,
+  "words": 1411,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-vn-01.json",
+  "target": "i18n/es/chunks/es/atlas-vn-01.json",
+  "assembles_into": "data/atlas/es/vn.js",
+  "english_from": "data/atlas/<lang>/vn.js",
+  "strings": 55,
+  "words": 1498,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-vn-02.json",
+  "target": "i18n/es/chunks/es/atlas-vn-02.json",
+  "assembles_into": "data/atlas/es/vn.js",
+  "english_from": "data/atlas/<lang>/vn.js",
+  "strings": 41,
+  "words": 1477,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/atlas-vn-03.json",
+  "target": "i18n/es/chunks/es/atlas-vn-03.json",
+  "assembles_into": "data/atlas/es/vn.js",
+  "english_from": "data/atlas/<lang>/vn.js",
+  "strings": 40,
+  "words": 885,
+  "status": "fixed",
+  "notes": ""
+ },
+ {
+  "source": "i18n/es/chunks/src/delta1-01.json",
+  "target": "i18n/es/chunks/es/delta1-01.json",
+  "assembles_into": "js/i18n-es.js, data/i18n-es-models.js, data/atlas/i18n-es.js",
+  "english_from": "js/i18n-*.js, data/i18n-*-models.js, data/atlas/i18n-*.js",
+  "strings": 155,
+  "words": 1490,
+  "status": "fixed",
+  "notes": "Added to the site after the first snapshot."
+ },
+ {
+  "source": "i18n/es/chunks/src/delta1-02.json",
+  "target": "i18n/es/chunks/es/delta1-02.json",
+  "assembles_into": "data/atlas/i18n-es.js",
+  "english_from": "data/atlas/i18n-*.js",
+  "strings": 125,
+  "words": 1499,
+  "status": "fixed",
+  "notes": "Added to the site after the first snapshot."
+ },
+ {
+  "source": "i18n/es/chunks/src/delta1-03.json",
+  "target": "i18n/es/chunks/es/delta1-03.json",
+  "assembles_into": "data/atlas/i18n-es.js, data/atlas/es/gr.js",
+  "english_from": "data/atlas/i18n-*.js, data/atlas/<lang>/gr.js",
+  "strings": 246,
+  "words": 1350,
+  "status": "fixed",
+  "notes": "Added to the site after the first snapshot."
+ }
+]

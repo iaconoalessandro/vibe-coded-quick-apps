@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------------------
- * Languages: English, Italian and simple French.
+ * Languages: English, Italian, simple French and Spanish.
  *
  * English is the source everywhere — in the pages, the scripts and the
  * models — and a translation is a dictionary keyed by that English:
@@ -39,17 +39,21 @@ window.I18N = (function () {
   var LANGS = [
     { id: 'en', label: 'EN', name: 'English' },
     { id: 'it', label: 'IT', name: 'Italiano' },
-    { id: 'fr', label: 'FR', name: 'Français' }
+    { id: 'fr', label: 'FR', name: 'Français' },
+    { id: 'es', label: 'ES', name: 'Español' }
   ];
 
   function stored() {
     try {
       var saved = localStorage.getItem(KEY);
-      return saved === 'it' || saved === 'fr' ? saved : 'en';
+      return saved === 'it' || saved === 'fr' || saved === 'es' ? saved : 'en';
     } catch (e) { return 'en'; }
   }
 
   var lang = stored();
+  /* French and Spanish go further than Italian: career names, diagram labels
+   * and each country's guide (data/atlas/<lang>/) are translated too. */
+  var full = lang === 'fr' || lang === 'es';
   var dict = Object.create(null);
   var misses = Object.create(null);
 
@@ -106,6 +110,7 @@ window.I18N = (function () {
   function ordinal(n) {
     if (lang === 'it') return n + 'º';
     if (lang === 'fr') return n + (n === 1 ? 'er' : 'e');
+    if (lang === 'es') return n + '.º';
     var s = ['th', 'st', 'nd', 'rd'], v = n % 100;
     return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
@@ -113,7 +118,8 @@ window.I18N = (function () {
   var MONTHS = {
     en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     it: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
-    fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+    fr: ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'],
+    es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic']
   };
   function month(i) { return (MONTHS[lang] || MONTHS.en)[i]; }
 
@@ -201,8 +207,9 @@ window.I18N = (function () {
 
   function walkEl(el, record) {
     /* Diagrams have short, context-specific labels; leave icon SVGs alone. */
-    if (lang === 'fr' && el.tagName.toLowerCase() === 'svg' && el.getAttribute('lang') === 'en' && el.getAttribute('translate') !== 'no') {
-      var dataPipeline = el.getAttribute('viewBox') === '0 0 320 319';
+    if (full && el.tagName.toLowerCase() === 'svg' && el.getAttribute('lang') === 'en' && el.getAttribute('translate') !== 'no') {
+      /* The French labels explain each step, so that one diagram is re-laid. */
+      var dataPipeline = lang === 'fr' && el.getAttribute('viewBox') === '0 0 320 319';
       if (dataPipeline) {
         /* Give the expanded explanations room without shrinking the type. */
         el.setAttribute('viewBox', '0 0 320 336');
@@ -235,16 +242,16 @@ window.I18N = (function () {
           });
         }
       });
-      el.setAttribute('lang', 'fr');
+      el.setAttribute('lang', lang);
       return;
     }
     /* French career names are plain descriptions of the work. Keep the
      * original job title available for matching job adverts and research. */
-    var name = lang === 'fr' && el.getAttribute('data-i18n-name');
+    var name = full && el.getAttribute('data-i18n-name');
     if (name && dict[name] !== undefined) {
       el.textContent = dict[name];
       el.setAttribute('title', name);
-      el.setAttribute('lang', 'fr');
+      el.setAttribute('lang', lang);
       return;
     }
     if (SKIP[el.tagName] || el.getAttribute('translate') === 'no') return;
@@ -276,7 +283,7 @@ window.I18N = (function () {
     if (root) walkEl(root, true);
     if (root === document.body) {
       var researchNote = document.querySelector('.cx-en-note');
-      if (researchNote && lang === 'fr') researchNote.lang = 'fr';
+      if (researchNote && full) researchNote.lang = lang;
     }
   }
 
@@ -288,7 +295,7 @@ window.I18N = (function () {
     base = new URL('../', document.currentScript.src).href;
   }
   function countryLanguage(id) {
-    if (lang !== 'fr') return Promise.resolve();
+    if (!full) return Promise.resolve();
     id = String(id).toLowerCase();
     if (!/^[a-z]{2}$/.test(id)) return Promise.reject(new Error('Unknown country'));
     if (!countryLoads[id]) countryLoads[id] = new Promise(function (resolve, reject) {
@@ -296,7 +303,7 @@ window.I18N = (function () {
       function request() {
         attempts++;
         var script = document.createElement('script');
-        script.src = base + 'data/atlas/fr/' + id + '.js';
+        script.src = base + 'data/atlas/' + lang + '/' + id + '.js';
         script.onload = resolve;
         script.onerror = function () {
           script.remove();
@@ -384,6 +391,7 @@ window.I18N = (function () {
 
   return {
     lang: lang,
+    full: full,
     langs: LANGS,
     add: add,
     t: t,
@@ -392,7 +400,7 @@ window.I18N = (function () {
     ordinal: ordinal,
     month: month,
     cap: cap,
-    locale: lang === 'it' ? 'it-IT' : lang === 'fr' ? 'fr-FR' : 'en-GB',
+    locale: lang === 'it' ? 'it-IT' : lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-GB',
     countryLanguage: countryLanguage,
     localize: localize,
     translateDom: translateDom,

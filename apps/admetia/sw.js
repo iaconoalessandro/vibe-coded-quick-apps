@@ -15,7 +15,7 @@
  * activate.
  * ------------------------------------------------------------------------- */
 
-var VERSION = 'v10';
+var VERSION = 'v11';
 var SHELL = 'admetia-shell-' + VERSION;
 var MEDIA = 'admetia-media-' + VERSION;
 
@@ -25,6 +25,7 @@ var SHELL_FILES = [
   'css/fonts.css', 'css/app.css',
   'js/i18n.js', 'js/i18n-it.js', 'data/i18n-it-models.js',
   'js/i18n-fr.js', 'data/i18n-fr-models.js', 'data/atlas/i18n-fr.js',
+  'js/i18n-es.js', 'data/i18n-es-models.js', 'data/atlas/i18n-es.js',
   'data/conversions.js', 'data/masters-model.js', 'data/computing-model.js',
   'data/computing-evidence.js', 'data/mba-model.js', 'data/mba-companies.js', 'data/deadlines.js', 'data/programme-fees.js',
   'js/theme.js', 'js/intro.js', 'js/storage.js', 'js/session.js', 'js/stats.js', 'js/ui.js', 'js/ticker.js', 'js/engine.js',

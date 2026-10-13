@@ -34,7 +34,7 @@
       return r.json();
     }).then(function (rows) {
       INDEX = rows.map(function (r) {
-        var french = window.I18N && I18N.lang === 'fr';
+        var french = window.I18N && I18N.full;
         return { r: r, t: fold(r.t + (french ? ' ' + T(r.t) : '')), n: fold(r.n), f: fold(r.f + (french ? ' ' + T(r.f) : '')), w: fold(r.w), e: fold(r.e) };
       });
       return INDEX;
@@ -87,10 +87,10 @@
       hits.forEach(function (h) {
         var li = el('li'), a = el('a');
         a.href = base + h.x.r.u;
-        var french = window.I18N && I18N.lang === 'fr';
+        var french = window.I18N && I18N.full;
         var t = el('span', 't', french ? T(h.x.r.t) : h.x.r.t);
         t.setAttribute('translate', 'no');
-        t.lang = french ? 'fr' : 'en';
+        t.lang = french ? I18N.lang : 'en';
         if (french) t.title = h.x.r.t;
         a.appendChild(t);
         a.appendChild(el('span', 'm', french ? T(h.x.r.f) : h.x.r.f));

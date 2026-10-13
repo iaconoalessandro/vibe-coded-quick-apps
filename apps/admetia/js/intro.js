@@ -54,6 +54,12 @@
       loading: 'Chargement', skip: 'Passer',
       motto: 'La porte d’entrée — des guides indépendants sur les admissions en master, les métiers et le travail à l’étranger'
     },
+    es: {
+      lines: [['¿INSEAD?', '¿LBS?', '¿BOCCONI?', '¿Y TÚ?'], ['GMAT', 'NOTA MEDIA', 'CV', 'VEREDICTO'], ['¿DÓNDE', 'ESTÁS', 'DE', 'VERDAD?']],
+      data: COUNT.programmes + '+ programas de negocios · ' + COUNT.mba + ' escuelas MBA · ' + COUNT.computing + ' informática',
+      loading: 'Cargando', skip: 'Omitir',
+      motto: 'La vía de entrada — guías independientes sobre admisiones a másteres, carreras y trabajo en el extranjero'
+    },
     it: {
       lines: [['INSEAD?', 'LBS?', 'BOCCONI?', 'E TU?'], ['GMAT', 'MEDIA', 'CV', 'VERDETTO'], ['A CHE', 'PUNTO', 'SEI', 'DAVVERO?']],
       data: COUNT.programmes + '+ programmi business · ' + COUNT.mba + ' scuole MBA · ' + COUNT.computing + ' informatica',

@@ -37,12 +37,12 @@
     return e;
   }
   function en(text, tag) {
-    var french = window.I18N && I18N.lang === 'fr';
+    var french = window.I18N && I18N.full;
     var quoted = /^“(.+)”$/.exec(text);
     var translated = french ? T(quoted ? quoted[1] : text) : text;
     var e = el(tag || 'span', null, quoted && french ? '“' + translated + '”' : translated);
     e.setAttribute('translate', 'no');
-    if (french) { e.lang = 'fr'; e.title = text; }
+    if (french) { e.lang = I18N.lang; e.title = text; }
     return e;
   }
   function has(a, x) { return !!a && a.indexOf(x) > -1; }

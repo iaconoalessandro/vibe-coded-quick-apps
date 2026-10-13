@@ -2263,7 +2263,7 @@
       r.appendChild(raw('td', null, F ? T(F.name) : '—'));
       r.appendChild(raw('td', null, x['in'] ? T('about {n} a year', { n: num(x['in']) }) : T('not stated')));
       r.appendChild(raw('td', null, x.w ? (x.w[0] === x.w[1] ? monthName(x.w[0]) : monthName(x.w[0]) + ' – ' + monthName(x.w[1])) : T('not stated')));
-      r.appendChild(raw('td', null, x.lang ? (window.I18N && I18N.lang === 'fr' ? T('Programme languages: ' + x.lang) : x.lang) : '—'));
+      r.appendChild(raw('td', null, x.lang ? (window.I18N && I18N.full ? T('Programme languages: ' + x.lang) : x.lang) : '—'));
       r.appendChild(raw('td', null, T(vname(A.entryIntl, x.intl || 'unknown'))));
       tb.appendChild(r);
     });

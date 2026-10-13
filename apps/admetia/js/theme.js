@@ -38,7 +38,7 @@
    * — English is better than nothing. */
   try {
     var storedLanguage = localStorage.getItem('admissions-calc:lang');
-    if (storedLanguage === 'it' || storedLanguage === 'fr') {
+    if (storedLanguage === 'it' || storedLanguage === 'fr' || storedLanguage === 'es') {
       root.lang = storedLanguage;
       root.classList.add('i18n-wait');
       setTimeout(function () { root.classList.remove('i18n-wait'); }, 3000);

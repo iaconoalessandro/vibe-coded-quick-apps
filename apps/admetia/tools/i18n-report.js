@@ -57,8 +57,8 @@ function dictionary(files, lang = 'it') {
  * (data/atlas/). Those entries are checked here for broken placeholders and
  * tags; whether every sentence has one is tests/atlas-test.js's job. */
 function atlasFiles(lang) {
-  if (lang === 'fr') return ['data/atlas/i18n-fr.js', ...fs.readdirSync(path.join(ROOT, 'data/atlas/fr'))
-    .filter((f) => f.endsWith('.js')).map((f) => 'data/atlas/fr/' + f)];
+  if (lang !== 'it') return [`data/atlas/i18n-${lang}.js`, ...fs.readdirSync(path.join(ROOT, 'data/atlas', lang))
+    .filter((f) => f.endsWith('.js')).map((f) => `data/atlas/${lang}/` + f)];
   return fs.readdirSync(path.join(ROOT, 'data/atlas')).filter((f) => f.endsWith('.js') && f !== 'geo.js')
     .map((f) => 'data/atlas/' + f);
 }
@@ -200,7 +200,7 @@ function check(lang = 'it') {
   const atlas = dictionary(atlasFiles(lang), lang);
   const all = Object.assign({}, atlas, dict);
   const broken = Object.keys(all).filter((k) => placeholders(k) !== placeholders(all[k]) || tags(k) !== tags(all[k]));
-  const supplementalMissing = lang === 'fr' ? [...supplemental].filter((k) => all[k] === undefined) : [];
+  const supplementalMissing = lang !== 'it' ? [...supplemental].filter((k) => all[k] === undefined) : [];
   return { dict, atlas, models, missing, stale, broken, supplementalMissing };
 }
 
@@ -208,8 +208,8 @@ module.exports = { check };
 
 if (require.main === module) {
   const verbose = process.argv.includes('-v');
-  const lang = process.argv.includes('--lang=fr') ? 'fr' : 'it';
-  const language = lang === 'fr' ? 'French' : 'Italian';
+  const lang = process.argv.includes('--lang=fr') ? 'fr' : process.argv.includes('--lang=es') ? 'es' : 'it';
+  const language = { fr: 'French', es: 'Spanish', it: 'Italian' }[lang];
   const r = check(lang);
   const n = Object.keys(r.dict).length;
   console.log(`${language} entries: ${n}`);
@@ -218,8 +218,8 @@ if (require.main === module) {
   console.log(`Entries whose English no longer appears: ${r.stale.length}`);
   r.stale.forEach((s) => console.log('  stale    ' + JSON.stringify(s)));
   console.log(`Entries with mismatched {placeholders} or tags: ${r.broken.length}`);
-  if (lang === 'fr') {
-    console.log(`Culture, outcomes, fee notes, employer programmes and diagram labels without French: ${r.supplementalMissing.length}`);
+  if (lang !== 'it') {
+    console.log(`Culture, outcomes, fee notes, employer programmes and diagram labels without ${language}: ${r.supplementalMissing.length}`);
     r.supplementalMissing.forEach((s) => console.log('  missing supplemental  ' + JSON.stringify(s)));
   }
   r.broken.forEach((s) => console.log('  broken   ' + JSON.stringify(s) + '\n        -> ' + JSON.stringify(r.dict[s])));

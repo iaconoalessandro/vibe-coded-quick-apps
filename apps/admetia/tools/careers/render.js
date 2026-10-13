@@ -168,6 +168,7 @@ ${footer(from)}
 <script defer src="${r('js/i18n.js')}"></script>
 <script defer src="${r('js/i18n-it.js')}"></script>
 <script defer src="${r('js/i18n-fr.js')}"></script>
+<script defer src="${r('js/i18n-es.js')}"></script>
 <script defer src="${r('js/stats.js')}"></script>
 <script defer src="${r('careers/assets/careers.js')}"></script>
 ${(page.scripts || []).map((s) => `<script defer src="${r(s)}"></script>`).join('\n')}${page.scripts ? '\n' : ''}</body>

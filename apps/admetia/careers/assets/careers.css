@@ -11,7 +11,7 @@
 
 /* Italian readers: the research stays in English, and says so. */
 .cx-en-note { display: none; }
-html[lang="it"] .cx-en-note, html[lang="fr"] .cx-en-note {
+html[lang="it"] .cx-en-note, html[lang="fr"] .cx-en-note, html[lang="es"] .cx-en-note {
   display: block; margin: 14px 0 0; padding: 10px 14px;
   border-left: 3px solid var(--accent); background: var(--paper-2);
   font: italic 16px/1.45 var(--font-head); color: var(--ink);

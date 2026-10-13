@@ -28,13 +28,13 @@ function sandbox(lang){
     localStorage:{getItem:k=>store[k]===undefined?null:store[k],setItem:(k,v)=>{store[k]=String(v);}}};
   s.window=s;
   vm.createContext(s);
-  const files=['js/i18n.js','js/i18n-it.js','js/i18n-fr.js','data/conversions.js','data/masters-model.js','data/computing-model.js',
-    'data/computing-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js','data/i18n-fr-models.js',
+  const files=['js/i18n.js','js/i18n-it.js','js/i18n-fr.js','js/i18n-es.js','data/conversions.js','data/masters-model.js','data/computing-model.js',
+    'data/computing-evidence.js','data/mba-model.js','data/mba-companies.js','data/deadlines.js','data/i18n-it-models.js','data/i18n-fr-models.js','data/i18n-es-models.js',
     'js/score-masters.js','js/score-computing.js','js/score-mba.js'];
   for(const f of files) vm.runInContext(fs.readFileSync(path.join(APP,f),'utf8'),s,{filename:f});
   return s;
 }
-const EN=sandbox('en'), IT=sandbox('it'), FR=sandbox('fr');
+const EN=sandbox('en'), IT=sandbox('it'), FR=sandbox('fr'), ES=sandbox('es');
 
 t('English readers get English',EN.I18N.lang==='en'&&EN.I18N.t('Me now')==='Me now');
 t('Italian readers get Italian',IT.I18N.lang==='it'&&IT.I18N.t('Me now')==='Io adesso');
@@ -49,7 +49,10 @@ t('French is a saved language with French number and date formatting',FR.I18N.la
 t('French has familiar labels and explains technical abbreviations',FR.I18N.t('Running score')==='Votre score actuel'&&FR.I18N.t('Data & AI')==='Données et intelligence artificielle'&&FR.I18N.t('GMAT').includes('Test d’admission'));
 t('French questions are translated before a calculator draws them',FR.MASTERS_MODEL.steps[0].title==='Votre diplôme');
 t('French templates preserve their variables',FR.I18N.t('in {n} days',{n:12})==='dans 12 jours');
-t('the language picker includes all three languages',FR.I18N.langs.map(x=>x.id).join(',')==='en,it,fr');
+t('the language picker includes all four languages',FR.I18N.langs.map(x=>x.id).join(',')==='en,it,fr,es');
+t('Spanish is a saved language with Spanish number and date formatting',ES.I18N.lang==='es'&&ES.I18N.locale==='es-ES'&&ES.I18N.month(0)==='ene'&&ES.I18N.ordinal(3)==='3.º'&&ES.I18N.words(3)==='3');
+t('Spanish questions are translated before a calculator draws them',ES.I18N.t('Running score')==='Puntuación acumulada'&&ES.MASTERS_MODEL.steps[0].title!==EN.MASTERS_MODEL.steps[0].title);
+t('Spanish templates preserve their variables',/\b12\b/.test(ES.I18N.t('in {n} days',{n:12}))&&ES.I18N.t('in {n} days',{n:12})!=='in 12 days');
 
 /* Generated metadata uses shared templates, including names containing
  * punctuation. It must translate without altering the English source. */
@@ -119,26 +122,34 @@ for(let pick=0;pick<6;pick++){
   }
 }
 t('every score is the same in Italian as in English ('+n+' profile × track runs)',same);
+function sameScores(L){
 let sameFrench=true;
 for(let pick=0;pick<6;pick++){
   for(const [model,scorer,tracks] of [['MASTERS_MODEL','MASTERS_SCORE',['mim','mif','marketing']],['IT_MODEL','IT_SCORE',['cs','dsai','conversion']]]){
     for(const track of tracks){
-      const a=profile(EN[model],pick),x=EN[scorer].evaluate(a,track),y=FR[scorer].evaluate(a,track);
+      const a=profile(EN[model],pick),x=EN[scorer].evaluate(a,track),y=L[scorer].evaluate(a,track);
       sameFrench=sameFrench&&x.score.total===y.score.total&&JSON.stringify(x.rows.map(r=>[r.school.id,r.adjusted,r.eligible,r.verdict.tone]))===JSON.stringify(y.rows.map(r=>[r.school.id,r.adjusted,r.eligible,r.verdict.tone]));
     }
   }
   for(const mode of ['published','corrected']){
-    const a=profile(EN.MBA_MODEL,pick),x=EN.MBA_SCORE.score(a,mode),y=FR.MBA_SCORE.score(a,mode);
+    const a=profile(EN.MBA_MODEL,pick),x=EN.MBA_SCORE.score(a,mode),y=L.MBA_SCORE.score(a,mode);
     sameFrench=sameFrench&&x.base===y.base&&JSON.stringify(x.schools)===JSON.stringify(y.schools);
   }
 }
-t('French preserves every score and eligibility result (48 profile × track runs)',sameFrench);
+return sameFrench;
+}
+t('French preserves every score and eligibility result (48 profile × track runs)',sameScores(FR));
+t('Spanish preserves every score and eligibility result (48 profile × track runs)',sameScores(ES));
 const frenchReport=require('../tools/i18n-report.js').check('fr');
 t('French preserves all placeholders and HTML tags',frenchReport.broken.length===0,frenchReport.broken.slice(0,3).join(' | '));
 t('French covers culture, outcomes, fee notes, employer programmes and diagram labels',frenchReport.supplementalMissing.length===0,frenchReport.supplementalMissing.slice(0,5).join(' | '));
 const frenchScopeErrors=Object.entries({...frenchReport.dict,...frenchReport.atlas}).filter(([en,fr])=>
   /non[- ]EU\b/i.test(en)&&!/non[- ]European\b/i.test(en)&&/non[- ]européen/i.test(fr));
 t('French keeps non-EU distinct from non-European',frenchScopeErrors.length===0,frenchScopeErrors.map(x=>x[0]).slice(0,3).join(' | '));
+const spanishReport=require('../tools/i18n-report.js').check('es');
+t('Spanish preserves all placeholders and HTML tags',spanishReport.broken.length===0,spanishReport.broken.slice(0,3).join(' | '));
+t('Spanish covers culture, outcomes, fee notes, employer programmes and diagram labels',spanishReport.supplementalMissing.length===0,spanishReport.supplementalMissing.slice(0,5).join(' | '));
+t('Spanish covers every French interface, model and country lookup key',Object.keys(frenchReport.dict).every(k=>spanishReport.dict[k]!==undefined)&&Object.keys(frenchReport.atlas).every(k=>spanishReport.atlas[k]!==undefined||spanishReport.dict[k]!==undefined));
 t('French covers every existing Italian interface and model lookup key',Object.keys(report.dict).every(k=>frenchReport.dict[k]!==undefined));
 t('French covers the country vocabulary and all existing Italian country text',Object.keys(report.atlas).every(k=>frenchReport.atlas[k]!==undefined||frenchReport.dict[k]!==undefined));
 const countryPairs=new Set();
@@ -245,6 +256,10 @@ async function finalChecks() {
   const svg={tagName:'svg',getAttribute:k=>k==='lang'?'en':null,querySelectorAll:()=>[label],setAttribute:(k,v)=>{svg[k]=v}};
   FR.document={querySelector:()=>null};FR.I18N.translateDom(svg);
   t('French diagrams translate text without changing SVG geometry',label.textContent==='Table'&&svg.lang==='fr');
+  const esSvg={...svg,lang:'en',setAttribute:(k,v)=>{esSvg[k]=v}};label.textContent='Fact table';ES.document=FR.document;ES.I18N.translateDom(esSvg);
+  t('Spanish diagrams translate their labels',label.textContent==='Tabla de hechos'&&esSvg.lang==='es');
+  const esScripts=[];ES.document={createElement:()=>({}),head:{appendChild:x=>esScripts.push(x)}};ES.I18N.countryLanguage('DE');
+  t('Spanish country guides load from data/atlas/es/',esScripts.length===1&&esScripts[0].src.endsWith('data/atlas/es/de.js'));
   const original={...svg,lang:'en'};label.textContent='Fact table';EN.document=FR.document;EN.I18N.translateDom(original);
   t('English diagram labels remain English',label.textContent==='Fact table');
   console.log('\n'+pass+' passed, '+fail+' failed');process.exit(fail?1:0);

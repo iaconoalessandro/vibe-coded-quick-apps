@@ -1,0 +1,22 @@
+{
+ "phase3_todo": [
+  "ui-16: career path was changed to camino by the reviewer following an over-broad glossary entry; glossary corrected to trayectoria profesional — revert",
+  "atlas-au-01..03 (reviewed before the rule was refined): numbered visas were left as English '482 visa' / '500 visa'; should be 'visado 482' etc. Check gb, ie, nz, sg, hk, mt, my, us, ca chunks for the same pattern in the consistency scan.",
+  "Denmark: Pay Limit scheme rendered 'vía de límite salarial' in dk-02 and 'régimen de límite salarial' in dk-03: unify. Per-country scan: same English permit/office name rendered differently across a country's chunks (Bulgaria Employment Agency; Austria sworn translator; UAE attestation).",
+  "Scan all chunks for 'Labour Force Survey' left in English (glossary added late: Encuesta de Población Activa de la UE).",
+  "'taught master's' rendered three ways before the glossary entry (MSc lectivos in models-06, posgrados de docencia in ui-17, máster impartido in atlas-gb-04): unify to 'máster con docencia'.",
+  "atlas-gr-01: reviewer rendered hiring/visa 'routes' as 'itinerarios' against the glossary (vía; itinerario is reserved for study tracks): check and fix; scan all atlas chunks for 'itinerario' used for routes.",
+  "atlas-shared-01: 'Applications work' / 'People and applications' use 'solicitudes' for job applications; glossary says candidaturas for jobs. Scan all atlas chunks for 'solicitud' used for job applications.",
+  "atlas-kr.0086: 'raised at offer' (salary is brought up at the offer stage, the 'Raised later' answer of the salary-expectation row) was rendered 'puede subir en la oferta': fix to 'se plantea en la fase de oferta'.",
+  "ui-01..17 and models-01..03 were reviewed before the glossary split 'intake' (round vs people): scan them for 'convocatoria' where the English 'intake' means the people admitted or hired.",
+  "Malaysia / Singapore / Hong Kong: generic 'pass' rendered 'pase' in my-03 and 'permiso' in my-02: unify (pase), keeping official names (Employment Pass) in English.",
+  "Scan every chunk for figures of a thousand billion or more still written as 'N mil millones' (N >= 1000): must be billones (style guide).",
+  "atlas-nl-02: one 'la IND' left; the rest of the Netherlands guide uses 'el IND' / 'el UWV'. General: gender of foreign agency acronyms within a country.",
+  "Scan for VC 'exits' still rendered 'salidas' (glossary added mid-review: desinversiones (exits)), and for 'Series A' / 'H2' forms that predate the glossary entries.",
+  "'standing' (the Atlas rating of a hub in a field; UI label is 'Relevancia') was rendered posición / posición general / prestigio / valoraciones in atlas chunks reviewed before the glossary entry: unify to relevancia where it is that rating.",
+  "Scan for 'servicio civil' (should be 'función pública') and unify 'expectativa(s) salarial(es)' / 'pretensiones salariales' with the atlas-shared row label. Poland: 'umowa zlecenie' rendered 'contrato de encargo' (pl-01) and 'contrato civil' (pl-03): unify.",
+  "Scan atlas chunks for 'the library' rendered plain 'la biblioteca' (glossary: la biblioteca de fuentes), and for 'kuwaitización/qatarización/omanización/saudización' forms: keep one pattern, 'nacionalización del empleo (X)' with the Spanish demonym form.",
+  "Deterministic scan: four-digit numbers written with a thousands point ('1.625 €') where the English has '1,625' must lose the point (style guide). Only where the source has the comma form, so decimal grades are untouched.",
+  "National statistics offices cited as sources ('Statistics Sweden', 'Statistics Netherlands', 'Statistics Lithuania', 'Statistics Iceland'…) are kept in English in some countries and translated in others: unify (keep the English source name, as the do-not-translate list says for statistical sources)."
+ ]
+}

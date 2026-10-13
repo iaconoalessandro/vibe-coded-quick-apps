@@ -40,10 +40,10 @@ const PAGES = Object.keys(require('./shell').ROOT_PAGES);
  * parked mockups, and documents written for this repository rather than for
  * readers of the site, and local environment files (the Python virtualenv
  * for tools/build-brand.py, the tools' response cache in .cache/, the
- * verification harness in .verify/, .gitignore). CREDITS.md does ship — it carries
- * the photo and type attributions. */
+ * verification harness in .verify/, .gitignore, the translation workspace in
+ * i18n/). CREDITS.md does ship — it carries the photo and type attributions. */
 const SKIP = new Set(['.git', '.github', '.claude', 'node_modules', '_site', '.DS_Store',
-  '.venv', '.cache', '.verify', '.gitignore', 'package.json', 'package-lock.json', 'tests', 'tools', 'design',
+  '.venv', '.cache', '.verify', '.gitignore', 'package.json', 'package-lock.json', 'tests', 'tools', 'design', 'i18n',
   'docs', 'README.md', 'CLAUDE.md', 'PRODUCT.md', 'graphify-out',
   /* The Career Explorer's build notes and parsed data (careers/data/
    * careers.json): for this repository, not loaded by any page. */

@@ -275,7 +275,7 @@ function ld(opts) {
   const site = { '@type': 'WebSite', '@id': SITE + '#website', url: SITE, name: 'Admetia' };
   const graph = [];
   if (!opts.section) {
-    graph.push({ ...site, alternateName: 'Admetia — the way in', description: opts.description, inLanguage: ['en', 'it', 'fr'] });
+    graph.push({ ...site, alternateName: 'Admetia — the way in', description: opts.description, inLanguage: ['en', 'it', 'fr', 'es'] });
   } else {
     const steps = trail(opts);
     const node = { '@type': opts.main ? 'CollectionPage' : 'WebPage', '@id': page + '#page', url: page, name: opts.title, description: opts.description,
