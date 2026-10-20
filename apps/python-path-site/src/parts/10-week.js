@@ -42,9 +42,11 @@ function renderWeek(id) {
   if (w.quiz.length) jumps.push(["quiz", "Quiz"]);
   if (w.checkpoint.length) jumps.push(["sunday", "Sunday questions"]);
   $("#view").innerHTML = `
+    <div class="weekfield">
     <nav class="wk-steps" aria-label="Weeks"><a class="wk-step wk-today" href="#today">${BACK}<span>Today</span></a><span class="wk-around">${wkNeighbours(w)}</span></nav>
     <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekNo(w)}</span>
       <h1><span class="wkprefix">${weekName(w)} · </span>${SHORT[w.id]}</h1></div>
+    </div>
     <dl class="wk-facts">
       <div><dt>When</dt><dd>${range(w)} · ${w.hours}</dd></div>
       <div><dt>Book</dt><dd>${w.book}</dd></div>

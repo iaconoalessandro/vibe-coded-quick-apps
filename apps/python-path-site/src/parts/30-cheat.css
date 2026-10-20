@@ -1,5 +1,5 @@
 /* ---- Cheat sheet ---- */
-#view h1 + .cs-lede { margin: 6px 0 0; color: var(--muted); font-size: var(--t-s); }
+.cs-lede { margin: 6px 0 0; color: var(--muted); font-size: var(--t-s); }
 .cs-search { position: sticky; top: calc(56px + env(safe-area-inset-top, 0px)); z-index: 4; background: var(--ground); margin-top: 18px; padding-block: 10px 12px; border-bottom: 1px solid var(--rule); }
 .cs-search label { display: block; font-size: var(--t-s); font-weight: 600; margin-bottom: 6px; }
 .cs-field { position: relative; }

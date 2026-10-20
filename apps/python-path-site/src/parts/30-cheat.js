@@ -1,7 +1,7 @@
 /* ---- Cheat sheet view: one DOM build per visit; filtering only toggles hidden and <mark>s ---- */
 let csQuery = "";
 function renderCheat() {
-  setWeekColour(null);
+  setWeekColour("cheat");
   const src = document.createElement("div");
   src.innerHTML = md("md-cheatsheet");
   // drop the markdown's own h1, intro line and rule: everything before the first h2
@@ -23,8 +23,8 @@ function renderCheat() {
   const secs = [...body.children];
   const wide = matchMedia("(min-width: 601px)").matches;
   $("#view").innerHTML = `
-    <h1>Cheat sheet</h1>
-    <p class="cs-lede">The same text as <code>CHEATSHEET.md</code> in your repo.</p>
+    <div class="weekfield"><h1>Cheat sheet</h1>
+    <p class="cs-lede">The same text as <code>CHEATSHEET.md</code> in your repo.</p></div>
     <div class="cs-search">
       <label for="cs-q">Search the cheat sheet</label>
       <div class="cs-field"><input id="cs-q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="DictReader, commit…" aria-describedby="cs-count">

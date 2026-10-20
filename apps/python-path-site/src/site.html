@@ -37,19 +37,19 @@ try { const m = localStorage.getItem("python-path-mode"); if (m === "light" || m
 :root[data-look="olivetti"] {
   --ground: #ffffff; --ink: #141414; --muted: #5a5a5a; --rule: #e1e1e1; --rule-strong: #141414;
   --band: #1f3f8f; --band-ink: #ffffff; --band-muted: #dbe3f7;
-  --link: #1f3f8f; --late: #c23f2a; --route: #141414; --check: #141414;
-  --code-bg: #f3f3f1; --code-ink: #141414; --select: #dbe3f7; --focus: #1f3f8f;
+  --link: var(--week-link, #1f3f8f); --late: #c23f2a; --route: #141414; --check: var(--week-link, #141414);
+  --code-bg: #f3f3f1; --code-ink: #141414; --select: #dbe3f7; --focus: var(--week-link, #1f3f8f);
   --f-ui: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif; --f-head: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --head-stretch: 100%; --head-weight: 800; --label-stretch: 100%;
 }
 @media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) {
   --ground: #121212; --ink: #f1f1ef; --muted: #a9a9a6; --rule: #2c2c2c; --rule-strong: #f1f1ef;
-  --link: #9db4ff; --late: #ff8f7a; --route: #f1f1ef; --check: #f1f1ef;
-  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: #9db4ff; color-scheme: dark; } }
+  --link: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff); --late: #ff8f7a; --route: #f1f1ef; --check: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff);
+  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff); color-scheme: dark; } }
 :root[data-look="olivetti"][data-theme="dark"] {
   --ground: #121212; --ink: #f1f1ef; --muted: #a9a9a6; --rule: #2c2c2c; --rule-strong: #f1f1ef;
-  --link: #9db4ff; --late: #ff8f7a; --route: #f1f1ef; --check: #f1f1ef;
-  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: #9db4ff; color-scheme: dark; }
+  --link: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff); --late: #ff8f7a; --route: #f1f1ef; --check: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff);
+  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: color-mix(in srgb, var(--week-link, #1f3f8f) 45%, #ffffff); color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--rule) var(--ground); }
@@ -141,8 +141,8 @@ input[type="checkbox"]:checked::after { opacity: 1; }
 .stop.now .mark { width: 20px; height: 20px; margin-left: 3px; border-width: 6px; }
 .stop:not(:last-child)::before { content: ""; position: absolute; left: 12px; top: 50%; height: 100%; width: 2px; background: var(--route); }
 :root[data-look="olivetti"] .stop::before { display: none; }
-:root[data-look="olivetti"] .mark { width: 26px; height: 26px; margin-left: 0; border: 3px solid var(--wk); border-radius: 0; background: transparent; }
-:root[data-look="olivetti"] .stop.done .mark, :root[data-look="olivetti"] .stop.now .mark { background: var(--wk); width: 26px; height: 26px; margin-left: 0; border-width: 3px; }
+:root[data-look="olivetti"] .mark { width: 30px; height: 30px; margin-left: 0; border: 3px solid var(--wk); border-radius: 0; background: transparent; }
+:root[data-look="olivetti"] .stop.done .mark, :root[data-look="olivetti"] .stop.now .mark { background: var(--wk); width: 30px; height: 30px; margin-left: 0; border-width: 3px; }
 :root[data-look="olivetti"] .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk); }
 
 .later { margin-top: 36px; border-top: 1px solid var(--rule); }
@@ -175,13 +175,24 @@ input[type="checkbox"]:checked::after { opacity: 1; }
 @media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) .mark { --wk-lift: color-mix(in srgb, var(--wk) 55%, #ffffff); border-color: var(--wk-lift); }
   :root[data-look="olivetti"]:not([data-theme="light"]) .stop.done .mark, :root[data-look="olivetti"]:not([data-theme="light"]) .stop.now .mark { background: var(--wk-lift); }
   :root[data-look="olivetti"]:not([data-theme="light"]) .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk-lift); }
-  :root[data-look="olivetti"]:not([data-theme="light"]) .track span { background: color-mix(in srgb, var(--week) 55%, #ffffff); } }
+}
 :root[data-look="olivetti"][data-theme="dark"] .mark { --wk-lift: color-mix(in srgb, var(--wk) 55%, #ffffff); border-color: var(--wk-lift); }
 :root[data-look="olivetti"][data-theme="dark"] .stop.done .mark, :root[data-look="olivetti"][data-theme="dark"] .stop.now .mark { background: var(--wk-lift); }
 :root[data-look="olivetti"][data-theme="dark"] .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk-lift); }
-:root[data-look="olivetti"][data-theme="dark"] .track span { background: color-mix(in srgb, var(--week) 55%, #ffffff); }
-@media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) .weeknum { color: color-mix(in srgb, var(--week) 55%, #ffffff); } }
-:root[data-look="olivetti"][data-theme="dark"] .weeknum { color: color-mix(in srgb, var(--week) 55%, #ffffff); }
+/* Olivetti: the page's colour field (bar + header band in one colour, full bleed without page overflow) */
+:root[data-look="olivetti"] .topbar { box-shadow: inset 0 -1px 0 color-mix(in srgb, var(--band-ink) 18%, transparent); }
+:root[data-look="olivetti"] .weekfield { background: var(--week, #1f3f8f); color: var(--band-ink); box-shadow: 0 0 0 100vmax var(--week, #1f3f8f); clip-path: inset(0 -100vmax); margin-top: -28px; padding-block: 30px 32px; }
+:root[data-look="olivetti"] .weekfield h1, :root[data-look="olivetti"] .weekfield a { color: var(--band-ink); }
+:root[data-look="olivetti"] .weekfield .weeknum { color: var(--band-ink); font-size: 6rem; }
+:root[data-look="olivetti"] .weekfield .dateline, :root[data-look="olivetti"] .weekfield .count, :root[data-look="olivetti"] .weekfield p { color: color-mix(in srgb, var(--band-ink) 85%, transparent); }
+:root[data-look="olivetti"] .weekfield .dateline b, :root[data-look="olivetti"] .weekfield .count b { color: var(--band-ink); }
+:root[data-look="olivetti"] .weekfield .plannote { color: var(--band-ink); font-weight: 700; }
+:root[data-look="olivetti"] .weekfield .track { background: color-mix(in srgb, var(--band-ink) 28%, transparent); }
+:root[data-look="olivetti"] .weekfield .track span { background: var(--band-ink); }
+:root[data-look="olivetti"] .weekfield :focus-visible { outline-color: var(--band-ink); }
+:root[data-look="olivetti"] .weekfield :not(pre) > code { background: color-mix(in srgb, var(--band-ink) 16%, transparent); color: var(--band-ink); }
+:root[data-look="olivetti"] .stop.now { background: color-mix(in srgb, var(--wk) 12%, transparent); }
+.localonly { margin: 10px 0 0; font-size: var(--t-s); color: var(--muted); }
 @media (max-width: 600px) {
   .colheads { display: none; }
   .next { border-top: 1px solid var(--rule-strong); margin-top: 22px; }
@@ -190,7 +201,7 @@ input[type="checkbox"]:checked::after { opacity: 1; }
   .stop { grid-template-columns: 36px minmax(0, 1fr) auto; }
   .stop .d { grid-column: 2; grid-row: 2; margin-top: -10px; padding-bottom: 10px; }
   .stop a { padding-bottom: 2px; }
-  :root[data-look="olivetti"] .weeknum { font-size: 3.25rem; }
+  :root[data-look="olivetti"] .weeknum, :root[data-look="olivetti"] .weekfield .weeknum { font-size: 4rem; }
   .nav a { padding: 0 7px; font-size: 0.9375rem; }
   .nav { gap: 0; }
   .name { font-size: 1rem; }
@@ -261,8 +272,9 @@ const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "File
   w5: "Databases from Python", w6: "Real programs", w7: "Review, cube, Part 1", w7b: "OLAP and MDX, Part 2" };
 // Olivetti: one flat colour per week (white text passes 4.5:1 on each except ochre, which takes ink)
 const HUE = { w0: "#2c7353", w1: "#14636f", w2: "#1f3f8f", w3: "#b53a26", w4: "#e2a325", w5: "#614891", w6: "#7a4f22", w7: "#5b6a1c", w7b: "#a02f5f" };
-const HUE_INK = { w4: "#141414" };
-const HUE_TEXT = { w4: "#9a6a08" }; // ochre is too light for text on white
+HUE.project = "#1f3f8f"; HUE.cheat = "#e2a325"; // Olivetti page colours for the non-week views
+const HUE_INK = { w4: "#141414", cheat: "#141414" };
+const HUE_TEXT = { w4: "#9a6a08", cheat: "#9a6a08" }; // ochre is too light for text on white
 // exercise sections, in each .py file's order
 const SECTIONS = {
   w2: [["Lists and tuples", ["second_largest", "unique_in_order", "append_copy", "min_max", "transpose", "squares_of_odds"]],
@@ -291,7 +303,7 @@ function sectionOf(w, x) {
 /* ============ STATE: db document progress/state, plus a local copy ============ */
 const LS = "python-path-progress";
 let state = { done: {}, quiz: {} };
-let docRef = null;
+let docRef = null, dbOff = false;
 try { const s = JSON.parse(localStorage.getItem(LS) || "null"); if (s) state = { done: s.done || {}, quiz: s.quiz || {} }; } catch (e) {}
 
 function save() {
@@ -304,7 +316,7 @@ function save() {
 (async () => {
   let db = null;
   try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) {}
-  if (!db) return;
+  if (!db) { dbOff = true; if (view === "today") render(); return; }
   docRef = db.doc("progress/state");
   try {
     const snap = await docRef.get();
@@ -336,13 +348,15 @@ function calendarWeek() {
   return WEEKS.find((w) => now <= new Date(w.end + "T23:59:59")) || WEEKS[WEEKS.length - 1];
 }
 const activeWeek = () => WEEKS.find((w) => exercisesOf(w).some((x) => !state.done[x.id])) || WEEKS[WEEKS.length - 1];
+// w: a week, or "project" / "cheat"; Olivetti paints the bar, the page field, links and ticks in its colour
 function setWeekColour(w) {
-  const root = document.documentElement.style;
-  if (w && document.documentElement.dataset.look === "olivetti") {
-    root.setProperty("--week", HUE[w.id]);
-    root.setProperty("--week-text", HUE_TEXT[w.id] || HUE[w.id]);
-    root.setProperty("--band-ink", HUE_INK[w.id] || "#ffffff");
-  } else { ["--week", "--week-text", "--band-ink"].forEach((k) => root.removeProperty(k)); }
+  const root = document.documentElement.style, key = w && (w.id || w);
+  if (key && document.documentElement.dataset.look === "olivetti") {
+    root.setProperty("--week", HUE[key]);
+    root.setProperty("--week-text", HUE_TEXT[key] || HUE[key]);
+    root.setProperty("--week-link", HUE_TEXT[key] || HUE[key]);
+    root.setProperty("--band-ink", HUE_INK[key] || "#ffffff");
+  } else { ["--week", "--week-text", "--week-link", "--band-ink"].forEach((k) => root.removeProperty(k)); }
 }
 const label = (x) => isExercise(x) ? `<code>${esc(fnName(x))}</code>` : x.html;
 
@@ -373,16 +387,19 @@ function renderToday() {
       <ul>${m.items.map((i) => `<li>${i}</li>`).join("")}</ul>
       <label><input type="checkbox" data-task="mod-${m.id}" ${state.done["mod-" + m.id] ? "checked" : ""}> Module done</label></div>`).join("")).join("");
   $("#view").innerHTML = `
+    <div class="weekfield">
     <div class="dateline"><span>${now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span><span>${due}</span></div>
     <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekNo(w)}</span>
       <h1><a href="#${w.id}"><span class="wkprefix">${weekName(w)} · </span>${SHORT[w.id]}</a></h1></div>
     ${behind ? `<p class="plannote">Planned this week: ${weekName(cal)} · ${SHORT[cal.id]}</p>` : ""}
     <div class="count"><span><b>${done} of ${total}</b> done this week</span><div class="track" aria-hidden="true"><span style="width:${total ? (100 * done) / total : 0}%"></span></div></div>
+    </div>
     ${next.length ? `<div class="colheads" aria-hidden="true"><span></span><span>Next up</span><span>Section</span></div>
       <h2 class="visually-hidden">Next up</h2><ul class="next">${rows}</ul>`
       : `<p class="weekdone">Every exercise in ${weekName(w)} is ticked. Finish the quiz and the Sunday questions, then move on.</p>`}
     <p class="undo" role="status">${lastTick ? `Marked ${label(lastTick)} done. <button type="button" class="linkbtn" data-undo="${lastTick.id}">Undo</button>` : ""}</p>
     <div class="go"><a href="#${w.id}">Continue the lesson ${ARROW}</a>${w.quiz.length ? `<a href="#${w.id}-quiz">Take the quiz ${ARROW}</a>` : ""}</div>
+    ${dbOff ? '<p class="localonly">Progress is saved in this browser only.</p>' : ""}
     <h2 class="plan-h">The plan</h2>
     <ol class="plan">${plan}</ol>
     <details class="later"><summary>After 18 December: exam retake and career track</summary><div class="mods">${later}</div></details>`;
@@ -538,7 +555,7 @@ route(true);
 .prose blockquote > :first-child { margin-top: 0; }
 .prose blockquote p:first-child > strong:only-child { display: block; font-family: var(--f-head); font-size: var(--t-l); font-weight: var(--head-weight); font-stretch: var(--head-stretch); }
 .prose blockquote ul { margin-top: 0.5em; }
-:root[data-look="olivetti"] .prose blockquote { border: 0; background: color-mix(in srgb, var(--week, #1f3f8f) 10%, var(--ground)); }
+:root[data-look="olivetti"] .prose blockquote { border: 0; background: color-mix(in srgb, var(--week, #1f3f8f) 15%, var(--ground)); }
 .tablewrap { overflow-x: auto; max-width: 100%; }
 .tablewrap, .prose pre, .codeblock pre { scrollbar-width: thin; scrollbar-color: var(--muted) transparent; }
 .tablewrap::-webkit-scrollbar, .codeblock pre::-webkit-scrollbar { height: 8px; }

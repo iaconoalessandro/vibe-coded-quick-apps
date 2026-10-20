@@ -28,8 +28,8 @@ function renderProject() {
     return row + divider;
   }).join("");
   $("#view").innerHTML = `
-    <h1 class="pj-h1">DSS project</h1>
-    <p class="pj-lede">LDS 2026–27 · Truth Social data warehouse. Every assignment, the tool it requires, and the week that prepares you for it.</p>
+    <div class="weekfield"><h1 class="pj-h1">DSS project</h1>
+    <p class="pj-lede">LDS 2026–27 · Truth Social data warehouse. Every assignment, the tool it requires, and the week that prepares you for it.</p></div>
     <dl class="pj-deadlines">
       <div><dt>Part 1 · Fri 11 Dec</dt><dd>A1–A14 code, the group database freezes</dd><dd class="pj-left">${pjDays(DEADLINE)}</dd></div>
       <div><dt>Part 2 · Fri 18 Dec</dt><dd>MDX queries, dashboards, report of at most 10 pages</dd><dd class="pj-left">${pjDays(PART2)}</dd></div>
@@ -49,6 +49,6 @@ function renderProject() {
       <li>A11 demands <b>documented edge cases</b>. Keep a running <code>DECISIONS.md</code> from week 3 on.</li>
       <li>Use the small fact table to verify results by hand, as the brief suggests.</li>
     </ul>`;
-  setWeekColour(null);
+  setWeekColour("project");
 }
 document.addEventListener("progress", () => { const c = document.getElementById("pj-count"); if (c && view === "project") c.innerHTML = pjCount(); });
