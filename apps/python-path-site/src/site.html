@@ -4,7 +4,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Hanken+Grotesk:wght@400..800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <script>document.documentElement.lang = "en"; // the artifact host's skeleton sets no lang
-try { if (localStorage.getItem("python-path-look") === "olivetti") document.documentElement.dataset.look = "olivetti"; } catch (e) {}</script>
+try { if (localStorage.getItem("python-path-look") === "olivetti") document.documentElement.dataset.look = "olivetti"; } catch (e) {}
+window.__hostTheme = document.documentElement.dataset.theme || null;
+try { const m = localStorage.getItem("python-path-mode"); if (m === "light" || m === "dark") document.documentElement.dataset.theme = m; } catch (e) {}</script>
 <style>
 /* One shared layout; two looks (Orario, Olivetti) change only type, palette and the plan's signature mark. */
 :root {
@@ -152,12 +154,20 @@ input[type="checkbox"]:checked::after { opacity: 1; }
 .mod ul { margin: 0; padding-left: 1.2em; font-size: var(--t-s); }
 .mod label { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; font-size: var(--t-s); cursor: pointer; }
 
-footer { border-top: 1px solid var(--rule); padding-block: 18px calc(18px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: var(--t-s); }
-footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+/* Display menu in the top bar: look + light/dark mode */
+.bar-right { display: flex; align-items: center; gap: 12px; }
+.display { position: relative; }
+.display-btn { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 11px; color: var(--band-ink); background: transparent; border: 1px solid color-mix(in srgb, var(--band-ink) 45%, transparent); border-radius: var(--radius-control); font: 500 var(--t-s) var(--f-ui); cursor: pointer; }
+.display-btn:hover, .display-btn[aria-expanded="true"] { border-color: var(--band-ink); }
+.display-btn svg { width: 16px; height: 16px; flex: none; }
+.display-panel { position: absolute; right: 0; top: calc(100% + 8px); z-index: 6; display: grid; gap: 14px; width: max-content; max-width: calc(100vw - 32px); padding: 16px; background: var(--ground); color: var(--ink); border: 1px solid var(--rule-strong); border-radius: var(--radius-control); box-shadow: 0 10px 28px color-mix(in srgb, #000 22%, transparent); }
+.display-panel fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 6px; }
+.display-panel legend { padding: 0 0 6px; font-size: var(--t-s); font-weight: 600; color: var(--muted); }
+.display-note { margin: 0; font-size: var(--t-s); color: var(--muted); }
 .looks { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--rule-strong); border-radius: calc(var(--radius-control) + 3px); }
 .looks label { position: relative; }
 .looks input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
-.looks span { display: block; padding: 9px 14px; color: var(--ink); border-radius: var(--radius-control); }
+.looks span { display: block; min-width: 4.5rem; text-align: center; padding: 10px 14px; color: var(--ink); border-radius: var(--radius-control); }
 .looks input:checked + span { background: var(--ink); color: var(--ground); }
 .looks input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: -4px; }
 
@@ -186,6 +196,14 @@ footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16p
   .name { font-size: 1rem; }
   .topbar .wrap { gap: 8px; }
 }
+/* phones: the bar can't hold the name, three links and the menu; Today already leads home */
+@media (max-width: 480px) {
+  .name { display: none; }
+  .topbar .wrap { justify-content: flex-end; }
+  .bar-right { gap: 6px; }
+  .display-label { display: none; }
+  .display-btn { width: 40px; justify-content: center; padding: 0; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .track span { transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 }
@@ -195,11 +213,35 @@ footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16p
 <header class="topbar" id="topbar">
   <div class="wrap">
     <a class="name" href="#today">Python Path</a>
-    <nav class="nav" aria-label="Main">
-      <a href="#today" data-nav="today">Today</a>
-      <a href="#project" data-nav="project">Project</a>
-      <a href="#cheat" data-nav="cheat">Cheat sheet</a>
-    </nav>
+    <div class="bar-right">
+      <nav class="nav" aria-label="Main">
+        <a href="#today" data-nav="today">Today</a>
+        <a href="#project" data-nav="project">Project</a>
+        <a href="#cheat" data-nav="cheat">Cheat sheet</a>
+      </nav>
+      <div class="display">
+        <button type="button" class="display-btn" id="display-btn" aria-expanded="false" aria-controls="display-panel" aria-label="Display: look and light or dark mode">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 1.8a6.2 6.2 0 0 1 0 12.4z" fill="currentColor"/></svg>
+          <span class="display-label">Display</span>
+        </button>
+        <div class="display-panel" id="display-panel" hidden>
+          <fieldset><legend>Look</legend>
+            <div class="looks">
+              <label><input type="radio" name="look" value="orario" id="look-orario"><span>Orario</span></label>
+              <label><input type="radio" name="look" value="olivetti" id="look-olivetti"><span>Olivetti</span></label>
+            </div>
+          </fieldset>
+          <fieldset><legend>Mode</legend>
+            <div class="looks">
+              <label><input type="radio" name="mode" value="auto" id="mode-auto"><span>Auto</span></label>
+              <label><input type="radio" name="mode" value="light" id="mode-light"><span>Light</span></label>
+              <label><input type="radio" name="mode" value="dark" id="mode-dark"><span>Dark</span></label>
+            </div>
+          </fieldset>
+          <p class="display-note">Auto follows claude.ai or your device.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -208,15 +250,6 @@ footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16p
   <div id="view"></div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span id="looklabel">Look</span>
-    <div class="looks" role="radiogroup" aria-labelledby="looklabel">
-      <label><input type="radio" name="look" value="orario" id="look-orario"><span>Orario</span></label>
-      <label><input type="radio" name="look" value="olivetti" id="look-olivetti"><span>Olivetti</span></label>
-    </div>
-  </div>
-</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script type="text/markdown" id="md-cheatsheet">{{CHEATSHEET}}</script>
@@ -435,6 +468,7 @@ window.addEventListener("hashchange", () => { lastTick = null; route(true); });
 
 document.addEventListener("change", (e) => {
   const t = e.target;
+  if (t.name === "mode") { setMode(t.value); return; }
   if (t.name === "look") {
     if (t.value === "olivetti") document.documentElement.dataset.look = "olivetti"; else delete document.documentElement.dataset.look;
     try { localStorage.setItem("python-path-look", t.value); } catch (err) {}
@@ -458,6 +492,33 @@ document.addEventListener("click", (e) => {
   if (u) { delete state.done[u.dataset.undo]; lastTick = null; save(); render(); const f = $(".next input"); if (f) f.focus(); }
 });
 $(document.documentElement.dataset.look === "olivetti" ? "#look-olivetti" : "#look-orario").checked = true;
+
+/* ============ DISPLAY MENU: look + mode ============ */
+let mode = "auto";
+try { const m = localStorage.getItem("python-path-mode"); if (m === "light" || m === "dark") mode = m; } catch (e) {}
+$("#mode-" + mode).checked = true;
+function setMode(m) {
+  mode = m;
+  try { localStorage.setItem("python-path-mode", m); } catch (e) {}
+  const root = document.documentElement;
+  if (m === "auto") { if (window.__hostTheme) root.dataset.theme = window.__hostTheme; else delete root.dataset.theme; }
+  else root.dataset.theme = m;
+}
+// the claude.ai host may set data-theme later; keep its value for Auto, keep the owner's choice otherwise
+new MutationObserver(() => {
+  const root = document.documentElement, now = root.dataset.theme || null;
+  if (mode === "auto") { window.__hostTheme = now; return; }
+  if (now !== mode) { window.__hostTheme = now; root.dataset.theme = mode; }
+}).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+const displayBtn = $("#display-btn"), displayPanel = $("#display-panel");
+function toggleDisplay(open) {
+  displayPanel.hidden = !open;
+  displayBtn.setAttribute("aria-expanded", String(open));
+  if (open) displayPanel.querySelector("input:checked").focus();
+}
+displayBtn.addEventListener("click", () => toggleDisplay(displayPanel.hidden));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !displayPanel.hidden) { toggleDisplay(false); displayBtn.focus(); } });
+document.addEventListener("click", (e) => { if (!displayPanel.hidden && !e.target.closest(".display")) toggleDisplay(false); });
 route(true);
 </script>
 <style>

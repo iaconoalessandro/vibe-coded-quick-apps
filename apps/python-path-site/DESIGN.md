@@ -223,7 +223,7 @@ The page is dense and calm. It is built for a half-width Mac window next to VS C
 The owner's avoid list in PRODUCT.md is binding on both looks (see Do's and Don'ts).
 
 **Key Characteristics:**
-- One layout, two looks (Orario, Olivetti), each in light and dark; the look is chosen in the footer.
+- One layout, two looks (Orario, Olivetti), each in light and dark; both are chosen in the top bar's Display menu (Look, and Mode: Auto / Light / Dark).
 - Pure white ground in light mode, never cream; near-black ground in dark mode.
 - Structure built from one-pixel rules: a strong ink rule opens a table, light rules separate rows.
 - Narrow, tabular, timetable-like labels in sentence case, never uppercase mono.
@@ -303,6 +303,7 @@ The system is flat. Depth comes from rules and ground colour, not shadows. The o
 ### Shadow Vocabulary
 - **Current nav underline** (`box-shadow: inset 0 -3px 0 var(--band-ink)`): marks the current page in the top bar.
 - **Current week ring, Olivetti** (`box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk)`): marks the current week's swatch.
+- **Display menu panel** (`box-shadow: 0 10px 28px` at 22% black): the one floating layer, so it gets the one real drop shadow.
 
 ### Named Rules
 **The Rules, Not Boxes Rule.** Group content with a strong ink rule on top and light rules between rows. Never put a card or a shadow around it.
@@ -337,8 +338,8 @@ Code ground, 1px rule border, 14px 16px padding, 0.875rem mono at 1.55, tab size
 ### Quiz Options and States
 Full-width 48px buttons with a 1px ink border, 10px 14px padding, body type, and a code-ground hover. Once answered, the other options go muted with light rules. **Right:** ok-bg fill, ok border, verdict in ok colour. **Wrong (Orario):** ground fill, 2px ink border, 2px strikethrough, verdict in bold ink. **Wrong (Olivetti):** bad-bg fill, 1px bad border, no strikethrough, verdict in bad colour. Olivetti options are square.
 
-### Look Switch
-In the footer: a "Look" label, then a radio group in a 1px ink frame (7px radius, 3px padding) with two 4px segments, Orario and Olivetti. The selected segment is inverted (ink fill, ground text). Focus shows a 2px focus outline inset on the segment.
+### Look Switch (Display menu)
+In the top bar, right of the links: a "Display" button (half-filled circle icon; icon-only under 480px, where the wordmark also hides) opens a panel with two radio groups, Look (Orario, Olivetti) and Mode (Auto, Light, Dark), and the note "Auto follows claude.ai or your device." Each group sits in a 1px ink frame (7px radius, 3px padding) with 4px segments; the selected segment is inverted (ink fill, ground text). Focus shows a 2px outline inset on the segment. The panel is ground-coloured with a 1px ink border and the page's only drop shadow (offset 10px, blur 28px); Escape or a click outside closes it and focus returns to the button. Mode writes data-theme on the root (Auto restores the host's value), stored per browser.
 
 ### Search Field (cheat sheet)
 A sticky bar under the top bar with a sentence-case label, a 48px input (1px ink border, 4px radius) and the result count right-aligned inside the field in muted tabular figures. Hits are highlighted with the selection colour.

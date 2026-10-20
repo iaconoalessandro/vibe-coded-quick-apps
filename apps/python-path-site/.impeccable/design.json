@@ -885,7 +885,7 @@
       "name": "Look Switch",
       "kind": "chip",
       "refersTo": "look-switch",
-      "description": "Footer radio pair in a 1px ink frame; the chosen look is inverted to ink.",
+      "description": "Display menu in the top bar: Look (Orario, Olivetti) and Mode (Auto, Light, Dark) radio groups in 1px ink frames; the chosen option is inverted to ink.",
       "html": "<div class=\"ds-looks\" role=\"radiogroup\" aria-label=\"Look\"><label><input type=\"radio\" name=\"ds-look\" checked><span>Orario</span></label><label><input type=\"radio\" name=\"ds-look\"><span>Olivetti</span></label></div>",
       "css": ":host,.ds-looks{--ground:#ffffff;--ink:#17211d;--muted:#56645e;--rule:#d6ded9;--rule-strong:#17211d;--band:#1d5443;--band-ink:#ffffff;--link:#1d5443;--route:#1d5443;--check:#1d5443;--code-bg:#f1f4f2;--focus:#1d5443;--ok:#1f6b46;--ok-bg:#e3f2ea;--late:#b8331f;--f-ui:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;--f-mono:\"JetBrains Mono\",ui-monospace,Menlo,monospace;--t-s:0.875rem;--t-m:1rem;--t-l:1.1875rem;--radius-control:4px;} .ds-looks{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--rule-strong);border-radius:7px;background:var(--ground);font-family:var(--f-ui)} .ds-looks label{position:relative} .ds-looks input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer} .ds-looks span{display:block;padding:9px 14px;color:var(--ink);border-radius:var(--radius-control)} .ds-looks label:hover span{background:var(--code-bg)} .ds-looks input:checked+span{background:var(--ink);color:var(--ground)} .ds-looks input:focus-visible+span{outline:2px solid var(--focus);outline-offset:-4px}"
     },
@@ -902,7 +902,7 @@
     "northStar": "The Timetable and the Manual",
     "overview": "Python Path is a seven-week route the owner rides every day. The system gives one shared layout two switchable looks. **Orario** reads like a railway timetable: a rail-green band across the top, a pure white ground, near-black ink, one-pixel rules, square structure, narrow-width column heads, tabular figures, and a route line with stops running down the plan. **Olivetti** reads like a printed manual where each chapter owns a colour: flat fields, one colour per week, and that colour runs the top bar, the big week numeral, the progress bar and the plan swatches. The two looks change type, palette and the plan's mark. Layout, content order and components stay the same.\n\nThe page is dense and calm. It is built for a half-width Mac window next to VS Code and for a 375px phone, and the next exercise is always the largest target on screen. Hierarchy comes from rules, weight and size. There are no cards, shadows or gradients. Decoration is limited to the two signature marks, the route line and the week swatch. Status stays quiet until it matters: the only alarm colour is the red for \"behind plan\".\n\nThe owner's avoid list in PRODUCT.md is binding on both looks (see Do's and Don'ts).",
     "keyCharacteristics": [
-      "One layout, two looks (Orario, Olivetti), each in light and dark; the look is chosen in the footer.",
+      "One layout, two looks (Orario, Olivetti), each in light and dark; both are chosen in the top bar's Display menu (Look, and Mode: Auto / Light / Dark).",
       "Pure white ground in light mode, never cream; near-black ground in dark mode.",
       "Structure built from one-pixel rules: a strong ink rule opens a table, light rules separate rows.",
       "Narrow, tabular, timetable-like labels in sentence case, never uppercase mono.",
