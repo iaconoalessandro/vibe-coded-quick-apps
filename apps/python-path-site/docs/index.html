@@ -1,0 +1,1981 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#1d5443" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#163f33" media="(prefers-color-scheme: dark)"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><title>Python Path</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Hanken+Grotesk:wght@400..800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<script>document.documentElement.lang = "en"; // the artifact host's skeleton sets no lang
+try { if (localStorage.getItem("python-path-look") === "olivetti") document.documentElement.dataset.look = "olivetti"; } catch (e) {}</script>
+<style>
+/* One shared layout; two looks (Orario, Olivetti) change only type, palette and the plan's signature mark. */
+:root {
+  --ground: #ffffff; --ink: #17211d; --muted: #56645e; --rule: #d6ded9; --rule-strong: #17211d;
+  --band: #1d5443; --band-ink: #ffffff; --band-muted: #cfe3da;
+  --link: #1d5443; --late: #b8331f; --route: #1d5443; --check: #1d5443;
+  --code-bg: #f1f4f2; --code-ink: #17211d; --select: #cfe7dc; --focus: #1d5443;
+  --ok: #1f6b46; --ok-bg: #e3f2ea; --bad: #a8321f; --bad-bg: #fbe9e5;
+  --f-ui: "Archivo", "Helvetica Neue", Arial, sans-serif; --f-head: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --head-stretch: 96%; --head-weight: 680; --label-stretch: 75%;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --t-s: 0.875rem; --t-m: 1rem; --t-l: 1.1875rem; --t-xl: 1.5rem; --t-xxl: clamp(2rem, 1.4rem + 2.6vw, 2.75rem);
+  --radius-control: 4px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --ground: #0f1513; --ink: #e6eeea; --muted: #9fb2aa; --rule: #26332e; --rule-strong: #e6eeea;
+  --band: #163f33; --band-ink: #f2f7f4; --band-muted: #a9cbbd;
+  --link: #7cc7a6; --late: #ff8a75; --route: #6fbf9c; --check: #6fbf9c;
+  --code-bg: #18211e; --code-ink: #dbe6e1; --select: #24493c; --focus: #7cc7a6;
+  --ok: #7fd3a6; --ok-bg: #15291f; --bad: #ff8a75; --bad-bg: #321a15; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --ground: #0f1513; --ink: #e6eeea; --muted: #9fb2aa; --rule: #26332e; --rule-strong: #e6eeea;
+  --band: #163f33; --band-ink: #f2f7f4; --band-muted: #a9cbbd;
+  --link: #7cc7a6; --late: #ff8a75; --route: #6fbf9c; --check: #6fbf9c;
+  --code-bg: #18211e; --code-ink: #dbe6e1; --select: #24493c; --focus: #7cc7a6;
+  --ok: #7fd3a6; --ok-bg: #15291f; --bad: #ff8a75; --bad-bg: #321a15; color-scheme: dark; }
+
+:root[data-look="olivetti"] {
+  --ground: #ffffff; --ink: #141414; --muted: #5a5a5a; --rule: #e1e1e1; --rule-strong: #141414;
+  --band: #1f3f8f; --band-ink: #ffffff; --band-muted: #dbe3f7;
+  --link: #1f3f8f; --late: #c23f2a; --route: #141414; --check: #141414;
+  --code-bg: #f3f3f1; --code-ink: #141414; --select: #dbe3f7; --focus: #1f3f8f;
+  --f-ui: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif; --f-head: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --head-stretch: 100%; --head-weight: 800; --label-stretch: 100%;
+}
+@media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) {
+  --ground: #121212; --ink: #f1f1ef; --muted: #a9a9a6; --rule: #2c2c2c; --rule-strong: #f1f1ef;
+  --link: #9db4ff; --late: #ff8f7a; --route: #f1f1ef; --check: #f1f1ef;
+  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: #9db4ff; color-scheme: dark; } }
+:root[data-look="olivetti"][data-theme="dark"] {
+  --ground: #121212; --ink: #f1f1ef; --muted: #a9a9a6; --rule: #2c2c2c; --rule-strong: #f1f1ef;
+  --link: #9db4ff; --late: #ff8f7a; --route: #f1f1ef; --check: #f1f1ef;
+  --code-bg: #1c1c1c; --code-ink: #e6e6e3; --select: #2b3a66; --focus: #9db4ff; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scrollbar-color: var(--rule) var(--ground); }
+body { background: var(--ground); color: var(--ink); font: 400 var(--t-m)/1.55 var(--f-ui); caret-color: var(--focus); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--band); }
+::selection { background: var(--select); color: var(--ink); }
+a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+a, button, label, summary, input { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+[id] { scroll-margin-top: calc(72px + env(safe-area-inset-top, 0px)); }
+.skip { position: absolute; left: 8px; top: -60px; z-index: 20; background: var(--ground); color: var(--ink); padding: 10px 14px; border: 2px solid var(--focus); }
+.skip:focus { top: calc(8px + env(safe-area-inset-top, 0px)); }
+code, pre, kbd { font-family: var(--f-mono); font-size: 0.9em; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+:not(pre) > code { background: var(--code-bg); color: var(--code-ink); padding: 0.08em 0.3em; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--f-head); font-stretch: var(--head-stretch); font-weight: var(--head-weight); line-height: 1.15; text-wrap: balance; letter-spacing: -0.01em; margin: 0; }
+.wrap { max-width: 880px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* top bar */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--week, var(--band)); color: var(--band-ink); }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+.name { font: 650 1.125rem/1 var(--f-head); font-stretch: 105%; color: inherit; text-decoration: none; padding: 12px 0; white-space: nowrap; }
+:root[data-look="olivetti"] .name { font-weight: 800; font-stretch: 100%; }
+.nav { display: flex; gap: 4px; }
+.nav a { color: var(--band-ink); text-decoration: none; white-space: nowrap; padding: 0 10px; min-height: 56px; display: flex; align-items: center; font-weight: 500; opacity: 0.85; box-shadow: inset 0 -3px 0 transparent; }
+.nav a:hover { opacity: 1; }
+.nav a[aria-current="page"] { opacity: 1; box-shadow: inset 0 -3px 0 var(--band-ink); }
+.topbar :focus-visible { outline-color: var(--band-ink); outline-offset: -4px; }
+
+main { padding-block: 28px 56px; }
+.savefail { margin: 0 0 18px; color: var(--bad); font-size: var(--t-s); }
+
+/* today */
+.dateline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; color: var(--muted); font-size: var(--t-s); font-variant-numeric: tabular-nums; }
+.dateline b { color: var(--ink); font-weight: 600; }
+.weekhead { margin-top: 12px; display: flex; align-items: baseline; gap: 14px; }
+.weeknum { display: none; }
+:root[data-look="olivetti"] .weeknum { display: block; font: 800 4.5rem/0.8 var(--f-head); color: var(--week-text); font-variant-numeric: tabular-nums; }
+.weekhead h1 { font-size: var(--t-xxl); }
+:root[data-look="olivetti"] .wkprefix { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.weekhead h1 a { color: inherit; text-decoration: none; }
+.weekhead h1 a:hover { text-decoration: underline; }
+.plannote { margin: 8px 0 0; color: var(--late); font-size: var(--t-s); font-weight: 600; }
+.count { margin-top: 16px; display: flex; align-items: center; gap: 14px; font-size: var(--t-s); color: var(--muted); font-variant-numeric: tabular-nums; }
+.count b { color: var(--ink); font-weight: 600; }
+.track { flex: 1; height: 2px; background: var(--rule); position: relative; }
+.track span { position: absolute; inset: 0 auto 0 0; background: var(--route); }
+:root[data-look="olivetti"] .track { height: 6px; }
+:root[data-look="olivetti"] .track span { background: var(--week); }
+
+.colheads { display: grid; grid-template-columns: 44px minmax(0, 1fr) 11rem; gap: 0 12px; margin-top: 28px; padding-bottom: 6px; border-bottom: 1px solid var(--rule-strong); font-size: var(--t-s); font-stretch: var(--label-stretch); font-weight: 600; color: var(--muted); }
+.next { list-style: none; margin: 0; padding: 0; }
+.next li { border-bottom: 1px solid var(--rule); }
+.next label { display: grid; grid-template-columns: 44px minmax(0, 1fr) 11rem; gap: 0 12px; align-items: center; min-height: 60px; padding-block: 8px; cursor: pointer; }
+.next label:hover .fn { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.next .fn { font: 500 1.0625rem/1.3 var(--f-mono); overflow-wrap: anywhere; }
+.next li:first-child .fn { font-size: 1.25rem; }
+.next .taskt { font-size: var(--t-l); font-weight: 500; }
+.next .sec { color: var(--muted); font-size: var(--t-s); }
+.next .file { display: block; font: 400 0.8125rem/1.4 var(--f-mono); color: var(--muted); margin-top: 2px; overflow-wrap: anywhere; }
+.undo { min-height: 1.6em; margin: 6px 0 0; font-size: var(--t-s); color: var(--muted); display: flex; gap: 10px; align-items: center; }
+.undo button, .linkbtn { display: inline-flex; align-items: center; min-height: 44px; margin-block: -10px; background: none; border: 0; padding: 0 2px; color: var(--link); font: 600 var(--t-s) var(--f-ui); cursor: pointer; text-decoration: underline; text-underline-offset: 0.2em; }
+.go { display: flex; flex-wrap: wrap; gap: 0 28px; margin-top: 0; font-weight: 600; }
+.go a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; }
+.go a:hover { text-decoration: underline; }
+.go svg { width: 16px; height: 16px; flex: none; }
+.weekdone { margin-top: 24px; font-size: var(--t-l); }
+
+/* checkbox, drawn */
+input[type="checkbox"] { appearance: none; -webkit-appearance: none; margin: 0; width: 24px; height: 24px; border: 2px solid var(--ink); border-radius: var(--radius-control); background: var(--ground); display: grid; place-content: center; cursor: pointer; }
+input[type="checkbox"]::after { content: ""; width: 14px; height: 14px; background: var(--ground); opacity: 0; -webkit-mask: var(--tick) center / contain no-repeat; mask: var(--tick) center / contain no-repeat; }
+input[type="checkbox"]:checked { background: var(--check); border-color: var(--check); }
+input[type="checkbox"]:checked::after { opacity: 1; }
+:root { --tick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2.5 8.5l3.5 3.5 7.5-8' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='square'/%3E%3C/svg%3E"); }
+:root[data-look="olivetti"] input[type="checkbox"] { border-radius: 0; }
+
+/* the plan */
+.plan-h { font-size: var(--t-xl); margin-top: 48px; }
+.plan { list-style: none; margin: 10px 0 0; padding: 0; border-top: 1px solid var(--rule-strong); }
+.stop { position: relative; display: grid; grid-template-columns: 44px 9.5rem minmax(0, 1fr) 4.5rem; gap: 0 12px; align-items: center; min-height: 48px; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+.stop a { color: var(--ink); text-decoration: none; padding-block: 12px; }
+.stop a::after { content: ""; position: absolute; inset: 0; }
+.stop:hover .wk { text-decoration: underline; text-underline-offset: 0.2em; }
+.stop .d { color: var(--muted); font-size: var(--t-s); }
+.stop .n { text-align: right; color: var(--muted); font-size: var(--t-s); }
+.stop.now .wk { font-weight: 650; }
+.stop.now .n { color: var(--ink); font-weight: 600; }
+.mark { width: 14px; height: 14px; margin-left: 6px; border-radius: 50%; border: 2px solid var(--route); background: var(--ground); position: relative; z-index: 1; }
+.stop.done .mark { background: var(--route); }
+.stop.now .mark { width: 20px; height: 20px; margin-left: 3px; border-width: 6px; }
+.stop:not(:last-child)::before { content: ""; position: absolute; left: 12px; top: 50%; height: 100%; width: 2px; background: var(--route); }
+:root[data-look="olivetti"] .stop::before { display: none; }
+:root[data-look="olivetti"] .mark { width: 26px; height: 26px; margin-left: 0; border: 3px solid var(--wk); border-radius: 0; background: transparent; }
+:root[data-look="olivetti"] .stop.done .mark, :root[data-look="olivetti"] .stop.now .mark { background: var(--wk); width: 26px; height: 26px; margin-left: 0; border-width: 3px; }
+:root[data-look="olivetti"] .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk); }
+
+.later { margin-top: 36px; border-top: 1px solid var(--rule); }
+.later summary { cursor: pointer; min-height: 48px; display: flex; align-items: center; font-weight: 600; }
+.later summary::marker { color: var(--muted); }
+.mods { display: grid; gap: 22px; padding: 8px 0 12px; }
+.mod h3 { font-size: var(--t-l); }
+.mod p { margin: 4px 0 6px; color: var(--muted); font-size: var(--t-s); }
+.mod ul { margin: 0; padding-left: 1.2em; font-size: var(--t-s); }
+.mod label { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; font-size: var(--t-s); cursor: pointer; }
+
+footer { border-top: 1px solid var(--rule); padding-block: 18px calc(18px + env(safe-area-inset-bottom, 0px)); color: var(--muted); font-size: var(--t-s); }
+footer .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.looks { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--rule-strong); border-radius: calc(var(--radius-control) + 3px); }
+.looks label { position: relative; }
+.looks input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.looks span { display: block; padding: 9px 14px; color: var(--ink); border-radius: var(--radius-control); }
+.looks input:checked + span { background: var(--ink); color: var(--ground); }
+.looks input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: -4px; }
+
+/* dark grounds: lift week colours drawn on the ground (numeral, swatches, bar) so they keep 3:1 */
+@media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) .mark { --wk-lift: color-mix(in srgb, var(--wk) 55%, #ffffff); border-color: var(--wk-lift); }
+  :root[data-look="olivetti"]:not([data-theme="light"]) .stop.done .mark, :root[data-look="olivetti"]:not([data-theme="light"]) .stop.now .mark { background: var(--wk-lift); }
+  :root[data-look="olivetti"]:not([data-theme="light"]) .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk-lift); }
+  :root[data-look="olivetti"]:not([data-theme="light"]) .track span { background: color-mix(in srgb, var(--week) 55%, #ffffff); } }
+:root[data-look="olivetti"][data-theme="dark"] .mark { --wk-lift: color-mix(in srgb, var(--wk) 55%, #ffffff); border-color: var(--wk-lift); }
+:root[data-look="olivetti"][data-theme="dark"] .stop.done .mark, :root[data-look="olivetti"][data-theme="dark"] .stop.now .mark { background: var(--wk-lift); }
+:root[data-look="olivetti"][data-theme="dark"] .stop.now .mark { box-shadow: 0 0 0 3px var(--ground), 0 0 0 5px var(--wk-lift); }
+:root[data-look="olivetti"][data-theme="dark"] .track span { background: color-mix(in srgb, var(--week) 55%, #ffffff); }
+@media (prefers-color-scheme: dark) { :root[data-look="olivetti"]:not([data-theme="light"]) .weeknum { color: color-mix(in srgb, var(--week) 55%, #ffffff); } }
+:root[data-look="olivetti"][data-theme="dark"] .weeknum { color: color-mix(in srgb, var(--week) 55%, #ffffff); }
+@media (max-width: 600px) {
+  .colheads { display: none; }
+  .next { border-top: 1px solid var(--rule-strong); margin-top: 22px; }
+  .next label { grid-template-columns: 40px minmax(0, 1fr); }
+  .next .sec { grid-column: 2; }
+  .stop { grid-template-columns: 36px minmax(0, 1fr) auto; }
+  .stop .d { grid-column: 2; grid-row: 2; margin-top: -10px; padding-bottom: 10px; }
+  .stop a { padding-bottom: 2px; }
+  :root[data-look="olivetti"] .weeknum { font-size: 3.25rem; }
+  .nav a { padding: 0 7px; font-size: 0.9375rem; }
+  .nav { gap: 0; }
+  .name { font-size: 1rem; }
+  .topbar .wrap { gap: 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .track span { transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+}
+</style>
+
+<a class="skip" href="#main" data-skip>Skip to content</a>
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="name" href="#today">Python Path</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#today" data-nav="today">Today</a>
+      <a href="#project" data-nav="project">Project</a>
+      <a href="#cheat" data-nav="cheat">Cheat sheet</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="main" tabindex="-1">
+  <p class="savefail" id="savefail" role="status" hidden></p>
+  <div id="view"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span id="looklabel">Look</span>
+    <div class="looks" role="radiogroup" aria-labelledby="looklabel">
+      <label><input type="radio" name="look" value="orario" id="look-orario"><span>Orario</span></label>
+      <label><input type="radio" name="look" value="olivetti" id="look-olivetti"><span>Olivetti</span></label>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script type="text/markdown" id="md-cheatsheet"># Python + Data Engineering cheat sheet
+
+Search it in VS Code with `cmd+F`, or from the terminal: `grep -n -A5 "DictReader" CHEATSHEET.md`
+
+---
+
+## 1. Terminal (macOS zsh)
+| Do | Command |
+|---|---|
+| where am I / list (incl. hidden) | `pwd` · `ls -la` |
+| move / up / home / back | `cd folder` · `cd ..` · `cd ~` · `cd -` |
+| make folder (nested) | `mkdir -p a/b/c` |
+| copy / move-rename / delete | `cp a b` · `mv a b` · `rm file` (no trash, so be careful) |
+| look at a file | `cat f` · `head -5 f` · `tail -5 f` · `less f` (q to quit) |
+| count lines / search text | `wc -l f` · `grep -n "word" f` · `grep -rn "word" .` |
+| autocomplete / history / stop | `Tab` · `↑` or `ctrl+R` · `ctrl+C` |
+| open folder in VS Code / Finder | `code .` · `open .` |
+
+Paths: `/Users/you/x` is absolute, `x/y.csv` is relative to `pwd`, `~` is home, `.` is here, `..` is the parent.
+Quote paths with spaces: `cd "My Drive/01_Università"`.
+
+## 2. Virtual environments & packages
+```bash
+python3 -m venv .venv            # once per project
+source .venv/bin/activate        # every new terminal; `deactivate` to leave
+which python                     # must end in .venv/bin/python
+python -m pip install pytest pyodbc
+python -m pip freeze > requirements.txt   # record versions
+python -m pip install -r requirements.txt # recreate elsewhere
+```
+- One venv **per project**. Never `pip install` into conda `(base)` or the system Python.
+- `.venv/` goes in `.gitignore`. Commit `requirements.txt` instead.
+- VS Code: `cmd+shift+P` → *Python: Select Interpreter* → `.venv`.
+- Later (Phase C): `uv venv`, `uv pip install`, `uv run`: the same ideas, 10–100× faster.
+
+## 3. Git & GitHub
+```bash
+git init                          # new repo
+git status                        # ALWAYS look before you commit
+git add file.py   /   git add -A  # stage
+git commit -m "w03: parse_arff handles quoted commas"
+git log --oneline -10             # history
+git diff                          # unstaged changes  (git diff --staged: staged)
+git restore file.py               # throw away local changes to a file
+git push / git pull               # sync with GitHub
+gh auth login                     # once: log in GitHub CLI
+gh repo create NAME --private --source=. --push   # publish this folder
+git clone URL                     # copy a repo locally
+```
+Branches (Phase C, team work):
+```bash
+git switch -c fix-parser          # new branch
+git push -u origin fix-parser     # publish it
+gh pr create --fill               # open a pull request
+git switch main && git pull       # back to main, up to date
+```
+- Commit small and often, with a message that says *what and why*.
+- **Never commit** data files, `.env`, passwords, `.venv/`. Put them in `.gitignore` before the first commit.
+- Committed a secret by accident? Change the password. Deleting the file doesn't remove it from history.
+
+## 4. VS Code
+| Do | Keys |
+|---|---|
+| command palette | `cmd+shift+P` |
+| quick open file | `cmd+P` |
+| terminal | `` ctrl+` `` |
+| run file | ▶ top-right, or `python file.py` in terminal |
+| debug | F5 · breakpoint: click left of line number · step over F10 · into F11 · continue F5 |
+| go to definition / rename | F12 · F2 |
+| comment line / multi-cursor | `cmd+/` · `opt+click` |
+| search all files | `cmd+shift+F` |
+
+## 5. Python core
+```python
+x = 42; y = 3.14; s = "text"; ok = True; nothing = None
+type(x)  int("7")  float("2.5")  str(3)  bool("")   # False: "", 0, [], {}, None
+7 / 2 == 3.5     7 // 2 == 3     7 % 2 == 1     2 ** 10 == 1024
+x += 1           a, b = b, a     # swap
+```
+**Strings** (immutable):
+```python
+s = "  Data,Eng  "
+s.strip() s.lower() s.upper() s.title() s.replace(",", ";")
+s.split(",")  ",".join(["a", "b"])  s.startswith("Da")  "Eng" in s
+s[0]  s[-1]  s[1:4]  s[::-1]  len(s)
+f"{name} has {n} rows"  f"{price:.2f}"  f"{n:,}"  f"{x:>8}"  f"{x=}"  # last one: debug print
+```
+**Control flow**:
+```python
+if x > 0:  ...
+elif x == 0:  ...
+else:  ...
+for i in range(5):        # 0..4        range(1, 6) -> 1..5    range(0, 10, 2)
+for i, item in enumerate(items):
+for a, b in zip(list1, list2):
+while cond:  ... break / continue
+value = "pos" if x > 0 else "neg"
+```
+**Functions**:
+```python
+def area(w, h=1):                 # h has a default
+    """Docstring: what it does, args, return."""
+    return w * h
+area(3) area(3, h=2)
+def f(*args, **kwargs): ...       # any positional / keyword args
+```
+
+## 6. Data structures
+| | create | add | remove | lookup | notes |
+|---|---|---|---|---|---|
+| **list** `[]` | `[1, 2]` | `.append(x)` `.extend(l)` `.insert(i,x)` | `.pop()` `.remove(x)` `del l[i]` | `l[i]`, `x in l` is **O(n)** | ordered, mutable |
+| **tuple** `()` | `(1, 2)` `1,` | no | no | `t[i]` | immutable, hashable → dict key / set item |
+| **dict** `{}` | `{"a": 1}` `dict(a=1)` | `d[k] = v` `.update()` `.setdefault(k, [])` | `.pop(k)` `del d[k]` | `d[k]` (KeyError) · `d.get(k, default)` · `k in d` is **O(1)** | insertion-ordered |
+| **set** | `set()` `{1, 2}` | `.add(x)` | `.discard(x)` | `x in s` is **O(1)** | unique, unordered · `a & b` `a \| b` `a - b` |
+
+```python
+for k, v in d.items(): ...        d.keys()  d.values()
+sorted(rows, key=lambda r: (-r["qty"], r["name"]))   # desc qty, then name
+[x * 2 for x in nums if x > 0]           # list comprehension
+{r["id"]: r for r in rows}               # dict comprehension (index by id)
+{r["city"] for r in rows}                # set comprehension (distinct)
+from collections import Counter, defaultdict
+Counter(words).most_common(3)            # top 3 (ties: first seen)
+groups = defaultdict(list); groups[k].append(row)
+```
+
+## 7. The row pattern (ETL in plain Python)
+A table is a **list of dicts**. Learn these 5 moves by heart:
+```python
+# 1 filter            (SQL WHERE)
+big = [r for r in rows if r["qty"] > 10]
+# 2 project / derive  (SQL SELECT)
+out = [{"id": r["id"], "total": r["qty"] * r["price"]} for r in rows]
+# 3 group + aggregate (SQL GROUP BY)
+tot = defaultdict(int)
+for r in rows: tot[r["store"]] += r["qty"]
+# 4 join              (SQL JOIN): index one side, loop the other. O(n+m)
+by_id = {u["id"]: u for u in users}
+joined = [{**p, **by_id[p["user_id"]]} for p in posts if p["user_id"] in by_id]
+# 5 distinct + surrogate keys (dimension table)
+lookup = {}
+for r in rows: lookup.setdefault(r["city"], len(lookup) + 1)
+```
+
+## 8. Files & formats
+```python
+from pathlib import Path
+p = Path("data") / "file.csv"     p.exists()  p.name  p.suffix  p.parent.mkdir(parents=True, exist_ok=True)
+for f in Path("data").glob("*.json"): ...
+
+with open(p, encoding="utf-8") as f:          # text: ALWAYS with + encoding
+    for line in f: ...                        # streams; f.read() loads it all
+with open(p, "w", encoding="utf-8") as f: f.write("x\n")   # "a" = append
+```
+**CSV** (always `newline=""`):
+```python
+import csv
+with open(p, encoding="utf-8", newline="") as f:
+    rows = list(csv.DictReader(f))                 # header from first line, values are STRINGS
+    # csv.DictReader(f, fieldnames=[...])          # file without header
+    # csv.reader(f, delimiter=";", quotechar="'")  # lists instead of dicts
+with open(p, "w", encoding="utf-8", newline="") as f:
+    w = csv.DictWriter(f, fieldnames=["id", "name"]); w.writeheader(); w.writerows(rows)
+```
+**JSON**:
+```python
+import json
+data = json.load(open(p, encoding="utf-8"))          # file -> dict/list
+json.dump(obj, f, indent=2, ensure_ascii=False)       # dict/list -> file
+json.loads(text)  json.dumps(obj)                     # string versions
+# JSON Lines (.jsonl): one object per line -> stream it
+for line in f: obj = json.loads(line)
+```
+**XML**:
+```python
+import xml.etree.ElementTree as ET
+root = ET.parse(p).getroot()
+for el in root.iter("row"):  el.attrib  el.get("id")  el.findtext("age")  el.text  list(el)
+# big file: stream + free memory
+for event, el in ET.iterparse(p, events=("end",)):
+    if el.tag == "record": handle(el); el.clear()
+```
+**ARFF**: `% comment`, `@relation`, `@attribute name type`, `@data`, then CSV rows. `?` means missing.
+Text values may be in `'single'` or `"double"` quotes, and they can contain commas. Test your parser on the nasty rows.
+
+## 9. Exceptions
+```python
+try:
+    n = int(text)
+except ValueError:
+    n = None
+except (KeyError, IndexError) as e:
+    log.warning("bad row: %s", e)
+else:   ...   # ran only if no exception
+finally: ...  # always runs
+raise ValueError(f"bad score: {score}")
+```
+Catch the **specific** exception. A bare `except:` hides bugs. Common ones: `ValueError`, `KeyError`, `IndexError`, `TypeError`, `FileNotFoundError`, `UnicodeDecodeError`, `ZeroDivisionError`.
+Reading a traceback: **start from the bottom line** (the error), then go up to the first line that is *your* file.
+
+## 10. Dates & times
+```python
+from datetime import datetime, date, timedelta
+dt = datetime.fromisoformat("2024-03-05 21:14:00")      # also accepts "T"
+dt = datetime.strptime("05/03/2024 21:14", "%d/%m/%Y %H:%M")
+dt.year dt.month dt.day dt.hour dt.weekday()  # Mon=0
+dt.strftime("%Y-%m-%d")   dt.date()   dt + timedelta(days=7)
+(dt2 - dt1).total_seconds() / 3600   # hours between
+quarter = (dt.month - 1) // 3 + 1
+date_id = dt.year * 10000 + dt.month * 100 + dt.day   # 20240305
+```
+`%Y` year · `%m` month · `%d` day · `%H` 24h · `%M` min · `%S` sec · `%A` weekday name · `%z` UTC offset.
+Time zones: decide what "night" means (local vs UTC) and **document it**.
+
+## 11. Regex (`import re`)
+```python
+re.findall(r"#(\w+)", text)                  # hashtags
+re.findall(r"https?://\S+", text)            # URLs
+re.search(rf"\b{re.escape(w)}\b", text, re.I)   # whole word, case-insensitive
+re.sub(r"\s+", " ", text).strip()            # collapse whitespace
+```
+`\d` digit · `\w` word char · `\s` space · `\b` word boundary · `.` any · `*` 0+ · `+` 1+ · `?` 0/1 · `( )` group · `[abc]` set. Always use raw strings `r"..."`.
+
+## 12. Stats without pandas
+```python
+import statistics as st
+st.mean(v) st.median(v) st.stdev(v)  # sample std, needs >= 2 values
+st.pstdev(v)                         # population std
+min(v) max(v) sum(v) len(v)
+```
+Edge cases to handle explicitly: empty list, one value (stdev raises), std == 0, None values, division by 0.
+
+## 13. Generators (stream big data)
+```python
+def read_rows(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        yield from csv.DictReader(f)          # one row at a time, flat memory
+def batched(it, n):
+    batch = []
+    for x in it:
+        batch.append(x)
+        if len(batch) == n: yield batch; batch = []
+    if batch: yield batch
+total = sum(int(r["qty"]) for r in read_rows(p))   # generator expression: no list built
+```
+`itertools.islice(gen, 10)` takes the first 10 · `itertools.batched(it, n)` (3.12+) is built in.
+
+## 14. Databases (DB-API: sqlite3 and pyodbc work the same)
+```python
+import sqlite3                     # local practice
+conn = sqlite3.connect("db.sqlite")    # ":memory:" for throwaway
+
+import os, pyodbc                  # SQL Server (VPN on!)
+conn = pyodbc.connect(
+    "DRIVER={ODBC Driver 18 for SQL Server};SERVER=...;DATABASE=Group_XX_DB;"
+    f"UID={os.environ['DB_USER']};PWD={os.environ['DB_PASSWORD']};TrustServerCertificate=yes")
+
+cur = conn.cursor()
+cur.execute("SELECT * FROM t WHERE year = ? AND city = ?", (2024, "Pisa"))   # ? placeholders
+row = cur.fetchone();  rows = cur.fetchall();  chunk = cur.fetchmany(1000)
+cols = [d[0] for d in cur.description]
+cur.fast_executemany = True                      # pyodbc only: huge speed-up
+cur.executemany("INSERT INTO t (a, b) VALUES (?, ?)", list_of_tuples)
+conn.commit()                                    # nothing is saved until commit
+conn.rollback()                                  # undo since last commit
+conn.close()
+```
+- **Never** build SQL with f-strings around *values* (SQL injection, quote bugs like `O'Brien`). Use `?`.
+- Table/column *names* can't be `?`, so validate them (`name.isidentifier()`).
+- Bulk load: batches of 1,000–10,000 rows, `fast_executemany`, commit per batch or at the end. Load dimensions before facts (foreign keys).
+- Mac + SQL Server: `brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release && brew install msodbcsql18`, then `pip install pyodbc`.
+- Sampling on SQL Server: `SELECT TOP (n) ...`, `TABLESAMPLE (5 PERCENT)` (approximate, page-based), or `WHERE ABS(CHECKSUM(NEWID())) % 100 < 5`. Know the trade-offs.
+- Credentials: a `.env` file (in `.gitignore`) plus `os.environ`, or `export DB_USER=...` in the terminal.
+
+## 15. Scripts: `__main__`, argparse, logging
+```python
+import argparse, logging, sys
+log = logging.getLogger(__name__)
+
+def main(argv=None):
+    p = argparse.ArgumentParser(description="...")
+    p.add_argument("input")
+    p.add_argument("--out-dir", default="out")
+    p.add_argument("--batch-size", type=int, default=1000)
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("-v", "--verbose", action="count", default=0)
+    args = p.parse_args(argv)
+    logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
+                        format="%(asctime)s %(levelname)s %(message)s")
+    log.info("reading %s", args.input)
+    return 0
+
+if __name__ == "__main__":   # only when run directly, not when imported
+    sys.exit(main())
+```
+Run: `python script.py data.csv --out-dir out -v` · as a module: `python -m package.script ...`
+Timing: `import time; t0 = time.perf_counter(); ...; log.info("took %.1fs", time.perf_counter() - t0)`
+
+## 16. pytest
+```python
+# tests/test_thing.py
+import pytest
+from mypkg.thing import parse
+
+def test_parse_basic():
+    assert parse("a,b") == ["a", "b"]
+
+def test_parse_rejects_empty():
+    with pytest.raises(ValueError):
+        parse("")
+
+@pytest.mark.parametrize("raw,expected", [("1", 1), ("?", None)])
+def test_many(raw, expected):
+    assert parse_value(raw) == expected
+
+def test_writes(tmp_path):          # tmp_path: a fresh temp folder per test
+    out = tmp_path / "x.csv"
+```
+`pytest -k name` · `-x` stop at first fail · `-v` verbose · `--lf` last failed · `-s` show prints · `assert x == pytest.approx(0.1 + 0.2)` for floats.
+
+## 17. Gotchas that cost points
+| Trap | Wrong | Right |
+|---|---|---|
+| mutable default arg | `def f(x, acc=[])` (shared across calls!) | `def f(x, acc=None): acc = [] if acc is None else acc` |
+| aliasing | `b = a; b.append(1)` changes `a` | `b = a.copy()` / `list(a)` / `copy.deepcopy(a)` for nested |
+| `is` vs `==` | `if x is 5` | `==` for values; `is` only for `None`: `if x is None` |
+| float equality | `0.1 + 0.2 == 0.3` → False | `math.isclose(a, b)` / `pytest.approx` |
+| CSV values are strings | `"10" > "9"` → False | convert: `int(r["qty"])` |
+| modifying a list while looping | `for x in l: l.remove(x)` | build a new list |
+| integer division | `/` always gives float | `//` floor division |
+| forgot `return` | function returns `None` | check every path returns |
+| shadowing builtins | `list = [...]`, `dict = ...`, `sum = 0` | pick other names |
+| file not closed / wrong encoding | `open(p).read()` | `with open(p, encoding="utf-8")` |
+| relative paths | works only from one folder | `Path(__file__).parent / "data"` or pass paths as args |
+
+## 18. Complexity cheat sheet (you know the theory; here is Python's cost)
+| Operation | list | dict / set |
+|---|---|---|
+| `x in` | O(n) | **O(1)** |
+| get by index / key | O(1) | O(1) |
+| append / add | O(1) amortized | O(1) |
+| insert/delete at front | O(n) (use `collections.deque`) | n/a |
+| sort | O(n log n) (`sorted`, stable) | n/a |
+Rule: membership checks inside a loop → use a **set** or **dict**, never a list. That's the difference between 1 second and 1 hour on the DSS data.
+</script>
+<script type="text/markdown" id="md-w0">
+## Why this week exists
+A notebook remembers whatever cells you ran, in whatever order you ran them. Run cell 5, edit cell 2, rerun cell 7, and the result depends on history nobody can see. That is why courses, exams and companies want **scripts**. A `.py` file runs top to bottom, the same way every time. It can be imported, tested, put in git, reviewed, and scheduled on a server. Your DSS scripts will run against a database for minutes at a time, so they have to be scripts.
+
+This week is pure setup. It's boring, and it's the foundation of everything else.
+
+## The mental model
+```text
+Terminal ──runs──▶ python (from .venv) ──reads──▶ exercises/w00_setup.py
+   │                         ▲
+   └── pytest ── imports ────┘      git ── snapshots ──▶ GitHub
+```
+- **Terminal**: a text way to drive the computer. You're always *in* a folder (`pwd`), and relative paths start there.
+- **Interpreter**: `python file.py` reads the file top to bottom and executes it. `import x` runs `x.py` once and gives you its names.
+- **Virtual environment**: a private Python + packages per project, in `.venv/`. Activate it in every new terminal, and check with `which python`.
+- **pytest**: finds `tests/test_*.py`, runs every `test_*` function, and reports which `assert`s failed. Red, then code, then green.
+- **git**: saves snapshots of your folder. `add` chooses what goes in the snapshot, `commit` takes it, `push` copies it to GitHub.
+
+## Reading a traceback
+```text
+Traceback (most recent call last):
+  File ".../tests/test_w00_setup.py", line 24, in test_average_of_positive_no_positives
+    assert average_of_positive([]) == 0.0
+  File ".../exercises/w00_setup.py", line 54, in average_of_positive
+    return total / count
+ZeroDivisionError: division by zero
+```
+Read it **bottom-up**. The last line is *what* went wrong. The line above it is *where*, and here that's your file, line 54. Everything above that is *how you got there*. Ignore frames inside Python's own libraries and look for the first frame in **your** files.
+
+## The debugger beats print()
+In VS Code, click left of a line number to set a red-dot breakpoint, then **Run › Start Debugging** (F5). Execution stops there. Hover over variables, or watch them in the left panel. F10 runs one line, F11 steps into a function call. You'll use this all the way through the DSS project.
+
+> **Remember**
+> - New terminal? `source .venv/bin/activate`, then `which python`.
+> - Read tracebacks from the bottom. Find the first line that is your code.
+> - `git status` before every commit. `.venv/`, `.env` and data files never go in git.
+> - A test is just a function with `assert`. Never edit a test to make it pass.
+</script>
+<script type="text/markdown" id="md-w1">
+## Why this week exists
+Everything later (CSV parsing, star schemas, SQL loading) is built from five things: **values, names, conditions, loops, functions**. You know the algorithms. This week is about getting the syntax into your fingers, so writing a loop takes 10 seconds, not 10 minutes.
+
+## Values, types, names
+```python
+qty = 5            # int
+price = 12.5       # float
+store = "S1"       # str
+active = True      # bool
+nothing = None     # "no value", common in dirty data
+type(qty)          # <class 'int'>
+int("42"), float("2.5"), str(7)   # conversions; int("4.2") raises ValueError
+```
+A name is a label stuck on an object. `qty = qty + 1` makes a new int and moves the label.
+
+## Strings (immutable: methods return NEW strings)
+```python
+s = "  Truth Social  "
+s.strip().lower()            # 'truth social'
+s.split()                    # ['Truth', 'Social']
+"-".join(["a", "b"])         # 'a-b'
+s[2:7], s[-1], s[::-1]       # slicing: start inclusive, end exclusive
+f"{store}: {qty} x {price:.2f} = {qty * price:.2f}"   # 'S1: 5 x 12.50 = 62.50'
+```
+
+## Conditions and loops
+```python
+if qty > 10:
+    size = "big"
+elif qty > 0:
+    size = "small"
+else:
+    size = "none"
+
+for i in range(3):           # 0, 1, 2   (end excluded, like slicing)
+    ...
+for i, word in enumerate(["a", "b"]):   # index and value together
+    ...
+while n != 1:                # when you don't know how many steps
+    ...
+```
+Truthiness: `""`, `0`, `[]`, `{}` and `None` are false, and everything else is true. So `if not name:` catches both `""` and `None`.
+
+## Functions: `return` vs `print`
+```python
+def total(qty, price, vat=0.22):        # vat has a default
+    """Price including VAT."""
+    return qty * price * (1 + vat)      # gives the value back to the caller
+
+x = total(2, 10)          # 24.4
+y = print(total(2, 10))   # prints 24.4, but y is None
+```
+`print` shows something to a human. `return` hands a value to the next piece of code. Tests check returns.
+
+## Worked example (do the same for `count_vowels`)
+"Count words longer than 3 letters":
+```python
+def count_long_words(text):
+    count = 0                    # 1. an accumulator
+    for word in text.split():    # 2. loop over pieces
+        if len(word) > 3:        # 3. a condition
+            count += 1           # 4. update
+    return count                 # 5. return after the loop, not inside it
+```
+Most of this week's exercises follow this accumulator pattern.
+
+> **Remember**
+> - `=` assigns, `==` compares.
+> - Indentation is syntax: 4 spaces. The body of `if`/`for`/`def` is indented.
+> - `range(a, b)` and `s[a:b]` exclude `b`.
+> - Strings never change in place: `s.upper()` returns a new string.
+> - A function without `return` returns `None`.
+</script>
+<script type="text/markdown" id="md-w2">
+## Why this week exists
+Data engineering in plain Python is mostly **moving rows between lists and dicts**. The DSS project bans pandas, so `dict` and `list` *are* your dataframe. Get this week right and the project becomes plumbing.
+
+## The four containers
+| | literal | mutable | ordered | `x in` cost | use for |
+|---|---|---|---|---|---|
+| list | `[1, 2]` | yes | yes | O(n) | sequences, rows |
+| tuple | `(1, 2)` | no | yes | O(n) | fixed records, dict keys |
+| dict | `{"a": 1}` | yes | insertion | **O(1)** | lookup by key, grouping |
+| set | `{1, 2}` | yes | no | **O(1)** | distinct values, "seen before?" |
+
+## Aliasing: the bug that eats afternoons
+```python
+a = [1, 2]
+b = a          # NOT a copy: two names, one list
+b.append(3)
+a              # [1, 2, 3]
+c = a.copy()   # a real (shallow) copy; nested lists still shared -> copy.deepcopy
+```
+Functions receive the same object, so a function that `.append`s to its argument changes the caller's list.
+
+## A table = a list of dicts
+```python
+rows = [
+    {"user": "u1", "hour": 22, "likes": 10},
+    {"user": "u2", "hour": 9,  "likes": 3},
+    {"user": "u1", "hour": 23, "likes": 7},
+]
+# GROUP BY user, SUM(likes)
+totals = {}
+for r in rows:
+    totals[r["user"]] = totals.get(r["user"], 0) + r["likes"]
+# {'u1': 17, 'u2': 3}
+
+from collections import defaultdict, Counter
+by_user = defaultdict(list)
+for r in rows:
+    by_user[r["user"]].append(r)          # group whole rows
+Counter(r["user"] for r in rows)          # Counter({'u1': 2, 'u2': 1})
+```
+
+## Comprehensions and sorting
+```python
+[r["likes"] for r in rows if r["hour"] >= 20]            # [10, 7]
+{r["user"] for r in rows}                                  # {'u1', 'u2'}
+sorted(rows, key=lambda r: (-r["likes"], r["user"]))       # likes desc, then user
+```
+`sorted()` returns a new list. `list.sort()` sorts in place and returns `None`.
+
+## Recursion, Python edition
+You know the theory. In Python:
+```python
+def total_size(folder):              # folder = {"files": [3, 5], "subfolders": [...]}
+    return sum(folder["files"]) + sum(total_size(f) for f in folder["subfolders"])
+```
+Python stops at about 1000 nested calls (`RecursionError`), so use recursion for trees and divide-and-conquer, and loops for long sequences. The P4DS exam always asks for one recursive function.
+
+> **Remember**
+> - Need "have I seen this?" inside a loop? Use a **set**, never a list.
+> - `b = a` doesn't copy. `a.copy()` does (shallowly).
+> - Dict keys must be hashable: tuples yes, lists no.
+> - `d[k]` raises KeyError. `d.get(k, default)` doesn't.
+> - Don't add or remove items in a list while looping over it. Build a new one.
+</script>
+<script type="text/markdown" id="md-w3">
+## Why this week exists
+DSS Assignment 1 hands you **CSV, XML, JSON and ARFF**, some of it large. Every reader you write should return the same shape (a list of dicts, or a generator of dicts), so cleaning and modelling never care where the data came from. This week you build those readers on the lab's census and sales files.
+
+## Opening files the right way
+```python
+from pathlib import Path
+path = Path("practice_data") / "jobs.csv"
+with open(path, encoding="utf-8") as f:   # `with` closes the file even if an error happens
+    for line in f:                         # streams line by line: fine for 10 GB
+        ...
+```
+Always pass `encoding="utf-8"`. Otherwise the result depends on the machine (Windows VM ≠ Mac). Use `newline=""` for CSV files.
+
+## CSV: let the module handle quotes
+```python
+'7066,"Rossi, Mario",5'.split(",")   # ['7066', '"Rossi', ' Mario"', '5']  <- wrong
+import csv
+with open(path, encoding="utf-8", newline="") as f:
+    for row in csv.DictReader(f):    # {'id': '7066', 'name': 'Rossi, Mario', 'qty': '5'}
+        qty = int(row["qty"])        # values are ALWAYS strings
+```
+
+## JSON maps to Python directly
+`object` → `dict`, `array` → `list`, `null` → `None`, `true` → `True`. `json.load(f)` and `json.dump(obj, f, indent=2, ensure_ascii=False)`.
+Many big dumps are **JSON Lines**: one object per line. Read those line by line with `json.loads(line)`.
+
+## XML: attributes vs elements
+```text
+<row id="1" age="39"/>                      ← attributes: el.attrib
+<census><id>1</id><age>39</age></census>    ← elements: el.findtext("age")
+```
+`ET.parse()` builds the whole tree in memory. For a big file, use `ET.iterparse()` and `elem.clear()` after each record. Memory stays flat, which matters for DSS events.
+
+## ARFF
+A header (`@relation`, `@attribute name type`), then `@data` and CSV-like rows. `?` means missing. Text can be quoted. **The real project file mixes quote styles and has commas and apostrophes inside text.** Build your parser on `sales.arff`, then break it on purpose with nasty test rows. Your test file is your proof.
+
+## Exceptions: expect bad data
+```python
+try:
+    likes = int(raw)
+except ValueError:          # catch the SPECIFIC error
+    likes = None            # decide, and document, what bad input becomes
+```
+Never use a bare `except:`. It also swallows typos and Ctrl+C.
+
+## Start your project repo now
+Create `~/code/lds-project` with the layout in the README (`src/`, `data/` git-ignored, `.env` git-ignored). Copy nothing from `python-path`. Write the readers again for the real files, using what you learned here.
+
+> **Remember**
+> - `with open(..., encoding="utf-8")`, every time.
+> - CSV values are strings. Convert on purpose, and handle `?` and `""`.
+> - Never `.read()` or `ET.parse()` a huge file. Stream it.
+> - Catch specific exceptions, and keep a count of the rows you rejected (that's report material).
+</script>
+<script type="text/markdown" id="md-w4">
+## Why this week exists
+This week covers DSS Assignments 1–4: find data-quality issues, derive features (time of day, season, hashtags, categories), design a star schema, and split the data into one CSV per table. You practise every move on `sales.arff` and `loans.json`.
+
+## Dates
+```python
+from datetime import datetime
+dt = datetime.fromisoformat("2024-03-05 21:14:00")   # "T" separator works too
+dt.hour, dt.month, dt.weekday()                      # 21, 3, 1 (Monday=0)
+(dt2 - dt1).total_seconds() / 3600                   # hours between
+```
+Decide your conventions once and write them in the report: time zone, whether 8:00 counts as day or night, which months make each season.
+
+## A data-quality checklist (run it on every source)
+| Check | How in plain Python |
+|---|---|
+| completeness | count `None` / `""` / `"?"` per column (`missing_report`) |
+| uniqueness | `find_duplicates(rows, ["id"])` with a set of keys |
+| validity | parse types with try/except and count the failures |
+| consistency | same date format? same user id in posts and users? (set differences) |
+| outliers | `statistics.mean` / `stdev`, flag `abs(x - mean) > k * std` |
+
+## Text features
+```python
+re.findall(r"#(\w+)", text)                          # hashtags
+re.search(rf"\b{re.escape(w)}\b", text, re.I)         # whole-word keyword
+```
+Rule-based categories (`categorize`) are **interpretable**, and Assignment 2 asks for exactly that. Build a small keyword dict per category, measure how many posts land in "other", and iterate.
+
+## Modules: reuse your own code
+```python
+from exercises.w03_files import write_csv     # week 4 imports week 3
+if __name__ == "__main__":                     # runs only when executed, not when imported
+    main()
+```
+
+## Star schema refresher (see your DW book)
+```text
+            dim_date (date_id PK, day, month, year, season ...)
+                 │
+dim_store ── fact_sales ── dim_title
+(store_key PK)   (store_key FK, title_key FK, date_id FK, qty)
+```
+1. **Grain first**: one fact row = one *what*? (one sale line; in DSS, one event).
+2. **Measures**: numbers you aggregate (qty, likes).
+3. **Dimensions**: descriptive context, each with an integer **surrogate key** made with a dict `natural value → id`.
+4. Facts store only keys and measures. Integrity check: every FK exists in its dimension (a set subset test).
+
+> **Remember**
+> - Decide the grain before anything else.
+> - `statistics.stdev` needs 2 or more values. Handle 0 and 1 explicitly.
+> - Every cleaning decision goes in the report: what, how many rows, why.
+> - Surrogate keys come from a dict, so a lookup costs O(1) per row.
+</script>
+<script type="text/markdown" id="md-w5">
+## Why this week exists
+Assignment 5 loads your CSVs into SQL Server **efficiently**, and Assignment 6 pulls at least 5% of a large events table into JSON. Both use the DB-API. You learn it on `sqlite3` (no server, instant feedback), then switch the connection to `pyodbc`.
+
+## The DB-API in 8 lines
+```python
+conn = sqlite3.connect(":memory:")          # pyodbc.connect(conn_str) for SQL Server
+cur = conn.cursor()
+cur.execute("CREATE TABLE t (id INTEGER, name TEXT)")
+cur.execute("INSERT INTO t VALUES (?, ?)", (1, "O'Brien"))     # ? placeholders
+cur.executemany("INSERT INTO t VALUES (?, ?)", [(2, "a"), (3, "b")])
+conn.commit()                               # until now, nothing is saved
+cur.execute("SELECT id, name FROM t WHERE id > ?", (1,))
+rows = cur.fetchall()                       # or fetchone() / fetchmany(1000)
+```
+Never write `f"... VALUES ('{name}')"`. The apostrophe in O'Brien breaks it, and so does a malicious string (SQL injection).
+
+## Generators: data that flows instead of piling up
+```python
+def read_rows(path):
+    with open(path, encoding="utf-8", newline="") as f:
+        yield from csv.DictReader(f)     # produces one row when asked
+
+for batch in batched(read_rows(p), 5000):
+    cur.executemany(sql, [tuple(r.values()) for r in batch])
+conn.commit()
+```
+Memory stays the same whether the file has a thousand rows or ten million.
+
+## Experiment (do it, write the numbers down)
+Insert 100,000 rows into sqlite three ways: (a) `execute` + `commit` per row, (b) `execute` per row + one commit, (c) `executemany` in batches of 5,000. Time each with `time.perf_counter()`. Put the table in your notes: it's the "efficiency and scalability" paragraph of your report.
+
+## SQL Server from your Mac (VPN on)
+```bash
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+HOMEBREW_ACCEPT_EULA=Y brew install msodbcsql18
+python -m pip install pyodbc
+```
+```python
+conn = pyodbc.connect(sqlserver_connection_string(db_settings(os.environ)))
+cur = conn.cursor()
+cur.fast_executemany = True      # without it, pyodbc sends rows one by one
+print(cur.execute("SELECT @@VERSION").fetchone()[0])
+```
+If the Mac driver fights you, run the same script inside the Windows VM. The code doesn't change.
+
+## Pulling a sample out (Assignment 6 shape)
+Think about it before coding. Should the sample be **random rows**, **random posts with all their events**, or **a time window**? Each answers different questions. Know `TOP`, `TABLESAMPLE` and `NEWID()` (see the cheat sheet) and their trade-offs. Stream the result with `fetchmany` into a JSON file (`export_query_to_json`).
+
+> **Remember**
+> - `?` placeholders for values, validated identifiers for names.
+> - `commit()`, or it never happened.
+> - Load dimensions before facts, because of foreign keys.
+> - `fast_executemany = True` on pyodbc.
+> - Credentials come from the environment, never from code or git.
+</script>
+<script type="text/markdown" id="md-w6">
+## Why this week exists
+Graders and future teammates will run your code, not read it. A script with **arguments, logs and exit codes** can be run by anyone, on any data, and tells them what happened. This is also build week: run your DSS Assignments 1–6 end to end from a clean clone.
+
+## The shape of every script
+```python
+log = logging.getLogger(__name__)
+
+def main(argv=None):                    # argv=None -> sys.argv; tests pass a list
+    args = build_parser().parse_args(argv)
+    logging.basicConfig(level=log_level(args.verbose), format="%(levelname)s %(message)s")
+    log.info("reading %s", args.input)
+    ...
+    return 0                            # 0 = success, anything else = failure
+
+if __name__ == "__main__":
+    sys.exit(main())
+```
+`print` is for program output. `logging` is for what the program is doing (progress, warnings, row counts), and you can turn it up with `-v` without touching code.
+
+## Checking SSIS with Python
+Assignments 8–11 are SSIS, but you can **verify** them. Export the small fact table, recompute the same metric with your week-2 group-by code, and compare. Edge cases to decide and document: a user with 0 day posts (division by zero), a user with one post (no standard deviation), ties at exactly one standard deviation. `safe_ratio` returns `None` instead of crashing or faking a 0.
+
+## Clean-clone test (do this before 11 Dec)
+```bash
+cd /tmp && git clone <your lds-project url> test && cd test
+python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+python src/a4_split_tables.py --input <data> --out out -v
+```
+If it fails here, it fails for the grader.
+
+> **Remember**
+> - `main(argv)` returns an exit code, and tests call it with a list.
+> - Default log level is WARNING, so `log.info` shows only with `-v`.
+> - Pass paths as arguments. Never hardcode `/Users/...`.
+> - README: how to run each assignment, in order, with the exact commands.
+</script>
+<script type="text/markdown" id="md-w7">
+## Why this week exists
+Part 1 (Assignments 1–14) is due **Friday 11 December**, and after that **your group database is frozen**. This week is buffer, review, and the cube.
+
+## Final review checklist
+- [ ] Clean clone runs end to end (week 6), and timings are recorded.
+- [ ] No pandas-like imports in Assignments 3–6: `grep -rn "pandas\|polars" src/` shows nothing.
+- [ ] No credentials in git: `git log -p | grep -i pwd` shows nothing.
+- [ ] Every cleaning decision and edge case is written down for the report.
+- [ ] `_python` and `_IS` tables hold the same dimension rows (compare counts).
+- [ ] Code review session with Claude (bring your repo link).
+
+## Building the cube (Assignment 14)
+- **Dimensions** come from your dimension tables. **Hierarchies** are drill paths: Date as Year → Quarter → Month → Day, and time of day as Day part → Hour.
+- **Measures** come from fact columns: count of events, sum of likes, and so on. Add only what the MDX queries need.
+- Seasons, categories and anything else the queries slice by must exist as **attributes**. If they're missing, you go back to the dimension tables, so check the Part 2 queries now.
+</script>
+<script type="text/markdown" id="md-w7b">
+## Why this week exists
+Part 2 (MDX queries, dashboards, the 10-page report) is due **18 December**. MDX reads strangely at first because it's built around **axes** and **tuples**, not rows.
+
+## The core shape
+```sql
+SELECT
+  { [Measures].[Qty] }                                  ON COLUMNS,
+  NON EMPTY [Store].[Store Id].[Store Id].MEMBERS       ON ROWS
+FROM [Sales]
+WHERE ( [Date].[Year].&[1994] )                          -- the slicer: a filter
+```
+- **Member**: one value of a dimension, like `[Date].[Year].&[1994]`.
+- **Tuple** `( , )`: one member per dimension, which is one cell's coordinates.
+- **Set** `{ , }`: a list of members or tuples, placed on an axis.
+- `A * B` (CROSSJOIN) puts every combination on rows. `NON EMPTY` drops empty rows.
+
+## Calculated members: where the work happens
+```sql
+WITH MEMBER [Measures].[Qty prev year] AS
+  ( [Measures].[Qty], [Date].[Calendar].CURRENTMEMBER.PREVMEMBER )
+MEMBER [Measures].[YoY %] AS
+  IIF( [Measures].[Qty prev year] = 0, NULL,
+       ([Measures].[Qty] - [Measures].[Qty prev year]) / [Measures].[Qty prev year] ),
+  FORMAT_STRING = "Percent"
+SELECT { [Measures].[Qty], [Measures].[YoY %] } ON COLUMNS,
+       [Date].[Calendar].[Year].MEMBERS ON ROWS
+FROM [Sales]
+```
+- `PREVMEMBER` is the previous member at the same level. `PARALLELPERIOD([Date].[Calendar].[Year], 1, member)` is the same position one year earlier (for example, the same season last year).
+- `[All]` members give grand totals for free. Put them on an axis for an "overall" row.
+- `FILTER(set, condition)`, `ORDER(set, expr, DESC)`, `TOPCOUNT(set, n, expr)`.
+- Distinct counts need a **distinct count measure** in the cube, which matters when "count each file once" is the question.
+
+> **Remember**
+> - One cell = one tuple. Anything you don't specify comes from the slicer or the `[All]` member.
+> - Guard every division with `IIF(x = 0, NULL, ...)`.
+> - Write the query in words first: "for each X, show Y, compared to Z."
+</script>
+<script>
+/* ============ DATA ============ */
+const DEADLINE = new Date("2026-12-11T23:59:00");
+const PART2 = new Date("2026-12-18T23:59:00");
+
+const t = (id, html, group) => ({ id, html, group });
+const fn = (wk, name) => t(`${wk}-${name}`, `<code>${name}</code>`, "Exercises");
+
+const WEEKS = [
+  { id: "w0", n: "W0", title: "Setup: terminal, venv, git, tests", start: "2026-10-21", end: "2026-10-23", hours: "≈5 h",
+    book: "ch. 2 Using Python · ch. 15 Operating System · ch. 17.1 Errors", unlocks: "everything",
+    why: "Notebooks hide state. Scripts are reproducible, testable and versionable, and courses and companies expect them.",
+    file: "exercises/w00_setup.py", test: "tests/test_w00_setup.py",
+    tasks: [
+      t("w0-vscode", "Install VS Code + Python extension, enable the <code>code</code> command", "Setup (README steps 1–5)"),
+      t("w0-venv", "Create and activate <code>.venv</code>, <code>pip install pytest</code>, select the interpreter", "Setup (README steps 1–5)"),
+      t("w0-red", "Run <code>pytest tests/test_w00_setup.py</code> and see red", "Setup (README steps 1–5)"),
+      fn("w0", "hello"), fn("w0", "python_version"), fn("w0", "in_virtualenv"),
+      t("w0-average_of_positive", "Fix the 3 bugs in <code>average_of_positive</code> <b>with the debugger</b>", "Exercises"),
+      t("w0-git", "<code>git init</code>, first commit, <code>gh auth login</code>, <code>gh repo create … --push</code>", "Ship it"),
+      t("w0-quiz", "Quiz below: all answers right", "Ship it"),
+    ],
+    quiz: [
+      { q: "You open a new terminal tab and run pytest. <code>test_running_inside_venv</code> fails. Most likely cause?",
+        o: ["The test is wrong", "You didn't run <code>source .venv/bin/activate</code> in this tab", "pytest isn't installed", "Python 3.14 has no venvs"], a: 1,
+        w: "Activation lasts for one terminal session. A new tab starts with conda's or the system Python, so check with <code>which python</code>." },
+      { q: "You <code>git add file.py</code>, edit file.py again, then <code>git commit</code>. What gets committed?",
+        o: ["The latest version", "The version at the time of <code>git add</code>", "Nothing", "Both versions"], a: 1,
+        w: "<code>add</code> snapshots the file into the staging area. Later edits need another <code>add</code> (<code>git status</code> shows them as \"modified\")." },
+      { q: "A traceback ends with <code>ZeroDivisionError</code>. The frames are: test file line 24 → your file line 54. Where do you look first?",
+        o: ["Test file line 24", "Your file line 54", "The top of the traceback", "pytest's source code"], a: 1,
+        w: "Bottom-up. The last frame in <em>your</em> code is where the bad operation happened. The test only shows which input triggered it." },
+      { q: "Which of these must NOT be committed?",
+        o: ["<code>requirements.txt</code>", "<code>tests/</code>", "<code>.venv/</code>", "<code>README.md</code>"], a: 2,
+        w: "<code>.venv/</code> is thousands of machine-specific files. Commit <code>requirements.txt</code> so anyone can rebuild it." },
+    ],
+    checkpoint: ["Explain the difference between a script and a notebook, and why the course wants scripts.",
+                 "What does activating a venv actually change? (hint: <code>which python</code>)",
+                 "Walk through add → commit → push in your own words."] },
+
+  { id: "w1", n: "W1", title: "Core syntax: values, strings, loops, functions", start: "2026-10-24", end: "2026-10-30", hours: "≈15 h",
+    book: "ch. 3 Expressions · 4 Variables · 5 Simple Functions · 6 Conditions · 7 Iterations · 8.1–8.4 Functions · 10 Strings",
+    unlocks: "P4DS exam basics", why: "Every later week is built from these five pieces. The goal is fluency, not just knowing them.",
+    file: "exercises/w01_basics.py", test: "tests/test_w01_basics.py",
+    tasks: [
+      t("w1-read", "Read the chapters; type every book example yourself, don't copy-paste", "Read"),
+      ...["celsius_to_fahrenheit", "is_even", "grade", "sum_to", "count_vowels", "fizzbuzz", "reverse_words", "format_price",
+          "initials", "is_palindrome", "collatz_steps", "first_index_above", "safe_int", "count_digits", "multiplication_table"].map(n => fn("w1", n)),
+      t("w1-book", "Do 5 exercises from the end of ch. 7 in a scratch file <code>playground.py</code>", "Extra"),
+      t("w1-quiz", "Quiz below: all answers right", "Ship it"),
+      t("w1-push", "Commit + push", "Ship it"),
+    ],
+    quiz: [
+      { q: "What does this print?", c: 's = "data"\ns.upper()\nprint(s)', o: ["DATA", "data", "None", "Error"], a: 1,
+        w: "Strings are immutable. <code>upper()</code> returns a new string, which was thrown away. Write <code>s = s.upper()</code>." },
+      { q: "What does this print?", c: "print(7 // 2, 7 % 2, 7 / 2)", o: ["3 1 3.5", "3.5 1 3.5", "3 1 3", "4 1 3.5"], a: 0,
+        w: "<code>//</code> is floor division, <code>%</code> is the remainder, and <code>/</code> always gives a float." },
+      { q: "What is <code>x</code>?", c: "def f():\n    print(42)\n\nx = f()", o: ["42", '"42"', "None", "Error"], a: 2,
+        w: "<code>f</code> prints 42 and then returns nothing, which means <code>None</code>." },
+      { q: "What does <code>bool(\"False\")</code> return?", o: ["False", "True", "Error", "None"], a: 1,
+        w: "Any non-empty string is truthy, even the text \"False\". Only <code>\"\"</code> is falsy." },
+      { q: "How many times does the loop body run?", c: "for i in range(2, 10, 3):\n    ...", o: ["3", "8", "2", "4"], a: 0,
+        w: "2, 5, 8. The stop value 10 is excluded." },
+    ],
+    checkpoint: ["When do you use <code>while</code> instead of <code>for</code>?",
+                 "Why is <code>return</code> inside the loop a common bug in an accumulator function?",
+                 "Explain default arguments with <code>format_price</code>."] },
+
+  { id: "w2", n: "W2", title: "Data structures: list, tuple, dict, set, recursion", start: "2026-10-31", end: "2026-11-06", hours: "≈16 h",
+    book: "ch. 11 Tuples · 12 Lists · 13 Dictionaries · 14 Sets · 9 Recursion · 8.6 lambda · 27.2 collections",
+    unlocks: "the core of every ETL step", project: true,
+    why: "No pandas allowed, so dicts and lists are your dataframe. Group-by and join by hand are the whole DSS project in miniature.",
+    file: "exercises/w02_collections.py", test: "tests/test_w02_collections.py",
+    tasks: [
+      t("w2-read", "Read the chapters, focus on aliasing (ch. 12.5) and dict lookup speed (13.5)", "Read"),
+      ...["second_largest", "unique_in_order", "append_copy", "min_max", "transpose", "squares_of_odds"].map(n => fn("w2", n)),
+      ...["word_frequencies", "top_n", "invert_dict", "merge_counts", "common_and_only"].map(n => fn("w2", n)),
+      ...["column", "group_by", "aggregate", "index_by", "join", "sales_summary"].map(n => fn("w2", n)),
+      ...["flatten", "depth", "binary_search", "merge_sort"].map(n => fn("w2", n)),
+      t("w2-time", "Experiment: time <code>x in big_list</code> vs <code>x in big_set</code> with 1,000,000 items (<code>time.perf_counter</code>)", "Extra"),
+      t("w2-quiz", "Quiz below: all answers right", "Ship it"),
+      t("w2-push", "Commit + push", "Ship it"),
+    ],
+    quiz: [
+      { q: "What does this print?", c: "a = [1, 2]\nb = a\nb.append(3)\nprint(a)", o: ["[1, 2]", "[1, 2, 3]", "[3]", "Error"], a: 1,
+        w: "<code>b = a</code> makes a second name for the same list. Use <code>a.copy()</code> for an independent one." },
+      { q: "What does this print?", c: "x = [3, 1, 2].sort()\nprint(x)", o: ["[1, 2, 3]", "[3, 1, 2]", "None", "Error"], a: 2,
+        w: "<code>list.sort()</code> sorts in place and returns <code>None</code>. <code>sorted(lst)</code> returns a new list." },
+      { q: "Which line raises an error?", c: 'a = {(1, 2): "ok"}\nb = {[1, 2]: "ok"}', o: ["Line 1", "Line 2", "Both", "Neither"], a: 1,
+        w: "Dict keys must be hashable. Tuples (of immutables) are, lists aren't: <code>TypeError: unhashable type: 'list'</code>." },
+      { q: "What does this print?", c: 'd = {"a": 1}\nprint(d.get("b", 0), "b" in d)', o: ["0 False", "None False", "0 True", "KeyError"], a: 0,
+        w: "<code>get</code> returns the default and doesn't insert anything, so <code>\"b\"</code> is still not in <code>d</code>." },
+      { q: "Checking <code>if user_id in seen</code> for 2 million rows: which <code>seen</code> makes it fast?",
+        o: ["a list", "a set", "a string", "a tuple"], a: 1,
+        w: "Set and dict membership is O(1) on average. A list is O(n), so 2M × 2M comparisons in the worst case." },
+    ],
+    checkpoint: ["Draw (on paper) what <code>b = a</code> vs <code>b = a.copy()</code> does in memory.",
+                 "Explain your <code>join</code>: why index one side first?",
+                 "Write group-by-and-sum from memory, without looking."] },
+
+  { id: "w3", n: "W3", title: "Files & formats: CSV, JSON, XML, ARFF, exceptions", start: "2026-11-07", end: "2026-11-13", hours: "≈16 h",
+    book: "ch. 16 Text Files · 17 Exceptions · 26 File Formats · 15.4/16.5 os & os.path",
+    unlocks: "DSS A1: reading every source", project: true,
+    why: "Assignment 1 gives you four formats. Readers that all return a list of dicts let the rest of the pipeline ignore the format.",
+    file: "exercises/w03_files.py", test: "tests/test_w03_files.py",
+    tasks: [
+      t("w3-read", "Read the chapters, plus the docs page for the <code>csv</code> module (skim)", "Read"),
+      ...["count_lines", "read_header_file", "read_csv_rows", "write_csv", "to_number", "convert_types", "missing_report"].map(n => fn("w3", n)),
+      ...["parse_arff", "xml_attribute_rows", "xml_element_rows", "count_values_streaming", "load_json", "save_json", "borrows_per_member", "read_text_safely"].map(n => fn("w3", n)),
+      t("w3-repo", "Create <code>~/code/lds-project</code> (README layout), push to GitHub, share with your group", "DSS project"),
+      t("w3-explore", "Write a first exploration script on the real files: row counts, columns, missing values", "DSS project"),
+      t("w3-quiz", "Quiz below: all answers right", "Ship it"),
+    ],
+    quiz: [
+      { q: "A CSV row gives <code>{\"qty\": \"10\"}</code>. What does <code>row[\"qty\"] + 1</code> do?",
+        o: ["11", '"101"', "TypeError", "10"], a: 2,
+        w: "CSV values are always strings, and str + int raises <code>TypeError</code>. Convert first: <code>int(row[\"qty\"]) + 1</code>." },
+      { q: "What is the result?", c: "json.loads('{\"a\": null, \"b\": true}')",
+        o: ["{'a': 'null', 'b': 'true'}", "{'a': None, 'b': True}", "Error", "{'a': 0, 'b': 1}"], a: 1,
+        w: "JSON <code>null</code> becomes <code>None</code> and <code>true</code> becomes <code>True</code>." },
+      { q: "What does <code>with open(...) as f:</code> guarantee?",
+        o: ["Faster reading", "The file is closed even if an exception happens inside", "UTF-8 encoding", "The file exists"], a: 1,
+        w: "The context manager closes the file on exit, whether that's normal or an error. Encoding you still pass yourself." },
+      { q: "Parsing a 4 GB XML events file. Best approach?",
+        o: ["<code>ET.parse(path)</code>", "<code>f.read()</code> then regex", "<code>ET.iterparse</code> + <code>elem.clear()</code>", "Convert to Excel"], a: 2,
+        w: "iterparse streams the file and <code>clear()</code> frees each finished record, so memory stays roughly constant." },
+    ],
+    checkpoint: ["Why does <code>line.split(\",\")</code> fail on real CSVs?",
+                 "Explain your ARFF parser. Which inputs would still break it?",
+                 "What did your first exploration of the real data reveal?"] },
+
+  { id: "w4", n: "W4", title: "Cleaning, dates, text, star schema", start: "2026-11-14", end: "2026-11-20", hours: "≈18 h",
+    book: "ch. 27.1 datetime · 27.5 statistics · 25 Regular Expressions · 8.5 Modules · your DW book (star schema)",
+    unlocks: "DSS A1, A2, A3, A4", project: true,
+    why: "Quality checks, derived features, categories and the star schema: the same moves the project needs, practised on sales data.",
+    file: "exercises/w04_cleaning.py", test: "tests/test_w04_cleaning.py",
+    tasks: [
+      ...["parse_timestamp", "season", "date_dimension_row", "hours_between"].map(n => fn("w4", n)),
+      ...["row_key", "find_duplicates", "drop_duplicates", "mean_std", "zscore_outliers"].map(n => fn("w4", n)),
+      ...["clean_text", "extract_hashtags", "extract_urls", "categorize"].map(n => fn("w4", n)),
+      ...["build_dimension", "build_sales_star", "write_tables"].map(n => fn("w4", n)),
+      t("w4-a1", "DSS A1: quality report on the real data (missing, duplicates, outliers, ARFF integration)", "DSS project"),
+      t("w4-a2", "DSS A2: define categories; measure the size of each, including \"other\"", "DSS project"),
+      t("w4-a3", "DSS A3: draw the star schema (grain = one event), check it against the Part 2 queries", "DSS project"),
+      t("w4-a4", "DSS A4: script that writes one CSV per DW table", "DSS project"),
+      t("w4-quiz", "Quiz below: all answers right", "Ship it"),
+    ],
+    quiz: [
+      { q: "What does this return?", c: "datetime(2024, 12, 1).month % 12 // 3", o: ["0 (winter)", "4", "3 (autumn)", "1"], a: 0,
+        w: "12 % 12 = 0, then 0 // 3 = 0, which is index 0 of [winter, spring, summer, autumn]." },
+      { q: "The <em>grain</em> of a fact table is…", o: ["its number of rows", "what one row represents", "its primary key", "its biggest dimension"], a: 1,
+        w: "Decide the grain first (one sale line, one event). Everything else follows from it." },
+      { q: "What does <code>statistics.stdev([5])</code> do?", o: ["0.0", "5", "raises StatisticsError", "None"], a: 2,
+        w: "Sample standard deviation needs at least 2 values. A user with one post is an edge case you have to handle and document." },
+      { q: "What does this return?", c: 're.findall(r"#(\\w+)", "#a #b-c")', o: ["['a', 'b-c']", "['a', 'b']", "['#a', '#b']", "[]"], a: 1,
+        w: "<code>\\w</code> matches letters, digits and underscore, so it stops at <code>-</code>." },
+    ],
+    checkpoint: ["State the grain of your DSS fact table and justify it.",
+                 "List 3 data-quality issues you found and what you did about each.",
+                 "How are your categories defined, and how would someone else reproduce them?"] },
+
+  { id: "w5", n: "W5", title: "Databases from Python: sqlite3 → pyodbc", start: "2026-11-21", end: "2026-11-27", hours: "≈18 h",
+    book: "ch. 23 Iterators and Generators · Python docs: sqlite3 · pyodbc wiki",
+    unlocks: "DSS A5 (upload), A6 (gather 5%)", project: true,
+    why: "The same DB-API calls work for sqlite and SQL Server. Batching and streaming are what make A5 finish in minutes, not hours.",
+    file: "exercises/w05_db.py", test: "tests/test_w05_db.py",
+    tasks: [
+      ...["batched", "iter_csv_rows", "create_star_schema", "insert_rows", "load_star_from_csv"].map(n => fn("w5", n)),
+      ...["qty_by_store", "qty_by_year_season", "export_query_to_json", "db_settings", "sqlserver_connection_string"].map(n => fn("w5", n)),
+      t("w5-bench", "Benchmark: 3 ways to insert 100k rows; record the times", "Extra"),
+      t("w5-driver", "Install ODBC Driver 18 + pyodbc; <code>SELECT @@VERSION</code> over the VPN", "DSS project"),
+      t("w5-a5", "DSS A5: load the <code>_python</code> tables (batched, timed, logged)", "DSS project"),
+      t("w5-a6", "DSS A6: choose a sampling strategy, write the ≥5% JSON export", "DSS project"),
+      t("w5-quiz", "Quiz below: all answers right", "Ship it"),
+    ],
+    quiz: [
+      { q: "You <code>executemany</code> 50k inserts with sqlite3, then <code>conn.close()</code>. How many rows are saved?",
+        o: ["50,000", "0", "Depends on batch size", "The first 1,000"], a: 1,
+        w: "Without <code>commit()</code>, the open transaction is rolled back on close." },
+      { q: "What do the two calls return?", c: "g = (x * 2 for x in range(3))\nprint(list(g))\nprint(list(g))",
+        o: ["[0, 2, 4] twice", "[0, 2, 4] then []", "Error", "[] then [0, 2, 4]"], a: 1,
+        w: "A generator is used up once it's consumed. Make a new one, or store a list if you really need two passes." },
+      { q: "Why <code>VALUES (?, ?)</code> instead of an f-string?",
+        o: ["It's faster to type", "Quoting and SQL injection are handled by the driver", "f-strings don't work with SQL", "Only SQL Server needs it"], a: 1,
+        w: "A post text containing <code>'</code> breaks an f-string query. A crafted one can run arbitrary SQL." },
+      { q: "What does <code>cursor.fast_executemany = True</code> change in pyodbc?",
+        o: ["Nothing on SQL Server", "Rows are sent as parameter arrays in bulk instead of one round trip per row", "It disables transactions", "It enables async"], a: 1,
+        w: "Without it, executemany is effectively a loop of single inserts over the network." },
+    ],
+    checkpoint: ["Explain your A5 loading strategy and its measured speed.",
+                 "Why load dimensions before facts?",
+                 "Defend your A6 sampling choice: what does it preserve, and what does it lose?"] },
+
+  { id: "w6", n: "W6", title: "Real programs: argparse, logging, end-to-end run", start: "2026-11-28", end: "2026-12-04", hours: "≈18 h",
+    book: "ch. 24 Command Line Processing · docs: logging HOWTO",
+    unlocks: "a runnable, gradable DSS repo · checks for A7–A13", project: true,
+    why: "Graders run your code. Arguments, logs and exit codes make it runnable by anyone, and Python checks catch SSIS mistakes.",
+    file: "exercises/w06_cli.py", test: "tests/test_w06_cli.py",
+    tasks: [
+      ...["build_parser", "log_level", "main", "safe_ratio", "percent_change"].map(n => fn("w6", n)),
+      t("w6-cli", "Give every DSS script <code>argparse</code> + logging + <code>main()</code>", "DSS project"),
+      t("w6-check", "Python checker for A8–A11 on the small fact table; compare with SSIS output", "DSS project"),
+      t("w6-clone", "Clean-clone test passes", "DSS project"),
+      t("w6-quiz", "Quiz below: all answers right", "Ship it"),
+    ],
+    quiz: [
+      { q: "What is <code>if __name__ == \"__main__\":</code> for?",
+        o: ["Speed", "Code under it runs when the file is executed, not when it's imported", "Required by Python 3", "Marks the main class"], a: 1,
+        w: "So tests (and other modules) can import your functions without running the program." },
+      { q: "<code>log.info(\"loaded\")</code> prints nothing. Why?",
+        o: ["logging is broken", "The default level is WARNING", "info goes to a file", "You need print"], a: 1,
+        w: "Configure the level (<code>-v</code> → INFO) with <code>logging.basicConfig(level=...)</code>." },
+      { q: "Your script fails halfway. What should it return to the shell?",
+        o: ["0", "A non-zero exit code", "Nothing", "The error text"], a: 1,
+        w: "0 means success. Schedulers and CI decide what to do next based on the exit code." },
+    ],
+    checkpoint: ["Run one DSS script live, with <code>-v</code>, and explain the log.",
+                 "Which edge cases did your checker find in A8–A11?"] },
+
+  { id: "w7", n: "W7", title: "Buffer, review, cube · deliver Part 1", start: "2026-12-05", end: "2026-12-11", hours: "as needed",
+    book: "your DW book: cubes, hierarchies, measures", unlocks: "Part 1 delivery (A1–A14)", project: true,
+    why: "Slack for what slipped, a full review, and A14. The database freezes on 11 Dec.",
+    tasks: [
+      t("w7-review", "Code review session with Claude (repo link ready)", "Deliver"),
+      t("w7-check", "Final checklist above: all boxes", "Deliver"),
+      t("w7-a14", "DSS A14: cube with hierarchies and the measures Part 2 needs", "Deliver"),
+      t("w7-submit", "Zip + Google form before 11 Dec 23:59", "Deliver"),
+    ], quiz: [], checkpoint: [] },
+
+  { id: "w7b", n: "W7b", title: "OLAP & MDX · deliver Part 2", start: "2026-12-12", end: "2026-12-18", hours: "as needed",
+    book: "your DW book: MDX chapter · course slides", unlocks: "Part 2 delivery (A15–A21 + report)", project: true,
+    why: "MDX reads strangely until tuples and axes click. Learn the five patterns, then the queries are small.",
+    tasks: [
+      t("w7b-basics", "Write 5 practice MDX queries on the course demo cube", "Learn"),
+      t("w7b-q", "DSS A15–A19 MDX queries", "Deliver"),
+      t("w7b-dash", "DSS A20–A21 dashboards + screenshots", "Deliver"),
+      t("w7b-report", "Report ≤10 pages, zip, form before 18 Dec", "Deliver"),
+    ],
+    quiz: [
+      { q: "In MDX, a <em>tuple</em> is…", o: ["a list of members on an axis", "one member from each of several dimensions: the coordinates of a cell", "a calculated measure", "a hierarchy level"], a: 1,
+        w: "<code>( [Date].[Year].&[1994], [Measures].[Qty] )</code> addresses one cell. A set <code>{ }</code> is a list of tuples." },
+      { q: "How do you guard a ratio against division by zero?", o: ["<code>NON EMPTY</code>", "<code>IIF(den = 0, NULL, num / den)</code>", "<code>FILTER</code>", "<code>TOPCOUNT</code>"], a: 1,
+        w: "<code>NULL</code> cells disappear under <code>NON EMPTY</code> instead of showing an error or infinity." },
+    ],
+    checkpoint: [] },
+];
+
+const LATER = [
+  { phase: "B", title: "P4DS exam retake", when: "from 19 Dec until the exam date", mods: [
+    { id: "b1", title: "OOP for the exam", why: "One of the two exam exercises is always a class model with a subclass.",
+      items: ["classes, <code>__init__</code>, <code>self</code>, methods", "<code>__str__</code> / <code>__repr__</code> (book ch. 20, 21.2)", "manager classes holding lists of objects", "inheritance, overriding, <code>super()</code> (ch. 22)", "<code>@dataclass</code>"] },
+    { id: "b2", title: "Pipeline + recursion drills", why: "The other exercise is a data pipeline: input loop with a sentinel, dict grouping, one recursive function.",
+      items: ["the two exam skeletons, typed from memory", "hand-written sort / search / greedy", "your old <code>exercise preparation/</code> notebooks, converted to .py + tests"] },
+    { id: "b3", title: "Timed mocks", why: "Speed under pressure is a skill of its own.", items: ["2 full mocks under exam conditions", "oral theory review: mutability, complexity, why NumPy is fast"] },
+  ]},
+  { phase: "C", title: "Career track: DS · DE · MLE", when: "after the exam, ≈4 months", mods: [
+    { id: "c1", title: "C1 Software engineering", why: "What makes code survive in a team.",
+      items: ["src layout + <code>pyproject.toml</code>, <code>uv</code>", "type hints, <code>ruff</code>, pre-commit", "pytest fixtures, coverage", "branches, pull requests, code review", "GitHub Actions CI", "Docker basics"] },
+    { id: "c2", title: "C2 Data science stack", why: "Now that you can do it by hand, learn the tools that do it fast.",
+      items: ["NumPy: arrays, vectorisation", "pandas: redo DSS A1 and compare with your plain-Python version", "matplotlib / seaborn", "DuckDB and Polars for larger data"] },
+    { id: "c3", title: "C3 Data engineering", why: "Pipelines that run every day without you.",
+      items: ["advanced SQL: CTEs, window functions", "Postgres in Docker", "Parquet, partitioning, incremental loads", "dbt models + tests", "orchestration: Prefect or Airflow", "data-quality checks as code"] },
+    { id: "c4", title: "C4 ML engineering", why: "Getting a model from a notebook into production.",
+      items: ["scikit-learn pipelines, proper validation", "experiment tracking with MLflow", "serving with FastAPI", "containerised deployment", "monitoring and drift"] },
+    { id: "c5", title: "Capstone: end-to-end portfolio project", why: "One public repo that shows the whole path.",
+      items: ["public dataset → ingestion script", "warehouse (DuckDB/Postgres) + dbt", "a model with tracked experiments", "an API serving predictions", "CI, README, architecture diagram"] },
+  ]},
+];
+
+const ASSIGN = [
+  ["A1", "Data understanding & cleaning, integrate the ARFF file", "any", "W3–W4"],
+  ["A2", "Post categories (manual rules or mining)", "any", "W4"],
+  ["A3", "DW schema, two copies (_python, _IS)", "Python / SSMS", "W4"],
+  ["A4", "Split data into one CSV per DW table", "Python, no pandas", "W4"],
+  ["A5", "Populate the _python tables efficiently", "Python, no pandas", "W5"],
+  ["A6", "Download ≥5% of events to JSON", "Python, no pandas", "W5"],
+  ["A7", "Load the _IS tables + events with SSIS", "SSIS", "W6 (check)"],
+  ["A8", "Night–day score per user", "SSIS", "W6 (check)"],
+  ["A9", "Cumulative likes / posts per category & month", "SSIS", "W6 (check)"],
+  ["A10", "Category avg likes vs other categories", "SSIS", "W6 (check)"],
+  ["A11", "Trending percentage & factor, edge cases", "SSIS", "W6 (check)"],
+  ["A12", "Own query on high-follower accounts", "SSIS", "W6"],
+  ["A13", "Own interesting query", "SSIS", "W6"],
+  ["A14", "Datacube with hierarchies & measures", "SSAS", "W7"],
+  ["A15–A19", "MDX queries", "MDX", "W7b"],
+  ["A20–A21", "Dashboards", "Power BI", "W7b"],
+];
+
+/* ============ PAGE MODEL ============ */
+const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "Files and formats", w4: "Cleaning, dates, star schema",
+  w5: "Databases from Python", w6: "Real programs", w7: "Review, cube, Part 1", w7b: "OLAP and MDX, Part 2" };
+// Olivetti: one flat colour per week (white text passes 4.5:1 on each except ochre, which takes ink)
+const HUE = { w0: "#2c7353", w1: "#14636f", w2: "#1f3f8f", w3: "#b53a26", w4: "#e2a325", w5: "#614891", w6: "#7a4f22", w7: "#5b6a1c", w7b: "#a02f5f" };
+const HUE_INK = { w4: "#141414" };
+const HUE_TEXT = { w4: "#9a6a08" }; // ochre is too light for text on white
+// exercise sections, in each .py file's order
+const SECTIONS = {
+  w2: [["Lists and tuples", ["second_largest", "unique_in_order", "append_copy", "min_max", "transpose", "squares_of_odds"]],
+       ["Dicts and sets", ["word_frequencies", "top_n", "invert_dict", "merge_counts", "common_and_only"]],
+       ["Rows: the ETL shape", ["column", "group_by", "aggregate", "index_by", "join", "sales_summary"]],
+       ["Recursion", ["flatten", "depth", "binary_search", "merge_sort"]]],
+  w3: [["CSV and missing values", ["count_lines", "read_header_file", "read_csv_rows", "write_csv", "to_number", "convert_types", "missing_report"]],
+       ["ARFF, XML, JSON, errors", ["parse_arff", "xml_attribute_rows", "xml_element_rows", "count_values_streaming", "load_json", "save_json", "borrows_per_member", "read_text_safely"]]],
+  w4: [["Dates", ["parse_timestamp", "season", "date_dimension_row", "hours_between"]],
+       ["Data quality", ["row_key", "find_duplicates", "drop_duplicates", "mean_std", "zscore_outliers"]],
+       ["Text", ["clean_text", "extract_hashtags", "extract_urls", "categorize"]],
+       ["Star schema", ["build_dimension", "build_sales_star", "write_tables"]]],
+  w5: [["Generators and loading", ["batched", "iter_csv_rows", "create_star_schema", "insert_rows", "load_star_from_csv"]],
+       ["Queries, export, settings", ["qty_by_store", "qty_by_year_season", "export_query_to_json", "db_settings", "sqlserver_connection_string"]]],
+};
+const weekNo = (w) => WEEKS.indexOf(w);
+const weekName = (w) => `Week ${weekNo(w)}`;
+const fnName = (x) => x.id.slice(x.id.indexOf("-") + 1);
+const isExercise = (x) => x.group === "Exercises";
+const exercisesOf = (w) => { const ex = w.tasks.filter(isExercise); return ex.length ? ex : w.tasks; };
+function sectionOf(w, x) {
+  const s = (SECTIONS[w.id] || []).find(([, names]) => names.includes(fnName(x)));
+  return s ? s[0] : isExercise(x) ? SHORT[w.id] : x.group;
+}
+
+/* ============ STATE: db document progress/state, plus a local copy ============ */
+const LS = "python-path-progress";
+let state = { done: {}, quiz: {} };
+let docRef = null;
+try { const s = JSON.parse(localStorage.getItem(LS) || "null"); if (s) state = { done: s.done || {}, quiz: s.quiz || {} }; } catch (e) {}
+
+function save() {
+  try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {}
+  if (!docRef) return;
+  docRef.set(JSON.parse(JSON.stringify(state))).then(
+    () => { $("#savefail").hidden = true; },
+    () => { const el = $("#savefail"); el.textContent = "Couldn't save your progress to this page. It's kept on this device until the next save works."; el.hidden = false; });
+}
+(async () => {
+  let db = null;
+  try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) {}
+  if (!db) return;
+  docRef = db.doc("progress/state");
+  try {
+    const snap = await docRef.get();
+    if (snap.exists) { const d = snap.data(); state = { done: { ...(d.done || {}) }, quiz: { ...(d.quiz || {}) } }; }
+    else if (Object.keys(state.done).length || Object.keys(state.quiz).length) save();
+    try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {}
+    render();
+  } catch (e) {}
+})();
+
+/* ============ HELPERS ============ */
+const $ = (s, el = document) => el.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const day = (iso) => new Date(iso + "T12:00:00");
+const fmt = (iso) => day(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+function range(w) {
+  const a = day(w.start), b = day(w.end);
+  return a.getMonth() === b.getMonth() ? `${a.getDate()}–${fmt(w.end)}` : `${fmt(w.start)}–${fmt(w.end)}`;
+}
+function daysUntil(date) {
+  const a = new Date(); a.setHours(0, 0, 0, 0);
+  const b = new Date(date); b.setHours(0, 0, 0, 0);
+  return Math.round((b - a) / 864e5);
+}
+const doneCount = (list) => list.filter((x) => state.done[x.id]).length;
+const ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+function calendarWeek() {
+  const now = new Date();
+  return WEEKS.find((w) => now <= new Date(w.end + "T23:59:59")) || WEEKS[WEEKS.length - 1];
+}
+const activeWeek = () => WEEKS.find((w) => exercisesOf(w).some((x) => !state.done[x.id])) || WEEKS[WEEKS.length - 1];
+function setWeekColour(w) {
+  const root = document.documentElement.style;
+  if (w && document.documentElement.dataset.look === "olivetti") {
+    root.setProperty("--week", HUE[w.id]);
+    root.setProperty("--week-text", HUE_TEXT[w.id] || HUE[w.id]);
+    root.setProperty("--band-ink", HUE_INK[w.id] || "#ffffff");
+  } else { ["--week", "--week-text", "--band-ink"].forEach((k) => root.removeProperty(k)); }
+}
+const label = (x) => isExercise(x) ? `<code>${esc(fnName(x))}</code>` : x.html;
+
+/* ============ TODAY ============ */
+let lastTick = null;
+function renderToday() {
+  const w = activeWeek(), cal = calendarWeek();
+  const ex = exercisesOf(w), next = ex.filter((x) => !state.done[x.id]).slice(0, 3);
+  const total = w.tasks.length, done = doneCount(w.tasks);
+  const now = new Date();
+  const d1 = daysUntil(DEADLINE), d2 = daysUntil(PART2);
+  const short = (d) => d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+  const due = d1 >= 0 ? `DSS Part 1 due <b>${short(DEADLINE)}</b> · ${d1} ${d1 === 1 ? "day" : "days"}`
+    : d2 >= 0 ? `DSS Part 2 due <b>${short(PART2)}</b> · ${d2} ${d2 === 1 ? "day" : "days"}` : "DSS delivered";
+  const behind = weekNo(w) < weekNo(cal);
+  const rows = next.map((x) => `<li><label><input type="checkbox" data-task="${x.id}">
+      <span>${isExercise(x) ? `<span class="fn">${esc(fnName(x))}</span>${w.file ? `<span class="file">${w.file}</span>` : ""}` : `<span class="taskt">${x.html}</span>`}</span>
+      <span class="sec">${esc(sectionOf(w, x))}</span></label></li>`).join("");
+  const plan = WEEKS.map((x) => {
+    const n = doneCount(x.tasks), all = x.tasks.length;
+    const cls = x === w ? "now" : n === all ? "done" : "";
+    return `<li class="stop ${cls}" style="--wk:${HUE[x.id]}"><span class="mark" aria-hidden="true"></span>
+      <span class="d">${range(x)}</span>
+      <a href="#${x.id}"><span class="wk">${weekName(x)} · ${SHORT[x.id]}</span>${x === w ? '<span class="visually-hidden"> (current)</span>' : ""}</a>
+      <span class="n" aria-label="${n} of ${all} done">${n}/${all}</span></li>`;
+  }).join("");
+  const later = LATER.map((ph) => ph.mods.map((m) => `<div class="mod"><h3>${m.title}</h3><p>${m.why}</p>
+      <ul>${m.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+      <label><input type="checkbox" data-task="mod-${m.id}" ${state.done["mod-" + m.id] ? "checked" : ""}> Module done</label></div>`).join("")).join("");
+  $("#view").innerHTML = `
+    <div class="dateline"><span>${now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span><span>${due}</span></div>
+    <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekNo(w)}</span>
+      <h1><a href="#${w.id}"><span class="wkprefix">${weekName(w)} · </span>${SHORT[w.id]}</a></h1></div>
+    ${behind ? `<p class="plannote">Planned this week: ${weekName(cal)} · ${SHORT[cal.id]}</p>` : ""}
+    <div class="count"><span><b>${done} of ${total}</b> done this week</span><div class="track" aria-hidden="true"><span style="width:${total ? (100 * done) / total : 0}%"></span></div></div>
+    ${next.length ? `<div class="colheads" aria-hidden="true"><span></span><span>Next up</span><span>Section</span></div>
+      <h2 class="visually-hidden">Next up</h2><ul class="next">${rows}</ul>`
+      : `<p class="weekdone">Every exercise in ${weekName(w)} is ticked. Finish the quiz and the Sunday questions, then move on.</p>`}
+    <p class="undo" role="status">${lastTick ? `Marked ${label(lastTick)} done. <button type="button" class="linkbtn" data-undo="${lastTick.id}">Undo</button>` : ""}</p>
+    <div class="go"><a href="#${w.id}">Continue the lesson ${ARROW}</a>${w.quiz.length ? `<a href="#${w.id}-quiz">Take the quiz ${ARROW}</a>` : ""}</div>
+    <h2 class="plan-h">The plan</h2>
+    <ol class="plan">${plan}</ol>
+    <details class="later"><summary>After 18 December: exam retake and career track</summary><div class="mods">${later}</div></details>`;
+  setWeekColour(w);
+}
+
+/* ============ SHARED: markdown, code blocks, copy ============ */
+const COPY_ICON = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="8.5" height="8.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 10.5V2.5h8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>';
+const md = (id) => {
+  const src = (document.getElementById(id) || {}).textContent || "";
+  return window.marked ? window.marked.parse(src) : `<pre>${esc(src)}</pre>`;
+};
+// wrap tables for sideways scroll and give every code block a copy button
+function enhance(root) {
+  root.querySelectorAll("table").forEach((t) => {
+    t.querySelectorAll("th").forEach((th) => { if (!th.textContent.trim()) th.innerHTML = '<span class="visually-hidden">Item</span>'; });
+    if (t.parentElement.classList.contains("tablewrap")) return;
+    // the wrapper scrolls sideways on narrow screens, so keyboard users must be able to focus it
+    const w = document.createElement("div"); w.className = "tablewrap"; w.tabIndex = 0; w.setAttribute("role", "region"); let hd = t.previousElementSibling; while (hd && !/^H[1-4]$/.test(hd.tagName)) hd = hd.previousElementSibling;
+    hd = hd || t.closest("section")?.querySelector("h1, h2, h3");
+    w.setAttribute("aria-label", "Table" + (hd ? ": " + hd.textContent.trim() : ""));
+    t.before(w); w.appendChild(t);
+  });
+  // markdown task lists ("- [ ] ...") become real, saved ticks; the key is derived from the item text so it stays stable
+  root.querySelectorAll('li > input[type="checkbox"][disabled]').forEach((box) => {
+    const li = box.parentElement, text = li.textContent.trim();
+    let h = 0; for (const ch of text) h = (h * 31 + ch.codePointAt(0)) >>> 0;
+    const lab = document.createElement("label"); lab.className = "md-check";
+    box.removeAttribute("disabled"); box.dataset.task = "chk-" + h.toString(36); box.checked = !!state.done[box.dataset.task];
+    while (li.firstChild) lab.appendChild(li.firstChild);
+    li.appendChild(lab); li.classList.add("md-check-item");
+  });
+  requestAnimationFrame(() => markScrollers(root));
+  root.querySelectorAll("pre").forEach((pre) => {
+    if (pre.parentElement.classList.contains("codeblock")) return;
+    const box = document.createElement("div"); box.className = "codeblock"; pre.before(box); box.appendChild(pre);
+    pre.tabIndex = 0;
+    const b = document.createElement("button"); b.type = "button"; b.className = "copy"; b.innerHTML = COPY_ICON + "<span>Copy</span>";
+    b.setAttribute("aria-label", "Copy code"); box.appendChild(b);
+  });
+}
+// say so under a table that is wider than the screen; code blocks get the visible scrollbar only
+function markScrollers(root) {
+  root.querySelectorAll(".tablewrap").forEach((w) => {
+    const over = w.scrollWidth > w.clientWidth + 1, note = w.nextElementSibling && w.nextElementSibling.classList.contains("scrollnote") ? w.nextElementSibling : null;
+    if (over && !note) w.insertAdjacentHTML("afterend", '<p class="scrollnote">Scroll sideways to see every column.</p>');
+    if (!over && note) note.remove();
+  });
+}
+let resizeTimer;
+window.addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => markScrollers(document), 200); });
+document.addEventListener("click", (e) => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const text = b.parentElement.querySelector("pre").innerText.replace(/\n$/, "");
+  const done = (msg) => { b.querySelector("span").textContent = msg; setTimeout(() => { b.querySelector("span").textContent = "Copy"; }, 1800); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector("pre")); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); done("Press Cmd+C"); };
+  try { navigator.clipboard.writeText(text).then(() => done("Copied"), fallback); } catch (err) { fallback(); }
+});
+
+/* ============ PARTS (week page, project, cheat sheet) ============ */
+/* ============ WEEK PAGE ============ */
+const BACK = ARROW.replace("<svg ", '<svg style="transform:scaleX(-1)" ');
+function wkNeighbours(w) {
+  const i = weekNo(w), prev = WEEKS[i - 1], next = WEEKS[i + 1];
+  const link = (x, dir) => x
+    ? `<a class="wk-step wk-${dir}" href="#${x.id}">${dir === "prev" ? BACK : ""}<span>${weekName(x)}<span class="wk-stepname"> · ${SHORT[x.id]}</span></span>${dir === "next" ? ARROW : ""}</a>`
+    : "";
+  return link(prev, "prev") + link(next, "next");
+}
+function wkGroups(w) {
+  const groups = [];
+  w.tasks.forEach((x) => {
+    // weeks without file sections group their exercises under one plain heading
+    const name = SECTIONS[w.id] || !isExercise(x) ? sectionOf(w, x) : "Exercises", last = groups[groups.length - 1];
+    if (last && last.name === name) last.items.push(x); else groups.push({ name, items: [x] });
+  });
+  return groups;
+}
+function wkTask(x) {
+  const on = !!state.done[x.id];
+  return `<li class="wk-task${on ? " wk-done" : ""}" data-row="${x.id}"><label>
+    <input type="checkbox" data-task="${x.id}" ${on ? "checked" : ""}><span class="wk-tasktext">${x.html}</span></label></li>`;
+}
+function wkQuestion(w, q, i) {
+  const key = `${w.id}-q${i}`, picked = state.quiz[key], answered = picked !== undefined;
+  const opts = q.o.map((o, j) => {
+    const cls = !answered ? "" : j === q.a ? " wk-right" : j === picked ? " wk-wrong" : "";
+    const note = !answered ? "" : j === q.a ? '<span class="visually-hidden"> (correct answer)</span>' : j === picked ? '<span class="visually-hidden"> (your answer)</span>' : "";
+    return `<li><button type="button" class="wk-opt${cls}" data-week="${w.id}" data-qi="${i}" data-oi="${j}" ${answered ? 'aria-disabled="true"' : ""}>${o}${note}</button></li>`;
+  }).join("");
+  const verdict = !answered ? "" : `<p class="wk-verdict"><b class="${picked === q.a ? "wk-ok" : "wk-no"}">${picked === q.a ? "Right." : "Not quite."}</b> ${q.w}</p>`;
+  return `<div class="wk-q" id="${key}"><p class="wk-qt"><span class="wk-qn">${i + 1}.</span> ${q.q}</p>
+    ${q.c ? `<pre><code>${esc(q.c)}</code></pre>` : ""}
+    <ol class="wk-opts" aria-label="Answers to question ${i + 1}">${opts}</ol>
+    <div class="wk-live" aria-live="polite">${verdict}</div></div>`;
+}
+function wkCount(w) { return `${doneCount(w.tasks)} of ${w.tasks.length} done`; }
+
+function renderWeek(id) {
+  const w = WEEKS.find((x) => x.id === id);
+  const jumps = [["lesson", "Lesson"], ["exercises", "Exercises"]];
+  if (w.quiz.length) jumps.push(["quiz", "Quiz"]);
+  if (w.checkpoint.length) jumps.push(["sunday", "Sunday questions"]);
+  $("#view").innerHTML = `
+    <nav class="wk-steps" aria-label="Weeks"><a class="wk-step wk-today" href="#today">${BACK}<span>Today</span></a><span class="wk-around">${wkNeighbours(w)}</span></nav>
+    <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekNo(w)}</span>
+      <h1><span class="wkprefix">${weekName(w)} · </span>${SHORT[w.id]}</h1></div>
+    <dl class="wk-facts">
+      <div><dt>When</dt><dd>${range(w)} · ${w.hours}</dd></div>
+      <div><dt>Book</dt><dd>${w.book}</dd></div>
+      <div><dt>Prepares you for</dt><dd>${w.unlocks}</dd></div>
+      ${w.file ? `<div><dt>Code</dt><dd><code>${w.file}</code></dd></div><div><dt>Run</dt><dd><code>pytest ${w.test} -v</code></dd></div>` : ""}
+    </dl>
+    <p class="wk-why">${w.why}</p>
+    <nav class="wk-jumps" aria-label="On this page">${jumps.map(([k, t]) => `<a href="#${w.id}-${k}">${t}</a>`).join("")}
+      <span class="wk-count" id="wk-count" aria-live="polite">${wkCount(w)}</span></nav>
+    <section id="lesson" class="prose wk-lesson" aria-label="Lesson">${md("md-" + w.id)}</section>
+    <section id="exercises" class="wk-section"><h2>Exercises</h2>
+      ${wkGroups(w).map((g) => `<h3 class="wk-group">${g.name}</h3><ul class="wk-tasks">${g.items.map(wkTask).join("")}</ul>`).join("")}</section>
+    ${w.quiz.length ? `<section id="quiz" class="wk-section"><h2>Quiz</h2><p class="wk-intro">Predict the answer first, then pick it. Answers lock once chosen.</p>
+      <div class="wk-quiz">${w.quiz.map((q, i) => wkQuestion(w, q, i)).join("")}</div>
+      <p><button type="button" class="linkbtn" data-reset-quiz="${w.id}">Reset this quiz</button></p></section>` : ""}
+    ${w.checkpoint.length ? `<section id="sunday" class="wk-section"><h2>Sunday questions</h2>
+      <p class="wk-intro">Explain these out loud, or to Claude, without notes.</p>
+      <ul class="wk-sunday">${w.checkpoint.map((c) => `<li>${c}</li>`).join("")}</ul></section>` : ""}
+    <nav class="wk-steps wk-bottom" aria-label="Other weeks">${wkNeighbours(w)}</nav>`;
+  enhance($("#view"));
+  setWeekColour(w);
+}
+
+function wkRefreshTask(id) {
+  const w = WEEKS.find((x) => x.id === view); if (!w) return;
+  const row = document.querySelector(`[data-row="${id}"]`);
+  if (row) { row.classList.toggle("wk-done", !!state.done[id]); const box = row.querySelector("input"); if (box) box.checked = !!state.done[id]; }
+  const c = $("#wk-count"); if (c) c.textContent = wkCount(w);
+}
+document.addEventListener("progress", (e) => wkRefreshTask(e.detail.id));
+
+document.addEventListener("click", (e) => {
+  const o = e.target.closest(".wk-opt");
+  if (o) {
+    const w = WEEKS.find((x) => x.id === o.dataset.week), i = Number(o.dataset.qi), key = `${w.id}-q${i}`;
+    if (state.quiz[key] !== undefined) return;
+    state.quiz[key] = Number(o.dataset.oi);
+    const quizId = `${w.id}-quiz`, allRight = w.quiz.every((q, k) => state.quiz[`${w.id}-q${k}`] === q.a);
+    if (allRight) state.done[quizId] = true;
+    save();
+    const box = document.getElementById(key);
+    box.outerHTML = wkQuestion(w, w.quiz[i], i);
+    const fresh = document.getElementById(key);
+    enhance(fresh);
+    fresh.querySelector(`[data-oi="${o.dataset.oi}"]`).focus();
+    if (allRight) wkRefreshTask(quizId);
+    return;
+  }
+  const r = e.target.closest("[data-reset-quiz]");
+  if (r) {
+    const w = WEEKS.find((x) => x.id === r.dataset.resetQuiz);
+    w.quiz.forEach((q, i) => { delete state.quiz[`${w.id}-q${i}`]; });
+    save();
+    $(".wk-quiz").innerHTML = w.quiz.map((q, i) => wkQuestion(w, q, i)).join("");
+    enhance($(".wk-quiz"));
+    const first = $(".wk-quiz .wk-opt"); if (first) first.focus();
+  }
+});
+
+/* ============ PROJECT ============ */
+// "W3–W4" -> {text: "Week 3–4", id: "w3"}; "W7b" -> Week 8 (the last week's id stays w7b)
+function pjWeek(code) {
+  const m = code.match(/^W(\d+)(b?)(?:–W(\d+))?(.*)$/);
+  if (!m) return { text: code, id: null };
+  const id = "w" + m[1] + m[2];
+  const w = WEEKS.find((x) => x.id === id);
+  const n = w ? weekName(w).replace("Week ", "") : m[1];
+  return { text: `Week ${n}${m[3] ? "–" + m[3] : ""}${m[4]}`, id: w ? id : null };
+}
+function pjDays(deadline) {
+  const n = daysUntil(deadline);
+  return n > 1 ? `${n} days left` : n === 1 ? "1 day left" : n === 0 ? "today" : "passed";
+}
+const pjCount = () => `<b>${ASSIGN.filter(([id]) => state.done["dss-" + id]).length} of ${ASSIGN.length}</b> done`;
+
+function renderProject() {
+  const rows = ASSIGN.map(([id, what, tool, wk]) => {
+    const w = pjWeek(wk), py = tool.startsWith("Python");
+    const prep = w.id ? `<a href="#${w.id}">${esc(w.text)}</a>` : esc(w.text);
+    const row = `<tr class="pj-row${py ? " pj-py" : ""}">
+      <td class="pj-done"><input type="checkbox" data-task="dss-${esc(id)}" id="dss-${esc(id)}" ${state.done["dss-" + id] ? "checked" : ""}></td>
+      <th scope="row" class="pj-id"><label for="dss-${esc(id)}">${esc(id)}</label></th>
+      <td class="pj-what"><label for="dss-${esc(id)}">${esc(what)}</label></td>
+      <td class="pj-tool">${py ? '<svg class="pj-pymark" viewBox="0 0 8 8" aria-hidden="true"><rect width="8" height="8"/></svg>' : ""}${esc(tool)}</td>
+      <td class="pj-prep">${prep}</td></tr>`;
+    const divider = id === "A14" ? `<tr class="pj-deadline"><td colspan="5">Part 1 deadline · Fri 11 Dec</td></tr>` : "";
+    return row + divider;
+  }).join("");
+  $("#view").innerHTML = `
+    <h1 class="pj-h1">DSS project</h1>
+    <p class="pj-lede">LDS 2026–27 · Truth Social data warehouse. Every assignment, the tool it requires, and the week that prepares you for it.</p>
+    <dl class="pj-deadlines">
+      <div><dt>Part 1 · Fri 11 Dec</dt><dd>A1–A14 code, the group database freezes</dd><dd class="pj-left">${pjDays(DEADLINE)}</dd></div>
+      <div><dt>Part 2 · Fri 18 Dec</dt><dd>MDX queries, dashboards, report of at most 10 pages</dd><dd class="pj-left">${pjDays(PART2)}</dd></div>
+    </dl>
+    <h2 class="pj-h2">Assignments</h2>
+    <p class="pj-count" id="pj-count">${pjCount()}</p>
+    <table class="pj-table">
+      <thead><tr><th scope="col" class="pj-done"><span class="visually-hidden">Done</span></th><th scope="col">#</th><th scope="col">What</th><th scope="col">Tool</th><th scope="col">Prepared in</th></tr></thead>
+      <tbody>${rows}<tr class="pj-deadline"><td colspan="5">Part 2 deadline · Fri 18 Dec</td></tr></tbody>
+    </table>
+    <h2 class="pj-h2">How we work on graded code</h2>
+    <p class="pj-p">The path teaches every technique on parallel data (census, sales, loans). You write the Truth Social code. Claude explains, reviews your code and points at problems, but doesn't write assignment solutions. What you hand in has to be something you can defend at the oral.</p>
+    <h2 class="pj-h2">Rules that shape the code</h2>
+    <ul class="pj-rules">
+      <li><b>No pandas-like packages</b> from A3 on: <code>csv</code>, <code>json</code>, <code>xml.etree</code>, <code>datetime</code>, <code>statistics</code>, <code>pyodbc</code>.</li>
+      <li>A5 is graded on <b>efficiency and scalability</b>: batching, <code>fast_executemany</code>, streaming, measured timings.</li>
+      <li>A11 demands <b>documented edge cases</b>. Keep a running <code>DECISIONS.md</code> from week 3 on.</li>
+      <li>Use the small fact table to verify results by hand, as the brief suggests.</li>
+    </ul>`;
+  setWeekColour(null);
+}
+document.addEventListener("progress", () => { const c = document.getElementById("pj-count"); if (c && view === "project") c.innerHTML = pjCount(); });
+
+/* ---- Cheat sheet view: one DOM build per visit; filtering only toggles hidden and <mark>s ---- */
+let csQuery = "";
+function renderCheat() {
+  setWeekColour(null);
+  const src = document.createElement("div");
+  src.innerHTML = md("md-cheatsheet");
+  // drop the markdown's own h1, intro line and rule: everything before the first h2
+  while (src.firstChild && src.firstChild.nodeName !== "H2") src.firstChild.remove();
+  const body = document.createElement("div");
+  body.className = "cs-body prose";
+  let sec = null;
+  [...src.childNodes].forEach((n) => {
+    if (n.nodeName === "H2") {
+      sec = document.createElement("section");
+      sec.className = "cs-sec";
+      sec.id = "cs-" + body.children.length;
+      n.textContent = n.textContent.replace(/^\d+\.\s*/, "");
+      n.tabIndex = -1;
+      sec.appendChild(n);
+      body.appendChild(sec);
+    } else if (sec) sec.appendChild(n);
+  });
+  const secs = [...body.children];
+  const wide = matchMedia("(min-width: 601px)").matches;
+  $("#view").innerHTML = `
+    <h1>Cheat sheet</h1>
+    <p class="cs-lede">The same text as <code>CHEATSHEET.md</code> in your repo.</p>
+    <div class="cs-search">
+      <label for="cs-q">Search the cheat sheet</label>
+      <div class="cs-field"><input id="cs-q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="DictReader, commit…" aria-describedby="cs-count">
+        <span class="cs-count" id="cs-count" aria-live="polite"></span></div>
+    </div>
+    <details class="cs-index"${wide ? " open" : ""}><summary>Sections</summary>
+      <ul>${secs.map((s, i) => `<li><a href="#cheat" data-cs="${i}">${esc(s.querySelector("h2").textContent)}</a></li>`).join("")}</ul>
+    </details>
+    <p class="cs-empty" hidden></p>`;
+  $("#view").appendChild(body);
+  enhance(body);
+  // search text per section, without the copy buttons' labels
+  secs.forEach((s) => { const c = s.cloneNode(true); c.querySelectorAll(".copy").forEach((b) => b.remove()); s.csText = c.textContent.toLowerCase(); });
+  const q = $("#cs-q");
+  q.value = csQuery;
+  q.addEventListener("input", () => { csQuery = q.value; csFilter(secs); });
+  q.addEventListener("keydown", (e) => { if (e.key === "Escape" && q.value) { e.preventDefault(); q.value = csQuery = ""; csFilter(secs); } });
+  $(".cs-index").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-cs]"); if (!a) return;
+    e.preventDefault(); // the router owns the hash
+    const s = secs[a.dataset.cs];
+    if (s.hidden) { q.value = csQuery = ""; csFilter(secs); }
+    s.scrollIntoView();
+    s.querySelector("h2").focus({ preventScroll: true });
+  });
+  csFilter(secs);
+}
+
+function csFilter(secs) {
+  const words = csQuery.toLowerCase().split(/\s+/).filter(Boolean);
+  let shown = 0;
+  secs.forEach((s) => {
+    s.querySelectorAll("mark.cs-hit").forEach((m) => m.replaceWith(m.textContent));
+    s.normalize();
+    s.hidden = words.some((w) => !s.csText.includes(w));
+    if (!s.hidden) { shown++; if (words.length) csMark(s, words); }
+  });
+  $("#cs-count").textContent = words.length ? `${shown} of ${secs.length} sections` : `${secs.length} sections`;
+  const empty = $(".cs-empty");
+  empty.hidden = shown > 0;
+  if (!shown) empty.innerHTML = `Nothing matches <b>“${esc(csQuery.trim())}”</b>. Try one word, like <code>DictReader</code> or <code>commit</code>.`;
+}
+
+function csMark(root, words) {
+  const re = new RegExp(words.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|"), "gi");
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => (n.parentElement.closest(".copy") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((n) => {
+    if (!re.test(n.nodeValue)) return;
+    re.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let last = 0;
+    n.nodeValue.replace(re, (m, at) => {
+      frag.append(n.nodeValue.slice(last, at));
+      const mk = document.createElement("mark"); mk.className = "cs-hit"; mk.textContent = m; frag.append(mk);
+      last = at + m.length;
+    });
+    frag.append(n.nodeValue.slice(last));
+    n.replaceWith(frag);
+  });
+}
+
+// "/" jumps to the search from anywhere on the cheat sheet
+document.addEventListener("keydown", (e) => {
+  if (view !== "cheat" || e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const a = document.activeElement;
+  if (a && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))) return;
+  const q = $("#cs-q"); if (!q) return;
+  e.preventDefault(); q.focus(); q.select();
+});
+
+
+/* ============ ROUTING ============ */
+// views: today | project | cheat | <week id>[-lesson|-exercises|-quiz|-sunday]
+let view = "today";
+function route(scroll) {
+  let h = (location.hash || "#today").slice(1);
+  if (h === "path" || h === "") h = "today";
+  const m = h.match(/^(w\d+b?)(?:-(lesson|exercises|quiz|sunday))?$/);
+  const week = m && WEEKS.find((w) => w.id === m[1]);
+  view = week ? week.id : ["project", "cheat"].includes(h) ? h : "today";
+  document.querySelectorAll("[data-nav]").forEach((a) => a.setAttribute("aria-current", a.dataset.nav === view ? "page" : "false"));
+  if (week) renderWeek(week.id); else if (view === "project") renderProject(); else if (view === "cheat") renderCheat(); else renderToday();
+  document.querySelectorAll("#view code, #view pre").forEach((el) => el.setAttribute("translate", "no"));
+  if (scroll) {
+    const target = week && m[2] ? document.getElementById(m[2]) : null;
+    if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+    const h1 = $("#view h1"); if (h1 && !target) { h1.tabIndex = -1; h1.focus({ preventScroll: true }); }
+  }
+}
+const render = () => route(false);
+window.addEventListener("hashchange", () => { lastTick = null; route(true); });
+
+document.addEventListener("change", (e) => {
+  const t = e.target;
+  if (t.name === "look") {
+    if (t.value === "olivetti") document.documentElement.dataset.look = "olivetti"; else delete document.documentElement.dataset.look;
+    try { localStorage.setItem("python-path-look", t.value); } catch (err) {}
+    render();
+    return;
+  }
+  const id = t.dataset && t.dataset.task; if (!id) return;
+  if (t.checked) state.done[id] = true; else delete state.done[id];
+  if (t.checked && t.closest(".next")) {
+    lastTick = WEEKS.flatMap((w) => w.tasks).find((x) => x.id === id) || null;
+    save(); render();
+    const first = $(".next input"); (first || $(".undo button") || document.body).focus({ preventScroll: true });
+    return;
+  }
+  save();
+  if (view === "today") render(); else document.dispatchEvent(new CustomEvent("progress", { detail: { id } }));
+});
+document.addEventListener("click", (e) => {
+  if (e.target.closest("[data-skip]")) { e.preventDefault(); $("#main").focus(); return; }
+  const u = e.target.closest("[data-undo]");
+  if (u) { delete state.done[u.dataset.undo]; lastTick = null; save(); render(); const f = $(".next input"); if (f) f.focus(); }
+});
+$(document.documentElement.dataset.look === "olivetti" ? "#look-olivetti" : "#look-orario").checked = true;
+route(true);
+</script>
+<style>
+/* ---- shared: rendered markdown (lessons, cheat sheet) ---- */
+.prose { font-size: 1.0625rem; line-height: 1.65; }
+.prose :where(p, ul, ol, blockquote, h2, h3, h4, hr) { max-width: 70ch; }
+.prose > * + * { margin-top: 0.9em; }
+.prose h2 { font-size: var(--t-xl); margin-top: 2.2em; }
+.prose h3 { font-size: var(--t-l); margin-top: 1.8em; }
+.prose h2 + *, .prose h3 + * { margin-top: 0.6em; }
+.prose p, .prose ul, .prose ol { margin-bottom: 0; }
+.prose ul, .prose ol { padding-left: 1.3em; }
+.prose li + li { margin-top: 0.3em; }
+.prose strong { font-weight: 650; }
+.prose hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+.prose blockquote { margin: 1.6em 0 0; padding: 16px 20px; border: 1px solid var(--rule-strong); }
+.prose blockquote > :first-child { margin-top: 0; }
+.prose blockquote p:first-child > strong:only-child { display: block; font-family: var(--f-head); font-size: var(--t-l); font-weight: var(--head-weight); font-stretch: var(--head-stretch); }
+.prose blockquote ul { margin-top: 0.5em; }
+:root[data-look="olivetti"] .prose blockquote { border: 0; background: color-mix(in srgb, var(--week, #1f3f8f) 10%, var(--ground)); }
+.tablewrap { overflow-x: auto; max-width: 100%; }
+.tablewrap, .prose pre, .codeblock pre { scrollbar-width: thin; scrollbar-color: var(--muted) transparent; }
+.tablewrap::-webkit-scrollbar, .codeblock pre::-webkit-scrollbar { height: 8px; }
+.tablewrap::-webkit-scrollbar-thumb, .codeblock pre::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 4px; }
+.scrollnote { margin: 6px 0 0; font-size: var(--t-s); color: var(--muted); }
+.prose table { border-collapse: collapse; font-size: var(--t-s); font-variant-numeric: tabular-nums; min-width: 100%; }
+.prose th, .prose td { border-bottom: 1px solid var(--rule); padding: 8px 12px 8px 0; text-align: left; vertical-align: top; }
+.prose th { border-bottom-color: var(--rule-strong); font-weight: 600; font-stretch: var(--label-stretch); color: var(--muted); }
+.codeblock { display: flex; flex-direction: column; }
+.prose li.md-check-item { list-style: none; margin-left: -1.3em; }
+.md-check { display: flex; gap: 12px; align-items: flex-start; min-height: 44px; padding-block: 8px; cursor: pointer; }
+.md-check input { flex: none; margin-top: 2px; }
+#view h1[tabindex="-1"]:focus, main:focus { outline: none; }
+.prose pre, .codeblock pre { margin: 0; background: var(--code-bg); color: var(--code-ink); padding: 14px 16px; overflow-x: auto; font-size: 0.875rem; line-height: 1.55; border: 1px solid var(--rule); tab-size: 4; }
+.prose pre code { background: none; padding: 0; font-size: inherit; }
+.copy { order: -1; align-self: flex-end; margin-bottom: -1px; display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px; border: 1px solid var(--rule); border-bottom-color: var(--code-bg); border-radius: var(--radius-control) var(--radius-control) 0 0; background: var(--code-bg); color: var(--ink); font: 500 var(--t-s) var(--f-ui); cursor: pointer; }
+.copy:hover { border-color: var(--rule-strong); }
+.copy svg { width: 14px; height: 14px; }
+@media (pointer: coarse) { .copy { min-height: 44px; } }
+/* ---- parts ---- */
+/* week page */
+.wk-steps { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 20px; font-size: var(--t-s); }
+.wk-around { display: flex; flex-wrap: wrap; gap: 0 20px; margin-left: auto; }
+.wk-step { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; font-weight: 600; }
+.wk-step:hover span { text-decoration: underline; text-underline-offset: 0.2em; }
+.wk-step svg { width: 16px; height: 16px; flex: none; }
+.wk-steps + .weekhead { margin-top: 8px; }
+.wk-facts { margin: 18px 0 0; display: grid; gap: 4px; font-size: var(--t-s); }
+.wk-facts div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 12px; }
+.wk-facts dt { color: var(--muted); font-stretch: var(--label-stretch); font-weight: 600; }
+.wk-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.wk-why { margin: 14px 0 0; max-width: 70ch; font-size: var(--t-l); line-height: 1.5; }
+.wk-jumps { display: flex; flex-wrap: wrap; align-items: center; gap: 0 22px; margin-top: 20px; padding-block: 2px; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule); font-weight: 600; }
+.wk-jumps a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.wk-jumps a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.wk-count { margin-left: auto; color: var(--muted); font-weight: 400; font-size: var(--t-s); font-variant-numeric: tabular-nums; }
+.wk-lesson { margin-top: 8px; }
+.wk-lesson > h2:first-child { margin-top: 1.6em; }
+.wk-section { margin-top: 56px; scroll-margin-top: 72px; }
+#lesson { scroll-margin-top: 72px; }
+.wk-section > h2 { font-size: var(--t-xl); padding-bottom: 8px; border-bottom: 1px solid var(--rule-strong); }
+.wk-group { font-size: var(--t-m); margin-top: 26px; color: var(--muted); font-stretch: var(--label-stretch); }
+.wk-section > h2 + .wk-group { margin-top: 16px; }
+.wk-tasks { list-style: none; margin: 6px 0 0; padding: 0; }
+.wk-task { border-bottom: 1px solid var(--rule); }
+.wk-task label { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; min-height: 52px; padding-block: 8px; cursor: pointer; }
+.wk-task .wk-tasktext { min-width: 0; overflow-wrap: anywhere; }
+.wk-task.wk-done .wk-tasktext { color: var(--muted); }
+.wk-intro { margin: 12px 0 0; color: var(--muted); font-size: var(--t-s); max-width: 70ch; }
+.wk-quiz { display: grid; gap: 32px; margin-top: 22px; }
+.wk-q { max-width: 70ch; scroll-margin-top: 72px; }
+.wk-qt { margin: 0; font-weight: 600; font-size: var(--t-l); line-height: 1.45; }
+.wk-qn { font-variant-numeric: tabular-nums; color: var(--muted); }
+.wk-q .codeblock { margin-top: 10px; }
+.wk-opts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.wk-opt { width: 100%; min-height: 48px; text-align: left; padding: 10px 14px; border: 1px solid var(--rule-strong); border-radius: var(--radius-control); background: var(--ground); color: var(--ink); font: 400 var(--t-m)/1.4 var(--f-ui); cursor: pointer; }
+.wk-opt:hover:not([aria-disabled]) { background: var(--code-bg); }
+.wk-opt[aria-disabled] { cursor: default; border-color: var(--rule); color: var(--muted); }
+.wk-opt.wk-right { background: var(--ok-bg); border-color: var(--ok); color: var(--ink); }
+.wk-opt.wk-wrong { background: var(--ground); border: 2px solid var(--ink); color: var(--ink); text-decoration: line-through; text-decoration-thickness: 2px; }
+:root[data-look="olivetti"] .wk-opt.wk-wrong { background: var(--bad-bg); border: 1px solid var(--bad); text-decoration: none; }
+.wk-opt code { background: none; padding: 0; }
+.wk-verdict { margin: 12px 0 0; font-size: var(--t-m); line-height: 1.55; }
+.wk-ok { color: var(--ok); }
+.wk-no { color: var(--ink); font-weight: 700; }
+:root[data-look="olivetti"] .wk-no { color: var(--bad); }
+.wk-sunday { margin: 14px 0 0; padding-left: 1.3em; max-width: 70ch; font-size: var(--t-l); line-height: 1.5; }
+.wk-sunday li + li { margin-top: 10px; }
+.wk-bottom { margin-top: 56px; padding-top: 8px; border-top: 1px solid var(--rule); }
+:root[data-look="olivetti"] .wk-opt { border-radius: 0; }
+@media (max-width: 600px) {
+  .wk-facts div { grid-template-columns: 1fr; gap: 0; }
+  .wk-facts div + div { margin-top: 6px; }
+  .wk-around { margin-left: 0; width: 100%; justify-content: space-between; }
+  .wk-steps .wk-today { width: 100%; }
+  .wk-count { margin-left: 0; width: 100%; padding-bottom: 8px; }
+}
+/* programmatic focus on the title after navigation shouldn't draw a ring */
+/* lesson tables scroll sideways inside their wrapper instead of crushing columns */
+.wk-lesson th, .wk-lesson td { white-space: nowrap; }
+@media (max-width: 600px) {
+  .wk-stepname { display: none; }
+  .wk-steps:not(.wk-bottom) { flex-wrap: nowrap; }
+  .wk-steps:not(.wk-bottom) .wk-today { width: auto; }
+  .wk-steps:not(.wk-bottom) .wk-around { width: auto; margin-left: auto; justify-content: flex-end; }
+  .wk-jumps { gap: 0 16px; }
+}
+
+/* ---- project ---- */
+.pj-h1 { font-size: var(--t-xxl); }
+.pj-lede { margin: 10px 0 0; color: var(--muted); max-width: 62ch; }
+.pj-deadlines { margin: 28px 0 0; border-top: 1px solid var(--rule-strong); }
+.pj-deadlines > div { display: grid; grid-template-columns: 11rem minmax(0, 1fr) auto; gap: 4px 16px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--rule); }
+.pj-deadlines dt { font-weight: 650; font-variant-numeric: tabular-nums; }
+.pj-deadlines dd { margin: 0; color: var(--muted); }
+.pj-deadlines .pj-left { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.pj-h2 { font-size: var(--t-xl); margin-top: 44px; }
+.pj-count { margin: 8px 0 0; color: var(--muted); font-size: var(--t-s); font-variant-numeric: tabular-nums; }
+.pj-count b { color: var(--ink); font-weight: 600; }
+.pj-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
+.pj-table thead th { text-align: left; font-size: var(--t-s); font-stretch: var(--label-stretch); font-weight: 600; color: var(--muted); padding: 0 12px 6px 0; border-bottom: 1px solid var(--rule-strong); }
+.pj-table td, .pj-table tbody th { text-align: left; vertical-align: middle; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); font-weight: 400; }
+.pj-table .pj-done { width: 44px; }
+.pj-table .pj-done input { display: grid; }
+.pj-row { min-height: 52px; }
+.pj-id { white-space: nowrap; font-weight: 600 !important; width: 6.5rem; }
+.pj-row label { cursor: pointer; display: block; min-height: 28px; padding-block: 4px; }
+.pj-tool { color: var(--muted); white-space: nowrap; }
+.pj-py .pj-tool { color: var(--ink); font-weight: 600; }
+.pj-pymark { width: 7px; height: 7px; fill: var(--route); margin-right: 7px; vertical-align: 1px; }
+.pj-prep { white-space: nowrap; }
+.pj-prep a { display: inline-flex; align-items: center; min-height: 44px; }
+.pj-deadline td { padding: 12px 0; font-weight: 650; border-bottom: 1px solid var(--rule-strong); }
+:root[data-look="olivetti"] .pj-deadline td { color: var(--ink); }
+.pj-p { max-width: 68ch; margin: 10px 0 0; }
+.pj-rules { margin: 10px 0 0; padding-left: 1.2em; max-width: 68ch; }
+.pj-rules li + li { margin-top: 0.4em; }
+@media (max-width: 600px) {
+  .pj-deadlines > div { grid-template-columns: minmax(0, 1fr) auto; }
+  .pj-deadlines dd:not(.pj-left) { grid-column: 1 / -1; grid-row: 2; }
+  .pj-deadlines .pj-left { grid-row: 1; grid-column: 2; }
+  .pj-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .pj-table, .pj-table tbody { display: block; }
+  .pj-table { border-top: 1px solid var(--rule-strong); }
+  .pj-row { display: grid; grid-template-columns: 40px auto minmax(0, 1fr); gap: 0 8px; padding-block: 10px; border-bottom: 1px solid var(--rule); }
+  .pj-row > * { border: 0 !important; padding: 0 !important; }
+  .pj-row .pj-done { grid-row: 1 / 3; width: auto; padding-top: 2px !important; }
+  .pj-id { width: auto; }
+  .pj-id label::after { content: " ·"; }
+  .pj-what { grid-column: 3; }
+  /* tool left, week link right, on one line under the title */
+  .pj-tool, .pj-prep { grid-column: 2 / 4; grid-row: 2; font-size: var(--t-s); white-space: nowrap; align-self: center; }
+  .pj-prep { justify-self: end; }
+  /* keep a 44px tap target without adding a visible gap under the title */
+  .pj-prep a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -10px; padding-left: 12px; }
+  .pj-deadline { display: block; }
+  .pj-deadline td { display: block; }
+}
+
+/* ---- Cheat sheet ---- */
+#view h1 + .cs-lede { margin: 6px 0 0; color: var(--muted); font-size: var(--t-s); }
+.cs-search { position: sticky; top: calc(56px + env(safe-area-inset-top, 0px)); z-index: 4; background: var(--ground); margin-top: 18px; padding-block: 10px 12px; border-bottom: 1px solid var(--rule); }
+.cs-search label { display: block; font-size: var(--t-s); font-weight: 600; margin-bottom: 6px; }
+.cs-field { position: relative; }
+.cs-search input { width: 100%; min-height: 48px; padding: 0 9.5rem 0 14px; border: 1px solid var(--rule-strong); border-radius: var(--radius-control); background: var(--ground); color: var(--ink); font: 400 var(--t-m) var(--f-ui); }
+.cs-search input::placeholder { color: var(--muted); }
+.cs-search input:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.cs-count { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: var(--t-s); font-variant-numeric: tabular-nums; pointer-events: none; }
+.cs-index { margin-top: 18px; }
+.cs-index summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 10px; font-weight: 600; list-style: none; }
+.cs-index summary::-webkit-details-marker { display: none; }
+.cs-index summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform 0.15s ease-out; }
+.cs-index[open] summary::before { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .cs-index summary::before { transition: none; } }
+.cs-index ul { list-style: none; margin: 0; padding: 0; columns: 3 12rem; column-gap: 24px; font-size: var(--t-s); }
+.cs-index li { break-inside: avoid; }
+.cs-index a { display: flex; align-items: center; min-height: 36px; color: var(--link); text-decoration: none; }
+.cs-index a:hover { text-decoration: underline; }
+.cs-empty { margin-top: 28px; font-size: var(--t-l); }
+.cs-body { margin-top: 12px; }
+.cs-sec { border-top: 1px solid var(--rule); padding-top: 4px; }
+.cs-sec > h2 { margin-top: 1.4em; scroll-margin-top: calc(56px + 130px + env(safe-area-inset-top, 0px)); }
+.cs-sec > h2:focus { outline: none; }
+.cs-sec > h2:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.cs-sec + .cs-sec { margin-top: 2em; }
+.cs-body mark.cs-hit { background: var(--select); color: var(--ink); padding: 0; }
+@media (min-width: 601px) { .cs-index summary { display: none; } }
+@media (max-width: 600px) {
+  .cs-index { border-bottom: 1px solid var(--rule); }
+  .cs-index ul { columns: 1; padding-bottom: 8px; }
+  .cs-index a { min-height: 44px; }
+  .cs-search input { padding-right: 8.5rem; }
+}
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }</style>
+</body></html>
