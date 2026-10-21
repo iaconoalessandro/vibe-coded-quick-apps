@@ -229,6 +229,7 @@ input[type="checkbox"]:checked::after { opacity: 1; }
         <a href="#today" data-nav="today">Today</a>
         <a href="#project" data-nav="project">Project</a>
         <a href="#cheat" data-nav="cheat">Cheat sheet</a>
+        <a href="#encyclopedia" data-nav="encyclopedia">Encyclopedia</a>
       </nav>
       <div class="display">
         <button type="button" class="display-btn" id="display-btn" aria-expanded="false" aria-controls="display-panel" aria-label="Display: look and light or dark mode">
@@ -264,6 +265,7 @@ input[type="checkbox"]:checked::after { opacity: 1; }
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script type="text/markdown" id="md-cheatsheet">{{CHEATSHEET}}</script>
+<script type="text/markdown" id="md-encyclopedia">{{ENCYCLOPEDIA}}</script>
 {{LESSONS}}
 <script>
 {{DATA}}
@@ -273,7 +275,7 @@ const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "File
   w5: "Databases from Python", w6: "Real programs", w7: "Review, cube, Part 1", w7b: "OLAP and MDX, Part 2" };
 // Olivetti: one flat colour per week (white text passes 4.5:1 on each except ochre, which takes ink)
 const HUE = { w0: "#2c7353", w1: "#14636f", w2: "#1f3f8f", w3: "#b53a26", w4: "#e2a325", w5: "#614891", w6: "#7a4f22", w7: "#5b6a1c", w7b: "#a02f5f" };
-HUE.project = "#1f3f8f"; HUE.cheat = "#e2a325"; // Olivetti page colours for the non-week views
+HUE.project = "#1f3f8f"; HUE.cheat = "#e2a325"; HUE.encyclopedia = "#b53a26"; // Olivetti page colours for the non-week views
 const HUE_INK = { w4: "#141414", cheat: "#141414" };
 const HUE_TEXT = { w4: "#9a6a08", cheat: "#9a6a08" }; // ochre is too light for text on white
 // exercise sections, in each .py file's order
@@ -315,6 +317,7 @@ function save() {
     () => { const el = $("#savefail"); el.textContent = "Couldn't save your progress to this page. It's kept on this device until the next save works."; el.hidden = false; });
 }
 (async () => {
+  await null; // outside claude.ai nothing below awaits, so wait for the router to set `view` first
   let db = null;
   try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch (e) {}
   if (!db) { dbOff = true; if (view === "today") render(); return; }
@@ -464,16 +467,17 @@ document.addEventListener("click", (e) => {
 {{PARTS_JS}}
 
 /* ============ ROUTING ============ */
-// views: today | project | cheat | <week id>[-lesson|-exercises|-quiz|-sunday]
+// views: today | project | cheat | encyclopedia[/<entry>] | <week id>[-lesson|-exercises|-quiz|-sunday]
 let view = "today";
 function route(scroll) {
   let h = (location.hash || "#today").slice(1);
   if (h === "path" || h === "") h = "today";
   const m = h.match(/^(w\d+b?)(?:-(lesson|exercises|quiz|sunday))?$/);
   const week = m && WEEKS.find((w) => w.id === m[1]);
-  view = week ? week.id : ["project", "cheat"].includes(h) ? h : "today";
+  const enc = h === "encyclopedia" || h.startsWith("encyclopedia/");
+  view = week ? week.id : enc ? "encyclopedia" : ["project", "cheat"].includes(h) ? h : "today";
   document.querySelectorAll("[data-nav]").forEach((a) => a.setAttribute("aria-current", a.dataset.nav === view ? "page" : "false"));
-  if (week) renderWeek(week.id); else if (view === "project") renderProject(); else if (view === "cheat") renderCheat(); else renderToday();
+  if (week) renderWeek(week.id); else if (view === "project") renderProject(); else if (view === "cheat") renderCheat(); else if (enc) renderEncyclopedia(h.slice("encyclopedia/".length)); else renderToday();
   document.querySelectorAll("#view code, #view pre").forEach((el) => el.setAttribute("translate", "no"));
   if (scroll) {
     const target = week && m[2] ? document.getElementById(m[2]) : null;

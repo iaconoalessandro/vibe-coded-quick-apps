@@ -13,6 +13,7 @@ with tools/check_solutions.py.
 import argparse
 import ast
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -56,6 +57,22 @@ def exercises(stub_dir):
     return {"heads": heads, "fns": fns}
 
 
+def slug(title):
+    # same rule as encSlug() in src/parts/40-encyclopedia.js
+    return re.sub(r"[^a-z0-9_]+", "-", title.replace("`", "").lower()).strip("-")
+
+
+def encyclopedia(lessons_text):
+    """The encyclopedia markdown, after checking entry names are unique and every #encyclopedia/ link resolves."""
+    text = (SRC / "encyclopedia.md").read_text(encoding="utf-8")
+    slugs = [slug(t) for t in re.findall(r"^### (.+)$", text, re.M)]
+    dup = {s for s in slugs if slugs.count(s) > 1}
+    assert not dup, f"encyclopedia entries share a name: {dup}"
+    broken = set(re.findall(r"#encyclopedia/([\w-]+)", text + lessons_text)) - set(slugs)
+    assert not broken, f"links to missing encyclopedia entries: {broken}"
+    return script_safe(text, "encyclopedia.md")
+
+
 def build(cheatsheet, stub_dir):
     lessons = "\n".join(
         f'<script type="text/markdown" id="md-{f.stem}">\n{script_safe(f.read_text(encoding="utf-8"), f.name)}</script>'
@@ -65,6 +82,7 @@ def build(cheatsheet, stub_dir):
     slots = {
         "{{CHEATSHEET}}": script_safe(cheatsheet.read_text(encoding="utf-8"), "CHEATSHEET.md"),
         "{{LESSONS}}": lessons,
+        "{{ENCYCLOPEDIA}}": encyclopedia(lessons),
         "{{DATA}}": (SRC / "data.js").read_text(encoding="utf-8"),
         "{{EXERCISES}}": script_safe(json.dumps(exercises(stub_dir), ensure_ascii=False), "exercises"),
         "{{PARTS_JS}}": "\n".join(f.read_text(encoding="utf-8") for f in parts if f.suffix == ".js"),
