@@ -609,24 +609,104 @@ def test_writes(tmp_path):          # tmp_path: a fresh temp folder per test
 Rule: membership checks inside a loop → use a **set** or **dict**, never a list. That's the difference between 1 second and 1 hour on the DSS data.
 </script>
 <script type="text/markdown" id="md-w0">
-## Why this week exists
-A notebook remembers whatever cells you ran, in whatever order you ran them. Run cell 5, edit cell 2, rerun cell 7, and the result depends on history nobody can see. That is why courses, exams and companies want **scripts**. A `.py` file runs top to bottom, the same way every time. It can be imported, tested, put in git, reviewed, and scheduled on a server. Your DSS scripts will run against a database for minutes at a time, so they have to be scripts.
+## What this week is for
+By the end of this week you will have a working setup: a terminal you can find your way around, a project folder with its own Python, a test you can run, a debugger you can step through, and the whole thing saved on GitHub. There is very little Python in it. Everything after this week assumes these tools work, so it is worth doing slowly and properly.
 
-This week is pure setup. It's boring, and it's the foundation of everything else.
+You will write Python in **`.py` files** (scripts), not in Jupyter notebooks. A notebook remembers whatever cells you ran, in whatever order you ran them: run cell 5, edit cell 2, rerun cell 7, and the result depends on a history nobody else can see. A `.py` file runs from the first line to the last, the same way every time, on any computer. That is why it can be tested, saved in git, reviewed by someone else and run on a server. The DSS project scripts run for minutes against a real database, so they have to be scripts.
 
-## The mental model
+## The pieces and how they fit
 ```text
 Terminal ──runs──▶ python (from .venv) ──reads──▶ exercises/w00_setup.py
    │                         ▲
    └── pytest ── imports ────┘      git ── snapshots ──▶ GitHub
 ```
-- **Terminal**: a text way to drive the computer. You're always *in* a folder (`pwd`), and relative paths start there.
-- **Interpreter**: `python file.py` reads the file top to bottom and executes it. `import x` runs `x.py` once and gives you its names.
-- **Virtual environment**: a private Python + packages per project, in `.venv/`. Activate it in every new terminal, and check with `which python`.
-- **pytest**: finds `tests/test_*.py`, runs every `test_*` function, and reports which `assert`s failed. Red, then code, then green.
-- **git**: saves snapshots of your folder. `add` chooses what goes in the snapshot, `commit` takes it, `push` copies it to GitHub.
+You type commands in the **terminal**. One of those commands starts **Python**, which reads your file and runs it. Another starts **pytest**, which loads your file and checks that your functions give the right answers. **git** keeps a history of your folder, and **GitHub** keeps a copy of that history online. The sections below take these one at a time.
+
+## The terminal
+The terminal is a window where you control the computer by typing instead of clicking. On a Mac it's the *Terminal* app (or the terminal panel inside VS Code: **View › Terminal**). On Windows, use *PowerShell* or the VS Code terminal.
+
+The most important idea: **the terminal is always "standing" inside one folder**, called the *current directory*. Every relative path you type starts from there. These are the commands you need this week:
+
+| Command | What it does | Example |
+|---|---|---|
+| `pwd` | prints the folder you're in ("print working directory") | `/Users/ada/code` |
+| `ls` | lists what's in it (`dir` on Windows) | `exercises  tests  README.md` |
+| `cd name` | moves into a folder | `cd python-path` |
+| `cd ..` | moves up one folder | |
+| `cd ~` | goes to your home folder | |
+
+Try it: open a terminal, run `pwd`, then `ls`, then `cd` into a folder you saw, then `pwd` again. If a command says *No such file or directory*, you're almost always in the wrong folder: run `pwd` and check.
+
+Two keys save a lot of typing: **Tab** completes a file or folder name, and the **up arrow** brings back your previous command.
+
+## Running a Python file
+A `.py` file is just text. Create `hello.py` containing one line:
+```python
+print("Hello from a script")
+```
+and run it from the terminal, in the folder that contains it:
+```bash
+python hello.py
+```
+Python reads the file from top to bottom and runs each line. `print(...)` writes text to the terminal, so you see `Hello from a script`. If you see `can't open file 'hello.py'`, you're not in the folder that contains it.
+
+On a Mac the command may be `python3` until you activate a virtual environment (next section). After activating, plain `python` works.
+
+## Virtual environments: one private Python per project
+Python projects use extra packages (pytest this week, pyodbc later). If you install them all into one shared Python, projects end up needing different versions of the same package and break each other. A **virtual environment** (venv) is a private folder, `.venv/`, holding a copy of Python and only this project's packages.
+
+You create it once per project:
+```bash
+cd ~/code/python-path
+python3 -m venv .venv               # create the .venv folder
+```
+and **activate** it every time you open a new terminal:
+```bash
+source .venv/bin/activate           # Mac/Linux
+.venv\Scripts\Activate.ps1          # Windows PowerShell
+```
+Activation changes one thing: when you type `python` or `pip`, the terminal now uses the ones inside `.venv`. Your prompt shows `(.venv)` at the start, and you can check:
+```bash
+which python                        # should end in /python-path/.venv/bin/python
+```
+Now install packages *into* the venv:
+```bash
+python -m pip install pytest
+```
+Writing `python -m pip` instead of plain `pip` guarantees that pip installs into the same Python you'll run.
+
+Finally tell VS Code to use it: **Cmd+Shift+P › Python: Select Interpreter**, then pick the one in `.venv`.
+
+**Common trap:** you open a new terminal tab, forget to activate, and suddenly "pytest is not installed" or a test about the venv fails. The fix is always the same: `source .venv/bin/activate`.
+
+## Functions and tests, the smallest possible version
+Every exercise on this site is a **function**: a named piece of code that takes inputs and gives back a result. You'll learn functions properly in week 1. For now, read this one:
+```python
+def double(x):          # "def" starts a function called double, with one input x
+    return x * 2        # "return" hands the result back
+```
+`double(5)` gives back `10`. The indented lines belong to the function.
+
+A **test** is another function that calls yours and checks the answer with `assert`:
+```python
+def test_double():
+    assert double(5) == 10      # == asks "are these equal?"
+    assert double(0) == 0
+```
+`assert something` does nothing when `something` is true, and stops with an error when it's false. **pytest** finds every file named `test_*.py` in `tests/`, runs every function named `test_*`, and prints a report: a green dot for each passing test, and an explanation for each failing one.
+
+In the exercise files, each function starts as a *stub*: the description is written, and the body is `raise NotImplementedError`, which means "not written yet". So the first time you run the tests, everything fails. That's on purpose. The daily loop is:
+
+1. Run the tests and see red: `pytest tests/test_w00_setup.py`
+2. Read the description of one function, and replace `raise NotImplementedError` with your code.
+3. Run the tests again. Repeat until that function's test is green.
+
+To run only the tests whose name contains a word, add `-k`: `pytest tests/test_w00_setup.py -k hello`. Add `-v` to see one line per test.
+
+Never change a test to make it pass. The test is the specification: if it disagrees with your code, your code is wrong (or you've misread the task).
 
 ## Reading a traceback
+When Python hits an error it prints a **traceback**: the list of function calls that were running when it crashed.
 ```text
 Traceback (most recent call last):
   File ".../tests/test_w00_setup.py", line 24, in test_average_of_positive_no_positives
@@ -635,413 +715,1638 @@ Traceback (most recent call last):
     return total / count
 ZeroDivisionError: division by zero
 ```
-Read it **bottom-up**. The last line is *what* went wrong. The line above it is *where*, and here that's your file, line 54. Everything above that is *how you got there*. Ignore frames inside Python's own libraries and look for the first frame in **your** files.
+Read it **from the bottom up**:
 
-## The debugger beats print()
-In VS Code, click left of a line number to set a red-dot breakpoint, then **Run › Start Debugging** (F5). Execution stops there. Hover over variables, or watch them in the left panel. F10 runs one line, F11 steps into a function call. You'll use this all the way through the DSS project.
+- The **last line** says *what* went wrong: `ZeroDivisionError: division by zero`.
+- The frame just above says *where*: `w00_setup.py`, line 54, the line `return total / count`.
+- The frames above that say *how you got there*: the test on line 24 called your function with `[]`, an empty list.
+
+Put those together and you have the bug: with an empty list, `count` is 0, and you divide by it. Frames inside Python's own libraries (paths containing `site-packages` or `lib/python3`) are almost never where the bug is; look for the first frame in **your** files.
+
+## The debugger: watching your code run
+`print()` shows you one value at one moment. A **debugger** pauses the program on a line you choose and lets you look at every variable, then move forward one line at a time.
+
+In VS Code:
+
+1. Open the file and click in the margin to the left of a line number. A red dot appears: that's a **breakpoint**.
+2. Open the Testing panel (the flask icon) and click the debug icon next to a test, or use **Run › Start Debugging** (F5) on a script.
+3. Execution stops at the red dot. The **Variables** panel on the left shows every variable and its current value. Hovering over a name in the code shows it too.
+4. Press **F10** ("step over") to run one line and stop again. Watch the variables change. **F11** ("step into") goes inside a function call. **F5** continues to the next breakpoint.
+
+The exercise `average_of_positive` has three planted bugs. Don't stare at the code trying to spot them. Put a breakpoint on the `for` line, step through with the input `[2, -1, 4]`, and after each step ask: "is `total` what I expect? is `count`?" The moment a value surprises you, you've found a bug.
+
+## git and GitHub: saving snapshots
+**git** records snapshots (called *commits*) of your project folder, so you can see what changed, when, and go back. Three commands do most of the work:
+```bash
+git status                     # what changed since the last snapshot?
+git add exercises/w00_setup.py # choose what goes into the next snapshot (the "staging area")
+git commit -m "Week 0: hello and python_version"   # take the snapshot, with a message
+```
+`add` copies the file *as it is now* into the staging area. If you edit it again after `add`, `git status` shows it as modified again, and you need another `add` for the new version to be included.
+
+Once, at the start of a project:
+```bash
+git init                       # turn the folder into a repository
+```
+**GitHub** is a website that stores a copy of your repository. With the GitHub command line tool:
+```bash
+gh auth login                  # once per computer
+gh repo create python-path --private --source=. --push   # create the online copy and upload
+git push                       # afterwards: upload new commits
+```
+Some files must **never** be committed: `.venv/` (thousands of machine-specific files; anyone can rebuild it), `.env` (passwords), and large data files. The repository's `.gitignore` file lists them so git ignores them. Run `git status` before every commit and read what's about to go in.
+
+## Try it yourself
+Before the exercises, do these in a scratch file `playground.py` and run it each time:
+
+1. Print your name, then your name in capital letters (`"ada".upper()`).
+2. Write a function `triple(x)` that returns `x * 3`, call it, and print the result.
+3. Divide a number by zero and read the traceback bottom-up. Which line does it point to?
+4. Set a breakpoint on your `print` line, start the debugger, and step over it.
 
 > **Remember**
-> - New terminal? `source .venv/bin/activate`, then `which python`.
-> - Read tracebacks from the bottom. Find the first line that is your code.
+> - The terminal is always inside one folder. Lost? `pwd`.
+> - New terminal: `source .venv/bin/activate`, then check `which python`.
+> - Red, then code, then green. Never edit a test to make it pass.
+> - Read tracebacks from the bottom. Find the first line in your own file.
 > - `git status` before every commit. `.venv/`, `.env` and data files never go in git.
-> - A test is just a function with `assert`. Never edit a test to make it pass.
 </script>
 <script type="text/markdown" id="md-w1">
-## Why this week exists
-Everything later (CSV parsing, star schemas, SQL loading) is built from five things: **values, names, conditions, loops, functions**. You know the algorithms. This week is about getting the syntax into your fingers, so writing a loop takes 10 seconds, not 10 minutes.
+## What this week is for
+Every program you'll write in this course, from a CSV reader to a database loader, is built from five things: **values**, **names**, **conditions**, **loops** and **functions**. This week covers each one from zero, with examples you can type and run. The goal is fluency: by Friday, writing a loop with a condition inside should take you seconds, not minutes.
 
-## Values, types, names
+The best way to read this lesson is with a terminal open. Type `python` (in your activated venv) to start the **interactive prompt**, shown as `>>>`. Anything you type there runs immediately and shows its result. Try every example; change it; break it on purpose. Type `exit()` to leave.
+
+## Values and their types
+Every piece of data in Python is a **value**, and every value has a **type** that decides what you can do with it.
 ```python
-qty = 5            # int
-price = 12.5       # float
-store = "S1"       # str
-active = True      # bool
-nothing = None     # "no value", common in dirty data
-type(qty)          # <class 'int'>
-int("42"), float("2.5"), str(7)   # conversions; int("4.2") raises ValueError
+>>> 42          # int: a whole number
+42
+>>> 3.5         # float: a number with a decimal point
+3.5
+>>> "Pisa"      # str: text, in single or double quotes
+'Pisa'
+>>> True        # bool: True or False (capital T and F)
+True
+>>> None        # NoneType: "no value here"
+>>> type(3.5)
+<class 'float'>
 ```
-A name is a label stuck on an object. `qty = qty + 1` makes a new int and moves the label.
+`None` deserves a mention: it means "nothing", and it shows up a lot in real data for missing values. It's not `0` and not `""`; it's its own thing.
 
-## Strings (immutable: methods return NEW strings)
+### Arithmetic
 ```python
-s = "  Truth Social  "
-s.strip().lower()            # 'truth social'
-s.split()                    # ['Truth', 'Social']
-"-".join(["a", "b"])         # 'a-b'
-s[2:7], s[-1], s[::-1]       # slicing: start inclusive, end exclusive
-f"{store}: {qty} x {price:.2f} = {qty * price:.2f}"   # 'S1: 5 x 12.50 = 62.50'
+>>> 7 + 2, 7 - 2, 7 * 2
+(9, 5, 14)
+>>> 7 / 2       # true division: ALWAYS gives a float
+3.5
+>>> 7 // 2      # floor division: the whole part, rounded down
+3
+>>> 7 % 2       # modulo: the remainder of 7 // 2
+1
+>>> 2 ** 10     # power
+1024
 ```
+`%` is more useful than it looks. `n % 2` is `0` when `n` is even and `1` when it's odd. `n % 10` is the last digit of `n`. `n // 10` is `n` without its last digit.
 
-## Conditions and loops
+Floats are stored in binary, so some decimals can't be exact:
 ```python
-if qty > 10:
-    size = "big"
-elif qty > 0:
-    size = "small"
-else:
-    size = "none"
-
-for i in range(3):           # 0, 1, 2   (end excluded, like slicing)
-    ...
-for i, word in enumerate(["a", "b"]):   # index and value together
-    ...
-while n != 1:                # when you don't know how many steps
-    ...
+>>> 0.1 + 0.2
+0.30000000000000004
 ```
-Truthiness: `""`, `0`, `[]`, `{}` and `None` are false, and everything else is true. So `if not name:` catches both `""` and `None`.
+This isn't a Python bug; every language does it. Never compare floats with `==` when they come from calculations: round them, or check that the difference is tiny.
 
-## Functions: `return` vs `print`
+### Converting between types
 ```python
-def total(qty, price, vat=0.22):        # vat has a default
-    """Price including VAT."""
-    return qty * price * (1 + vat)      # gives the value back to the caller
-
-x = total(2, 10)          # 24.4
-y = print(total(2, 10))   # prints 24.4, but y is None
+>>> int("42")       # text to int
+42
+>>> float("2.5")
+2.5
+>>> str(7)          # number to text
+'7'
+>>> int("4.2")      # not a whole number: error
+ValueError: invalid literal for int() with base 10: '4.2'
+>>> "3" + 4         # Python never converts silently
+TypeError: can only concatenate str (not "int") to str
 ```
-`print` shows something to a human. `return` hands a value to the next piece of code. Tests check returns.
+This matters immediately in week 3: everything you read from a file is a string, even `"42"`, and you have to convert it on purpose.
 
-## Worked example (do the same for `count_vowels`)
-"Count words longer than 3 letters":
+## Names (variables)
+A **name** is a label you attach to a value with `=`:
+```python
+qty = 5
+price = 12.5
+total = qty * price     # Python computes the right side first, then attaches the name
+print(total)            # 62.5
+```
+`=` means "make this name refer to this value", not "is equal to". That's why this line makes sense:
+```python
+qty = qty + 1           # take the current qty (5), add 1, attach the name qty to the result (6)
+qty += 1                # the same thing, shorter
+```
+Names are case-sensitive (`qty` and `Qty` are different), can contain letters, digits and `_`, and can't start with a digit. By convention Python uses `lower_case_with_underscores`.
+
+## Strings
+A string is a sequence of characters. Each character has a position called an **index**, starting at **0**:
+```text
+ s =   " P  y  t  h  o  n "
+index:   0  1  2  3  4  5
+from end:-6 -5 -4 -3 -2 -1
+```
+```python
+>>> s = "Python"
+>>> s[0]            # first character
+'P'
+>>> s[-1]           # negative indexes count from the end
+'n'
+>>> len(s)          # number of characters
+6
+```
+### Slicing: taking a piece
+`s[start:stop]` gives the characters from `start` up to **but not including** `stop`:
+```python
+>>> s[0:2]
+'Py'
+>>> s[2:]           # from index 2 to the end
+'thon'
+>>> s[:3]           # from the start to index 3 (excluded)
+'Pyt'
+>>> s[::-1]         # a third number is the step; -1 walks backwards
+'nohtyP'
+```
+"Stop is excluded" seems odd at first, but it means `s[:3] + s[3:]` is always the whole string, and `s[a:b]` always has `b - a` characters.
+
+### Methods: things a string can do
+A **method** is a function that belongs to a value, called with a dot:
+```python
+>>> name = "  ada LOVELACE "
+>>> name.strip()            # remove spaces at both ends
+'ada LOVELACE'
+>>> name.lower(), name.upper()
+('  ada lovelace ', '  ADA LOVELACE ')
+>>> name.strip().title()
+'Ada Lovelace'
+>>> "a,b,c".split(",")      # cut into a list at each comma
+['a', 'b', 'c']
+>>> "  two   words ".split()   # no argument: cut at any run of spaces, drop the empty bits
+['two', 'words']
+>>> "-".join(["a", "b", "c"])  # the opposite of split: glue a list together
+'a-b-c'
+>>> "data" in "big data"       # is one string inside another?
+True
+>>> "abc".startswith("a"), "x1".isalpha(), "42".isdigit()
+(True, False, True)
+```
+**Strings never change.** A method like `upper()` doesn't modify the string; it returns a **new** one. If you don't keep it, it's gone:
+```python
+s = "data"
+s.upper()           # creates "DATA" and throws it away
+print(s)            # data
+s = s.upper()       # keep the new string by attaching the name to it
+print(s)            # DATA
+```
+### f-strings: putting values inside text
+Put an `f` before the quotes, and anything inside `{ }` is computed and inserted:
+```python
+>>> store, qty, price = "S1", 5, 12.5
+>>> f"{store}: {qty} x {price} = {qty * price}"
+'S1: 5 x 12.5 = 62.5'
+>>> f"{price:.2f}"          # after the colon: a format. .2f = 2 decimals
+'12.50'
+>>> f"[{qty:4d}]"           # 4d = an integer, right-aligned in 4 characters
+'[   5]'
+```
+
+## Booleans and conditions
+A **comparison** produces `True` or `False`:
+```python
+>>> 5 > 3, 5 == 3, 5 != 3, 5 >= 5
+(True, False, True, True)
+>>> 0 <= 7 <= 10            # chained: is 7 between 0 and 10?
+True
+```
+Note `==` (compare) versus `=` (attach a name). Mixing them up is the most common beginner typo.
+
+Combine comparisons with `and`, `or`, `not`:
+```python
+>>> age = 25
+>>> age >= 18 and age < 65
+True
+>>> not (age > 30)
+True
+```
+### if / elif / else
+`if` runs a block of code only when a condition is true. The block is the **indented** lines under it; indentation is part of Python's grammar, always 4 spaces:
+```python
+temperature = 31
+if temperature > 30:
+    print("hot")            # runs only if the condition is True
+    print("drink water")    # still inside the if: same indentation
+print("done")               # back at the left edge: always runs
+```
+With several cases, Python checks them **from top to bottom and runs only the first true one**:
+```python
+if temperature > 30:
+    label = "hot"
+elif temperature > 15:      # only checked if the first condition was False
+    label = "mild"
+else:                       # runs if nothing above was True
+    label = "cold"
+```
+Because only the first match runs, **order matters**. If you check `temperature > 15` first, then 35 is labelled "mild", because 35 > 15 is also true and Python never reaches the "hot" branch. When ranges overlap, put the most specific (or the highest threshold) first.
+
+### Truthiness
+`if` doesn't need a real `True`/`False`. Python treats these as false: `0`, `0.0`, `""` (empty string), `[]`, `{}`, and `None`. Everything else counts as true. So:
+```python
+name = ""
+if not name:                # catches "" and None in one go
+    print("name is missing")
+```
+Careful: `bool("False")` is `True`, because it's a non-empty string.
+
+## Loops
+### for: do something for each item
+A `for` loop takes the items of a sequence one by one, attaches a name to each, and runs the block:
+```python
+for letter in "abc":
+    print(letter)           # a, then b, then c
+
+for word in ["red", "green"]:
+    print(word.upper())     # RED, then GREEN
+```
+To repeat something a number of times, loop over `range`:
+```python
+>>> list(range(5))          # 0 up to 5, excluded (like slicing)
+[0, 1, 2, 3, 4]
+>>> list(range(2, 6))       # from 2 up to 6, excluded
+[2, 3, 4, 5]
+>>> list(range(0, 10, 3))   # step 3
+[0, 3, 6, 9]
+```
+When you need the position **and** the item, use `enumerate`:
+```python
+for i, city in enumerate(["Pisa", "Lucca"]):
+    print(i, city)          # 0 Pisa, then 1 Lucca
+```
+### while: repeat until something changes
+A `while` loop repeats as long as its condition is true. Use it when you **don't know in advance** how many steps it will take:
+```python
+balance = 100
+years = 0
+while balance < 200:        # checked before every round
+    balance = balance * 1.07
+    years += 1
+print(years)                # 11: how many years at 7% to double the money
+```
+If the condition never becomes false, the loop never ends. Something inside the loop must move towards the exit (here, `balance` grows). Press Ctrl+C to stop a runaway program.
+
+`break` leaves a loop immediately; `continue` skips to the next round.
+
+### The accumulator pattern
+Most loops you'll write this week follow one shape: start a result, update it for each item, use it after the loop.
 ```python
 def count_long_words(text):
-    count = 0                    # 1. an accumulator
-    for word in text.split():    # 2. loop over pieces
-        if len(word) > 3:        # 3. a condition
-            count += 1           # 4. update
-    return count                 # 5. return after the loop, not inside it
+    count = 0                       # 1. start the accumulator
+    for word in text.split():       # 2. loop over the pieces
+        if len(word) > 3:           # 3. decide whether this item matters
+            count += 1              # 4. update
+    return count                    # 5. after the loop (not indented under for!)
 ```
-Most of this week's exercises follow this accumulator pattern.
+Trace it by hand with `"the quick brown fox"`: `count` goes 0 → 0 ("the") → 1 ("quick") → 2 ("brown") → 2 ("fox"), and the function returns 2.
+
+The same shape builds strings (`result = ""`, then `result += ...`) and lists (`result = []`, then `result.append(...)`).
+
+The classic bug is indenting `return` one level too far, inside the loop. Then the function returns after the **first** item, every time.
+
+## Functions
+A **function** packages a piece of code under a name, so you can run it with different inputs:
+```python
+def vat_price(net, rate=0.22):
+    """Return the price including VAT."""
+    return net * (1 + rate)
+```
+- `def` starts the definition; `vat_price` is the name; `net` and `rate` are **parameters**, the names the inputs get inside the function.
+- `rate=0.22` is a **default value**: if the caller doesn't give a rate, it's 0.22.
+- The text in triple quotes is the **docstring**: a description for humans. Every exercise's docstring is its specification.
+- `return` sends a value back to whoever called the function, and **ends the function immediately**.
+
+Calling it:
+```python
+>>> vat_price(100)              # rate takes its default
+122.0
+>>> vat_price(100, 0.10)        # or give it explicitly
+110.00000000000001
+>>> vat_price(100, rate=0.04)   # by name: clearer when there are several parameters
+104.0
+```
+### return versus print
+This confuses almost everyone at the start. `print` **shows** a value to a human, on the screen. `return` **gives** a value to the code that called the function, so it can be stored, compared or used in a calculation.
+```python
+def shout_print(word):
+    print(word.upper())
+
+def shout_return(word):
+    return word.upper()
+
+a = shout_print("hi")       # shows HI on screen, but a is None
+b = shout_return("hi")      # shows nothing, but b is "HI"
+```
+A function with no `return` returns `None`. Tests check what you **return**, so in the exercises, never `print` the answer; `return` it.
+
+### Returning early
+Because `return` ends the function, you can leave as soon as you know the answer:
+```python
+def has_negative(numbers):
+    for n in numbers:
+        if n < 0:
+            return True         # found one: no need to look further
+    return False                # only reached if the loop finished without finding one
+```
+
+## Errors on purpose: raise and try
+Sometimes the right thing for a function to do is refuse bad input. `raise` stops the function with an error:
+```python
+def percent(part, whole):
+    if whole <= 0:
+        raise ValueError("whole must be positive")
+    return part / whole * 100
+```
+The opposite side is `try` / `except`: try something that might fail, and decide what happens if it does.
+```python
+text = "4.2"
+try:
+    n = int(text)           # raises ValueError
+except ValueError:
+    n = None                # we land here instead of crashing
+```
+Week 3 covers this properly. For now, `safe_int` uses exactly this pattern.
+
+## Try it yourself
+Type these at the `>>>` prompt or in `playground.py`:
+
+1. What do `17 // 5`, `17 % 5` and `-17 // 5` give? Predict first.
+2. Take `"  Decision Support Systems "` and produce `"DSS"` using `split()` and a loop.
+3. Write a function `count_char(text, ch)` that counts how often `ch` appears, with a loop (not `.count`).
+4. Write a `while` loop that prints the powers of 2 below 1000.
+5. Write `describe(n)` that returns `"negative"`, `"zero"` or `"positive"`, then call it with `-3`, `0`, `8`.
 
 > **Remember**
-> - `=` assigns, `==` compares.
-> - Indentation is syntax: 4 spaces. The body of `if`/`for`/`def` is indented.
-> - `range(a, b)` and `s[a:b]` exclude `b`.
-> - Strings never change in place: `s.upper()` returns a new string.
-> - A function without `return` returns `None`.
+> - `=` attaches a name, `==` compares.
+> - Indentation is grammar: 4 spaces mark what's inside an `if`, `for`, `while` or `def`.
+> - `range(a, b)` and `s[a:b]` stop **before** `b`.
+> - Strings never change: `s.upper()` returns a new string you must keep.
+> - Only the first true branch of an `if/elif` chain runs, so order matters.
+> - `return` gives a value back and ends the function. A function without it returns `None`.
 </script>
 <script type="text/markdown" id="md-w2">
-## Why this week exists
-Data engineering in plain Python is mostly **moving rows between lists and dicts**. The DSS project bans pandas, so `dict` and `list` *are* your dataframe. Get this week right and the project becomes plumbing.
+## What this week is for
+Last week you worked with single values. Real data comes in collections: a list of posts, a table of sales, the set of users you've already seen. Python has four built-in containers, and this week you learn what each is for, how they behave, and how to combine them into **tables**. The DSS project doesn't allow pandas, so a list of dicts *is* your dataframe: grouping, counting and joining are loops you'll write yourself. Get this week right and the project becomes plumbing.
 
-## The four containers
-| | literal | mutable | ordered | `x in` cost | use for |
+## Lists: an ordered, changeable sequence
+A **list** holds any number of values, in order, between square brackets:
+```python
+>>> scores = [70, 85, 92]
+>>> scores[0], scores[-1]           # indexing works like strings
+(70, 92)
+>>> scores[1:]                      # slicing too
+[85, 92]
+>>> len(scores)
+3
+```
+Unlike strings, lists **can change in place**:
+```python
+>>> scores.append(60)               # add at the end
+>>> scores
+[70, 85, 92, 60]
+>>> scores[0] = 75                  # replace one item
+>>> scores.remove(92)               # remove the first item equal to 92
+>>> scores.pop()                    # remove and return the last item
+60
+>>> scores
+[75, 85]
+>>> scores.extend([50, 99])         # add every item of another list
+>>> 85 in scores                    # membership: is it in the list?
+True
+```
+Useful built-in functions work on any list of numbers: `sum(scores)`, `min(scores)`, `max(scores)`, `sorted(scores)`.
+
+### Sorting: a new list or the same list
+```python
+>>> nums = [3, 1, 2]
+>>> sorted(nums)            # returns a NEW sorted list; nums is unchanged
+[1, 2, 3]
+>>> nums.sort()             # sorts nums itself, and returns None
+>>> nums
+[1, 2, 3]
+```
+So `x = nums.sort()` leaves `x` equal to `None`: a classic mistake. Use `sorted()` when you want the result as a value.
+
+To sort by something other than the value itself, pass a **key**: a function applied to each item, whose result is used for comparing.
+```python
+>>> words = ["banana", "fig", "apple"]
+>>> sorted(words, key=len)                  # by length
+['fig', 'apple', 'banana']
+>>> sorted(words, key=len, reverse=True)    # longest first
+['banana', 'apple', 'fig']
+```
+A **lambda** is a tiny function written inline: `lambda w: w[-1]` means "given `w`, return its last letter".
+```python
+>>> sorted(words, key=lambda w: w[-1])      # by last letter
+['banana', 'apple', 'fig']
+```
+To sort by two things, return a tuple: Python compares the first items, and only on a tie looks at the second. To sort one of them in descending order, negate it (numbers only):
+```python
+people = [("Ada", 36), ("Alan", 41), ("Grace", 36)]
+sorted(people, key=lambda p: (-p[1], p[0]))   # oldest first, then by name
+# [('Alan', 41), ('Ada', 36), ('Grace', 36)]
+```
+
+## Tuples: a fixed group of values
+A **tuple** is like a list that can't change. Use it for a fixed record where each position has a meaning:
+```python
+>>> point = (43.7, 10.4)            # (latitude, longitude)
+>>> lat, lon = point                # unpacking: one name per position
+>>> lat
+43.7
+>>> point[0] = 0
+TypeError: 'tuple' object does not support item assignment
+```
+Functions return several values as a tuple: `return low, high` returns `(low, high)`, and the caller writes `low, high = f(...)`. You've already seen unpacking in `for i, city in enumerate(...)`.
+
+## Names point at objects: aliasing
+This is the one idea in this week that causes real bugs, so slow down here.
+
+A name doesn't *contain* a list; it **points at** a list somewhere in memory. Assigning one name to another makes them point at **the same** list:
+```python
+a = [1, 2]
+b = a           # b points at the same list as a: no copy is made
+b.append(3)
+print(a)        # [1, 2, 3]: there was only ever one list
+```
+```text
+a ──┐
+    ├──▶ [1, 2, 3]
+b ──┘
+```
+To get an independent list, copy it:
+```python
+c = a.copy()    # or list(a), or a[:]
+c.append(4)
+print(a)        # [1, 2, 3]: unchanged
+```
+The same happens with function arguments: a function receives the caller's list, not a copy. If the function calls `.append` on it, the caller's list changes. A function that should not affect its input must copy it first, or build a new list.
+
+Strings, numbers and tuples can't change, so with them aliasing never surprises you: every "change" makes a new object.
+
+One more trap that follows from this: **don't add or remove items in a list while you're looping over it.** The loop skips items in confusing ways. Build a new list instead.
+
+## Dicts: look things up by key
+A **dict** (dictionary) maps **keys** to **values**. You look up a value by its key, not by position:
+```python
+>>> ages = {"Ada": 36, "Alan": 41}
+>>> ages["Ada"]
+36
+>>> ages["Grace"] = 85          # add a new key, or replace an existing value
+>>> "Alan" in ages              # checks the KEYS
+True
+>>> ages["Linus"]
+KeyError: 'Linus'
+>>> ages.get("Linus")           # get: None instead of an error
+>>> ages.get("Linus", 0)        # or a default of your choice
+0
+```
+Looping over a dict:
+```python
+for name in ages:                    # the keys
+    ...
+for name, age in ages.items():       # key and value together
+    print(f"{name} is {age}")
+list(ages.values())                  # [36, 41, 85]
+```
+Dicts keep keys in the order they were inserted.
+
+Keys must be **hashable**, which in practice means unchangeable: strings, numbers and tuples work; lists don't (`TypeError: unhashable type: 'list'`). A tuple key is how you index by two things at once: `sales[("S1", 1994)] = 120`.
+
+### Why dicts are fast
+Finding something in a list means checking items one by one: for a million items, up to a million comparisons. A dict computes where a key lives from the key itself (a *hash*) and goes straight there: one step, whatever the size. Computer scientists write this as **O(n)** for the list and **O(1)** for the dict. When you have a loop over a million rows and do a lookup in each, that's the difference between a second and a day.
+
+### Counting with a dict
+The most common dict pattern: count how often each thing appears.
+```python
+colours = ["red", "blue", "red", "green", "red"]
+counts = {}
+for c in colours:
+    counts[c] = counts.get(c, 0) + 1   # current count (0 if new) plus one
+# {'red': 3, 'blue': 1, 'green': 1}
+```
+Read the key line carefully: `counts.get(c, 0)` is "the count so far, or 0 the first time", then we add 1 and store it back.
+
+## Sets: distinct values, fast membership
+A **set** holds unique values, with no order:
+```python
+>>> tags = {"python", "sql", "python"}
+>>> tags
+{'python', 'sql'}                   # the duplicate is gone
+>>> set([3, 1, 3, 2])               # the quickest way to remove duplicates
+{1, 2, 3}
+>>> tags.add("etl")
+>>> "sql" in tags                   # O(1), like a dict
+True
+```
+Sets support the operations you know from maths:
+```python
+>>> a, b = {1, 2, 3}, {2, 3, 4}
+>>> a & b       # intersection: in both
+{2, 3}
+>>> a | b       # union: in either
+{1, 2, 3, 4}
+>>> a - b       # difference: in a but not in b
+{1}
+```
+The "have I seen this before?" pattern uses a set alongside a loop:
+```python
+seen = set()
+for user in user_ids:
+    if user in seen:
+        print("repeat:", user)
+    seen.add(user)
+```
+Note: `{}` is an empty **dict**. An empty set is `set()`.
+
+### Which container?
+| | written as | can change | ordered | `x in` cost | use for |
 |---|---|---|---|---|---|
 | list | `[1, 2]` | yes | yes | O(n) | sequences, rows |
 | tuple | `(1, 2)` | no | yes | O(n) | fixed records, dict keys |
-| dict | `{"a": 1}` | yes | insertion | **O(1)** | lookup by key, grouping |
+| dict | `{"a": 1}` | yes | insertion order | **O(1)** | lookup by key, grouping, counting |
 | set | `{1, 2}` | yes | no | **O(1)** | distinct values, "seen before?" |
 
-## Aliasing: the bug that eats afternoons
+## Comprehensions: building a collection in one line
+A very common loop builds a new list from an old one:
 ```python
-a = [1, 2]
-b = a          # NOT a copy: two names, one list
-b.append(3)
-a              # [1, 2, 3]
-c = a.copy()   # a real (shallow) copy; nested lists still shared -> copy.deepcopy
+squares = []
+for n in range(5):
+    squares.append(n * n)
 ```
-Functions receive the same object, so a function that `.append`s to its argument changes the caller's list.
+A **list comprehension** says the same thing in one expression:
+```python
+squares = [n * n for n in range(5)]             # [0, 1, 4, 9, 16]
+evens = [n for n in range(10) if n % 2 == 0]    # with a filter: [0, 2, 4, 6, 8]
+```
+Read it as: "`n * n`, for each `n` in `range(5)`". The same works for sets and dicts:
+```python
+{w.lower() for w in ["A", "a", "B"]}            # set: {'a', 'b'}
+{w: len(w) for w in ["fig", "apple"]}           # dict: {'fig': 3, 'apple': 5}
+```
+Comprehensions can be nested. A comprehension *inside* another builds a list of lists:
+```python
+[[r * c for c in range(1, 4)] for r in range(1, 3)]   # [[1, 2, 3], [2, 4, 6]]
+```
+Use comprehensions for simple transformations and filters. When the logic needs several steps, a normal loop is clearer.
 
-## A table = a list of dicts
+## A table is a list of dicts
+Here is the shape you'll use for the rest of the course. One dict per row; the keys are the column names:
 ```python
 rows = [
     {"user": "u1", "hour": 22, "likes": 10},
     {"user": "u2", "hour": 9,  "likes": 3},
     {"user": "u1", "hour": 23, "likes": 7},
 ]
-# GROUP BY user, SUM(likes)
+```
+Everything you'd do in SQL or a spreadsheet becomes a loop over `rows`.
+
+**Select a column:**
+```python
+[r["likes"] for r in rows]                      # [10, 3, 7]
+```
+**Filter rows (WHERE):**
+```python
+[r for r in rows if r["hour"] >= 20]            # the two evening rows
+```
+**Group and sum (GROUP BY user, SUM(likes)):** the counting pattern, adding a value instead of 1:
+```python
 totals = {}
 for r in rows:
     totals[r["user"]] = totals.get(r["user"], 0) + r["likes"]
 # {'u1': 17, 'u2': 3}
-
-from collections import defaultdict, Counter
-by_user = defaultdict(list)
+```
+**Group whole rows**, to compute several things per group later:
+```python
+groups = {}
 for r in rows:
-    by_user[r["user"]].append(r)          # group whole rows
+    groups.setdefault(r["user"], []).append(r)   # create an empty list the first time
+# {'u1': [row0, row2], 'u2': [row1]}
+```
+**Join two tables** on a shared key. The slow way loops over both tables (for every row in one, scan all rows in the other). The fast way first builds a dict from one table, so each lookup is O(1):
+```python
+users = [{"user": "u1", "city": "Pisa"}, {"user": "u2", "city": "Lucca"}]
+city_of = {u["user"]: u for u in users}         # index: user -> row
+joined = []
+for r in rows:
+    match = city_of.get(r["user"])
+    if match is not None:                       # inner join: skip rows without a match
+        joined.append({**r, **match})           # merge two dicts into a new one
+```
+`{**a, **b}` makes a new dict with all keys of `a`, then all keys of `b`.
+
+### Two helpers from the collections module
+These save typing once you understand the plain-dict versions above:
+```python
+from collections import Counter, defaultdict
+
 Counter(r["user"] for r in rows)          # Counter({'u1': 2, 'u2': 1})
+Counter("mississippi").most_common(2)     # [('i', 4), ('s', 4)]
+
+by_user = defaultdict(list)               # missing keys start as an empty list
+for r in rows:
+    by_user[r["user"]].append(r)
 ```
 
-## Comprehensions and sorting
-```python
-[r["likes"] for r in rows if r["hour"] >= 20]            # [10, 7]
-{r["user"] for r in rows}                                  # {'u1', 'u2'}
-sorted(rows, key=lambda r: (-r["likes"], r["user"]))       # likes desc, then user
-```
-`sorted()` returns a new list. `list.sort()` sorts in place and returns `None`.
+## Recursion
+A function is **recursive** when it calls itself. That sounds circular, but it works when each call handles a **smaller** version of the problem, and there's a **base case** small enough to answer directly.
 
-## Recursion, Python edition
-You know the theory. In Python:
+Example: the sum of a list is "the first item plus the sum of the rest", and the sum of an empty list is 0.
 ```python
-def total_size(folder):              # folder = {"files": [3, 5], "subfolders": [...]}
-    return sum(folder["files"]) + sum(total_size(f) for f in folder["subfolders"])
+def total(nums):
+    if not nums:                    # base case: nothing left
+        return 0
+    return nums[0] + total(nums[1:])   # one item + the same problem, one item shorter
 ```
-Python stops at about 1000 nested calls (`RecursionError`), so use recursion for trees and divide-and-conquer, and loops for long sequences. The P4DS exam always asks for one recursive function.
+Trace `total([4, 5, 6])`:
+```text
+total([4, 5, 6]) = 4 + total([5, 6])
+                       = 5 + total([6])
+                             = 6 + total([])
+                                   = 0
+                 = 4 + 5 + 6 + 0 = 15
+```
+Every recursive function needs both parts. Without a base case, or if the problem doesn't get smaller, it calls itself forever, and Python stops it after about 1000 levels with `RecursionError`.
+
+Recursion shines on data that **contains smaller copies of itself**: folders inside folders, lists inside lists, the two halves of a sorted list.
+```python
+def count_files(folder):            # folder = {"files": [...], "subfolders": [folder, ...]}
+    n = len(folder["files"])
+    for sub in folder["subfolders"]:
+        n += count_files(sub)       # each subfolder is the same problem, smaller
+    return n
+```
+For plain long sequences, a loop is better: it's faster and has no depth limit. The P4DS exam always includes one recursive function, so practise the shape: base case first, then the smaller call.
+
+## Try it yourself
+1. Make `a = [1, 2, 3]`, then `b = a`, then `b[0] = 99`. Print `a`. Now repeat with `b = a.copy()`.
+2. Count the letters of `"data engineering"` with a dict and `.get`, then with `Counter`. Same result?
+3. Given `nums = [5, 3, 8, 1]`, write a comprehension for the numbers above 4, doubled.
+4. Sort `[("Pisa", 90000), ("Lucca", 89000), ("Siena", 53000)]` by population, largest first.
+5. Write a recursive `count_down(n)` that prints `n, n-1, ..., 1`. What's the base case?
 
 > **Remember**
-> - Need "have I seen this?" inside a loop? Use a **set**, never a list.
-> - `b = a` doesn't copy. `a.copy()` does (shallowly).
-> - Dict keys must be hashable: tuples yes, lists no.
-> - `d[k]` raises KeyError. `d.get(k, default)` doesn't.
-> - Don't add or remove items in a list while looping over it. Build a new one.
+> - `b = a` doesn't copy. `a.copy()` does.
+> - `sorted(x)` returns a new list; `x.sort()` changes `x` and returns `None`.
+> - Need "have I seen this?" inside a loop? Use a **set** or a **dict**, never a list.
+> - `d[k]` raises KeyError for a missing key; `d.get(k, default)` doesn't.
+> - Dict keys must be unchangeable: tuples yes, lists no.
+> - Join = index one table in a dict, loop over the other.
+> - Recursion = a base case + a call on a smaller problem.
 </script>
 <script type="text/markdown" id="md-w3">
-## Why this week exists
-DSS Assignment 1 hands you **CSV, XML, JSON and ARFF**, some of it large. Every reader you write should return the same shape (a list of dicts, or a generator of dicts), so cleaning and modelling never care where the data came from. This week you build those readers on the lab's census and sales files.
+## What this week is for
+So far your data lived inside your code. Real data lives in **files**, in several formats, and is often messy or too large to load at once. This week you learn to read and write text files, CSV, JSON and XML, to parse the ARFF format used by Weka, and to handle the errors that real files cause.
 
-## Opening files the right way
+One design rule ties it together: **every reader returns the same shape**, a list of dicts (or later, a stream of dicts). Then the rest of your program never has to care whether the data came from a CSV or an XML file. DSS Assignment 1 hands you four formats at once, which is exactly why this matters.
+
+## Paths: telling Python where a file is
+A **path** is a file's address. It can be **absolute**, starting from the top of the disk (`/Users/ada/code/python-path/practice_data/jobs.csv`), or **relative**, starting from the folder the terminal is in (`practice_data/jobs.csv`). Relative paths are what you want in code, so that it works on other people's computers, but they only work if you run the program from the right folder.
+
+The `pathlib` module gives you `Path` objects, which join parts correctly on every operating system:
 ```python
 from pathlib import Path
-path = Path("practice_data") / "jobs.csv"
-with open(path, encoding="utf-8") as f:   # `with` closes the file even if an error happens
-    for line in f:                         # streams line by line: fine for 10 GB
-        ...
-```
-Always pass `encoding="utf-8"`. Otherwise the result depends on the machine (Windows VM ≠ Mac). Use `newline=""` for CSV files.
 
-## CSV: let the module handle quotes
+data = Path("practice_data")
+path = data / "jobs.csv"            # / joins path parts
+path.name, path.suffix, path.stem   # ('jobs.csv', '.csv', 'jobs')
+path.exists()                       # True or False
+path.parent                         # Path('practice_data')
+Path("out/star").mkdir(parents=True, exist_ok=True)   # create folders, no error if they exist
+sorted(data.glob("*.csv"))          # every .csv file in the folder
+```
+
+## Opening, reading and writing text files
 ```python
-'7066,"Rossi, Mario",5'.split(",")   # ['7066', '"Rossi', ' Mario"', '5']  <- wrong
-import csv
-with open(path, encoding="utf-8", newline="") as f:
-    for row in csv.DictReader(f):    # {'id': '7066', 'name': 'Rossi, Mario', 'qty': '5'}
-        qty = int(row["qty"])        # values are ALWAYS strings
+with open(path, encoding="utf-8") as f:
+    for line in f:
+        print(line.rstrip("\n"))
 ```
+Line by line:
 
-## JSON maps to Python directly
-`object` → `dict`, `array` → `list`, `null` → `None`, `true` → `True`. `json.load(f)` and `json.dump(obj, f, indent=2, ensure_ascii=False)`.
-Many big dumps are **JSON Lines**: one object per line. Read those line by line with `json.loads(line)`.
+- `open(...)` connects to the file and gives you a **file object**, here named `f`.
+- `encoding="utf-8"` says how bytes on disk become characters. If you leave it out, Python uses the computer's default, which differs between Mac and Windows: the same code then reads "è" correctly on one machine and as garbage on another. Always write it.
+- `with ... as f:` guarantees the file is **closed** when the indented block ends, even if an error happens inside. Open files hold system resources; forgetting to close them causes subtle bugs.
+- `for line in f` reads **one line at a time**. Each `line` still ends with the newline character `"\n"`, which is why we strip it.
 
-## XML: attributes vs elements
+Reading line by line uses the same small amount of memory whether the file is 1 KB or 10 GB. The alternative, `f.read()`, loads the whole file into one string: fine for small files, a crash for big ones.
+
+Writing:
+```python
+with open("out/notes.txt", "w", encoding="utf-8") as f:   # "w" = write (replaces the file!)
+    f.write("first line\n")                               # you add the newlines yourself
+    f.write("second line\n")
+```
+Use `"a"` instead of `"w"` to append to the end of an existing file.
+
+## CSV: comma-separated values
+A CSV file is a table as text: one row per line, values separated by commas, usually with a header line of column names.
 ```text
-<row id="1" age="39"/>                      ← attributes: el.attrib
-<census><id>1</id><age>39</age></census>    ← elements: el.findtext("age")
+id,name,qty
+7066,"Rossi, Mario",5
+7067,Bianchi,12
 ```
-`ET.parse()` builds the whole tree in memory. For a big file, use `ET.iterparse()` and `elem.clear()` after each record. Memory stays flat, which matters for DSS events.
+It looks as if `line.split(",")` would be enough. It isn't:
+```python
+>>> '7066,"Rossi, Mario",5'.split(",")
+['7066', '"Rossi', ' Mario"', '5']          # the name was cut in two
+```
+When a value contains a comma, CSV wraps it in quotes, and a value containing a quote doubles it. The `csv` module knows all these rules. Use it, always:
+```python
+import csv
 
-## ARFF
-A header (`@relation`, `@attribute name type`), then `@data` and CSV-like rows. `?` means missing. Text can be quoted. **The real project file mixes quote styles and has commas and apostrophes inside text.** Build your parser on `sales.arff`, then break it on purpose with nasty test rows. Your test file is your proof.
+with open("people.csv", encoding="utf-8", newline="") as f:
+    reader = csv.DictReader(f)          # reads the header, then one dict per row
+    for row in reader:
+        print(row)                      # {'id': '7066', 'name': 'Rossi, Mario', 'qty': '5'}
+```
+Two details:
 
-## Exceptions: expect bad data
+- `newline=""` lets the csv module handle line endings itself (some values may legally contain newlines). Use it for every CSV file, reading or writing.
+- **Every value is a string**, even `'5'`. `row["qty"] + 1` raises `TypeError`. Convert on purpose: `int(row["qty"])`.
+
+If the file has no header line, give the column names yourself: `csv.DictReader(f, fieldnames=["id", "name", "qty"])`.
+
+Writing a list of dicts:
+```python
+rows = [{"id": 1, "name": "Rossi, Mario"}, {"id": 2, "name": "Bianchi"}]
+with open("out.csv", "w", encoding="utf-8", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=["id", "name"])
+    writer.writeheader()
+    writer.writerows(rows)              # adds the quotes around "Rossi, Mario" for you
+```
+
+## Missing values and type conversion
+Real files have holes. A missing value might be an empty string `""`, a question mark `"?"` (the ARFF convention), `"NA"`, or a space. Decide once what counts as missing and turn it into `None`, so the rest of your code has one thing to check.
+
+Converting strings to numbers is a good place to learn the "try it and see" style that Python prefers:
+```python
+def parse_amount(text):
+    text = text.strip()
+    if text in {"", "?"}:
+        return None
+    try:
+        return float(text)
+    except ValueError:              # not a number after all
+        return None
+```
+Instead of checking in advance whether `text` "looks like" a number (signs, decimals, exponents: easy to get wrong), you simply try to convert it and handle the failure. The next section explains `try` properly.
+
+## Exceptions: when things go wrong
+An **exception** is Python's way of saying "I can't do this": `ValueError` (right type, bad value: `int("abc")`), `TypeError` (wrong type: `"a" + 1`), `KeyError` (missing dict key), `FileNotFoundError`, `ZeroDivisionError`, and so on. If nothing handles it, the program stops and prints a traceback.
+
+`try` / `except` handles it:
 ```python
 try:
-    likes = int(raw)
-except ValueError:          # catch the SPECIFIC error
-    likes = None            # decide, and document, what bad input becomes
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+except FileNotFoundError:
+    text = None
+    print(f"no such file: {path}")
 ```
-Never use a bare `except:`. It also swallows typos and Ctrl+C.
+Python runs the `try` block. If one of the listed exceptions happens, it jumps to the matching `except` block and continues after it; the rest of the `try` block is skipped. If a *different* exception happens, it isn't caught.
 
-## Start your project repo now
-Create `~/code/lds-project` with the layout in the README (`src/`, `data/` git-ignored, `.env` git-ignored). Copy nothing from `python-path`. Write the readers again for the real files, using what you learned here.
+Rules worth following from day one:
+
+- **Catch the specific exception you expect.** A bare `except:` catches everything, including your own typos (`NameError`) and Ctrl+C, and hides real bugs.
+- **Keep the `try` block small**, around the one line that can fail, so you know what you caught.
+- **Decide and record** what bad input becomes. In a data pipeline, count the rejected rows; that number goes in your report.
+
+You can catch several kinds at once, `except (ValueError, TypeError):`, or give each its own `except` block.
+
+## JSON
+JSON is the format of web APIs and many data dumps. Its structures map straight onto Python's:
+
+| JSON | Python |
+|---|---|
+| object `{"a": 1}` | dict |
+| array `[1, 2]` | list |
+| string `"x"` | str |
+| number `1`, `2.5` | int, float |
+| `true` / `false` | `True` / `False` |
+| `null` | `None` |
+
+```python
+import json
+
+with open("loans.json", encoding="utf-8") as f:
+    data = json.load(f)                 # the whole file becomes Python dicts and lists
+data["members"][0]["name"]              # navigate it like any nested structure
+
+with open("out.json", "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)   # pretty, and keeps "è" readable
+```
+`json.loads(text)` and `json.dumps(obj)` (with an **s**, for *string*) do the same with strings instead of files.
+
+Big dumps are often **JSON Lines**: one complete JSON object per line, not one giant array. Read them line by line, with `json.loads(line)` for each, so memory stays small.
+
+When you first open a JSON file, explore it at the prompt: `type(data)`, `data.keys()`, `len(data["events"])`, `data["events"][0]`. Know its shape before writing code.
+
+## XML
+XML stores data as nested **elements**, written with tags. The same record can be stored two ways:
+```text
+<row id="1" age="39"/>                          values as ATTRIBUTES of the element
+<census><id>1</id><age>39</age></census>        values as CHILD ELEMENTS
+```
+Python's `xml.etree.ElementTree` reads both:
+```python
+import xml.etree.ElementTree as ET
+
+root = ET.parse("census_row.xml").getroot()    # the whole file as a tree
+for el in root.iter("row"):                     # every <row> element, at any depth
+    el.attrib                                   # a dict of its attributes: {'id': '1', 'age': '39'}
+
+root = ET.parse("census_elements.xml").getroot()
+for el in root.iter("census"):
+    el.findtext("age")                          # the text of the child <age>: '39'
+    {child.tag: child.text for child in el}     # every child as a dict
+```
+Special characters are escaped in XML (`<` is written `&lt;`); ElementTree decodes them for you.
+
+`ET.parse` builds the **entire** tree in memory, which is fine for small files and a problem for a multi-gigabyte one. For large files, **stream** with `iterparse`: it hands you each element as soon as its closing tag is read, and you throw it away when you're done with it.
+```python
+for event, el in ET.iterparse(path, events=("end",)):
+    if el.tag == "census":                      # one complete record has been read
+        process(el)
+        el.clear()                              # free it, so memory doesn't grow
+```
+
+## ARFF
+ARFF is the format of the Weka tool, and the DSS data comes partly as ARFF. It's a CSV-like data section with a header that describes the columns:
+```text
+% lines starting with % are comments
+@relation sales
+
+@attribute stor_id numeric
+@attribute ord_date date 'yyyy-MM-dd'
+@attribute payterms {'Net 60','Net 30','ON invoice'}
+
+@data
+6380,1994-09-14,'Net 60'
+7066,1993-05-24,?
+```
+- `@relation` names the dataset.
+- Each `@attribute` gives a column name and its type. The type can contain spaces (a date format, or a list of allowed values in braces), so split the line into at most three parts: `line.split(maxsplit=2)`.
+- After `@data`, each line is one row. Text values may be wrapped in **single** quotes, and `?` means missing.
+- Keywords are case-insensitive: `@DATA` is the same as `@data`.
+
+Since the data lines are CSV with single quotes, you don't parse them by hand: `csv.reader(lines, quotechar="'", skipinitialspace=True)` handles quotes and commas inside values.
+
+Real ARFF files are messier than the clean examples: mixed quote styles, apostrophes and commas inside text. When you write a parser, write tests with the nastiest rows you can imagine. Your test file is your proof that the parser works.
+
+## Putting it together
+A reader for any format should end up in the same place:
+```python
+rows = read_csv_rows("a.csv")              # [{'id': '1', ...}, ...]
+rows = parse_arff("a.arff")["rows"]        # [{'id': '1', ...}, ...]
+rows = xml_attribute_rows("a.xml")         # [{'id': '1', ...}, ...]
+```
+After that, cleaning, counting and loading are the same code for all of them. That's the payoff of choosing one shape.
+
+### Start your project repo
+If you're doing the DSS project, create its repository now, separate from this exercise repo: a `src/` folder for scripts, a `data/` folder that is git-ignored (the data must never go on GitHub), and a `.env` file for credentials, also git-ignored. Then write the readers again for the real files, using what you learned here, rather than copying code across.
+
+## Try it yourself
+1. Count the lines of a file with a `for` loop, then compare with `wc -l` in the terminal. Do they agree? (A last line without a newline is the usual reason they don't.)
+2. Split `'a,"b,c",d'` with `.split(",")` and with `csv.reader(['a,"b,c",d'])`. Compare.
+3. `json.dumps({"ok": True, "x": None})`: what does `True` become? And `None`?
+4. Write a tiny XML string with two `<item name="..."/>` elements and read their names with `ET.fromstring(text).iter("item")`.
+5. Call `int("12a")` inside a `try` that catches `ValueError` and prints a message. Then catch `KeyError` instead: what happens?
 
 > **Remember**
-> - `with open(..., encoding="utf-8")`, every time.
-> - CSV values are strings. Convert on purpose, and handle `?` and `""`.
-> - Never `.read()` or `ET.parse()` a huge file. Stream it.
-> - Catch specific exceptions, and keep a count of the rows you rejected (that's report material).
+> - `with open(path, encoding="utf-8")`, every time. Add `newline=""` for CSV.
+> - Never split CSV lines by hand; the `csv` module handles quotes and commas.
+> - Values from CSV, XML and ARFF are strings. Convert on purpose, and turn `""`, `"?"` into `None`.
+> - Big files: loop over lines, or `iterparse` + `clear()`. Never `.read()` or `ET.parse()` gigabytes.
+> - Catch the specific exception, keep the `try` small, and count what you reject.
 </script>
 <script type="text/markdown" id="md-w4">
-## Why this week exists
-This week covers DSS Assignments 1–4: find data-quality issues, derive features (time of day, season, hashtags, categories), design a star schema, and split the data into one CSV per table. You practise every move on `sales.arff` and `loans.json`.
+## What this week is for
+Reading a file is only the start. Before data is useful you have to **check** it (what's missing, duplicated or impossible), **derive** new columns from it (the season of a date, the hashtags in a text, a category), and **reshape** it into a structure that answers questions quickly: a **star schema**. Those are DSS Assignments 1 to 4. This week you learn each move on small practice data (`sales.arff` and `loans.json`), so that on the real data you're applying a method you already understand.
 
-## Dates
+## Modules: reusing your own code
+Your week-4 file starts with:
 ```python
-from datetime import datetime
-dt = datetime.fromisoformat("2024-03-05 21:14:00")   # "T" separator works too
-dt.hour, dt.month, dt.weekday()                      # 21, 3, 1 (Monday=0)
-(dt2 - dt1).total_seconds() / 3600                   # hours between
+from exercises.w03_files import write_csv
 ```
-Decide your conventions once and write them in the report: time zone, whether 8:00 counts as day or night, which months make each season.
-
-## A data-quality checklist (run it on every source)
-| Check | How in plain Python |
-|---|---|
-| completeness | count `None` / `""` / `"?"` per column (`missing_report`) |
-| uniqueness | `find_duplicates(rows, ["id"])` with a set of keys |
-| validity | parse types with try/except and count the failures |
-| consistency | same date format? same user id in posts and users? (set differences) |
-| outliers | `statistics.mean` / `stdev`, flag `abs(x - mean) > k * std` |
-
-## Text features
+Any `.py` file is a **module**, and `import` lets one file use functions defined in another. You wrote `write_csv` last week; now you reuse it instead of writing it again. Some forms you'll see:
 ```python
-re.findall(r"#(\w+)", text)                          # hashtags
-re.search(rf"\b{re.escape(w)}\b", text, re.I)         # whole-word keyword
+import statistics                     # use it as statistics.mean(...)
+from datetime import datetime         # use it as datetime(...)
+import xml.etree.ElementTree as ET    # a shorter nickname
 ```
-Rule-based categories (`categorize`) are **interpretable**, and Assignment 2 asks for exactly that. Build a small keyword dict per category, measure how many posts land in "other", and iterate.
-
-## Modules: reuse your own code
+When Python imports a module, it **runs the whole file** once. That's why scripts end with:
 ```python
-from exercises.w03_files import write_csv     # week 4 imports week 3
-if __name__ == "__main__":                     # runs only when executed, not when imported
+if __name__ == "__main__":
     main()
 ```
+`__name__` is `"__main__"` only when the file is run directly (`python file.py`). When another file imports it, `__name__` is the module's name, so `main()` doesn't run. That's how tests can import your functions without starting your program.
 
-## Star schema refresher (see your DW book)
-```text
-            dim_date (date_id PK, day, month, year, season ...)
-                 │
-dim_store ── fact_sales ── dim_title
-(store_key PK)   (store_key FK, title_key FK, date_id FK, qty)
+## Dates and times
+Dates arrive as strings, like `"1994-09-14 08:30:00"`. To compare them, extract the month, or compute a difference, convert them to `datetime` objects:
+```python
+from datetime import datetime
+
+dt = datetime.fromisoformat("1994-09-14 08:30:00")     # ISO format: year-month-day
+dt.year, dt.month, dt.day, dt.hour                     # (1994, 9, 14, 8)
+dt.weekday()                                           # 2: Monday is 0, so Wednesday
 ```
-1. **Grain first**: one fact row = one *what*? (one sale line; in DSS, one event).
-2. **Measures**: numbers you aggregate (qty, likes).
-3. **Dimensions**: descriptive context, each with an integer **surrogate key** made with a dict `natural value → id`.
-4. Facts store only keys and measures. Integrity check: every FK exists in its dimension (a set subset test).
+For other layouts, describe the format with `strptime` ("string parse time"), where `%Y` is a 4-digit year, `%m` month, `%d` day, `%H` hour, `%M` minute, `%S` second:
+```python
+datetime.strptime("14/09/1994 08:30", "%d/%m/%Y %H:%M")
+```
+If the string doesn't match, you get `ValueError`, which is what you want: a wrong date should fail loudly, not turn silently into a wrong value.
+
+The reverse, `strftime` ("string format time"), turns a datetime into text: `dt.strftime("%Y-%m-%d")` gives `'1994-09-14'`.
+
+Subtracting two datetimes gives a `timedelta`, a duration:
+```python
+start = datetime(2024, 1, 1, 22, 0)
+end = datetime(2024, 1, 2, 1, 30)
+gap = end - start                   # timedelta(seconds=12600)
+gap.total_seconds() / 3600          # 3.5 hours
+```
+
+### Deriving features from a date
+Many useful columns are simple arithmetic on the month or hour. The quarter of month `m` is `(m - 1) // 3 + 1`: months 1–3 give 1, 4–6 give 2, and so on. Check it by hand with `m = 3` and `m = 4`.
+
+Seasons are similar but shifted, because winter spans December to February. The trick is `m % 12`, which turns December (12) into 0, so December, January and February become 0, 1, 2, and integer division by 3 puts them in the same group:
+```text
+month       12  1  2 | 3  4  5 | 6  7  8 | 9 10 11
+m % 12       0  1  2 | 3  4  5 | 6  7  8 | 9 10 11
+m % 12 // 3  0  0  0 | 1  1  1 | 2  2  2 | 3  3  3
+season      winter   | spring  | summer  | autumn
+```
+Whatever conventions you choose (time zone, whether 8:00 is day or night, which months make a season) write them down. Someone else must be able to reproduce your numbers.
+
+## Checking data quality
+Before you trust a dataset, measure it. These five checks catch most problems:
+
+| Check | Question | How in plain Python |
+|---|---|---|
+| completeness | what's missing? | count `None` / `""` / `"?"` per column |
+| uniqueness | are there duplicate rows or ids? | put keys in a set, see which repeat |
+| validity | do values parse? are they in range? | convert with try/except, count failures |
+| consistency | do the files agree with each other? | set differences: ids in posts but not in users |
+| outliers | are some values implausibly far from the rest? | mean and standard deviation |
+
+### Duplicates
+To spot duplicates you need something you can put in a set. A dict can't go in a set (it can change), but a **tuple** of its values can:
+```python
+row = {"user": "u1", "post": 7, "likes": 3}
+key = (row["user"], row["post"])            # identity = these two fields
+```
+If "duplicate" means *every* field matches, use all the items. Sort them first, so two dicts with the same content but keys in a different order give the same tuple:
+```python
+tuple(sorted(row.items()))    # (('likes', 3), ('post', 7), ('user', 'u1'))
+```
+Then the "seen before?" pattern from week 2 finds repeats, and keeping only the first occurrence of each key removes them. Always report **how many** you removed and by **which** definition of duplicate.
+
+### Averages, spread and outliers
+The `statistics` module has what you need:
+```python
+import statistics
+values = [2, 4, 4, 4, 5, 5, 7, 9]
+statistics.mean(values)       # 5
+statistics.stdev(values)      # 2.138...: the sample standard deviation
+statistics.median(values)     # 4.5
+```
+The **standard deviation** measures how spread out values are around the mean: roughly, the typical distance of a value from the average. A common rule flags a value as an **outlier** when it's more than `k` standard deviations from the mean (k = 2 or 3):
+```python
+mean, std = statistics.mean(values), statistics.stdev(values)
+[v for v in values if abs(v - mean) > 2 * std]     # [] here; 9 is 1.87 std away
+```
+The **z-score** of a value is exactly that distance in units of std: `(v - mean) / std`.
+
+Edge cases are where graders look, so decide them explicitly:
+
+- `statistics.stdev` needs **at least two** values; with one it raises `StatisticsError`. A user with a single post has no spread. What do you return?
+- If all values are equal, std is 0, and dividing by it fails. No value can be an outlier then.
+- Missing values (`None`) must be removed first, or the arithmetic crashes.
+
+## Text: regular expressions
+A **regular expression** (regex) is a small pattern language for finding text. Python's `re` module uses it. A few building blocks cover most needs:
+
+| Pattern | Matches |
+|---|---|
+| `abc` | the literal text "abc" |
+| `\d` | one digit |
+| `\w` | one "word" character: letter, digit or `_` |
+| `\s` | one whitespace character (space, tab, newline) |
+| `\S` | one character that is **not** whitespace |
+| `+` | one or more of the previous thing |
+| `?` | optional (zero or one) |
+| `\b` | a word boundary: the edge between a word and a non-word |
+| `( )` | a group: the part you want back |
+
+Always write patterns as **raw strings**, `r"..."`, so backslashes reach `re` untouched.
+```python
+import re
+re.findall(r"\d+", "3 posts, 12 likes")             # ['3', '12']
+re.findall(r"#(\w+)", "Go #Python and #DataEng!")     # ['Python', 'DataEng']: the group only
+re.findall(r"https?://\S+", "see https://x.org now")  # ['https://x.org']
+re.sub(r"\s+", " ", "too   many\n spaces")            # 'too many spaces'
+```
+In `#(\w+)`, the `#` must be there, `\w+` takes the letters after it, and the parentheses say "give me just this part". `\w` stops at `-` or `!`, so `#b-c` gives `b`.
+
+**Whole words.** Searching for "art" inside "start" finds it, which is usually wrong for keyword rules. `\b` fixes that:
+```python
+re.search(r"\bart\b", "let's start", re.IGNORECASE)    # None: no match
+re.search(r"\bart\b", "modern Art", re.IGNORECASE)     # a match object
+```
+When the keyword comes from a variable, escape it, so characters like `.` or `+` in it are taken literally: `rf"\b{re.escape(word)}\b"` (an `rf` string is raw *and* an f-string).
+
+### Rule-based categories
+To assign each post a category, an interpretable approach is an **ordered** set of keyword rules: check the categories in order, and the first one with a matching keyword wins; nothing matches, it's "other".
+```python
+rules = {"food": ["pizza", "pasta"], "sport": ["match", "goal"]}
+```
+Then **measure**: how many items land in each category, and especially in "other"? Read a sample of the "other" items, add keywords, measure again. The sizes and your iterations are report material, and the rules make your categories reproducible by anyone.
+
+## The star schema
+Your data will be loaded into a data warehouse and queried by a cube. Warehouses organise data as a **star schema**: one central **fact table** surrounded by **dimension tables**.
+```text
+                 dim_date
+         (date_id, day, month, year, season)
+                     │
+dim_store ───── fact_sales ───── dim_title
+(store_key,     (store_key, title_key,     (title_key,
+ stor_id)        date_id, qty)              title_id)
+```
+- The **fact table** records events: one row per sale. It contains **measures** (numbers you add up, like `qty`) and **foreign keys** pointing at dimensions. Nothing else.
+- Each **dimension table** describes one aspect of the event: where (store), what (title), when (date). It holds the descriptive attributes you filter and group by.
+
+Why split it this way? Descriptive text is stored once per store instead of once per sale, and queries like "quantity per season per store" become a join of the fact with two small tables.
+
+### Designing one, in order
+1. **Choose the grain**: what does one fact row represent? One sale line? One order? One post? Everything else follows from this, and mixing grains in one table gives wrong totals. Write the grain down in one sentence.
+2. **Choose the measures**: the numbers you'll aggregate at that grain.
+3. **Choose the dimensions**: the context you'll slice by. Check them against the questions you'll be asked later (the Part 2 queries): if a query groups by season, season must be an attribute somewhere.
+4. **Give each dimension row a surrogate key**: a plain integer 1, 2, 3... created by you, instead of the source's own id. It's small, fast to join, and independent of how the source system names things.
+
+### Building a dimension in Python
+A dict maps each distinct natural value to its new key, and assigns the next number the first time a value appears:
+```python
+cities = ["Pisa", "Lucca", "Pisa", "Siena"]
+key_of = {}
+dim_city = []
+for c in cities:
+    if c not in key_of:
+        key_of[c] = len(key_of) + 1                # 1, 2, 3...
+        dim_city.append({"city_key": key_of[c], "city": c})
+# dim_city: [{'city_key': 1, 'city': 'Pisa'}, {'city_key': 2, 'city': 'Lucca'}, {'city_key': 3, 'city': 'Siena'}]
+# key_of:   {'Pisa': 1, 'Lucca': 2, 'Siena': 3}
+```
+When you build the fact rows, each lookup `key_of[row["city"]]` costs O(1), so even millions of rows go fast.
+
+A **date dimension** often uses a readable key instead: `19940914` for 14 Sep 1994 (`year * 10000 + month * 100 + day`). It's unique, sorts in date order, and you can read it.
+
+### Checking the result
+Two integrity checks catch most mistakes:
+
+- **Every foreign key exists** in its dimension: `{f["city_key"] for f in facts} <= set(key_of.values())` (the `<=` operator on sets means "is a subset of").
+- **Totals are preserved**: the sum of the measure in the fact table equals the sum in the source data.
+
+Finally, write one CSV per table (with your week-3 `write_csv`). Those files are what you load into the database next week.
+
+## Try it yourself
+1. Parse `"2024-02-29 23:15:00"`. What's its weekday? Its quarter? Its season by the formula above?
+2. How many hours between `"2024-03-30 22:00"` and `"2024-04-01 06:00"`?
+3. `re.findall(r"\d+", "Room 12, floor 3, 2024")`. Now change the pattern so only 4-digit numbers match.
+4. Compute mean and stdev of `[10, 12, 11, 13, 50]`. Which values are more than 1.5 std from the mean?
+5. On paper: draw a star schema for library loans (member, book, date). What's the grain? What's the measure?
 
 > **Remember**
-> - Decide the grain before anything else.
-> - `statistics.stdev` needs 2 or more values. Handle 0 and 1 explicitly.
+> - Decide the grain before anything else, and write it in one sentence.
+> - Dates: parse with `fromisoformat` or `strptime`; durations with `.total_seconds()`.
+> - `statistics.stdev` needs two values or more. Handle 0, 1 and "all equal" explicitly.
+> - Regex: raw strings, `\b` for whole words, `re.escape` for keywords from variables.
+> - Surrogate keys come from a dict, so each lookup is O(1).
 > - Every cleaning decision goes in the report: what, how many rows, why.
-> - Surrogate keys come from a dict, so a lookup costs O(1) per row.
 </script>
 <script type="text/markdown" id="md-w5">
-## Why this week exists
-Assignment 5 loads your CSVs into SQL Server **efficiently**, and Assignment 6 pulls at least 5% of a large events table into JSON. Both use the DB-API. You learn it on `sqlite3` (no server, instant feedback), then switch the connection to `pyodbc`.
+## What this week is for
+Last week ended with one CSV file per table. This week you load them into a real database from Python, query them, and export query results to JSON. Those are DSS Assignments 5 and 6, where the data is large enough that **how** you load matters: the naive way takes hours, the right way minutes.
 
-## The DB-API in 8 lines
+You'll practise on **SQLite**, a database that comes built into Python: no server, no password, the whole database is one file (or lives only in memory). Then you switch to **SQL Server** with `pyodbc`. Both follow the same Python standard (the DB-API), so the code barely changes.
+
+## Iterators and generators: data that flows
+Before databases, one Python idea you need to load big files efficiently.
+
+When you write `for line in f`, the file doesn't hand over all its lines at once. It gives one line each time the loop asks for the next. Anything that works this way is an **iterator**. Lists are different: all their items exist in memory at the same time.
+
+You can write your own iterator with a **generator function**: a function that uses `yield` instead of `return`.
 ```python
-conn = sqlite3.connect(":memory:")          # pyodbc.connect(conn_str) for SQL Server
-cur = conn.cursor()
-cur.execute("CREATE TABLE t (id INTEGER, name TEXT)")
-cur.execute("INSERT INTO t VALUES (?, ?)", (1, "O'Brien"))     # ? placeholders
-cur.executemany("INSERT INTO t VALUES (?, ?)", [(2, "a"), (3, "b")])
-conn.commit()                               # until now, nothing is saved
-cur.execute("SELECT id, name FROM t WHERE id > ?", (1,))
-rows = cur.fetchall()                       # or fetchone() / fetchmany(1000)
+def countdown(n):
+    while n > 0:
+        yield n          # hand over one value, then PAUSE here
+        n -= 1
+
+for x in countdown(3):
+    print(x)             # 3, 2, 1
 ```
-Never write `f"... VALUES ('{name}')"`. The apostrophe in O'Brien breaks it, and so does a malicious string (SQL injection).
-
-## Generators: data that flows instead of piling up
+Calling `countdown(3)` doesn't run the body. It creates a generator object. Each time the `for` loop asks for the next value, the function runs until the next `yield`, hands over that value, and pauses, keeping all its variables, until it's asked again. When the function ends, the loop ends.
 ```python
+>>> g = countdown(2)
+>>> next(g)              # next() asks for one value by hand
+2
+>>> next(g)
+1
+>>> next(g)
+StopIteration            # nothing left
+```
+Why bother? Because a generator **holds one item at a time**. A generator that reads a 10 GB CSV yields one row, you process it, the row is forgotten, the next one arrives. Memory stays tiny.
+```python
+import csv
 def read_rows(path):
     with open(path, encoding="utf-8", newline="") as f:
-        yield from csv.DictReader(f)     # produces one row when asked
+        yield from csv.DictReader(f)     # yield each row the reader produces
+```
+`yield from x` means "yield every item of x, one by one".
 
-for batch in batched(read_rows(p), 5000):
-    cur.executemany(sql, [tuple(r.values()) for r in batch])
+A **generator expression** is the lazy cousin of a list comprehension, with round brackets: `(r["qty"] for r in rows)`. `sum(int(r["qty"]) for r in read_rows(p))` adds up a column of a file of any size without ever building a list.
+
+One catch: a generator can be consumed **only once**. After you've looped over it, it's empty:
+```python
+g = (x * 2 for x in range(3))
+list(g)     # [0, 2, 4]
+list(g)     # []
+```
+### Batches
+Databases prefer receiving rows in groups (say 1,000 at a time) rather than one by one or all at once. So a common helper takes any iterable and yields lists of up to `n` items: collect items into a list; when it reaches `n`, yield it and start a new one; at the end, yield whatever is left over. That's the first exercise this week.
+
+## Talking to a database: the DB-API
+Every Python database library follows the same steps:
+```python
+import sqlite3
+
+conn = sqlite3.connect("shop.db")     # 1. connect (":memory:" for a throwaway database)
+cur = conn.cursor()                    # 2. get a cursor: the thing that runs statements
+
+cur.execute("CREATE TABLE item (id INTEGER PRIMARY KEY, name TEXT, price REAL)")    # 3. run SQL
+cur.execute("INSERT INTO item (id, name, price) VALUES (?, ?, ?)", (1, "pen", 1.5))
+conn.commit()                          # 4. make the changes permanent
+
+cur.execute("SELECT name, price FROM item WHERE price > ?", (1.0,))
+cur.fetchall()                         # 5. fetch results: [('pen', 1.5)]
+conn.close()
+```
+Step by step:
+
+- **connect** opens the database. For SQL Server it's `pyodbc.connect(connection_string)`; everything after is the same.
+- **cursor** runs statements and holds the results of the last query.
+- **execute** runs one SQL statement. The `?` marks are **placeholders**; the values go in a separate tuple (note the comma in `(1.0,)`: a one-item tuple).
+- **commit** saves. Changes are made inside a **transaction**, which is only written permanently when you commit. If you close without committing, everything since the last commit is thrown away. That's a feature: if your script crashes halfway through a load, the database isn't left half-updated.
+- **fetchall** returns every result row as a list of tuples; **fetchone** returns one row; **fetchmany(n)** returns the next `n`.
+
+`conn.execute(...)` is a shortcut that makes a cursor for you, handy for one-off statements. `conn.executescript("...; ...;")` runs several statements in one go (SQLite only), useful for creating a schema.
+
+### Why placeholders, never f-strings
+It's tempting to build SQL with an f-string:
+```python
+name = "O'Brien"
+cur.execute(f"INSERT INTO person VALUES ('{name}')")
+# INSERT INTO person VALUES ('O'Brien')   <- the apostrophe ends the string: syntax error
+```
+Worse, if `name` came from a file and contained `x'); DROP TABLE person; --`, the database would run that too. This is **SQL injection**, one of the most common security holes in real software. With placeholders, the driver sends values separately from the SQL text, so a value can never be mistaken for code:
+```python
+cur.execute("INSERT INTO person VALUES (?)", (name,))      # always safe
+```
+Placeholders work for **values only**, not for table or column names. If a name comes from data, check it yourself: `"fact_sales".isidentifier()` is `True`, `"t; DROP TABLE t".isidentifier()` is `False`.
+
+### Inserting many rows
+`executemany` runs one statement for every tuple in a list:
+```python
+rows = [(2, "ink", 3.0), (3, "pad", 2.2)]
+cur.executemany("INSERT INTO item (id, name, price) VALUES (?, ?, ?)", rows)
 conn.commit()
 ```
-Memory stays the same whether the file has a thousand rows or ten million.
+Combined with batches and a generator, this loads a file of any size with flat memory:
+```python
+for batch in batched(read_rows(path), 1000):
+    cur.executemany(sql, [(r["id"], r["name"], r["price"]) for r in batch])
+conn.commit()
+```
 
-## Experiment (do it, write the numbers down)
-Insert 100,000 rows into sqlite three ways: (a) `execute` + `commit` per row, (b) `execute` per row + one commit, (c) `executemany` in batches of 5,000. Time each with `time.perf_counter()`. Put the table in your notes: it's the "efficiency and scalability" paragraph of your report.
+## Measure the speed, don't guess
+How you insert makes an enormous difference. Try it: insert 100,000 rows into SQLite three ways, timing each with `time.perf_counter()`:
 
-## SQL Server from your Mac (VPN on)
+1. `execute` and `commit` for every row;
+2. `execute` for every row, one `commit` at the end;
+3. `executemany` in batches of 5,000, one `commit` at the end.
+```python
+import time
+t0 = time.perf_counter()
+...                                  # the code you're timing
+print(f"{time.perf_counter() - t0:.2f} s")
+```
+Expect differences of 10 to 100 times. Committing is expensive because it forces a write to disk, and each round trip to a database server costs network time. Keep the table of numbers: it's the "efficiency" paragraph of the DSS report, backed by evidence.
+
+## Loading a star schema: order matters
+The fact table refers to the dimensions through foreign keys. If a fact row says `store_key = 3`, store 3 must already exist. So load **dimensions first, then facts**. Loading the other way round either fails (when the database enforces the keys) or leaves the database in a broken state in between.
+
+Creating the tables in a script that can be re-run safely is common practice: drop them if they exist, then create them. Drop the fact table first, because it depends on the others.
+
+SQLite is flexible with types: if a column is declared `INTEGER` and you insert the string `"5"`, it stores the number 5. SQL Server is stricter, so convert values in Python before inserting.
+
+## Querying from Python
+Once loaded, ask questions in SQL and get Python tuples back. A join plus a group-by, for example "total quantity per store, largest first":
+```sql
+SELECT s.stor_id, SUM(f.qty) AS total
+FROM fact_sales f
+JOIN dim_store s ON s.store_key = f.store_key
+GROUP BY s.stor_id
+ORDER BY total DESC, s.stor_id
+```
+Read it in the order the database works: take `fact_sales`, attach each row's store via the key (**JOIN**), put rows with the same store together (**GROUP BY**), add up `qty` in each group (**SUM**), then sort (**ORDER BY**), with `stor_id` breaking ties so the result is always in the same order.
+
+Triple-quoted strings let you write SQL over several lines in Python, which is much easier to read.
+
+## Exporting results to JSON, without running out of memory
+To export a large query result, don't `fetchall()` it: that loads every row at once. Fetch in chunks with `fetchmany`, and write as you go. Column names are in `cur.description`, a tuple per column whose first item is the name:
+```python
+cur = conn.execute("SELECT id, name FROM item")
+names = [d[0] for d in cur.description]          # ['id', 'name']
+while True:
+    chunk = cur.fetchmany(1000)
+    if not chunk:                                # empty list: no more rows
+        break
+    for values in chunk:
+        record = dict(zip(names, values))        # {'id': 1, 'name': 'pen'}
+        ...
+```
+`zip(a, b)` pairs items by position: `zip(["id", "name"], (1, "pen"))` gives `("id", 1), ("name", "pen")`, and `dict(...)` turns those pairs into a dict.
+
+`json.dump(all_rows, f)` needs the whole list in memory, so for a streaming export you write the JSON array yourself: `[`, then each record with `json.dumps(record)` separated by commas, then `]`.
+
+### Choosing a sample (Assignment 6)
+Assignment 6 asks for at least 5% of a large table. Before writing code, decide what the sample must preserve. **Random rows** keep overall proportions but break up related records. **Random entities with all their rows** (for example, random posts with all their events) keep each entity complete. **A time window** keeps everything in a period but may not represent the rest. Each answers different questions, and your report must justify the choice. In SQL Server, look up `TOP`, `TABLESAMPLE` and `ORDER BY NEWID()` in the cheat sheet, and note their trade-offs.
+
+## Credentials stay out of the code
+Database passwords must never be written in your scripts or committed to git: repositories get shared, copied and published. Keep them in **environment variables**, which a program reads at run time:
+```python
+import os
+server = os.environ["DB_SERVER"]        # KeyError if it's not set
+```
+You set them in the terminal (`export DB_SERVER=...`) or in a `.env` file that is listed in `.gitignore`. When something is missing, fail with a message that lists **everything** missing at once, so the user can fix it in one go.
+
+## SQL Server from your computer
+On the university network (VPN on), with Microsoft's ODBC driver installed:
 ```bash
 brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
 HOMEBREW_ACCEPT_EULA=Y brew install msodbcsql18
 python -m pip install pyodbc
 ```
 ```python
-conn = pyodbc.connect(sqlserver_connection_string(db_settings(os.environ)))
+import os, pyodbc
+conn = pyodbc.connect(
+    "DRIVER={ODBC Driver 18 for SQL Server};"
+    f"SERVER={os.environ['DB_SERVER']};DATABASE={os.environ['DB_NAME']};"
+    f"UID={os.environ['DB_USER']};PWD={os.environ['DB_PASSWORD']};TrustServerCertificate=yes"
+)
 cur = conn.cursor()
-cur.fast_executemany = True      # without it, pyodbc sends rows one by one
+cur.fast_executemany = True              # without it, executemany sends rows one by one
 print(cur.execute("SELECT @@VERSION").fetchone()[0])
 ```
-If the Mac driver fights you, run the same script inside the Windows VM. The code doesn't change.
+`fast_executemany = True` makes pyodbc send a whole batch in one round trip; without it, inserting a large table over the VPN can take hours. If the Mac driver gives trouble, run the same script inside a Windows VM: the Python doesn't change.
 
-## Pulling a sample out (Assignment 6 shape)
-Think about it before coding. Should the sample be **random rows**, **random posts with all their events**, or **a time window**? Each answers different questions. Know `TOP`, `TABLESAMPLE` and `NEWID()` (see the cheat sheet) and their trade-offs. Stream the result with `fetchmany` into a JSON file (`export_query_to_json`).
+## Try it yourself
+1. Write a generator `evens(limit)` that yields 0, 2, 4... below `limit`. Call `next()` on it by hand.
+2. In `sqlite3.connect(":memory:")`, create a table, insert three rows with `executemany`, and query them back.
+3. Insert a row, **don't** commit, close, reconnect to a file database. Is the row there?
+4. Try inserting `"O'Brien"` with an f-string, then with a placeholder.
+5. Time inserting 50,000 rows with a commit per row versus one commit at the end.
 
 > **Remember**
-> - `?` placeholders for values, validated identifiers for names.
+> - A generator yields one item at a time and can be used only once.
+> - `?` placeholders for values, `isidentifier()` checks for names. Never f-strings with values.
 > - `commit()`, or it never happened.
-> - Load dimensions before facts, because of foreign keys.
+> - Load dimensions before facts.
+> - `fetchmany` + writing as you go for big exports.
 > - `fast_executemany = True` on pyodbc.
 > - Credentials come from the environment, never from code or git.
 </script>
 <script type="text/markdown" id="md-w6">
-## Why this week exists
-Graders and future teammates will run your code, not read it. A script with **arguments, logs and exit codes** can be run by anyone, on any data, and tells them what happened. This is also build week: run your DSS Assignments 1–6 end to end from a clean clone.
+## What this week is for
+Until now you've called your functions from tests. A grader, a teammate or a server will instead **run your script from the terminal**, often on different data and without reading your code. This week turns a collection of functions into a proper **program**: it takes options on the command line, reports what it's doing through logging, signals success or failure with an exit code, and can be both run and imported. Then you use it to run the whole DSS Part 1 pipeline end to end from a clean copy of your repository.
 
-## The shape of every script
+## How a program gets its inputs: command-line arguments
+When you type
+```bash
+python sales2star.py data/sales.arff --out-dir out -v
+```
+everything after the script name reaches Python as a list of strings, `sys.argv`:
 ```python
-log = logging.getLogger(__name__)
+import sys
+print(sys.argv)     # ['sales2star.py', 'data/sales.arff', '--out-dir', 'out', '-v']
+```
+You could pick that list apart by hand, but you'd have to handle missing values, wrong types, `--help`, and options in any order. The standard library's **argparse** does all of that from a description of what you accept:
+```python
+import argparse
+from pathlib import Path
 
-def main(argv=None):                    # argv=None -> sys.argv; tests pass a list
+parser = argparse.ArgumentParser(prog="sales2star", description="Turn sales data into a star schema.")
+parser.add_argument("input", type=Path, help="the input file")                  # positional: required
+parser.add_argument("--out-dir", type=Path, default=Path("out"), help="output folder")
+parser.add_argument("--limit", type=int, default=None, help="stop after N rows")
+parser.add_argument("--dry-run", action="store_true", help="compute, write nothing")
+parser.add_argument("-v", "--verbose", action="count", default=0, help="-v, -vv for more detail")
+
+args = parser.parse_args(["data.arff", "--limit", "50", "-vv"])
+args.input, args.out_dir, args.limit, args.dry_run, args.verbose
+# (Path('data.arff'), Path('out'), 50, False, 2)
+```
+What each part does:
+
+- A name without dashes (`"input"`) is a **positional** argument: required, identified by its position.
+- A name with dashes (`"--out-dir"`) is an **option**: optional, with a `default`. In `args` the dashes become underscores: `args.out_dir`.
+- `type=int` converts the string for you, and if the user types `--limit many`, argparse prints a clear error and exits. You never write that check yourself.
+- `action="store_true"` makes a **flag**: present means `True`, absent means `False`.
+- `action="count"` counts repetitions: `-v` is 1, `-vv` is 2.
+- `help=` text appears when someone runs `python sales2star.py --help`, which argparse builds for free.
+
+`parse_args()` with no argument reads `sys.argv`. Passing a list explicitly, as above, is how tests check your parser without a terminal.
+
+## Logging instead of print
+A running program has two kinds of output. Its **result** (the data it produces) and a **story** about what it's doing: "read 21 rows", "skipped 3 bad dates", "wrote 4 tables". `print` mixes both into the same stream. The `logging` module handles the story, with **levels** that say how important each message is:
+
+| Level | Use for |
+|---|---|
+| `DEBUG` | details you want only when hunting a bug |
+| `INFO` | normal progress: counts, file names, timings |
+| `WARNING` | something odd that the program worked around |
+| `ERROR` | something failed |
+
+```python
+import logging
+log = logging.getLogger(__name__)          # one logger per module, named after it
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+log.debug("row 17: %s", row)               # hidden: below INFO
+log.info("read %d rows from %s", 21, "sales.arff")
+log.warning("3 rows with bad dates skipped")
+```
+```text
+INFO read 21 rows from sales.arff
+WARNING 3 rows with bad dates skipped
+```
+Only messages at or above the configured level appear. The default level is **WARNING**, which is why `log.info(...)` seems to do nothing until you configure logging. Connecting the level to `-v` gives users control without touching the code: no flag shows warnings and errors, `-v` adds INFO, `-vv` adds DEBUG.
+
+Notice `log.info("read %d rows", n)` rather than an f-string: logging fills in the values only if the message is actually shown. Log messages go to **stderr**, a separate stream from the result on stdout, so `python script.py > result.txt` captures only the result.
+
+## Exit codes: telling the shell how it went
+Every program ends with a number, its **exit code**. `0` means success; anything else means failure. Shell scripts, schedulers and CI systems read it to decide what happens next. In the terminal, `echo $?` shows the last command's exit code.
+
+In Python, `sys.exit(code)` ends the program with that code. The clean pattern is a `main` function that **returns** the code, and one line that passes it to `sys.exit`:
+```python
+def main(argv=None):
     args = build_parser().parse_args(argv)
-    logging.basicConfig(level=log_level(args.verbose), format="%(levelname)s %(message)s")
-    log.info("reading %s", args.input)
-    ...
-    return 0                            # 0 = success, anything else = failure
+    logging.basicConfig(level=..., format="%(levelname)s %(message)s")
+    if not args.input.exists():
+        log.error("input file not found: %s", args.input)
+        return 1                          # failure, with a message that says why
+    ...                                   # the actual work, in small steps, each logged
+    return 0                              # success
 
 if __name__ == "__main__":
     sys.exit(main())
 ```
-`print` is for program output. `logging` is for what the program is doing (progress, warnings, row counts), and you can turn it up with `-v` without touching code.
+Why `main(argv=None)`? Run from the terminal, `argv` is `None`, so argparse reads `sys.argv`. From a test, you call `main(["data.arff", "--dry-run"])` and check the returned code, without starting a new process.
 
-## Checking SSIS with Python
-Assignments 8–11 are SSIS, but you can **verify** them. Export the small fact table, recompute the same metric with your week-2 group-by code, and compare. Edge cases to decide and document: a user with 0 day posts (division by zero), a user with one post (no standard deviation), ties at exactly one standard deviation. `safe_ratio` returns `None` instead of crashing or faking a 0.
+And why `if __name__ == "__main__":`? (Week 4 introduced it.) Importing a module runs its whole file. This line makes `main()` run only when the file is executed as a program, so tests and other modules can import its functions safely.
 
-## Clean-clone test (do this before 11 Dec)
-```bash
-cd /tmp && git clone <your lds-project url> test && cd test
-python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-python src/a4_split_tables.py --input <data> --out out -v
+You can also run a module inside a package with `python -m package.module`, which is how the week-6 exercise runs: `python -m exercises.w06_cli practice_data/sales.arff -v`.
+
+## Never crash on an edge case, never fake a number
+Analytical code divides constantly: averages, ratios, percentage changes. Division by zero will happen in real data (a user with no daytime posts, a category with no posts last month). There are three possible behaviours, and only one is right:
+
+- **Crash** (`ZeroDivisionError`): one odd user stops the whole pipeline.
+- **Return 0**: looks like a real result, and silently drags averages down. This is the dangerous one.
+- **Return `None`** (or `NULL` in SQL): "not defined". It shows up as missing, gets excluded from averages, and you can count how often it happened.
+
+Return `None`, and write in your report how many cases there were and why.
+```python
+def share(part, whole):
+    if not whole:              # catches 0 and None
+        return None
+    return part / whole
 ```
-If it fails here, it fails for the grader.
+Percentage change from `old` to `new` is `(new - old) / old * 100`: from 80 to 100 is +25%, from 100 to 80 is −20% (not −25%: the base is different). It's undefined when `old` is 0.
+
+## Checking SSIS results with Python
+DSS Assignments 8–11 are done in SSIS, a visual tool where mistakes are easy to make and hard to see. You can **verify** them independently: export a small slice of the fact table, compute the same metric with your own week-2 grouping code, and compare. If the numbers differ, one of the two is wrong, and you'll find out before the grader does. Typical edge cases to decide and document: division by zero, a user with a single post (no standard deviation), values exactly on a threshold (is "more than one std" `>` or `>=`?).
+
+## The clean-clone test
+Your code works on your computer. Does it work anywhere else? The only way to know is to try it as a stranger would: clone the repository into an empty folder, install from `requirements.txt`, and run the README's commands exactly as written.
+```bash
+cd /tmp && git clone <your repository url> test-clone && cd test-clone
+python3 -m venv .venv && source .venv/bin/activate
+python -m pip install -r requirements.txt
+python src/split_tables.py data/input.arff --out-dir out -v
+```
+Typical failures this reveals: a path hard-coded as `/Users/yourname/...`, a package installed on your machine but missing from `requirements.txt`, a data file that never went in the repository, a step that only worked because of something you ran by hand. If it fails here, it fails for the grader.
+
+`requirements.txt` lists the packages your project needs, one per line (`pyodbc==5.2.0`). `python -m pip freeze` shows what's installed in your venv.
+
+## Try it yourself
+1. Write a script `greet.py` that takes a name (positional) and `--times N` (default 1) and prints the greeting N times. Run it with `--help`.
+2. Run it with `--times many`. What does argparse print? What's the exit code (`echo $?`)?
+3. Add logging: an INFO line at the start. Run with and without `-v`.
+4. Make the script return exit code 2 when the name is empty. Check with `echo $?`.
+5. Import `greet` from another file. Does the greeting print on import? Why not?
 
 > **Remember**
-> - `main(argv)` returns an exit code, and tests call it with a list.
-> - Default log level is WARNING, so `log.info` shows only with `-v`.
-> - Pass paths as arguments. Never hardcode `/Users/...`.
-> - README: how to run each assignment, in order, with the exact commands.
+> - argparse turns `sys.argv` into typed, documented options; `--help` comes free.
+> - `print` is the program's output; `logging` is its story. Default level is WARNING.
+> - `main(argv=None)` returns an exit code: 0 for success, anything else for failure.
+> - Undefined results are `None`, never a fake 0. Count and document them.
+> - Pass paths as arguments. Never hard-code `/Users/...`.
+> - If the clean clone fails, it fails for the grader.
 </script>
 <script type="text/markdown" id="md-w7">
-## Why this week exists
-Part 1 (Assignments 1–14) is due **Friday 11 December**, and after that **your group database is frozen**. This week is buffer, review, and the cube.
+## What this week is for
+DSS Part 1 (Assignments 1–14) is due **Friday 11 December**, and after that **your group database is frozen**: nothing you change later counts. This week has no new Python. It's slack for whatever slipped, a full review of the repository, and the last assignment: the **data cube**. The cube is new material, so it gets a proper explanation below.
 
 ## Final review checklist
-- [ ] Clean clone runs end to end (week 6), and timings are recorded.
-- [ ] No pandas-like imports in Assignments 3–6: `grep -rn "pandas\|polars" src/` shows nothing.
-- [ ] No credentials in git: `git log -p | grep -i pwd` shows nothing.
-- [ ] Every cleaning decision and edge case is written down for the report.
-- [ ] `_python` and `_IS` tables hold the same dimension rows (compare counts).
-- [ ] Code review session with Claude (bring your repo link).
+Work through these in order; each one has caught real problems in past projects.
+- [ ] The clean-clone test from week 6 runs end to end, and the timings are recorded.
+- [ ] No dataframe libraries in Assignments 3–6: `grep -rn "pandas\|polars" src/` prints nothing.
+- [ ] No credentials anywhere in the history: `git log -p | grep -i pwd` prints nothing.
+- [ ] Every cleaning decision and edge case is written down, with row counts, for the report.
+- [ ] The `_python` and `_IS` tables hold the same dimension rows (compare `COUNT(*)` per table).
+- [ ] The README says how to run each assignment, in order, with the exact commands.
+- [ ] Someone else reviewed the code (a teammate, or a review session with Claude).
 
-## Building the cube (Assignment 14)
-- **Dimensions** come from your dimension tables. **Hierarchies** are drill paths: Date as Year → Quarter → Month → Day, and time of day as Day part → Hour.
-- **Measures** come from fact columns: count of events, sum of likes, and so on. Add only what the MDX queries need.
-- Seasons, categories and anything else the queries slice by must exist as **attributes**. If they're missing, you go back to the dimension tables, so check the Part 2 queries now.
+## From star schema to cube
+In weeks 4 and 5 you built a star schema: a fact table of events, with dimension tables around it. You can answer any question with SQL, but each question means writing joins and group-bys again. A **cube** (built in SSAS, SQL Server Analysis Services) sits on top of the star schema and **pre-organises** it for analysis: you declare once which dimensions exist, how they break down into levels, and which numbers can be added up. After that, tools like Excel, Power BI and the MDX language (next week) can slice the data any way without writing SQL.
+
+The mental picture: a spreadsheet has two axes (rows and columns). A cube has as many axes as you have dimensions: date, store, title... Each **cell** sits at one combination of positions, one per dimension, and holds the measures for that combination: "quantity sold, for store 7131, title PS2091, in September 1994".
+
+## The three things you define
+### Dimensions and attributes
+Each dimension table becomes a cube **dimension**. Its columns become **attributes**: the things you can filter or group by. If a question needs "season", season must be an attribute of the date dimension. If it isn't, you have to go back and add the column to the table, reload, and rebuild. So, **before building the cube, read the Part 2 queries and list every attribute they use.**
+
+### Hierarchies
+A **hierarchy** is a drill-down path through attributes, from coarse to fine:
+```text
+Date:          Year → Quarter → Month → Day
+Time of day:   Day part (night/morning/...) → Hour
+Geography:     Country → Region → City
+```
+With a hierarchy, a user looking at yearly totals can open one year to see its quarters, then a quarter to see its months. Each level must fit entirely inside the level above: every month belongs to exactly one quarter. (A "month" attribute that's just 1–12 doesn't fit inside a year by itself: January 1994 and January 1995 are different members, so month keys usually include the year.)
+
+### Measures
+**Measures** come from the numeric columns of the fact table, with an aggregation: sum of likes, count of events, maximum of something. Ask for each one: does adding it up make sense? Quantities and counts add up across every dimension. Some numbers don't: an average, or a "number of followers" snapshot, gives nonsense when summed. Those need a different aggregation or a calculated measure (next week).
+
+**Distinct counts** need care. "How many different users posted?" can't be computed by adding the counts of each day, because a user active on two days would count twice. SSAS needs a separate **distinct count measure** for that.
+
+Add only the measures the queries actually need. A smaller cube is easier to check.
+
+## Checking the cube
+Process the cube, then compare a few numbers with SQL on the star schema: the grand total of each measure, the total for one year, the count for one store. If the cube and SQL disagree, the usual suspects are a wrong key relationship between a dimension and the fact table, or facts whose keys don't exist in the dimension.
+
+## Deliver
+Zip the repository as the course instructions ask, submit the form before 23:59 on 11 December, and don't touch the database afterwards.
 </script>
 <script type="text/markdown" id="md-w7b">
-## Why this week exists
-Part 2 (MDX queries, dashboards, the 10-page report) is due **18 December**. MDX reads strangely at first because it's built around **axes** and **tuples**, not rows.
+## What this week is for
+DSS Part 2 (the MDX queries, the dashboards and a report of at most 10 pages) is due **Friday 18 December**. MDX is the query language for cubes. It looks a bit like SQL, which is misleading: SQL thinks in **rows** you filter and group, MDX thinks in **cells** of a cube you point at. Once that idea clicks, most queries are short. This lesson builds it up one piece at a time, on a small sales cube (dimensions Store, Title and Date; measure Qty). The course's demo cube works the same way.
 
-## The core shape
+## Members: the positions along a dimension
+Every value of a dimension attribute is a **member**. Members are written with square brackets, from the dimension down:
+```sql
+[Store].[Store Id].&[7131]        -- the member with key 7131 of attribute Store Id
+[Date].[Year].&[1994]             -- the year 1994
+[Measures].[Qty]                  -- measures are members too, of a special dimension
+```
+`&[...]` means "the member with this **key**". Without `&`, `[Date].[Year].[1994]` looks the member up by its **name**; both work when names are unique.
+
+Each attribute also has an **All** member, the total over everything: `[Store].[Store Id].[All]`.
+
+Useful functions on a member:
+```sql
+[Date].[Calendar].[Month].&[199409].PREVMEMBER   -- the month before: August 1994
+[Date].[Calendar].[Year].&[1994].CHILDREN        -- its quarters (one level down the hierarchy)
+[Date].[Calendar].[Month].&[199409].PARENT       -- its quarter
+```
+
+## Tuples: the coordinates of one cell
+A **tuple** lists one member from several dimensions, in round brackets. It points at **one cell**:
+```sql
+( [Store].[Store Id].&[7131], [Date].[Year].&[1994], [Measures].[Qty] )
+-- "quantity sold by store 7131 in 1994": one number
+```
+What about dimensions you didn't mention, like Title? They take their **All** member: all titles together. That rule explains a lot of MDX behaviour: **anything you don't specify is "all of it"** (unless the WHERE clause says otherwise).
+
+## Sets: lists of members or tuples
+A **set** is a list in curly brackets. It's what you put on the rows or columns of a result:
+```sql
+{ [Date].[Year].&[1993], [Date].[Year].&[1994] }   -- two members
+[Store].[Store Id].[Store Id].MEMBERS              -- every store (without the All member)
+[Date].[Calendar].[Year].&[1993] : [Date].[Calendar].[Year].&[1994]   -- a range
+```
+`.MEMBERS` on a level gives all its members. Writing the attribute name twice, `[Store Id].[Store Id]`, means "the level of individual stores", which excludes the All member.
+
+## The SELECT statement: putting sets on axes
 ```sql
 SELECT
-  { [Measures].[Qty] }                                  ON COLUMNS,
-  NON EMPTY [Store].[Store Id].[Store Id].MEMBERS       ON ROWS
+  { [Measures].[Qty] }                               ON COLUMNS,
+  [Store].[Store Id].[Store Id].MEMBERS              ON ROWS
 FROM [Sales]
-WHERE ( [Date].[Year].&[1994] )                          -- the slicer: a filter
+WHERE ( [Date].[Year].&[1994] )
 ```
-- **Member**: one value of a dimension, like `[Date].[Year].&[1994]`.
-- **Tuple** `( , )`: one member per dimension, which is one cell's coordinates.
-- **Set** `{ , }`: a list of members or tuples, placed on an axis.
-- `A * B` (CROSSJOIN) puts every combination on rows. `NON EMPTY` drops empty rows.
+Read it as a spreadsheet you're laying out:
 
-## Calculated members: where the work happens
+- **ON COLUMNS**: the set across the top. Here, one column: Qty.
+- **ON ROWS**: the set down the side. Here, one row per store.
+- **FROM**: which cube.
+- **WHERE**: the **slicer**. Not a filter on rows like in SQL, but a fixed coordinate for every cell: "everything in this result is about 1994".
+
+Each cell of the result is the tuple (its row member, its column member, the slicer), with All for everything else. That's the whole evaluation model.
+
+### Combining dimensions on one axis
+To show every store for every year, put the **cross join** of both sets on rows, written `*`:
+```sql
+SELECT { [Measures].[Qty] } ON COLUMNS,
+       NON EMPTY [Store].[Store Id].[Store Id].MEMBERS * [Date].[Year].[Year].MEMBERS ON ROWS
+FROM [Sales]
+```
+Each row is now a pair (store, year). Many pairs have no sales; **NON EMPTY** removes rows where every cell is empty.
+
+## Sorting, filtering and top-N
+These functions take a set and return a set, so they go wherever a set goes:
+```sql
+ORDER( [Store].[Store Id].[Store Id].MEMBERS, [Measures].[Qty], BDESC )
+-- stores sorted by Qty, highest first (B = break the hierarchy, sort all together)
+
+FILTER( [Store].[Store Id].[Store Id].MEMBERS, [Measures].[Qty] > 100 )
+-- only stores that sold more than 100
+
+TOPCOUNT( [Title].[Title Id].[Title Id].MEMBERS, 5, [Measures].[Qty] )
+-- the 5 best-selling titles
+```
+In `FILTER`, the condition is evaluated for each member in turn, together with the slicer: "the Qty of this store, in the WHERE context".
+
+## Calculated members: computing new numbers
+Most real questions need a number that isn't stored: a share, a growth, a comparison. You define it with `WITH MEMBER`, at the top of the query, then use it like any measure:
+```sql
+WITH MEMBER [Measures].[Share of total] AS
+  [Measures].[Qty] / ( [Measures].[Qty], [Store].[Store Id].[All] ),
+  FORMAT_STRING = "Percent"
+SELECT { [Measures].[Qty], [Measures].[Share of total] } ON COLUMNS,
+       [Store].[Store Id].[Store Id].MEMBERS ON ROWS
+FROM [Sales]
+```
+Look at the denominator: it's a tuple that takes the current cell and **changes one coordinate**, the store, to All. So for each store row it means "Qty of all stores". This "same cell, but with one coordinate moved" idea is the key MDX skill.
+
+Moving along time works the same way:
 ```sql
 WITH MEMBER [Measures].[Qty prev year] AS
   ( [Measures].[Qty], [Date].[Calendar].CURRENTMEMBER.PREVMEMBER )
-MEMBER [Measures].[YoY %] AS
+MEMBER [Measures].[Growth] AS
   IIF( [Measures].[Qty prev year] = 0, NULL,
-       ([Measures].[Qty] - [Measures].[Qty prev year]) / [Measures].[Qty prev year] ),
+       ( [Measures].[Qty] - [Measures].[Qty prev year] ) / [Measures].[Qty prev year] ),
   FORMAT_STRING = "Percent"
-SELECT { [Measures].[Qty], [Measures].[YoY %] } ON COLUMNS,
+SELECT { [Measures].[Qty], [Measures].[Growth] } ON COLUMNS,
        [Date].[Calendar].[Year].MEMBERS ON ROWS
 FROM [Sales]
 ```
-- `PREVMEMBER` is the previous member at the same level. `PARALLELPERIOD([Date].[Calendar].[Year], 1, member)` is the same position one year earlier (for example, the same season last year).
-- `[All]` members give grand totals for free. Put them on an axis for an "overall" row.
-- `FILTER(set, condition)`, `ORDER(set, expr, DESC)`, `TOPCOUNT(set, n, expr)`.
-- Distinct counts need a **distinct count measure** in the cube, which matters when "count each file once" is the question.
+- `CURRENTMEMBER` is the member of that hierarchy in the cell being computed (here, the row's year). `.PREVMEMBER` is the one before it at the same level.
+- `PARALLELPERIOD([Date].[Calendar].[Year], 1, member)` gives the same position one year earlier: for a month, the same month last year. Useful for "compared to the same season last year".
+- `IIF(condition, if_true, if_false)` guards the division. Returning `NULL` (not 0) makes the cell empty, exactly like returning `None` in week 6, and `NON EMPTY` can then hide it.
+
+## Writing a query, step by step
+1. **Say it in words** first: "for each X, show Y, compared to Z, only where W". 
+2. X tells you what goes **on rows**; Y (and Z) are the measures **on columns**; a fixed context goes in **WHERE**; a condition on X is a **FILTER**.
+3. If Y or Z isn't stored in the cube, define it with **WITH MEMBER**, usually as "the current cell with one coordinate moved".
+4. Run it with a small set on rows first, check one number by hand (or with SQL on the star schema), then widen it.
+
+**Distinct counts** need a distinct-count measure in the cube (week 7). If a query asks "how many different users", check that the cube has one before writing MDX around it.
+
+## Dashboards and the report
+The dashboards (Power BI) are built on the same cube: drag dimensions onto axes and measures into values, which is MDX with a mouse. Choose each chart for the question it answers, label axes and units, and keep screenshots for the report. In the report, for every query explain what it computes, how you checked it, and every edge case you decided (empty cells, division by zero, ties).
 
 > **Remember**
-> - One cell = one tuple. Anything you don't specify comes from the slicer or the `[All]` member.
+> - A tuple `( , )` is one cell; a set `{ , }` is a list for an axis.
+> - Anything you don't specify is the All member, unless WHERE fixes it.
+> - WHERE is a slicer (a fixed coordinate), not a row filter. Use FILTER for conditions.
+> - Calculated members = the current cell with one coordinate moved.
 > - Guard every division with `IIF(x = 0, NULL, ...)`.
-> - Write the query in words first: "for each X, show Y, compared to Z."
+> - Write the query in words first.
 </script>
 <script>
 /* ============ DATA ============ */
@@ -1331,6 +2636,7 @@ const ASSIGN = [
   ["A20–A21", "Dashboards", "Power BI", "W7b"],
 ];
 
+const EXERCISES = {"heads": {"w0": "\"\"\"Week 0: prove your setup works.\n\nGoal: write a .py file, run it, run its tests, use the debugger.\nRun the tests with:   pytest tests/test_w00_setup.py\nRun this file with:   python exercises/w00_setup.py\n\"\"\"\nimport sys", "w1": "\"\"\"Week 1: core syntax (book ch. 3-8 and 10).\n\nVariables, types, expressions, strings, conditions, loops, functions.\nRule for this week: only plain loops and if/else. No list comprehensions yet; they come in week 2.\nRun:  pytest tests/test_w01_basics.py -v\n\"\"\"", "w2": "\"\"\"Week 2: data structures (book ch. 9, 11-14, 27 \"collections\").\n\nLists, tuples, dicts, sets, mutability, nesting, comprehensions, sorting, recursion.\nA table of data in plain Python is a LIST OF DICTS: one dict per row, keys are column names.\n    rows = [{\"store\": \"A\", \"qty\": 5}, {\"store\": \"B\", \"qty\": 3}]\nMost ETL code is loops over that shape: you will use it for the whole DSS project.\nRun:  pytest tests/test_w02_collections.py -v\n\"\"\"\nfrom collections import Counter, defaultdict", "w3": "\"\"\"Week 3: files, formats, exceptions (book ch. 15-17 and 26).\n\nEvery reader here returns the same shape: a LIST OF DICTS (week 2), so the rest of your\npipeline never cares whether the data came from CSV, ARFF, XML or JSON.\nPractice files are in practice_data/ (the DSS lab files + loans.json).\nRules: always `with open(...)`, always encoding=\"utf-8\", always newline=\"\" for csv files.\nRun:  pytest tests/test_w03_files.py -v\n\"\"\"\nimport csv\nimport json\nimport xml.etree.ElementTree as ET\nfrom collections import Counter\nfrom pathlib import Path\n\nMISSING = {\"\", \"?\"}  # ARFF writes missing values as \"?\"", "w4": "\"\"\"Week 4: dates, data quality, text, star schema (book ch. 8 \"Modules\", 25, 27).\n\nThis file IMPORTS your week-3 code: that's what modules are for. Write a function once, reuse it.\nThe last two exercises turn practice_data/sales.arff into a small star schema\n(dimensions + fact table, one CSV per table): the same kind of job as DSS Assignments 3-4,\non different data.\nRun:  pytest tests/test_w04_cleaning.py -v\n\"\"\"\nimport re\nimport statistics\nfrom datetime import datetime\nfrom pathlib import Path\n\nfrom exercises.w03_files import write_csv\n\nWEEKDAYS = [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\"]", "w5": "\"\"\"Week 5: databases from Python (book ch. 23 \"Iterators and Generators\" + DB-API).\n\nYou practise on sqlite3 (built into Python, no server). pyodbc for SQL Server follows the SAME\nDB-API: connect -> cursor -> execute/executemany with ? placeholders -> commit -> fetch.\nSo everything here carries over to your Group_ID_DB, with one difference: on pyodbc\nset `cursor.fast_executemany = True` before executemany, or bulk inserts crawl.\nRun:  pytest tests/test_w05_db.py -v\n\"\"\"\nimport csv\nimport json\nfrom pathlib import Path", "w6": "\"\"\"Week 6: turn functions into a real program (book ch. 24 \"Command Line Processing\").\n\nargparse for options, logging instead of print, exit codes, and a main() that wires weeks 3-4 together.\nWhen it's done you can run:\n    python -m exercises.w06_cli practice_data/sales.arff --out-dir out/star -v\nThat is the shape every DSS script should have.\nRun:  pytest tests/test_w06_cli.py -v\n\"\"\"\nimport argparse\nimport logging\nimport sys\nfrom pathlib import Path\n\nfrom exercises.w03_files import parse_arff\nfrom exercises.w04_cleaning import build_sales_star, write_tables\n\nlog = logging.getLogger(__name__)"}, "fns": {"w0-hello": {"stub": "def hello(name):\n    \"\"\"Return a greeting for `name`.\n\n    >>> hello(\"Ada\")\n    'Hello, Ada!'\n    \"\"\"\n    raise NotImplementedError", "sol": "def hello(name):\n    # an f-string puts the value of `name` inside the text\n    return f\"Hello, {name}!\""}, "w0-python_version": {"stub": "def python_version():\n    \"\"\"Return the running Python version as \"MAJOR.MINOR\", e.g. \"3.14\".\n\n    Hint: `sys.version_info` has `.major` and `.minor` attributes.\n    \"\"\"\n    raise NotImplementedError", "sol": "def python_version():\n    v = sys.version_info\n    return f\"{v.major}.{v.minor}\""}, "w0-in_virtualenv": {"stub": "def in_virtualenv():\n    \"\"\"Return True if this code is running inside a virtual environment.\n\n    Hint: inside a venv, `sys.prefix` (the venv) differs from `sys.base_prefix`\n    (the Python it was created from).\n    \"\"\"\n    raise NotImplementedError", "sol": "def in_virtualenv():\n    # inside a venv, sys.prefix points at .venv; outside, both are the same folder\n    return sys.prefix != sys.base_prefix"}, "w0-average_of_positive": {"stub": "def average_of_positive(numbers):\n    \"\"\"Return the average of the numbers that are > 0. Return 0.0 if there are none.\n\n    DEBUGGING EXERCISE: this function is already written but has THREE bugs.\n    1. Run the tests and read the traceback bottom-up: which line, which error?\n    2. Put a breakpoint on the `for` line (click left of the line number),\n       then Run > Start Debugging and step with F10. Watch `total` and `count`.\n    Fix all three without rewriting the whole function.\n\n    >>> average_of_positive([2, -1, 4])\n    3.0\n    \"\"\"\n    total = 0\n    count = 0\n    for n in numbers:\n        if n > 0:\n            total = n\n        count += 1\n    return total / count", "sol": "def average_of_positive(numbers):\n    total = 0\n    count = 0\n    for n in numbers:\n        if n > 0:\n            total += n      # bug 1: `total = n` overwrote the sum instead of adding to it\n            count += 1      # bug 2: this was outside the `if`, so it counted the negatives too\n    if count == 0:          # bug 3: with no positives, total / count divided by zero\n        return 0.0\n    return total / count"}, "w1-celsius_to_fahrenheit": {"stub": "def celsius_to_fahrenheit(celsius):\n    \"\"\"Convert Celsius to Fahrenheit: F = C * 9/5 + 32.\n\n    >>> celsius_to_fahrenheit(100)\n    212.0\n    \"\"\"\n    raise NotImplementedError", "sol": "def celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32"}, "w1-is_even": {"stub": "def is_even(n):\n    \"\"\"Return True if the integer n is even. Hint: the % operator.\"\"\"\n    raise NotImplementedError", "sol": "def is_even(n):\n    # n % 2 is the remainder after dividing by 2: 0 for even numbers\n    return n % 2 == 0"}, "w1-grade": {"stub": "def grade(score):\n    \"\"\"Turn a score 0-100 into a letter: >=90 \"A\", >=80 \"B\", >=70 \"C\", otherwise \"F\".\n\n    Raise ValueError if score is outside 0..100 (e.g. `raise ValueError(\"bad score\")`).\n    Order of the if/elif branches matters: why?\n    \"\"\"\n    raise NotImplementedError", "sol": "def grade(score):\n    if score < 0 or score > 100:\n        raise ValueError(f\"bad score: {score}\")\n    # check the highest band first: 95 is also >= 70, so the first true branch must be \"A\"\n    if score >= 90:\n        return \"A\"\n    elif score >= 80:\n        return \"B\"\n    elif score >= 70:\n        return \"C\"\n    else:\n        return \"F\""}, "w1-sum_to": {"stub": "def sum_to(n):\n    \"\"\"Return 1 + 2 + ... + n using a loop (not the formula). sum_to(0) is 0.\"\"\"\n    raise NotImplementedError", "sol": "def sum_to(n):\n    total = 0\n    for i in range(1, n + 1):   # range stops before its end, so n + 1 includes n\n        total += i\n    return total"}, "w1-count_vowels": {"stub": "def count_vowels(text):\n    \"\"\"Count the vowels (a, e, i, o, u, upper or lower case) in text.\n\n    >>> count_vowels(\"Hello World\")\n    3\n    \"\"\"\n    raise NotImplementedError", "sol": "def count_vowels(text):\n    count = 0\n    for ch in text.lower():     # lower() once, so \"A\" and \"a\" are the same\n        if ch in \"aeiou\":\n            count += 1\n    return count"}, "w1-fizzbuzz": {"stub": "def fizzbuzz(n):\n    \"\"\"Return a list of strings for 1..n: \"Fizz\" for multiples of 3, \"Buzz\" for 5,\n    \"FizzBuzz\" for both, otherwise the number as a string.\n\n    >>> fizzbuzz(5)\n    ['1', '2', 'Fizz', '4', 'Buzz']\n    \"\"\"\n    raise NotImplementedError", "sol": "def fizzbuzz(n):\n    result = []\n    for i in range(1, n + 1):\n        if i % 15 == 0:         # test \"both\" first, or the 3 branch would catch 15\n            result.append(\"FizzBuzz\")\n        elif i % 3 == 0:\n            result.append(\"Fizz\")\n        elif i % 5 == 0:\n            result.append(\"Buzz\")\n        else:\n            result.append(str(i))\n    return result"}, "w1-reverse_words": {"stub": "def reverse_words(sentence):\n    \"\"\"Reverse the order of words. Extra spaces between words collapse to one.\n\n    >>> reverse_words(\"  data   engineering is fun \")\n    'fun is engineering data'\n    Hint: str.split() with no argument, slicing [::-1], \" \".join(...)\n    \"\"\"\n    raise NotImplementedError", "sol": "def reverse_words(sentence):\n    words = sentence.split()        # no argument: splits on any run of spaces, drops empty pieces\n    return \" \".join(words[::-1])"}, "w1-format_price": {"stub": "def format_price(amount, currency=\"EUR\"):\n    \"\"\"Format a number with exactly 2 decimals followed by the currency.\n\n    >>> format_price(12.5)\n    '12.50 EUR'\n    >>> format_price(3, \"USD\")\n    '3.00 USD'\n    Hint: f-string format spec  f\"{x:.2f}\"\n    \"\"\"\n    raise NotImplementedError", "sol": "def format_price(amount, currency=\"EUR\"):\n    return f\"{amount:.2f} {currency}\""}, "w1-initials": {"stub": "def initials(full_name):\n    \"\"\"Return the capitalised initials, each followed by a dot.\n\n    >>> initials(\"ada  king lovelace\")\n    'A.K.L.'\n    \"\"\"\n    raise NotImplementedError", "sol": "def initials(full_name):\n    result = \"\"\n    for word in full_name.split():\n        result += word[0].upper() + \".\"\n    return result"}, "w1-is_palindrome": {"stub": "def is_palindrome(text):\n    \"\"\"True if text reads the same backwards, ignoring case and anything that is not a letter.\n\n    >>> is_palindrome(\"A man, a plan, a canal: Panama\")\n    True\n    Hint: str.isalpha()\n    \"\"\"\n    raise NotImplementedError", "sol": "def is_palindrome(text):\n    letters = \"\"\n    for ch in text:\n        if ch.isalpha():\n            letters += ch.lower()\n    return letters == letters[::-1]"}, "w1-collatz_steps": {"stub": "def collatz_steps(n):\n    \"\"\"Count the steps to reach 1: if n is even n = n // 2, else n = 3n + 1.\n\n    collatz_steps(1) is 0, collatz_steps(6) is 8. Use a while loop.\n    Raise ValueError for n < 1.\n    \"\"\"\n    raise NotImplementedError", "sol": "def collatz_steps(n):\n    if n < 1:\n        raise ValueError(\"n must be at least 1\")\n    steps = 0\n    while n != 1:               # we don't know how many steps in advance: a while loop\n        if n % 2 == 0:\n            n = n // 2\n        else:\n            n = 3 * n + 1\n        steps += 1\n    return steps"}, "w1-first_index_above": {"stub": "def first_index_above(values, threshold):\n    \"\"\"Return the index of the first value > threshold, or -1 if none.\n\n    Practise `for i, v in enumerate(values)` and returning early from inside a loop.\n    \"\"\"\n    raise NotImplementedError", "sol": "def first_index_above(values, threshold):\n    for i, v in enumerate(values):\n        if v > threshold:\n            return i            # leave the function as soon as we know the answer\n    return -1"}, "w1-safe_int": {"stub": "def safe_int(text, default=0):\n    \"\"\"Convert text to int; if that fails, return default.\n\n    >>> safe_int(\"42\")\n    42\n    >>> safe_int(\" 7 \")\n    7\n    >>> safe_int(\"4.2\", default=-1)\n    -1\n    Preview of week 3: try / except ValueError.\n    \"\"\"\n    raise NotImplementedError", "sol": "def safe_int(text, default=0):\n    try:\n        return int(text)        # int() already ignores surrounding spaces\n    except ValueError:\n        return default"}, "w1-count_digits": {"stub": "def count_digits(n):\n    \"\"\"Count the digits of an integer (sign ignored) without converting it to str.\n\n    count_digits(0) is 1, count_digits(-1234) is 4. Use a while loop and // 10.\n    \"\"\"\n    raise NotImplementedError", "sol": "def count_digits(n):\n    n = abs(n)\n    count = 1                   # every number, even 0, has at least one digit\n    while n >= 10:\n        n = n // 10             # drop the last digit\n        count += 1\n    return count"}, "w1-multiplication_table": {"stub": "def multiplication_table(n):\n    \"\"\"Return the n x n table as one string: rows separated by newlines, numbers\n    right-aligned in width 4.\n\n    >>> print(multiplication_table(3))\n       1   2   3\n       2   4   6\n       3   6   9\n    Hint: nested loops and f\"{x:4d}\"\n    \"\"\"\n    raise NotImplementedError", "sol": "def multiplication_table(n):\n    lines = []\n    for row in range(1, n + 1):\n        line = \"\"\n        for col in range(1, n + 1):\n            line += f\"{row * col:4d}\"\n        lines.append(line)\n    return \"\\n\".join(lines)"}, "w2-second_largest": {"stub": "def second_largest(nums):\n    \"\"\"Return the second largest DISTINCT value, or None if there isn't one.\n\n    >>> second_largest([3, 9, 9, 1])\n    3\n    \"\"\"\n    raise NotImplementedError", "sol": "def second_largest(nums):\n    distinct = sorted(set(nums))    # set() drops repeats, sorted() orders them\n    if len(distinct) < 2:\n        return None\n    return distinct[-2]"}, "w2-unique_in_order": {"stub": "def unique_in_order(items):\n    \"\"\"Remove duplicates, keeping the first occurrence and the original order.\n\n    >>> unique_in_order([\"b\", \"a\", \"b\", \"c\", \"a\"])\n    ['b', 'a', 'c']\n    Hint: a set `seen` for O(1) membership checks, a list for the order.\n    \"\"\"\n    raise NotImplementedError", "sol": "def unique_in_order(items):\n    seen = set()\n    result = []\n    for x in items:\n        if x not in seen:           # set lookup is instant; a list would rescan every time\n            seen.add(x)\n            result.append(x)\n    return result"}, "w2-append_copy": {"stub": "def append_copy(lst, item):\n    \"\"\"Return a NEW list with item appended. The original list must NOT change.\n\n    Aliasing trap: `new = lst` does not copy. Why does the test check `lst` afterwards?\n    \"\"\"\n    raise NotImplementedError", "sol": "def append_copy(lst, item):\n    new = lst.copy()                # `new = lst` would be a second name for the same list\n    new.append(item)\n    return new"}, "w2-min_max": {"stub": "def min_max(nums):\n    \"\"\"Return a tuple (smallest, largest) in one pass, without min() or max().\n\n    Raise ValueError on an empty list. Tuples are how Python returns several values.\n    \"\"\"\n    raise NotImplementedError", "sol": "def min_max(nums):\n    if not nums:\n        raise ValueError(\"min_max() of an empty list\")\n    lo = hi = nums[0]\n    for x in nums[1:]:\n        if x < lo:\n            lo = x\n        elif x > hi:\n            hi = x\n    return lo, hi"}, "w2-transpose": {"stub": "def transpose(matrix):\n    \"\"\"Transpose a list of lists using a nested list comprehension.\n\n    >>> transpose([[1, 2, 3], [4, 5, 6]])\n    [[1, 4], [2, 5], [3, 6]]\n    \"\"\"\n    raise NotImplementedError", "sol": "def transpose(matrix):\n    if not matrix:\n        return []\n    # outer loop picks a column index c, inner loop takes item c from every row\n    return [[row[c] for row in matrix] for c in range(len(matrix[0]))]"}, "w2-squares_of_odds": {"stub": "def squares_of_odds(nums):\n    \"\"\"One list comprehension: the squares of the odd numbers, in order.\n\n    >>> squares_of_odds([1, 2, 3, 4, 5])\n    [1, 9, 25]\n    \"\"\"\n    raise NotImplementedError", "sol": "def squares_of_odds(nums):\n    return [x * x for x in nums if x % 2 == 1]"}, "w2-word_frequencies": {"stub": "def word_frequencies(text):\n    \"\"\"Count words, case-insensitive, ignoring the punctuation .,!?;: around words.\n\n    >>> word_frequencies(\"The cat. The DOG!\")\n    {'the': 2, 'cat': 1, 'dog': 1}\n    Do it once with a plain dict and dict.get(word, 0), then rewrite with Counter.\n    \"\"\"\n    raise NotImplementedError", "sol": "def word_frequencies(text):\n    counts = {}\n    for word in text.lower().split():\n        word = word.strip(\".,!?;:\")\n        if word:\n            counts[word] = counts.get(word, 0) + 1\n    return counts"}, "w2-top_n": {"stub": "def top_n(freqs, n):\n    \"\"\"Return the n (word, count) pairs with the highest counts as a list of tuples.\n\n    Ties are broken alphabetically. Hint: sorted(freqs.items(), key=lambda kv: (-kv[1], kv[0]))\n    \"\"\"\n    raise NotImplementedError", "sol": "def top_n(freqs, n):\n    # -count sorts the biggest first; the word breaks ties alphabetically\n    return sorted(freqs.items(), key=lambda kv: (-kv[1], kv[0]))[:n]"}, "w2-invert_dict": {"stub": "def invert_dict(d):\n    \"\"\"Map each value to the sorted list of keys that had it.\n\n    >>> invert_dict({\"a\": 1, \"b\": 2, \"c\": 1})\n    {1: ['a', 'c'], 2: ['b']}\n    \"\"\"\n    raise NotImplementedError", "sol": "def invert_dict(d):\n    result = defaultdict(list)      # a missing key starts as an empty list\n    for key, value in d.items():\n        result[value].append(key)\n    return {value: sorted(keys) for value, keys in result.items()}"}, "w2-merge_counts": {"stub": "def merge_counts(a, b):\n    \"\"\"Return a new dict with the counts of a and b added together. Do not modify a or b.\"\"\"\n    raise NotImplementedError", "sol": "def merge_counts(a, b):\n    result = dict(a)                # a new dict, so `a` stays as it was\n    for key, n in b.items():\n        result[key] = result.get(key, 0) + n\n    return result"}, "w2-common_and_only": {"stub": "def common_and_only(a, b):\n    \"\"\"Return a tuple of three SORTED lists: (in both, only in a, only in b).\n\n    Hint: set operators & and -\n    \"\"\"\n    raise NotImplementedError", "sol": "def common_and_only(a, b):\n    sa, sb = set(a), set(b)\n    return sorted(sa & sb), sorted(sa - sb), sorted(sb - sa)"}, "w2-column": {"stub": "def column(rows, key):\n    \"\"\"Return the list of values for one column. Rows missing the key give None.\n\n    >>> column([{\"a\": 1}, {\"b\": 2}], \"a\")\n    [1, None]\n    \"\"\"\n    raise NotImplementedError", "sol": "def column(rows, key):\n    return [row.get(key) for row in rows]"}, "w2-group_by": {"stub": "def group_by(rows, key):\n    \"\"\"Group rows into a dict: value of `key` -> list of the rows with that value.\n\n    Keep row order inside each group. This is SQL's GROUP BY, by hand.\n    \"\"\"\n    raise NotImplementedError", "sol": "def group_by(rows, key):\n    groups = defaultdict(list)\n    for row in rows:\n        groups[row[key]].append(row)\n    return dict(groups)"}, "w2-aggregate": {"stub": "def aggregate(rows, group_key, value_key, how=\"sum\"):\n    \"\"\"GROUP BY group_key and aggregate value_key. `how` is \"sum\", \"count\", \"mean\" or \"max\".\n\n    Return a dict group -> number. Raise ValueError for an unknown `how`.\n    >>> aggregate([{\"s\": \"A\", \"q\": 2}, {\"s\": \"A\", \"q\": 4}, {\"s\": \"B\", \"q\": 1}], \"s\", \"q\", \"mean\")\n    {'A': 3.0, 'B': 1.0}\n    \"\"\"\n    raise NotImplementedError", "sol": "def aggregate(rows, group_key, value_key, how=\"sum\"):\n    if how not in (\"sum\", \"count\", \"mean\", \"max\"):\n        raise ValueError(f\"unknown aggregation: {how}\")\n    result = {}\n    for group, members in group_by(rows, group_key).items():\n        values = [row[value_key] for row in members]\n        if how == \"sum\":\n            result[group] = sum(values)\n        elif how == \"count\":\n            result[group] = len(values)\n        elif how == \"mean\":\n            result[group] = sum(values) / len(values)\n        else:\n            result[group] = max(values)\n    return result"}, "w2-index_by": {"stub": "def index_by(rows, key):\n    \"\"\"Build a lookup dict key value -> row. Raise ValueError if a key value repeats.\n\n    This is how you join two tables in plain Python: index one, loop over the other.\n    \"\"\"\n    raise NotImplementedError", "sol": "def index_by(rows, key):\n    index = {}\n    for row in rows:\n        k = row[key]\n        if k in index:\n            raise ValueError(f\"duplicate key {k!r}\")\n        index[k] = row\n    return index"}, "w2-join": {"stub": "def join(left, right, key):\n    \"\"\"Inner join two lists of rows on `key`. Return new merged dicts (left fields first).\n\n    Use index_by on `right`, then one loop over `left`: O(n + m), not O(n * m).\n    \"\"\"\n    raise NotImplementedError", "sol": "def join(left, right, key):\n    lookup = index_by(right, key)       # one pass over right\n    result = []\n    for row in left:                    # one pass over left, an instant lookup per row\n        match = lookup.get(row[key])\n        if match is not None:\n            result.append({**row, **match})     # a new dict: left fields, then right fields\n    return result"}, "w2-sales_summary": {"stub": "def sales_summary(rows):\n    \"\"\"Mini-project. rows look like {\"store\": \"S1\", \"title\": \"T1\", \"qty\": 5}.\n\n    Return {store: {\"orders\": n_rows, \"qty\": total_qty, \"top_title\": title_with_most_qty}}\n    Ties for top_title -> the alphabetically first title.\n    Combine group_by, sum and a Counter (Counter.most_common is useful but check its tie order!).\n    \"\"\"\n    raise NotImplementedError", "sol": "def sales_summary(rows):\n    summary = {}\n    for store, members in group_by(rows, \"store\").items():\n        qty_per_title = Counter()\n        for row in members:\n            qty_per_title[row[\"title\"]] += row[\"qty\"]\n        best = max(qty_per_title.values())\n        top = min(t for t, q in qty_per_title.items() if q == best)   # tie: alphabetically first\n        summary[store] = {\"orders\": len(members), \"qty\": sum(qty_per_title.values()), \"top_title\": top}\n    return summary"}, "w2-flatten": {"stub": "def flatten(nested):\n    \"\"\"Flatten arbitrarily nested lists.\n\n    >>> flatten([1, [2, [3, [4]], 5]])\n    [1, 2, 3, 4, 5]\n    Hint: isinstance(x, list)\n    \"\"\"\n    raise NotImplementedError", "sol": "def flatten(nested):\n    result = []\n    for x in nested:\n        if isinstance(x, list):\n            result.extend(flatten(x))   # the same problem, one level smaller\n        else:\n            result.append(x)\n    return result"}, "w2-depth": {"stub": "def depth(nested):\n    \"\"\"Max nesting depth: depth([]) is 1, depth([1, [2, [3]]]) is 3. Recursive.\"\"\"\n    raise NotImplementedError", "sol": "def depth(nested):\n    inner = [depth(x) for x in nested if isinstance(x, list)]\n    return 1 + max(inner, default=0)"}, "w2-binary_search": {"stub": "def binary_search(sorted_list, target, lo=0, hi=None):\n    \"\"\"Recursive binary search. Return the index of target or -1.\n\n    Default argument hi=None, then set hi = len(sorted_list) - 1 on the first call.\n    Never use a mutable default like hi=[]: why? (see the cheat sheet)\n    \"\"\"\n    raise NotImplementedError", "sol": "def binary_search(sorted_list, target, lo=0, hi=None):\n    if hi is None:\n        hi = len(sorted_list) - 1\n    if lo > hi:                         # empty range: not found\n        return -1\n    mid = (lo + hi) // 2\n    if sorted_list[mid] == target:\n        return mid\n    if sorted_list[mid] < target:\n        return binary_search(sorted_list, target, mid + 1, hi)\n    return binary_search(sorted_list, target, lo, mid - 1)"}, "w2-merge_sort": {"stub": "def merge_sort(nums):\n    \"\"\"Recursive merge sort returning a NEW sorted list. Don't use sort() or sorted().\"\"\"\n    raise NotImplementedError", "sol": "def merge_sort(nums):\n    if len(nums) <= 1:\n        return list(nums)               # a copy, so the caller's list is never returned\n    mid = len(nums) // 2\n    left, right = merge_sort(nums[:mid]), merge_sort(nums[mid:])\n    merged, i, j = [], 0, 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            merged.append(left[i])\n            i += 1\n        else:\n            merged.append(right[j])\n            j += 1\n    return merged + left[i:] + right[j:]"}, "w3-count_lines": {"stub": "def count_lines(path):\n    \"\"\"Return the number of lines in a text file. Iterate over the file object: never .read() a big file.\"\"\"\n    raise NotImplementedError", "sol": "def count_lines(path):\n    count = 0\n    with open(path, encoding=\"utf-8\") as f:\n        for _ in f:                 # reads one line at a time, never the whole file\n            count += 1\n    return count"}, "w3-read_header_file": {"stub": "def read_header_file(path):\n    \"\"\"Read a one-line comma-separated header file (practice_data/census.header) into a list of names.\"\"\"\n    raise NotImplementedError", "sol": "def read_header_file(path):\n    with open(path, encoding=\"utf-8\") as f:\n        line = f.readline()\n    return [name.strip() for name in line.split(\",\")]"}, "w3-read_csv_rows": {"stub": "def read_csv_rows(path, fieldnames=None):\n    \"\"\"Read a CSV into a list of dicts with csv.DictReader. Values stay strings.\n\n    If fieldnames is None the first line is the header; otherwise use the given names\n    (census_selected.csv has no header: its names are in census.header).\n    Strip surrounding spaces from every value.\n    \"\"\"\n    raise NotImplementedError", "sol": "def read_csv_rows(path, fieldnames=None):\n    with open(path, encoding=\"utf-8\", newline=\"\") as f:\n        reader = csv.DictReader(f, fieldnames=fieldnames)   # None: take names from line 1\n        return [{k: v.strip() for k, v in row.items()} for row in reader]"}, "w3-write_csv": {"stub": "def write_csv(rows, path, fieldnames):\n    \"\"\"Write rows (list of dicts) to a CSV with a header line; create parent folders if needed.\n\n    Return the number of data rows written. Hint: Path(path).parent.mkdir(parents=True, exist_ok=True)\n    \"\"\"\n    raise NotImplementedError", "sol": "def write_csv(rows, path, fieldnames):\n    path = Path(path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    with open(path, \"w\", encoding=\"utf-8\", newline=\"\") as f:\n        writer = csv.DictWriter(f, fieldnames=fieldnames)\n        writer.writeheader()\n        n = 0\n        for row in rows:\n            writer.writerow(row)    # the writer adds quotes around commas and quotes for you\n            n += 1\n    return n"}, "w3-to_number": {"stub": "def to_number(value):\n    \"\"\"Convert a raw string to int or float when possible.\n\n    \"42\" -> 42, \" 3.5 \" -> 3.5, \"?\" or \"\" or \"  \" -> None, \"Private\" -> \"Private\" (stripped).\n    Use try/except ValueError: don't try to detect digits by hand.\n    \"\"\"\n    raise NotImplementedError", "sol": "def to_number(value):\n    text = value.strip()\n    if text in MISSING:\n        return None\n    try:\n        return int(text)            # try the strictest type first: \"3.5\" fails here...\n    except ValueError:\n        pass\n    try:\n        return float(text)          # ...and succeeds here\n    except ValueError:\n        return text"}, "w3-convert_types": {"stub": "def convert_types(rows):\n    \"\"\"Return NEW rows with to_number applied to every value.\"\"\"\n    raise NotImplementedError", "sol": "def convert_types(rows):\n    return [{k: to_number(v) for k, v in row.items()} for row in rows]"}, "w3-missing_report": {"stub": "def missing_report(rows):\n    \"\"\"Return {field: number of missing values} for fields with at least one missing.\n\n    Missing means None, or a string that is \"\" or \"?\" after stripping.\n    \"\"\"\n    raise NotImplementedError", "sol": "def missing_report(rows):\n    report = Counter()\n    for row in rows:\n        for field, value in row.items():\n            if value is None or (isinstance(value, str) and value.strip() in MISSING):\n                report[field] += 1\n    return dict(report)"}, "w3-parse_arff": {"stub": "def parse_arff(path):\n    \"\"\"Parse a simple ARFF file into {\"relation\": str, \"attributes\": [(name, type)], \"rows\": [dict]}.\n\n    Format: lines starting with % are comments; @relation NAME; @attribute NAME TYPE\n    (TYPE may contain spaces, e.g. \"date 'yyyy-MM-dd'\" or \"{a, b}\"); then @data, then one CSV\n    line per row where text values may be wrapped in single quotes: 'Net 60'.\n    Keywords are case-insensitive (@DATA works too). Row values are strings without the quotes.\n\n    Hint: str.split(maxsplit=2), and csv.reader(lines, quotechar=\"'\", skipinitialspace=True).\n    Think: what would break if a text value contained a comma? an apostrophe? double quotes?\n    \"\"\"\n    raise NotImplementedError", "sol": "def parse_arff(path):\n    relation, attributes, data_lines = None, [], []\n    in_data = False\n    with open(path, encoding=\"utf-8\") as f:\n        for line in f:\n            line = line.strip()\n            if not line or line.startswith(\"%\"):    # blank lines and comments carry no data\n                continue\n            if in_data:\n                data_lines.append(line)\n                continue\n            parts = line.split(maxsplit=2)          # \"@attribute\", name, the rest (the type)\n            keyword = parts[0].lower()\n            if keyword == \"@relation\":\n                relation = parts[1].strip(\"'\\\"\")\n            elif keyword == \"@attribute\":\n                attributes.append((parts[1], parts[2]))\n            elif keyword == \"@data\":\n                in_data = True\n    names = [name for name, _ in attributes]\n    reader = csv.reader(data_lines, quotechar=\"'\", skipinitialspace=True)\n    rows = [dict(zip(names, values)) for values in reader]\n    return {\"relation\": relation, \"attributes\": attributes, \"rows\": rows}"}, "w3-xml_attribute_rows": {"stub": "def xml_attribute_rows(path, record_tag=\"row\"):\n    \"\"\"census_row.xml stores each record as attributes: <row id=\"1\" age=\"39\" .../>.\n\n    Return a list of dicts (attribute name -> string value), one per <record_tag> element.\n    Hint: ET.parse(path).getroot().iter(record_tag) and element.attrib\n    \"\"\"\n    raise NotImplementedError", "sol": "def xml_attribute_rows(path, record_tag=\"row\"):\n    root = ET.parse(path).getroot()\n    return [dict(el.attrib) for el in root.iter(record_tag)]"}, "w3-xml_element_rows": {"stub": "def xml_element_rows(path, record_tag):\n    \"\"\"census_elements.xml stores each record as child elements: <census><id>1</id><age>39</age>...</census>.\n\n    Return a list of dicts child tag -> text (\"\" if the element is empty).\n    \"\"\"\n    raise NotImplementedError", "sol": "def xml_element_rows(path, record_tag):\n    root = ET.parse(path).getroot()\n    return [{child.tag: child.text or \"\" for child in el} for el in root.iter(record_tag)]"}, "w3-count_values_streaming": {"stub": "def count_values_streaming(path, record_tag, field):\n    \"\"\"Count the values of child `field` across all <record_tag> elements WITHOUT loading the whole tree.\n\n    Use ET.iterparse(path, events=(\"end\",)) and call elem.clear() after each finished record,\n    so memory stays flat even on a multi-GB file. Return a plain dict value -> count.\n    \"\"\"\n    raise NotImplementedError", "sol": "def count_values_streaming(path, record_tag, field):\n    counts = Counter()\n    for _, elem in ET.iterparse(path, events=(\"end\",)):\n        if elem.tag == record_tag:          # \"end\" fires when the closing tag is read\n            counts[elem.findtext(field)] += 1\n            elem.clear()                    # free this record before reading the next\n    return dict(counts)"}, "w3-load_json": {"stub": "def load_json(path):\n    \"\"\"Load a JSON file and return the Python object.\"\"\"\n    raise NotImplementedError", "sol": "def load_json(path):\n    with open(path, encoding=\"utf-8\") as f:\n        return json.load(f)"}, "w3-save_json": {"stub": "def save_json(obj, path):\n    \"\"\"Save obj as pretty JSON (indent=2, ensure_ascii=False so \"è\" stays readable). Create parent folders.\"\"\"\n    raise NotImplementedError", "sol": "def save_json(obj, path):\n    path = Path(path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    with open(path, \"w\", encoding=\"utf-8\") as f:\n        json.dump(obj, f, indent=2, ensure_ascii=False)"}, "w3-borrows_per_member": {"stub": "def borrows_per_member(path):\n    \"\"\"loans.json has \"members\" and \"events\". Count the events of type \"borrow\" per member NAME.\n\n    Skip events whose member_id is missing (None) or unknown. Return {name: count},\n    only for members with at least one borrow. Duplicated events count twice (cleaning is week 4).\n    \"\"\"\n    raise NotImplementedError", "sol": "def borrows_per_member(path):\n    data = load_json(path)\n    names = {m[\"id\"]: m[\"name\"] for m in data[\"members\"]}   # id -> name, for instant lookups\n    counts = Counter()\n    for event in data[\"events\"]:\n        if event[\"type\"] != \"borrow\":\n            continue\n        name = names.get(event.get(\"member_id\"))            # None for a missing or unknown id\n        if name is not None:\n            counts[name] += 1\n    return dict(counts)"}, "w3-read_text_safely": {"stub": "def read_text_safely(path):\n    \"\"\"Return the file's text, or None if the file does not exist.\n\n    If the bytes are not valid UTF-8, don't crash: decode with errors=\"replace\" (bad bytes become \"�\").\n    Catch the specific exceptions (FileNotFoundError, UnicodeDecodeError), never a bare `except:`.\n    \"\"\"\n    raise NotImplementedError", "sol": "def read_text_safely(path):\n    try:\n        with open(path, encoding=\"utf-8\") as f:\n            return f.read()\n    except FileNotFoundError:\n        return None\n    except UnicodeDecodeError:\n        with open(path, encoding=\"utf-8\", errors=\"replace\") as f:\n            return f.read()"}, "w4-parse_timestamp": {"stub": "def parse_timestamp(text):\n    \"\"\"Parse \"1994-09-14 08:30:00\" or \"1994-09-14T08:30:00\" into a datetime.\n\n    Raise ValueError for anything else (that's what datetime does by default: let it propagate).\n    Hint: datetime.fromisoformat, or datetime.strptime(text, \"%Y-%m-%d %H:%M:%S\").\n    \"\"\"\n    raise NotImplementedError", "sol": "def parse_timestamp(text):\n    return datetime.strptime(text.replace(\"T\", \" \"), \"%Y-%m-%d %H:%M:%S\")"}, "w4-season": {"stub": "def season(dt):\n    \"\"\"Meteorological season: Dec-Feb \"winter\", Mar-May \"spring\", Jun-Aug \"summer\", Sep-Nov \"autumn\".\"\"\"\n    raise NotImplementedError", "sol": "def season(dt):\n    # Dec=12 -> 0, Jan=1 -> 0, Feb=2 -> 0, Mar=3 -> 1 ... Nov=11 -> 3\n    return [\"winter\", \"spring\", \"summer\", \"autumn\"][dt.month % 12 // 3]"}, "w4-date_dimension_row": {"stub": "def date_dimension_row(dt):\n    \"\"\"Return one row of a date dimension:\n\n    {\"date_id\": 19940914, \"date\": \"1994-09-14\", \"day\": 14, \"month\": 9, \"year\": 1994,\n     \"quarter\": 3, \"weekday\": \"Wednesday\", \"season\": \"autumn\"}\n    date_id is an int YYYYMMDD: a common surrogate key for dates. Use WEEKDAYS and dt.weekday().\n    \"\"\"\n    raise NotImplementedError", "sol": "def date_dimension_row(dt):\n    return {\n        \"date_id\": dt.year * 10000 + dt.month * 100 + dt.day,\n        \"date\": dt.strftime(\"%Y-%m-%d\"),\n        \"day\": dt.day,\n        \"month\": dt.month,\n        \"year\": dt.year,\n        \"quarter\": (dt.month - 1) // 3 + 1,\n        \"weekday\": WEEKDAYS[dt.weekday()],      # weekday(): Monday is 0\n        \"season\": season(dt),\n    }"}, "w4-hours_between": {"stub": "def hours_between(start, end):\n    \"\"\"Hours (float) from timestamp string start to end; negative if end is earlier.\n\n    Subtracting two datetimes gives a timedelta: use .total_seconds().\n    \"\"\"\n    raise NotImplementedError", "sol": "def hours_between(start, end):\n    return (parse_timestamp(end) - parse_timestamp(start)).total_seconds() / 3600"}, "w4-row_key": {"stub": "def row_key(row, key_fields):\n    \"\"\"Return a hashable identity for a row, so rows can go in a set or be dict keys.\n\n    key_fields=None -> the whole row: tuple(sorted(row.items())).\n    Otherwise the tuple of the values of key_fields, in that order.\n    >>> row_key({\"b\": 2, \"a\": 1}, None)\n    (('a', 1), ('b', 2))\n    >>> row_key({\"b\": 2, \"a\": 1}, [\"b\"])\n    (2,)\n    \"\"\"\n    raise NotImplementedError", "sol": "def row_key(row, key_fields):\n    if key_fields is None:\n        return tuple(sorted(row.items()))       # sorted: key order in the dict doesn't matter\n    return tuple(row[f] for f in key_fields)"}, "w4-find_duplicates": {"stub": "def find_duplicates(rows, key_fields):\n    \"\"\"Return the key tuples that occur more than once, each listed once, in first-seen order.\n\n    >>> find_duplicates([{\"a\": 1, \"b\": 2}, {\"a\": 1, \"b\": 3}, {\"a\": 1, \"b\": 2}], [\"a\", \"b\"])\n    [(1, 2)]\n    \"\"\"\n    raise NotImplementedError", "sol": "def find_duplicates(rows, key_fields):\n    seen, dups = set(), []\n    for row in rows:\n        key = row_key(row, key_fields)\n        if key in seen and key not in dups:\n            dups.append(key)\n        seen.add(key)\n    return dups"}, "w4-drop_duplicates": {"stub": "def drop_duplicates(rows, key_fields=None):\n    \"\"\"Return rows without duplicates, keeping the first occurrence.\n\n    key_fields=None means \"the whole row must match\". Hint: tuple(sorted(row.items()))\n    turns a dict into something you can put in a set.\n    \"\"\"\n    raise NotImplementedError", "sol": "def drop_duplicates(rows, key_fields=None):\n    seen, result = set(), []\n    for row in rows:\n        key = row_key(row, key_fields)\n        if key not in seen:\n            seen.add(key)\n            result.append(row)\n    return result"}, "w4-mean_std": {"stub": "def mean_std(values):\n    \"\"\"Return (mean, sample standard deviation) ignoring None values.\n\n    No values -> (None, None). One value -> (value, 0.0). Use the statistics module.\n    Edge cases like these are exactly what graders check: decide them, then document them.\n    \"\"\"\n    raise NotImplementedError", "sol": "def mean_std(values):\n    present = [v for v in values if v is not None]\n    if not present:\n        return None, None\n    if len(present) == 1:                       # stdev needs two values: decide, don't crash\n        return float(present[0]), 0.0\n    return statistics.mean(present), statistics.stdev(present)"}, "w4-zscore_outliers": {"stub": "def zscore_outliers(values, k=3.0):\n    \"\"\"Return the indexes of values farther than k standard deviations from the mean.\n\n    None values are never outliers. If std is 0 (or undefined) there are no outliers.\n    \"\"\"\n    raise NotImplementedError", "sol": "def zscore_outliers(values, k=3.0):\n    mean, std = mean_std(values)\n    if not std:                                 # None or 0: nothing can be \"far\" from the mean\n        return []\n    return [i for i, v in enumerate(values) if v is not None and abs(v - mean) > k * std]"}, "w4-clean_text": {"stub": "def clean_text(text):\n    \"\"\"Collapse all runs of whitespace (spaces, tabs, newlines) to one space and strip. None -> \"\".\"\"\"\n    raise NotImplementedError", "sol": "def clean_text(text):\n    if text is None:\n        return \"\"\n    return \" \".join(text.split())"}, "w4-extract_hashtags": {"stub": "def extract_hashtags(text):\n    \"\"\"Return the hashtags in order, lowercased, without '#'.\n\n    >>> extract_hashtags(\"Go #Python and #DataEng! #python\")\n    ['python', 'dataeng', 'python']\n    Hint: re.findall(r\"#(\\\\w+)\", text)\n    \"\"\"\n    raise NotImplementedError", "sol": "def extract_hashtags(text):\n    return [tag.lower() for tag in re.findall(r\"#(\\w+)\", text)]"}, "w4-extract_urls": {"stub": "def extract_urls(text):\n    \"\"\"Return the http/https URLs in the text, without trailing . , ) ! ? characters.\"\"\"\n    raise NotImplementedError", "sol": "def extract_urls(text):\n    return [url.rstrip(\".,)!?\") for url in re.findall(r\"https?://\\S+\", text)]"}, "w4-categorize": {"stub": "def categorize(text, rules, default=\"other\"):\n    \"\"\"Rule-based classifier. rules is an ordered dict category -> list of keywords.\n\n    Return the FIRST category with a keyword appearing in text as a whole word,\n    case-insensitive (\"art\" must not match \"start\"). No match -> default.\n    Hint: re.search(rf\"\\\\b{re.escape(word)}\\\\b\", text, re.IGNORECASE)\n    \"\"\"\n    raise NotImplementedError", "sol": "def categorize(text, rules, default=\"other\"):\n    for category, words in rules.items():       # dicts keep insertion order: rule order wins\n        for word in words:\n            if re.search(rf\"\\b{re.escape(word)}\\b\", text, re.IGNORECASE):\n                return category\n    return default"}, "w4-build_dimension": {"stub": "def build_dimension(rows, fields, key_name):\n    \"\"\"Build a dimension table from the distinct combinations of `fields`.\n\n    Return (dim_rows, lookup):\n      dim_rows: [{key_name: 1, field1: ..., field2: ...}, ...]  surrogate keys 1, 2, 3... in first-seen order\n      lookup:   {(value1, value2): 1, ...}  so fact rows can find their key in O(1)\n    \"\"\"\n    raise NotImplementedError", "sol": "def build_dimension(rows, fields, key_name):\n    dim_rows, lookup = [], {}\n    for row in rows:\n        values = tuple(row[f] for f in fields)\n        if values not in lookup:\n            lookup[values] = len(lookup) + 1    # next surrogate key: 1, 2, 3, ...\n            dim_rows.append({key_name: lookup[values], **dict(zip(fields, values))})\n    return dim_rows, lookup"}, "w4-build_sales_star": {"stub": "def build_sales_star(rows):\n    \"\"\"Turn parse_arff(\"sales.arff\")[\"rows\"] into a star schema.\n\n    Return {\"dim_store\": [...], \"dim_title\": [...], \"dim_date\": [...], \"fact_sales\": [...]} where\n      dim_store: {\"store_key\", \"stor_id\"}        (build_dimension)\n      dim_title: {\"title_key\", \"title_id\"}       (build_dimension)\n      dim_date:  date_dimension_row(...) rows, one per distinct date, sorted by date_id\n      fact_sales: one per input row, in input order:\n        {\"ord_num\", \"store_key\", \"title_key\", \"date_id\", \"payterms\", \"qty\"}  with qty as int\n    \"\"\"\n    raise NotImplementedError", "sol": "def build_sales_star(rows):\n    dim_store, stores = build_dimension(rows, [\"stor_id\"], \"store_key\")\n    dim_title, titles = build_dimension(rows, [\"title_id\"], \"title_key\")\n    dates = {}\n    facts = []\n    for row in rows:\n        dt = parse_timestamp(row[\"ord_date\"])\n        date = date_dimension_row(dt)\n        dates[date[\"date_id\"]] = date           # a dict keeps one row per distinct date\n        facts.append({\n            \"ord_num\": row[\"ord_num\"],\n            \"store_key\": stores[(row[\"stor_id\"],)],\n            \"title_key\": titles[(row[\"title_id\"],)],\n            \"date_id\": date[\"date_id\"],\n            \"payterms\": row[\"payterms\"],\n            \"qty\": int(row[\"qty\"]),\n        })\n    dim_date = [dates[k] for k in sorted(dates)]\n    return {\"dim_store\": dim_store, \"dim_title\": dim_title, \"dim_date\": dim_date, \"fact_sales\": facts}"}, "w4-write_tables": {"stub": "def write_tables(tables, out_dir):\n    \"\"\"Write each table to out_dir/<name>.csv (header = keys of the first row). Return {name: n_rows}.\n\n    Reuse write_csv from week 3.\n    \"\"\"\n    raise NotImplementedError", "sol": "def write_tables(tables, out_dir):\n    counts = {}\n    for name, rows in tables.items():\n        counts[name] = write_csv(rows, Path(out_dir) / f\"{name}.csv\", list(rows[0]))\n    return counts"}, "w5-batched": {"stub": "def batched(iterable, n):\n    \"\"\"Generator: yield lists of up to n items from any iterable (even a generator).\n\n    >>> list(batched(range(5), 2))\n    [[0, 1], [2, 3], [4]]\n    Raise ValueError if n < 1. Uses `yield`: nothing is computed until someone asks.\n    \"\"\"\n    raise NotImplementedError", "sol": "def batched(iterable, n):\n    if n < 1:\n        raise ValueError(\"n must be at least 1\")\n    batch = []\n    for item in iterable:\n        batch.append(item)\n        if len(batch) == n:\n            yield batch                 # hand over a full batch, pause here until asked again\n            batch = []\n    if batch:                           # the last, shorter batch\n        yield batch"}, "w5-iter_csv_rows": {"stub": "def iter_csv_rows(path):\n    \"\"\"Generator: yield one dict per CSV row (header in first line) without loading the file in memory.\"\"\"\n    raise NotImplementedError", "sol": "def iter_csv_rows(path):\n    with open(path, encoding=\"utf-8\", newline=\"\") as f:\n        yield from csv.DictReader(f)"}, "w5-create_star_schema": {"stub": "def create_star_schema(conn):\n    \"\"\"Create the 4 tables of week 4's sales star schema (drop them first if they exist).\n\n    dim_store(store_key INTEGER PRIMARY KEY, stor_id TEXT NOT NULL UNIQUE)\n    dim_title(title_key INTEGER PRIMARY KEY, title_id TEXT NOT NULL UNIQUE)\n    dim_date(date_id INTEGER PRIMARY KEY, date TEXT, day INTEGER, month INTEGER, year INTEGER,\n             quarter INTEGER, weekday TEXT, season TEXT)\n    fact_sales(ord_num TEXT, store_key INTEGER REFERENCES dim_store, title_key INTEGER REFERENCES dim_title,\n               date_id INTEGER REFERENCES dim_date, payterms TEXT, qty INTEGER)\n    Hint: conn.executescript(\"...several statements;...\")\n    \"\"\"\n    raise NotImplementedError", "sol": "def create_star_schema(conn):\n    conn.executescript(\"\"\"\n        DROP TABLE IF EXISTS fact_sales;\n        DROP TABLE IF EXISTS dim_store;\n        DROP TABLE IF EXISTS dim_title;\n        DROP TABLE IF EXISTS dim_date;\n        CREATE TABLE dim_store (store_key INTEGER PRIMARY KEY, stor_id TEXT NOT NULL UNIQUE);\n        CREATE TABLE dim_title (title_key INTEGER PRIMARY KEY, title_id TEXT NOT NULL UNIQUE);\n        CREATE TABLE dim_date (date_id INTEGER PRIMARY KEY, date TEXT, day INTEGER, month INTEGER,\n                               year INTEGER, quarter INTEGER, weekday TEXT, season TEXT);\n        CREATE TABLE fact_sales (ord_num TEXT,\n                                 store_key INTEGER REFERENCES dim_store,\n                                 title_key INTEGER REFERENCES dim_title,\n                                 date_id INTEGER REFERENCES dim_date,\n                                 payterms TEXT, qty INTEGER);\n    \"\"\")"}, "w5-insert_rows": {"stub": "def insert_rows(conn, table, rows, batch_size=500):\n    \"\"\"Insert an iterable of dicts into `table` with executemany, batch_size rows at a time.\n\n    Column names come from the first row. Return the number of rows inserted.\n    VALUES must use ? placeholders, never f-strings with values (SQL injection + quoting bugs).\n    Table/column NAMES can't be placeholders, so check each with str.isidentifier() and\n    raise ValueError if one isn't. Commit once at the end.\n    \"\"\"\n    raise NotImplementedError", "sol": "def insert_rows(conn, table, rows, batch_size=500):\n    cur = conn.cursor()\n    total = 0\n    sql = columns = None\n    for batch in batched(rows, batch_size):\n        if sql is None:                 # build the statement once, from the first row's keys\n            columns = list(batch[0])\n            for name in [table, *columns]:\n                if not name.isidentifier():\n                    raise ValueError(f\"unsafe SQL name: {name!r}\")\n            marks = \", \".join(\"?\" for _ in columns)\n            sql = f\"INSERT INTO {table} ({', '.join(columns)}) VALUES ({marks})\"\n        cur.executemany(sql, [tuple(row[c] for c in columns) for row in batch])\n        total += len(batch)\n    conn.commit()\n    return total"}, "w5-load_star_from_csv": {"stub": "def load_star_from_csv(conn, csv_dir):\n    \"\"\"Create the schema and load dim_store, dim_title, dim_date, fact_sales from csv_dir/<table>.csv.\n\n    Dimensions first, then the fact: why does the order matter? Return {table: n_rows}.\n    Stream the CSVs with iter_csv_rows: don't build lists.\n    \"\"\"\n    raise NotImplementedError", "sol": "def load_star_from_csv(conn, csv_dir):\n    create_star_schema(conn)\n    counts = {}\n    # dimensions first: a fact row points at dimension keys that must already exist\n    for table in [\"dim_store\", \"dim_title\", \"dim_date\", \"fact_sales\"]:\n        counts[table] = insert_rows(conn, table, iter_csv_rows(Path(csv_dir) / f\"{table}.csv\"))\n    return counts"}, "w5-qty_by_store": {"stub": "def qty_by_store(conn):\n    \"\"\"SQL: total qty per store as a list of (stor_id, total) tuples, biggest total first, ties by stor_id.\"\"\"\n    raise NotImplementedError", "sol": "def qty_by_store(conn):\n    return conn.execute(\"\"\"\n        SELECT s.stor_id, SUM(f.qty) AS total\n        FROM fact_sales f JOIN dim_store s ON s.store_key = f.store_key\n        GROUP BY s.stor_id\n        ORDER BY total DESC, s.stor_id\n    \"\"\").fetchall()"}, "w5-qty_by_year_season": {"stub": "def qty_by_year_season(conn):\n    \"\"\"SQL: list of (year, season, total_qty) ordered by year then season name.\"\"\"\n    raise NotImplementedError", "sol": "def qty_by_year_season(conn):\n    return conn.execute(\"\"\"\n        SELECT d.year, d.season, SUM(f.qty)\n        FROM fact_sales f JOIN dim_date d ON d.date_id = f.date_id\n        GROUP BY d.year, d.season\n        ORDER BY d.year, d.season\n    \"\"\").fetchall()"}, "w5-export_query_to_json": {"stub": "def export_query_to_json(conn, sql, path, params=(), chunk_size=1000):\n    \"\"\"Run sql and stream the result to a JSON array of objects at path. Return the row count.\n\n    Fetch with cursor.fetchmany(chunk_size) in a loop so a huge result never sits in memory;\n    column names are in cursor.description (first item of each entry). Write \"[\", rows separated\n    by \",\", then \"]\" yourself: json.dump on a full list would need all rows in memory.\n    \"\"\"\n    raise NotImplementedError", "sol": "def export_query_to_json(conn, sql, path, params=(), chunk_size=1000):\n    path = Path(path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    cur = conn.execute(sql, params)\n    names = [d[0] for d in cur.description]\n    n = 0\n    with open(path, \"w\", encoding=\"utf-8\") as f:\n        f.write(\"[\")\n        while True:\n            chunk = cur.fetchmany(chunk_size)\n            if not chunk:\n                break\n            for values in chunk:\n                f.write((\",\" if n else \"\") + json.dumps(dict(zip(names, values)), ensure_ascii=False))\n                n += 1\n        f.write(\"]\")\n    return n"}, "w5-db_settings": {"stub": "def db_settings(environ):\n    \"\"\"Read DB_SERVER, DB_NAME, DB_USER, DB_PASSWORD from a mapping (pass os.environ in real code).\n\n    Return {\"server\", \"database\", \"user\", \"password\"}. If any are missing raise KeyError whose\n    message lists ALL missing names. Credentials live in the environment / .env, never in code or git.\n    \"\"\"\n    raise NotImplementedError", "sol": "def db_settings(environ):\n    names = {\"server\": \"DB_SERVER\", \"database\": \"DB_NAME\", \"user\": \"DB_USER\", \"password\": \"DB_PASSWORD\"}\n    missing = [var for var in names.values() if var not in environ]\n    if missing:\n        raise KeyError(f\"missing environment variables: {', '.join(missing)}\")\n    return {key: environ[var] for key, var in names.items()}"}, "w5-sqlserver_connection_string": {"stub": "def sqlserver_connection_string(settings, driver=\"ODBC Driver 18 for SQL Server\"):\n    \"\"\"Build the pyodbc connection string from db_settings(...) output:\n\n    \"DRIVER={ODBC Driver 18 for SQL Server};SERVER=s;DATABASE=d;UID=u;PWD=p;TrustServerCertificate=yes\"\n    Then in real code: pyodbc.connect(sqlserver_connection_string(db_settings(os.environ)))\n    \"\"\"\n    raise NotImplementedError", "sol": "def sqlserver_connection_string(settings, driver=\"ODBC Driver 18 for SQL Server\"):\n    s = settings\n    return (f\"DRIVER={{{driver}}};SERVER={s['server']};DATABASE={s['database']};\"\n            f\"UID={s['user']};PWD={s['password']};TrustServerCertificate=yes\")"}, "w6-build_parser": {"stub": "def build_parser():\n    \"\"\"Return an argparse.ArgumentParser(prog=\"sales2star\") with:\n\n    input            positional, the .arff file (type=Path)\n    --out-dir        type=Path, default Path(\"out\")\n    --batch-size     int, default 1000\n    --dry-run        flag (store_true): compute but write nothing\n    -v / --verbose   count: -v is INFO, -vv is DEBUG\n    \"\"\"\n    raise NotImplementedError", "sol": "def build_parser():\n    p = argparse.ArgumentParser(prog=\"sales2star\", description=\"Turn a sales ARFF file into star-schema CSVs.\")\n    p.add_argument(\"input\", type=Path, help=\"the .arff file\")\n    p.add_argument(\"--out-dir\", type=Path, default=Path(\"out\"), help=\"where the CSVs go (default: out)\")\n    p.add_argument(\"--batch-size\", type=int, default=1000)\n    p.add_argument(\"--dry-run\", action=\"store_true\", help=\"compute but write nothing\")\n    p.add_argument(\"-v\", \"--verbose\", action=\"count\", default=0, help=\"-v for INFO, -vv for DEBUG\")\n    return p"}, "w6-log_level": {"stub": "def log_level(verbosity):\n    \"\"\"0 -> logging.WARNING, 1 -> logging.INFO, 2 or more -> logging.DEBUG.\"\"\"\n    raise NotImplementedError", "sol": "def log_level(verbosity):\n    if verbosity <= 0:\n        return logging.WARNING\n    if verbosity == 1:\n        return logging.INFO\n    return logging.DEBUG"}, "w6-main": {"stub": "def main(argv=None):\n    \"\"\"Program entry point. Return an exit code: 0 ok, 1 error.\n\n    1. parse argv with build_parser(); configure logging with\n       logging.basicConfig(level=log_level(args.verbose), format=\"%(levelname)s %(message)s\", force=True)\n    2. if the input file doesn't exist: log.error(...) mentioning the path, return 1\n    3. parse_arff -> build_sales_star; log.info one line per table: \"<table>: <n> rows\"\n    4. if --dry-run: log.info(\"dry run: nothing written\"), return 0\n    5. otherwise write_tables(star, args.out_dir); log.info where; return 0\n    \"\"\"\n    raise NotImplementedError", "sol": "def main(argv=None):\n    args = build_parser().parse_args(argv)\n    logging.basicConfig(level=log_level(args.verbose), format=\"%(levelname)s %(message)s\", force=True)\n    if not args.input.exists():\n        log.error(\"input file not found: %s\", args.input)\n        return 1\n    star = build_sales_star(parse_arff(args.input)[\"rows\"])\n    for table, rows in star.items():\n        log.info(\"%s: %d rows\", table, len(rows))\n    if args.dry_run:\n        log.info(\"dry run: nothing written\")\n        return 0\n    write_tables(star, args.out_dir)\n    log.info(\"tables written to %s\", args.out_dir)\n    return 0"}, "w6-safe_ratio": {"stub": "def safe_ratio(numerator, denominator):\n    \"\"\"numerator / denominator, or None when the denominator is 0 or None (never crash, never fake a 0).\"\"\"\n    raise NotImplementedError", "sol": "def safe_ratio(numerator, denominator):\n    if not denominator:                 # catches both 0 and None\n        return None\n    return numerator / denominator"}, "w6-percent_change": {"stub": "def percent_change(old, new):\n    \"\"\"Percentage change from old to new, rounded to 2 decimals. None when old is 0 or None.\n\n    >>> percent_change(80, 100)\n    25.0\n    \"\"\"\n    raise NotImplementedError", "sol": "def percent_change(old, new):\n    ratio = safe_ratio(new - old, old) if old is not None else None\n    return None if ratio is None else round(ratio * 100, 2)"}}};
 /* ============ PAGE MODEL ============ */
 const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "Files and formats", w4: "Cleaning, dates, star schema",
   w5: "Databases from Python", w6: "Real programs", w7: "Review, cube, Part 1", w7b: "OLAP and MDX, Part 2" };
@@ -1543,9 +2849,17 @@ function wkGroups(w) {
   return groups;
 }
 function wkTask(x) {
-  const on = !!state.done[x.id];
-  return `<li class="wk-task${on ? " wk-done" : ""}" data-row="${x.id}"><label>
-    <input type="checkbox" data-task="${x.id}" ${on ? "checked" : ""}><span class="wk-tasktext">${x.html}</span></label></li>`;
+  const on = !!state.done[x.id], ex = EXERCISES.fns[x.id];
+  // exercises show the function as it is in the .py file; the solution stays folded until asked for
+  const body = !ex ? "" : `<div class="wk-exbody"><pre><code>${esc(ex.stub)}</code></pre>
+    <details class="wk-sol"><summary>Show solution</summary><pre><code>${esc(ex.sol)}</code></pre></details></div>`;
+  return `<li class="wk-task${on ? " wk-done" : ""}${ex ? " wk-ex" : ""}" data-row="${x.id}"><label>
+    <input type="checkbox" data-task="${x.id}" ${on ? "checked" : ""}><span class="wk-tasktext">${x.html}</span></label>${body}</li>`;
+}
+function wkFileHead(w) {
+  const head = EXERCISES.heads[w.id];
+  return !head ? "" : `<p class="wk-intro">Each exercise is a function in <code>${w.file}</code>: write the body, then run the tests.
+    Try it yourself before you open a solution. The top of the file:</p><pre><code>${esc(head)}</code></pre>`;
 }
 function wkQuestion(w, q, i) {
   const key = `${w.id}-q${i}`, picked = state.quiz[key], answered = picked !== undefined;
@@ -1584,6 +2898,7 @@ function renderWeek(id) {
       <span class="wk-count" id="wk-count" aria-live="polite">${wkCount(w)}</span></nav>
     <section id="lesson" class="prose wk-lesson" aria-label="Lesson">${md("md-" + w.id)}</section>
     <section id="exercises" class="wk-section"><h2>Exercises</h2>
+      ${wkFileHead(w)}
       ${wkGroups(w).map((g) => `<h3 class="wk-group">${g.name}</h3><ul class="wk-tasks">${g.items.map(wkTask).join("")}</ul>`).join("")}</section>
     ${w.quiz.length ? `<section id="quiz" class="wk-section"><h2>Quiz</h2><p class="wk-intro">Predict the answer first, then pick it. Answers lock once chosen.</p>
       <div class="wk-quiz">${w.quiz.map((q, i) => wkQuestion(w, q, i)).join("")}</div>
@@ -1931,6 +3246,11 @@ route(true);
 .wk-task label { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; min-height: 52px; padding-block: 8px; cursor: pointer; }
 .wk-task .wk-tasktext { min-width: 0; overflow-wrap: anywhere; }
 .wk-task.wk-done .wk-tasktext { color: var(--muted); }
+.wk-task.wk-ex .wk-tasktext code { font-size: var(--t-m); font-weight: 600; background: none; padding: 0; }
+.wk-exbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 0 0 18px 40px; }
+.wk-sol summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--link); }
+.wk-sol summary::marker { color: var(--muted); }
+.wk-section > .wk-intro + .codeblock { margin-top: 10px; }
 .wk-intro { margin: 12px 0 0; color: var(--muted); font-size: var(--t-s); max-width: 70ch; }
 .wk-quiz { display: grid; gap: 32px; margin-top: 22px; }
 .wk-q { max-width: 70ch; scroll-margin-top: 72px; }
@@ -1959,6 +3279,7 @@ route(true);
   .wk-around { margin-left: 0; width: 100%; justify-content: space-between; }
   .wk-steps .wk-today { width: 100%; }
   .wk-count { margin-left: 0; width: 100%; padding-bottom: 8px; }
+  .wk-exbody { padding-left: 0; }
 }
 /* programmatic focus on the title after navigation shouldn't draw a ring */
 /* lesson tables scroll sideways inside their wrapper instead of crushing columns */

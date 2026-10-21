@@ -26,6 +26,11 @@
 .wk-task label { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; min-height: 52px; padding-block: 8px; cursor: pointer; }
 .wk-task .wk-tasktext { min-width: 0; overflow-wrap: anywhere; }
 .wk-task.wk-done .wk-tasktext { color: var(--muted); }
+.wk-task.wk-ex .wk-tasktext code { font-size: var(--t-m); font-weight: 600; background: none; padding: 0; }
+.wk-exbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 0 0 18px 40px; }
+.wk-sol summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--link); }
+.wk-sol summary::marker { color: var(--muted); }
+.wk-section > .wk-intro + .codeblock { margin-top: 10px; }
 .wk-intro { margin: 12px 0 0; color: var(--muted); font-size: var(--t-s); max-width: 70ch; }
 .wk-quiz { display: grid; gap: 32px; margin-top: 22px; }
 .wk-q { max-width: 70ch; scroll-margin-top: 72px; }
@@ -54,6 +59,7 @@
   .wk-around { margin-left: 0; width: 100%; justify-content: space-between; }
   .wk-steps .wk-today { width: 100%; }
   .wk-count { margin-left: 0; width: 100%; padding-bottom: 8px; }
+  .wk-exbody { padding-left: 0; }
 }
 /* programmatic focus on the title after navigation shouldn't draw a ring */
 /* lesson tables scroll sideways inside their wrapper instead of crushing columns */

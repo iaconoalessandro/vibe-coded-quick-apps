@@ -17,9 +17,17 @@ function wkGroups(w) {
   return groups;
 }
 function wkTask(x) {
-  const on = !!state.done[x.id];
-  return `<li class="wk-task${on ? " wk-done" : ""}" data-row="${x.id}"><label>
-    <input type="checkbox" data-task="${x.id}" ${on ? "checked" : ""}><span class="wk-tasktext">${x.html}</span></label></li>`;
+  const on = !!state.done[x.id], ex = EXERCISES.fns[x.id];
+  // exercises show the function as it is in the .py file; the solution stays folded until asked for
+  const body = !ex ? "" : `<div class="wk-exbody"><pre><code>${esc(ex.stub)}</code></pre>
+    <details class="wk-sol"><summary>Show solution</summary><pre><code>${esc(ex.sol)}</code></pre></details></div>`;
+  return `<li class="wk-task${on ? " wk-done" : ""}${ex ? " wk-ex" : ""}" data-row="${x.id}"><label>
+    <input type="checkbox" data-task="${x.id}" ${on ? "checked" : ""}><span class="wk-tasktext">${x.html}</span></label>${body}</li>`;
+}
+function wkFileHead(w) {
+  const head = EXERCISES.heads[w.id];
+  return !head ? "" : `<p class="wk-intro">Each exercise is a function in <code>${w.file}</code>: write the body, then run the tests.
+    Try it yourself before you open a solution. The top of the file:</p><pre><code>${esc(head)}</code></pre>`;
 }
 function wkQuestion(w, q, i) {
   const key = `${w.id}-q${i}`, picked = state.quiz[key], answered = picked !== undefined;
@@ -58,6 +66,7 @@ function renderWeek(id) {
       <span class="wk-count" id="wk-count" aria-live="polite">${wkCount(w)}</span></nav>
     <section id="lesson" class="prose wk-lesson" aria-label="Lesson">${md("md-" + w.id)}</section>
     <section id="exercises" class="wk-section"><h2>Exercises</h2>
+      ${wkFileHead(w)}
       ${wkGroups(w).map((g) => `<h3 class="wk-group">${g.name}</h3><ul class="wk-tasks">${g.items.map(wkTask).join("")}</ul>`).join("")}</section>
     ${w.quiz.length ? `<section id="quiz" class="wk-section"><h2>Quiz</h2><p class="wk-intro">Predict the answer first, then pick it. Answers lock once chosen.</p>
       <div class="wk-quiz">${w.quiz.map((q, i) => wkQuestion(w, q, i)).join("")}</div>
