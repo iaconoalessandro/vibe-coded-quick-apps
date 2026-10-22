@@ -2,11 +2,14 @@
 
 A monorepo collection of standalone, vibe-coded web applications and interactive tools, maintained together for easy exploration, updates, and cross-project enhancements.
 
+🌐 **Live Portal:** [https://iaconoalessandro.github.io/vibe-coded-quick-apps/](https://iaconoalessandro.github.io/vibe-coded-quick-apps/)
+
 ---
 
 ## 🚀 Included Applications
 
 ### 1. [Admetia](apps/admetia/)
+* **Live Demo:** [https://iaconoalessandro.github.io/vibe-coded-quick-apps/admetia/](https://iaconoalessandro.github.io/vibe-coded-quick-apps/admetia/)
 * **Description:** Offline, privacy-first admissions calculators for MBA, business master's, and IT & computing master's programmes.
 * **Features:**
   - Multi-programme GPA / test score / work experience evaluation.
@@ -22,17 +25,15 @@ A monorepo collection of standalone, vibe-coded web applications and interactive
 ---
 
 ### 2. [Python Path Site](apps/python-path-site/)
+* **Live Demo:** [https://iaconoalessandro.github.io/vibe-coded-quick-apps/python-path-site/](https://iaconoalessandro.github.io/vibe-coded-quick-apps/python-path-site/)
 * **Description:** A curated Python learning companion featuring daily exercises, weekly lessons, data science (DSS) project roadmaps, and quick cheat sheets.
 * **Features:**
   - Built-in exercise runner and folded solution hints.
   - Encyclopedia with 124+ short reference entries across 14 topics.
   - Dual design system: *Orario* and *Olivetti* vintage aesthetics with Auto/Light/Dark modes.
-* **How to run & build:**
+* **How to run:**
   ```bash
   cd apps/python-path-site
-  # Optional: Rebuild static pages
-  python3 build.py
-  # Serve locally
   python3 -m http.server 8001
   # Open http://localhost:8001 in your browser
   ```
@@ -40,6 +41,7 @@ A monorepo collection of standalone, vibe-coded web applications and interactive
 ---
 
 ### 3. [Estonia Relocation Map](apps/estonia-relocation-map/)
+* **Live Demo:** [https://iaconoalessandro.github.io/vibe-coded-quick-apps/estonia-relocation-map/](https://iaconoalessandro.github.io/vibe-coded-quick-apps/estonia-relocation-map/)
 * **Description:** An interactive geospatial relocation map of Estonia designed for tech professionals and expats.
 * **Features:**
   - Covers Tallinn, Tartu, Pärnu, Narva, and Kohtla-Järve.

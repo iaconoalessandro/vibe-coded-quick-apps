@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vibe Coded Quick Apps — Alessandro Iacono</title>
+  <meta name="description" content="A curated collection of standalone web apps and interactive tools created by Alessandro Iacono.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --surface: #141b24;
+      --surface-hover: #1b2431;
+      --border: #232f3e;
+      --border-focus: #3b82f6;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.15);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      padding: 2rem 1.25rem;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+
+    header {
+      margin-bottom: 3.5rem;
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--card-color, var(--primary)), transparent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      background: var(--surface-hover);
+      box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-admetia { --card-color: #38bdf8; }
+    .card-python { --card-color: #34d399; }
+    .card-estonia { --card-color: #818cf8; }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      font-size: 0.725rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9375rem;
+      margin-bottom: 1.75rem;
+      flex: 1;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .card-link span.arrow {
+      transition: transform 0.2s ease;
+      color: var(--card-color, var(--primary));
+    }
+
+    .card:hover .card-link {
+      background: var(--card-color, var(--primary));
+      border-color: var(--card-color, var(--primary));
+      color: #0b0f14;
+      font-weight: 600;
+    }
+
+    .card:hover .card-link span.arrow {
+      color: #0b0f14;
+      transform: translateX(4px);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-pill">Monorepo Portal</div>
+      <h1>Vibe Coded Quick Apps</h1>
+      <p class="lead">A curated collection of standalone web apps, interactive maps, and learning companions built with clean code and zero telemetry.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Admetia -->
+      <div class="card card-admetia">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🎓</div>
+          </div>
+          <div class="tags">
+            <span class="tag">MBA / Master's</span>
+            <span class="tag">Multilingual</span>
+            <span class="tag">Privacy-first</span>
+          </div>
+          <h2>Admetia</h2>
+          <p>Offline, client-side admissions calculators and career exploration across 136 business & computing programmes and 46 countries.</p>
+        </div>
+        <a class="card-link" href="./admetia/">
+          <span>Launch Application</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Python Path -->
+      <div class="card card-python">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🐍</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Exercises</span>
+            <span class="tag">Encyclopedia</span>
+          </div>
+          <h2>Python Path</h2>
+          <p>Interactive study roadmap with practice exercises, folded solutions, weekly lessons, and a 124-entry encyclopedia with dual vintage aesthetics.</p>
+        </div>
+        <a class="card-link" href="./python-path-site/">
+          <span>Launch Application</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <!-- Estonia Relocation Map -->
+      <div class="card card-estonia">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🗺️</div>
+          </div>
+          <div class="tags">
+            <span class="tag">Geospatial</span>
+            <span class="tag">Estonia</span>
+            <span class="tag">Transit & Rents</span>
+          </div>
+          <h2>Estonia Relocation Map</h2>
+          <p>Interactive relocation map covering Tallinn, Tartu, Pärnu, Narva & Kohtla-Järve: verified tech employers, rental pricing, and transit corridors.</p>
+        </div>
+        <a class="card-link" href="./estonia-relocation-map/">
+          <span>Launch Application</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div>Developed & maintained by <a href="https://github.com/iaconoalessandro" target="_blank" rel="noopener">Alessandro Iacono</a></div>
+      <div class="footer-links">
+        <a href="https://github.com/iaconoalessandro/vibe-coded-quick-apps" target="_blank" rel="noopener">Repository Source</a>
+        <a href="https://github.com/iaconoalessandro" target="_blank" rel="noopener">GitHub Profile</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
