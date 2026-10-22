@@ -44,7 +44,7 @@ function renderProject() {
     <p class="pj-p">The path teaches every technique on parallel data (census, sales, loans). You write the Truth Social code. Claude explains, reviews your code and points at problems, but doesn't write assignment solutions. What you hand in has to be something you can defend at the oral.</p>
     <h2 class="pj-h2">Rules that shape the code</h2>
     <ul class="pj-rules">
-      <li><b>No pandas-like packages</b> from A3 on: <code>csv</code>, <code>json</code>, <code>xml.etree</code>, <code>datetime</code>, <code>statistics</code>, <code>pyodbc</code>.</li>
+      <li><b>No pandas-like packages</b> in A4–A6 (A1–A2 may use pandas): <code>csv</code>, <code>json</code>, <code>xml.etree</code>, <code>datetime</code>, <code>statistics</code>, <code>pyodbc</code>.</li>
       <li>A5 is graded on <b>efficiency and scalability</b>: batching, <code>fast_executemany</code>, streaming, measured timings.</li>
       <li>A11 demands <b>documented edge cases</b>. Keep a running <code>DECISIONS.md</code> from week 3 on.</li>
       <li>Use the small fact table to verify results by hand, as the brief suggests.</li>

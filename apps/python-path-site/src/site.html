@@ -271,10 +271,10 @@ input[type="checkbox"]:checked::after { opacity: 1; }
 {{DATA}}
 const EXERCISES = {{EXERCISES}};
 /* ============ PAGE MODEL ============ */
-const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "Files and formats", w4: "Cleaning, dates, star schema",
+const SHORT = { w0: "Setup", w1: "Core syntax", w2: "Data structures", w3: "Files and formats", w4: "Cleaning, dates, star schema", w4p: "pandas and NumPy",
   w5: "Databases from Python", w6: "Real programs", w7: "Review, cube, Part 1", w7b: "OLAP and MDX, Part 2" };
 // Olivetti: one flat colour per week (white text passes 4.5:1 on each except ochre, which takes ink)
-const HUE = { w0: "#2c7353", w1: "#14636f", w2: "#1f3f8f", w3: "#b53a26", w4: "#e2a325", w5: "#614891", w6: "#7a4f22", w7: "#5b6a1c", w7b: "#a02f5f" };
+const HUE = { w0: "#2c7353", w1: "#14636f", w2: "#1f3f8f", w3: "#b53a26", w4: "#e2a325", w4p: "#2f5d7c", w5: "#614891", w6: "#7a4f22", w7: "#5b6a1c", w7b: "#a02f5f" };
 HUE.project = "#1f3f8f"; HUE.cheat = "#e2a325"; HUE.encyclopedia = "#b53a26"; // Olivetti page colours for the non-week views
 const HUE_INK = { w4: "#141414", cheat: "#141414" };
 const HUE_TEXT = { w4: "#9a6a08", cheat: "#9a6a08" }; // ochre is too light for text on white
@@ -290,11 +290,18 @@ const SECTIONS = {
        ["Data quality", ["row_key", "find_duplicates", "drop_duplicates", "mean_std", "zscore_outliers"]],
        ["Text", ["clean_text", "extract_hashtags", "extract_urls", "categorize"]],
        ["Star schema", ["build_dimension", "build_sales_star", "write_tables"]]],
+  w4p: [["NumPy", ["grid", "column_stats", "min_max_scale", "clip_negative", "count_in_range", "grade_bands"]],
+        ["Inspect, select, filter", ["load_jobs", "profile", "filter_orders", "top_customers"]],
+        ["Cleaning", ["clean_orders", "latest_per_customer", "add_date_parts", "tidy_posts"]],
+        ["New columns", ["add_size_band", "age_groups", "one_hot"]],
+        ["Group, join, reshape", ["sales_by_city", "add_share_of_city", "join_customers", "stack_months", "monthly_pivot", "wide_to_long"]]],
   w5: [["Generators and loading", ["batched", "iter_csv_rows", "create_star_schema", "insert_rows", "load_star_from_csv"]],
        ["Queries, export, settings", ["qty_by_store", "qty_by_year_season", "export_query_to_json", "db_settings", "sqlserver_connection_string"]]],
 };
 const weekNo = (w) => WEEKS.indexOf(w);
-const weekName = (w) => `Week ${weekNo(w)}`;
+// "+" weeks (W4+) run alongside a numbered week, so they don't shift the numbers after them
+const weekLabel = (w) => w.n.endsWith("+") ? w.n.slice(1) : WEEKS.filter((x) => !x.n.endsWith("+")).indexOf(w);
+const weekName = (w) => `Week ${weekLabel(w)}`;
 const fnName = (x) => x.id.slice(x.id.indexOf("-") + 1);
 const isExercise = (x) => x.group === "Exercises";
 const exercisesOf = (w) => { const ex = w.tasks.filter(isExercise); return ex.length ? ex : w.tasks; };
@@ -393,7 +400,7 @@ function renderToday() {
   $("#view").innerHTML = `
     <div class="weekfield">
     <div class="dateline"><span>${now.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" })}</span><span>${due}</span></div>
-    <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekNo(w)}</span>
+    <div class="weekhead"><span class="weeknum" aria-hidden="true">${weekLabel(w)}</span>
       <h1><a href="#${w.id}"><span class="wkprefix">${weekName(w)} · </span>${SHORT[w.id]}</a></h1></div>
     ${behind ? `<p class="plannote">Planned this week: ${weekName(cal)} · ${SHORT[cal.id]}</p>` : ""}
     <div class="count"><span><b>${done} of ${total}</b> done this week</span><div class="track" aria-hidden="true"><span style="width:${total ? (100 * done) / total : 0}%"></span></div></div>
@@ -472,7 +479,7 @@ let view = "today";
 function route(scroll) {
   let h = (location.hash || "#today").slice(1);
   if (h === "path" || h === "") h = "today";
-  const m = h.match(/^(w\d+b?)(?:-(lesson|exercises|quiz|sunday))?$/);
+  const m = h.match(/^(w\d+[a-z]?)(?:-(lesson|exercises|quiz|sunday))?$/);
   const week = m && WEEKS.find((w) => w.id === m[1]);
   const enc = h === "encyclopedia" || h.startsWith("encyclopedia/");
   view = week ? week.id : enc ? "encyclopedia" : ["project", "cheat"].includes(h) ? h : "today";

@@ -1034,7 +1034,7 @@ key = tuple(sorted(row.items())) # turn a dict row into something hashable
 ### List of dicts (tables)
 The standard way to hold a **table** in plain Python: a list with one dict per row, whose keys are the column names.
 
-**What it's for.** Every format can be read into it (CSV, JSON, XML, ARFF), and every table operation becomes a loop over it. It's what the DSS project uses instead of pandas.
+**What it's for.** Every format can be read into it (CSV, JSON, XML, ARFF), and every table operation becomes a loop over it. It's what DSS A4–A6 use, where pandas isn't allowed.
 
 **How to use it.**
 ```python

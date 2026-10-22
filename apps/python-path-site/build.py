@@ -42,8 +42,9 @@ def exercises(stub_dir):
     Returns {"heads": {week: file header}, "fns": {"<week>-<function>": {"stub": ..., "sol": ...}}}.
     """
     heads, fns = {}, {}
-    for stub_file in sorted(stub_dir.glob("w[0-9][0-9]_*.py")):
-        week = f"w{int(stub_file.stem[1:3])}"
+    for stub_file in sorted(stub_dir.glob("w[0-9][0-9]*_*.py")):
+        num, suffix = re.match(r"w(\d\d)([a-z]?)_", stub_file.stem).groups()
+        week = f"w{int(num)}{suffix}"  # w04p_pandas.py -> w4p
         stub_src = stub_file.read_text(encoding="utf-8")
         sol_src = (SRC / "solutions" / stub_file.name).read_text(encoding="utf-8")
         sols = {n.name: ast.get_source_segment(sol_src, n) for n in ast.parse(sol_src).body if isinstance(n, ast.FunctionDef)}
