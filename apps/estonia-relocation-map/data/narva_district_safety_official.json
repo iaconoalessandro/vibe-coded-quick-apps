@@ -1,0 +1,7226 @@
+[
+  {
+    "id": "safety_narva_vanalinn",
+    "name": "Vanalinn",
+    "district": "Vanalinn (Historic Old Town & University Quarter)",
+    "short_name": "Vanalinn",
+    "lat": 59.380562,
+    "lon": 28.20133,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 1.7,
+    "scores": {
+      "calmness": 1.5,
+      "assaults": 1.2,
+      "thefts": 2.2,
+      "drunkenness": 1.6,
+      "severe_crimes": 1.9,
+      "family": 2.6,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "6 bars/pubs/clubs and 0 alcohol shops (93th percentile nationally), 13 hotels/attractions, 75th-percentile green cover, 2% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 93th percentile, students/dormitories at the 90th, tourist footfall at the 93th, deprivation index 0.73 (cheap rent + 19% tertiary education + 98% apartment blocks). Offset by 0 schools/kindergartens and 16 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 61th percentile, tourist density 93th (pickpocketing), student/campus density 90th (bicycle theft), affluence 61th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 6 licensed premises and alcohol shops in this district (93th percentile nationally); deprivation index 0.73; 13 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.73) and night-time economy (93th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "1.7/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.385121,
+          28.189803
+        ],
+        [
+          59.38543,
+          28.191124
+        ],
+        [
+          59.387227,
+          28.202774
+        ],
+        [
+          59.386961,
+          28.202825
+        ],
+        [
+          59.385886,
+          28.203582
+        ],
+        [
+          59.385529,
+          28.203949
+        ],
+        [
+          59.385301,
+          28.204516
+        ],
+        [
+          59.385088,
+          28.204642
+        ],
+        [
+          59.383821,
+          28.205964
+        ],
+        [
+          59.383331,
+          28.206112
+        ],
+        [
+          59.382759,
+          28.206679
+        ],
+        [
+          59.381718,
+          28.206592
+        ],
+        [
+          59.381104,
+          28.20588
+        ],
+        [
+          59.380751,
+          28.205627
+        ],
+        [
+          59.380572,
+          28.205283
+        ],
+        [
+          59.379897,
+          28.204935
+        ],
+        [
+          59.379585,
+          28.204653
+        ],
+        [
+          59.378949,
+          28.20438
+        ],
+        [
+          59.378802,
+          28.204413
+        ],
+        [
+          59.378573,
+          28.204067
+        ],
+        [
+          59.377977,
+          28.203533
+        ],
+        [
+          59.377655,
+          28.203411
+        ],
+        [
+          59.377238,
+          28.203505
+        ],
+        [
+          59.377147,
+          28.203326
+        ],
+        [
+          59.377161,
+          28.203104
+        ],
+        [
+          59.37558,
+          28.202465
+        ],
+        [
+          59.374909,
+          28.201969
+        ],
+        [
+          59.37379,
+          28.198195
+        ],
+        [
+          59.373715,
+          28.197757
+        ],
+        [
+          59.373627,
+          28.195744
+        ],
+        [
+          59.376502,
+          28.19286
+        ],
+        [
+          59.378295,
+          28.191293
+        ],
+        [
+          59.383987,
+          28.19045
+        ],
+        [
+          59.385121,
+          28.189803
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.93,
+      "tourist_pctile": 0.93,
+      "retail_pctile": 0.61,
+      "student_pctile": 0.9,
+      "family_amenity_pctile": 0.94,
+      "green_pctile": 0.75,
+      "house_share_pctile": 0.12,
+      "affluence_pctile": 0.61,
+      "education_pctile": 0.07,
+      "deprivation_index": 0.73,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 6.06
+    },
+    "family_desc": "0 schools/kindergartens and 16 playgrounds (94th percentile nationally), 1 sports facilities, 2% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €6.06/m² (61th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_joaorg",
+    "name": "Joaorg",
+    "district": "Joaorg (Linnuse Riverside & Castle Park)",
+    "short_name": "Joaorg",
+    "lat": 59.371089,
+    "lon": 28.204878,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.5,
+    "scores": {
+      "calmness": 2.5,
+      "assaults": 2.2,
+      "thefts": 2.9,
+      "drunkenness": 2.5,
+      "severe_crimes": 2.8,
+      "family": 2.9,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (31th percentile nationally), 4 hotels/attractions, 70th-percentile green cover, 40% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 31th percentile, students/dormitories at the 36th, tourist footfall at the 91th, deprivation index 0.59 (cheap rent + 19% tertiary education + 60% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 58th percentile, tourist density 91th (pickpocketing), student/campus density 36th (bicycle theft), affluence 68th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (31th percentile nationally); deprivation index 0.59; 4 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.59) and night-time economy (31th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.5/5.0 nationally — below the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.373715,
+          28.197757
+        ],
+        [
+          59.373849,
+          28.198415
+        ],
+        [
+          59.374909,
+          28.201969
+        ],
+        [
+          59.374366,
+          28.201984
+        ],
+        [
+          59.373859,
+          28.202525
+        ],
+        [
+          59.373649,
+          28.202109
+        ],
+        [
+          59.373553,
+          28.202053
+        ],
+        [
+          59.37322,
+          28.202159
+        ],
+        [
+          59.372977,
+          28.202475
+        ],
+        [
+          59.372168,
+          28.204117
+        ],
+        [
+          59.37183,
+          28.205266
+        ],
+        [
+          59.371618,
+          28.205799
+        ],
+        [
+          59.371387,
+          28.206104
+        ],
+        [
+          59.371162,
+          28.206366
+        ],
+        [
+          59.370866,
+          28.206471
+        ],
+        [
+          59.369676,
+          28.206467
+        ],
+        [
+          59.369563,
+          28.206609
+        ],
+        [
+          59.369557,
+          28.206806
+        ],
+        [
+          59.369686,
+          28.207063
+        ],
+        [
+          59.36989,
+          28.207258
+        ],
+        [
+          59.371383,
+          28.207304
+        ],
+        [
+          59.371195,
+          28.207829
+        ],
+        [
+          59.370973,
+          28.208149
+        ],
+        [
+          59.370917,
+          28.208326
+        ],
+        [
+          59.370923,
+          28.208688
+        ],
+        [
+          59.370706,
+          28.208973
+        ],
+        [
+          59.370088,
+          28.20896
+        ],
+        [
+          59.369743,
+          28.208627
+        ],
+        [
+          59.369424,
+          28.208469
+        ],
+        [
+          59.369134,
+          28.208114
+        ],
+        [
+          59.369151,
+          28.207897
+        ],
+        [
+          59.369304,
+          28.207634
+        ],
+        [
+          59.36927,
+          28.207466
+        ],
+        [
+          59.369017,
+          28.207544
+        ],
+        [
+          59.368588,
+          28.207277
+        ],
+        [
+          59.367668,
+          28.205827
+        ],
+        [
+          59.367184,
+          28.205422
+        ],
+        [
+          59.369143,
+          28.196851
+        ],
+        [
+          59.371977,
+          28.197348
+        ],
+        [
+          59.373627,
+          28.195744
+        ],
+        [
+          59.373715,
+          28.197757
+        ]
+      ],
+      [
+        [
+          59.373683,
+          28.202708
+        ],
+        [
+          59.373748,
+          28.202866
+        ],
+        [
+          59.373717,
+          28.203087
+        ],
+        [
+          59.373408,
+          28.203648
+        ],
+        [
+          59.372881,
+          28.205439
+        ],
+        [
+          59.372268,
+          28.206787
+        ],
+        [
+          59.372155,
+          28.207255
+        ],
+        [
+          59.371932,
+          28.207677
+        ],
+        [
+          59.371052,
+          28.208469
+        ],
+        [
+          59.371,
+          28.208386
+        ],
+        [
+          59.371022,
+          28.208208
+        ],
+        [
+          59.371451,
+          28.207412
+        ],
+        [
+          59.37158,
+          28.2073
+        ],
+        [
+          59.371629,
+          28.207461
+        ],
+        [
+          59.371771,
+          28.207297
+        ],
+        [
+          59.37177,
+          28.207118
+        ],
+        [
+          59.371693,
+          28.207172
+        ],
+        [
+          59.371828,
+          28.206901
+        ],
+        [
+          59.371874,
+          28.206622
+        ],
+        [
+          59.372003,
+          28.206588
+        ],
+        [
+          59.371962,
+          28.206351
+        ],
+        [
+          59.372106,
+          28.205986
+        ],
+        [
+          59.372969,
+          28.203937
+        ],
+        [
+          59.373337,
+          28.20325
+        ],
+        [
+          59.373515,
+          28.203111
+        ],
+        [
+          59.373671,
+          28.202704
+        ],
+        [
+          59.373683,
+          28.202708
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.31,
+      "tourist_pctile": 0.91,
+      "retail_pctile": 0.58,
+      "student_pctile": 0.36,
+      "family_amenity_pctile": 0.1,
+      "green_pctile": 0.7,
+      "house_share_pctile": 0.48,
+      "affluence_pctile": 0.68,
+      "education_pctile": 0.11,
+      "deprivation_index": 0.59,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 8.59
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (10th percentile nationally), 0 sports facilities, 40% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €8.59/m² (68th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_pähklimäe",
+    "name": "Pähklimäe",
+    "district": "Pähklimäe (Äkkeküla Pine Woods & Residential)",
+    "short_name": "Pähklimäe",
+    "lat": 59.391439,
+    "lon": 28.164548,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.1,
+    "scores": {
+      "calmness": 2.2,
+      "assaults": 1.7,
+      "thefts": 2.8,
+      "drunkenness": 1.7,
+      "severe_crimes": 2.1,
+      "family": 3.0,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "3 bars/pubs/clubs and 0 alcohol shops (79th percentile nationally), 3 hotels/attractions, 99th-percentile green cover, 28% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 79th percentile, students/dormitories at the 37th, tourist footfall at the 73th, deprivation index 0.70 (cheap rent + 19% tertiary education + 72% apartment blocks). Offset by 0 schools/kindergartens and 12 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 63th percentile, tourist density 73th (pickpocketing), student/campus density 37th (bicycle theft), affluence 44th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 3 licensed premises and alcohol shops in this district (79th percentile nationally); deprivation index 0.70; 3 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.70) and night-time economy (79th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.1/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.386852,
+          28.148418
+        ],
+        [
+          59.389276,
+          28.1506
+        ],
+        [
+          59.390695,
+          28.151701
+        ],
+        [
+          59.392562,
+          28.153579
+        ],
+        [
+          59.395163,
+          28.155279
+        ],
+        [
+          59.398154,
+          28.145187
+        ],
+        [
+          59.399467,
+          28.146581
+        ],
+        [
+          59.399665,
+          28.146935
+        ],
+        [
+          59.400036,
+          28.147113
+        ],
+        [
+          59.400233,
+          28.148406
+        ],
+        [
+          59.40006,
+          28.151848
+        ],
+        [
+          59.39817,
+          28.163169
+        ],
+        [
+          59.397355,
+          28.165811
+        ],
+        [
+          59.394366,
+          28.171476
+        ],
+        [
+          59.392506,
+          28.173684
+        ],
+        [
+          59.393968,
+          28.179753
+        ],
+        [
+          59.394158,
+          28.181553
+        ],
+        [
+          59.39338,
+          28.182613
+        ],
+        [
+          59.387097,
+          28.18862
+        ],
+        [
+          59.385121,
+          28.189803
+        ],
+        [
+          59.383809,
+          28.184626
+        ],
+        [
+          59.382574,
+          28.18006
+        ],
+        [
+          59.380862,
+          28.180165
+        ],
+        [
+          59.380177,
+          28.179604
+        ],
+        [
+          59.379583,
+          28.179484
+        ],
+        [
+          59.386715,
+          28.148306
+        ],
+        [
+          59.386852,
+          28.148418
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.79,
+      "tourist_pctile": 0.73,
+      "retail_pctile": 0.63,
+      "student_pctile": 0.37,
+      "family_amenity_pctile": 0.63,
+      "green_pctile": 0.99,
+      "house_share_pctile": 0.36,
+      "affluence_pctile": 0.44,
+      "education_pctile": 0.15,
+      "deprivation_index": 0.7,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.41
+    },
+    "family_desc": "0 schools/kindergartens and 12 playgrounds (63th percentile nationally), 1 sports facilities, 28% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.41/m² (44th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_sutthoffi",
+    "name": "Sutthoffi",
+    "district": "Sutthoffi (Hospital & Northern Forest)",
+    "short_name": "Sutthoffi",
+    "lat": 59.393624,
+    "lon": 28.192031,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.0,
+    "scores": {
+      "calmness": 3.2,
+      "assaults": 2.7,
+      "thefts": 3.9,
+      "drunkenness": 2.8,
+      "severe_crimes": 3.2,
+      "family": 3.1,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (33th percentile nationally), 0 hotels/attractions, 36th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 33th percentile, students/dormitories at the 39th, tourist footfall at the 15th, deprivation index 0.49 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 39th percentile, tourist density 15th (pickpocketing), student/campus density 39th (bicycle theft), affluence 48th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (33th percentile nationally); deprivation index 0.49; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.49) and night-time economy (33th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.0/5.0 nationally — around the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.40081,
+          28.183774
+        ],
+        [
+          59.400444,
+          28.184692
+        ],
+        [
+          59.400138,
+          28.18523
+        ],
+        [
+          59.400034,
+          28.18527
+        ],
+        [
+          59.399408,
+          28.186534
+        ],
+        [
+          59.399109,
+          28.186961
+        ],
+        [
+          59.397278,
+          28.190349
+        ],
+        [
+          59.396487,
+          28.192195
+        ],
+        [
+          59.39599,
+          28.192748
+        ],
+        [
+          59.395732,
+          28.193298
+        ],
+        [
+          59.395112,
+          28.19404
+        ],
+        [
+          59.393906,
+          28.195024
+        ],
+        [
+          59.39366,
+          28.195526
+        ],
+        [
+          59.393157,
+          28.19604
+        ],
+        [
+          59.39254,
+          28.196997
+        ],
+        [
+          59.391873,
+          28.197658
+        ],
+        [
+          59.389887,
+          28.200502
+        ],
+        [
+          59.389712,
+          28.200675
+        ],
+        [
+          59.38937,
+          28.200672
+        ],
+        [
+          59.388908,
+          28.201434
+        ],
+        [
+          59.388775,
+          28.201411
+        ],
+        [
+          59.388545,
+          28.201721
+        ],
+        [
+          59.38828,
+          28.201758
+        ],
+        [
+          59.387999,
+          28.202193
+        ],
+        [
+          59.387227,
+          28.202774
+        ],
+        [
+          59.38543,
+          28.191124
+        ],
+        [
+          59.385121,
+          28.189803
+        ],
+        [
+          59.387097,
+          28.18862
+        ],
+        [
+          59.39338,
+          28.182613
+        ],
+        [
+          59.394158,
+          28.181553
+        ],
+        [
+          59.394863,
+          28.180955
+        ],
+        [
+          59.397042,
+          28.177698
+        ],
+        [
+          59.400919,
+          28.183421
+        ],
+        [
+          59.40081,
+          28.183774
+        ]
+      ],
+      [
+        [
+          59.400783,
+          28.185244
+        ],
+        [
+          59.400908,
+          28.185433
+        ],
+        [
+          59.400929,
+          28.185709
+        ],
+        [
+          59.400798,
+          28.185956
+        ],
+        [
+          59.400449,
+          28.187729
+        ],
+        [
+          59.400358,
+          28.187865
+        ],
+        [
+          59.400308,
+          28.188189
+        ],
+        [
+          59.400058,
+          28.188913
+        ],
+        [
+          59.399982,
+          28.189475
+        ],
+        [
+          59.399596,
+          28.190353
+        ],
+        [
+          59.399248,
+          28.190905
+        ],
+        [
+          59.398425,
+          28.191882
+        ],
+        [
+          59.398167,
+          28.192351
+        ],
+        [
+          59.398055,
+          28.192401
+        ],
+        [
+          59.397849,
+          28.19228
+        ],
+        [
+          59.397496,
+          28.192363
+        ],
+        [
+          59.397213,
+          28.192153
+        ],
+        [
+          59.397205,
+          28.191688
+        ],
+        [
+          59.397277,
+          28.191321
+        ],
+        [
+          59.397564,
+          28.190642
+        ],
+        [
+          59.399242,
+          28.187463
+        ],
+        [
+          59.400134,
+          28.186083
+        ],
+        [
+          59.400551,
+          28.18525
+        ],
+        [
+          59.400739,
+          28.185179
+        ],
+        [
+          59.400783,
+          28.185244
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.33,
+      "tourist_pctile": 0.15,
+      "retail_pctile": 0.39,
+      "student_pctile": 0.39,
+      "family_amenity_pctile": 0.12,
+      "green_pctile": 0.36,
+      "house_share_pctile": 0.82,
+      "affluence_pctile": 0.48,
+      "education_pctile": 0.19,
+      "deprivation_index": 0.49,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.53
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (12th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.53/m² (48th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_siivertsi",
+    "name": "Siivertsi",
+    "district": "Siivertsi (Northern Riverside Villa Quarter)",
+    "short_name": "Siivertsi",
+    "lat": 59.407496,
+    "lon": 28.16083,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.2,
+    "scores": {
+      "calmness": 3.6,
+      "assaults": 2.7,
+      "thefts": 4.3,
+      "drunkenness": 2.9,
+      "severe_crimes": 3.3,
+      "family": 3.4,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (34th percentile nationally), 0 hotels/attractions, 73th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 34th percentile, students/dormitories at the 40th, tourist footfall at the 16th, deprivation index 0.46 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 10th percentile, tourist density 16th (pickpocketing), student/campus density 40th (bicycle theft), affluence 52th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (34th percentile nationally); deprivation index 0.46; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.46) and night-time economy (34th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.2/5.0 nationally — around the Estonian average. Nights are quiet; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.419827,
+          28.135929
+        ],
+        [
+          59.418975,
+          28.137192
+        ],
+        [
+          59.417935,
+          28.139065
+        ],
+        [
+          59.417755,
+          28.13973
+        ],
+        [
+          59.417022,
+          28.141591
+        ],
+        [
+          59.416583,
+          28.142469
+        ],
+        [
+          59.416224,
+          28.143497
+        ],
+        [
+          59.415396,
+          28.14515
+        ],
+        [
+          59.414965,
+          28.146222
+        ],
+        [
+          59.414556,
+          28.14783
+        ],
+        [
+          59.414277,
+          28.148478
+        ],
+        [
+          59.414207,
+          28.149641
+        ],
+        [
+          59.413634,
+          28.151535
+        ],
+        [
+          59.413364,
+          28.15277
+        ],
+        [
+          59.413316,
+          28.153111
+        ],
+        [
+          59.413386,
+          28.153344
+        ],
+        [
+          59.413344,
+          28.15366
+        ],
+        [
+          59.413136,
+          28.154729
+        ],
+        [
+          59.41301,
+          28.154952
+        ],
+        [
+          59.412861,
+          28.155624
+        ],
+        [
+          59.412646,
+          28.157174
+        ],
+        [
+          59.41238,
+          28.158016
+        ],
+        [
+          59.412164,
+          28.159023
+        ],
+        [
+          59.411977,
+          28.160315
+        ],
+        [
+          59.41159,
+          28.161881
+        ],
+        [
+          59.411361,
+          28.162547
+        ],
+        [
+          59.41095,
+          28.163258
+        ],
+        [
+          59.410606,
+          28.163496
+        ],
+        [
+          59.410245,
+          28.163373
+        ],
+        [
+          59.409965,
+          28.163039
+        ],
+        [
+          59.409858,
+          28.163096
+        ],
+        [
+          59.409769,
+          28.16291
+        ],
+        [
+          59.409586,
+          28.162828
+        ],
+        [
+          59.40877,
+          28.163001
+        ],
+        [
+          59.408383,
+          28.163295
+        ],
+        [
+          59.407688,
+          28.164452
+        ],
+        [
+          59.407389,
+          28.165192
+        ],
+        [
+          59.407084,
+          28.165613
+        ],
+        [
+          59.406711,
+          28.166511
+        ],
+        [
+          59.406222,
+          28.167315
+        ],
+        [
+          59.405661,
+          28.168491
+        ],
+        [
+          59.405582,
+          28.169184
+        ],
+        [
+          59.405199,
+          28.170318
+        ],
+        [
+          59.405078,
+          28.171073
+        ],
+        [
+          59.404827,
+          28.171588
+        ],
+        [
+          59.404614,
+          28.172366
+        ],
+        [
+          59.404157,
+          28.173319
+        ],
+        [
+          59.403864,
+          28.173578
+        ],
+        [
+          59.403209,
+          28.174764
+        ],
+        [
+          59.402662,
+          28.17607
+        ],
+        [
+          59.402626,
+          28.176536
+        ],
+        [
+          59.402084,
+          28.178555
+        ],
+        [
+          59.401886,
+          28.179403
+        ],
+        [
+          59.40189,
+          28.179616
+        ],
+        [
+          59.401824,
+          28.179715
+        ],
+        [
+          59.401849,
+          28.179888
+        ],
+        [
+          59.401796,
+          28.179947
+        ],
+        [
+          59.401884,
+          28.180071
+        ],
+        [
+          59.40172,
+          28.180134
+        ],
+        [
+          59.401733,
+          28.180699
+        ],
+        [
+          59.401536,
+          28.181006
+        ],
+        [
+          59.401465,
+          28.181529
+        ],
+        [
+          59.401201,
+          28.182213
+        ],
+        [
+          59.40114,
+          28.182769
+        ],
+        [
+          59.400919,
+          28.183421
+        ],
+        [
+          59.397042,
+          28.177698
+        ],
+        [
+          59.394863,
+          28.180955
+        ],
+        [
+          59.394158,
+          28.181553
+        ],
+        [
+          59.393968,
+          28.179753
+        ],
+        [
+          59.392506,
+          28.173684
+        ],
+        [
+          59.394366,
+          28.171476
+        ],
+        [
+          59.397355,
+          28.165811
+        ],
+        [
+          59.39817,
+          28.163169
+        ],
+        [
+          59.40006,
+          28.151848
+        ],
+        [
+          59.400233,
+          28.148406
+        ],
+        [
+          59.400036,
+          28.147113
+        ],
+        [
+          59.399665,
+          28.146935
+        ],
+        [
+          59.399467,
+          28.146581
+        ],
+        [
+          59.398154,
+          28.145187
+        ],
+        [
+          59.400136,
+          28.138624
+        ],
+        [
+          59.41284,
+          28.135005
+        ],
+        [
+          59.414119,
+          28.134826
+        ],
+        [
+          59.416069,
+          28.134281
+        ],
+        [
+          59.419226,
+          28.133235
+        ],
+        [
+          59.420323,
+          28.135416
+        ],
+        [
+          59.420077,
+          28.135595
+        ],
+        [
+          59.419827,
+          28.135929
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.34,
+      "tourist_pctile": 0.16,
+      "retail_pctile": 0.1,
+      "student_pctile": 0.4,
+      "family_amenity_pctile": 0.13,
+      "green_pctile": 0.73,
+      "house_share_pctile": 0.84,
+      "affluence_pctile": 0.52,
+      "education_pctile": 0.24,
+      "deprivation_index": 0.46,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.53
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (13th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.53/m² (52th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_kudruküla",
+    "name": "Kudruküla",
+    "district": "Kudruküla (Dacha Cooperatives & Pine Woods)",
+    "short_name": "Kudruküla",
+    "lat": 59.424996,
+    "lon": 28.051792,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.1,
+    "scores": {
+      "calmness": 3.0,
+      "assaults": 2.7,
+      "thefts": 4.3,
+      "drunkenness": 2.9,
+      "severe_crimes": 3.3,
+      "family": 3.0,
+      "language": 1.8,
+      "demographics": 1.8
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (36th percentile nationally), 0 hotels/attractions, 3th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 36th percentile, students/dormitories at the 42th, tourist footfall at the 18th, deprivation index 0.43 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 12th percentile, tourist density 18th (pickpocketing), student/campus density 42th (bicycle theft), affluence 56th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (36th percentile nationally); deprivation index 0.43; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.43) and night-time economy (36th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "5.0% give Estonian as their mother tongue; an estimated 27% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.1/5.0 nationally — around the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.417665,
+          28.016667
+        ],
+        [
+          59.419508,
+          28.020083
+        ],
+        [
+          59.418835,
+          28.021698
+        ],
+        [
+          59.422653,
+          28.027934
+        ],
+        [
+          59.422601,
+          28.028079
+        ],
+        [
+          59.431857,
+          28.04322
+        ],
+        [
+          59.431905,
+          28.043915
+        ],
+        [
+          59.431525,
+          28.044656
+        ],
+        [
+          59.43173,
+          28.045036
+        ],
+        [
+          59.43601,
+          28.051643
+        ],
+        [
+          59.44386,
+          28.063214
+        ],
+        [
+          59.443791,
+          28.063379
+        ],
+        [
+          59.443797,
+          28.063594
+        ],
+        [
+          59.441354,
+          28.067745
+        ],
+        [
+          59.440948,
+          28.067208
+        ],
+        [
+          59.438579,
+          28.075881
+        ],
+        [
+          59.437737,
+          28.07434
+        ],
+        [
+          59.43773,
+          28.073629
+        ],
+        [
+          59.437096,
+          28.072904
+        ],
+        [
+          59.43697,
+          28.072156
+        ],
+        [
+          59.437004,
+          28.072119
+        ],
+        [
+          59.43537,
+          28.069766
+        ],
+        [
+          59.432666,
+          28.066296
+        ],
+        [
+          59.431351,
+          28.067065
+        ],
+        [
+          59.43033,
+          28.076574
+        ],
+        [
+          59.42977,
+          28.082605
+        ],
+        [
+          59.429693,
+          28.082795
+        ],
+        [
+          59.419912,
+          28.06699
+        ],
+        [
+          59.417556,
+          28.07256
+        ],
+        [
+          59.414787,
+          28.068153
+        ],
+        [
+          59.413337,
+          28.071597
+        ],
+        [
+          59.41322,
+          28.070939
+        ],
+        [
+          59.413241,
+          28.067847
+        ],
+        [
+          59.413303,
+          28.067676
+        ],
+        [
+          59.413201,
+          28.065677
+        ],
+        [
+          59.413412,
+          28.055006
+        ],
+        [
+          59.413531,
+          28.054695
+        ],
+        [
+          59.414802,
+          28.0526
+        ],
+        [
+          59.416489,
+          28.049509
+        ],
+        [
+          59.420323,
+          28.040384
+        ],
+        [
+          59.419589,
+          28.037203
+        ],
+        [
+          59.419485,
+          28.036955
+        ],
+        [
+          59.417068,
+          28.033221
+        ],
+        [
+          59.416311,
+          28.03502
+        ],
+        [
+          59.416066,
+          28.029488
+        ],
+        [
+          59.415801,
+          28.027279
+        ],
+        [
+          59.414853,
+          28.02325
+        ],
+        [
+          59.417009,
+          28.018258
+        ],
+        [
+          59.414981,
+          28.014936
+        ],
+        [
+          59.416508,
+          28.011294
+        ],
+        [
+          59.417665,
+          28.016667
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "5.0% give Estonian as their mother tongue; an estimated 27% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.36,
+      "tourist_pctile": 0.18,
+      "retail_pctile": 0.12,
+      "student_pctile": 0.42,
+      "family_amenity_pctile": 0.15,
+      "green_pctile": 0.03,
+      "house_share_pctile": 0.85,
+      "affluence_pctile": 0.56,
+      "education_pctile": 0.28,
+      "deprivation_index": 0.43,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.61
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (15th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.61/m² (56th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_olgina",
+    "name": "Olgina",
+    "district": "Olgina (Suburban Airfield & Village)",
+    "short_name": "Olgina",
+    "lat": 59.380479,
+    "lon": 28.083217,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.9,
+    "scores": {
+      "calmness": 3.0,
+      "assaults": 2.6,
+      "thefts": 4.0,
+      "drunkenness": 2.7,
+      "severe_crimes": 3.0,
+      "family": 2.9,
+      "language": 2.0,
+      "demographics": 2.0
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (37th percentile nationally), 0 hotels/attractions, 4th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 37th percentile, students/dormitories at the 43th, tourist footfall at the 19th, deprivation index 0.52 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 13th percentile, tourist density 19th (pickpocketing), student/campus density 43th (bicycle theft), affluence 30th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (37th percentile nationally); deprivation index 0.52; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.52) and night-time economy (37th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "6.0% give Estonian as their mother tongue; an estimated 30% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.9/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). English mostly works, some Estonian or Russian helps.",
+    "polygons": [
+      [
+        [
+          59.380742,
+          28.077414
+        ],
+        [
+          59.381108,
+          28.077958
+        ],
+        [
+          59.381173,
+          28.077843
+        ],
+        [
+          59.381459,
+          28.078079
+        ],
+        [
+          59.381459,
+          28.07841
+        ],
+        [
+          59.381586,
+          28.078707
+        ],
+        [
+          59.382098,
+          28.079092
+        ],
+        [
+          59.383175,
+          28.079528
+        ],
+        [
+          59.385171,
+          28.083323
+        ],
+        [
+          59.385351,
+          28.084396
+        ],
+        [
+          59.382318,
+          28.090591
+        ],
+        [
+          59.382002,
+          28.092772
+        ],
+        [
+          59.382167,
+          28.093711
+        ],
+        [
+          59.380301,
+          28.094332
+        ],
+        [
+          59.379581,
+          28.092533
+        ],
+        [
+          59.378044,
+          28.091238
+        ],
+        [
+          59.377432,
+          28.088506
+        ],
+        [
+          59.376556,
+          28.086482
+        ],
+        [
+          59.375559,
+          28.084599
+        ],
+        [
+          59.376863,
+          28.082972
+        ],
+        [
+          59.377994,
+          28.081078
+        ],
+        [
+          59.378831,
+          28.079924
+        ],
+        [
+          59.380029,
+          28.077676
+        ],
+        [
+          59.38014,
+          28.077828
+        ],
+        [
+          59.380586,
+          28.077237
+        ],
+        [
+          59.380742,
+          28.077414
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "6.0% give Estonian as their mother tongue; an estimated 30% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.37,
+      "tourist_pctile": 0.19,
+      "retail_pctile": 0.13,
+      "student_pctile": 0.43,
+      "family_amenity_pctile": 0.16,
+      "green_pctile": 0.04,
+      "house_share_pctile": 0.87,
+      "affluence_pctile": 0.3,
+      "education_pctile": 0.32,
+      "deprivation_index": 0.52,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 4.87
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (16th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €4.87/m² (30th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_kalevi",
+    "name": "Kalevi",
+    "district": "Kalevi (Central Commercial & Fama Quarter)",
+    "short_name": "Kalevi",
+    "lat": 59.381087,
+    "lon": 28.184802,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 1.9,
+    "scores": {
+      "calmness": 1.5,
+      "assaults": 1.9,
+      "thefts": 2.5,
+      "drunkenness": 1.7,
+      "severe_crimes": 1.9,
+      "family": 2.7,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "3 bars/pubs/clubs and 0 alcohol shops (94th percentile nationally), 0 hotels/attractions, 13th-percentile green cover, 25% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 94th percentile, students/dormitories at the 45th, tourist footfall at the 21th, deprivation index 0.79 (cheap rent + 19% tertiary education + 75% apartment blocks). Offset by 0 schools/kindergartens and 11 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 90th percentile, tourist density 21th (pickpocketing), student/campus density 45th (bicycle theft), affluence 5th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 3 licensed premises and alcohol shops in this district (94th percentile nationally); deprivation index 0.79; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.79) and night-time economy (94th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "1.9/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.380177,
+          28.179604
+        ],
+        [
+          59.380862,
+          28.180165
+        ],
+        [
+          59.382574,
+          28.18006
+        ],
+        [
+          59.383809,
+          28.184626
+        ],
+        [
+          59.385121,
+          28.189803
+        ],
+        [
+          59.383774,
+          28.190526
+        ],
+        [
+          59.378295,
+          28.191293
+        ],
+        [
+          59.376502,
+          28.19286
+        ],
+        [
+          59.379583,
+          28.179484
+        ],
+        [
+          59.380177,
+          28.179604
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.94,
+      "tourist_pctile": 0.21,
+      "retail_pctile": 0.9,
+      "student_pctile": 0.45,
+      "family_amenity_pctile": 1.0,
+      "green_pctile": 0.13,
+      "house_share_pctile": 0.34,
+      "affluence_pctile": 0.05,
+      "education_pctile": 0.36,
+      "deprivation_index": 0.79,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 3.24
+    },
+    "family_desc": "0 schools/kindergartens and 11 playgrounds (100th percentile nationally), 0 sports facilities, 25% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €3.24/m² (5th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_kerese",
+    "name": "Kerese",
+    "district": "Kerese (Paul Keres Central Axis & Astri Quarter)",
+    "short_name": "Kerese",
+    "lat": 59.3734,
+    "lon": 28.1854,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 1.6,
+    "scores": {
+      "calmness": 1.1,
+      "assaults": 1.4,
+      "thefts": 1.9,
+      "drunkenness": 1.6,
+      "severe_crimes": 2.0,
+      "family": 2.2,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "2 bars/pubs/clubs and 0 alcohol shops (90th percentile nationally), 1 hotels/attractions, 42th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 90th percentile, students/dormitories at the 91th, tourist footfall at the 76th, deprivation index 0.72 (cheap rent + 19% tertiary education + 100% apartment blocks). Offset by 2 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 82th percentile, tourist density 76th (pickpocketing), student/campus density 91th (bicycle theft), affluence 36th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 2 licensed premises and alcohol shops in this district (90th percentile nationally); deprivation index 0.72; 1 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.72) and night-time economy (90th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "1.6/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; plenty of families with children around; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.371593,
+          28.186267
+        ],
+        [
+          59.371836,
+          28.184705
+        ],
+        [
+          59.37198,
+          28.183245
+        ],
+        [
+          59.372046,
+          28.181798
+        ],
+        [
+          59.372219,
+          28.172382
+        ],
+        [
+          59.378929,
+          28.178195
+        ],
+        [
+          59.379583,
+          28.179484
+        ],
+        [
+          59.376502,
+          28.19286
+        ],
+        [
+          59.371977,
+          28.197348
+        ],
+        [
+          59.369143,
+          28.196851
+        ],
+        [
+          59.371593,
+          28.186267
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.9,
+      "tourist_pctile": 0.76,
+      "retail_pctile": 0.82,
+      "student_pctile": 0.91,
+      "family_amenity_pctile": 0.78,
+      "green_pctile": 0.42,
+      "house_share_pctile": 0.03,
+      "affluence_pctile": 0.36,
+      "education_pctile": 0.4,
+      "deprivation_index": 0.72,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.16
+    },
+    "family_desc": "2 schools/kindergartens and 6 playgrounds (78th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.16/m² (36th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_soldino",
+    "name": "Soldino",
+    "district": "Soldino (Tallinna Mnt High-Rise Panel Quarter)",
+    "short_name": "Soldino",
+    "lat": 59.376327,
+    "lon": 28.156523,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.1,
+    "scores": {
+      "calmness": 1.8,
+      "assaults": 2.0,
+      "thefts": 2.8,
+      "drunkenness": 1.9,
+      "severe_crimes": 2.3,
+      "family": 2.2,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "2 bars/pubs/clubs and 0 alcohol shops (76th percentile nationally), 0 hotels/attractions, 34th-percentile green cover, 0% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 76th percentile, students/dormitories at the 46th, tourist footfall at the 22th, deprivation index 0.74 (cheap rent + 19% tertiary education + 100% apartment blocks). Offset by 0 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 67th percentile, tourist density 22th (pickpocketing), student/campus density 46th (bicycle theft), affluence 26th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 2 licensed premises and alcohol shops in this district (76th percentile nationally); deprivation index 0.74; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.74) and night-time economy (76th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.1/5.0 nationally — among the weakest in Estonia. A night-time drinking hotspot — expect noise and street drinkers; a reasonable family presence; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.371624,
+          28.147549
+        ],
+        [
+          59.371235,
+          28.13663
+        ],
+        [
+          59.380505,
+          28.145775
+        ],
+        [
+          59.382974,
+          28.144266
+        ],
+        [
+          59.386715,
+          28.148306
+        ],
+        [
+          59.379583,
+          28.179484
+        ],
+        [
+          59.378929,
+          28.178195
+        ],
+        [
+          59.372219,
+          28.172382
+        ],
+        [
+          59.372302,
+          28.166551
+        ],
+        [
+          59.371891,
+          28.15507
+        ],
+        [
+          59.371624,
+          28.147549
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.76,
+      "tourist_pctile": 0.22,
+      "retail_pctile": 0.67,
+      "student_pctile": 0.46,
+      "family_amenity_pctile": 0.52,
+      "green_pctile": 0.34,
+      "house_share_pctile": 0.04,
+      "affluence_pctile": 0.26,
+      "education_pctile": 0.44,
+      "deprivation_index": 0.74,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 4.85
+    },
+    "family_desc": "0 schools/kindergartens and 6 playgrounds (52th percentile nationally), 0 sports facilities, 0% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €4.85/m² (26th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_paemurru",
+    "name": "Paemurru",
+    "district": "Paemurru (Railway Station & Transit Hub Quarter)",
+    "short_name": "Paemurru",
+    "lat": 59.365748,
+    "lon": 28.169074,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 2.8,
+    "scores": {
+      "calmness": 3.0,
+      "assaults": 2.6,
+      "thefts": 3.7,
+      "drunkenness": 2.5,
+      "severe_crimes": 2.8,
+      "family": 2.8,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (39th percentile nationally), 0 hotels/attractions, 12th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 39th percentile, students/dormitories at the 48th, tourist footfall at the 24th, deprivation index 0.58 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 15th percentile, tourist density 24th (pickpocketing), student/campus density 48th (bicycle theft), affluence 1th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (39th percentile nationally); deprivation index 0.58; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.58) and night-time economy (39th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.8/5.0 nationally — below the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.372048,
+          28.179921
+        ],
+        [
+          59.371923,
+          28.17883
+        ],
+        [
+          59.371657,
+          28.177737
+        ],
+        [
+          59.371004,
+          28.176031
+        ],
+        [
+          59.370688,
+          28.1754
+        ],
+        [
+          59.370003,
+          28.174493
+        ],
+        [
+          59.369626,
+          28.174125
+        ],
+        [
+          59.368786,
+          28.173635
+        ],
+        [
+          59.368296,
+          28.173532
+        ],
+        [
+          59.367361,
+          28.173686
+        ],
+        [
+          59.365492,
+          28.175043
+        ],
+        [
+          59.361158,
+          28.178469
+        ],
+        [
+          59.360035,
+          28.178901
+        ],
+        [
+          59.35976,
+          28.176568
+        ],
+        [
+          59.35976,
+          28.174562
+        ],
+        [
+          59.359902,
+          28.172968
+        ],
+        [
+          59.361764,
+          28.173379
+        ],
+        [
+          59.36167,
+          28.170742
+        ],
+        [
+          59.361532,
+          28.169824
+        ],
+        [
+          59.361491,
+          28.16731
+        ],
+        [
+          59.361361,
+          28.165039
+        ],
+        [
+          59.360769,
+          28.162752
+        ],
+        [
+          59.360717,
+          28.162168
+        ],
+        [
+          59.360775,
+          28.161596
+        ],
+        [
+          59.362732,
+          28.154677
+        ],
+        [
+          59.362809,
+          28.154253
+        ],
+        [
+          59.362839,
+          28.153298
+        ],
+        [
+          59.361705,
+          28.146878
+        ],
+        [
+          59.369363,
+          28.155158
+        ],
+        [
+          59.370096,
+          28.155427
+        ],
+        [
+          59.371891,
+          28.15507
+        ],
+        [
+          59.372302,
+          28.166551
+        ],
+        [
+          59.372069,
+          28.180577
+        ],
+        [
+          59.372048,
+          28.179921
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.39,
+      "tourist_pctile": 0.24,
+      "retail_pctile": 0.15,
+      "student_pctile": 0.48,
+      "family_amenity_pctile": 0.18,
+      "green_pctile": 0.12,
+      "house_share_pctile": 0.88,
+      "affluence_pctile": 0.01,
+      "education_pctile": 0.48,
+      "deprivation_index": 0.58,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 3.16
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (18th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €3.16/m² (1th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_kulgu",
+    "name": "Kulgu",
+    "district": "Kulgu (Reservoir Boathouses / 'Narva Venice')",
+    "short_name": "Kulgu",
+    "lat": 59.357582,
+    "lon": 28.172034,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.0,
+    "scores": {
+      "calmness": 3.6,
+      "assaults": 2.6,
+      "thefts": 3.8,
+      "drunkenness": 2.5,
+      "severe_crimes": 3.0,
+      "family": 3.4,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (40th percentile nationally), 0 hotels/attractions, 81th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 40th percentile, students/dormitories at the 49th, tourist footfall at the 25th, deprivation index 0.52 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 16th percentile, tourist density 25th (pickpocketing), student/campus density 49th (bicycle theft), affluence 12th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (40th percentile nationally); deprivation index 0.52; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.52) and night-time economy (40th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.0/5.0 nationally — around the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.35403,
+          28.139949
+        ],
+        [
+          59.355192,
+          28.140017
+        ],
+        [
+          59.361705,
+          28.146878
+        ],
+        [
+          59.362839,
+          28.153298
+        ],
+        [
+          59.362809,
+          28.154253
+        ],
+        [
+          59.362732,
+          28.154677
+        ],
+        [
+          59.360775,
+          28.161596
+        ],
+        [
+          59.360717,
+          28.162168
+        ],
+        [
+          59.360769,
+          28.162752
+        ],
+        [
+          59.361361,
+          28.165039
+        ],
+        [
+          59.361491,
+          28.16731
+        ],
+        [
+          59.361532,
+          28.169824
+        ],
+        [
+          59.36167,
+          28.170742
+        ],
+        [
+          59.361764,
+          28.173379
+        ],
+        [
+          59.359902,
+          28.172968
+        ],
+        [
+          59.35976,
+          28.174562
+        ],
+        [
+          59.35976,
+          28.176568
+        ],
+        [
+          59.360103,
+          28.179672
+        ],
+        [
+          59.35861,
+          28.18687
+        ],
+        [
+          59.358412,
+          28.187024
+        ],
+        [
+          59.358243,
+          28.186882
+        ],
+        [
+          59.356845,
+          28.184196
+        ],
+        [
+          59.356001,
+          28.187714
+        ],
+        [
+          59.354916,
+          28.191267
+        ],
+        [
+          59.354203,
+          28.190683
+        ],
+        [
+          59.353787,
+          28.19013
+        ],
+        [
+          59.353701,
+          28.189834
+        ],
+        [
+          59.353346,
+          28.189655
+        ],
+        [
+          59.353606,
+          28.188931
+        ],
+        [
+          59.353757,
+          28.188147
+        ],
+        [
+          59.3538,
+          28.187569
+        ],
+        [
+          59.353758,
+          28.186597
+        ],
+        [
+          59.352761,
+          28.180939
+        ],
+        [
+          59.350263,
+          28.167773
+        ],
+        [
+          59.353992,
+          28.143418
+        ],
+        [
+          59.35403,
+          28.139949
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.4,
+      "tourist_pctile": 0.25,
+      "retail_pctile": 0.16,
+      "student_pctile": 0.49,
+      "family_amenity_pctile": 0.19,
+      "green_pctile": 0.81,
+      "house_share_pctile": 0.9,
+      "affluence_pctile": 0.12,
+      "education_pctile": 0.52,
+      "deprivation_index": 0.52,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 4.31
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (19th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €4.31/m² (12th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_kreenholm",
+    "name": "Kreenholm",
+    "district": "Kreenholm (Historic Industrial & Tenement Quarter)",
+    "short_name": "Kreenholm",
+    "lat": 59.363338,
+    "lon": 28.19246,
+    "color": "#dc2626",
+    "fill_color": "#ef4444",
+    "face_type": "unhappy",
+    "mean_score": 2.4,
+    "scores": {
+      "calmness": 2.1,
+      "assaults": 2.4,
+      "thefts": 2.6,
+      "drunkenness": 2.4,
+      "severe_crimes": 2.6,
+      "family": 3.0,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (42th percentile nationally), 2 hotels/attractions, 31th-percentile green cover, 3% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 42th percentile, students/dormitories at the 51th, tourist footfall at the 69th, deprivation index 0.71 (cheap rent + 19% tertiary education + 97% apartment blocks). Offset by 0 schools/kindergartens and 6 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 52th percentile, tourist density 69th (pickpocketing), student/campus density 51th (bicycle theft), affluence 22th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (42th percentile nationally); deprivation index 0.71; 2 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.71) and night-time economy (42th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "2.4/5.0 nationally — below the Estonian average. Some night-time bar traffic; a reasonable family presence; socially strained — cheap stock, low attainment, wall-to-wall blocks (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.369626,
+          28.174125
+        ],
+        [
+          59.370405,
+          28.174984
+        ],
+        [
+          59.371004,
+          28.176031
+        ],
+        [
+          59.371657,
+          28.177737
+        ],
+        [
+          59.371923,
+          28.17883
+        ],
+        [
+          59.372048,
+          28.179921
+        ],
+        [
+          59.372046,
+          28.181798
+        ],
+        [
+          59.37198,
+          28.183245
+        ],
+        [
+          59.371836,
+          28.184705
+        ],
+        [
+          59.371593,
+          28.186267
+        ],
+        [
+          59.367184,
+          28.205422
+        ],
+        [
+          59.366825,
+          28.205255
+        ],
+        [
+          59.366643,
+          28.204993
+        ],
+        [
+          59.366037,
+          28.205158
+        ],
+        [
+          59.366481,
+          28.2053
+        ],
+        [
+          59.365951,
+          28.205563
+        ],
+        [
+          59.365437,
+          28.205622
+        ],
+        [
+          59.364938,
+          28.205463
+        ],
+        [
+          59.364835,
+          28.205549
+        ],
+        [
+          59.364753,
+          28.205794
+        ],
+        [
+          59.364566,
+          28.205873
+        ],
+        [
+          59.364242,
+          28.205708
+        ],
+        [
+          59.364126,
+          28.205426
+        ],
+        [
+          59.364119,
+          28.204843
+        ],
+        [
+          59.364024,
+          28.204498
+        ],
+        [
+          59.363407,
+          28.203372
+        ],
+        [
+          59.36291,
+          28.201982
+        ],
+        [
+          59.361963,
+          28.200273
+        ],
+        [
+          59.361914,
+          28.19986
+        ],
+        [
+          59.362076,
+          28.199808
+        ],
+        [
+          59.362147,
+          28.199563
+        ],
+        [
+          59.361816,
+          28.198504
+        ],
+        [
+          59.361239,
+          28.197646
+        ],
+        [
+          59.360606,
+          28.196474
+        ],
+        [
+          59.360367,
+          28.196274
+        ],
+        [
+          59.360082,
+          28.19564
+        ],
+        [
+          59.359807,
+          28.195328
+        ],
+        [
+          59.359505,
+          28.194589
+        ],
+        [
+          59.359227,
+          28.194304
+        ],
+        [
+          59.359221,
+          28.194066
+        ],
+        [
+          59.358857,
+          28.193262
+        ],
+        [
+          59.358806,
+          28.193222
+        ],
+        [
+          59.358686,
+          28.193534
+        ],
+        [
+          59.358697,
+          28.193658
+        ],
+        [
+          59.359442,
+          28.194814
+        ],
+        [
+          59.359475,
+          28.19504
+        ],
+        [
+          59.359405,
+          28.195171
+        ],
+        [
+          59.358456,
+          28.194686
+        ],
+        [
+          59.357597,
+          28.193941
+        ],
+        [
+          59.356938,
+          28.193549
+        ],
+        [
+          59.355764,
+          28.192042
+        ],
+        [
+          59.354916,
+          28.191267
+        ],
+        [
+          59.356001,
+          28.187714
+        ],
+        [
+          59.356845,
+          28.184196
+        ],
+        [
+          59.358243,
+          28.186882
+        ],
+        [
+          59.358412,
+          28.187024
+        ],
+        [
+          59.35861,
+          28.18687
+        ],
+        [
+          59.360103,
+          28.179672
+        ],
+        [
+          59.360035,
+          28.178901
+        ],
+        [
+          59.361158,
+          28.178469
+        ],
+        [
+          59.365492,
+          28.175043
+        ],
+        [
+          59.367361,
+          28.173686
+        ],
+        [
+          59.368296,
+          28.173532
+        ],
+        [
+          59.369167,
+          28.173806
+        ],
+        [
+          59.369626,
+          28.174125
+        ]
+      ],
+      [
+        [
+          59.35519,
+          28.193333
+        ],
+        [
+          59.356989,
+          28.194973
+        ],
+        [
+          59.359705,
+          28.196782
+        ],
+        [
+          59.36026,
+          28.197801
+        ],
+        [
+          59.360594,
+          28.198729
+        ],
+        [
+          59.360495,
+          28.198864
+        ],
+        [
+          59.360179,
+          28.199183
+        ],
+        [
+          59.359396,
+          28.199602
+        ],
+        [
+          59.358456,
+          28.200005
+        ],
+        [
+          59.358148,
+          28.199952
+        ],
+        [
+          59.356875,
+          28.199012
+        ],
+        [
+          59.356453,
+          28.198544
+        ],
+        [
+          59.354718,
+          28.195487
+        ],
+        [
+          59.354536,
+          28.194856
+        ],
+        [
+          59.354576,
+          28.194063
+        ],
+        [
+          59.354856,
+          28.193385
+        ],
+        [
+          59.35513,
+          28.193302
+        ],
+        [
+          59.35519,
+          28.193333
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.42,
+      "tourist_pctile": 0.69,
+      "retail_pctile": 0.52,
+      "student_pctile": 0.51,
+      "family_amenity_pctile": 0.6,
+      "green_pctile": 0.31,
+      "house_share_pctile": 0.13,
+      "affluence_pctile": 0.22,
+      "education_pctile": 0.56,
+      "deprivation_index": 0.71,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 4.56
+    },
+    "family_desc": "0 schools/kindergartens and 6 playgrounds (60th percentile nationally), 0 sports facilities, 3% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €4.56/m² (22th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_veekulgu",
+    "name": "Veekulgu",
+    "district": "Veekulgu (Industrial & Water-Intake Belt)",
+    "short_name": "Veekulgu",
+    "lat": 59.348324,
+    "lon": 28.159881,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.0,
+    "scores": {
+      "calmness": 3.6,
+      "assaults": 2.7,
+      "thefts": 3.8,
+      "drunkenness": 2.5,
+      "severe_crimes": 3.1,
+      "family": 3.5,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (43th percentile nationally), 0 hotels/attractions, 88th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 43th percentile, students/dormitories at the 52th, tourist footfall at the 27th, deprivation index 0.48 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 18th percentile, tourist density 27th (pickpocketing), student/campus density 52th (bicycle theft), affluence 16th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (43th percentile nationally); deprivation index 0.48; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.48) and night-time economy (43th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.0/5.0 nationally — around the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.350907,
+          28.139758
+        ],
+        [
+          59.35403,
+          28.139949
+        ],
+        [
+          59.353973,
+          28.143625
+        ],
+        [
+          59.350263,
+          28.167773
+        ],
+        [
+          59.352761,
+          28.180939
+        ],
+        [
+          59.353758,
+          28.186597
+        ],
+        [
+          59.3538,
+          28.187569
+        ],
+        [
+          59.353757,
+          28.188147
+        ],
+        [
+          59.353606,
+          28.188931
+        ],
+        [
+          59.353346,
+          28.189655
+        ],
+        [
+          59.353246,
+          28.189491
+        ],
+        [
+          59.353233,
+          28.189156
+        ],
+        [
+          59.353146,
+          28.189
+        ],
+        [
+          59.353065,
+          28.188371
+        ],
+        [
+          59.353001,
+          28.188254
+        ],
+        [
+          59.353006,
+          28.187444
+        ],
+        [
+          59.352872,
+          28.186795
+        ],
+        [
+          59.35272,
+          28.185316
+        ],
+        [
+          59.352719,
+          28.185087
+        ],
+        [
+          59.35311,
+          28.183592
+        ],
+        [
+          59.353082,
+          28.183182
+        ],
+        [
+          59.35296,
+          28.182824
+        ],
+        [
+          59.352829,
+          28.182969
+        ],
+        [
+          59.35279,
+          28.183194
+        ],
+        [
+          59.352694,
+          28.183075
+        ],
+        [
+          59.352525,
+          28.183269
+        ],
+        [
+          59.352424,
+          28.182984
+        ],
+        [
+          59.352889,
+          28.182386
+        ],
+        [
+          59.3527,
+          28.181275
+        ],
+        [
+          59.352592,
+          28.18094
+        ],
+        [
+          59.352483,
+          28.180977
+        ],
+        [
+          59.352326,
+          28.180753
+        ],
+        [
+          59.352191,
+          28.180774
+        ],
+        [
+          59.352116,
+          28.180618
+        ],
+        [
+          59.351761,
+          28.180467
+        ],
+        [
+          59.351444,
+          28.180088
+        ],
+        [
+          59.350962,
+          28.180024
+        ],
+        [
+          59.350736,
+          28.179675
+        ],
+        [
+          59.349953,
+          28.179282
+        ],
+        [
+          59.349822,
+          28.179592
+        ],
+        [
+          59.349644,
+          28.180865
+        ],
+        [
+          59.349713,
+          28.181445
+        ],
+        [
+          59.349826,
+          28.181845
+        ],
+        [
+          59.350018,
+          28.182099
+        ],
+        [
+          59.350028,
+          28.18226
+        ],
+        [
+          59.34996,
+          28.182398
+        ],
+        [
+          59.349771,
+          28.182343
+        ],
+        [
+          59.349767,
+          28.181872
+        ],
+        [
+          59.349589,
+          28.181437
+        ],
+        [
+          59.349454,
+          28.181555
+        ],
+        [
+          59.349373,
+          28.181501
+        ],
+        [
+          59.349345,
+          28.181775
+        ],
+        [
+          59.349199,
+          28.1817
+        ],
+        [
+          59.348978,
+          28.18207
+        ],
+        [
+          59.348652,
+          28.181874
+        ],
+        [
+          59.348285,
+          28.182047
+        ],
+        [
+          59.348228,
+          28.181978
+        ],
+        [
+          59.348227,
+          28.18167
+        ],
+        [
+          59.34814,
+          28.181287
+        ],
+        [
+          59.348041,
+          28.181297
+        ],
+        [
+          59.347928,
+          28.182106
+        ],
+        [
+          59.347862,
+          28.182177
+        ],
+        [
+          59.34778,
+          28.182046
+        ],
+        [
+          59.347844,
+          28.181842
+        ],
+        [
+          59.347733,
+          28.181714
+        ],
+        [
+          59.347854,
+          28.181455
+        ],
+        [
+          59.347815,
+          28.181292
+        ],
+        [
+          59.348087,
+          28.181126
+        ],
+        [
+          59.348065,
+          28.180837
+        ],
+        [
+          59.347768,
+          28.179649
+        ],
+        [
+          59.347815,
+          28.178672
+        ],
+        [
+          59.347721,
+          28.178585
+        ],
+        [
+          59.347621,
+          28.17826
+        ],
+        [
+          59.347474,
+          28.178256
+        ],
+        [
+          59.347475,
+          28.178061
+        ],
+        [
+          59.347298,
+          28.177498
+        ],
+        [
+          59.347002,
+          28.17714
+        ],
+        [
+          59.347035,
+          28.176828
+        ],
+        [
+          59.346891,
+          28.17619
+        ],
+        [
+          59.346886,
+          28.17558
+        ],
+        [
+          59.346838,
+          28.175509
+        ],
+        [
+          59.346684,
+          28.175608
+        ],
+        [
+          59.34649,
+          28.175438
+        ],
+        [
+          59.346251,
+          28.175444
+        ],
+        [
+          59.346162,
+          28.175123
+        ],
+        [
+          59.346268,
+          28.175004
+        ],
+        [
+          59.346359,
+          28.1751
+        ],
+        [
+          59.346537,
+          28.175029
+        ],
+        [
+          59.346581,
+          28.174269
+        ],
+        [
+          59.346378,
+          28.173862
+        ],
+        [
+          59.3463,
+          28.173489
+        ],
+        [
+          59.346324,
+          28.173297
+        ],
+        [
+          59.346787,
+          28.173137
+        ],
+        [
+          59.347187,
+          28.17316
+        ],
+        [
+          59.347632,
+          28.173246
+        ],
+        [
+          59.347826,
+          28.17341
+        ],
+        [
+          59.347711,
+          28.17309
+        ],
+        [
+          59.347394,
+          28.172906
+        ],
+        [
+          59.34682,
+          28.172992
+        ],
+        [
+          59.346802,
+          28.172823
+        ],
+        [
+          59.346779,
+          28.173012
+        ],
+        [
+          59.346714,
+          28.173053
+        ],
+        [
+          59.346661,
+          28.172974
+        ],
+        [
+          59.345923,
+          28.173242
+        ],
+        [
+          59.345855,
+          28.172952
+        ],
+        [
+          59.34575,
+          28.172979
+        ],
+        [
+          59.345555,
+          28.173068
+        ],
+        [
+          59.345281,
+          28.173744
+        ],
+        [
+          59.345108,
+          28.173869
+        ],
+        [
+          59.345007,
+          28.173738
+        ],
+        [
+          59.343328,
+          28.173657
+        ],
+        [
+          59.343382,
+          28.172085
+        ],
+        [
+          59.343519,
+          28.17158
+        ],
+        [
+          59.343461,
+          28.172017
+        ],
+        [
+          59.343604,
+          28.172315
+        ],
+        [
+          59.343613,
+          28.172791
+        ],
+        [
+          59.343699,
+          28.173
+        ],
+        [
+          59.345084,
+          28.173081
+        ],
+        [
+          59.345249,
+          28.172862
+        ],
+        [
+          59.345857,
+          28.172526
+        ],
+        [
+          59.345945,
+          28.172345
+        ],
+        [
+          59.346477,
+          28.172264
+        ],
+        [
+          59.346536,
+          28.171892
+        ],
+        [
+          59.346544,
+          28.172158
+        ],
+        [
+          59.34661,
+          28.172214
+        ],
+        [
+          59.346622,
+          28.171881
+        ],
+        [
+          59.346523,
+          28.171768
+        ],
+        [
+          59.346664,
+          28.171188
+        ],
+        [
+          59.346723,
+          28.171159
+        ],
+        [
+          59.346794,
+          28.171379
+        ],
+        [
+          59.346861,
+          28.171389
+        ],
+        [
+          59.346787,
+          28.17089
+        ],
+        [
+          59.34671,
+          28.170914
+        ],
+        [
+          59.346603,
+          28.170191
+        ],
+        [
+          59.346258,
+          28.169292
+        ],
+        [
+          59.346266,
+          28.169078
+        ],
+        [
+          59.34633,
+          28.169077
+        ],
+        [
+          59.346371,
+          28.168902
+        ],
+        [
+          59.346563,
+          28.169212
+        ],
+        [
+          59.346716,
+          28.169186
+        ],
+        [
+          59.346733,
+          28.168951
+        ],
+        [
+          59.346463,
+          28.168773
+        ],
+        [
+          59.346445,
+          28.168872
+        ],
+        [
+          59.346296,
+          28.168939
+        ],
+        [
+          59.346374,
+          28.16772
+        ],
+        [
+          59.34634,
+          28.167614
+        ],
+        [
+          59.34612,
+          28.167515
+        ],
+        [
+          59.346107,
+          28.16732
+        ],
+        [
+          59.346246,
+          28.16732
+        ],
+        [
+          59.346208,
+          28.166954
+        ],
+        [
+          59.346122,
+          28.166943
+        ],
+        [
+          59.346146,
+          28.166754
+        ],
+        [
+          59.346071,
+          28.166783
+        ],
+        [
+          59.346044,
+          28.16656
+        ],
+        [
+          59.346123,
+          28.166441
+        ],
+        [
+          59.346141,
+          28.166003
+        ],
+        [
+          59.345939,
+          28.16547
+        ],
+        [
+          59.345954,
+          28.165161
+        ],
+        [
+          59.346104,
+          28.165062
+        ],
+        [
+          59.346099,
+          28.164934
+        ],
+        [
+          59.346306,
+          28.164522
+        ],
+        [
+          59.346384,
+          28.164169
+        ],
+        [
+          59.346196,
+          28.163235
+        ],
+        [
+          59.346099,
+          28.162226
+        ],
+        [
+          59.345988,
+          28.162208
+        ],
+        [
+          59.345984,
+          28.162025
+        ],
+        [
+          59.346079,
+          28.161965
+        ],
+        [
+          59.34602,
+          28.161883
+        ],
+        [
+          59.34601,
+          28.161363
+        ],
+        [
+          59.346115,
+          28.161081
+        ],
+        [
+          59.346001,
+          28.160512
+        ],
+        [
+          59.346149,
+          28.160311
+        ],
+        [
+          59.345946,
+          28.160287
+        ],
+        [
+          59.345896,
+          28.159655
+        ],
+        [
+          59.345744,
+          28.159755
+        ],
+        [
+          59.3457,
+          28.159126
+        ],
+        [
+          59.345649,
+          28.159075
+        ],
+        [
+          59.345687,
+          28.15893
+        ],
+        [
+          59.345587,
+          28.159085
+        ],
+        [
+          59.34533,
+          28.158967
+        ],
+        [
+          59.345268,
+          28.158412
+        ],
+        [
+          59.345206,
+          28.15837
+        ],
+        [
+          59.345286,
+          28.158293
+        ],
+        [
+          59.345248,
+          28.158175
+        ],
+        [
+          59.345287,
+          28.157799
+        ],
+        [
+          59.345502,
+          28.157833
+        ],
+        [
+          59.345505,
+          28.15772
+        ],
+        [
+          59.345278,
+          28.157711
+        ],
+        [
+          59.34525,
+          28.156921
+        ],
+        [
+          59.34532,
+          28.156823
+        ],
+        [
+          59.345249,
+          28.156573
+        ],
+        [
+          59.345214,
+          28.155866
+        ],
+        [
+          59.345097,
+          28.155766
+        ],
+        [
+          59.345212,
+          28.15525
+        ],
+        [
+          59.345068,
+          28.154179
+        ],
+        [
+          59.345093,
+          28.153915
+        ],
+        [
+          59.345066,
+          28.153784
+        ],
+        [
+          59.344898,
+          28.153773
+        ],
+        [
+          59.344844,
+          28.153604
+        ],
+        [
+          59.344922,
+          28.1534
+        ],
+        [
+          59.3451,
+          28.153333
+        ],
+        [
+          59.344988,
+          28.153001
+        ],
+        [
+          59.345111,
+          28.15281
+        ],
+        [
+          59.345191,
+          28.152318
+        ],
+        [
+          59.345502,
+          28.152416
+        ],
+        [
+          59.345514,
+          28.152287
+        ],
+        [
+          59.345203,
+          28.152197
+        ],
+        [
+          59.345096,
+          28.151983
+        ],
+        [
+          59.34516,
+          28.151808
+        ],
+        [
+          59.345125,
+          28.150985
+        ],
+        [
+          59.345196,
+          28.150694
+        ],
+        [
+          59.344833,
+          28.149318
+        ],
+        [
+          59.344817,
+          28.149206
+        ],
+        [
+          59.344918,
+          28.149132
+        ],
+        [
+          59.344659,
+          28.148956
+        ],
+        [
+          59.344505,
+          28.148564
+        ],
+        [
+          59.344336,
+          28.148473
+        ],
+        [
+          59.34425,
+          28.148249
+        ],
+        [
+          59.344254,
+          28.147902
+        ],
+        [
+          59.344199,
+          28.147956
+        ],
+        [
+          59.344055,
+          28.147782
+        ],
+        [
+          59.344063,
+          28.147582
+        ],
+        [
+          59.34412,
+          28.14756
+        ],
+        [
+          59.344076,
+          28.147131
+        ],
+        [
+          59.344125,
+          28.146729
+        ],
+        [
+          59.343992,
+          28.147757
+        ],
+        [
+          59.344056,
+          28.148095
+        ],
+        [
+          59.343873,
+          28.148513
+        ],
+        [
+          59.343756,
+          28.148481
+        ],
+        [
+          59.343617,
+          28.148681
+        ],
+        [
+          59.343348,
+          28.148374
+        ],
+        [
+          59.343286,
+          28.147901
+        ],
+        [
+          59.343041,
+          28.147458
+        ],
+        [
+          59.342947,
+          28.147017
+        ],
+        [
+          59.343004,
+          28.146693
+        ],
+        [
+          59.34294,
+          28.146217
+        ],
+        [
+          59.342833,
+          28.146428
+        ],
+        [
+          59.342798,
+          28.145846
+        ],
+        [
+          59.343011,
+          28.145342
+        ],
+        [
+          59.342943,
+          28.144875
+        ],
+        [
+          59.342982,
+          28.144734
+        ],
+        [
+          59.342779,
+          28.144701
+        ],
+        [
+          59.342702,
+          28.14443
+        ],
+        [
+          59.342801,
+          28.143771
+        ],
+        [
+          59.342698,
+          28.143493
+        ],
+        [
+          59.342774,
+          28.143149
+        ],
+        [
+          59.342758,
+          28.142762
+        ],
+        [
+          59.342651,
+          28.142717
+        ],
+        [
+          59.342526,
+          28.14238
+        ],
+        [
+          59.342619,
+          28.142221
+        ],
+        [
+          59.342312,
+          28.14202
+        ],
+        [
+          59.342226,
+          28.141831
+        ],
+        [
+          59.342292,
+          28.141465
+        ],
+        [
+          59.342535,
+          28.141271
+        ],
+        [
+          59.342647,
+          28.141593
+        ],
+        [
+          59.342689,
+          28.141499
+        ],
+        [
+          59.342868,
+          28.141563
+        ],
+        [
+          59.34287,
+          28.141686
+        ],
+        [
+          59.342782,
+          28.141752
+        ],
+        [
+          59.342855,
+          28.141979
+        ],
+        [
+          59.342961,
+          28.141143
+        ],
+        [
+          59.343093,
+          28.140967
+        ],
+        [
+          59.343087,
+          28.140658
+        ],
+        [
+          59.342997,
+          28.140549
+        ],
+        [
+          59.34304,
+          28.140399
+        ],
+        [
+          59.342902,
+          28.14009
+        ],
+        [
+          59.342918,
+          28.139752
+        ],
+        [
+          59.342843,
+          28.139535
+        ],
+        [
+          59.34291,
+          28.139371
+        ],
+        [
+          59.342751,
+          28.139294
+        ],
+        [
+          59.342596,
+          28.138896
+        ],
+        [
+          59.342649,
+          28.137977
+        ],
+        [
+          59.342808,
+          28.137401
+        ],
+        [
+          59.342665,
+          28.137405
+        ],
+        [
+          59.342594,
+          28.137202
+        ],
+        [
+          59.342543,
+          28.137426
+        ],
+        [
+          59.342343,
+          28.137619
+        ],
+        [
+          59.342455,
+          28.137759
+        ],
+        [
+          59.342448,
+          28.137965
+        ],
+        [
+          59.342545,
+          28.138085
+        ],
+        [
+          59.342472,
+          28.13822
+        ],
+        [
+          59.342369,
+          28.138262
+        ],
+        [
+          59.342306,
+          28.138084
+        ],
+        [
+          59.342229,
+          28.138219
+        ],
+        [
+          59.342302,
+          28.13836
+        ],
+        [
+          59.342548,
+          28.138385
+        ],
+        [
+          59.342479,
+          28.138696
+        ],
+        [
+          59.342554,
+          28.13909
+        ],
+        [
+          59.342523,
+          28.139236
+        ],
+        [
+          59.342431,
+          28.139221
+        ],
+        [
+          59.342456,
+          28.139068
+        ],
+        [
+          59.34241,
+          28.138993
+        ],
+        [
+          59.342344,
+          28.139213
+        ],
+        [
+          59.342235,
+          28.139242
+        ],
+        [
+          59.34216,
+          28.139006
+        ],
+        [
+          59.342172,
+          28.138746
+        ],
+        [
+          59.341942,
+          28.138279
+        ],
+        [
+          59.342033,
+          28.138207
+        ],
+        [
+          59.342065,
+          28.138037
+        ],
+        [
+          59.341968,
+          28.137987
+        ],
+        [
+          59.34194,
+          28.138145
+        ],
+        [
+          59.341883,
+          28.138139
+        ],
+        [
+          59.341948,
+          28.137892
+        ],
+        [
+          59.341904,
+          28.137762
+        ],
+        [
+          59.341966,
+          28.137608
+        ],
+        [
+          59.341792,
+          28.137793
+        ],
+        [
+          59.341687,
+          28.137424
+        ],
+        [
+          59.341527,
+          28.137192
+        ],
+        [
+          59.3414,
+          28.137245
+        ],
+        [
+          59.341093,
+          28.136383
+        ],
+        [
+          59.340603,
+          28.13557
+        ],
+        [
+          59.340753,
+          28.135475
+        ],
+        [
+          59.340683,
+          28.135382
+        ],
+        [
+          59.340698,
+          28.135276
+        ],
+        [
+          59.341028,
+          28.135222
+        ],
+        [
+          59.341172,
+          28.1354
+        ],
+        [
+          59.34142,
+          28.135102
+        ],
+        [
+          59.341534,
+          28.135126
+        ],
+        [
+          59.341672,
+          28.13488
+        ],
+        [
+          59.341623,
+          28.134334
+        ],
+        [
+          59.341521,
+          28.134075
+        ],
+        [
+          59.343081,
+          28.133909
+        ],
+        [
+          59.346111,
+          28.133813
+        ],
+        [
+          59.346885,
+          28.135578
+        ],
+        [
+          59.347862,
+          28.137197
+        ],
+        [
+          59.348987,
+          28.138506
+        ],
+        [
+          59.349937,
+          28.139261
+        ],
+        [
+          59.350907,
+          28.139758
+        ]
+      ],
+      [
+        [
+          59.348512,
+          28.188582
+        ],
+        [
+          59.349175,
+          28.188568
+        ],
+        [
+          59.349645,
+          28.188831
+        ],
+        [
+          59.349815,
+          28.188817
+        ],
+        [
+          59.350069,
+          28.189204
+        ],
+        [
+          59.350306,
+          28.189223
+        ],
+        [
+          59.350469,
+          28.189804
+        ],
+        [
+          59.350738,
+          28.189953
+        ],
+        [
+          59.350966,
+          28.189885
+        ],
+        [
+          59.35103,
+          28.189712
+        ],
+        [
+          59.35122,
+          28.189861
+        ],
+        [
+          59.351439,
+          28.189808
+        ],
+        [
+          59.351514,
+          28.189957
+        ],
+        [
+          59.351442,
+          28.190054
+        ],
+        [
+          59.349619,
+          28.190387
+        ],
+        [
+          59.349539,
+          28.190327
+        ],
+        [
+          59.34824,
+          28.190674
+        ],
+        [
+          59.347918,
+          28.190645
+        ],
+        [
+          59.347293,
+          28.190268
+        ],
+        [
+          59.346998,
+          28.18988
+        ],
+        [
+          59.346872,
+          28.189429
+        ],
+        [
+          59.34686,
+          28.189091
+        ],
+        [
+          59.346963,
+          28.188884
+        ],
+        [
+          59.3472,
+          28.188943
+        ],
+        [
+          59.347282,
+          28.188772
+        ],
+        [
+          59.347377,
+          28.188759
+        ],
+        [
+          59.347483,
+          28.188476
+        ],
+        [
+          59.34761,
+          28.188677
+        ],
+        [
+          59.348058,
+          28.188446
+        ],
+        [
+          59.348286,
+          28.188424
+        ],
+        [
+          59.348433,
+          28.188553
+        ],
+        [
+          59.348512,
+          28.188582
+        ]
+      ],
+      [
+        [
+          59.342727,
+          28.146048
+        ],
+        [
+          59.342788,
+          28.146177
+        ],
+        [
+          59.342831,
+          28.146762
+        ],
+        [
+          59.342685,
+          28.146647
+        ],
+        [
+          59.342658,
+          28.146791
+        ],
+        [
+          59.342833,
+          28.146962
+        ],
+        [
+          59.342887,
+          28.147254
+        ],
+        [
+          59.342823,
+          28.147656
+        ],
+        [
+          59.342917,
+          28.148407
+        ],
+        [
+          59.343106,
+          28.148546
+        ],
+        [
+          59.343114,
+          28.148837
+        ],
+        [
+          59.342897,
+          28.149346
+        ],
+        [
+          59.342735,
+          28.149438
+        ],
+        [
+          59.342474,
+          28.149042
+        ],
+        [
+          59.342376,
+          28.149076
+        ],
+        [
+          59.342247,
+          28.149463
+        ],
+        [
+          59.342166,
+          28.149466
+        ],
+        [
+          59.342089,
+          28.149315
+        ],
+        [
+          59.342123,
+          28.149017
+        ],
+        [
+          59.342225,
+          28.148865
+        ],
+        [
+          59.342158,
+          28.148433
+        ],
+        [
+          59.342377,
+          28.147981
+        ],
+        [
+          59.34253,
+          28.147932
+        ],
+        [
+          59.342535,
+          28.147649
+        ],
+        [
+          59.342307,
+          28.147645
+        ],
+        [
+          59.342136,
+          28.147903
+        ],
+        [
+          59.342184,
+          28.148045
+        ],
+        [
+          59.342126,
+          28.148173
+        ],
+        [
+          59.342005,
+          28.14828
+        ],
+        [
+          59.34166,
+          28.148144
+        ],
+        [
+          59.341479,
+          28.147883
+        ],
+        [
+          59.341475,
+          28.147712
+        ],
+        [
+          59.34158,
+          28.147586
+        ],
+        [
+          59.341754,
+          28.147712
+        ],
+        [
+          59.341921,
+          28.147691
+        ],
+        [
+          59.341793,
+          28.147505
+        ],
+        [
+          59.341695,
+          28.147517
+        ],
+        [
+          59.341551,
+          28.146919
+        ],
+        [
+          59.341598,
+          28.146751
+        ],
+        [
+          59.341705,
+          28.146997
+        ],
+        [
+          59.341973,
+          28.146616
+        ],
+        [
+          59.341994,
+          28.146479
+        ],
+        [
+          59.341874,
+          28.146187
+        ],
+        [
+          59.341948,
+          28.145756
+        ],
+        [
+          59.342076,
+          28.14567
+        ],
+        [
+          59.342216,
+          28.145845
+        ],
+        [
+          59.342411,
+          28.14579
+        ],
+        [
+          59.342482,
+          28.145723
+        ],
+        [
+          59.342503,
+          28.145508
+        ],
+        [
+          59.342672,
+          28.14548
+        ],
+        [
+          59.342719,
+          28.145955
+        ],
+        [
+          59.342727,
+          28.146048
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.43,
+      "tourist_pctile": 0.27,
+      "retail_pctile": 0.18,
+      "student_pctile": 0.52,
+      "family_amenity_pctile": 0.21,
+      "green_pctile": 0.88,
+      "house_share_pctile": 0.91,
+      "affluence_pctile": 0.16,
+      "education_pctile": 0.6,
+      "deprivation_index": 0.48,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 4.31
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (21th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €4.31/m² (16th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  },
+  {
+    "id": "safety_narva_elektrijaama",
+    "name": "Elektrijaama",
+    "district": "Elektrijaama & Veekulgu (Energy Infrastructure District)",
+    "short_name": "Elektrijaama",
+    "lat": 59.311075,
+    "lon": 28.087145,
+    "color": "#ea580c",
+    "fill_color": "#f97316",
+    "face_type": "concerned",
+    "mean_score": 3.0,
+    "scores": {
+      "calmness": 3.1,
+      "assaults": 2.8,
+      "thefts": 3.9,
+      "drunkenness": 2.7,
+      "severe_crimes": 3.3,
+      "family": 3.5,
+      "language": 1.2,
+      "demographics": 1.2
+    },
+    "calmness_desc": "0 bars/pubs/clubs and 0 alcohol shops (45th percentile nationally), 0 hotels/attractions, 37th-percentile green cover, 100% of the housing stock detached or terraced. County baseline: 308 registered crimes per 10 000 (Ida-Viru maakond, 2025). Sources: OpenStreetMap land use (ODbL), extracted 2026-08; Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta).",
+    "assaults_desc": "Street-aggression risk. Drivers here: alcohol venues at the 45th percentile, students/dormitories at the 54th, tourist footfall at the 28th, deprivation index 0.37 (cheap rent + 19% tertiary education + 0% apartment blocks). Offset by 0 schools/kindergartens and 0 playgrounds. County baseline: §121 assault 83/10 000 (Ida-Viru maakond 2025, Estonia 12–83). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "thefts_desc": "Burglary, bicycle theft and pickpocketing only — fraud and computer crime are excluded (26.5% of Estonia's 2025 property crime, none of it street-level). Retail density 25th percentile, tourist density 28th (pickpocketing), student/campus density 54th (bicycle theft), affluence 40th (private security, cameras, controlled entrances). County baseline: §199 theft 65/10 000 (Ida-Viru maakond 2025). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, varavastased kuriteod 2025; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026.",
+    "drunkenness_desc": "Public drinking and disorder. 0 licensed premises and alcohol shops in this district (45th percentile nationally); deprivation index 0.37; 0 tourist venues. County baseline: §424 driving under the influence 35/10 000 — the published proxy for alcohol-related disorder (Ida-Viru maakond 2025, Estonia 11–35). Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); OpenStreetMap land use (ODbL), extracted 2026-08.",
+    "severe_crimes_desc": "Violence and sexual offences. County baseline: person crimes 100/10 000 and sexual offences 49.6/100 000 (Ida-Viru maakond 2025). Estonia does not publish homicide below county level, so the county burden is concentrated onto districts by deprivation (0.37) and night-time economy (45th pct) rather than spread evenly — a quiet villa suburb does not inherit a panel-block district's violence. Sources: Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta); Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025.",
+    "demographics_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "verdict": "3.0/5.0 nationally — around the Estonian average. Some night-time bar traffic; few families — this is not a school-run neighbourhood; mixed (19% degree-holders). Russian is the working language here — plan for it.",
+    "polygons": [
+      [
+        [
+          59.332683,
+          28.018776
+        ],
+        [
+          59.332836,
+          28.019169
+        ],
+        [
+          59.333156,
+          28.019569
+        ],
+        [
+          59.333499,
+          28.020495
+        ],
+        [
+          59.333749,
+          28.020826
+        ],
+        [
+          59.333732,
+          28.021187
+        ],
+        [
+          59.335722,
+          28.019071
+        ],
+        [
+          59.337532,
+          28.030637
+        ],
+        [
+          59.335274,
+          28.032329
+        ],
+        [
+          59.335421,
+          28.03325
+        ],
+        [
+          59.335619,
+          28.033477
+        ],
+        [
+          59.335698,
+          28.03372
+        ],
+        [
+          59.335582,
+          28.034498
+        ],
+        [
+          59.335607,
+          28.034935
+        ],
+        [
+          59.335803,
+          28.035678
+        ],
+        [
+          59.335802,
+          28.035876
+        ],
+        [
+          59.335258,
+          28.036566
+        ],
+        [
+          59.335092,
+          28.036896
+        ],
+        [
+          59.3352,
+          28.038121
+        ],
+        [
+          59.335432,
+          28.038134
+        ],
+        [
+          59.336163,
+          28.03748
+        ],
+        [
+          59.346333,
+          28.037675
+        ],
+        [
+          59.350242,
+          28.037576
+        ],
+        [
+          59.351008,
+          28.0427
+        ],
+        [
+          59.351936,
+          28.059846
+        ],
+        [
+          59.353379,
+          28.089005
+        ],
+        [
+          59.359843,
+          28.085092
+        ],
+        [
+          59.361291,
+          28.086192
+        ],
+        [
+          59.369425,
+          28.081204
+        ],
+        [
+          59.369661,
+          28.089785
+        ],
+        [
+          59.369823,
+          28.089767
+        ],
+        [
+          59.370007,
+          28.09404
+        ],
+        [
+          59.370376,
+          28.09815
+        ],
+        [
+          59.370336,
+          28.102094
+        ],
+        [
+          59.370137,
+          28.102105
+        ],
+        [
+          59.370675,
+          28.116154
+        ],
+        [
+          59.371333,
+          28.136737
+        ],
+        [
+          59.371235,
+          28.13663
+        ],
+        [
+          59.371891,
+          28.15507
+        ],
+        [
+          59.370096,
+          28.155427
+        ],
+        [
+          59.369363,
+          28.155158
+        ],
+        [
+          59.361705,
+          28.146878
+        ],
+        [
+          59.355192,
+          28.140017
+        ],
+        [
+          59.350907,
+          28.139758
+        ],
+        [
+          59.349937,
+          28.139261
+        ],
+        [
+          59.348987,
+          28.138506
+        ],
+        [
+          59.347862,
+          28.137197
+        ],
+        [
+          59.346885,
+          28.135578
+        ],
+        [
+          59.346111,
+          28.133813
+        ],
+        [
+          59.343081,
+          28.133909
+        ],
+        [
+          59.341521,
+          28.134075
+        ],
+        [
+          59.341107,
+          28.134268
+        ],
+        [
+          59.340677,
+          28.133798
+        ],
+        [
+          59.340499,
+          28.133737
+        ],
+        [
+          59.34047,
+          28.133489
+        ],
+        [
+          59.340231,
+          28.133003
+        ],
+        [
+          59.340161,
+          28.133049
+        ],
+        [
+          59.340191,
+          28.13357
+        ],
+        [
+          59.340052,
+          28.133651
+        ],
+        [
+          59.340042,
+          28.134045
+        ],
+        [
+          59.339903,
+          28.134243
+        ],
+        [
+          59.339722,
+          28.134236
+        ],
+        [
+          59.339558,
+          28.134018
+        ],
+        [
+          59.339026,
+          28.13388
+        ],
+        [
+          59.338971,
+          28.133683
+        ],
+        [
+          59.339004,
+          28.133534
+        ],
+        [
+          59.339325,
+          28.132955
+        ],
+        [
+          59.339282,
+          28.132578
+        ],
+        [
+          59.339324,
+          28.132341
+        ],
+        [
+          59.339607,
+          28.132009
+        ],
+        [
+          59.339559,
+          28.131153
+        ],
+        [
+          59.339199,
+          28.13138
+        ],
+        [
+          59.339072,
+          28.131219
+        ],
+        [
+          59.338881,
+          28.13
+        ],
+        [
+          59.33862,
+          28.129492
+        ],
+        [
+          59.338235,
+          28.12939
+        ],
+        [
+          59.338172,
+          28.129209
+        ],
+        [
+          59.338218,
+          28.128784
+        ],
+        [
+          59.338174,
+          28.128547
+        ],
+        [
+          59.338088,
+          28.128431
+        ],
+        [
+          59.337843,
+          28.128553
+        ],
+        [
+          59.337765,
+          28.128287
+        ],
+        [
+          59.337798,
+          28.128132
+        ],
+        [
+          59.337552,
+          28.127447
+        ],
+        [
+          59.337647,
+          28.127312
+        ],
+        [
+          59.337081,
+          28.126666
+        ],
+        [
+          59.336871,
+          28.126828
+        ],
+        [
+          59.336556,
+          28.126675
+        ],
+        [
+          59.335665,
+          28.126618
+        ],
+        [
+          59.335306,
+          28.126824
+        ],
+        [
+          59.335123,
+          28.126593
+        ],
+        [
+          59.334578,
+          28.126538
+        ],
+        [
+          59.334337,
+          28.126797
+        ],
+        [
+          59.334128,
+          28.126518
+        ],
+        [
+          59.332678,
+          28.12646
+        ],
+        [
+          59.332444,
+          28.126588
+        ],
+        [
+          59.332365,
+          28.126479
+        ],
+        [
+          59.331459,
+          28.126407
+        ],
+        [
+          59.33131,
+          28.126556
+        ],
+        [
+          59.331015,
+          28.126363
+        ],
+        [
+          59.330005,
+          28.126292
+        ],
+        [
+          59.329781,
+          28.126341
+        ],
+        [
+          59.329728,
+          28.126469
+        ],
+        [
+          59.32951,
+          28.126274
+        ],
+        [
+          59.329104,
+          28.126339
+        ],
+        [
+          59.328987,
+          28.126207
+        ],
+        [
+          59.328714,
+          28.126229
+        ],
+        [
+          59.32858,
+          28.126372
+        ],
+        [
+          59.328468,
+          28.126743
+        ],
+        [
+          59.328302,
+          28.128093
+        ],
+        [
+          59.328114,
+          28.12906
+        ],
+        [
+          59.327999,
+          28.12929
+        ],
+        [
+          59.327976,
+          28.128848
+        ],
+        [
+          59.327783,
+          28.128186
+        ],
+        [
+          59.327852,
+          28.127619
+        ],
+        [
+          59.327854,
+          28.126192
+        ],
+        [
+          59.327744,
+          28.126
+        ],
+        [
+          59.327514,
+          28.125951
+        ],
+        [
+          59.327351,
+          28.126224
+        ],
+        [
+          59.327079,
+          28.129956
+        ],
+        [
+          59.326847,
+          28.130745
+        ],
+        [
+          59.326611,
+          28.132455
+        ],
+        [
+          59.326504,
+          28.132611
+        ],
+        [
+          59.326512,
+          28.132732
+        ],
+        [
+          59.326635,
+          28.132869
+        ],
+        [
+          59.326623,
+          28.133167
+        ],
+        [
+          59.326345,
+          28.133654
+        ],
+        [
+          59.325753,
+          28.134242
+        ],
+        [
+          59.325629,
+          28.134517
+        ],
+        [
+          59.325286,
+          28.134705
+        ],
+        [
+          59.325202,
+          28.134498
+        ],
+        [
+          59.324868,
+          28.134947
+        ],
+        [
+          59.324247,
+          28.134837
+        ],
+        [
+          59.323995,
+          28.134522
+        ],
+        [
+          59.32381,
+          28.134685
+        ],
+        [
+          59.32305,
+          28.134018
+        ],
+        [
+          59.322879,
+          28.133797
+        ],
+        [
+          59.322807,
+          28.133502
+        ],
+        [
+          59.322617,
+          28.133357
+        ],
+        [
+          59.322427,
+          28.132801
+        ],
+        [
+          59.322378,
+          28.132458
+        ],
+        [
+          59.322116,
+          28.132376
+        ],
+        [
+          59.321648,
+          28.131955
+        ],
+        [
+          59.321325,
+          28.131206
+        ],
+        [
+          59.321004,
+          28.130804
+        ],
+        [
+          59.320892,
+          28.130753
+        ],
+        [
+          59.320706,
+          28.131149
+        ],
+        [
+          59.319998,
+          28.131077
+        ],
+        [
+          59.319235,
+          28.131281
+        ],
+        [
+          59.318991,
+          28.131243
+        ],
+        [
+          59.318432,
+          28.130614
+        ],
+        [
+          59.318229,
+          28.130673
+        ],
+        [
+          59.317952,
+          28.13055
+        ],
+        [
+          59.317201,
+          28.129843
+        ],
+        [
+          59.316322,
+          28.129247
+        ],
+        [
+          59.315816,
+          28.128371
+        ],
+        [
+          59.315593,
+          28.12828
+        ],
+        [
+          59.3156,
+          28.128008
+        ],
+        [
+          59.315436,
+          28.127642
+        ],
+        [
+          59.315281,
+          28.127798
+        ],
+        [
+          59.315187,
+          28.128113
+        ],
+        [
+          59.31489,
+          28.128396
+        ],
+        [
+          59.314243,
+          28.128595
+        ],
+        [
+          59.313992,
+          28.129037
+        ],
+        [
+          59.314013,
+          28.128838
+        ],
+        [
+          59.313561,
+          28.128999
+        ],
+        [
+          59.312549,
+          28.129016
+        ],
+        [
+          59.312354,
+          28.128957
+        ],
+        [
+          59.312183,
+          28.128709
+        ],
+        [
+          59.311999,
+          28.128093
+        ],
+        [
+          59.311558,
+          28.127264
+        ],
+        [
+          59.311424,
+          28.127175
+        ],
+        [
+          59.311121,
+          28.127274
+        ],
+        [
+          59.310486,
+          28.126834
+        ],
+        [
+          59.310226,
+          28.12685
+        ],
+        [
+          59.310137,
+          28.126532
+        ],
+        [
+          59.309226,
+          28.12591
+        ],
+        [
+          59.309156,
+          28.125777
+        ],
+        [
+          59.308594,
+          28.125613
+        ],
+        [
+          59.308099,
+          28.125726
+        ],
+        [
+          59.307366,
+          28.126256
+        ],
+        [
+          59.306822,
+          28.125698
+        ],
+        [
+          59.306569,
+          28.125222
+        ],
+        [
+          59.306252,
+          28.124961
+        ],
+        [
+          59.30606,
+          28.124572
+        ],
+        [
+          59.305607,
+          28.124378
+        ],
+        [
+          59.305219,
+          28.123504
+        ],
+        [
+          59.305121,
+          28.122506
+        ],
+        [
+          59.304741,
+          28.121903
+        ],
+        [
+          59.304203,
+          28.121283
+        ],
+        [
+          59.303918,
+          28.121086
+        ],
+        [
+          59.303451,
+          28.120977
+        ],
+        [
+          59.303029,
+          28.120471
+        ],
+        [
+          59.302894,
+          28.120491
+        ],
+        [
+          59.30237,
+          28.120179
+        ],
+        [
+          59.30228,
+          28.120034
+        ],
+        [
+          59.302135,
+          28.120001
+        ],
+        [
+          59.302014,
+          28.119767
+        ],
+        [
+          59.301899,
+          28.11975
+        ],
+        [
+          59.301738,
+          28.119363
+        ],
+        [
+          59.301655,
+          28.118787
+        ],
+        [
+          59.301403,
+          28.117963
+        ],
+        [
+          59.30108,
+          28.117563
+        ],
+        [
+          59.300905,
+          28.116667
+        ],
+        [
+          59.300917,
+          28.116287
+        ],
+        [
+          59.300832,
+          28.115879
+        ],
+        [
+          59.300849,
+          28.11534
+        ],
+        [
+          59.300606,
+          28.114786
+        ],
+        [
+          59.300535,
+          28.113425
+        ],
+        [
+          59.300342,
+          28.112009
+        ],
+        [
+          59.300256,
+          28.11187
+        ],
+        [
+          59.30024,
+          28.111719
+        ],
+        [
+          59.300359,
+          28.111635
+        ],
+        [
+          59.300351,
+          28.111089
+        ],
+        [
+          59.300189,
+          28.110763
+        ],
+        [
+          59.300065,
+          28.109886
+        ],
+        [
+          59.29998,
+          28.109668
+        ],
+        [
+          59.29996,
+          28.108854
+        ],
+        [
+          59.299873,
+          28.108556
+        ],
+        [
+          59.299845,
+          28.107354
+        ],
+        [
+          59.299687,
+          28.107236
+        ],
+        [
+          59.299646,
+          28.107073
+        ],
+        [
+          59.299734,
+          28.106519
+        ],
+        [
+          59.299624,
+          28.106169
+        ],
+        [
+          59.2997,
+          28.105693
+        ],
+        [
+          59.299843,
+          28.105492
+        ],
+        [
+          59.299425,
+          28.104887
+        ],
+        [
+          59.29938,
+          28.103735
+        ],
+        [
+          59.299457,
+          28.103051
+        ],
+        [
+          59.299318,
+          28.102312
+        ],
+        [
+          59.29937,
+          28.101949
+        ],
+        [
+          59.299355,
+          28.101198
+        ],
+        [
+          59.299191,
+          28.099801
+        ],
+        [
+          59.299101,
+          28.099424
+        ],
+        [
+          59.29895,
+          28.099396
+        ],
+        [
+          59.298894,
+          28.099261
+        ],
+        [
+          59.298972,
+          28.098874
+        ],
+        [
+          59.29896,
+          28.098605
+        ],
+        [
+          59.298902,
+          28.098331
+        ],
+        [
+          59.298711,
+          28.097962
+        ],
+        [
+          59.298785,
+          28.097713
+        ],
+        [
+          59.298648,
+          28.097558
+        ],
+        [
+          59.298461,
+          28.09707
+        ],
+        [
+          59.298427,
+          28.09668
+        ],
+        [
+          59.298206,
+          28.09597
+        ],
+        [
+          59.298074,
+          28.095845
+        ],
+        [
+          59.298054,
+          28.095655
+        ],
+        [
+          59.297818,
+          28.095436
+        ],
+        [
+          59.297607,
+          28.094875
+        ],
+        [
+          59.297274,
+          28.094534
+        ],
+        [
+          59.296888,
+          28.094604
+        ],
+        [
+          59.296744,
+          28.094207
+        ],
+        [
+          59.296633,
+          28.094189
+        ],
+        [
+          59.296537,
+          28.094011
+        ],
+        [
+          59.296446,
+          28.09344
+        ],
+        [
+          59.296171,
+          28.093046
+        ],
+        [
+          59.296223,
+          28.092677
+        ],
+        [
+          59.29647,
+          28.092137
+        ],
+        [
+          59.296502,
+          28.091928
+        ],
+        [
+          59.296726,
+          28.091894
+        ],
+        [
+          59.296776,
+          28.091623
+        ],
+        [
+          59.296473,
+          28.090728
+        ],
+        [
+          59.296399,
+          28.090818
+        ],
+        [
+          59.296377,
+          28.091202
+        ],
+        [
+          59.296284,
+          28.09125
+        ],
+        [
+          59.296159,
+          28.091196
+        ],
+        [
+          59.296069,
+          28.090997
+        ],
+        [
+          59.296061,
+          28.090758
+        ],
+        [
+          59.296423,
+          28.089722
+        ],
+        [
+          59.296825,
+          28.089334
+        ],
+        [
+          59.29671,
+          28.088889
+        ],
+        [
+          59.296453,
+          28.088625
+        ],
+        [
+          59.296304,
+          28.088296
+        ],
+        [
+          59.296248,
+          28.087952
+        ],
+        [
+          59.296286,
+          28.087178
+        ],
+        [
+          59.296367,
+          28.087136
+        ],
+        [
+          59.296415,
+          28.086883
+        ],
+        [
+          59.296431,
+          28.086366
+        ],
+        [
+          59.296166,
+          28.084233
+        ],
+        [
+          59.295886,
+          28.083421
+        ],
+        [
+          59.295788,
+          28.082735
+        ],
+        [
+          59.295568,
+          28.081938
+        ],
+        [
+          59.295425,
+          28.082101
+        ],
+        [
+          59.295245,
+          28.081929
+        ],
+        [
+          59.295197,
+          28.081502
+        ],
+        [
+          59.295265,
+          28.081299
+        ],
+        [
+          59.295416,
+          28.081378
+        ],
+        [
+          59.29551,
+          28.079854
+        ],
+        [
+          59.295488,
+          28.078105
+        ],
+        [
+          59.295726,
+          28.076387
+        ],
+        [
+          59.296014,
+          28.075549
+        ],
+        [
+          59.296289,
+          28.0751
+        ],
+        [
+          59.29662,
+          28.074868
+        ],
+        [
+          59.296857,
+          28.075042
+        ],
+        [
+          59.296869,
+          28.075364
+        ],
+        [
+          59.297022,
+          28.075723
+        ],
+        [
+          59.297348,
+          28.076103
+        ],
+        [
+          59.297577,
+          28.076813
+        ],
+        [
+          59.29779,
+          28.076967
+        ],
+        [
+          59.297639,
+          28.07761
+        ],
+        [
+          59.297605,
+          28.078374
+        ],
+        [
+          59.297691,
+          28.078768
+        ],
+        [
+          59.298067,
+          28.079282
+        ],
+        [
+          59.298598,
+          28.07941
+        ],
+        [
+          59.298847,
+          28.079119
+        ],
+        [
+          59.298847,
+          28.078778
+        ],
+        [
+          59.298626,
+          28.078858
+        ],
+        [
+          59.298478,
+          28.079075
+        ],
+        [
+          59.298184,
+          28.07904
+        ],
+        [
+          59.297932,
+          28.078733
+        ],
+        [
+          59.297916,
+          28.078198
+        ],
+        [
+          59.298094,
+          28.078091
+        ],
+        [
+          59.298123,
+          28.077838
+        ],
+        [
+          59.298408,
+          28.077808
+        ],
+        [
+          59.298446,
+          28.077621
+        ],
+        [
+          59.298471,
+          28.077197
+        ],
+        [
+          59.298291,
+          28.077005
+        ],
+        [
+          59.298224,
+          28.076357
+        ],
+        [
+          59.298082,
+          28.07602
+        ],
+        [
+          59.298107,
+          28.075212
+        ],
+        [
+          59.298168,
+          28.075006
+        ],
+        [
+          59.298277,
+          28.074998
+        ],
+        [
+          59.298284,
+          28.074423
+        ],
+        [
+          59.298344,
+          28.074238
+        ],
+        [
+          59.298439,
+          28.074356
+        ],
+        [
+          59.29842,
+          28.074951
+        ],
+        [
+          59.298515,
+          28.075432
+        ],
+        [
+          59.298729,
+          28.074497
+        ],
+        [
+          59.298787,
+          28.074056
+        ],
+        [
+          59.29878,
+          28.073564
+        ],
+        [
+          59.298673,
+          28.073147
+        ],
+        [
+          59.29874,
+          28.072387
+        ],
+        [
+          59.298715,
+          28.071786
+        ],
+        [
+          59.298859,
+          28.071739
+        ],
+        [
+          59.299209,
+          28.073104
+        ],
+        [
+          59.29925,
+          28.073535
+        ],
+        [
+          59.299158,
+          28.074036
+        ],
+        [
+          59.299226,
+          28.074663
+        ],
+        [
+          59.299171,
+          28.07504
+        ],
+        [
+          59.299303,
+          28.075355
+        ],
+        [
+          59.299502,
+          28.075272
+        ],
+        [
+          59.299517,
+          28.074783
+        ],
+        [
+          59.299343,
+          28.072992
+        ],
+        [
+          59.299033,
+          28.07176
+        ],
+        [
+          59.299042,
+          28.071462
+        ],
+        [
+          59.299253,
+          28.071338
+        ],
+        [
+          59.299352,
+          28.071307
+        ],
+        [
+          59.299465,
+          28.071534
+        ],
+        [
+          59.299586,
+          28.071507
+        ],
+        [
+          59.299483,
+          28.07096
+        ],
+        [
+          59.299664,
+          28.070406
+        ],
+        [
+          59.299551,
+          28.070179
+        ],
+        [
+          59.299538,
+          28.069879
+        ],
+        [
+          59.299658,
+          28.06953
+        ],
+        [
+          59.299681,
+          28.068807
+        ],
+        [
+          59.299381,
+          28.06826
+        ],
+        [
+          59.299109,
+          28.067545
+        ],
+        [
+          59.299201,
+          28.068089
+        ],
+        [
+          59.299494,
+          28.068849
+        ],
+        [
+          59.299408,
+          28.069863
+        ],
+        [
+          59.299431,
+          28.070186
+        ],
+        [
+          59.299533,
+          28.070411
+        ],
+        [
+          59.299156,
+          28.071284
+        ],
+        [
+          59.298983,
+          28.071263
+        ],
+        [
+          59.29878,
+          28.070045
+        ],
+        [
+          59.298702,
+          28.070099
+        ],
+        [
+          59.298778,
+          28.070471
+        ],
+        [
+          59.2988,
+          28.071178
+        ],
+        [
+          59.298424,
+          28.071687
+        ],
+        [
+          59.298318,
+          28.07159
+        ],
+        [
+          59.298321,
+          28.071121
+        ],
+        [
+          59.298398,
+          28.070767
+        ],
+        [
+          59.298265,
+          28.070133
+        ],
+        [
+          59.298326,
+          28.069906
+        ],
+        [
+          59.298297,
+          28.069433
+        ],
+        [
+          59.298184,
+          28.069569
+        ],
+        [
+          59.298054,
+          28.06919
+        ],
+        [
+          59.298217,
+          28.068527
+        ],
+        [
+          59.298262,
+          28.067402
+        ],
+        [
+          59.298172,
+          28.067156
+        ],
+        [
+          59.298204,
+          28.066819
+        ],
+        [
+          59.298342,
+          28.066579
+        ],
+        [
+          59.298361,
+          28.065984
+        ],
+        [
+          59.298448,
+          28.065995
+        ],
+        [
+          59.298422,
+          28.065416
+        ],
+        [
+          59.29851,
+          28.065383
+        ],
+        [
+          59.298507,
+          28.065127
+        ],
+        [
+          59.298271,
+          28.064651
+        ],
+        [
+          59.298014,
+          28.063789
+        ],
+        [
+          59.29798,
+          28.063145
+        ],
+        [
+          59.297716,
+          28.062857
+        ],
+        [
+          59.29773,
+          28.062411
+        ],
+        [
+          59.297815,
+          28.062144
+        ],
+        [
+          59.297903,
+          28.06209
+        ],
+        [
+          59.297984,
+          28.062313
+        ],
+        [
+          59.299128,
+          28.066929
+        ],
+        [
+          59.299306,
+          28.067352
+        ],
+        [
+          59.299371,
+          28.067171
+        ],
+        [
+          59.299526,
+          28.067466
+        ],
+        [
+          59.299594,
+          28.067368
+        ],
+        [
+          59.299236,
+          28.06628
+        ],
+        [
+          59.298777,
+          28.06454
+        ],
+        [
+          59.298767,
+          28.064134
+        ],
+        [
+          59.298198,
+          28.062082
+        ],
+        [
+          59.298579,
+          28.062106
+        ],
+        [
+          59.298733,
+          28.062423
+        ],
+        [
+          59.298929,
+          28.062446
+        ],
+        [
+          59.298974,
+          28.06275
+        ],
+        [
+          59.298655,
+          28.062841
+        ],
+        [
+          59.29856,
+          28.063085
+        ],
+        [
+          59.298588,
+          28.063238
+        ],
+        [
+          59.298767,
+          28.063088
+        ],
+        [
+          59.299181,
+          28.063116
+        ],
+        [
+          59.299286,
+          28.063257
+        ],
+        [
+          59.299278,
+          28.063512
+        ],
+        [
+          59.299383,
+          28.063652
+        ],
+        [
+          59.299373,
+          28.06395
+        ],
+        [
+          59.299551,
+          28.064184
+        ],
+        [
+          59.299568,
+          28.064357
+        ],
+        [
+          59.299166,
+          28.064309
+        ],
+        [
+          59.299117,
+          28.064474
+        ],
+        [
+          59.299509,
+          28.065566
+        ],
+        [
+          59.299611,
+          28.066495
+        ],
+        [
+          59.299511,
+          28.066889
+        ],
+        [
+          59.299703,
+          28.06704
+        ],
+        [
+          59.300151,
+          28.067029
+        ],
+        [
+          59.299942,
+          28.066705
+        ],
+        [
+          59.299895,
+          28.066124
+        ],
+        [
+          59.30025,
+          28.065569
+        ],
+        [
+          59.300302,
+          28.06566
+        ],
+        [
+          59.30005,
+          28.066419
+        ],
+        [
+          59.300182,
+          28.066734
+        ],
+        [
+          59.300675,
+          28.066664
+        ],
+        [
+          59.300912,
+          28.067098
+        ],
+        [
+          59.301763,
+          28.067092
+        ],
+        [
+          59.302148,
+          28.067351
+        ],
+        [
+          59.302379,
+          28.067635
+        ],
+        [
+          59.302576,
+          28.067615
+        ],
+        [
+          59.302982,
+          28.068261
+        ],
+        [
+          59.303233,
+          28.068299
+        ],
+        [
+          59.303377,
+          28.068542
+        ],
+        [
+          59.303512,
+          28.068409
+        ],
+        [
+          59.303403,
+          28.068055
+        ],
+        [
+          59.303334,
+          28.067471
+        ],
+        [
+          59.302943,
+          28.06704
+        ],
+        [
+          59.302944,
+          28.066656
+        ],
+        [
+          59.303026,
+          28.066474
+        ],
+        [
+          59.302977,
+          28.066319
+        ],
+        [
+          59.302489,
+          28.066581
+        ],
+        [
+          59.302141,
+          28.06654
+        ],
+        [
+          59.301813,
+          28.066202
+        ],
+        [
+          59.301612,
+          28.065645
+        ],
+        [
+          59.301633,
+          28.065327
+        ],
+        [
+          59.301771,
+          28.065088
+        ],
+        [
+          59.30201,
+          28.065116
+        ],
+        [
+          59.302091,
+          28.065339
+        ],
+        [
+          59.302081,
+          28.065636
+        ],
+        [
+          59.302258,
+          28.065935
+        ],
+        [
+          59.302809,
+          28.066086
+        ],
+        [
+          59.302859,
+          28.065899
+        ],
+        [
+          59.302739,
+          28.065544
+        ],
+        [
+          59.302902,
+          28.065563
+        ],
+        [
+          59.303109,
+          28.065225
+        ],
+        [
+          59.303158,
+          28.065039
+        ],
+        [
+          59.303119,
+          28.064906
+        ],
+        [
+          59.303048,
+          28.065068
+        ],
+        [
+          59.302965,
+          28.064952
+        ],
+        [
+          59.302796,
+          28.064398
+        ],
+        [
+          59.303038,
+          28.064683
+        ],
+        [
+          59.302892,
+          28.064111
+        ],
+        [
+          59.302979,
+          28.064121
+        ],
+        [
+          59.303119,
+          28.064543
+        ],
+        [
+          59.303259,
+          28.064603
+        ],
+        [
+          59.303227,
+          28.064236
+        ],
+        [
+          59.303103,
+          28.063645
+        ],
+        [
+          59.302877,
+          28.063213
+        ],
+        [
+          59.302873,
+          28.062615
+        ],
+        [
+          59.302715,
+          28.062447
+        ],
+        [
+          59.302606,
+          28.062456
+        ],
+        [
+          59.302629,
+          28.06169
+        ],
+        [
+          59.30258,
+          28.061151
+        ],
+        [
+          59.30223,
+          28.060128
+        ],
+        [
+          59.303157,
+          28.05998
+        ],
+        [
+          59.303434,
+          28.059865
+        ],
+        [
+          59.303432,
+          28.05971
+        ],
+        [
+          59.302833,
+          28.059826
+        ],
+        [
+          59.302784,
+          28.059576
+        ],
+        [
+          59.302743,
+          28.059841
+        ],
+        [
+          59.302221,
+          28.059895
+        ],
+        [
+          59.301962,
+          28.059111
+        ],
+        [
+          59.301646,
+          28.057158
+        ],
+        [
+          59.301505,
+          28.057141
+        ],
+        [
+          59.301445,
+          28.0566
+        ],
+        [
+          59.301499,
+          28.056265
+        ],
+        [
+          59.301768,
+          28.056383
+        ],
+        [
+          59.301877,
+          28.056033
+        ],
+        [
+          59.302124,
+          28.055806
+        ],
+        [
+          59.302207,
+          28.055603
+        ],
+        [
+          59.302159,
+          28.055384
+        ],
+        [
+          59.301905,
+          28.055844
+        ],
+        [
+          59.301505,
+          28.055733
+        ],
+        [
+          59.301371,
+          28.055823
+        ],
+        [
+          59.301097,
+          28.055151
+        ],
+        [
+          59.301092,
+          28.054617
+        ],
+        [
+          59.301197,
+          28.054395
+        ],
+        [
+          59.301367,
+          28.054543
+        ],
+        [
+          59.301415,
+          28.054037
+        ],
+        [
+          59.301406,
+          28.05363
+        ],
+        [
+          59.301321,
+          28.053215
+        ],
+        [
+          59.301101,
+          28.052912
+        ],
+        [
+          59.300998,
+          28.052366
+        ],
+        [
+          59.301001,
+          28.051556
+        ],
+        [
+          59.300945,
+          28.05125
+        ],
+        [
+          59.300954,
+          28.050953
+        ],
+        [
+          59.301088,
+          28.050499
+        ],
+        [
+          59.301199,
+          28.04904
+        ],
+        [
+          59.301155,
+          28.04753
+        ],
+        [
+          59.300935,
+          28.044662
+        ],
+        [
+          59.300909,
+          28.043587
+        ],
+        [
+          59.300959,
+          28.043017
+        ],
+        [
+          59.30089,
+          28.04207
+        ],
+        [
+          59.300927,
+          28.040901
+        ],
+        [
+          59.300979,
+          28.040582
+        ],
+        [
+          59.301435,
+          28.040579
+        ],
+        [
+          59.301855,
+          28.040928
+        ],
+        [
+          59.302233,
+          28.041448
+        ],
+        [
+          59.302352,
+          28.041364
+        ],
+        [
+          59.3021,
+          28.040942
+        ],
+        [
+          59.302065,
+          28.040365
+        ],
+        [
+          59.301771,
+          28.040014
+        ],
+        [
+          59.301684,
+          28.039776
+        ],
+        [
+          59.301656,
+          28.039198
+        ],
+        [
+          59.301707,
+          28.039145
+        ],
+        [
+          59.301912,
+          28.039336
+        ],
+        [
+          59.301963,
+          28.039097
+        ],
+        [
+          59.301814,
+          28.038845
+        ],
+        [
+          59.301553,
+          28.038038
+        ],
+        [
+          59.301416,
+          28.037918
+        ],
+        [
+          59.301282,
+          28.037437
+        ],
+        [
+          59.301356,
+          28.036873
+        ],
+        [
+          59.301314,
+          28.036342
+        ],
+        [
+          59.300837,
+          28.035746
+        ],
+        [
+          59.300483,
+          28.035634
+        ],
+        [
+          59.300232,
+          28.035715
+        ],
+        [
+          59.299992,
+          28.035531
+        ],
+        [
+          59.299985,
+          28.034801
+        ],
+        [
+          59.300135,
+          28.034579
+        ],
+        [
+          59.300274,
+          28.033755
+        ],
+        [
+          59.300081,
+          28.033246
+        ],
+        [
+          59.302612,
+          28.031553
+        ],
+        [
+          59.307953,
+          28.02829
+        ],
+        [
+          59.319414,
+          28.020495
+        ],
+        [
+          59.324244,
+          28.018881
+        ],
+        [
+          59.32479,
+          28.020558
+        ],
+        [
+          59.332596,
+          28.018291
+        ],
+        [
+          59.332675,
+          28.01869
+        ],
+        [
+          59.332683,
+          28.018776
+        ]
+      ],
+      [
+        [
+          59.296658,
+          28.03383
+        ],
+        [
+          59.29676,
+          28.033685
+        ],
+        [
+          59.297009,
+          28.033923
+        ],
+        [
+          59.297106,
+          28.03421
+        ],
+        [
+          59.297142,
+          28.034633
+        ],
+        [
+          59.297123,
+          28.035188
+        ],
+        [
+          59.297064,
+          28.035313
+        ],
+        [
+          59.296963,
+          28.035306
+        ],
+        [
+          59.296966,
+          28.035441
+        ],
+        [
+          59.297883,
+          28.036636
+        ],
+        [
+          59.29801,
+          28.037059
+        ],
+        [
+          59.298054,
+          28.037611
+        ],
+        [
+          59.297259,
+          28.038811
+        ],
+        [
+          59.295915,
+          28.038912
+        ],
+        [
+          59.296012,
+          28.036812
+        ],
+        [
+          59.296167,
+          28.036377
+        ],
+        [
+          59.296063,
+          28.035705
+        ],
+        [
+          59.29626,
+          28.035321
+        ],
+        [
+          59.296255,
+          28.03516
+        ],
+        [
+          59.296028,
+          28.034904
+        ],
+        [
+          59.29601,
+          28.0347
+        ],
+        [
+          59.296239,
+          28.033862
+        ],
+        [
+          59.296399,
+          28.033598
+        ],
+        [
+          59.296634,
+          28.033894
+        ],
+        [
+          59.296658,
+          28.03383
+        ]
+      ],
+      [
+        [
+          59.298061,
+          28.041109
+        ],
+        [
+          59.298204,
+          28.041482
+        ],
+        [
+          59.298266,
+          28.042313
+        ],
+        [
+          59.298128,
+          28.043464
+        ],
+        [
+          59.297806,
+          28.043829
+        ],
+        [
+          59.297732,
+          28.044034
+        ],
+        [
+          59.29815,
+          28.045288
+        ],
+        [
+          59.298068,
+          28.045529
+        ],
+        [
+          59.297837,
+          28.045475
+        ],
+        [
+          59.297664,
+          28.045062
+        ],
+        [
+          59.297437,
+          28.043778
+        ],
+        [
+          59.297332,
+          28.042898
+        ],
+        [
+          59.297341,
+          28.042542
+        ],
+        [
+          59.297258,
+          28.042279
+        ],
+        [
+          59.297207,
+          28.04115
+        ],
+        [
+          59.297253,
+          28.04081
+        ],
+        [
+          59.2975,
+          28.040586
+        ],
+        [
+          59.297792,
+          28.040718
+        ],
+        [
+          59.297982,
+          28.04099
+        ],
+        [
+          59.298061,
+          28.041109
+        ]
+      ],
+      [
+        [
+          59.29764,
+          28.039459
+        ],
+        [
+          59.297721,
+          28.039842
+        ],
+        [
+          59.297621,
+          28.040242
+        ],
+        [
+          59.297199,
+          28.040561
+        ],
+        [
+          59.296589,
+          28.041338
+        ],
+        [
+          59.296211,
+          28.04122
+        ],
+        [
+          59.29609,
+          28.041039
+        ],
+        [
+          59.295938,
+          28.04049
+        ],
+        [
+          59.295888,
+          28.039413
+        ],
+        [
+          59.297537,
+          28.039363
+        ],
+        [
+          59.29764,
+          28.039459
+        ]
+      ]
+    ],
+    "boundary_source": "OpenStreetMap administrative / place=quarter relations (ODbL)",
+    "scale": "Absolute Estonia scale: 1.0 = worst observed in any Estonian county, 5.0 = best. 65% of each metric is this district's own profile, 35% is its county's 2025 police statistics — so a city's burden lands on the districts whose profile carries it, not smeared evenly.",
+    "language_desc": "2.3% give Estonian as their mother tongue; an estimated 18% speak English (Estonia: 2.3% Narva – 94.7% Viljandi; 14% Sillamäe – 54% Tartu). Whether you can handle a landlord, a pharmacy or a school here without Russian. Source: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021.",
+    "score_sources": {
+      "crime": "Justiits- ja Digiministeerium, Kuritegevus Eestis 2025 (maakonnad, 10 000 elaniku kohta)",
+      "sexual_offences": "Justiits- ja Digiministeerium, Seksuaalkuriteod maakonniti 2025",
+      "property_split": "Justiits- ja Digiministeerium, varavastased kuriteod 2025",
+      "language": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "education": "Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021",
+      "affluence": "kv.ee + City24.ee live listings, 28.08.2026",
+      "district_landuse": "OpenStreetMap land use (ODbL), extracted 2026-08",
+      "county": "Ida-Viru maakond",
+      "crime_year": 2025,
+      "census_year": 2021,
+      "weighting": "65% district profile / 35% county statistics"
+    },
+    "district_indices": {
+      "nightlife_alcohol_pctile": 0.45,
+      "tourist_pctile": 0.28,
+      "retail_pctile": 0.25,
+      "student_pctile": 0.54,
+      "family_amenity_pctile": 0.22,
+      "green_pctile": 0.37,
+      "house_share_pctile": 0.93,
+      "affluence_pctile": 0.4,
+      "education_pctile": 0.64,
+      "deprivation_index": 0.37,
+      "tertiary_education_pct": 18.6,
+      "rent_eur_m2": 5.31
+    },
+    "family_desc": "0 schools/kindergartens and 0 playgrounds (22th percentile nationally), 0 sports facilities, 100% detached/terraced housing, 19% of adults hold a bachelor's degree or higher, rent €5.31/m² (40th percentile). Higher education and affluence both track lower offending and better-maintained, better-lit, better-surveilled streets. Sources: Statistikaamet rahvaloendus RL21302 / RL21434 / RL21439, 31.12.2021; OpenStreetMap land use (ODbL), extracted 2026-08; kv.ee + City24.ee live listings, 28.08.2026."
+  }
+]

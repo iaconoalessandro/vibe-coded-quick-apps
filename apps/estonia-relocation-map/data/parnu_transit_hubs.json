@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Pärnu Central Bus Station (Pärnu Bussijaam)",
+    "category": "Intercity & Urban Bus Hub",
+    "description": "Central urban & long-distance coach terminal at Pärnu Keskus & Port Artur. Primary interchange for all city bus lines (Lines 1–17) and intercity express coaches to Tallinn, Tartu, Riga.",
+    "lat": 58.386,
+    "lon": 24.5025,
+    "color": "#581c87",
+    "icon": "🚌"
+  },
+  {
+    "name": "Rail Baltica Pärnu International Passenger Terminal",
+    "category": "High-Speed Rail Hub",
+    "description": "Flagship high-speed Rail Baltica international passenger station (Zaha Hadid Architects / Pluss). 40-minute express connection to Tallinn, 1 hour to Riga at 249 km/h, with integrated city bus & micro-mobility transfer.",
+    "lat": 58.375,
+    "lon": 24.55,
+    "color": "#581c87",
+    "icon": "🚄"
+  },
+  {
+    "name": "Papiniidu & Kaubamajakas Multi-Modal Transit Hub",
+    "category": "Urban Trunk & Commercial Node",
+    "description": "High-capacity transit node connecting Mai residential district, Kaubamajakas shopping center, Niidu tech corridor, and south-eastern regional buses.",
+    "lat": 58.3685,
+    "lon": 24.542,
+    "color": "#581c87",
+    "icon": "🚏"
+  },
+  {
+    "name": "Pärnu Airport Aviation Hub (Pärnu Lennujaam)",
+    "category": "Regional Aviation & Drone Node",
+    "description": "Modernized regional airport terminal with seasonal international flights (Helsinki, Stockholm), UAV/drone innovation testing corridor, and Bus Line 7 terminus.",
+    "lat": 58.419,
+    "lon": 24.4725,
+    "color": "#581c87",
+    "icon": "✈️"
+  },
+  {
+    "name": "Rannapark & Kuursaal Resort Mobility Hub",
+    "category": "Tourism & Multi-Modal Resort Hub",
+    "description": "Seaside transfer and micro-mobility hub serving Pärnu Beach, Hedon Spa, Tervis Medical Spa, Kuursaal, and coastal bike highways (Bus Line 15).",
+    "lat": 58.3765,
+    "lon": 24.498,
+    "color": "#581c87",
+    "icon": "🏖️"
+  }
+]

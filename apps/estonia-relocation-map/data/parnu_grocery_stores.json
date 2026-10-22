@@ -1,0 +1,806 @@
+{
+ "stores": [
+  {
+   "name": "Lidl",
+   "chain": "lidl",
+   "chainLabel": "Lidl",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 1,
+   "format": "big",
+   "colour": "#0050AA",
+   "note": "Hard discounter — cheapest basket in Estonia. Large format, own-brand heavy.",
+   "lat": 58.371822,
+   "lon": 24.545907,
+   "street": "Riia mnt",
+   "housenumber": "106",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "way/911570225"
+  },
+  {
+   "name": "Maxima X",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 58.407997,
+   "lon": 24.659724,
+   "street": "Pärnu mnt",
+   "housenumber": "57",
+   "hours": "",
+   "osmId": "way/213731293"
+  },
+  {
+   "name": "Maxima XXX",
+   "chain": "maxima",
+   "chainLabel": "Maxima",
+   "tier": "discount_big",
+   "tierLabel": "Big & cheap",
+   "priceBand": 2,
+   "format": "big",
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop.",
+   "lat": 58.374547,
+   "lon": 24.536997,
+   "street": "Riia mnt",
+   "housenumber": "131",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "way/71514626"
+  },
+  {
+   "name": "Coop Paikuse Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.373688,
+   "lon": 24.617831,
+   "street": "Pärnade pst",
+   "housenumber": "1",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/213816625"
+  },
+  {
+   "name": "Coop Port Artur Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.387562,
+   "lon": 24.504358,
+   "street": "Lai",
+   "housenumber": "11",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "node/1047058453"
+  },
+  {
+   "name": "Coop Sauga Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.429007,
+   "lon": 24.497706,
+   "street": "Kuldnoka",
+   "housenumber": "1",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/749076459"
+  },
+  {
+   "name": "Coop Sindi Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.40481,
+   "lon": 24.651702,
+   "street": "Jaama",
+   "housenumber": "8",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/73994157"
+  },
+  {
+   "name": "Coop Tammiste Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.38886,
+   "lon": 24.607542,
+   "street": "Kellukese tee",
+   "housenumber": "2",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "way/720432798"
+  },
+  {
+   "name": "Coop Tiina Konsum",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.380021,
+   "lon": 24.527509,
+   "street": "Riia mnt",
+   "housenumber": "74",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "way/73553775"
+  },
+  {
+   "name": "Härma mini-Rimi",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.404036,
+   "lon": 24.492347,
+   "street": "",
+   "housenumber": "",
+   "hours": "",
+   "osmId": "node/1130174905"
+  },
+  {
+   "name": "Laine Selver ABC",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.37334,
+   "lon": 24.5333,
+   "street": "Mai",
+   "housenumber": "4",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/74569503"
+  },
+  {
+   "name": "Mai Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.368501,
+   "lon": 24.546377,
+   "street": "",
+   "housenumber": "",
+   "hours": "",
+   "osmId": "node/13358985774"
+  },
+  {
+   "name": "Niidu Rimi super",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.39191,
+   "lon": 24.535974,
+   "street": "Niidu",
+   "housenumber": "18b",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/11043749164"
+  },
+  {
+   "name": "Oja Selver ABC",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.390407,
+   "lon": 24.53094,
+   "street": "Liblika",
+   "housenumber": "6",
+   "hours": "Mo-Sa 09:00-22:00",
+   "osmId": "way/720388457"
+  },
+  {
+   "name": "Pärnu Maksimarket",
+   "chain": "coop",
+   "chainLabel": "Coop / Konsum",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs.",
+   "lat": 58.395595,
+   "lon": 24.458078,
+   "street": "Haapsalu mnt",
+   "housenumber": "43",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/248125249"
+  },
+  {
+   "name": "Ranna Selver ABC",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.375701,
+   "lon": 24.513595,
+   "street": "Karusselli",
+   "housenumber": "91",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/213815611"
+  },
+  {
+   "name": "Realiseerimiskeskus",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.388267,
+   "lon": 24.506874,
+   "street": "Lai",
+   "housenumber": "18",
+   "hours": "Mo-Fr 09:00-20:00; Sa 10:00-20:00; Sa 10:00-16:00",
+   "osmId": "node/11034537086"
+  },
+  {
+   "name": "Rimi",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.369664,
+   "lon": 24.551105,
+   "street": "Papiniidu",
+   "housenumber": "8",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/1047088967"
+  },
+  {
+   "name": "Rimi",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.381888,
+   "lon": 24.509519,
+   "street": "Suur-Sepa",
+   "housenumber": "18",
+   "hours": "Mo-Su 08:00-22:00",
+   "osmId": "node/4834210724"
+  },
+  {
+   "name": "Rimi",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.386363,
+   "lon": 24.504289,
+   "street": "",
+   "housenumber": "",
+   "hours": "Mo-Su 07:30-22:00",
+   "osmId": "node/5847106417"
+  },
+  {
+   "name": "Rimi Mini",
+   "chain": "rimi",
+   "chainLabel": "Rimi",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store.",
+   "lat": 58.391849,
+   "lon": 24.493817,
+   "street": "",
+   "housenumber": "",
+   "hours": "07:30-22:00",
+   "osmId": "node/4364181094"
+  },
+  {
+   "name": "Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.38749,
+   "lon": 24.501373,
+   "street": "Lai",
+   "housenumber": "5",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "node/4258261066"
+  },
+  {
+   "name": "Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.378234,
+   "lon": 24.533371,
+   "street": "Suur-Jõe",
+   "housenumber": "57",
+   "hours": "Mo-Su 09:00-23:00",
+   "osmId": "way/64095781"
+  },
+  {
+   "name": "Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.368412,
+   "lon": 24.546502,
+   "street": "Papiniidu",
+   "housenumber": "42",
+   "hours": "Mo-Su 09:00 - 23:00",
+   "osmId": "way/72613139"
+  },
+  {
+   "name": "Vana-Pärnu Selver ABC",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 3,
+   "format": "small",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.394023,
+   "lon": 24.461232,
+   "street": "Haapsalu mnt",
+   "housenumber": "41",
+   "hours": "Mo-Su 09:00-22:00",
+   "osmId": "way/426955872"
+  },
+  {
+   "name": "Ülejõe Selver",
+   "chain": "selver",
+   "chainLabel": "Selver",
+   "tier": "large",
+   "tierLabel": "Large supermarket",
+   "priceBand": 3,
+   "format": "medium",
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format.",
+   "lat": 58.408287,
+   "lon": 24.494676,
+   "street": "Tallinna mnt",
+   "housenumber": "93a",
+   "hours": "09:00-23:00",
+   "osmId": "way/71517045"
+  },
+  {
+   "name": "A1000 Market",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.381708,
+   "lon": 24.51207,
+   "street": "Karja",
+   "housenumber": "6",
+   "hours": "",
+   "osmId": "way/73553437"
+  },
+  {
+   "name": "Bio4You",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.36987,
+   "lon": 24.550622,
+   "street": "Papiniidu",
+   "housenumber": "8",
+   "hours": "Mo-Su 10:00-20:00",
+   "osmId": "node/6238400877"
+  },
+  {
+   "name": "Biomarket",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.386587,
+   "lon": 24.503115,
+   "street": "Hommiku",
+   "housenumber": "2",
+   "hours": "Mo-Sa 10:00-20:00; Su 10:00-18:00",
+   "osmId": "node/7130853664"
+  },
+  {
+   "name": "Helter",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.400804,
+   "lon": 24.519557,
+   "street": "Raba",
+   "housenumber": "23",
+   "hours": "",
+   "osmId": "node/3652603644"
+  },
+  {
+   "name": "Horeca Service",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.405499,
+   "lon": 24.508366,
+   "street": "Savi",
+   "housenumber": "7",
+   "hours": "",
+   "osmId": "node/11909595001"
+  },
+  {
+   "name": "Kanpol",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.375211,
+   "lon": 24.545502,
+   "street": "Suur-Jõe",
+   "housenumber": "58",
+   "hours": "",
+   "osmId": "way/73879353"
+  },
+  {
+   "name": "Pärnu Kaupmees",
+   "chain": null,
+   "chainLabel": "Independent",
+   "tier": "standard",
+   "tierLabel": "Neighbourhood store",
+   "priceBand": 4,
+   "format": "small",
+   "colour": "#6B7A76",
+   "note": "Independent supermarket.",
+   "lat": 58.410231,
+   "lon": 24.49552,
+   "street": "Parmu",
+   "housenumber": "5",
+   "hours": "Mo-Fr 08:00-19:00; Sa 09:00-16:00",
+   "osmId": "way/74197672"
+  }
+ ],
+ "districtAccess": {
+  "Rannarajoon (Resort & Beach Promenade)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 2532,
+    "walkMinutes": 41
+   },
+   "nearestAny": {
+    "name": "Rimi",
+    "chain": "Rimi",
+    "metres": 1081,
+    "walkMinutes": 18
+   }
+  },
+  "Kesklinn (Historic City Centre & Port)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 2465,
+    "walkMinutes": 40
+   },
+   "nearestAny": {
+    "name": "Biomarket",
+    "chain": "Independent",
+    "metres": 203,
+    "walkMinutes": 3
+   }
+  },
+  "Papiniidu / Mai (Coastal Panel & Commercial Hub)": {
+   "nearestBig": {
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 884,
+    "walkMinutes": 14
+   },
+   "nearestAny": {
+    "name": "Mai Selver",
+    "chain": "Selver",
+    "metres": 708,
+    "walkMinutes": 12
+   }
+  },
+  "Tammiste (Riverside Villa Suburb)": {
+   "nearestBig": {
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 2982,
+    "walkMinutes": 48
+   },
+   "nearestAny": {
+    "name": "Coop Tammiste Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 2056,
+    "walkMinutes": 33
+   }
+  },
+  "Paikuse (Academy & Family Green Suburb)": {
+   "nearestBig": {
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 4388,
+    "walkMinutes": 71
+   },
+   "nearestAny": {
+    "name": "Coop Paikuse Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 867,
+    "walkMinutes": 14
+   }
+  },
+  "Ülejõe (Northern Innovation & Härma)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 4353,
+    "walkMinutes": 71
+   },
+   "nearestAny": {
+    "name": "Härma mini-Rimi",
+    "chain": "Rimi",
+    "metres": 874,
+    "walkMinutes": 14
+   }
+  },
+  "Rääma (Riverfront & HealthTech Campus)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 2813,
+    "walkMinutes": 46
+   },
+   "nearestAny": {
+    "name": "Helter",
+    "chain": "Independent",
+    "metres": 418,
+    "walkMinutes": 7
+   }
+  },
+  "Raeküla (Pine Forest Coastal Villa Quarter)": {
+   "nearestBig": {
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 2138,
+    "walkMinutes": 35
+   },
+   "nearestAny": {
+    "name": "Selver",
+    "chain": "Selver",
+    "metres": 1761,
+    "walkMinutes": 29
+   }
+  },
+  "Audru & Valgeranna (Golf & CleanTech Borough)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 12389,
+    "walkMinutes": 201
+   },
+   "nearestAny": {
+    "name": "Pärnu Maksimarket",
+    "chain": "Coop / Konsum",
+    "metres": 7295,
+    "walkMinutes": 119
+   }
+  },
+  "Vana-Pärnu (Historic Seaside Wooden Quarter)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 4465,
+    "walkMinutes": 73
+   },
+   "nearestAny": {
+    "name": "Vana-Pärnu Selver ABC",
+    "chain": "Selver",
+    "metres": 1332,
+    "walkMinutes": 22
+   }
+  },
+  "Sindi (Historic Riverfront Mechatronics Town)": {
+   "nearestBig": {
+    "name": "Maxima X",
+    "chain": "Maxima",
+    "metres": 751,
+    "walkMinutes": 12
+   },
+   "nearestAny": {
+    "name": "Coop Sindi Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 345,
+    "walkMinutes": 6
+   }
+  },
+  "Eeslinn (Inner Suburb & Wooden Villa Belt)": {
+   "nearestBig": {
+    "name": "Maxima XXX",
+    "chain": "Maxima",
+    "metres": 1266,
+    "walkMinutes": 21
+   },
+   "nearestAny": {
+    "name": "Coop Tiina Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 458,
+    "walkMinutes": 7
+   }
+  },
+  "Lodja (Southern Pine Belt & Allotments)": {
+   "nearestBig": {
+    "name": "Lidl",
+    "chain": "Lidl",
+    "metres": 2860,
+    "walkMinutes": 46
+   },
+   "nearestAny": {
+    "name": "Coop Paikuse Konsum",
+    "chain": "Coop / Konsum",
+    "metres": 2071,
+    "walkMinutes": 34
+   }
+  }
+ },
+ "chains": {
+  "lidl": {
+   "label": "Lidl",
+   "tier": "discount_big",
+   "price_band": 1,
+   "colour": "#0050AA",
+   "note": "Hard discounter — cheapest basket in Estonia. Large format, own-brand heavy."
+  },
+  "prisma": {
+   "label": "Prisma",
+   "tier": "discount_big",
+   "price_band": 2,
+   "colour": "#00A94F",
+   "note": "Hypermarket. Full weekly shop, low prices, big non-food range."
+  },
+  "maxima": {
+   "label": "Maxima",
+   "tier": "discount_big",
+   "price_band": 2,
+   "colour": "#004B93",
+   "note": "Low prices across the range. XX and XXX are hypermarkets; plain X is a full supermarket, still a workable weekly shop."
+  },
+  "grossi": {
+   "label": "Grossi Toidukaubad",
+   "tier": "standard",
+   "price_band": 1,
+   "colour": "#E4032E",
+   "note": "Cheapest basket alongside Lidl, but small-format — a top-up shop, not a weekly one. Strongest in Kohtla-Järve and Narva."
+  },
+  "rimi": {
+   "label": "Rimi",
+   "tier": "large",
+   "price_band": 3,
+   "colour": "#D2001C",
+   "note": "Hyper is a full weekly shop; Super is mid-size; Mini is a corner store."
+  },
+  "selver": {
+   "label": "Selver",
+   "tier": "large",
+   "price_band": 3,
+   "colour": "#E52C24",
+   "note": "Mid-price, good fresh range. ABC is the small forecourt format."
+  },
+  "coop": {
+   "label": "Coop / Konsum",
+   "tier": "standard",
+   "price_band": 3,
+   "colour": "#F07E13",
+   "note": "Konsum / Maksimarket. Dominant in smaller towns and suburbs."
+  }
+ },
+ "tierLabels": {
+  "discount_big": "Big & cheap",
+  "large": "Large supermarket",
+  "standard": "Neighbourhood store"
+ },
+ "source": "OpenStreetMap via Overpass (ODbL)"
+}

@@ -1,0 +1,446 @@
+<body>
+
+    <a class="skip-link" href="#nested-layer-panel">Skip to map controls</a>
+
+    <div id="map" role="application" aria-label="Map of Estonian tech hubs, rents, transit and grocery stores"></div>
+
+    <div id="boot-status" class="boot-status" role="status" aria-live="polite" hidden>Loading…</div>
+
+    <!-- ── SEARCH ─────────────────────────────────────────────────────────── -->
+    <div class="search-wrap">
+        <label class="visually-hidden" for="search-input" data-i18n="search.label">Search companies, districts and shops</label>
+        <input id="search-input" type="search" class="search-input" autocomplete="off"
+               role="combobox" aria-expanded="false" aria-controls="search-results"
+               aria-autocomplete="list"
+               data-i18n-placeholder="search.placeholder"
+               placeholder="Search a company, district or shop…">
+        <ul id="search-results" class="search-results" role="listbox"
+            aria-label="Search results" hidden></ul>
+    </div>
+
+    <!-- ── LEFT RAIL ──────────────────────────────────────────────────────── -->
+    <div id="city-selector-bar">
+        <span class="city-label-tag" data-i18n="rail.title">📍 Estonia · 5 cities</span>
+
+        <div id="city-buttons" role="group" aria-label="Choose a city"></div>
+
+        <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="et" aria-pressed="false">ET</button>
+            <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+
+        <button type="button" id="btn-share" class="rail-action" data-i18n="rail.share">Copy link to this view</button>
+
+        <button type="button" id="btn_meme_toggle" class="meme-toggle-btn"
+                aria-pressed="false"
+                title="Replace the safety faces with Mr. Incredible meme faces">
+            <span aria-hidden="true">🎭</span>
+            <span data-i18n="rail.meme">Meme Mode</span>
+        </button>
+
+        <div class="city-rail-note" data-i18n="rail.note">One continuous map — zoom out and pan straight from one city into the next. Layers load by viewport.</div>
+    </div>
+
+    <div id="sheet-scrim" class="sheet-scrim" hidden></div>
+
+    <!-- ── LAYER PANEL ────────────────────────────────────────────────────── -->
+    <div id="nested-layer-panel">
+
+        <button type="button" id="sheet-handle" class="sheet-handle"
+                aria-expanded="false" aria-controls="panel-body">
+            <span class="sheet-handle__grip" aria-hidden="true"></span>
+            <span data-i18n="panel.mobileHandle">Layers &amp; filters</span>
+        </button>
+
+        <div class="panel-header">
+            <button type="button" class="panel-header__toggle" id="panel-main-toggle"
+                    aria-expanded="true" aria-controls="panel-body">
+                <span aria-hidden="true">🎛️</span>
+                <span id="panel-title-text">Tallinn Tech &amp; Rent Map</span>
+            </button>
+            <div class="panel-header__actions">
+                <button type="button" class="permanent-badge" id="badge_parks_status"
+                        aria-pressed="true" title="Toggle green parks">🌳 Parks ON</button>
+                <span id="panel-toggle-icon" aria-hidden="true">▼</span>
+            </div>
+        </div>
+
+        <div id="panel-body">
+
+            <!-- ── FILTERS ────────────────────────────────────────────────── -->
+            <div class="accordion-group accordion-group--filters">
+                <div class="accordion-header">
+                    <button type="button" class="accordion-toggle" data-accordion="body_filters"
+                            aria-expanded="false" aria-controls="body_filters">
+                        <span data-i18n="filters.title">🔍 Find a district that fits</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_filters" class="accordion-content" role="region"
+                     aria-label="District filters">
+
+                    <div class="filter-row">
+                        <label for="filter-rent" data-i18n="filters.rent">Maximum rent</label>
+                        <output id="filter-rent-value" for="filter-rent">any</output>
+                        <input type="range" id="filter-rent" min="4" max="18" step="0.5"
+                               value="18" data-off-value="18">
+                    </div>
+
+                    <div class="filter-row">
+                        <label for="filter-safety" data-i18n="filters.safety">Minimum safety score</label>
+                        <output id="filter-safety-value" for="filter-safety">any</output>
+                        <input type="range" id="filter-safety" min="1" max="5" step="0.1"
+                               value="1" data-off-value="1">
+                    </div>
+
+                    <div class="filter-row">
+                        <label for="filter-grocery" data-i18n="filters.grocery">Walk to a big, cheap supermarket</label>
+                        <output id="filter-grocery-value" for="filter-grocery">any</output>
+                        <input type="range" id="filter-grocery" min="3" max="40" step="1"
+                               value="40" data-off-value="40">
+                    </div>
+
+                    <div class="filter-foot">
+                        <span id="filter-summary" role="status" aria-live="polite">no filter applied</span>
+                        <button type="button" id="filter-reset" class="btn-mini" data-i18n="filters.reset">Reset</button>
+                    </div>
+                    <p class="filter-note" data-i18n="filters.note">Districts that do not match are dimmed rather than hidden, so you can still see what you ruled out.</p>
+                </div>
+            </div>
+
+            <!-- ── GROCERIES ──────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_grocery" class="group-check"
+                           data-global-toggle="grocery"
+                           aria-label="Toggle every grocery store layer">
+                    <button type="button" class="accordion-toggle" data-accordion="body_grocery"
+                            aria-expanded="false" aria-controls="body_grocery">
+                        <span data-i18n="grocery.title">🛒 Groceries &amp; Supermarkets</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_grocery" class="accordion-content" role="region"
+                     aria-label="Grocery store layers">
+
+                    <p class="group-blurb" data-i18n="grocery.blurb">Estonia's chains differ sharply in price. Lidl and Grossi have the cheapest basket; Prisma and Maxima are the cheapest full weekly shop; Rimi and Selver cost more.</p>
+
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_grocery_discount_big" data-grocery-tier="discount_big">
+                            <span class="checkmark"></span>
+                            <span class="item-label">
+                                <span class="gro-swatch gro-swatch--big" aria-hidden="true"></span>
+                                <span data-i18n="grocery.big">Big &amp; cheap — Lidl, Prisma, Maxima XX</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_grocery_large" data-grocery-tier="large">
+                            <span class="checkmark"></span>
+                            <span class="item-label">
+                                <span class="gro-swatch gro-swatch--large" aria-hidden="true"></span>
+                                <span data-i18n="grocery.large">Large supermarket — Rimi, Selver</span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_grocery_standard" data-grocery-tier="standard">
+                            <span class="checkmark"></span>
+                            <span class="item-label">
+                                <span class="gro-swatch gro-swatch--standard" aria-hidden="true"></span>
+                                <span data-i18n="grocery.standard">Neighbourhood — Grossi, Konsum, independents</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <p class="group-blurb group-blurb--dim" data-i18n="grocery.hint">Click any store for opening hours and a 10-minute walking ring. District popups report the walk to the nearest big, cheap store.</p>
+                </div>
+            </div>
+
+            <!-- ── SAFETY ─────────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_safety" class="group-check"
+                           data-global-toggle="safety"
+                           aria-label="Toggle every district safety scorecard">
+                    <button type="button" class="accordion-toggle" data-accordion="body_safety"
+                            aria-expanded="false" aria-controls="body_safety">
+                        <span data-i18n="safety.title">🛡️ District Safety &amp; Quality</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_safety" class="accordion-content" role="region"
+                     aria-label="District safety layers">
+                    <div id="safety_legend_bar">
+                        <span id="legend_face_5" title="4.1–5.0">🔵 4.1–5.0</span>
+                        <span id="legend_face_4" title="3.6–4.0">🟢 3.6–4.0</span>
+                        <span id="legend_face_3" title="3.0–3.5">🟡 3.0–3.5</span>
+                        <span id="legend_face_2" title="2.1–2.9">🟠 2.1–2.9</span>
+                        <span id="legend_face_1" title="0–2.0">🔴 0–2.0</span>
+                    </div>
+                    <div id="safety_items_container"></div>
+                </div>
+            </div>
+
+            <!-- ── RENT ───────────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_rental" class="group-check"
+                           data-global-toggle="rental"
+                           aria-label="Toggle every district rent badge">
+                    <button type="button" class="accordion-toggle" data-accordion="body_rental"
+                            aria-expanded="false" aria-controls="body_rental">
+                        <span data-i18n="rent.title">💶 District Rent &amp; Boundaries</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_rental" class="accordion-content" role="region"
+                     aria-label="District rent layers">
+                    <div id="rent_legend_bar" title="One national €/m² scale — a colour means the same thing in every city">
+                        <span><span class="swatch" style="background:#6b21a8;"></span>≥€15 Premium</span>
+                        <span><span class="swatch" style="background:#3730a3;"></span>€12.50–15 High</span>
+                        <span><span class="swatch" style="background:#1e40af;"></span>€10–12.50 Mid</span>
+                        <span><span class="swatch" style="background:#115e59;"></span>€7.50–10 Affordable</span>
+                        <span><span class="swatch" style="background:#065f46;"></span>€5–7.50 Budget</span>
+                        <span><span class="swatch" style="background:#3f6212;"></span>&lt;€5 Lowest</span>
+                    </div>
+                    <div id="rental_items_container"></div>
+                </div>
+            </div>
+
+            <!-- ── TECH HUBS ──────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_companies" class="group-check"
+                           data-global-toggle="companies"
+                           aria-label="Toggle every tech hub layer">
+                    <button type="button" class="accordion-toggle" data-accordion="body_companies"
+                            aria-expanded="false" aria-controls="body_companies">
+                        <span id="label_companies_header" data-i18n="hubs.title">🏢 Tech Hubs by Sector</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_companies" class="accordion-content" role="region"
+                     aria-label="Tech hub layers">
+                    <div id="companies_items_container"></div>
+                </div>
+            </div>
+
+            <!-- ── TRANSPORT ──────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_transport" class="group-check"
+                           data-global-toggle="transport"
+                           aria-label="Toggle every transit line">
+                    <button type="button" class="accordion-toggle" data-accordion="body_transport"
+                            aria-expanded="false" aria-controls="body_transport">
+                        <span data-i18n="transit.title">🚆 Transport &amp; Lines</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_transport" class="accordion-content" role="region"
+                     aria-label="Transit layers">
+
+                    <div class="accordion-subgroup">
+                        <div class="subgroup-header">
+                            <input type="checkbox" id="parent_bus_all" class="group-check"
+                                   data-global-toggle="busAll" aria-label="Toggle every bus line">
+                            <button type="button" class="accordion-toggle" data-accordion="sub_bus"
+                                    aria-expanded="false" aria-controls="sub_bus">
+                                <span id="label_bus_all_header">🚌 Bus Lines</span>
+                                <span class="accordion-arrow" aria-hidden="true">▶</span>
+                            </button>
+                        </div>
+                        <div id="sub_bus" class="subgroup-content" role="region" aria-label="Bus lines">
+
+                            <div class="subsubgroup">
+                                <div class="subsubgroup-header">
+                                    <input type="checkbox" id="parent_bus_key" class="group-check"
+                                           data-bucket-toggle="busKey" aria-label="Toggle key centre bus lines">
+                                    <button type="button" class="accordion-toggle" data-accordion="body_bus_key"
+                                            aria-expanded="false" aria-controls="body_bus_key">
+                                        <span id="label_bus_key">🔴 Key Center (10–20 min)</span>
+                                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                                    </button>
+                                </div>
+                                <div id="body_bus_key" class="subsubgroup-content" role="region" aria-label="Key centre bus lines"></div>
+                            </div>
+
+                            <div class="subsubgroup">
+                                <div class="subsubgroup-header">
+                                    <input type="checkbox" id="parent_bus_suburb" class="group-check"
+                                           data-bucket-toggle="busSuburb" aria-label="Toggle suburban bus lines">
+                                    <button type="button" class="accordion-toggle" data-accordion="body_bus_suburb"
+                                            aria-expanded="false" aria-controls="body_bus_suburb">
+                                        <span id="label_bus_suburb">🌲 Suburbs</span>
+                                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                                    </button>
+                                </div>
+                                <div id="body_bus_suburb" class="subsubgroup-content" role="region" aria-label="Suburban bus lines"></div>
+                            </div>
+
+                            <div class="subsubgroup">
+                                <div class="subsubgroup-header">
+                                    <input type="checkbox" id="parent_bus_outside" class="group-check"
+                                           data-bucket-toggle="busOutside" aria-label="Toggle regional bus lines">
+                                    <button type="button" class="accordion-toggle" data-accordion="body_bus_outside"
+                                            aria-expanded="false" aria-controls="body_bus_outside">
+                                        <span id="label_bus_outside">🏡 Outside City (Within 30km)</span>
+                                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                                    </button>
+                                </div>
+                                <div id="body_bus_outside" class="subsubgroup-content" role="region" aria-label="Regional bus lines"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="group_trolleys" class="accordion-subgroup">
+                        <div class="subgroup-header">
+                            <input type="checkbox" id="parent_trolleys" class="group-check"
+                                   data-bucket-toggle="trolleys" aria-label="Toggle trolleybus lines">
+                            <button type="button" class="accordion-toggle" data-accordion="body_trolleys"
+                                    aria-expanded="false" aria-controls="body_trolleys">
+                                <span>🚎 Trolley</span>
+                                <span class="accordion-arrow" aria-hidden="true">▶</span>
+                            </button>
+                        </div>
+                        <div id="body_trolleys" class="subgroup-content" role="region" aria-label="Trolleybus lines"></div>
+                    </div>
+
+                    <div class="accordion-subgroup">
+                        <div class="subgroup-header">
+                            <input type="checkbox" id="parent_rail" class="group-check"
+                                   data-bucket-toggle="trains" aria-label="Toggle rail corridors">
+                            <button type="button" class="accordion-toggle" data-accordion="body_rail"
+                                    aria-expanded="false" aria-controls="body_rail">
+                                <span id="label_train_header">🚆 Train</span>
+                                <span class="accordion-arrow" aria-hidden="true">▶</span>
+                            </button>
+                        </div>
+                        <div id="body_rail" class="subgroup-content" role="region" aria-label="Rail corridors"></div>
+                    </div>
+
+                    <div id="group_trams" class="accordion-subgroup">
+                        <div class="subgroup-header">
+                            <input type="checkbox" id="parent_trams" class="group-check"
+                                   data-bucket-toggle="trams" aria-label="Toggle tram lines">
+                            <button type="button" class="accordion-toggle" data-accordion="body_trams"
+                                    aria-expanded="false" aria-controls="body_trams">
+                                <span>🚋 Tram</span>
+                                <span class="accordion-arrow" aria-hidden="true">▶</span>
+                            </button>
+                        </div>
+                        <div id="body_trams" class="subgroup-content" role="region" aria-label="Tram lines"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── PARKS, DISTRICTS & HUBS ────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <input type="checkbox" id="parent_districts" class="group-check"
+                           data-global-toggle="districts"
+                           aria-label="Toggle parks, districts and hubs">
+                    <button type="button" class="accordion-toggle" data-accordion="body_districts"
+                            aria-expanded="false" aria-controls="body_districts">
+                        <span data-i18n="ambient.title">🌳 Parks, Districts &amp; Hubs</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_districts" class="accordion-content" role="region"
+                     aria-label="Parks, districts and hub layers">
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_parks" checked data-simple-toggle="parks">
+                            <span class="checkmark"></span>
+                            <span class="item-label">🌳 Green Parks &amp; Nature Reserves</span>
+                        </label>
+                    </div>
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_district_labels" checked data-simple-toggle="labels">
+                            <span class="checkmark"></span>
+                            <span class="item-label">🏷️ District Watermark Labels</span>
+                        </label>
+                    </div>
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_clusters" data-simple-toggle="clusters">
+                            <span class="checkmark"></span>
+                            <span class="item-label">🏢 Major Tech Clusters (District Polygons)</span>
+                        </label>
+                    </div>
+                    <div class="nested-item">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="chk_hubs" data-simple-toggle="hubs">
+                            <span class="checkmark"></span>
+                            <span class="item-label">🚉 Major Multi-Modal Transit Hubs</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── BASEMAP ────────────────────────────────────────────────── -->
+            <div class="accordion-group">
+                <div class="accordion-header">
+                    <button type="button" class="accordion-toggle" data-accordion="body_basemaps"
+                            aria-expanded="false" aria-controls="body_basemaps">
+                        <span data-i18n="basemap.title">🗺️ Basemap Style</span>
+                        <span class="accordion-arrow" aria-hidden="true">▶</span>
+                    </button>
+                </div>
+                <div id="body_basemaps" class="accordion-content" role="region"
+                     aria-label="Basemap style">
+                    <fieldset class="basemap-set">
+                        <legend class="visually-hidden">Basemap style</legend>
+                        <div class="nested-item">
+                            <label class="custom-radio">
+                                <input type="radio" name="basemap_select" checked data-basemap="basemap_dark">
+                                <span class="radiomark"></span>
+                                <span class="item-label">🌙 Dark Canvas (Clean &amp; High Contrast)</span>
+                            </label>
+                        </div>
+                        <div class="nested-item">
+                            <label class="custom-radio">
+                                <input type="radio" name="basemap_select" data-basemap="basemap_light">
+                                <span class="radiomark"></span>
+                                <span class="item-label">☀️ Light Gray Canvas</span>
+                            </label>
+                        </div>
+                        <div class="nested-item">
+                            <label class="custom-radio">
+                                <input type="radio" name="basemap_select" data-basemap="basemap_osm">
+                                <span class="radiomark"></span>
+                                <span class="item-label">🗺️ OpenStreetMap Detailed</span>
+                            </label>
+                        </div>
+                        <div class="nested-item">
+                            <label class="custom-radio">
+                                <input type="radio" name="basemap_select" data-basemap="basemap_street">
+                                <span class="radiomark"></span>
+                                <span class="item-label">🚗 Street Navigation Map</span>
+                            </label>
+                        </div>
+                        <div class="nested-item">
+                            <label class="custom-radio">
+                                <input type="radio" name="basemap_select" data-basemap="basemap_sat">
+                                <span class="radiomark"></span>
+                                <span class="item-label">🛰️ Satellite Imagery</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button type="button" data-all-transit="on" class="btn-quick" style="background:#059669;" data-i18n="footer.allOn">✨ All Transit ON</button>
+            <button type="button" data-all-transit="off" class="btn-quick" style="background:#334155;" data-i18n="footer.allOff">🧹 All Transit OFF</button>
+        </div>
+    </div>

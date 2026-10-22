@@ -1,0 +1,114 @@
+[
+  {
+    "name": "KESKLINN",
+    "lat": 58.384,
+    "lon": 24.501,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "RANNARAJOON",
+    "lat": 58.3762,
+    "lon": 24.4985,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "ÜLEJÕE",
+    "lat": 58.4015,
+    "lon": 24.4814,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "RÄÄMA",
+    "lat": 58.3995,
+    "lon": 24.5146,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "VANA-PÄRNU",
+    "lat": 58.3809,
+    "lon": 24.4604,
+    "type": "major",
+    "size": 12
+  },
+  {
+    "name": "RAEKÜLA",
+    "lat": 58.352,
+    "lon": 24.56,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "PAPINIIDU / MAI",
+    "lat": 58.3644,
+    "lon": 24.5329,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "TAMMISTE",
+    "lat": 58.3886,
+    "lon": 24.5888,
+    "type": "sub",
+    "size": 12
+  },
+  {
+    "name": "PAIKUSE",
+    "lat": 58.3639,
+    "lon": 24.6219,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "AUDRU",
+    "lat": 58.4129,
+    "lon": 24.3354,
+    "type": "sub",
+    "size": 12
+  },
+  {
+    "name": "SINDI",
+    "lat": 58.4056,
+    "lon": 24.6615,
+    "type": "major",
+    "size": 13
+  },
+  {
+    "name": "🎓 UT PÄRNU COLLEGE & FORWARDSPACE",
+    "lat": 58.385,
+    "lon": 24.4985,
+    "type": "tech_hub",
+    "size": 11
+  },
+  {
+    "name": "🚀 NIIDU TECH & ELECTRONICS PARK",
+    "lat": 58.3885,
+    "lon": 24.554,
+    "type": "tech_hub",
+    "size": 11
+  },
+  {
+    "name": "🔬 PÄRNU HAIGLA HEALTHTECH",
+    "lat": 58.401,
+    "lon": 24.539,
+    "type": "tech_hub",
+    "size": 11
+  },
+  {
+    "name": "🚄 RAIL BALTICA PÄRNU TERMINAL",
+    "lat": 58.3755,
+    "lon": 24.551,
+    "type": "tech_hub",
+    "size": 11
+  },
+  {
+    "name": "⚡ SINDI MECHATRONICS HUB",
+    "lat": 58.405,
+    "lon": 24.648,
+    "type": "tech_hub",
+    "size": 11
+  }
+]

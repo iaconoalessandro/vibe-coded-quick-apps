@@ -1,0 +1,16 @@
+# Caches & OS cruft
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Large regenerable OSM extracts / raw slices
+data/osm_cache/
+*.osm.pbf
+
+# Optional multi-file build for hosting on a real web server.
+# The deliverable, index.html, IS committed — see the README.
+dist/

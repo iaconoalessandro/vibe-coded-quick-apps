@@ -1,0 +1,140 @@
+{
+  "rail_baltica_parnu": {
+    "id": "rail_baltica_parnu",
+    "num": "RB1",
+    "label": "🚄 Rail Baltica: Tallinn ↔ Rapla ↔ Pärnu ↔ Häädemeeste ↔ Riga",
+    "name": "Rail Baltica High-Speed European Passenger Corridor (249 km/h)",
+    "color": "#e11d48",
+    "weight": 6.0,
+    "coords": [
+      [
+        58.585,
+        24.81
+      ],
+      [
+        58.485,
+        24.67
+      ],
+      [
+        58.415,
+        24.575
+      ],
+      [
+        58.375,
+        24.55
+      ],
+      [
+        58.335,
+        24.545
+      ],
+      [
+        58.21,
+        24.51
+      ],
+      [
+        58.078,
+        24.505
+      ],
+      [
+        57.875,
+        24.36
+      ]
+    ],
+    "stations": [
+      {
+        "name": "Pärnu International Passenger Terminal (Niidu)",
+        "coords": [
+          58.375,
+          24.55
+        ],
+        "lat": 58.375,
+        "lon": 24.55,
+        "type": "major_hub",
+        "desc": "Iconic high-speed terminal designed by Zaha Hadid Architects. Direct 40-minute express trains to Tallinn Ülemiste and 1 hour to Riga Central."
+      },
+      {
+        "name": "Tootsi Regional Hub",
+        "coords": [
+          58.585,
+          24.81
+        ],
+        "lat": 58.585,
+        "lon": 24.81,
+        "type": "station",
+        "desc": "Northern Pärnumaa regional commuter and passing loop station."
+      },
+      {
+        "name": "Häädemeeste Commuter Stop",
+        "coords": [
+          58.078,
+          24.505
+        ],
+        "lat": 58.078,
+        "lon": 24.505,
+        "type": "station",
+        "desc": "Southern coastal commuter stop serving Häädemeeste and seaside holiday districts."
+      }
+    ]
+  },
+  "rail_historic_parnu": {
+    "id": "rail_historic_parnu",
+    "num": "R22",
+    "label": "🚆 Pärnu Regional Rail Corridor (Edelaraudtee)",
+    "name": "Pärnu ↔ Sindi ↔ Tori ↔ Vändra Regional Rail Line",
+    "color": "#ff6600",
+    "weight": 5.0,
+    "coords": [
+      [
+        58.375,
+        24.55
+      ],
+      [
+        58.388,
+        24.555
+      ],
+      [
+        58.407,
+        24.652
+      ],
+      [
+        58.475,
+        24.81
+      ]
+    ],
+    "stations": [
+      {
+        "name": "Pärnu Kaubajaam (Niidu Freight Hub)",
+        "coords": [
+          58.388,
+          24.555
+        ],
+        "lat": 58.388,
+        "lon": 24.555,
+        "type": "station",
+        "desc": "Historic freight and logistics terminal in Niidu industrial area."
+      },
+      {
+        "name": "Sindi Raudteejaam",
+        "coords": [
+          58.407,
+          24.652
+        ],
+        "lat": 58.407,
+        "lon": 24.652,
+        "type": "station",
+        "desc": "Historic railway station serving Sindi textile and mechatronics plants."
+      },
+      {
+        "name": "Tori Raudteejaam",
+        "coords": [
+          58.475,
+          24.81
+        ],
+        "lat": 58.475,
+        "lon": 24.81,
+        "type": "station",
+        "desc": "Regional station serving Tori horse breeding center and Soomaa National Park gateway."
+      }
+    ]
+  }
+}

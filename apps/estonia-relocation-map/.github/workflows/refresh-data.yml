@@ -1,0 +1,50 @@
+name: Refresh data
+
+# The rent snapshot decays from the day it is taken. This keeps it current and
+# — because each run appends rather than overwrites — builds the rent time
+# series, which is worth more than any single reading.
+#
+# BEFORE ENABLING: settle the terms-of-service position for kv.ee and
+# City24.ee. A one-off research snapshot and a scheduled commercial job are
+# not the same thing. See docs/data-sources.md.
+
+on:
+  schedule:
+    - cron: "0 4 * * 1"      # Mondays, 04:00 UTC
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pytest
+
+      - name: Refresh grocery stores from OpenStreetMap
+        run: python scripts/build_grocery_stores.py --refresh
+
+      - name: Re-verify rents against live listings
+        run: python scripts/verify_rental_prices.py
+
+      - name: Append this week's reading to the rent history
+        run: python scripts/append_rent_history.py
+
+      - name: Test
+        run: |
+          python build.py --no-exports
+          python -m pytest
+
+      - name: Commit if anything moved
+        run: |
+          git config user.name  "data-refresh[bot]"
+          git config user.email "data-refresh@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "Weekly data refresh: $(date -u +%Y-%m-%d)"
+          git push

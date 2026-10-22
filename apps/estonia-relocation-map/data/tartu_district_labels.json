@@ -1,0 +1,134 @@
+[
+  {
+    "name": "KESKLINN",
+    "lat": 58.378,
+    "lon": 26.724,
+    "type": "major"
+  },
+  {
+    "name": "SUPILINN",
+    "lat": 58.3865,
+    "lon": 26.7125,
+    "type": "major"
+  },
+  {
+    "name": "KARLOVA",
+    "lat": 58.367,
+    "lon": 26.731,
+    "type": "major"
+  },
+  {
+    "name": "TAMMELINN",
+    "lat": 58.3625,
+    "lon": 26.698,
+    "type": "major"
+  },
+  {
+    "name": "TÄHTVERE",
+    "lat": 58.385,
+    "lon": 26.703,
+    "type": "major"
+  },
+  {
+    "name": "VAKSALI",
+    "lat": 58.373,
+    "lon": 26.708,
+    "type": "major"
+  },
+  {
+    "name": "ÜLEJÕE",
+    "lat": 58.387,
+    "lon": 26.732,
+    "type": "major"
+  },
+  {
+    "name": "ANNELINN",
+    "lat": 58.374,
+    "lon": 26.765,
+    "type": "major"
+  },
+  {
+    "name": "MAARJAMÕISA",
+    "lat": 58.368,
+    "lon": 26.696,
+    "type": "major"
+  },
+  {
+    "name": "VEERIKU",
+    "lat": 58.376,
+    "lon": 26.69,
+    "type": "major"
+  },
+  {
+    "name": "ROPKA",
+    "lat": 58.358,
+    "lon": 26.732,
+    "type": "major"
+  },
+  {
+    "name": "VARIKU",
+    "lat": 58.354,
+    "lon": 26.713,
+    "type": "sub"
+  },
+  {
+    "name": "RÄNILINN",
+    "lat": 58.356,
+    "lon": 26.678,
+    "type": "sub"
+  },
+  {
+    "name": "IHASTE",
+    "lat": 58.358,
+    "lon": 26.782,
+    "type": "sub"
+  },
+  {
+    "name": "KVISSENTALI",
+    "lat": 58.401,
+    "lon": 26.715,
+    "type": "sub"
+  },
+  {
+    "name": "RAADI-KRUUSAMÄE",
+    "lat": 58.398,
+    "lon": 26.745,
+    "type": "major"
+  },
+  {
+    "name": "JAAMAMÕISA",
+    "lat": 58.384,
+    "lon": 26.762,
+    "type": "sub"
+  },
+  {
+    "name": "🏢 DELTA CENTRE",
+    "lat": 58.3852,
+    "lon": 26.7265,
+    "type": "tech_hub"
+  },
+  {
+    "name": "🚀 TARTU SCIENCE PARK",
+    "lat": 58.359,
+    "lon": 26.685,
+    "type": "tech_hub"
+  },
+  {
+    "name": "⚙️ APARAADITEHAS",
+    "lat": 58.3715,
+    "lon": 26.7135,
+    "type": "tech_hub"
+  },
+  {
+    "name": "🔬 BIOMEDICUM",
+    "lat": 58.3705,
+    "lon": 26.6975,
+    "type": "tech_hub"
+  },
+  {
+    "name": "🏛️ ERM & RAADI",
+    "lat": 58.3965,
+    "lon": 26.7445,
+    "type": "tech_hub"
+  }
+]

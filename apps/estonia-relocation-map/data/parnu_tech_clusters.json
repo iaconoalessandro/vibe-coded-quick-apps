@@ -1,0 +1,148 @@
+[
+  {
+    "id": "cluster_niidu_savi",
+    "name": "Niidu & Savi Industrial Tech & Electronics Park",
+    "color": "#0284c7",
+    "fillColor": "#38bdf8",
+    "desc": "Pärnu's premier advanced manufacturing and mechatronics cluster: Scanfil Electronics, NOTE Pärnu, AQ Lasertool, Metsä Wood mega-mill, Ruukki Products, Trimaster Baltic.",
+    "polygons": [
+      [
+        [
+          58.407,
+          24.48
+        ],
+        [
+          58.409,
+          24.495
+        ],
+        [
+          58.402,
+          24.505
+        ],
+        [
+          58.398,
+          24.49
+        ],
+        [
+          58.407,
+          24.48
+        ]
+      ],
+      [
+        [
+          58.392,
+          24.545
+        ],
+        [
+          58.395,
+          24.562
+        ],
+        [
+          58.385,
+          24.565
+        ],
+        [
+          58.384,
+          24.548
+        ],
+        [
+          58.392,
+          24.545
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_kesklinn_river",
+    "name": "Kesklinn & Riverfront Innovation Quarter",
+    "color": "#ea580c",
+    "fillColor": "#f97316",
+    "desc": "Academic research, digital software development, startup incubation, and creative tech: UT Pärnu College, Forwardspace Incubator, Helmes, Pärnu Loomeinkubaator.",
+    "polygons": [
+      [
+        [
+          58.3885,
+          24.492
+        ],
+        [
+          58.3895,
+          24.505
+        ],
+        [
+          58.384,
+          24.507
+        ],
+        [
+          58.3825,
+          24.496
+        ],
+        [
+          58.3885,
+          24.492
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_raama_health",
+    "name": "Rääma MedTech & Health Innovation Campus",
+    "color": "#16a34a",
+    "fillColor": "#22c55e",
+    "desc": "Regional e-health center, robotic diagnostics, smart materials, and medical device telemetry: Pärnu Haigla, Telemedicine Center, Wendre Automation.",
+    "polygons": [
+      [
+        [
+          58.403,
+          24.53
+        ],
+        [
+          58.404,
+          24.546
+        ],
+        [
+          58.395,
+          24.545
+        ],
+        [
+          58.394,
+          24.522
+        ],
+        [
+          58.403,
+          24.53
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "cluster_sindi_mechatronics",
+    "name": "Sindi Mechatronics & Baltic Clean Energy Hub",
+    "color": "#9333ea",
+    "fillColor": "#a855f7",
+    "desc": "High-precision electromagnetic component engineering, CNC mechatronics, and Baltic smart grid energy infrastructure: MS Balti Trafo, Fein-El-Met, Elering Synchronous Condenser.",
+    "polygons": [
+      [
+        [
+          58.412,
+          24.635
+        ],
+        [
+          58.414,
+          24.665
+        ],
+        [
+          58.4,
+          24.67
+        ],
+        [
+          58.398,
+          24.63
+        ],
+        [
+          58.412,
+          24.635
+        ]
+      ]
+    ]
+  }
+]
