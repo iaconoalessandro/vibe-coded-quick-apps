@@ -1,0 +1,38 @@
+/* ---- Encyclopedia ---- */
+.enc-intro { margin-top: 8px; }
+.enc-index { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 8px 32px; margin-top: 12px; }
+.enc-index section { border-top: 1px solid var(--rule-strong); padding-top: 4px; }
+.enc-index h2 { font-size: var(--t-l); margin: 10px 0 0; }
+.enc-index p { margin: 4px 0 0; color: var(--muted); font-size: var(--t-s); }
+.enc-index ul { list-style: none; margin: 6px 0 18px; padding: 0; }
+.enc-index a { display: block; padding-block: 7px; line-height: 1.35; text-decoration: none; }
+.enc-index a:hover { text-decoration: underline; }
+.enc-crumb { margin: 0 0 6px; font-size: var(--t-s); color: var(--muted); }
+.enc { display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 36px; align-items: start; margin-top: 8px; }
+.enc-toc { align-self: stretch; }
+.enc-toc summary { display: none; }
+.enc-toc nav { position: sticky; top: calc(56px + 16px + env(safe-area-inset-top, 0px)); max-height: calc(100vh - 56px - 32px - env(safe-area-inset-top, 0px)); overflow-y: auto; padding: 12px 6px 12px 0; scrollbar-width: thin; }
+.enc-toc ul { list-style: none; margin: 0; padding: 0; }
+.enc-topic { display: block; margin: 14px 0 2px; font-weight: 700; font-size: var(--t-s); }
+.enc-toc li:first-child > .enc-topic { margin-top: 0; }
+.enc-toc a { display: block; padding: 6px 0 6px 10px; line-height: 1.35; border-left: 2px solid var(--rule); font-size: var(--t-s); text-decoration: none; color: var(--ink); }
+.enc-toc a:hover { color: var(--link); }
+.enc-toc a[aria-current="page"] { border-left-color: var(--link); color: var(--link); font-weight: 650; }
+/* links are block, not flex: flex would drop the spaces around inline code */
+.enc-toc code, .enc-index code, .enc-steps code, .weekfield h1 code { background: none; padding: 0; color: inherit; font-size: 0.95em; }
+.enc-body { min-width: 0; padding-top: 4px; }
+.enc-body > :first-child { margin-top: 0.6em; }
+.enc-steps { display: flex; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 8px; border-top: 1px solid var(--rule); }
+.enc-steps .wk-step:last-child { margin-left: auto; text-align: right; }
+@media (max-width: 760px) {
+  .enc { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .enc-toc { border-bottom: 1px solid var(--rule); }
+  .enc-toc summary { cursor: pointer; min-height: 48px; display: flex; align-items: center; gap: 10px; font-weight: 600; list-style: none; }
+  .enc-toc summary::-webkit-details-marker { display: none; }
+  .enc-toc summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); }
+  .enc-toc[open] summary::before { transform: rotate(45deg); }
+  .enc-toc nav { position: static; max-height: none; padding-top: 0; }
+  .enc-toc a { padding-block: 11px; }
+}
+/* phones: four nav links plus the Display button must fit in 375px */
+@media (max-width: 480px) { .nav a { padding: 0 5px; font-size: 0.875rem; } }

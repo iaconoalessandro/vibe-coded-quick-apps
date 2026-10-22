@@ -1,0 +1,73 @@
+/* week page */
+.wk-steps { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 20px; font-size: var(--t-s); }
+.wk-around { display: flex; flex-wrap: wrap; gap: 0 20px; margin-left: auto; }
+.wk-step { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; font-weight: 600; }
+.wk-step:hover span { text-decoration: underline; text-underline-offset: 0.2em; }
+.wk-step svg { width: 16px; height: 16px; flex: none; }
+.wk-steps + .weekhead { margin-top: 8px; }
+.wk-facts { margin: 18px 0 0; display: grid; gap: 4px; font-size: var(--t-s); }
+.wk-facts div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 12px; }
+.wk-facts dt { color: var(--muted); font-stretch: var(--label-stretch); font-weight: 600; }
+.wk-facts dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.wk-why { margin: 14px 0 0; max-width: 70ch; font-size: var(--t-l); line-height: 1.5; }
+.wk-jumps { display: flex; flex-wrap: wrap; align-items: center; gap: 0 22px; margin-top: 20px; padding-block: 2px; border-top: 1px solid var(--rule-strong); border-bottom: 1px solid var(--rule); font-weight: 600; }
+.wk-jumps a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
+.wk-jumps a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.wk-count { margin-left: auto; color: var(--muted); font-weight: 400; font-size: var(--t-s); font-variant-numeric: tabular-nums; }
+.wk-lesson { margin-top: 8px; }
+.wk-lesson > h2:first-child { margin-top: 1.6em; }
+.wk-section { margin-top: 56px; scroll-margin-top: 72px; }
+#lesson { scroll-margin-top: 72px; }
+.wk-section > h2 { font-size: var(--t-xl); padding-bottom: 8px; border-bottom: 1px solid var(--rule-strong); }
+.wk-group { font-size: var(--t-m); margin-top: 26px; color: var(--muted); font-stretch: var(--label-stretch); }
+.wk-section > h2 + .wk-group { margin-top: 16px; }
+.wk-tasks { list-style: none; margin: 6px 0 0; padding: 0; }
+.wk-task { border-bottom: 1px solid var(--rule); }
+.wk-task label { display: grid; grid-template-columns: 40px minmax(0, 1fr); align-items: center; min-height: 52px; padding-block: 8px; cursor: pointer; }
+.wk-task .wk-tasktext { min-width: 0; overflow-wrap: anywhere; }
+.wk-task.wk-done .wk-tasktext { color: var(--muted); }
+.wk-task.wk-ex .wk-tasktext code { font-size: var(--t-m); font-weight: 600; background: none; padding: 0; }
+.wk-exbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 0 0 18px 40px; }
+.wk-sol summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--link); }
+.wk-sol summary::marker { color: var(--muted); }
+.wk-section > .wk-intro + .codeblock { margin-top: 10px; }
+.wk-intro { margin: 12px 0 0; color: var(--muted); font-size: var(--t-s); max-width: 70ch; }
+.wk-quiz { display: grid; gap: 32px; margin-top: 22px; }
+.wk-q { max-width: 70ch; scroll-margin-top: 72px; }
+.wk-qt { margin: 0; font-weight: 600; font-size: var(--t-l); line-height: 1.45; }
+.wk-qn { font-variant-numeric: tabular-nums; color: var(--muted); }
+.wk-q .codeblock { margin-top: 10px; }
+.wk-opts { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+.wk-opt { width: 100%; min-height: 48px; text-align: left; padding: 10px 14px; border: 1px solid var(--rule-strong); border-radius: var(--radius-control); background: var(--ground); color: var(--ink); font: 400 var(--t-m)/1.4 var(--f-ui); cursor: pointer; }
+.wk-opt:hover:not([aria-disabled]) { background: var(--code-bg); }
+.wk-opt[aria-disabled] { cursor: default; border-color: var(--rule); color: var(--muted); }
+.wk-opt.wk-right { background: var(--ok-bg); border-color: var(--ok); color: var(--ink); }
+.wk-opt.wk-wrong { background: var(--ground); border: 2px solid var(--ink); color: var(--ink); text-decoration: line-through; text-decoration-thickness: 2px; }
+:root[data-look="olivetti"] .wk-opt.wk-wrong { background: var(--bad-bg); border: 1px solid var(--bad); text-decoration: none; }
+.wk-opt code { background: none; padding: 0; }
+.wk-verdict { margin: 12px 0 0; font-size: var(--t-m); line-height: 1.55; }
+.wk-ok { color: var(--ok); }
+.wk-no { color: var(--ink); font-weight: 700; }
+:root[data-look="olivetti"] .wk-no { color: var(--bad); }
+.wk-sunday { margin: 14px 0 0; padding-left: 1.3em; max-width: 70ch; font-size: var(--t-l); line-height: 1.5; }
+.wk-sunday li + li { margin-top: 10px; }
+.wk-bottom { margin-top: 56px; padding-top: 8px; border-top: 1px solid var(--rule); }
+:root[data-look="olivetti"] .wk-opt { border-radius: 0; }
+@media (max-width: 600px) {
+  .wk-facts div { grid-template-columns: 1fr; gap: 0; }
+  .wk-facts div + div { margin-top: 6px; }
+  .wk-around { margin-left: 0; width: 100%; justify-content: space-between; }
+  .wk-steps .wk-today { width: 100%; }
+  .wk-count { margin-left: 0; width: 100%; padding-bottom: 8px; }
+  .wk-exbody { padding-left: 0; }
+}
+/* programmatic focus on the title after navigation shouldn't draw a ring */
+/* lesson tables scroll sideways inside their wrapper instead of crushing columns */
+.wk-lesson th, .wk-lesson td { white-space: nowrap; }
+@media (max-width: 600px) {
+  .wk-stepname { display: none; }
+  .wk-steps:not(.wk-bottom) { flex-wrap: nowrap; }
+  .wk-steps:not(.wk-bottom) .wk-today { width: auto; }
+  .wk-steps:not(.wk-bottom) .wk-around { width: auto; margin-left: auto; justify-content: flex-end; }
+  .wk-jumps { gap: 0 16px; }
+}
