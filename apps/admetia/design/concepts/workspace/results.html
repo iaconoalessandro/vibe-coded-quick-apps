@@ -1,0 +1,54 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script><script src="sidebar.js"></script>
+<style>
+.content{padding:24px 28px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.kpi{padding:14px 16px}.kpi .k{font-size:12px;color:var(--muted);font-weight:500}.kpi .v{font:700 28px "JetBrains Mono";letter-spacing:-.02em;margin-top:2px}.kpi .s{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 300px;gap:12px}
+.chart{padding:16px 18px}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:10px}.ch h2{margin:0;font-size:15px}.ch .sp{flex:1}
+.leg{display:flex;gap:14px;font-size:12px;color:var(--muted);align-items:center}.leg i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.axis{display:grid;grid-template-columns:230px 1fr 90px;font:500 11px "JetBrains Mono";color:var(--muted);padding:0 0 4px}
+.axis .ticks{position:relative;height:14px}.axis .ticks span{position:absolute;transform:translateX(-50%)}
+.r{display:grid;grid-template-columns:230px 1fr 90px;align-items:center;height:30px;border-top:1px solid #f0f2f6;font-size:12.8px}
+.r .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:10px}.r .nm small{color:var(--muted)}
+.trk{position:relative;height:100%}
+.trk .g{position:absolute;top:0;bottom:0;width:1px;background:#f0f2f6}
+.trk .band{position:absolute;top:11px;height:8px;border-radius:9px;background:#e6ebf2}
+.trk .bar{position:absolute;top:8px;height:14px;width:2px;background:#94a3b8}
+.trk .me{position:absolute;top:8px;width:14px;height:14px;margin-left:-7px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(15,23,42,.15)}
+.me.good{background:var(--green)}.me.mid{background:var(--amber)}.me.low{background:var(--red)}
+.r .v{text-align:right}
+.panel{padding:16px 18px}.panel h2{margin:0 0 10px;font-size:15px}
+.imp{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}.imp:first-of-type{border-top:0}.imp .g{margin-left:auto;font:700 13px "JetBrains Mono";color:var(--green);background:var(--green-soft);padding:3px 8px;border-radius:6px}
+.fxs .fx{display:grid;grid-template-columns:1fr auto;gap:3px 10px;font-size:12.5px;margin-bottom:8px}.fxs .p{font-family:"JetBrains Mono";color:var(--muted)}
+.fxs .tr{grid-column:1/-1;height:6px;background:#eef1f5;border-radius:9px;overflow:hidden}.fxs .tr i{display:block;height:100%;background:var(--blue);border-radius:9px}
+</style></head><body>
+<div class="app"><aside class="side" data-on="mim"></aside>
+<div class="main">
+  <div class="topbar">Business <span>/</span> Master in Management <span>/</span> <b>Results</b><span class="sp"></span><span class="btn">Edit answers</span><span class="btn">Export</span></div>
+  <div class="content">
+    <div class="kpis">
+      <div class="card kpi"><div class="k">Profile score</div><div class="v" style="color:var(--blue)">70.2</div><div class="s">management weighting</div></div>
+      <div class="card kpi"><div class="k">Under each school's weighting</div><div class="v">68.3–74.9</div><div class="s">6.6-point swing</div></div>
+      <div class="card kpi"><div class="k">Competitive or better</div><div class="v" style="color:var(--green)">7<span style="font-size:16px;color:var(--muted)"> / 20</span></div><div class="s">eligible programmes</div></div>
+      <div class="card kpi"><div class="k">Ruled out by a hard rule</div><div class="v">0</div><div class="s">no gate failed</div></div>
+    </div>
+    <div class="grid">
+      <div class="card chart"><div class="ch"><h2>Your score against each school's bar</h2><span class="sp"></span><div class="leg"><span><i style="background:var(--green)"></i>Competitive</span><span><i style="background:var(--amber)"></i>Possible</span><span><i style="background:var(--red)"></i>Stretch</span><span><i style="background:#e6ebf2;border-radius:3px;width:18px"></i>bar → strong</span></div></div>
+        <div class="axis"><span></span><div class="ticks" id="ticks"></div><span></span></div>
+        <div id="rows"></div></div>
+      <div style="display:grid;gap:12px;align-content:start">
+        <div class="card panel"><h2>What would help most</h2><div id="imp"></div></div>
+        <div class="card panel fxs"><h2>Where your points come from</h2><div id="fx"></div></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+<script>
+var lo=62,hi=90;function x(v){return (v-lo)/(hi-lo)*100}
+var t='';for(var v=65;v<=90;v+=5)t+='<span style="left:'+x(v)+'%">'+v+'</span>';document.getElementById('ticks').innerHTML=t;
+document.getElementById('rows').innerHTML=D.rows.slice(0,19).map(function(r){var g='';for(var v=65;v<=90;v+=5)g+='<span class="g" style="left:'+x(v)+'%"></span>';return '<div class="r"><span class="nm">'+D.short(r.n)+' <small>'+r.c+'</small></span><div class="trk">'+g+'<span class="band" style="left:'+x(r.t)+'%;width:'+(x(r.st)-x(r.t))+'%"></span><span class="bar" style="left:'+x(r.t)+'%"></span><span class="me '+r.tone+'" style="left:'+x(r.s)+'%"></span></div><span class="v"><span class="tag '+r.tone+'">'+r.v+'</span></span></div>'}).join('');
+document.getElementById('imp').innerHTML=D.help.map(function(h){return '<div class="imp">'+h[0]+'<span class="g">'+h[1]+'</span></div>'}).join('');
+document.getElementById('fx').innerHTML=D.factors.slice(0,6).map(function(f){return '<div class="fx"><span>'+f[0]+'</span><span class="p">'+f[1]+'/'+f[2]+'</span><span class="tr"><i style="width:'+(f[1]/f[2]*100)+'%"></i></span></div>'}).join('');
+</script>
+</body></html>

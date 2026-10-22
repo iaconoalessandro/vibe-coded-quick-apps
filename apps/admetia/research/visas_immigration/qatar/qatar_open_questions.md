@@ -1,0 +1,26 @@
+# Punti Aperti e Verifiche Manuali: Qatar (QA)
+
+> **Regola di Integrità:** Questo documento censisce tutti i punti normativi, procedurali o economici relativi allo Stato del Qatar che presentano divergenze tra fonti primarie e secondarie, margini di discrezionalità amministrativa o per i quali non è disponibile un dato pubblico incontrovertibile. Tali elementi **non possono essere presentati come asserzioni certe** nella guida principale [`qatar_visas_immigration_guide.md`](qatar_visas_immigration_guide.md), ma devono essere monitorati e verificati tramite contatti diretti.
+> **Data di Riferimento del Council:** 05/10/2026.
+
+---
+
+## 1. REGISTRO DEI PUNTI APERTI E DISCREPANZE AUDITATE
+
+| ID Quesito | Ambito | Oggetto del Punto Aperto | Conflitto / Fonte Primaria vs Secondaria | Chi Contattare per Risoluzione | Azione Richiesta |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **QA-OQ-01** | Legalizzazione Titoli | **Requisito della "Triade" vs Circolare MOFA 2022 sulla lettera universitaria** | La circolare MOFA di fine 2022 ha teoricamente semplificato la legalizzazione accettando Laurea + Transcript. Tuttavia, l'Ambasciata del Qatar a Roma, il MOEHE e l'albo ingegneri UPDA continuano a esigere prova di frequenza in presenza al 100%. | Sezione Consolare Ambasciata del Qatar a Roma (`rome@mofa.gov.qa`) e Ufficio Equivalenze MOEHE Doha | Richiedere chiarimento formale scritto sull'accettabilità del Diploma Supplement bilingue privo di lettera separata rettorale. |
+| **QA-OQ-02** | Cambio Status | **Margine di discrezionalità MOI per conversione in loco a 500 QAR** | La tariffa è fissata a 500 QAR sul portale MOI, ma la concessione della conversione da visto turistico a visto di lavoro senza uscire dal Paese è puramente discrezionale e soggetta alle quote di nazionalità aziendali. | Ministry of Interior – General Directorate of Passports / PRO aziendale | Verificare prima dell'imbarco se la quota aziendale MOL per la specifica nazionalità europea è attiva e sbloccata. |
+| **QA-OQ-03** | Ricongiungimento | **Soglia stipendiale intermedia (6.000 – 10.000 QAR) per Visto Famiglia** | La regola generale fissa 10.000 QAR (o 6.000 QAR con alloggio aziendale). Nella prassi, stipendi tra 7.000 e 9.000 QAR per professioni sanitarie/ingegneristiche vengono talvolta approvati in deroga dal comitato MOI. | Permanent Committee for Work Licences / MOI Family Visa Department | Presentare istanza con lettera di supporto aziendale e contratto registrato presso Baladiya. |
+| **QA-OQ-04** | Diritto del Lavoro | **Tempi effettivi di cancellazione di false denunce di "Fuga" (Absconding / Huroob)** | Sulla carta la mobilità lavorativa è libera ex Legge 18-19/2020. Nella prassi datori scorretti usano la denuncia di Huroob su Metrash per bloccare il QID; il ricorso al MOL Dispute Committee richiede 2-5 mesi. | Ministry of Labour – Labour Dispute Settlement Committee (`labourdisputes@mol.gov.qa`) | Conservare prova cartacea/PEC delle dimissioni notificate via portale MOL prima di inoltrare il preavviso. |
+| **QA-OQ-05** | Qatarizzazione | **Quote percentuali esatte per settore ex Legge n. 12 del 2024** | La Legge n. 12 del 2024 (in vigore da aprile 2025) non fissa quote rigide nel testo di legge, ma demanda a decreti ministeriali variabili per comparto economico (banche, assicurazioni, TLC, servizi). | Ministry of Labour – Department of National Human Resources Development / Portale Tawteen | Richiedere all'HR aziendale lo screenshot del portale Tawteen attestante la conformità della posizione offerta. |
+| **QA-OQ-06** | Sanità e Visti | **Protocollo di rivalutazione per esiti cicatriziali polmonari (TB latente)** | La Medical Commission esclude automaticamente soggetti con cicatrici polmonari (anche esiti di pregresse polmoniti infantili guarite). Non è pubblico il tasso di successo del ricorso con test Quantiferon/espettorato. | Hamad Medical Corporation – Communicable Disease Center (CDC) / MoPH Medical Commission | Eseguire TAC/RX torace ad alta risoluzione preventiva in Italia; evitare il trasferimento in presenza di ombre fibrose apicali. |
+| **QA-OQ-07** | Tirocini Esteri | **Fattibilità formale del Temporary Work Permit per stage di studenti non residenti** | Il Qatar non ha un visto stage. Il portale Sahem (Jusour) è riservato ai residenti. Non è documentata la concessione ordinaria di permessi temporanei di lavoro a studenti europei senza laurea completata. | Jusour Qatar Manpower Solutions (`info@jusour.qa`) e Ministry of Labour | Richiedere se Jusour prevede finestre di mobilità formativa per convenzioni universitarie internazionali. |
+
+---
+
+## 2. MODALITÀ DI CHIUSURA DEI PUNTI APERTI
+
+1. **Protocollo Consolare Roma/Milano:** Contattare l'Ambasciata del Qatar a Roma via email o PEC per richiedere la circolare interna sulle legalizzazioni universitarie aggiornata all'anno in corso.
+2. **Audit Periodico Portale Tawteen:** Verificare con i consulenti giuslavoristi a Doha (es. studi Fragomen, Al Tamimi & Co, Clyde & Co) le tabelle percentuali di qatarizzazione per il settore consulenza, ingegneria e banche.
+3. **Revisione Sanitaria MoPH:** Monitorare le circolari applicative della Legge n. 22 del 2021 per l'attivazione della Fase 2 dell'assicurazione sanitaria obbligatoria dei lavoratori privati.

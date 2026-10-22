@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script>
+<style>
+.wrap{display:grid;grid-template-columns:380px 1fr;gap:56px;padding:20px 48px 0}
+.left .num{font:300 150px/1 Geist;letter-spacing:-.07em;margin:10px 0 6px}
+.left h1{font-size:30px;line-height:1.15;letter-spacing:-.035em;font-weight:600;margin:14px 0 10px}
+.left p{color:var(--muted);font-size:15.5px;margin:0 0 22px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:22px}
+.st div{padding:14px 0}.st div+div{border-left:1px solid var(--line);padding-left:16px}.st b{display:block;font:600 26px "Geist Mono";letter-spacing:-.03em}.st small{color:var(--muted);font-size:12.5px}
+.lever{background:var(--bg-2);border-radius:20px;padding:18px 20px}
+#lv div{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:7px 0;border-top:1px solid #e6e6e4}#lv div:first-of-type{border-top:0;margin-top:6px}#lv div b{font:600 14px "Geist Mono"}
+.chart .hd{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}.chart h2{font-size:22px;letter-spacing:-.03em;font-weight:600;margin:0}
+.leg{margin-left:auto;display:flex;gap:16px;font-size:13px;color:var(--muted)}.leg i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.ax{display:grid;grid-template-columns:200px 1fr 56px;font:500 11.5px "Geist Mono";color:var(--muted);padding:6px 0}
+#ax{position:relative;height:14px}#ax span{position:absolute;transform:translateX(-50%)}
+.r{display:grid;grid-template-columns:200px 1fr 56px;align-items:center;height:37px;font-size:14px}
+.r .tr{position:relative;height:100%}
+.r .tr::before{content:"";position:absolute;left:var(--z);top:0;bottom:0;width:1.5px;background:var(--ink)}
+.r .tr i{position:absolute;top:12px;height:13px;border-radius:4px}
+.r .v{font:500 13px "Geist Mono";text-align:right}
+.r.hl{background:linear-gradient(90deg,transparent,var(--amber-soft) 20%,var(--amber-soft) 80%,transparent)}
+</style></head><body>
+<div class="nav"><span class="wm"><i></i>Admission Chances</span><span>/ Master in Management / Results</span><span class="sp"></span><span>Edit answers</span><span class="pill">Auto</span></div>
+<div class="wrap">
+  <div class="left"><span class="lbl">Profile score · management weighting</span><div class="num">70.2</div>
+    <h1>Above the bar at 7 of 20 programmes.</h1><p>68.3–74.9 once each school applies its own weighting. No hard rule rules you out.</p>
+    <div class="st"><div><b>7</b><small>Competitive</small></div><div><b>10</b><small>Possible</small></div><div><b>3</b><small>Stretch</small></div></div>
+    <div class="lever"><span class="lbl">What would move it most</span><div id="lv"></div></div>
+  </div>
+  <div class="chart"><div class="hd"><h2>Distance from each school's bar</h2><div class="leg"><span><i style="background:#0a0a0a"></i>Competitive</span><span><i style="background:#ff9f0a"></i>Possible</span><span><i style="background:#f0506e"></i>Stretch</span></div></div>
+    <div class="ax"><span></span><div id="ax"></div><span></span></div><div id="rows"></div></div>
+</div>
+<script>
+var lo=-13,hi=9;function x(v){return (v-lo)/(hi-lo)*100}var z=x(0)+'%';
+var a='';[-12,-8,-4,0,4,8].forEach(function(v){a+='<span style="left:'+x(v)+'%">'+(v>0?'+':'')+v+'</span>'});document.getElementById('ax').innerHTML=a;
+document.getElementById('rows').innerHTML=D.rows.map(function(r){return r}).sort(function(p,q){return (q.s-q.t)-(p.s-p.t)}).slice(0,20).map(function(r,i){var d=r.s-r.t,c=r.tone=='good'?'#0a0a0a':r.tone=='mid'?'#ff9f0a':'#f0506e';return '<div class="r" style="--z:'+z+'"><span>'+D.short(r.n)+'</span><span class="tr"><i style="left:'+(d>=0?z:x(d)+'%')+';width:'+(Math.abs(d)/(hi-lo)*100)+'%;background:'+c+'"></i></span><span class="v">'+(d>=0?'+':'')+d.toFixed(1)+'</span></div>'}).join('');
+document.getElementById('lv').innerHTML=D.help.map(function(h){return '<div><span>'+h[0]+'</span><b>'+h[1]+'</b></div>'}).join('');
+</script>
+</body></html>

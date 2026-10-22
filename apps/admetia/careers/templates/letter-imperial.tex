@@ -1,0 +1,54 @@
+% Motivation letter: Imperial Business School
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries Motivation letter: Imperial Business School}\\[3pt]
+MSc programmes \textperiodcentered{} limit: 3,500 + 2,500 characters (two questions)
+\end{center}
+\guide{Admetia skeleton. The headings and budgets below are a suggestion for spending the limit; the school publishes the limit and the prompt, not the parts. Delete every grey line before you submit, and check the limit on the school's own page.}
+\cventry{Question 1 (3,500 characters)}{}
+\cvsection{Why Imperial Business School (about 1,400 characters)}
+\guide{The programme by its correct name, the modules, projects or people that matter to you, and why they fit what you want to do.}
+[Write here.]\par
+\cvsection{What you will contribute (about 1,500 characters)}
+\guide{Two pieces of evidence: what you have done that other students will gain from (a skill, an experience, a perspective).}
+[Write here.]\par
+\cvsection{Where it leads (about 600 characters)}
+\guide{One sentence on your goal and how the year gets you there.}
+[Write here.]\par
+\cventry{Question 2 (2,500 characters)}{}
+\cvsection{The value and the situation (about 450 characters)}
+\guide{Name the value (Respect, Collaboration, Integrity, Innovation or Excellence) and set the scene in two sentences.}
+[Write here.]\par
+\cvsection{What you did (about 1,250 characters)}
+\guide{Your actions, in the first person, in the order you took them.}
+[Write here.]\par
+\cvsection{The impact (about 550 characters)}
+\guide{What changed, with a number where there is one.}
+[Write here.]\par
+\cvsection{What you took from it (about 250 characters)}
+\guide{One sentence.}
+[Write here.]\par
+\end{document}

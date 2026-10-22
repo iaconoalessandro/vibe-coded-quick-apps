@@ -1,0 +1,247 @@
+[
+ {
+  "id": "atlas-ae.0013",
+  "chunk": "atlas-ae-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-at.0017",
+  "chunk": "atlas-at-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-ca.0012",
+  "chunk": "atlas-ca-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-cn.0054",
+  "chunk": "atlas-cn-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-hk.0024",
+  "chunk": "atlas-hk-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "ui.2115",
+  "chunk": "ui-13",
+  "fix": "\"standing\" (how strongly a hub is rated) is \"relevancia\", not prestigio."
+ },
+ {
+  "id": "ui.2238",
+  "chunk": "ui-14",
+  "fix": "\"brief\" is \"resumen\" (Un resumen por cada país del Atlas) and \"standing\" is \"relevancia\"."
+ },
+ {
+  "id": "atlas-gr.0007",
+  "chunk": "atlas-gr-01",
+  "fix": "\"standing\" (how strongly a hub is rated in a field) is \"relevancia\" (\"standing steps\" = niveles de relevancia), not posición/valoraciones/consideración."
+ },
+ {
+  "id": "atlas-au.0039",
+  "chunk": "atlas-au-01",
+  "fix": "\"standing\" (how strongly a hub is rated in a field) is \"relevancia\" (\"standing steps\" = niveles de relevancia), not posición/valoraciones/consideración."
+ },
+ {
+  "id": "models.0834",
+  "chunk": "models-06",
+  "fix": "\"taught master/MSc\" is \"máster con docencia\" / \"MSc con docencia\", not lectivo/impartido."
+ },
+ {
+  "id": "atlas-gb.0253",
+  "chunk": "atlas-gb-04",
+  "fix": "\"taught master/MSc\" is \"máster con docencia\" / \"MSc con docencia\", not lectivo/impartido."
+ },
+ {
+  "id": "atlas-gb.0257",
+  "chunk": "atlas-gb-04",
+  "fix": "\"taught master/MSc\" is \"máster con docencia\" / \"MSc con docencia\", not lectivo/impartido."
+ },
+ {
+  "id": "ui.2764",
+  "chunk": "ui-17",
+  "fix": "\"taught-postgraduate\" is \"posgrados con docencia\", not \"de docencia\"."
+ },
+ {
+  "id": "atlas-au.0106",
+  "chunk": "atlas-au-02",
+  "fix": "\"target schools/universities\" is \"universidades objetivo\", not prioritarias/preferentes."
+ },
+ {
+  "id": "atlas-bg.0062",
+  "chunk": "atlas-bg-01",
+  "fix": "\"target schools/universities\" is \"universidades objetivo\", not prioritarias/preferentes."
+ },
+ {
+  "id": "atlas-es.0133",
+  "chunk": "atlas-es-02",
+  "fix": "\"target schools/universities\" is \"universidades objetivo\", not prioritarias/preferentes."
+ },
+ {
+  "id": "ui.1546",
+  "chunk": "ui-09",
+  "fix": "\"return offers\" here: \"ofertas de contratación al final\"."
+ },
+ {
+  "id": "atlas-ca.0086",
+  "chunk": "atlas-ca-02",
+  "fix": "\"Statistics Canada’s Labour Force Survey\": write \"La encuesta de población activa (Labour Force Survey) de Statistics Canada\"."
+ },
+ {
+  "id": "atlas-at.0045",
+  "chunk": "atlas-at-01",
+  "fix": "venture-capital \"exits\" is \"desinversiones (exits)\", not salidas; check \"H2 2023–2025\" reads \"el segundo semestre de 2023–2025\"."
+ },
+ {
+  "id": "atlas-au.0004",
+  "chunk": "atlas-au-01",
+  "fix": "numbered visas were left in English word order: \"the 482 visa\" → \"el visado 482\", \"a 408 visa\" → \"un visado 408\", \"a 500 visa\" → \"un visado 500\", \"the 485 visa\" → \"el visado 485\"."
+ },
+ {
+  "id": "atlas-au.0016",
+  "chunk": "atlas-au-01",
+  "fix": "numbered visas were left in English word order: \"the 482 visa\" → \"el visado 482\", \"a 408 visa\" → \"un visado 408\", \"a 500 visa\" → \"un visado 500\", \"the 485 visa\" → \"el visado 485\"."
+ },
+ {
+  "id": "atlas-au.0109",
+  "chunk": "atlas-au-02",
+  "fix": "numbered visas were left in English word order: \"the 482 visa\" → \"el visado 482\", \"a 408 visa\" → \"un visado 408\", \"a 500 visa\" → \"un visado 500\", \"the 485 visa\" → \"el visado 485\"."
+ },
+ {
+  "id": "atlas-au.0168",
+  "chunk": "atlas-au-03",
+  "fix": "numbered visas were left in English word order: \"the 482 visa\" → \"el visado 482\", \"a 408 visa\" → \"un visado 408\", \"a 500 visa\" → \"un visado 500\", \"the 485 visa\" → \"el visado 485\"."
+ },
+ {
+  "id": "atlas-au.0181",
+  "chunk": "atlas-au-03",
+  "fix": "numbered visas were left in English word order: \"the 482 visa\" → \"el visado 482\", \"a 408 visa\" → \"un visado 408\", \"a 500 visa\" → \"un visado 500\", \"the 485 visa\" → \"el visado 485\"."
+ },
+ {
+  "id": "ui.2151",
+  "chunk": "ui-13",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-au.0115",
+  "chunk": "atlas-au-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-cz.0107",
+  "chunk": "atlas-cz-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-de.0243",
+  "chunk": "atlas-de-03",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-fr.0186",
+  "chunk": "atlas-fr-03",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-bg.0081",
+  "chunk": "atlas-bg-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "ui.2243",
+  "chunk": "ui-14",
+  "fix": "\"the library\" (Admetia’s collection of sources) is \"la biblioteca de fuentes\"."
+ },
+ {
+  "id": "ui.2245",
+  "chunk": "ui-14",
+  "fix": "\"the library\" (Admetia’s collection of sources) is \"la biblioteca de fuentes\"."
+ },
+ {
+  "id": "atlas-gb.0196",
+  "chunk": "atlas-gb-03",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-gb.0199",
+  "chunk": "atlas-gb-03",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-es.0055",
+  "chunk": "atlas-es-01",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-es.0096",
+  "chunk": "atlas-es-01",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-de.0292",
+  "chunk": "atlas-de-04",
+  "fix": "\"internship\" is plural-only in Spanish: \"unas prácticas\" / \"todas las prácticas\", never \"una práctica\" / \"toda práctica\"; adjust agreement."
+ },
+ {
+  "id": "atlas-de.0294",
+  "chunk": "atlas-de-04",
+  "fix": "\"internship\" is plural-only in Spanish: \"unas prácticas\" / \"todas las prácticas\", never \"una práctica\" / \"toda práctica\"; adjust agreement."
+ },
+ {
+  "id": "atlas-de.0297",
+  "chunk": "atlas-de-04",
+  "fix": "\"internship\" is plural-only in Spanish: \"unas prácticas\" / \"todas las prácticas\", never \"una práctica\" / \"toda práctica\"; adjust agreement."
+ },
+ {
+  "id": "atlas-dk.0110",
+  "chunk": "atlas-dk-02",
+  "fix": "the Pay Limit scheme is \"el régimen de límite salarial\" (as in dk.0130 and dk.0167), not \"la vía de límite salarial\"."
+ },
+ {
+  "id": "models.0003",
+  "chunk": "models-01",
+  "fix": "\"intake\" here means the people admitted: \"promoción\", not \"convocatoria\" (avoid repeating promoción twice in one sentence: use \"un grupo\" or \"clase\" for the second if needed)."
+ },
+ {
+  "id": "models.0411",
+  "chunk": "models-03",
+  "fix": "\"intake\" here means the people admitted: \"promoción\", not \"convocatoria\" (avoid repeating promoción twice in one sentence: use \"un grupo\" or \"clase\" for the second if needed)."
+ },
+ {
+  "id": "atlas-shared.0031",
+  "chunk": "atlas-shared-01",
+  "fix": "these are labels of the hiring section, so \"application(s)\" are job applications: \"candidatura(s)\", not \"solicitud(es)\" (Contactos y candidaturas / Las candidaturas funcionan / Candidatura directa / Pretensiones salariales en la candidatura)."
+ },
+ {
+  "id": "atlas-shared.0032",
+  "chunk": "atlas-shared-01",
+  "fix": "these are labels of the hiring section, so \"application(s)\" are job applications: \"candidatura(s)\", not \"solicitud(es)\" (Contactos y candidaturas / Las candidaturas funcionan / Candidatura directa / Pretensiones salariales en la candidatura)."
+ },
+ {
+  "id": "atlas-shared.0107",
+  "chunk": "atlas-shared-01",
+  "fix": "these are labels of the hiring section, so \"application(s)\" are job applications: \"candidatura(s)\", not \"solicitud(es)\" (Contactos y candidaturas / Las candidaturas funcionan / Candidatura directa / Pretensiones salariales en la candidatura)."
+ },
+ {
+  "id": "atlas-shared.0171",
+  "chunk": "atlas-shared-01",
+  "fix": "these are labels of the hiring section, so \"application(s)\" are job applications: \"candidatura(s)\", not \"solicitud(es)\" (Contactos y candidaturas / Las candidaturas funcionan / Candidatura directa / Pretensiones salariales en la candidatura)."
+ },
+ {
+  "id": "atlas-at.0177",
+  "chunk": "atlas-at-03",
+  "fix": "\"court-registered translator\" / \"sworn court translator\" are the same Austrian figure: use \"traductor jurado judicial\" in both."
+ },
+ {
+  "id": "atlas-at.0195",
+  "chunk": "atlas-at-04",
+  "fix": "\"court-registered translator\" / \"sworn court translator\" are the same Austrian figure: use \"traductor jurado judicial\" in both."
+ },
+ {
+  "id": "atlas-ae.0178",
+  "chunk": "atlas-ae-03",
+  "fix": "\"attestation\" of a degree or document is \"legalización\" (as in the earlier UAE strings), not \"certificación\"."
+ }
+]

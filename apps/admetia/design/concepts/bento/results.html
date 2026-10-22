@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script>
+<style>
+.score{grid-column:span 5;background:var(--lilac);display:flex;align-items:center;gap:22px;padding:24px 28px}
+.score .n{font:800 80px/1 "Bricolage Grotesque";letter-spacing:-.05em}.score p{margin:4px 0 0;color:#3b3560;font-size:14.5px}
+.head{grid-column:span 7;display:flex;flex-direction:column;justify-content:center;padding:24px 30px}
+.head h1{font:800 46px/1 "Bricolage Grotesque";letter-spacing:-.04em;margin:8px 0 8px}
+.head p{margin:0;color:var(--soft)}
+.col{grid-column:span 4;padding:22px 22px 18px}
+.col .h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}.col .h b{font:800 26px "Bricolage Grotesque";letter-spacing:-.03em}.col .h span{margin-left:auto;font:800 40px/1 "Bricolage Grotesque"}
+.col p.d{margin:-6px 0 12px;font-size:13px;opacity:.75}
+.sch{background:rgba(255,255,255,.72);border-radius:16px;padding:10px 14px;margin-bottom:8px;display:flex;align-items:center;gap:10px;font-size:14px}
+.sch b{font-weight:600}.sch small{display:block;color:var(--muted);font-size:12px}.sch .v{margin-left:auto;font:800 18px "Bricolage Grotesque"}
+.c1{background:var(--mint)}.c1 .h span{color:var(--mint-d)}.c2{background:var(--butter)}.c2 .h span{color:var(--butter-d)}.c3{background:var(--peach)}.c3 .h span{color:var(--peach-d)}
+.more{text-align:center;font-weight:600;font-size:13.5px;padding:6px 0 0;opacity:.7}
+</style></head><body><div class="wrap">
+<div class="nav"><div class="logo"><i data-icon="cap"></i>Admission Chances</div><span class="sp"></span><a>Business</a><a class="on">Results</a><a>Edit answers</a></div>
+<div class="bento">
+  <div class="t score"><svg width="118" height="118" viewBox="0 0 118 118"><circle cx="59" cy="59" r="48" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="16"/><circle cx="59" cy="59" r="48" fill="none" stroke="#5b3fd9" stroke-width="16" stroke-linecap="round" stroke-dasharray="301.6" stroke-dashoffset="90" transform="rotate(-90 59 59)"/></svg><div><span class="lab">Profile score</span><div class="n">70.2</div><p>68.3–74.9 under each school's own weighting</p></div></div>
+  <div class="t head"><span class="lab">Master in Management · 20 programmes</span><h1>Competitive at 7. Within reach at 10.</h1><p>No hard rule rules you out. Your biggest lever: internship experience (+2.3).</p></div>
+  <div class="t col c1"><div class="h"><b>Competitive</b><span>7</span></div><p class="d">You clear the school's bar.</p><div id="g1"></div></div>
+  <div class="t col c2"><div class="h"><b>Possible</b><span>10</span></div><p class="d">Close — a stronger file could tip it.</p><div id="g2"></div></div>
+  <div class="t col c3"><div class="h"><b>Stretch</b><span>3</span></div><p class="d">Well below the bar on these answers.</p><div id="g3"></div></div>
+  <div class="t" style="grid-column:span 6;background:var(--sky);padding:22px 26px"><span class="lab">What would help most</span><div id="imp" style="display:grid;gap:8px;margin-top:12px"></div></div>
+  <div class="t" style="grid-column:span 6;padding:22px 26px"><span class="lab">Where your points come from</span><div id="fx" style="display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-top:12px"></div></div>
+</div></div>
+<script>
+function fill(id,tone,n){var r=D.rows.filter(function(x){return x.tone===tone});document.getElementById(id).innerHTML=r.slice(0,n).map(function(x){return '<div class="sch"><div><b>'+D.short(x.n)+'</b><small>'+x.c+' · bar '+x.t+'</small></div><span class="v">'+x.s+'</span></div>'}).join('')+(r.length>n?'<div class="more">+ '+(r.length-n)+' more</div>':'')}
+fill('g1','good',5);document.getElementById('imp').innerHTML=D.help.map(function(h){return '<div style="background:rgba(255,255,255,.75);border-radius:14px;padding:10px 14px;display:flex;font-weight:600;font-size:14px">'+h[0]+'<span style="margin-left:auto;font:800 18px Bricolage Grotesque;color:#157a4a">'+h[1]+'</span></div>'}).join('');document.getElementById('fx').innerHTML=D.factors.slice(0,6).map(function(f){return '<div style="font-size:13px;font-weight:600">'+f[0]+'<span style="float:right;color:#76767f">'+f[1]+'/'+f[2]+'</span><i style="display:block;height:10px;border-radius:99px;background:#eeede8;margin-top:5px;overflow:hidden"><b style="display:block;height:100%;width:'+(f[1]/f[2]*100)+'%;background:#5b3fd9;border-radius:99px"></b></i></div>'}).join('');fill('g2','mid',5);fill('g3','low',5);
+</script>
+</body></html>

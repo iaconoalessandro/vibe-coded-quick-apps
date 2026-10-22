@@ -1,0 +1,16 @@
+# Admetia — https://iaconoalessandro.github.io/admetia/
+#
+# Everything published here is meant to be read, by search engines and by
+# AI search crawlers alike: no page is disallowed. The one page kept out of
+# results, 404.html, says so itself (noindex).
+#
+# Crawlers read robots.txt only at the root of a host. While the site lives
+# under /admetia/ on github.io this file is at /admetia/robots.txt, where
+# they do not look; it takes effect as it is once the site has a host of its
+# own (update the address below then). Until then the sitemap is found from
+# Search Console and from the pages' own links.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://iaconoalessandro.github.io/admetia/sitemap.xml

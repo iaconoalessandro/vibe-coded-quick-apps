@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script><script src="sidebar.js"></script>
+<style>
+.work{display:grid;grid-template-columns:240px 1fr 330px;min-height:calc(100vh - 56px)}
+.steps{border-right:1px solid var(--line);background:var(--surface);padding:22px 18px}
+.steps .t{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.stp{display:flex;gap:12px;padding:8px 0;position:relative}
+.stp .b{width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 11px Inter;color:var(--muted);flex:none;background:var(--surface);z-index:1}
+.stp:not(:last-child)::before{content:"";position:absolute;left:11px;top:32px;bottom:-8px;width:2px;background:var(--line)}
+.stp.done .b{background:var(--green);border-color:var(--green);color:#fff}.stp.done .b svg{width:12px;height:12px}
+.stp.cur .b{border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}
+.stp b{font-size:13.5px;display:block}.stp small{color:var(--muted);font-size:12px}
+.stp .qs{margin:6px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--muted)}.stp .qs li{padding:3px 0}.stp .qs li.on{color:var(--blue);font-weight:600}
+.form{padding:26px 34px}
+.form .crumb{font-size:12.5px;color:var(--muted)}
+.form h1{font-size:24px;letter-spacing:-.02em;margin:4px 0 4px;font-weight:800}
+.form .blurb{color:var(--muted);margin:0 0 20px;font-size:13.5px;max-width:60em}
+.q{padding:18px 20px;margin-bottom:14px}
+.q .l{display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:14.5px}.q .l .req{font-size:11px;color:var(--muted);font-weight:500}
+.q .h{color:var(--muted);font-size:12.8px;margin:2px 0 12px}
+.seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#f8fafc}
+.seg span{flex:1;text-align:center;padding:8px 6px;font-size:12.8px;font-weight:500;border-right:1px solid var(--line);color:var(--soft)}.seg span:last-child{border-right:0}
+.seg span.on{background:var(--surface);color:var(--blue);font-weight:700;box-shadow:inset 0 -2px 0 var(--blue)}
+.lst{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.li{display:grid;grid-template-columns:20px 1fr auto;gap:10px;align-items:center;padding:9px 12px;border-top:1px solid var(--line);font-size:13.5px}.li:first-child{border-top:0}
+.li .r{width:16px;height:16px;border-radius:50%;border:2px solid #c6cfdb}.li .n{color:var(--muted);font-size:12.5px;font-family:"JetBrains Mono";font-weight:500}
+.li.on{background:var(--blue-soft)}.li .r{border-radius:4px}.li.on .r{background:var(--blue);border-color:var(--blue);box-shadow:inset 0 0 0 2px #fff}
+.foot{display:flex;gap:10px;margin-top:6px}.foot .sp{flex:1}
+.rail{border-left:1px solid var(--line);background:var(--surface);padding:22px 20px}
+.rail .k{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.big{display:flex;align-items:baseline;gap:8px;margin:6px 0 2px}.big .n{font:700 44px "JetBrains Mono";letter-spacing:-.03em}.big .d{font:600 13px "JetBrains Mono";color:var(--green)}
+.rail .sub{color:var(--muted);font-size:12.5px;margin-bottom:16px}
+.fx{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:12.5px;margin-bottom:9px}.fx .p{font-family:"JetBrains Mono";color:var(--muted)}
+.fx .tr{grid-column:1/-1;height:6px;background:#eef1f5;border-radius:9px;overflow:hidden}.fx .tr i{display:block;height:100%;background:var(--blue);border-radius:9px}
+.rail hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+.mini{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px}.mini .s{margin-left:auto;font-family:"JetBrains Mono";font-size:12px;color:var(--muted)}
+</style></head><body>
+<div class="app"><aside class="side" data-on="mim"></aside>
+<div class="main">
+  <div class="topbar">Business <span>/</span> <b>Master in Management</b><span class="sp"></span><span class="chip">Autosaved</span><span class="btn">Reset</span><span class="btn pri">See results →</span></div>
+  <div class="work">
+    <div class="steps"><div class="t">5 steps · 25 questions</div>
+      <div class="stp done"><span class="b" data-icon="check"></span><div><b>Your degree</b><small>4 of 4 answered</small></div></div>
+      <div class="stp done"><span class="b" data-icon="check"></span><div><b>Tests</b><small>4 of 4 answered</small></div></div>
+      <div class="stp cur"><span class="b">3</span><div><b>Quantitative preparation</b><small>2 of 6 answered</small><ul class="qs"><li>ECTS in quantitative subjects</li><li>ECTS in business</li><li class="on">ECTS in accounting &amp; finance</li><li>Mathematics taken</li><li>Programming</li><li>CFA</li></ul></div></div>
+      <div class="stp"><span class="b">4</span><div><b>Experience</b><small>5 questions</small></div></div>
+      <div class="stp"><span class="b">5</span><div><b>Your application</b><small>5 questions</small></div></div>
+    </div>
+    <div class="form">
+      <div class="crumb">Step 3 of 5</div><h1>Quantitative preparation</h1>
+      <p class="blurb">European programmes gate on ECTS credits; US ones gate on named courses. Both are pass/fail, so answer these as accurately as you can.</p>
+      <div class="card q"><div class="l">ECTS in statistics, research methods or quantitative subjects</div><div class="h">Several schools require a minimum here as a hard entry rule.</div>
+        <div class="seg"><span>None</span><span>1–9</span><span>10–19</span><span>20–29</span><span class="on">30+</span></div></div>
+      <div class="card q"><div class="l">ECTS in business administration or economics</div><div class="h">Counted towards the business-background rule at CBS, RSM and WU.</div>
+        <div class="seg"><span>None</span><span>1–29</span><span>30–44</span><span>45–59</span><span>60–89</span><span class="on">90+</span></div></div>
+      <div class="card q"><div class="l">Mathematics you have actually taken <span class="req">optional · tick all that apply</span></div><div class="h">Princeton expects linear algebra, multivariable calculus, differential equations and probability.</div>
+        <div class="lst"><div class="li on"><span class="r"></span>Single-variable calculus<span class="n"></span></div><div class="li"><span class="r"></span>Multivariable calculus<span class="n"></span></div><div class="li"><span class="r"></span>Linear algebra<span class="n"></span></div><div class="li on"><span class="r"></span>Probability and statistics<span class="n"></span></div></div></div>
+    </div>
+    <div class="rail"><div class="k">Live score</div><div class="big"><span class="n">70.2</span><span class="d">▲ 2.1</span></div><div class="sub">out of 100 · management weighting</div>
+      <div id="fx"></div><hr>
+      <div class="k" style="margin-bottom:8px">Hard rules</div>
+      <div class="mini"><span class="tag good">Pass</span>Quantitative ECTS minimums</div>
+      <div class="mini"><span class="tag good">Pass</span>Business ECTS minimums</div>
+      <div class="mini"><span class="tag gray">Pending</span>Work experience cap</div><hr>
+      <div class="k" style="margin-bottom:6px">Best fit right now</div>
+      <div class="mini">Michigan Ross<span class="s">74.9</span></div><div class="mini">RSM Rotterdam<span class="s">74.9</span></div><div class="mini">Bocconi<span class="s">74.9</span></div>
+    </div>
+  </div>
+</div></div>
+<script>document.getElementById('fx').innerHTML=D.factors.map(function(f){return '<div class="fx"><span>'+f[0]+'</span><span class="p">'+f[1]+'/'+f[2]+'</span><span class="tr"><i style="width:'+(f[1]/f[2]*100)+'%"></i></span></div>'}).join('');</script>
+</body></html>

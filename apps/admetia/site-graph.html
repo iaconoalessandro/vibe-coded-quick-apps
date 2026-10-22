@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Admetia — Website Page Navigation Graph</title>
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
+  <style>
+    :root {
+      --bg: #fff7ef;
+      --surface: #fff1e5;
+      --card: #ffffff;
+      --ink: #262422;
+      --muted: #66605c;
+      --hair: #e6d9ce;
+      --border: rgba(0, 0, 0, 0.12);
+      --claret: #990f3d;
+      --teal: #0d7680;
+      --oxford: #0f5499;
+      --amber: #b45309;
+      --font-mast: "Source Serif 4", Georgia, serif;
+      --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111116;
+      --surface: #181822;
+      --card: #20202c;
+      --ink: #edecec;
+      --muted: #a3a19e;
+      --hair: #2e2e3d;
+      --border: rgba(255, 255, 255, 0.12);
+      --claret: #e0486c;
+      --teal: #22a3af;
+      --oxford: #4d90e0;
+      --amber: #e6983b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Strip */
+    header.graph-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--hair);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-shrink: 0;
+      z-index: 10;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-family: var(--font-mast);
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: var(--claret);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      color: var(--muted);
+      display: none;
+    }
+    @media (min-width: 900px) {
+      .brand-sub { display: inline; }
+    }
+
+    .top-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .scope-selector {
+      display: inline-flex;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2px;
+    }
+
+    .scope-btn {
+      background: transparent;
+      border: none;
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .scope-btn.active {
+      background: var(--teal);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .search-box {
+      position: relative;
+      width: 200px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--teal);
+    }
+
+    .search-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 4px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      max-height: 240px;
+      overflow-y: auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      z-index: 100;
+      display: none;
+    }
+
+    .search-result-item {
+      padding: 7px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--hair);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-result-item:hover {
+      background: var(--surface);
+    }
+
+    .theme-toggle-btn, .zoom-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      padding: 5px 9px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    /* Main Container */
+    .main-layout {
+      flex: 1;
+      display: flex;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #canvas-container {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      cursor: grab;
+      user-select: none;
+    }
+
+    #canvas-container:active {
+      cursor: grabbing;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Floating Journeys & Filters Toolbar */
+    .floating-toolbar {
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      max-width: calc(100vw - 380px);
+      z-index: 5;
+    }
+
+    [data-theme="dark"] .floating-toolbar {
+      background: rgba(32, 32, 44, 0.88);
+    }
+
+    .toolbar-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-right: 4px;
+    }
+
+    .pill-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .pill-btn:hover {
+      background: var(--surface);
+    }
+
+    .pill-btn.active {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    .journey-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .journey-btn:hover {
+      background: var(--card);
+      border-color: var(--teal);
+    }
+
+    .journey-btn.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    /* Floating Canvas Controls (bottom-left) */
+    .canvas-hud {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    /* Right Inspector Drawer */
+    aside.inspector-panel {
+      width: 320px;
+      background: var(--surface);
+      border-left: 1px solid var(--hair);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+      z-index: 6;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.03);
+    }
+
+    @media (max-width: 820px) {
+      aside.inspector-panel {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+      }
+      aside.inspector-panel.open {
+        transform: translateX(0);
+      }
+    }
+
+    .panel-header {
+      padding: 16px;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .panel-group-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 7px;
+      border-radius: 4px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .panel-title {
+      font-family: var(--font-mast);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+
+    .panel-path {
+      font-family: monospace;
+      font-size: 11px;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    .panel-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .panel-desc {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+
+    .open-page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--teal);
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-align: center;
+      transition: background 0.15s ease;
+    }
+
+    .open-page-btn:hover {
+      opacity: 0.9;
+    }
+
+    .connections-block h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .link-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .link-chip {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+    }
+
+    .link-chip:hover {
+      border-color: var(--teal);
+      transform: translateX(2px);
+    }
+
+    .chip-label {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .chip-rel {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .empty-state {
+      padding: 30px 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <header class="graph-header">
+    <div class="brand-wrap">
+      <a href="index.html" class="brand-title">Admetia</a>
+      <span class="brand-badge">Site Navigator Graph</span>
+      <span class="brand-sub">Visualizing how all public pages connect</span>
+    </div>
+
+    <div class="top-controls">
+      <div class="scope-selector">
+        <button class="scope-btn active" data-scope="core">Core Architecture (20)</button>
+        <button class="scope-btn" data-scope="ecosystem">With Fields &amp; Backgrounds (44)</button>
+        <button class="scope-btn" data-scope="full">Full Network (61)</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="node-search" placeholder="Search pages..." autocomplete="off">
+        <div class="search-results" id="search-results"></div>
+      </div>
+
+      <button class="theme-toggle-btn" id="theme-btn" title="Toggle theme">◐ Theme</button>
+    </div>
+  </header>
+
+  <div class="main-layout">
+    <div id="canvas-container">
+      <canvas id="graph-canvas"></canvas>
+
+      <!-- Floating Journeys & Pillar Filter -->
+      <div class="floating-toolbar">
+        <div class="toolbar-row">
+          <span class="toolbar-label">Guided Journeys:</span>
+          <button class="journey-btn" data-journey="admissions">🎓 Master's Applicant</button>
+          <button class="journey-btn" data-journey="career-explorer">🧭 Career Discovery</button>
+          <button class="journey-btn" data-journey="mobility">🌍 Moving Abroad</button>
+          <button class="journey-btn" data-journey="job-hunter">💼 Landing the Job</button>
+          <button class="journey-btn" data-journey="all">Clear</button>
+        </div>
+        <div class="toolbar-row">
+          <span class="toolbar-label">Pillars:</span>
+          <button class="pill-btn active" data-filter="all">All</button>
+          <button class="pill-btn" data-filter="study"><span class="dot" style="background:#b45309"></span>Masters</button>
+          <button class="pill-btn" data-filter="careers"><span class="dot" style="background:#4f46e5"></span>Careers</button>
+          <button class="pill-btn" data-filter="jobs"><span class="dot" style="background:#0d7680"></span>Jobs</button>
+          <button class="pill-btn" data-filter="map"><span class="dot" style="background:#0284c7"></span>Atlas</button>
+          <button class="pill-btn" data-filter="method"><span class="dot" style="background:#990f3d"></span>Method</button>
+        </div>
+      </div>
+
+      <!-- Canvas zoom HUD -->
+      <div class="canvas-hud">
+        <button class="zoom-btn" id="zoom-in" title="Zoom in">+</button>
+        <button class="zoom-btn" id="zoom-out" title="Zoom out">-</button>
+        <button class="zoom-btn" id="zoom-fit" title="Fit graph to screen">Reset View</button>
+      </div>
+    </div>
+
+    <!-- Inspector Drawer -->
+    <aside class="inspector-panel" id="inspector">
+      <div id="inspector-content">
+        <div class="empty-state">
+          <p><strong>Click on any page node</strong> in the graph to inspect its purpose, pathways, and direct navigation links.</p>
+          <p style="margin-top: 10px; font-size: 12px;">You can also drag nodes to rearrange the graph, or use the scroll wheel to zoom.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // Embedded Graph Data
+    const GRAPH_DATA = {"coreNodes":[{"id":"index.html","label":"Home","title":"Admetia Home Portal","group":"core","path":"index.html","level":1,"size":26,"desc":"The main landing portal for independent admissions calculators, career guidance, and global mobility data."},{"id":"study.html","label":"Masters Hub","title":"Masters Overview","group":"study","path":"study.html","level":2,"size":22,"desc":"Strategy guide and index for European and UK master programmes across business and computing."},{"id":"programmes.html","label":"Directory","title":"Programme Directory","group":"study","path":"programmes.html","level":3,"size":17,"desc":"Searchable database of top master programmes with tuition, class sizes, and deadlines."},{"id":"business.html","label":"Business Hub","title":"Business Calculators","group":"study","path":"business.html","level":3,"size":19,"desc":"Admissions and ROI calculator portal for MBA, MiF, MiM, and Marketing master degrees."},{"id":"mba.html","label":"MBA Calc","title":"MBA Admissions Calculator","group":"study","path":"mba.html","level":4,"size":19,"desc":"Scoring engine and statistical admissions odds for top European and US MBA programmes."},{"id":"masters.html","label":"MiF / MiM Calc","title":"Finance, Management & Marketing","group":"study","path":"masters.html","level":4,"size":19,"desc":"Admissions calculator for pre-experience Master in Finance, Management, and Marketing."},{"id":"it.html","label":"Computing Hub","title":"Computing Calculators","group":"study","path":"it.html","level":3,"size":19,"desc":"Admissions portal for Computer Science, Data & AI, and Conversion technology master degrees."},{"id":"computing.html","label":"Tech & AI Calc","title":"Computing Calculator","group":"study","path":"computing.html","level":4,"size":19,"desc":"Scoring calculator for CS, Data Science & AI, and non-STEM conversion master programmes."},{"id":"careers/index.html","label":"Careers Hub","title":"Explore Careers","group":"careers","path":"careers/index.html","level":2,"size":24,"desc":"Gateway to 120+ career profiles organized by academic background, industry field, and seniority."},{"id":"careers/compass.html","label":"Career Compass","title":"Interactive Career Compass","group":"careers","path":"careers/compass.html","level":3,"size":21,"desc":"Interactive recommendation tool mapping personal strengths, work-style preferences, and goals to roles."},{"id":"careers/compare.html","label":"Compare Roles","title":"Role Comparator","group":"careers","path":"careers/compare.html","level":3,"size":17,"desc":"Head-to-head comparison tool for working hours, salary trajectory, stress, and exit opportunities."},{"id":"careers/italy-pay.html","label":"Italy Pay","title":"Italian Pay Guide","group":"careers","path":"careers/italy-pay.html","level":3,"size":17,"desc":"Realistic gross-to-net salary calculator, tax brackets, and progression across Italian employment sectors."},{"id":"careers/sources.html","label":"Sources","title":"Career Research Sources","group":"careers","path":"careers/sources.html","level":3,"size":15,"desc":"Primary evidence base, alumni placement reports, salary surveys, and recruitment datasets."},{"id":"jobs.html","label":"Jobs Hub","title":"Internship & Job Hunt","group":"jobs","path":"jobs.html","level":2,"size":22,"desc":"Framework and playbooks for securing internships and graduate positions across Europe."},{"id":"hiring.html","label":"Hiring by Country","title":"Hiring by Country","group":"jobs","path":"hiring.html","level":3,"size":19,"desc":"Country-by-country breakdown of sponsorship policies, language requirements, and hiring seasons."},{"id":"careers/recruiting-calendar.html","label":"Recruiting Calendar","title":"Recruiting Calendar","group":"jobs","path":"careers/recruiting-calendar.html","level":3,"size":17,"desc":"Timeline of graduate scheme deadlines and summer internship recruiting windows across Europe."},{"id":"careers/toolkit.html","label":"Application Toolkit","title":"Application Toolkit","group":"jobs","path":"careers/toolkit.html","level":3,"size":17,"desc":"Curated templates for resumes, cover letters, and cold email outreach to hiring managers."},{"id":"careers/interview-prep.html","label":"Interview Prep","title":"Interview Prep Guide","group":"jobs","path":"careers/interview-prep.html","level":3,"size":17,"desc":"Frameworks for technical cases, behavioral interviews, coding challenges, and assessment centres."},{"id":"map.html","label":"Atlas (Map)","title":"Map Intelligence","group":"map","path":"map.html","level":2,"size":24,"desc":"World map of graduate hiring hubs, net income benchmarks, and passport/visa accessibility."},{"id":"method.html","label":"Methodology","title":"Sources & Methodology","group":"method","path":"method.html","level":2,"size":20,"desc":"Transparent explanation of scoring algorithms, calibration metrics, and data integrity standards."}],"fieldNodes":[{"id":"careers/fields/accounting.html","label":"Accounting","title":"Accounting — Career Field","group":"fields","path":"careers/fields/accounting.html","level":4,"size":15,"desc":"Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific."},{"id":"careers/fields/artificial-intelligence.html","label":"Artificial Intelligence","title":"Artificial Intelligence — Career Field","group":"fields","path":"careers/fields/artificial-intelligence.html","level":4,"size":15,"desc":"Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; cro"},{"id":"careers/fields/computer-science.html","label":"Computer Science","title":"Computer Science — Career Field","group":"fields","path":"careers/fields/computer-science.html","level":4,"size":15,"desc":"Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade."},{"id":"careers/fields/cybersecurity.html","label":"Cybersecurity","title":"Cybersecurity — Career Field","group":"fields","path":"careers/fields/cybersecurity.html","level":4,"size":15,"desc":"Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite &quot;skills gap&quot; headlines."},{"id":"careers/fields/data-analytics.html","label":"Data Analytics","title":"Data Analytics — Career Field","group":"fields","path":"careers/fields/data-analytics.html","level":4,"size":15,"desc":"Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door."},{"id":"careers/fields/data-science.html","label":"Data Science","title":"Data Science — Career Field","group":"fields","path":"careers/fields/data-science.html","level":4,"size":15,"desc":"Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting."},{"id":"careers/fields/economics.html","label":"Economics","title":"Economics — Career Field","group":"fields","path":"careers/fields/economics.html","level":4,"size":15,"desc":"Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top."},{"id":"careers/fields/finance.html","label":"Finance","title":"Finance — Career Field","group":"fields","path":"careers/fields/finance.html","level":4,"size":15,"desc":"Moving, pricing, investing and protecting money: investment banking and advisory (M&amp;A, ECM, DCM/LevFin, restructuring), sales &amp; trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and"},{"id":"careers/fields/logistics-supply-chain.html","label":"Logistics &amp; Supply Chain","title":"Logistics &amp; Supply Chain — Career Field","group":"fields","path":"careers/fields/logistics-supply-chain.html","level":4,"size":15,"desc":"Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting."},{"id":"careers/fields/management-consulting.html","label":"Management Consulting","title":"Management Consulting — Career Field","group":"fields","path":"careers/fields/management-consulting.html","level":4,"size":15,"desc":"Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy."},{"id":"careers/fields/management.html","label":"Management","title":"Management — Career Field","group":"fields","path":"careers/fields/management.html","level":4,"size":15,"desc":"General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management."},{"id":"careers/fields/marketing.html","label":"Marketing (incl. sales)","title":"Marketing (incl. sales) — Career Field","group":"fields","path":"careers/fields/marketing.html","level":4,"size":15,"desc":"Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development."},{"id":"careers/fields/product-management-startups.html","label":"Product Management &amp; Startups","title":"Product Management &amp; Startups — Career Field","group":"fields","path":"careers/fields/product-management-startups.html","level":4,"size":15,"desc":"Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding)."}],"bgNodes":[{"id":"careers/backgrounds/accounting.html","label":"Accounting Grad","title":"Studied Accounting — Background Guide","group":"backgrounds","path":"careers/backgrounds/accounting.html","level":4,"size":14,"desc":"Which fields and role families a Accounting background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/artificial-intelligence.html","label":"Artificial Intelligence Grad","title":"Studied Artificial Intelligence — Background Guide","group":"backgrounds","path":"careers/backgrounds/artificial-intelligence.html","level":4,"size":14,"desc":"Which fields and role families a Artificial Intelligence background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/computer-science.html","label":"Computer Science Grad","title":"Studied Computer Science — Background Guide","group":"backgrounds","path":"careers/backgrounds/computer-science.html","level":4,"size":14,"desc":"Which fields and role families a Computer Science background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/cybersecurity.html","label":"Cybersecurity Grad","title":"Studied Cybersecurity — Background Guide","group":"backgrounds","path":"careers/backgrounds/cybersecurity.html","level":4,"size":14,"desc":"Which fields and role families a Cybersecurity background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/data-analytics.html","label":"Data Analytics Grad","title":"Studied Data Analytics — Background Guide","group":"backgrounds","path":"careers/backgrounds/data-analytics.html","level":4,"size":14,"desc":"Which fields and role families a Data Analytics background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/data-science.html","label":"Data Science Grad","title":"Studied Data Science — Background Guide","group":"backgrounds","path":"careers/backgrounds/data-science.html","level":4,"size":14,"desc":"Which fields and role families a Data Science background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/economics.html","label":"Economics Grad","title":"Studied Economics — Background Guide","group":"backgrounds","path":"careers/backgrounds/economics.html","level":4,"size":14,"desc":"Which fields and role families a Economics background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/finance.html","label":"Finance Grad","title":"Studied Finance — Background Guide","group":"backgrounds","path":"careers/backgrounds/finance.html","level":4,"size":14,"desc":"Which fields and role families a Finance background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/logistics-and-supply-chain.html","label":"Logistics &amp; Supply Chain Grad","title":"Studied Logistics &amp; Supply Chain — Background Guide","group":"backgrounds","path":"careers/backgrounds/logistics-and-supply-chain.html","level":4,"size":14,"desc":"Which fields and role families a Logistics &amp; Supply Chain background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/management.html","label":"Management Grad","title":"Studied Management — Background Guide","group":"backgrounds","path":"careers/backgrounds/management.html","level":4,"size":14,"desc":"Which fields and role families a Management background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/marketing.html","label":"Marketing Grad","title":"Studied Marketing — Background Guide","group":"backgrounds","path":"careers/backgrounds/marketing.html","level":4,"size":14,"desc":"Which fields and role families a Marketing background leads to, rated strong, possible or stretch, with the reason for each."}],"roleNodes":[{"id":"careers/roles/m-and-a-and-industry-coverage-banker.html","label":"M&A Banker","title":"M&A Banker — Role Profile","group":"roles","path":"careers/roles/m-and-a-and-industry-coverage-banker.html","level":5,"size":13,"desc":"M&amp;A and industry/coverage banker (analyst to MD) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","label":"Strategy Consultant","title":"Strategy Consultant — Role Profile","group":"roles","path":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","level":5,"size":13,"desc":"Strategy consultant (MBB and tier-2), analyst/associate to partner (Management Consulting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/machine-learning-engineer.html","label":"ML Engineer","title":"ML Engineer — Role Profile","group":"roles","path":"careers/roles/machine-learning-engineer.html","level":5,"size":13,"desc":"Machine learning engineer (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/backend-software-engineer.html","label":"Backend Engineer","title":"Backend Engineer — Role Profile","group":"roles","path":"careers/roles/backend-software-engineer.html","level":5,"size":13,"desc":"Backend software engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/quantitative-researcher-and-quantitative-trader.html","label":"Quant Trader/Researcher","title":"Quant Trader/Researcher — Role Profile","group":"roles","path":"careers/roles/quantitative-researcher-and-quantitative-trader.html","level":5,"size":13,"desc":"Quantitative researcher and quantitative trader (quant funds and prop trading firms) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/private-equity-associate-to-partner.html","label":"Private Equity","title":"Private Equity — Role Profile","group":"roles","path":"careers/roles/private-equity-associate-to-partner.html","level":5,"size":13,"desc":"Private equity associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/product-marketing-manager.html","label":"Product Marketer","title":"Product Marketer — Role Profile","group":"roles","path":"careers/roles/product-marketing-manager.html","level":5,"size":13,"desc":"Product marketing manager (tech/B2B) (Marketing (incl. sales)): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/associate-rotational-product-manager.html","label":"Associate Product Manager","title":"Associate Product Manager — Role Profile","group":"roles","path":"careers/roles/associate-rotational-product-manager.html","level":5,"size":13,"desc":"Associate / rotational product manager (entry programmes) (Product Management &amp; Startups): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/data-scientist-in-banking-and-insurance.html","label":"Data Scientist (Banking)","title":"Data Scientist (Banking) — Role Profile","group":"roles","path":"careers/roles/data-scientist-in-banking-and-insurance.html","level":5,"size":13,"desc":"Data scientist in banking and insurance (credit, fraud, pricing) (Data Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/cloud-engineer-cloud-solutions-architect.html","label":"Cloud Architect","title":"Cloud Architect — Role Profile","group":"roles","path":"careers/roles/cloud-engineer-cloud-solutions-architect.html","level":5,"size":13,"desc":"Cloud engineer / cloud solutions architect (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/penetration-tester-red-teamer-offensive-security.html","label":"Red Teamer / Pentester","title":"Red Teamer / Pentester — Role Profile","group":"roles","path":"careers/roles/penetration-tester-red-teamer-offensive-security.html","level":5,"size":13,"desc":"Penetration tester / red teamer / offensive security (Cybersecurity): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/economic-consultant.html","label":"Economic Consultant","title":"Economic Consultant — Role Profile","group":"roles","path":"careers/roles/economic-consultant.html","level":5,"size":13,"desc":"Economic consultant (competition, litigation, regulation) (Economics): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/financial-accountant-financial-controller.html","label":"Financial Controller","title":"Financial Controller — Role Profile","group":"roles","path":"careers/roles/financial-accountant-financial-controller.html","level":5,"size":13,"desc":"Financial accountant / financial controller (in industry) (Accounting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html","label":"Supply Chain Analyst","title":"Supply Chain Analyst — Role Profile","group":"roles","path":"careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html","level":5,"size":13,"desc":"Supply chain analyst / supply chain systems specialist (Logistics &amp; Supply Chain): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/venture-capital-analyst-associate-to-partner.html","label":"Venture Capital","title":"Venture Capital — Role Profile","group":"roles","path":"careers/roles/venture-capital-analyst-associate-to-partner.html","level":5,"size":13,"desc":"Venture capital analyst/associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/ai-research-scientist.html","label":"AI Researcher","title":"AI Researcher — Role Profile","group":"roles","path":"careers/roles/ai-research-scientist.html","level":5,"size":13,"desc":"AI research scientist (industry and academia) (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/devops-site-reliability-platform-engineer.html","label":"SRE / DevOps","title":"SRE / DevOps — Role Profile","group":"roles","path":"careers/roles/devops-site-reliability-platform-engineer.html","level":5,"size":13,"desc":"DevOps / site reliability / platform engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."}],"allNodes":[{"id":"index.html","label":"Home","title":"Admetia Home Portal","group":"core","path":"index.html","level":1,"size":26,"desc":"The main landing portal for independent admissions calculators, career guidance, and global mobility data."},{"id":"study.html","label":"Masters Hub","title":"Masters Overview","group":"study","path":"study.html","level":2,"size":22,"desc":"Strategy guide and index for European and UK master programmes across business and computing."},{"id":"programmes.html","label":"Directory","title":"Programme Directory","group":"study","path":"programmes.html","level":3,"size":17,"desc":"Searchable database of top master programmes with tuition, class sizes, and deadlines."},{"id":"business.html","label":"Business Hub","title":"Business Calculators","group":"study","path":"business.html","level":3,"size":19,"desc":"Admissions and ROI calculator portal for MBA, MiF, MiM, and Marketing master degrees."},{"id":"mba.html","label":"MBA Calc","title":"MBA Admissions Calculator","group":"study","path":"mba.html","level":4,"size":19,"desc":"Scoring engine and statistical admissions odds for top European and US MBA programmes."},{"id":"masters.html","label":"MiF / MiM Calc","title":"Finance, Management & Marketing","group":"study","path":"masters.html","level":4,"size":19,"desc":"Admissions calculator for pre-experience Master in Finance, Management, and Marketing."},{"id":"it.html","label":"Computing Hub","title":"Computing Calculators","group":"study","path":"it.html","level":3,"size":19,"desc":"Admissions portal for Computer Science, Data & AI, and Conversion technology master degrees."},{"id":"computing.html","label":"Tech & AI Calc","title":"Computing Calculator","group":"study","path":"computing.html","level":4,"size":19,"desc":"Scoring calculator for CS, Data Science & AI, and non-STEM conversion master programmes."},{"id":"careers/index.html","label":"Careers Hub","title":"Explore Careers","group":"careers","path":"careers/index.html","level":2,"size":24,"desc":"Gateway to 120+ career profiles organized by academic background, industry field, and seniority."},{"id":"careers/compass.html","label":"Career Compass","title":"Interactive Career Compass","group":"careers","path":"careers/compass.html","level":3,"size":21,"desc":"Interactive recommendation tool mapping personal strengths, work-style preferences, and goals to roles."},{"id":"careers/compare.html","label":"Compare Roles","title":"Role Comparator","group":"careers","path":"careers/compare.html","level":3,"size":17,"desc":"Head-to-head comparison tool for working hours, salary trajectory, stress, and exit opportunities."},{"id":"careers/italy-pay.html","label":"Italy Pay","title":"Italian Pay Guide","group":"careers","path":"careers/italy-pay.html","level":3,"size":17,"desc":"Realistic gross-to-net salary calculator, tax brackets, and progression across Italian employment sectors."},{"id":"careers/sources.html","label":"Sources","title":"Career Research Sources","group":"careers","path":"careers/sources.html","level":3,"size":15,"desc":"Primary evidence base, alumni placement reports, salary surveys, and recruitment datasets."},{"id":"jobs.html","label":"Jobs Hub","title":"Internship & Job Hunt","group":"jobs","path":"jobs.html","level":2,"size":22,"desc":"Framework and playbooks for securing internships and graduate positions across Europe."},{"id":"hiring.html","label":"Hiring by Country","title":"Hiring by Country","group":"jobs","path":"hiring.html","level":3,"size":19,"desc":"Country-by-country breakdown of sponsorship policies, language requirements, and hiring seasons."},{"id":"careers/recruiting-calendar.html","label":"Recruiting Calendar","title":"Recruiting Calendar","group":"jobs","path":"careers/recruiting-calendar.html","level":3,"size":17,"desc":"Timeline of graduate scheme deadlines and summer internship recruiting windows across Europe."},{"id":"careers/toolkit.html","label":"Application Toolkit","title":"Application Toolkit","group":"jobs","path":"careers/toolkit.html","level":3,"size":17,"desc":"Curated templates for resumes, cover letters, and cold email outreach to hiring managers."},{"id":"careers/interview-prep.html","label":"Interview Prep","title":"Interview Prep Guide","group":"jobs","path":"careers/interview-prep.html","level":3,"size":17,"desc":"Frameworks for technical cases, behavioral interviews, coding challenges, and assessment centres."},{"id":"map.html","label":"Atlas (Map)","title":"Map Intelligence","group":"map","path":"map.html","level":2,"size":24,"desc":"World map of graduate hiring hubs, net income benchmarks, and passport/visa accessibility."},{"id":"method.html","label":"Methodology","title":"Sources & Methodology","group":"method","path":"method.html","level":2,"size":20,"desc":"Transparent explanation of scoring algorithms, calibration metrics, and data integrity standards."},{"id":"careers/fields/accounting.html","label":"Accounting","title":"Accounting — Career Field","group":"fields","path":"careers/fields/accounting.html","level":4,"size":15,"desc":"Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific."},{"id":"careers/fields/artificial-intelligence.html","label":"Artificial Intelligence","title":"Artificial Intelligence — Career Field","group":"fields","path":"careers/fields/artificial-intelligence.html","level":4,"size":15,"desc":"Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; cro"},{"id":"careers/fields/computer-science.html","label":"Computer Science","title":"Computer Science — Career Field","group":"fields","path":"careers/fields/computer-science.html","level":4,"size":15,"desc":"Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade."},{"id":"careers/fields/cybersecurity.html","label":"Cybersecurity","title":"Cybersecurity — Career Field","group":"fields","path":"careers/fields/cybersecurity.html","level":4,"size":15,"desc":"Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite &quot;skills gap&quot; headlines."},{"id":"careers/fields/data-analytics.html","label":"Data Analytics","title":"Data Analytics — Career Field","group":"fields","path":"careers/fields/data-analytics.html","level":4,"size":15,"desc":"Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door."},{"id":"careers/fields/data-science.html","label":"Data Science","title":"Data Science — Career Field","group":"fields","path":"careers/fields/data-science.html","level":4,"size":15,"desc":"Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting."},{"id":"careers/fields/economics.html","label":"Economics","title":"Economics — Career Field","group":"fields","path":"careers/fields/economics.html","level":4,"size":15,"desc":"Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top."},{"id":"careers/fields/finance.html","label":"Finance","title":"Finance — Career Field","group":"fields","path":"careers/fields/finance.html","level":4,"size":15,"desc":"Moving, pricing, investing and protecting money: investment banking and advisory (M&amp;A, ECM, DCM/LevFin, restructuring), sales &amp; trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and"},{"id":"careers/fields/logistics-supply-chain.html","label":"Logistics &amp; Supply Chain","title":"Logistics &amp; Supply Chain — Career Field","group":"fields","path":"careers/fields/logistics-supply-chain.html","level":4,"size":15,"desc":"Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting."},{"id":"careers/fields/management-consulting.html","label":"Management Consulting","title":"Management Consulting — Career Field","group":"fields","path":"careers/fields/management-consulting.html","level":4,"size":15,"desc":"Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy."},{"id":"careers/fields/management.html","label":"Management","title":"Management — Career Field","group":"fields","path":"careers/fields/management.html","level":4,"size":15,"desc":"General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management."},{"id":"careers/fields/marketing.html","label":"Marketing (incl. sales)","title":"Marketing (incl. sales) — Career Field","group":"fields","path":"careers/fields/marketing.html","level":4,"size":15,"desc":"Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development."},{"id":"careers/fields/product-management-startups.html","label":"Product Management &amp; Startups","title":"Product Management &amp; Startups — Career Field","group":"fields","path":"careers/fields/product-management-startups.html","level":4,"size":15,"desc":"Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding)."},{"id":"careers/backgrounds/accounting.html","label":"Accounting Grad","title":"Studied Accounting — Background Guide","group":"backgrounds","path":"careers/backgrounds/accounting.html","level":4,"size":14,"desc":"Which fields and role families a Accounting background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/artificial-intelligence.html","label":"Artificial Intelligence Grad","title":"Studied Artificial Intelligence — Background Guide","group":"backgrounds","path":"careers/backgrounds/artificial-intelligence.html","level":4,"size":14,"desc":"Which fields and role families a Artificial Intelligence background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/computer-science.html","label":"Computer Science Grad","title":"Studied Computer Science — Background Guide","group":"backgrounds","path":"careers/backgrounds/computer-science.html","level":4,"size":14,"desc":"Which fields and role families a Computer Science background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/cybersecurity.html","label":"Cybersecurity Grad","title":"Studied Cybersecurity — Background Guide","group":"backgrounds","path":"careers/backgrounds/cybersecurity.html","level":4,"size":14,"desc":"Which fields and role families a Cybersecurity background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/data-analytics.html","label":"Data Analytics Grad","title":"Studied Data Analytics — Background Guide","group":"backgrounds","path":"careers/backgrounds/data-analytics.html","level":4,"size":14,"desc":"Which fields and role families a Data Analytics background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/data-science.html","label":"Data Science Grad","title":"Studied Data Science — Background Guide","group":"backgrounds","path":"careers/backgrounds/data-science.html","level":4,"size":14,"desc":"Which fields and role families a Data Science background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/economics.html","label":"Economics Grad","title":"Studied Economics — Background Guide","group":"backgrounds","path":"careers/backgrounds/economics.html","level":4,"size":14,"desc":"Which fields and role families a Economics background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/finance.html","label":"Finance Grad","title":"Studied Finance — Background Guide","group":"backgrounds","path":"careers/backgrounds/finance.html","level":4,"size":14,"desc":"Which fields and role families a Finance background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/logistics-and-supply-chain.html","label":"Logistics &amp; Supply Chain Grad","title":"Studied Logistics &amp; Supply Chain — Background Guide","group":"backgrounds","path":"careers/backgrounds/logistics-and-supply-chain.html","level":4,"size":14,"desc":"Which fields and role families a Logistics &amp; Supply Chain background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/management.html","label":"Management Grad","title":"Studied Management — Background Guide","group":"backgrounds","path":"careers/backgrounds/management.html","level":4,"size":14,"desc":"Which fields and role families a Management background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/backgrounds/marketing.html","label":"Marketing Grad","title":"Studied Marketing — Background Guide","group":"backgrounds","path":"careers/backgrounds/marketing.html","level":4,"size":14,"desc":"Which fields and role families a Marketing background leads to, rated strong, possible or stretch, with the reason for each."},{"id":"careers/roles/m-and-a-and-industry-coverage-banker.html","label":"M&A Banker","title":"M&A Banker — Role Profile","group":"roles","path":"careers/roles/m-and-a-and-industry-coverage-banker.html","level":5,"size":13,"desc":"M&amp;A and industry/coverage banker (analyst to MD) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","label":"Strategy Consultant","title":"Strategy Consultant — Role Profile","group":"roles","path":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","level":5,"size":13,"desc":"Strategy consultant (MBB and tier-2), analyst/associate to partner (Management Consulting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/machine-learning-engineer.html","label":"ML Engineer","title":"ML Engineer — Role Profile","group":"roles","path":"careers/roles/machine-learning-engineer.html","level":5,"size":13,"desc":"Machine learning engineer (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/backend-software-engineer.html","label":"Backend Engineer","title":"Backend Engineer — Role Profile","group":"roles","path":"careers/roles/backend-software-engineer.html","level":5,"size":13,"desc":"Backend software engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/quantitative-researcher-and-quantitative-trader.html","label":"Quant Trader/Researcher","title":"Quant Trader/Researcher — Role Profile","group":"roles","path":"careers/roles/quantitative-researcher-and-quantitative-trader.html","level":5,"size":13,"desc":"Quantitative researcher and quantitative trader (quant funds and prop trading firms) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/private-equity-associate-to-partner.html","label":"Private Equity","title":"Private Equity — Role Profile","group":"roles","path":"careers/roles/private-equity-associate-to-partner.html","level":5,"size":13,"desc":"Private equity associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/product-marketing-manager.html","label":"Product Marketer","title":"Product Marketer — Role Profile","group":"roles","path":"careers/roles/product-marketing-manager.html","level":5,"size":13,"desc":"Product marketing manager (tech/B2B) (Marketing (incl. sales)): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/associate-rotational-product-manager.html","label":"Associate Product Manager","title":"Associate Product Manager — Role Profile","group":"roles","path":"careers/roles/associate-rotational-product-manager.html","level":5,"size":13,"desc":"Associate / rotational product manager (entry programmes) (Product Management &amp; Startups): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/data-scientist-in-banking-and-insurance.html","label":"Data Scientist (Banking)","title":"Data Scientist (Banking) — Role Profile","group":"roles","path":"careers/roles/data-scientist-in-banking-and-insurance.html","level":5,"size":13,"desc":"Data scientist in banking and insurance (credit, fraud, pricing) (Data Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/cloud-engineer-cloud-solutions-architect.html","label":"Cloud Architect","title":"Cloud Architect — Role Profile","group":"roles","path":"careers/roles/cloud-engineer-cloud-solutions-architect.html","level":5,"size":13,"desc":"Cloud engineer / cloud solutions architect (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/penetration-tester-red-teamer-offensive-security.html","label":"Red Teamer / Pentester","title":"Red Teamer / Pentester — Role Profile","group":"roles","path":"careers/roles/penetration-tester-red-teamer-offensive-security.html","level":5,"size":13,"desc":"Penetration tester / red teamer / offensive security (Cybersecurity): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/economic-consultant.html","label":"Economic Consultant","title":"Economic Consultant — Role Profile","group":"roles","path":"careers/roles/economic-consultant.html","level":5,"size":13,"desc":"Economic consultant (competition, litigation, regulation) (Economics): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/financial-accountant-financial-controller.html","label":"Financial Controller","title":"Financial Controller — Role Profile","group":"roles","path":"careers/roles/financial-accountant-financial-controller.html","level":5,"size":13,"desc":"Financial accountant / financial controller (in industry) (Accounting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html","label":"Supply Chain Analyst","title":"Supply Chain Analyst — Role Profile","group":"roles","path":"careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html","level":5,"size":13,"desc":"Supply chain analyst / supply chain systems specialist (Logistics &amp; Supply Chain): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/venture-capital-analyst-associate-to-partner.html","label":"Venture Capital","title":"Venture Capital — Role Profile","group":"roles","path":"careers/roles/venture-capital-analyst-associate-to-partner.html","level":5,"size":13,"desc":"Venture capital analyst/associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/ai-research-scientist.html","label":"AI Researcher","title":"AI Researcher — Role Profile","group":"roles","path":"careers/roles/ai-research-scientist.html","level":5,"size":13,"desc":"AI research scientist (industry and academia) (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."},{"id":"careers/roles/devops-site-reliability-platform-engineer.html","label":"SRE / DevOps","title":"SRE / DevOps — Role Profile","group":"roles","path":"careers/roles/devops-site-reliability-platform-engineer.html","level":5,"size":13,"desc":"DevOps / site reliability / platform engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."}],"coreLinks":[{"source":"index.html","target":"study.html","label":"Explore Masters"},{"source":"index.html","target":"careers/index.html","label":"Explore Careers"},{"source":"index.html","target":"jobs.html","label":"Find Jobs"},{"source":"index.html","target":"map.html","label":"World Map"},{"source":"index.html","target":"method.html","label":"Sources & Method"},{"source":"study.html","target":"programmes.html","label":"Browse directory"},{"source":"study.html","target":"business.html","label":"Business track"},{"source":"study.html","target":"it.html","label":"Computing track"},{"source":"business.html","target":"mba.html","label":"MBA scoring"},{"source":"business.html","target":"masters.html","label":"MiF / MiM scoring"},{"source":"it.html","target":"computing.html","label":"CS & AI scoring"},{"source":"programmes.html","target":"business.html","label":"Calculate admission"},{"source":"programmes.html","target":"it.html","label":"Calculate admission"},{"source":"careers/index.html","target":"careers/compass.html","label":"Take assessment"},{"source":"careers/index.html","target":"careers/compare.html","label":"Compare options"},{"source":"careers/index.html","target":"careers/italy-pay.html","label":"Compensation benchmark"},{"source":"careers/index.html","target":"careers/sources.html","label":"Evidence base"},{"source":"careers/compass.html","target":"careers/compare.html","label":"Compare matches"},{"source":"careers/compare.html","target":"careers/italy-pay.html","label":"Deep dive pay"},{"source":"jobs.html","target":"hiring.html","label":"Country policies"},{"source":"jobs.html","target":"careers/recruiting-calendar.html","label":"Recruitment cycles"},{"source":"jobs.html","target":"careers/toolkit.html","label":"CV & outreach"},{"source":"jobs.html","target":"careers/interview-prep.html","label":"Case & technical prep"},{"source":"careers/recruiting-calendar.html","target":"careers/toolkit.html","label":"Prepare docs"},{"source":"careers/toolkit.html","target":"careers/interview-prep.html","label":"Next: interviews"},{"source":"mba.html","target":"map.html","label":"Global MBA hubs"},{"source":"mba.html","target":"careers/index.html","label":"Post-MBA careers"},{"source":"masters.html","target":"careers/index.html","label":"Target finance / consulting"},{"source":"computing.html","target":"careers/index.html","label":"Tech & ML career paths"},{"source":"computing.html","target":"map.html","label":"European tech hubs"},{"source":"careers/compass.html","target":"jobs.html","label":"Apply to recommended roles"},{"source":"hiring.html","target":"map.html","label":"Country visa & salary data"},{"source":"method.html","target":"study.html","label":"Calibrate scoring models"},{"source":"method.html","target":"map.html","label":"Salary purchasing parity"},{"source":"method.html","target":"careers/sources.html","label":"Data verification"}],"allLinks":[{"source":"index.html","target":"study.html","label":"Explore Masters"},{"source":"index.html","target":"careers/index.html","label":"Explore Careers"},{"source":"index.html","target":"jobs.html","label":"Find Jobs"},{"source":"index.html","target":"map.html","label":"World Map"},{"source":"index.html","target":"method.html","label":"Sources & Method"},{"source":"study.html","target":"programmes.html","label":"Browse directory"},{"source":"study.html","target":"business.html","label":"Business track"},{"source":"study.html","target":"it.html","label":"Computing track"},{"source":"business.html","target":"mba.html","label":"MBA scoring"},{"source":"business.html","target":"masters.html","label":"MiF / MiM scoring"},{"source":"it.html","target":"computing.html","label":"CS & AI scoring"},{"source":"programmes.html","target":"business.html","label":"Calculate admission"},{"source":"programmes.html","target":"it.html","label":"Calculate admission"},{"source":"careers/index.html","target":"careers/compass.html","label":"Take assessment"},{"source":"careers/index.html","target":"careers/compare.html","label":"Compare options"},{"source":"careers/index.html","target":"careers/italy-pay.html","label":"Compensation benchmark"},{"source":"careers/index.html","target":"careers/sources.html","label":"Evidence base"},{"source":"careers/compass.html","target":"careers/compare.html","label":"Compare matches"},{"source":"careers/compare.html","target":"careers/italy-pay.html","label":"Deep dive pay"},{"source":"jobs.html","target":"hiring.html","label":"Country policies"},{"source":"jobs.html","target":"careers/recruiting-calendar.html","label":"Recruitment cycles"},{"source":"jobs.html","target":"careers/toolkit.html","label":"CV & outreach"},{"source":"jobs.html","target":"careers/interview-prep.html","label":"Case & technical prep"},{"source":"careers/recruiting-calendar.html","target":"careers/toolkit.html","label":"Prepare docs"},{"source":"careers/toolkit.html","target":"careers/interview-prep.html","label":"Next: interviews"},{"source":"mba.html","target":"map.html","label":"Global MBA hubs"},{"source":"mba.html","target":"careers/index.html","label":"Post-MBA careers"},{"source":"masters.html","target":"careers/index.html","label":"Target finance / consulting"},{"source":"computing.html","target":"careers/index.html","label":"Tech & ML career paths"},{"source":"computing.html","target":"map.html","label":"European tech hubs"},{"source":"careers/compass.html","target":"jobs.html","label":"Apply to recommended roles"},{"source":"hiring.html","target":"map.html","label":"Country visa & salary data"},{"source":"method.html","target":"study.html","label":"Calibrate scoring models"},{"source":"method.html","target":"map.html","label":"Salary purchasing parity"},{"source":"method.html","target":"careers/sources.html","label":"Data verification"},{"source":"careers/index.html","target":"careers/fields/accounting.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/artificial-intelligence.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/computer-science.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/cybersecurity.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/data-analytics.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/data-science.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/economics.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/finance.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/logistics-supply-chain.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/management-consulting.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/management.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/marketing.html","label":"Field profile"},{"source":"careers/index.html","target":"careers/fields/product-management-startups.html","label":"Field profile"},{"source":"mba.html","target":"careers/fields/management-consulting.html","label":"Consulting pipeline"},{"source":"mba.html","target":"careers/fields/finance.html","label":"Private equity / IB"},{"source":"masters.html","target":"careers/fields/finance.html","label":"Markets & M&A"},{"source":"masters.html","target":"careers/fields/management-consulting.html","label":"Strategy consulting"},{"source":"masters.html","target":"careers/fields/marketing.html","label":"Brand & growth"},{"source":"computing.html","target":"careers/fields/computer-science.html","label":"Software engineering"},{"source":"computing.html","target":"careers/fields/artificial-intelligence.html","label":"AI research & ML"},{"source":"computing.html","target":"careers/fields/data-science.html","label":"Data science"},{"source":"computing.html","target":"careers/fields/cybersecurity.html","label":"SecOps & Red teaming"},{"source":"careers/compass.html","target":"careers/fields/product-management-startups.html","label":"Tech PM match"},{"source":"careers/index.html","target":"careers/backgrounds/accounting.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/artificial-intelligence.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/computer-science.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/cybersecurity.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/data-analytics.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/data-science.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/economics.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/finance.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/logistics-and-supply-chain.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/management.html","label":"By study background"},{"source":"careers/index.html","target":"careers/backgrounds/marketing.html","label":"By study background"},{"source":"careers/backgrounds/computer-science.html","target":"computing.html","label":"Deepen with tech master"},{"source":"careers/backgrounds/finance.html","target":"masters.html","label":"Target MiF / MSc Finance"},{"source":"careers/backgrounds/economics.html","target":"masters.html","label":"Economics to MiM/MiF"},{"source":"careers/backgrounds/management.html","target":"mba.html","label":"Early-career to MBA"},{"source":"careers/backgrounds/data-science.html","target":"computing.html","label":"Advanced AI master"},{"source":"careers/fields/finance.html","target":"careers/roles/m-and-a-and-industry-coverage-banker.html","label":"Role guide"},{"source":"careers/fields/management-consulting.html","target":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","label":"Role guide"},{"source":"careers/fields/artificial-intelligence.html","target":"careers/roles/machine-learning-engineer.html","label":"Role guide"},{"source":"careers/fields/computer-science.html","target":"careers/roles/backend-software-engineer.html","label":"Role guide"},{"source":"careers/fields/finance.html","target":"careers/roles/quantitative-researcher-and-quantitative-trader.html","label":"Role guide"},{"source":"careers/fields/finance.html","target":"careers/roles/private-equity-associate-to-partner.html","label":"Role guide"},{"source":"careers/fields/marketing.html","target":"careers/roles/product-marketing-manager.html","label":"Role guide"},{"source":"careers/fields/product-management-startups.html","target":"careers/roles/associate-rotational-product-manager.html","label":"Role guide"},{"source":"careers/fields/data-science.html","target":"careers/roles/data-scientist-in-banking-and-insurance.html","label":"Role guide"},{"source":"careers/fields/computer-science.html","target":"careers/roles/cloud-engineer-cloud-solutions-architect.html","label":"Role guide"},{"source":"careers/fields/cybersecurity.html","target":"careers/roles/penetration-tester-red-teamer-offensive-security.html","label":"Role guide"},{"source":"careers/fields/economics.html","target":"careers/roles/economic-consultant.html","label":"Role guide"},{"source":"careers/fields/accounting.html","target":"careers/roles/financial-accountant-financial-controller.html","label":"Role guide"},{"source":"careers/fields/logistics-supply-chain.html","target":"careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html","label":"Role guide"},{"source":"careers/fields/finance.html","target":"careers/roles/venture-capital-analyst-associate-to-partner.html","label":"Role guide"},{"source":"careers/fields/artificial-intelligence.html","target":"careers/roles/ai-research-scientist.html","label":"Role guide"},{"source":"careers/fields/computer-science.html","target":"careers/roles/devops-site-reliability-platform-engineer.html","label":"Role guide"},{"source":"careers/roles/m-and-a-and-industry-coverage-banker.html","target":"careers/recruiting-calendar.html","label":"Spring weeks & summer analyst timeline"},{"source":"careers/roles/strategy-consultant-analyst-associate-to-partner.html","target":"careers/interview-prep.html","label":"Case interview framework"},{"source":"careers/roles/machine-learning-engineer.html","target":"careers/interview-prep.html","label":"System design & coding"},{"source":"careers/roles/quantitative-researcher-and-quantitative-trader.html","target":"careers/interview-prep.html","label":"Maths & probability rounds"},{"source":"careers/roles/m-and-a-and-industry-coverage-banker.html","target":"careers/toolkit.html","label":"Investment banking CV format"}]};
+
+    // Pillar Colors
+    const GROUP_COLORS = {
+      core: { bg: '#334155', label: 'Entry & Home' },
+      study: { bg: '#b45309', label: 'Masters & Calcs' },
+      careers: { bg: '#4f46e5', label: 'Careers & Guidance' },
+      jobs: { bg: '#0d7680', label: 'Jobs & Applications' },
+      map: { bg: '#0284c7', label: 'Atlas (Map Intelligence)' },
+      method: { bg: '#990f3d', label: 'Method & Sources' },
+      fields: { bg: '#7c3aed', label: 'Career Fields' },
+      backgrounds: { bg: '#2563eb', label: 'Study Backgrounds' },
+      roles: { bg: '#db2777', label: 'Role Profiles' }
+    };
+
+    // Journeys
+    const JOURNEYS = {
+      'admissions': ['index.html', 'study.html', 'programmes.html', 'business.html', 'mba.html', 'masters.html', 'it.html', 'computing.html', 'map.html', 'method.html'],
+      'career-explorer': ['index.html', 'careers/index.html', 'careers/compass.html', 'careers/compare.html', 'careers/italy-pay.html', 'careers/fields/finance.html', 'careers/fields/management-consulting.html', 'careers/fields/artificial-intelligence.html'],
+      'mobility': ['index.html', 'map.html', 'hiring.html', 'careers/italy-pay.html', 'jobs.html', 'method.html'],
+      'job-hunter': ['index.html', 'jobs.html', 'hiring.html', 'careers/recruiting-calendar.html', 'careers/toolkit.html', 'careers/interview-prep.html', 'careers/compare.html']
+    };
+
+    // State
+    let currentScope = 'core';
+    let currentFilter = 'all';
+    let currentJourney = null;
+    let selectedNodeId = 'index.html';
+    let hoveredNodeId = null;
+
+    let nodes = [];
+    let links = [];
+
+    // Canvas & Physics
+    const canvas = document.getElementById('graph-canvas');
+    const ctx = canvas.getContext('2d');
+    const container = document.getElementById('canvas-container');
+
+    let width = container.clientWidth;
+    let height = container.clientHeight;
+    let dpr = window.devicePixelRatio || 1;
+
+    let panX = width / 2;
+    let panY = height / 2;
+    let zoom = 1.0;
+
+    let isDragging = false;
+    let dragStartX = 0, dragStartY = 0;
+    let draggedNode = null;
+
+    function initScope(scope) {
+      currentScope = scope;
+      let targetNodes = [];
+      let targetLinks = [];
+
+      if (scope === 'core') {
+        targetNodes = JSON.parse(JSON.stringify(GRAPH_DATA.coreNodes));
+        targetLinks = JSON.parse(JSON.stringify(GRAPH_DATA.coreLinks));
+      } else if (scope === 'ecosystem') {
+        targetNodes = JSON.parse(JSON.stringify([...GRAPH_DATA.coreNodes, ...GRAPH_DATA.fieldNodes, ...GRAPH_DATA.bgNodes]));
+        const validIds = new Set(targetNodes.map(n => n.id));
+        targetLinks = JSON.parse(JSON.stringify(GRAPH_DATA.allLinks.filter(l => validIds.has(l.source) && validIds.has(l.target))));
+      } else {
+        targetNodes = JSON.parse(JSON.stringify(GRAPH_DATA.allNodes));
+        targetLinks = JSON.parse(JSON.stringify(GRAPH_DATA.allLinks));
+      }
+
+      // Initialize coordinates in radial or tree-like clusters
+      const angleStep = (2 * Math.PI) / targetNodes.length;
+      targetNodes.forEach((n, i) => {
+        const radius = n.level === 1 ? 0 : (n.level === 2 ? 160 : (n.level === 3 ? 290 : 420));
+        const theta = i * angleStep;
+        n.x = Math.cos(theta) * radius + (Math.random() - 0.5) * 40;
+        n.y = Math.sin(theta) * radius + (Math.random() - 0.5) * 40;
+        n.vx = 0;
+        n.vy = 0;
+      });
+
+      nodes = targetNodes;
+      links = targetLinks;
+      updateInspector(selectedNodeId);
+    }
+
+    // Resize handling
+    function resizeCanvas() {
+      width = container.clientWidth;
+      height = container.clientHeight;
+      dpr = window.devicePixelRatio || 1;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      draw();
+    });
+    resizeCanvas();
+
+    // Physics Simulation step
+    function stepSimulation() {
+      const repulsion = currentScope === 'core' ? 3200 : 2000;
+      const springLength = currentScope === 'core' ? 120 : 90;
+      const springStiffness = 0.04;
+      const centerGravity = 0.008;
+
+      // 1. Repulsion between all pairs
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          let dx = b.x - a.x;
+          let dy = b.y - a.y;
+          let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          if (dist < 600) {
+            let force = repulsion / (dist * dist);
+            let fx = (dx / dist) * force;
+            let fy = (dy / dist) * force;
+            a.vx -= fx;
+            a.vy -= fy;
+            b.vx += fx;
+            b.vy += fy;
+          }
+        }
+      }
+
+      // 2. Spring attraction along links
+      const nodeMap = new Map(nodes.map(n => [n.id, n]));
+      for (const l of links) {
+        const source = nodeMap.get(l.source);
+        const target = nodeMap.get(l.target);
+        if (!source || !target) continue;
+
+        let dx = target.x - source.x;
+        let dy = target.y - source.y;
+        let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        let diff = dist - springLength;
+        let fx = (dx / dist) * diff * springStiffness;
+        let fy = (dy / dist) * diff * springStiffness;
+
+        source.vx += fx;
+        source.vy += fy;
+        target.vx -= fx;
+        target.vy -= fy;
+      }
+
+      // 3. Center gravity and update position
+      for (const n of nodes) {
+        if (n === draggedNode) continue;
+        n.vx -= n.x * centerGravity;
+        n.vy -= n.y * centerGravity;
+
+        n.vx *= 0.84; // friction
+        n.vy *= 0.84;
+
+        n.x += n.vx;
+        n.y += n.vy;
+      }
+    }
+
+    // Render loop
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.save();
+      ctx.translate(panX, panY);
+      ctx.scale(zoom, zoom);
+
+      const nodeMap = new Map(nodes.map(n => [n.id, n]));
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+
+      // Determine active highlight set
+      let highlightedNodes = new Set();
+      let highlightedLinks = new Set();
+
+      if (currentJourney && JOURNEYS[currentJourney]) {
+        JOURNEYS[currentJourney].forEach(id => highlightedNodes.add(id));
+      } else if (selectedNodeId) {
+        highlightedNodes.add(selectedNodeId);
+        links.forEach((l, idx) => {
+          if (l.source === selectedNodeId || l.target === selectedNodeId) {
+            highlightedNodes.add(l.source);
+            highlightedNodes.add(l.target);
+            highlightedLinks.add(idx);
+          }
+        });
+      }
+
+      // Draw Links
+      links.forEach((l, idx) => {
+        const source = nodeMap.get(l.source);
+        const target = nodeMap.get(l.target);
+        if (!source || !target) return;
+
+        // Filter check
+        if (currentFilter !== 'all' && source.group !== currentFilter && target.group !== currentFilter) {
+          return;
+        }
+
+        const isHighlighted = highlightedLinks.has(idx) || (currentJourney && highlightedNodes.has(l.source) && highlightedNodes.has(l.target));
+        const isDimmed = (selectedNodeId || currentJourney) && !isHighlighted;
+
+        ctx.beginPath();
+        ctx.moveTo(source.x, source.y);
+
+        // Curved link
+        const midX = (source.x + target.x) / 2 + (target.y - source.y) * 0.12;
+        const midY = (source.y + target.y) / 2 - (target.x - source.x) * 0.12;
+        ctx.quadraticCurveTo(midX, midY, target.x, target.y);
+
+        if (isHighlighted) {
+          ctx.strokeStyle = isDark ? '#22a3af' : '#0d7680';
+          ctx.lineWidth = 2.4;
+          ctx.globalAlpha = 0.95;
+        } else if (isDimmed) {
+          ctx.strokeStyle = isDark ? '#3a3a4c' : '#e6d9ce';
+          ctx.lineWidth = 1;
+          ctx.globalAlpha = 0.25;
+        } else {
+          ctx.strokeStyle = isDark ? '#444458' : '#cdbcae';
+          ctx.lineWidth = 1.3;
+          ctx.globalAlpha = 0.6;
+        }
+        ctx.stroke();
+
+        // Arrow head
+        const arrowDist = target.size + 4;
+        const dx = target.x - midX;
+        const dy = target.y - midY;
+        const angle = Math.atan2(dy, dx);
+        const arrowX = target.x - Math.cos(angle) * arrowDist;
+        const arrowY = target.y - Math.sin(angle) * arrowDist;
+
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.beginPath();
+        ctx.moveTo(arrowX, arrowY);
+        ctx.lineTo(arrowX - 7 * Math.cos(angle - Math.PI / 6), arrowY - 7 * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(arrowX - 7 * Math.cos(angle + Math.PI / 6), arrowY - 7 * Math.sin(angle + Math.PI / 6));
+        ctx.closePath();
+        ctx.fill();
+
+        // Draw link label when highlighted
+        if (isHighlighted && l.label && zoom > 0.75) {
+          ctx.font = '10px Hanken Grotesk, sans-serif';
+          ctx.fillStyle = isDark ? '#edecec' : '#262422';
+          ctx.globalAlpha = 0.85;
+          ctx.fillText(l.label, midX, midY - 4);
+        }
+      });
+
+      // Draw Nodes
+      nodes.forEach(n => {
+        if (currentFilter !== 'all' && n.group !== currentFilter) return;
+
+        const isSelected = n.id === selectedNodeId;
+        const isHovered = n.id === hoveredNodeId;
+        const isConnected = highlightedNodes.has(n.id);
+        const isDimmed = (selectedNodeId || currentJourney) && !isConnected;
+
+        const groupColor = GROUP_COLORS[n.group]?.bg || '#555';
+
+        ctx.save();
+        ctx.translate(n.x, n.y);
+
+        // Halo / selection ring
+        if (isSelected || isHovered) {
+          ctx.beginPath();
+          ctx.arc(0, 0, n.size + 7, 0, Math.PI * 2);
+          ctx.fillStyle = isDark ? 'rgba(34, 163, 175, 0.3)' : 'rgba(13, 118, 128, 0.2)';
+          ctx.fill();
+        }
+
+        // Node Circle
+        ctx.beginPath();
+        ctx.arc(0, 0, n.size, 0, Math.PI * 2);
+        ctx.fillStyle = isDimmed ? (isDark ? '#2a2a38' : '#e0d3c6') : groupColor;
+        ctx.globalAlpha = isDimmed ? 0.3 : 1.0;
+        ctx.fill();
+
+        ctx.lineWidth = isSelected ? 3 : 1.5;
+        ctx.strokeStyle = isSelected ? '#ffffff' : (isDark ? '#111116' : '#ffffff');
+        ctx.stroke();
+
+        // Node Label
+        ctx.globalAlpha = isDimmed ? 0.35 : 1.0;
+        ctx.font = `${n.level <= 2 ? 'bold 12px' : '11px'} "Hanken Grotesk", sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+
+        const labelY = n.size + 4;
+        const text = n.label;
+        const textWidth = ctx.measureText(text).width;
+
+        // Label pill background for readability
+        ctx.fillStyle = isDark ? 'rgba(24, 24, 34, 0.85)' : 'rgba(255, 247, 239, 0.9)';
+        ctx.fillRect(-textWidth / 2 - 4, labelY - 1, textWidth + 8, 14);
+
+        ctx.fillStyle = isDark ? '#edecec' : '#262422';
+        ctx.fillText(text, 0, labelY);
+
+        ctx.restore();
+      });
+
+      ctx.restore();
+    }
+
+    function animate() {
+      stepSimulation();
+      draw();
+      requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+
+    // Inspector Update
+    function updateInspector(nodeId) {
+      selectedNodeId = nodeId;
+      const node = nodes.find(n => n.id === nodeId) || GRAPH_DATA.allNodes.find(n => n.id === nodeId);
+      const inspectorContent = document.getElementById('inspector-content');
+
+      if (!node) {
+        inspectorContent.innerHTML = `<div class="empty-state">Select a page on the graph to inspect details.</div>`;
+        return;
+      }
+
+      const groupInfo = GROUP_COLORS[node.group] || { bg: '#666', label: node.group };
+      const outgoing = links.filter(l => l.source === node.id);
+      const incoming = links.filter(l => l.target === node.id);
+
+      const nodeMap = new Map(GRAPH_DATA.allNodes.map(n => [n.id, n]));
+
+      let html = `
+        <div class="panel-header">
+          <span class="panel-group-badge" style="background:${groupInfo.bg}">${groupInfo.label}</span>
+          <h3 class="panel-title">${node.title || node.label}</h3>
+          <div class="panel-path">${node.path}</div>
+        </div>
+        <div class="panel-body">
+          <p class="panel-desc">${node.desc || 'No summary available.'}</p>
+          <a href="${node.path}" class="open-page-btn" target="_blank">Open Page in Browser ↗</a>
+
+          <div class="connections-block">
+            <h4>Can navigate to (${outgoing.length})</h4>
+            <div class="link-chips">
+              ${outgoing.length ? outgoing.map(l => {
+                const targetNode = nodeMap.get(l.target);
+                return `
+                  <button class="link-chip" onclick="focusNode('${l.target}')">
+                    <span class="chip-label">${targetNode ? targetNode.label : l.target}</span>
+                    <span class="chip-rel">${l.label || 'Direct link'}</span>
+                  </button>
+                `;
+              }).join('') : '<div style="font-size:12px;color:var(--muted)">Terminal node (or expands in full view).</div>'}
+            </div>
+          </div>
+
+          <div class="connections-block">
+            <h4>Accessible from (${incoming.length})</h4>
+            <div class="link-chips">
+              ${incoming.length ? incoming.map(l => {
+                const sourceNode = nodeMap.get(l.source);
+                return `
+                  <button class="link-chip" onclick="focusNode('${l.source}')">
+                    <span class="chip-label">${sourceNode ? sourceNode.label : l.source}</span>
+                    <span class="chip-rel">${l.label || 'Direct link'}</span>
+                  </button>
+                `;
+              }).join('') : '<div style="font-size:12px;color:var(--muted)">Direct entry point from top navigation.</div>'}
+            </div>
+          </div>
+        </div>
+      `;
+
+      inspectorContent.innerHTML = html;
+      document.getElementById('inspector').classList.add('open');
+    }
+
+    window.focusNode = function(nodeId) {
+      selectedNodeId = nodeId;
+      const node = nodes.find(n => n.id === nodeId);
+      if (node) {
+        panX = width / 2 - node.x * zoom;
+        panY = height / 2 - node.y * zoom;
+      }
+      updateInspector(nodeId);
+    };
+
+    // Mouse / Touch Interactivity
+    function getNodeAt(x, y) {
+      const graphX = (x - panX) / zoom;
+      const graphY = (y - panY) / zoom;
+      for (let i = nodes.length - 1; i >= 0; i--) {
+        const n = nodes[i];
+        if (currentFilter !== 'all' && n.group !== currentFilter) continue;
+        const dx = graphX - n.x;
+        const dy = graphY - n.y;
+        if (dx * dx + dy * dy <= (n.size + 4) * (n.size + 4)) {
+          return n;
+        }
+      }
+      return null;
+    }
+
+    container.addEventListener('mousedown', e => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const hit = getNodeAt(x, y);
+
+      if (hit) {
+        draggedNode = hit;
+        dragStartX = x;
+        dragStartY = y;
+        selectedNodeId = hit.id;
+        updateInspector(hit.id);
+      } else {
+        isDragging = true;
+        dragStartX = x - panX;
+        dragStartY = y - panY;
+      }
+    });
+
+    container.addEventListener('mousemove', e => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      if (draggedNode) {
+        draggedNode.x = (x - panX) / zoom;
+        draggedNode.y = (y - panY) / zoom;
+        draggedNode.vx = 0;
+        draggedNode.vy = 0;
+      } else if (isDragging) {
+        panX = x - dragStartX;
+        panY = y - dragStartY;
+      } else {
+        const hit = getNodeAt(x, y);
+        hoveredNodeId = hit ? hit.id : null;
+        container.style.cursor = hit ? 'pointer' : 'grab';
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+      draggedNode = null;
+    });
+
+    container.addEventListener('wheel', e => {
+      e.preventDefault();
+      const rect = container.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const factor = e.deltaY < 0 ? 1.12 : 0.89;
+      const newZoom = Math.min(Math.max(zoom * factor, 0.3), 3.0);
+
+      panX = mouseX - (mouseX - panX) * (newZoom / zoom);
+      panY = mouseY - (mouseY - panY) * (newZoom / zoom);
+      zoom = newZoom;
+    }, { passive: false });
+
+    // Scope Buttons
+    document.querySelectorAll('.scope-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.scope-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        initScope(btn.getAttribute('data-scope'));
+      });
+    });
+
+    // Pillar Filter Buttons
+    document.querySelectorAll('.pill-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        currentJourney = null;
+        document.querySelectorAll('.journey-btn').forEach(j => j.classList.remove('active'));
+      });
+    });
+
+    // Guided Journeys Buttons
+    document.querySelectorAll('.journey-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.journey-btn').forEach(b => b.classList.remove('active'));
+        const j = btn.getAttribute('data-journey');
+        if (j === 'all') {
+          currentJourney = null;
+        } else {
+          btn.classList.add('active');
+          currentJourney = j;
+        }
+      });
+    });
+
+    // Search Bar
+    const searchInput = document.getElementById('node-search');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      if (!q) { searchResults.style.display = 'none'; return; }
+
+      const matches = GRAPH_DATA.allNodes.filter(n =>
+        n.label.toLowerCase().includes(q) || n.title.toLowerCase().includes(q) || n.id.toLowerCase().includes(q)
+      ).slice(0, 10);
+
+      if (!matches.length) {
+        searchResults.style.display = 'none';
+        return;
+      }
+
+      searchResults.innerHTML = matches.map(m => `
+        <div class="search-result-item" onclick="selectSearchResult('${m.id}')">
+          <span style="font-weight:600">${m.label}</span>
+          <span style="font-size:10px;color:var(--muted)">${m.group}</span>
+        </div>
+      `).join('');
+      searchResults.style.display = 'block';
+    });
+
+    window.selectSearchResult = function(nodeId) {
+      searchResults.style.display = 'none';
+      searchInput.value = '';
+
+      // If node is not in current scope, switch scope to full
+      if (!nodes.find(n => n.id === nodeId)) {
+        document.querySelectorAll('.scope-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.scope-btn[data-scope="full"]').classList.add('active');
+        initScope('full');
+      }
+
+      focusNode(nodeId);
+    };
+
+    document.addEventListener('click', e => {
+      if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+        searchResults.style.display = 'none';
+      }
+    });
+
+    // Zoom Buttons
+    document.getElementById('zoom-in').onclick = () => { zoom = Math.min(zoom * 1.25, 3.0); };
+    document.getElementById('zoom-out').onclick = () => { zoom = Math.max(zoom * 0.8, 0.3); };
+    document.getElementById('zoom-fit').onclick = () => {
+      zoom = 1.0;
+      panX = width / 2;
+      panY = height / 2;
+    };
+
+    // Theme Toggle
+    document.getElementById('theme-btn').onclick = () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    };
+
+    // Start
+    initScope('core');
+  </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+[
+ {
+  "id": "atlas-il.0010",
+  "chunk": "atlas-il-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-is.0013",
+  "chunk": "atlas-is-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-jp.0034",
+  "chunk": "atlas-jp-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-kr.0023",
+  "chunk": "atlas-kr-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-kw.0007",
+  "chunk": "atlas-kw-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-om.0007",
+  "chunk": "atlas-om-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-qa.0008",
+  "chunk": "atlas-qa-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-ru.0011",
+  "chunk": "atlas-ru-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-sa.0008",
+  "chunk": "atlas-sa-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-tr.0010",
+  "chunk": "atlas-tr-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-tw.0028",
+  "chunk": "atlas-tw-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-us.0013",
+  "chunk": "atlas-us-01",
+  "fix": "\"Country brief\" must be \"Resumen del país\" (not Ficha/Informe), and \"standing\" must be \"relevancia\" with nothing added (no general/internacional/su)."
+ },
+ {
+  "id": "atlas-is.0017",
+  "chunk": "atlas-is-01",
+  "fix": "\"standing\" (how strongly a hub is rated in a field) is \"relevancia\" (\"standing steps\" = niveles de relevancia), not posición/valoraciones/consideración."
+ },
+ {
+  "id": "atlas-pl.0044",
+  "chunk": "atlas-pl-01",
+  "fix": "\"standing\" (how strongly a hub is rated in a field) is \"relevancia\" (\"standing steps\" = niveles de relevancia), not posición/valoraciones/consideración."
+ },
+ {
+  "id": "atlas-nz.0030",
+  "chunk": "atlas-nz-01",
+  "fix": "\"standing\" (how strongly a hub is rated in a field) is \"relevancia\" (\"standing steps\" = niveles de relevancia), not posición/valoraciones/consideración."
+ },
+ {
+  "id": "atlas-ie.0066",
+  "chunk": "atlas-ie-01",
+  "fix": "\"target schools/universities\" is \"universidades objetivo\", not prioritarias/preferentes."
+ },
+ {
+  "id": "atlas-ie.0094",
+  "chunk": "atlas-ie-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-kw.0063",
+  "chunk": "atlas-kw-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-mt.0083",
+  "chunk": "atlas-mt-02",
+  "fix": "\"salary expectation(s)\" asked of a candidate is \"pretensiones salariales\" (plural, also where the English is singular), not expectativa(s) salarial(es) / una pretensión salarial."
+ },
+ {
+  "id": "atlas-kr.0086",
+  "chunk": "atlas-kr-02",
+  "fix": "\"raised at offer\" means the subject is brought up at the offer stage: \"se plantea en la fase de oferta\" (not \"puede subir\"); \"salary expectation\" is \"pretensiones salariales\"."
+ },
+ {
+  "id": "atlas-no.0083",
+  "chunk": "atlas-no-02",
+  "fix": "\"the large graduate programmes read\": \"graduate\" was dropped; write \"los grandes programas para recién titulados que hemos consultado\" (keep the rest)."
+ },
+ {
+  "id": "atlas-ie.0078",
+  "chunk": "atlas-ie-02",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-nl.0123",
+  "chunk": "atlas-nl-02",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-nz.0056",
+  "chunk": "atlas-nz-01",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-nz.0075",
+  "chunk": "atlas-nz-02",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-sa.0019",
+  "chunk": "atlas-sa-01",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-sg.0107",
+  "chunk": "atlas-sg-02",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-vn.0067",
+  "chunk": "atlas-vn-02",
+  "fix": "\"graduate programme(s)\" is \"programa(s) para recién titulados\" (not \"para titulados\" / \"de recién titulados\")."
+ },
+ {
+  "id": "atlas-nl.0016",
+  "chunk": "atlas-nl-01",
+  "fix": "statistical sources keep their English name: \"Statistics Netherlands (CBS)\", not a translated office name."
+ },
+ {
+  "id": "atlas-se.0003",
+  "chunk": "atlas-se-01",
+  "fix": "statistical sources keep their English name: \"Statistics Sweden\", not \"la Oficina de Estadística de Suecia\"."
+ },
+ {
+  "id": "atlas-se.0004",
+  "chunk": "atlas-se-01",
+  "fix": "statistical sources keep their English name: \"Statistics Sweden\", not \"la Oficina de Estadística de Suecia\"."
+ },
+ {
+  "id": "atlas-my.0106",
+  "chunk": "atlas-my-02",
+  "fix": "a generic Malaysian \"pass\" is \"pase\" (as in the rest of the Malaysia, Singapore and Hong Kong guides), not \"permiso\"; adjust agreement."
+ },
+ {
+  "id": "atlas-my.0110",
+  "chunk": "atlas-my-02",
+  "fix": "a generic Malaysian \"pass\" is \"pase\" (as in the rest of the Malaysia, Singapore and Hong Kong guides), not \"permiso\"; adjust agreement."
+ },
+ {
+  "id": "atlas-my.0111",
+  "chunk": "atlas-my-02",
+  "fix": "a generic Malaysian \"pass\" is \"pase\" (as in the rest of the Malaysia, Singapore and Hong Kong guides), not \"permiso\"; adjust agreement."
+ },
+ {
+  "id": "atlas-us.0283",
+  "chunk": "atlas-us-05",
+  "fix": "\"country of citizenship\" is \"país de nacionalidad\"."
+ },
+ {
+  "id": "atlas-vn.0123",
+  "chunk": "atlas-vn-03",
+  "fix": "\"machine-readable zone/line\" of a passport is \"zona de lectura mecánica\"."
+ },
+ {
+  "id": "atlas-vn.0131",
+  "chunk": "atlas-vn-03",
+  "fix": "\"machine-readable zone/line\" of a passport is \"zona de lectura mecánica\"."
+ },
+ {
+  "id": "atlas-tw.0088",
+  "chunk": "atlas-tw-02",
+  "fix": "use the generic masculine: \"Un empleado extranjero\", not \"Una persona empleada extranjera\"."
+ },
+ {
+  "id": "atlas-nl.0124",
+  "chunk": "atlas-nl-02",
+  "fix": "the agency takes the masculine everywhere else in the Netherlands guide: \"el IND\" (del IND, al IND), not \"la IND\"."
+ }
+]

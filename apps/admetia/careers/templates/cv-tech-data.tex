@@ -1,0 +1,69 @@
+% Software engineering and data: one-page CV
+% Admetia application toolkit (https://iaconoalessandro.github.io/admetia/careers/toolkit.html).
+% One column, no tables, graphics or text boxes, so applicant tracking
+% systems can read it. Compile with pdfLaTeX (Overleaf's default).
+% Replace every [bracketed] placeholder; delete lines you do not need.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+% Copyable, searchable text in the PDF (pdfLaTeX only).
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+\newcommand{\cvsection}[1]{\vspace{7pt}{\large\bfseries\MakeUppercase{#1}}\par\vspace{1pt}\hrule\vspace{3pt}}
+\newcommand{\cventry}[2]{\vspace{2pt}\textbf{#1}\hfill #2\par}
+\newcommand{\cvsub}[1]{\textit{#1}\par}
+\newcommand{\guide}[1]{{\itshape\color{gray}#1}\par}
+\begin{document}
+
+\begin{center}{\LARGE\bfseries [FIRST NAME LAST NAME]}\\[3pt]
+[City, Country] \textperiodcentered{} [+39 333 000 0000] \textperiodcentered{} [name.surname@email.com] \textperiodcentered{} [github.com/yourname] \textperiodcentered{} [linkedin.com/in/yourname]
+\end{center}
+\cvsection{Education}
+\cventry{[University name], [City]}{[Sep 2025 -- Jul 2027 (expected)]}
+\cvsub{[MSc in Computer Science / Data Science]}
+\begin{itemize}
+  \item Grade: [average and scale]; modules: [Algorithms, Machine Learning, Distributed Systems, Databases]
+\end{itemize}
+\cventry{[University name], [City]}{[Sep 2022 -- Jul 2025]}
+\cvsub{[BSc in Computer Engineering]}
+\begin{itemize}
+  \item Final grade: [110/110]; thesis: [title, one line on what you built or found]
+\end{itemize}
+\cvsection{Technical skills}
+\textbf{Languages:} [Python, Java, C++, SQL, TypeScript]\par
+\textbf{Frameworks and libraries:} [PyTorch, scikit-learn, pandas, React, Spring]\par
+\textbf{Tools and platforms:} [Git, Docker, Kubernetes, AWS (EC2, S3, Lambda), PostgreSQL, Linux]\par
+\cvsection{Projects}
+\cventry{[Project name] \textperiodcentered{} [github.com/yourname/project]}{[2026]}
+\begin{itemize}
+  \item {}[Built a [what] in [stack] that [does what]; [n] users / [x]\% faster than [baseline] / [n] stars]
+  \item {}[Designed [component]; handled [n] requests per second with [latency] at p95]
+\end{itemize}
+\cventry{[Project name] \textperiodcentered{} [github.com/yourname/project]}{[2025]}
+\begin{itemize}
+  \item {}[Trained a [model] on [dataset, size]; [metric] of [x] against a [y] baseline]
+\end{itemize}
+\cvsection{Experience}
+\cventry{[Company name], [City]}{[Jun 2026 -- Sep 2026]}
+\cvsub{[Software Engineering Intern, [team]]}
+\begin{itemize}
+  \item {}[Shipped [feature] to production in [stack]; used by [n] customers / reduced [metric] by [x]\%]
+  \item {}[Wrote [n] tests and a CI check that cut failed deployments from [x] to [y] a month]
+\end{itemize}
+\cvsection{Hackathons, competitions and awards}
+\begin{itemize}
+  \item {}[Hackathon name, year]: [place] of [n] teams for [what you built]
+  \item {}[Kaggle / ICPC / Olympiad]: [result, with the size of the field]
+\end{itemize}
+\cvsection{Languages}
+[Italian (native), English (C1), [other]]\par
+\end{document}

@@ -1,0 +1,1728 @@
+{
+ "ref": "main",
+ "generated": "node tools/ux-ledger.js --write",
+ "counts": {
+  "baselinePages": 167,
+  "blocks": 30287,
+  "movedToAnotherPage": 249,
+  "missingBlocks": 0,
+  "scriptStrings": 3567,
+  "missingStrings": 0,
+  "missingLinks": 0,
+  "dataChanged": 0,
+  "dataRemoved": 0,
+  "pagesNow": 170
+ },
+ "pages": [
+  {
+   "file": "404.html",
+   "blocks": 19,
+   "same": 16,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "business.html",
+   "blocks": 32,
+   "same": 32,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "careers/backgrounds/accounting.html",
+   "blocks": 268,
+   "same": 266,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/artificial-intelligence.html",
+   "blocks": 267,
+   "same": 265,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/computer-science.html",
+   "blocks": 270,
+   "same": 268,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/cybersecurity.html",
+   "blocks": 263,
+   "same": 261,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/data-analytics.html",
+   "blocks": 272,
+   "same": 270,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/data-science.html",
+   "blocks": 272,
+   "same": 270,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/economics.html",
+   "blocks": 272,
+   "same": 270,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/finance.html",
+   "blocks": 269,
+   "same": 267,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/logistics-and-supply-chain.html",
+   "blocks": 272,
+   "same": 270,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/management.html",
+   "blocks": 269,
+   "same": 267,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/backgrounds/marketing.html",
+   "blocks": 260,
+   "same": 257,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/compare.html",
+   "blocks": 591,
+   "same": 589,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/compass.html",
+   "blocks": 39,
+   "same": 36,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/accounting.html",
+   "blocks": 395,
+   "same": 392,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/artificial-intelligence.html",
+   "blocks": 791,
+   "same": 788,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/computer-science.html",
+   "blocks": 840,
+   "same": 837,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/cybersecurity.html",
+   "blocks": 431,
+   "same": 428,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/data-analytics.html",
+   "blocks": 339,
+   "same": 336,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/data-science.html",
+   "blocks": 383,
+   "same": 380,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/economics.html",
+   "blocks": 349,
+   "same": 346,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/finance.html",
+   "blocks": 1629,
+   "same": 1626,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/logistics-supply-chain.html",
+   "blocks": 390,
+   "same": 387,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/management-consulting.html",
+   "blocks": 360,
+   "same": 357,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/management.html",
+   "blocks": 407,
+   "same": 404,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/marketing.html",
+   "blocks": 406,
+   "same": 403,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/fields/product-management-startups.html",
+   "blocks": 344,
+   "same": 341,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "index.html": 1
+   }
+  },
+  {
+   "file": "careers/index.html",
+   "blocks": 111,
+   "same": 110,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "careers/interview-prep.html",
+   "blocks": 762,
+   "same": 760,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/italy-pay.html",
+   "blocks": 1092,
+   "same": 1089,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/recruiting-calendar.html",
+   "blocks": 409,
+   "same": 407,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/academic-economist-and-pre-doctoral-research-assistant.html",
+   "blocks": 106,
+   "same": 104,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/agency-roles.html",
+   "blocks": 111,
+   "same": 109,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-data-specialist-ai-trainer-annotation-and-human.html",
+   "blocks": 118,
+   "same": 115,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-engineer-llm-application-engineer.html",
+   "blocks": 119,
+   "same": 116,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-governance-policy-and-responsible-ai-specialist.html",
+   "blocks": 132,
+   "same": 129,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-product-manager.html",
+   "blocks": 127,
+   "same": 124,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-research-scientist.html",
+   "blocks": 118,
+   "same": 115,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ai-safety-alignment-interpretability-and-evaluations-red-teaming.html",
+   "blocks": 128,
+   "same": 125,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/analytics-consultant.html",
+   "blocks": 101,
+   "same": 99,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/analytics-engineer.html",
+   "blocks": 116,
+   "same": 114,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/application-security-product-security-engineer.html",
+   "blocks": 124,
+   "same": 122,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/applied-scientist-research-data-scientist.html",
+   "blocks": 117,
+   "same": 115,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/asset-management-client-and-distribution-roles.html",
+   "blocks": 115,
+   "same": 113,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/asset-management-investment-roles-long-only.html",
+   "blocks": 132,
+   "same": 129,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/associate-rotational-product-manager.html",
+   "blocks": 110,
+   "same": 108,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/backend-software-engineer.html",
+   "blocks": 141,
+   "same": 138,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/bank-quant-strats-desk-quant-pricing-and-xva.html",
+   "blocks": 131,
+   "same": 128,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/bi-developer-bi-analyst.html",
+   "blocks": 123,
+   "same": 121,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/brand-manager.html",
+   "blocks": 138,
+   "same": 136,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/buyer-procurement-specialist-category-manager.html",
+   "blocks": 126,
+   "same": 124,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/central-bank-economist.html",
+   "blocks": 117,
+   "same": 115,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+   "blocks": 107,
+   "same": 104,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/compliance-and-financial-crime.html",
+   "blocks": 135,
+   "same": 132,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/computer-science-researcher.html",
+   "blocks": 135,
+   "same": 132,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/computer-vision-robotics-edge-ai-engineer.html",
+   "blocks": 116,
+   "same": 113,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/content-social-and-community-marketer.html",
+   "blocks": 123,
+   "same": 121,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/corporate-and-transaction-banking.html",
+   "blocks": 141,
+   "same": 138,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/corporate-development.html",
+   "blocks": 140,
+   "same": 137,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/corporate-strategy-and-business-development.html",
+   "blocks": 122,
+   "same": 120,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/corporate-treasury-analyst.html",
+   "blocks": 135,
+   "same": 132,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/crm-lifecycle-marketing-specialist.html",
+   "blocks": 131,
+   "same": 129,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/data-analyst-business-analyst.html",
+   "blocks": 126,
+   "same": 124,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/data-engineer.html",
+   "blocks": 137,
+   "same": 134,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/data-governance-data-quality-and-data-steward-roles.html",
+   "blocks": 100,
+   "same": 98,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/data-science-consultant.html",
+   "blocks": 107,
+   "same": 105,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/data-scientist-in-banking-and-insurance.html",
+   "blocks": 124,
+   "same": 122,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/debt-capital-markets-and-leveraged-finance.html",
+   "blocks": 122,
+   "same": 119,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/decision-scientist-operations-research-analyst.html",
+   "blocks": 119,
+   "same": 117,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/demand-supply-planner-and-s-and-op-analyst.html",
+   "blocks": 140,
+   "same": 138,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/devops-site-reliability-platform-engineer.html",
+   "blocks": 130,
+   "same": 127,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/digital-performance-marketing-specialist.html",
+   "blocks": 136,
+   "same": 134,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/discretionary-trader-pm-at-a-hedge-fund-or.html",
+   "blocks": 120,
+   "same": 117,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/economic-consultant.html",
+   "blocks": 107,
+   "same": 105,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/economist-at-an-international-organisation.html",
+   "blocks": 107,
+   "same": 105,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/embedded-firmware-systems-engineer.html",
+   "blocks": 103,
+   "same": 100,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/enterprise-applications-consultant-and-it-systems-administrator-support.html",
+   "blocks": 144,
+   "same": 141,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/equity-capital-markets.html",
+   "blocks": 124,
+   "same": 121,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/external-auditor.html",
+   "blocks": 139,
+   "same": 137,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/financial-accountant-financial-controller.html",
+   "blocks": 135,
+   "same": 133,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/fintech-business-roles.html",
+   "blocks": 132,
+   "same": 129,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/forensic-accountant.html",
+   "blocks": 111,
+   "same": 109,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/forward-deployed-engineer-ai-solutions-engineer-ai-consultant.html",
+   "blocks": 125,
+   "same": 122,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/founder-entrepreneur.html",
+   "blocks": 112,
+   "same": 110,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/fp-and-a-corporate-finance-analyst.html",
+   "blocks": 122,
+   "same": 119,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/frontend-engineer.html",
+   "blocks": 134,
+   "same": 132,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/full-stack-engineer.html",
+   "blocks": 140,
+   "same": 138,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/game-developer.html",
+   "blocks": 115,
+   "same": 113,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/government-economist-official-statistician.html",
+   "blocks": 112,
+   "same": 110,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/grc-analyst-security-auditor-privacy-specialist.html",
+   "blocks": 128,
+   "same": 126,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/hedge-fund-analyst-portfolio-manager.html",
+   "blocks": 150,
+   "same": 147,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/hr-people-professional.html",
+   "blocks": 162,
+   "same": 160,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/incident-responder-digital-forensics.html",
+   "blocks": 124,
+   "same": 122,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/index.html",
+   "blocks": 179,
+   "same": 177,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/institutional-salesperson.html",
+   "blocks": 141,
+   "same": 138,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/internal-auditor.html",
+   "blocks": 129,
+   "same": 127,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/internal-strategy-corporate-transformation-in-house-consulting.html",
+   "blocks": 127,
+   "same": 125,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/investment-professional-at-an-institutional-allocator.html",
+   "blocks": 133,
+   "same": 130,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/logistics-and-transport-coordinator-manager.html",
+   "blocks": 157,
+   "same": 155,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+   "blocks": 146,
+   "same": 143,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/machine-learning-engineer.html",
+   "blocks": 128,
+   "same": 125,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/machine-learning-modeling-data-scientist.html",
+   "blocks": 134,
+   "same": 132,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/management-accountant-controller.html",
+   "blocks": 118,
+   "same": 116,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/management-operations-transformation-consultant-at-big-4-accenture.html",
+   "blocks": 133,
+   "same": 131,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/management-trainee-graduate-leadership-programme-to-general-manager.html",
+   "blocks": 150,
+   "same": 148,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/market-research-consumer-insights-analyst.html",
+   "blocks": 106,
+   "same": 104,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/marketing-digital-and-product-analyst.html",
+   "blocks": 122,
+   "same": 120,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/mlops-ml-platform-ai-infrastructure-engineer.html",
+   "blocks": 123,
+   "same": 120,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/mobile-engineer.html",
+   "blocks": 133,
+   "same": 131,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/operations-and-supply-chain-analyst.html",
+   "blocks": 114,
+   "same": 112,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/operations-manager.html",
+   "blocks": 150,
+   "same": 148,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/ot-ics-security-specialist.html",
+   "blocks": 112,
+   "same": 110,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+   "blocks": 128,
+   "same": 126,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/people-hr-analyst.html",
+   "blocks": 99,
+   "same": 97,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/private-banker-wealth-manager.html",
+   "blocks": 128,
+   "same": 126,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/private-credit-analyst-associate.html",
+   "blocks": 131,
+   "same": 128,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/private-equity-associate-to-partner.html",
+   "blocks": 139,
+   "same": 137,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/product-experimentation-data-scientist.html",
+   "blocks": 133,
+   "same": 131,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/product-manager.html",
+   "blocks": 130,
+   "same": 128,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/product-marketing-manager.html",
+   "blocks": 125,
+   "same": 123,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/project-programme-manager.html",
+   "blocks": 126,
+   "same": 124,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/public-sector-and-non-profit-manager.html",
+   "blocks": 113,
+   "same": 111,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/qa-test-automation-engineer-sdet.html",
+   "blocks": 116,
+   "same": 114,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/quant-developer-trading-systems-engineer.html",
+   "blocks": 129,
+   "same": 126,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+   "blocks": 135,
+   "same": 132,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/research-engineer.html",
+   "blocks": 123,
+   "same": 120,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/restructuring.html",
+   "blocks": 140,
+   "same": 137,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/risk-management-at-banks-insurers-and-asset-managers.html",
+   "blocks": 138,
+   "same": 135,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/sales-and-business-development.html",
+   "blocks": 166,
+   "same": 164,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/security-architect.html",
+   "blocks": 100,
+   "same": 98,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/security-consultant-and-the-path-to-ciso.html",
+   "blocks": 127,
+   "same": 125,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/security-engineer-cloud-security-engineer-iam-engineer.html",
+   "blocks": 131,
+   "same": 129,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/sell-side-equity-research-analyst.html",
+   "blocks": 125,
+   "same": 122,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/shipping-and-maritime-roles.html",
+   "blocks": 133,
+   "same": 131,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/soc-analyst.html",
+   "blocks": 134,
+   "same": 132,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/solutions-engineer-sales-engineer-developer-advocate.html",
+   "blocks": 134,
+   "same": 131,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/specialist-boutique-consultant.html",
+   "blocks": 130,
+   "same": 128,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/startup-operator-founder-s-associate-chief-of-staff.html",
+   "blocks": 113,
+   "same": 111,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/statistician-biostatistician.html",
+   "blocks": 138,
+   "same": 136,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+   "blocks": 159,
+   "same": 157,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/structurer.html",
+   "blocks": 133,
+   "same": 130,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+   "blocks": 127,
+   "same": 125,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/supply-chain-consultant.html",
+   "blocks": 105,
+   "same": 103,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/sustainability-reporting-esg-assurance-specialist.html",
+   "blocks": 120,
+   "same": 118,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/tax-advisor-tax-accountant.html",
+   "blocks": 134,
+   "same": 132,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/tech-sector-economist.html",
+   "blocks": 90,
+   "same": 88,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/technical-programme-manager-and-product-operations.html",
+   "blocks": 121,
+   "same": 119,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/technology-and-digital-consultant.html",
+   "blocks": 126,
+   "same": 124,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/technology-consultant-at-an-it-consultancy-system-integrator.html",
+   "blocks": 124,
+   "same": 121,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/think-tank-policy-researcher.html",
+   "blocks": 104,
+   "same": 102,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/threat-intelligence-analyst.html",
+   "blocks": 122,
+   "same": 120,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/trader-analyst-at-a-physical-commodity-trading-house.html",
+   "blocks": 137,
+   "same": 134,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/trader-at-a-bank.html",
+   "blocks": 151,
+   "same": 148,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/transaction-services-valuation-corporate-finance-advisory-at-big.html",
+   "blocks": 124,
+   "same": 121,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+   "blocks": 128,
+   "same": 125,
+   "moved": 2,
+   "missing": 0,
+   "to": {
+    "method.html": 1,
+    "study.html": 1
+   }
+  },
+  {
+   "file": "careers/roles/warehouse-distribution-operations-manager.html",
+   "blocks": 126,
+   "same": 124,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/sources.html",
+   "blocks": 886,
+   "same": 884,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "careers/toolkit.html",
+   "blocks": 332,
+   "same": 330,
+   "moved": 1,
+   "missing": 0,
+   "to": {
+    "method.html": 1
+   }
+  },
+  {
+   "file": "computing.html",
+   "blocks": 12,
+   "same": 12,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "hiring.html",
+   "blocks": 14,
+   "same": 14,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "index.html",
+   "blocks": 38,
+   "same": 3,
+   "moved": 33,
+   "missing": 0,
+   "to": {
+    "study.html": 33
+   }
+  },
+  {
+   "file": "it.html",
+   "blocks": 27,
+   "same": 27,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "map.html",
+   "blocks": 13,
+   "same": 13,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "masters.html",
+   "blocks": 12,
+   "same": 12,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "mba.html",
+   "blocks": 15,
+   "same": 15,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  },
+  {
+   "file": "programmes.html",
+   "blocks": 13,
+   "same": 13,
+   "moved": 0,
+   "missing": 0,
+   "to": {}
+  }
+ ]
+}

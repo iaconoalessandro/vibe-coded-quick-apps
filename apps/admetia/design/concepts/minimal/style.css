@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..700&display=swap');
+:root{--bg:#fff;--bg-2:#f6f6f5;--ink:#0a0a0a;--soft:#3f3f3f;--muted:#7a7a7a;--line:#ebebea;--amber:#ff9f0a;--amber-soft:#fff4e0;--rose:#f0506e;--ok:#0a0a0a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:"Geist Mono",ui-monospace,monospace}
+.nav{display:flex;align-items:center;gap:30px;padding:22px 48px;font-size:14.5px;color:var(--soft)}
+.nav .wm{font-weight:650;color:var(--ink);letter-spacing:-.02em;font-size:16px;display:flex;align-items:center;gap:9px}
+.nav .wm i{width:22px;height:22px;border-radius:50%;background:conic-gradient(from 200deg,var(--amber),var(--rose),var(--amber))}
+.nav .sp{flex:1}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--soft)}
+.pill i{width:7px;height:7px;border-radius:50%;background:#22c55e}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:14px 26px;font-weight:550;font-size:15.5px;background:var(--ink);color:#fff}
+.btn.l{background:var(--bg-2);color:var(--ink)}.btn svg{width:17px;height:17px}
+.lbl{font:500 12px "Geist Mono";letter-spacing:.04em;color:var(--muted);text-transform:uppercase}

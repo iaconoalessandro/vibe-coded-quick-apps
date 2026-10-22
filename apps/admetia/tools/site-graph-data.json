@@ -1,0 +1,1891 @@
+{
+  "coreNodes": [
+    {
+      "id": "index.html",
+      "label": "Home",
+      "title": "Admetia Home Portal",
+      "group": "core",
+      "path": "index.html",
+      "level": 1,
+      "size": 26,
+      "desc": "The main landing portal for independent admissions calculators, career guidance, and global mobility data."
+    },
+    {
+      "id": "study.html",
+      "label": "Masters Hub",
+      "title": "Masters Overview",
+      "group": "study",
+      "path": "study.html",
+      "level": 2,
+      "size": 22,
+      "desc": "Strategy guide and index for European and UK master programmes across business and computing."
+    },
+    {
+      "id": "programmes.html",
+      "label": "Directory",
+      "title": "Programme Directory",
+      "group": "study",
+      "path": "programmes.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Searchable database of top master programmes with tuition, class sizes, and deadlines."
+    },
+    {
+      "id": "business.html",
+      "label": "Business Hub",
+      "title": "Business Calculators",
+      "group": "study",
+      "path": "business.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Admissions and ROI calculator portal for MBA, MiF, MiM, and Marketing master degrees."
+    },
+    {
+      "id": "mba.html",
+      "label": "MBA Calc",
+      "title": "MBA Admissions Calculator",
+      "group": "study",
+      "path": "mba.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Scoring engine and statistical admissions odds for top European and US MBA programmes."
+    },
+    {
+      "id": "masters.html",
+      "label": "MiF / MiM Calc",
+      "title": "Finance, Management & Marketing",
+      "group": "study",
+      "path": "masters.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Admissions calculator for pre-experience Master in Finance, Management, and Marketing."
+    },
+    {
+      "id": "it.html",
+      "label": "Computing Hub",
+      "title": "Computing Calculators",
+      "group": "study",
+      "path": "it.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Admissions portal for Computer Science, Data & AI, and Conversion technology master degrees."
+    },
+    {
+      "id": "computing.html",
+      "label": "Tech & AI Calc",
+      "title": "Computing Calculator",
+      "group": "study",
+      "path": "computing.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Scoring calculator for CS, Data Science & AI, and non-STEM conversion master programmes."
+    },
+    {
+      "id": "careers/index.html",
+      "label": "Careers Hub",
+      "title": "Explore Careers",
+      "group": "careers",
+      "path": "careers/index.html",
+      "level": 2,
+      "size": 24,
+      "desc": "Gateway to 120+ career profiles organized by academic background, industry field, and seniority."
+    },
+    {
+      "id": "careers/compass.html",
+      "label": "Career Compass",
+      "title": "Interactive Career Compass",
+      "group": "careers",
+      "path": "careers/compass.html",
+      "level": 3,
+      "size": 21,
+      "desc": "Interactive recommendation tool mapping personal strengths, work-style preferences, and goals to roles."
+    },
+    {
+      "id": "careers/compare.html",
+      "label": "Compare Roles",
+      "title": "Role Comparator",
+      "group": "careers",
+      "path": "careers/compare.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Head-to-head comparison tool for working hours, salary trajectory, stress, and exit opportunities."
+    },
+    {
+      "id": "careers/italy-pay.html",
+      "label": "Italy Pay",
+      "title": "Italian Pay Guide",
+      "group": "careers",
+      "path": "careers/italy-pay.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Realistic gross-to-net salary calculator, tax brackets, and progression across Italian employment sectors."
+    },
+    {
+      "id": "careers/sources.html",
+      "label": "Sources",
+      "title": "Career Research Sources",
+      "group": "careers",
+      "path": "careers/sources.html",
+      "level": 3,
+      "size": 15,
+      "desc": "Primary evidence base, alumni placement reports, salary surveys, and recruitment datasets."
+    },
+    {
+      "id": "jobs.html",
+      "label": "Jobs Hub",
+      "title": "Internship & Job Hunt",
+      "group": "jobs",
+      "path": "jobs.html",
+      "level": 2,
+      "size": 22,
+      "desc": "Framework and playbooks for securing internships and graduate positions across Europe."
+    },
+    {
+      "id": "hiring.html",
+      "label": "Hiring by Country",
+      "title": "Hiring by Country",
+      "group": "jobs",
+      "path": "hiring.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Country-by-country breakdown of sponsorship policies, language requirements, and hiring seasons."
+    },
+    {
+      "id": "careers/recruiting-calendar.html",
+      "label": "Recruiting Calendar",
+      "title": "Recruiting Calendar",
+      "group": "jobs",
+      "path": "careers/recruiting-calendar.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Timeline of graduate scheme deadlines and summer internship recruiting windows across Europe."
+    },
+    {
+      "id": "careers/toolkit.html",
+      "label": "Application Toolkit",
+      "title": "Application Toolkit",
+      "group": "jobs",
+      "path": "careers/toolkit.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Curated templates for resumes, cover letters, and cold email outreach to hiring managers."
+    },
+    {
+      "id": "careers/interview-prep.html",
+      "label": "Interview Prep",
+      "title": "Interview Prep Guide",
+      "group": "jobs",
+      "path": "careers/interview-prep.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Frameworks for technical cases, behavioral interviews, coding challenges, and assessment centres."
+    },
+    {
+      "id": "map.html",
+      "label": "Atlas (Map)",
+      "title": "Map Intelligence",
+      "group": "map",
+      "path": "map.html",
+      "level": 2,
+      "size": 24,
+      "desc": "World map of graduate hiring hubs, net income benchmarks, and passport/visa accessibility."
+    },
+    {
+      "id": "method.html",
+      "label": "Methodology",
+      "title": "Sources & Methodology",
+      "group": "method",
+      "path": "method.html",
+      "level": 2,
+      "size": 20,
+      "desc": "Transparent explanation of scoring algorithms, calibration metrics, and data integrity standards."
+    }
+  ],
+  "fieldNodes": [
+    {
+      "id": "careers/fields/accounting.html",
+      "label": "Accounting",
+      "title": "Accounting — Career Field",
+      "group": "fields",
+      "path": "careers/fields/accounting.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific."
+    },
+    {
+      "id": "careers/fields/artificial-intelligence.html",
+      "label": "Artificial Intelligence",
+      "title": "Artificial Intelligence — Career Field",
+      "group": "fields",
+      "path": "careers/fields/artificial-intelligence.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; cro"
+    },
+    {
+      "id": "careers/fields/computer-science.html",
+      "label": "Computer Science",
+      "title": "Computer Science — Career Field",
+      "group": "fields",
+      "path": "careers/fields/computer-science.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade."
+    },
+    {
+      "id": "careers/fields/cybersecurity.html",
+      "label": "Cybersecurity",
+      "title": "Cybersecurity — Career Field",
+      "group": "fields",
+      "path": "careers/fields/cybersecurity.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite &quot;skills gap&quot; headlines."
+    },
+    {
+      "id": "careers/fields/data-analytics.html",
+      "label": "Data Analytics",
+      "title": "Data Analytics — Career Field",
+      "group": "fields",
+      "path": "careers/fields/data-analytics.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door."
+    },
+    {
+      "id": "careers/fields/data-science.html",
+      "label": "Data Science",
+      "title": "Data Science — Career Field",
+      "group": "fields",
+      "path": "careers/fields/data-science.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting."
+    },
+    {
+      "id": "careers/fields/economics.html",
+      "label": "Economics",
+      "title": "Economics — Career Field",
+      "group": "fields",
+      "path": "careers/fields/economics.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top."
+    },
+    {
+      "id": "careers/fields/finance.html",
+      "label": "Finance",
+      "title": "Finance — Career Field",
+      "group": "fields",
+      "path": "careers/fields/finance.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Moving, pricing, investing and protecting money: investment banking and advisory (M&amp;A, ECM, DCM/LevFin, restructuring), sales &amp; trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and"
+    },
+    {
+      "id": "careers/fields/logistics-supply-chain.html",
+      "label": "Logistics &amp; Supply Chain",
+      "title": "Logistics &amp; Supply Chain — Career Field",
+      "group": "fields",
+      "path": "careers/fields/logistics-supply-chain.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting."
+    },
+    {
+      "id": "careers/fields/management-consulting.html",
+      "label": "Management Consulting",
+      "title": "Management Consulting — Career Field",
+      "group": "fields",
+      "path": "careers/fields/management-consulting.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy."
+    },
+    {
+      "id": "careers/fields/management.html",
+      "label": "Management",
+      "title": "Management — Career Field",
+      "group": "fields",
+      "path": "careers/fields/management.html",
+      "level": 4,
+      "size": 15,
+      "desc": "General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management."
+    },
+    {
+      "id": "careers/fields/marketing.html",
+      "label": "Marketing (incl. sales)",
+      "title": "Marketing (incl. sales) — Career Field",
+      "group": "fields",
+      "path": "careers/fields/marketing.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development."
+    },
+    {
+      "id": "careers/fields/product-management-startups.html",
+      "label": "Product Management &amp; Startups",
+      "title": "Product Management &amp; Startups — Career Field",
+      "group": "fields",
+      "path": "careers/fields/product-management-startups.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding)."
+    }
+  ],
+  "bgNodes": [
+    {
+      "id": "careers/backgrounds/accounting.html",
+      "label": "Accounting Grad",
+      "title": "Studied Accounting — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/accounting.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Accounting background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/artificial-intelligence.html",
+      "label": "Artificial Intelligence Grad",
+      "title": "Studied Artificial Intelligence — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/artificial-intelligence.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Artificial Intelligence background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/computer-science.html",
+      "label": "Computer Science Grad",
+      "title": "Studied Computer Science — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/computer-science.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Computer Science background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/cybersecurity.html",
+      "label": "Cybersecurity Grad",
+      "title": "Studied Cybersecurity — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/cybersecurity.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Cybersecurity background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/data-analytics.html",
+      "label": "Data Analytics Grad",
+      "title": "Studied Data Analytics — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/data-analytics.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Data Analytics background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/data-science.html",
+      "label": "Data Science Grad",
+      "title": "Studied Data Science — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/data-science.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Data Science background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/economics.html",
+      "label": "Economics Grad",
+      "title": "Studied Economics — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/economics.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Economics background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/finance.html",
+      "label": "Finance Grad",
+      "title": "Studied Finance — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/finance.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Finance background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/logistics-and-supply-chain.html",
+      "label": "Logistics &amp; Supply Chain Grad",
+      "title": "Studied Logistics &amp; Supply Chain — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/logistics-and-supply-chain.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Logistics &amp; Supply Chain background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/management.html",
+      "label": "Management Grad",
+      "title": "Studied Management — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/management.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Management background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/marketing.html",
+      "label": "Marketing Grad",
+      "title": "Studied Marketing — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/marketing.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Marketing background leads to, rated strong, possible or stretch, with the reason for each."
+    }
+  ],
+  "roleNodes": [
+    {
+      "id": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "label": "M&A Banker",
+      "title": "M&A Banker — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "level": 5,
+      "size": 13,
+      "desc": "M&amp;A and industry/coverage banker (analyst to MD) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "label": "Strategy Consultant",
+      "title": "Strategy Consultant — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Strategy consultant (MBB and tier-2), analyst/associate to partner (Management Consulting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/machine-learning-engineer.html",
+      "label": "ML Engineer",
+      "title": "ML Engineer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/machine-learning-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Machine learning engineer (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/backend-software-engineer.html",
+      "label": "Backend Engineer",
+      "title": "Backend Engineer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/backend-software-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Backend software engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "label": "Quant Trader/Researcher",
+      "title": "Quant Trader/Researcher — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Quantitative researcher and quantitative trader (quant funds and prop trading firms) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/private-equity-associate-to-partner.html",
+      "label": "Private Equity",
+      "title": "Private Equity — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/private-equity-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Private equity associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/product-marketing-manager.html",
+      "label": "Product Marketer",
+      "title": "Product Marketer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/product-marketing-manager.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Product marketing manager (tech/B2B) (Marketing (incl. sales)): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/associate-rotational-product-manager.html",
+      "label": "Associate Product Manager",
+      "title": "Associate Product Manager — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/associate-rotational-product-manager.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Associate / rotational product manager (entry programmes) (Product Management &amp; Startups): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/data-scientist-in-banking-and-insurance.html",
+      "label": "Data Scientist (Banking)",
+      "title": "Data Scientist (Banking) — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/data-scientist-in-banking-and-insurance.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Data scientist in banking and insurance (credit, fraud, pricing) (Data Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+      "label": "Cloud Architect",
+      "title": "Cloud Architect — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Cloud engineer / cloud solutions architect (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+      "label": "Red Teamer / Pentester",
+      "title": "Red Teamer / Pentester — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Penetration tester / red teamer / offensive security (Cybersecurity): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/economic-consultant.html",
+      "label": "Economic Consultant",
+      "title": "Economic Consultant — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/economic-consultant.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Economic consultant (competition, litigation, regulation) (Economics): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/financial-accountant-financial-controller.html",
+      "label": "Financial Controller",
+      "title": "Financial Controller — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/financial-accountant-financial-controller.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Financial accountant / financial controller (in industry) (Accounting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+      "label": "Supply Chain Analyst",
+      "title": "Supply Chain Analyst — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Supply chain analyst / supply chain systems specialist (Logistics &amp; Supply Chain): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+      "label": "Venture Capital",
+      "title": "Venture Capital — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Venture capital analyst/associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/ai-research-scientist.html",
+      "label": "AI Researcher",
+      "title": "AI Researcher — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/ai-research-scientist.html",
+      "level": 5,
+      "size": 13,
+      "desc": "AI research scientist (industry and academia) (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/devops-site-reliability-platform-engineer.html",
+      "label": "SRE / DevOps",
+      "title": "SRE / DevOps — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/devops-site-reliability-platform-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "DevOps / site reliability / platform engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    }
+  ],
+  "allNodes": [
+    {
+      "id": "index.html",
+      "label": "Home",
+      "title": "Admetia Home Portal",
+      "group": "core",
+      "path": "index.html",
+      "level": 1,
+      "size": 26,
+      "desc": "The main landing portal for independent admissions calculators, career guidance, and global mobility data."
+    },
+    {
+      "id": "study.html",
+      "label": "Masters Hub",
+      "title": "Masters Overview",
+      "group": "study",
+      "path": "study.html",
+      "level": 2,
+      "size": 22,
+      "desc": "Strategy guide and index for European and UK master programmes across business and computing."
+    },
+    {
+      "id": "programmes.html",
+      "label": "Directory",
+      "title": "Programme Directory",
+      "group": "study",
+      "path": "programmes.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Searchable database of top master programmes with tuition, class sizes, and deadlines."
+    },
+    {
+      "id": "business.html",
+      "label": "Business Hub",
+      "title": "Business Calculators",
+      "group": "study",
+      "path": "business.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Admissions and ROI calculator portal for MBA, MiF, MiM, and Marketing master degrees."
+    },
+    {
+      "id": "mba.html",
+      "label": "MBA Calc",
+      "title": "MBA Admissions Calculator",
+      "group": "study",
+      "path": "mba.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Scoring engine and statistical admissions odds for top European and US MBA programmes."
+    },
+    {
+      "id": "masters.html",
+      "label": "MiF / MiM Calc",
+      "title": "Finance, Management & Marketing",
+      "group": "study",
+      "path": "masters.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Admissions calculator for pre-experience Master in Finance, Management, and Marketing."
+    },
+    {
+      "id": "it.html",
+      "label": "Computing Hub",
+      "title": "Computing Calculators",
+      "group": "study",
+      "path": "it.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Admissions portal for Computer Science, Data & AI, and Conversion technology master degrees."
+    },
+    {
+      "id": "computing.html",
+      "label": "Tech & AI Calc",
+      "title": "Computing Calculator",
+      "group": "study",
+      "path": "computing.html",
+      "level": 4,
+      "size": 19,
+      "desc": "Scoring calculator for CS, Data Science & AI, and non-STEM conversion master programmes."
+    },
+    {
+      "id": "careers/index.html",
+      "label": "Careers Hub",
+      "title": "Explore Careers",
+      "group": "careers",
+      "path": "careers/index.html",
+      "level": 2,
+      "size": 24,
+      "desc": "Gateway to 120+ career profiles organized by academic background, industry field, and seniority."
+    },
+    {
+      "id": "careers/compass.html",
+      "label": "Career Compass",
+      "title": "Interactive Career Compass",
+      "group": "careers",
+      "path": "careers/compass.html",
+      "level": 3,
+      "size": 21,
+      "desc": "Interactive recommendation tool mapping personal strengths, work-style preferences, and goals to roles."
+    },
+    {
+      "id": "careers/compare.html",
+      "label": "Compare Roles",
+      "title": "Role Comparator",
+      "group": "careers",
+      "path": "careers/compare.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Head-to-head comparison tool for working hours, salary trajectory, stress, and exit opportunities."
+    },
+    {
+      "id": "careers/italy-pay.html",
+      "label": "Italy Pay",
+      "title": "Italian Pay Guide",
+      "group": "careers",
+      "path": "careers/italy-pay.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Realistic gross-to-net salary calculator, tax brackets, and progression across Italian employment sectors."
+    },
+    {
+      "id": "careers/sources.html",
+      "label": "Sources",
+      "title": "Career Research Sources",
+      "group": "careers",
+      "path": "careers/sources.html",
+      "level": 3,
+      "size": 15,
+      "desc": "Primary evidence base, alumni placement reports, salary surveys, and recruitment datasets."
+    },
+    {
+      "id": "jobs.html",
+      "label": "Jobs Hub",
+      "title": "Internship & Job Hunt",
+      "group": "jobs",
+      "path": "jobs.html",
+      "level": 2,
+      "size": 22,
+      "desc": "Framework and playbooks for securing internships and graduate positions across Europe."
+    },
+    {
+      "id": "hiring.html",
+      "label": "Hiring by Country",
+      "title": "Hiring by Country",
+      "group": "jobs",
+      "path": "hiring.html",
+      "level": 3,
+      "size": 19,
+      "desc": "Country-by-country breakdown of sponsorship policies, language requirements, and hiring seasons."
+    },
+    {
+      "id": "careers/recruiting-calendar.html",
+      "label": "Recruiting Calendar",
+      "title": "Recruiting Calendar",
+      "group": "jobs",
+      "path": "careers/recruiting-calendar.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Timeline of graduate scheme deadlines and summer internship recruiting windows across Europe."
+    },
+    {
+      "id": "careers/toolkit.html",
+      "label": "Application Toolkit",
+      "title": "Application Toolkit",
+      "group": "jobs",
+      "path": "careers/toolkit.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Curated templates for resumes, cover letters, and cold email outreach to hiring managers."
+    },
+    {
+      "id": "careers/interview-prep.html",
+      "label": "Interview Prep",
+      "title": "Interview Prep Guide",
+      "group": "jobs",
+      "path": "careers/interview-prep.html",
+      "level": 3,
+      "size": 17,
+      "desc": "Frameworks for technical cases, behavioral interviews, coding challenges, and assessment centres."
+    },
+    {
+      "id": "map.html",
+      "label": "Atlas (Map)",
+      "title": "Map Intelligence",
+      "group": "map",
+      "path": "map.html",
+      "level": 2,
+      "size": 24,
+      "desc": "World map of graduate hiring hubs, net income benchmarks, and passport/visa accessibility."
+    },
+    {
+      "id": "method.html",
+      "label": "Methodology",
+      "title": "Sources & Methodology",
+      "group": "method",
+      "path": "method.html",
+      "level": 2,
+      "size": 20,
+      "desc": "Transparent explanation of scoring algorithms, calibration metrics, and data integrity standards."
+    },
+    {
+      "id": "careers/fields/accounting.html",
+      "label": "Accounting",
+      "title": "Accounting — Career Field",
+      "group": "fields",
+      "path": "careers/fields/accounting.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Recording, checking and reporting financial information: external audit, tax, financial and management accounting/controlling, internal audit, forensic accounting, sustainability reporting. Qualification-driven and region-specific."
+    },
+    {
+      "id": "careers/fields/artificial-intelligence.html",
+      "label": "Artificial Intelligence",
+      "title": "Artificial Intelligence — Career Field",
+      "group": "fields",
+      "path": "careers/fields/artificial-intelligence.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Engineering AI systems (ML, LLM applications, MLOps/infrastructure, computer vision/robotics, data and feedback work) and the frontier around them (research science and engineering, safety and evaluations, forward-deployed roles, governance and policy, AI product). Extreme pay for a small elite; cro"
+    },
+    {
+      "id": "careers/fields/computer-science.html",
+      "label": "Computer Science",
+      "title": "Computer Science — Career Field",
+      "group": "fields",
+      "path": "careers/fields/computer-science.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Building software products (backend, frontend, mobile, games, QA, solutions engineering) and running the systems underneath (DevOps/SRE, cloud, embedded, data engineering, enterprise IT, IT consulting, research). The widest pay spread of any branch; the hardest entry-level market in a decade."
+    },
+    {
+      "id": "careers/fields/cybersecurity.html",
+      "label": "Cybersecurity",
+      "title": "Cybersecurity — Career Field",
+      "group": "fields",
+      "path": "careers/fields/cybersecurity.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Defending organisations: SOC monitoring, incident response and forensics, threat intelligence, penetration testing, application and cloud security, architecture, GRC/audit, OT security, consulting and the CISO track. Real demand at mid-level, but a tough first job despite &quot;skills gap&quot; headlines."
+    },
+    {
+      "id": "careers/fields/data-analytics.html",
+      "label": "Data Analytics",
+      "title": "Data Analytics — Career Field",
+      "group": "fields",
+      "path": "careers/fields/data-analytics.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Turning business data into reports, dashboards and answers: data/business analysts, BI developers, analytics engineers, marketing/product analysts, operations analysts, HR analytics, data governance, analytics consulting. The most accessible technical entry door."
+    },
+    {
+      "id": "careers/fields/data-science.html",
+      "label": "Data Science",
+      "title": "Data Science — Career Field",
+      "group": "fields",
+      "path": "careers/fields/data-science.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Using statistics and models to make decisions: product experimentation, ML modelling, operations research, biostatistics, credit/fraud/pricing models in banking and insurance, PhD-track applied science, consulting."
+    },
+    {
+      "id": "careers/fields/economics.html",
+      "label": "Economics",
+      "title": "Economics — Career Field",
+      "group": "fields",
+      "path": "careers/fields/economics.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Being hired as an economist: central banks, international organisations, government and statistics offices, economic consulting, tech-sector economists, think tanks, academia and pre-docs. PhD-heavy at the top."
+    },
+    {
+      "id": "careers/fields/finance.html",
+      "label": "Finance",
+      "title": "Finance — Career Field",
+      "group": "fields",
+      "path": "careers/fields/finance.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Moving, pricing, investing and protecting money: investment banking and advisory (M&amp;A, ECM, DCM/LevFin, restructuring), sales &amp; trading and research, the buy side (asset management, hedge funds, PE, VC, private credit, allocators, private banking), and corporate finance, risk, compliance, quant and"
+    },
+    {
+      "id": "careers/fields/logistics-supply-chain.html",
+      "label": "Logistics &amp; Supply Chain",
+      "title": "Logistics &amp; Supply Chain — Career Field",
+      "group": "fields",
+      "path": "careers/fields/logistics-supply-chain.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Getting goods made, bought, stored and moved: procurement, demand/supply planning, logistics and freight forwarding, warehousing, shipping and maritime, supply chain analytics and systems, consulting."
+    },
+    {
+      "id": "careers/fields/management-consulting.html",
+      "label": "Management Consulting",
+      "title": "Management Consulting — Career Field",
+      "group": "fields",
+      "path": "careers/fields/management-consulting.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Advising organisations on strategy, operations and transformation: MBB and tier-2 strategy firms, Big 4/Accenture, specialist boutiques, technology consulting, in-house strategy."
+    },
+    {
+      "id": "careers/fields/management.html",
+      "label": "Management",
+      "title": "Management — Career Field",
+      "group": "fields",
+      "path": "careers/fields/management.html",
+      "level": 4,
+      "size": 15,
+      "desc": "General business careers inside organisations: graduate leadership programmes, operations management, project/programme management, HR, in-house strategy and BD, public and non-profit management."
+    },
+    {
+      "id": "careers/fields/marketing.html",
+      "label": "Marketing (incl. sales)",
+      "title": "Marketing (incl. sales) — Career Field",
+      "group": "fields",
+      "path": "careers/fields/marketing.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Creating demand and winning customers: brand management, digital/performance, content and social, product marketing, CRM, market research, agency roles, and sales and business development."
+    },
+    {
+      "id": "careers/fields/product-management-startups.html",
+      "label": "Product Management &amp; Startups",
+      "title": "Product Management &amp; Startups — Career Field",
+      "group": "fields",
+      "path": "careers/fields/product-management-startups.html",
+      "level": 4,
+      "size": 15,
+      "desc": "Deciding what software gets built (PM, APM programmes, TPM and product ops) and building young companies (startup operator roles, founding)."
+    },
+    {
+      "id": "careers/backgrounds/accounting.html",
+      "label": "Accounting Grad",
+      "title": "Studied Accounting — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/accounting.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Accounting background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/artificial-intelligence.html",
+      "label": "Artificial Intelligence Grad",
+      "title": "Studied Artificial Intelligence — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/artificial-intelligence.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Artificial Intelligence background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/computer-science.html",
+      "label": "Computer Science Grad",
+      "title": "Studied Computer Science — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/computer-science.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Computer Science background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/cybersecurity.html",
+      "label": "Cybersecurity Grad",
+      "title": "Studied Cybersecurity — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/cybersecurity.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Cybersecurity background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/data-analytics.html",
+      "label": "Data Analytics Grad",
+      "title": "Studied Data Analytics — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/data-analytics.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Data Analytics background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/data-science.html",
+      "label": "Data Science Grad",
+      "title": "Studied Data Science — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/data-science.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Data Science background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/economics.html",
+      "label": "Economics Grad",
+      "title": "Studied Economics — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/economics.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Economics background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/finance.html",
+      "label": "Finance Grad",
+      "title": "Studied Finance — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/finance.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Finance background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/logistics-and-supply-chain.html",
+      "label": "Logistics &amp; Supply Chain Grad",
+      "title": "Studied Logistics &amp; Supply Chain — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/logistics-and-supply-chain.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Logistics &amp; Supply Chain background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/management.html",
+      "label": "Management Grad",
+      "title": "Studied Management — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/management.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Management background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/backgrounds/marketing.html",
+      "label": "Marketing Grad",
+      "title": "Studied Marketing — Background Guide",
+      "group": "backgrounds",
+      "path": "careers/backgrounds/marketing.html",
+      "level": 4,
+      "size": 14,
+      "desc": "Which fields and role families a Marketing background leads to, rated strong, possible or stretch, with the reason for each."
+    },
+    {
+      "id": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "label": "M&A Banker",
+      "title": "M&A Banker — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "level": 5,
+      "size": 13,
+      "desc": "M&amp;A and industry/coverage banker (analyst to MD) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "label": "Strategy Consultant",
+      "title": "Strategy Consultant — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Strategy consultant (MBB and tier-2), analyst/associate to partner (Management Consulting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/machine-learning-engineer.html",
+      "label": "ML Engineer",
+      "title": "ML Engineer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/machine-learning-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Machine learning engineer (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/backend-software-engineer.html",
+      "label": "Backend Engineer",
+      "title": "Backend Engineer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/backend-software-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Backend software engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "label": "Quant Trader/Researcher",
+      "title": "Quant Trader/Researcher — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Quantitative researcher and quantitative trader (quant funds and prop trading firms) (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/private-equity-associate-to-partner.html",
+      "label": "Private Equity",
+      "title": "Private Equity — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/private-equity-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Private equity associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/product-marketing-manager.html",
+      "label": "Product Marketer",
+      "title": "Product Marketer — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/product-marketing-manager.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Product marketing manager (tech/B2B) (Marketing (incl. sales)): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/associate-rotational-product-manager.html",
+      "label": "Associate Product Manager",
+      "title": "Associate Product Manager — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/associate-rotational-product-manager.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Associate / rotational product manager (entry programmes) (Product Management &amp; Startups): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/data-scientist-in-banking-and-insurance.html",
+      "label": "Data Scientist (Banking)",
+      "title": "Data Scientist (Banking) — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/data-scientist-in-banking-and-insurance.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Data scientist in banking and insurance (credit, fraud, pricing) (Data Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+      "label": "Cloud Architect",
+      "title": "Cloud Architect — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Cloud engineer / cloud solutions architect (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+      "label": "Red Teamer / Pentester",
+      "title": "Red Teamer / Pentester — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Penetration tester / red teamer / offensive security (Cybersecurity): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/economic-consultant.html",
+      "label": "Economic Consultant",
+      "title": "Economic Consultant — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/economic-consultant.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Economic consultant (competition, litigation, regulation) (Economics): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/financial-accountant-financial-controller.html",
+      "label": "Financial Controller",
+      "title": "Financial Controller — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/financial-accountant-financial-controller.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Financial accountant / financial controller (in industry) (Accounting): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+      "label": "Supply Chain Analyst",
+      "title": "Supply Chain Analyst — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Supply chain analyst / supply chain systems specialist (Logistics &amp; Supply Chain): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+      "label": "Venture Capital",
+      "title": "Venture Capital — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+      "level": 5,
+      "size": 13,
+      "desc": "Venture capital analyst/associate to partner (Finance): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/ai-research-scientist.html",
+      "label": "AI Researcher",
+      "title": "AI Researcher — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/ai-research-scientist.html",
+      "level": 5,
+      "size": 13,
+      "desc": "AI research scientist (industry and academia) (Artificial Intelligence): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    },
+    {
+      "id": "careers/roles/devops-site-reliability-platform-engineer.html",
+      "label": "SRE / DevOps",
+      "title": "SRE / DevOps — Role Profile",
+      "group": "roles",
+      "path": "careers/roles/devops-site-reliability-platform-engineer.html",
+      "level": 5,
+      "size": 13,
+      "desc": "DevOps / site reliability / platform engineer (Computer Science): what you do, hours and stress, pay by region with sources, career path, exits, employers and how to get in."
+    }
+  ],
+  "coreLinks": [
+    {
+      "source": "index.html",
+      "target": "study.html",
+      "label": "Explore Masters"
+    },
+    {
+      "source": "index.html",
+      "target": "careers/index.html",
+      "label": "Explore Careers"
+    },
+    {
+      "source": "index.html",
+      "target": "jobs.html",
+      "label": "Find Jobs"
+    },
+    {
+      "source": "index.html",
+      "target": "map.html",
+      "label": "World Map"
+    },
+    {
+      "source": "index.html",
+      "target": "method.html",
+      "label": "Sources & Method"
+    },
+    {
+      "source": "study.html",
+      "target": "programmes.html",
+      "label": "Browse directory"
+    },
+    {
+      "source": "study.html",
+      "target": "business.html",
+      "label": "Business track"
+    },
+    {
+      "source": "study.html",
+      "target": "it.html",
+      "label": "Computing track"
+    },
+    {
+      "source": "business.html",
+      "target": "mba.html",
+      "label": "MBA scoring"
+    },
+    {
+      "source": "business.html",
+      "target": "masters.html",
+      "label": "MiF / MiM scoring"
+    },
+    {
+      "source": "it.html",
+      "target": "computing.html",
+      "label": "CS & AI scoring"
+    },
+    {
+      "source": "programmes.html",
+      "target": "business.html",
+      "label": "Calculate admission"
+    },
+    {
+      "source": "programmes.html",
+      "target": "it.html",
+      "label": "Calculate admission"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/compass.html",
+      "label": "Take assessment"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/compare.html",
+      "label": "Compare options"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/italy-pay.html",
+      "label": "Compensation benchmark"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/sources.html",
+      "label": "Evidence base"
+    },
+    {
+      "source": "careers/compass.html",
+      "target": "careers/compare.html",
+      "label": "Compare matches"
+    },
+    {
+      "source": "careers/compare.html",
+      "target": "careers/italy-pay.html",
+      "label": "Deep dive pay"
+    },
+    {
+      "source": "jobs.html",
+      "target": "hiring.html",
+      "label": "Country policies"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/recruiting-calendar.html",
+      "label": "Recruitment cycles"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/toolkit.html",
+      "label": "CV & outreach"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/interview-prep.html",
+      "label": "Case & technical prep"
+    },
+    {
+      "source": "careers/recruiting-calendar.html",
+      "target": "careers/toolkit.html",
+      "label": "Prepare docs"
+    },
+    {
+      "source": "careers/toolkit.html",
+      "target": "careers/interview-prep.html",
+      "label": "Next: interviews"
+    },
+    {
+      "source": "mba.html",
+      "target": "map.html",
+      "label": "Global MBA hubs"
+    },
+    {
+      "source": "mba.html",
+      "target": "careers/index.html",
+      "label": "Post-MBA careers"
+    },
+    {
+      "source": "masters.html",
+      "target": "careers/index.html",
+      "label": "Target finance / consulting"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/index.html",
+      "label": "Tech & ML career paths"
+    },
+    {
+      "source": "computing.html",
+      "target": "map.html",
+      "label": "European tech hubs"
+    },
+    {
+      "source": "careers/compass.html",
+      "target": "jobs.html",
+      "label": "Apply to recommended roles"
+    },
+    {
+      "source": "hiring.html",
+      "target": "map.html",
+      "label": "Country visa & salary data"
+    },
+    {
+      "source": "method.html",
+      "target": "study.html",
+      "label": "Calibrate scoring models"
+    },
+    {
+      "source": "method.html",
+      "target": "map.html",
+      "label": "Salary purchasing parity"
+    },
+    {
+      "source": "method.html",
+      "target": "careers/sources.html",
+      "label": "Data verification"
+    }
+  ],
+  "allLinks": [
+    {
+      "source": "index.html",
+      "target": "study.html",
+      "label": "Explore Masters"
+    },
+    {
+      "source": "index.html",
+      "target": "careers/index.html",
+      "label": "Explore Careers"
+    },
+    {
+      "source": "index.html",
+      "target": "jobs.html",
+      "label": "Find Jobs"
+    },
+    {
+      "source": "index.html",
+      "target": "map.html",
+      "label": "World Map"
+    },
+    {
+      "source": "index.html",
+      "target": "method.html",
+      "label": "Sources & Method"
+    },
+    {
+      "source": "study.html",
+      "target": "programmes.html",
+      "label": "Browse directory"
+    },
+    {
+      "source": "study.html",
+      "target": "business.html",
+      "label": "Business track"
+    },
+    {
+      "source": "study.html",
+      "target": "it.html",
+      "label": "Computing track"
+    },
+    {
+      "source": "business.html",
+      "target": "mba.html",
+      "label": "MBA scoring"
+    },
+    {
+      "source": "business.html",
+      "target": "masters.html",
+      "label": "MiF / MiM scoring"
+    },
+    {
+      "source": "it.html",
+      "target": "computing.html",
+      "label": "CS & AI scoring"
+    },
+    {
+      "source": "programmes.html",
+      "target": "business.html",
+      "label": "Calculate admission"
+    },
+    {
+      "source": "programmes.html",
+      "target": "it.html",
+      "label": "Calculate admission"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/compass.html",
+      "label": "Take assessment"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/compare.html",
+      "label": "Compare options"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/italy-pay.html",
+      "label": "Compensation benchmark"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/sources.html",
+      "label": "Evidence base"
+    },
+    {
+      "source": "careers/compass.html",
+      "target": "careers/compare.html",
+      "label": "Compare matches"
+    },
+    {
+      "source": "careers/compare.html",
+      "target": "careers/italy-pay.html",
+      "label": "Deep dive pay"
+    },
+    {
+      "source": "jobs.html",
+      "target": "hiring.html",
+      "label": "Country policies"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/recruiting-calendar.html",
+      "label": "Recruitment cycles"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/toolkit.html",
+      "label": "CV & outreach"
+    },
+    {
+      "source": "jobs.html",
+      "target": "careers/interview-prep.html",
+      "label": "Case & technical prep"
+    },
+    {
+      "source": "careers/recruiting-calendar.html",
+      "target": "careers/toolkit.html",
+      "label": "Prepare docs"
+    },
+    {
+      "source": "careers/toolkit.html",
+      "target": "careers/interview-prep.html",
+      "label": "Next: interviews"
+    },
+    {
+      "source": "mba.html",
+      "target": "map.html",
+      "label": "Global MBA hubs"
+    },
+    {
+      "source": "mba.html",
+      "target": "careers/index.html",
+      "label": "Post-MBA careers"
+    },
+    {
+      "source": "masters.html",
+      "target": "careers/index.html",
+      "label": "Target finance / consulting"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/index.html",
+      "label": "Tech & ML career paths"
+    },
+    {
+      "source": "computing.html",
+      "target": "map.html",
+      "label": "European tech hubs"
+    },
+    {
+      "source": "careers/compass.html",
+      "target": "jobs.html",
+      "label": "Apply to recommended roles"
+    },
+    {
+      "source": "hiring.html",
+      "target": "map.html",
+      "label": "Country visa & salary data"
+    },
+    {
+      "source": "method.html",
+      "target": "study.html",
+      "label": "Calibrate scoring models"
+    },
+    {
+      "source": "method.html",
+      "target": "map.html",
+      "label": "Salary purchasing parity"
+    },
+    {
+      "source": "method.html",
+      "target": "careers/sources.html",
+      "label": "Data verification"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/accounting.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/artificial-intelligence.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/computer-science.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/cybersecurity.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/data-analytics.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/data-science.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/economics.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/finance.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/logistics-supply-chain.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/management-consulting.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/management.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/marketing.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/fields/product-management-startups.html",
+      "label": "Field profile"
+    },
+    {
+      "source": "mba.html",
+      "target": "careers/fields/management-consulting.html",
+      "label": "Consulting pipeline"
+    },
+    {
+      "source": "mba.html",
+      "target": "careers/fields/finance.html",
+      "label": "Private equity / IB"
+    },
+    {
+      "source": "masters.html",
+      "target": "careers/fields/finance.html",
+      "label": "Markets & M&A"
+    },
+    {
+      "source": "masters.html",
+      "target": "careers/fields/management-consulting.html",
+      "label": "Strategy consulting"
+    },
+    {
+      "source": "masters.html",
+      "target": "careers/fields/marketing.html",
+      "label": "Brand & growth"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/fields/computer-science.html",
+      "label": "Software engineering"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/fields/artificial-intelligence.html",
+      "label": "AI research & ML"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/fields/data-science.html",
+      "label": "Data science"
+    },
+    {
+      "source": "computing.html",
+      "target": "careers/fields/cybersecurity.html",
+      "label": "SecOps & Red teaming"
+    },
+    {
+      "source": "careers/compass.html",
+      "target": "careers/fields/product-management-startups.html",
+      "label": "Tech PM match"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/accounting.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/artificial-intelligence.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/computer-science.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/cybersecurity.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/data-analytics.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/data-science.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/economics.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/finance.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/logistics-and-supply-chain.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/management.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/index.html",
+      "target": "careers/backgrounds/marketing.html",
+      "label": "By study background"
+    },
+    {
+      "source": "careers/backgrounds/computer-science.html",
+      "target": "computing.html",
+      "label": "Deepen with tech master"
+    },
+    {
+      "source": "careers/backgrounds/finance.html",
+      "target": "masters.html",
+      "label": "Target MiF / MSc Finance"
+    },
+    {
+      "source": "careers/backgrounds/economics.html",
+      "target": "masters.html",
+      "label": "Economics to MiM/MiF"
+    },
+    {
+      "source": "careers/backgrounds/management.html",
+      "target": "mba.html",
+      "label": "Early-career to MBA"
+    },
+    {
+      "source": "careers/backgrounds/data-science.html",
+      "target": "computing.html",
+      "label": "Advanced AI master"
+    },
+    {
+      "source": "careers/fields/finance.html",
+      "target": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/management-consulting.html",
+      "target": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/artificial-intelligence.html",
+      "target": "careers/roles/machine-learning-engineer.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/computer-science.html",
+      "target": "careers/roles/backend-software-engineer.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/finance.html",
+      "target": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/finance.html",
+      "target": "careers/roles/private-equity-associate-to-partner.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/marketing.html",
+      "target": "careers/roles/product-marketing-manager.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/product-management-startups.html",
+      "target": "careers/roles/associate-rotational-product-manager.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/data-science.html",
+      "target": "careers/roles/data-scientist-in-banking-and-insurance.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/computer-science.html",
+      "target": "careers/roles/cloud-engineer-cloud-solutions-architect.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/cybersecurity.html",
+      "target": "careers/roles/penetration-tester-red-teamer-offensive-security.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/economics.html",
+      "target": "careers/roles/economic-consultant.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/accounting.html",
+      "target": "careers/roles/financial-accountant-financial-controller.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/logistics-supply-chain.html",
+      "target": "careers/roles/supply-chain-analyst-supply-chain-systems-specialist.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/finance.html",
+      "target": "careers/roles/venture-capital-analyst-associate-to-partner.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/artificial-intelligence.html",
+      "target": "careers/roles/ai-research-scientist.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/fields/computer-science.html",
+      "target": "careers/roles/devops-site-reliability-platform-engineer.html",
+      "label": "Role guide"
+    },
+    {
+      "source": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "target": "careers/recruiting-calendar.html",
+      "label": "Spring weeks & summer analyst timeline"
+    },
+    {
+      "source": "careers/roles/strategy-consultant-analyst-associate-to-partner.html",
+      "target": "careers/interview-prep.html",
+      "label": "Case interview framework"
+    },
+    {
+      "source": "careers/roles/machine-learning-engineer.html",
+      "target": "careers/interview-prep.html",
+      "label": "System design & coding"
+    },
+    {
+      "source": "careers/roles/quantitative-researcher-and-quantitative-trader.html",
+      "target": "careers/interview-prep.html",
+      "label": "Maths & probability rounds"
+    },
+    {
+      "source": "careers/roles/m-and-a-and-industry-coverage-banker.html",
+      "target": "careers/toolkit.html",
+      "label": "Investment banking CV format"
+    }
+  ]
+}

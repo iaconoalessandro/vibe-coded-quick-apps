@@ -1,0 +1,50 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="style.css"><script src="../data.js"></script>
+<style>
+.bento{grid-template-rows:auto}
+.q{grid-column:span 8;grid-row:span 3;padding:32px 34px}
+.q .lab{color:var(--lilac-d);opacity:1}
+.q h1{font:800 50px/1 "Bricolage Grotesque";letter-spacing:-.04em;margin:12px 0 8px}
+.q .help{color:var(--muted);margin:0 0 22px}
+.opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.o{border-radius:22px;background:var(--bg);padding:18px 18px 16px;min-height:132px;display:flex;flex-direction:column;border:2px solid transparent}
+.o .pc{font:800 44px/1 "Bricolage Grotesque";letter-spacing:-.03em}.o .top{font:700 11px Inter;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-bottom:4px}
+.o b{font-size:15px;margin-top:auto}.o small{color:var(--muted);font-size:12.5px;line-height:1.35}
+.o.on{background:var(--ink);color:#fff}.o.on small{color:rgba(255,255,255,.65)}.o.on .pc{color:var(--butter)}
+.foot{display:flex;align-items:center;gap:10px;margin-top:22px}.foot .sp{flex:1}
+.back{background:var(--bg);color:var(--ink)}
+.side{grid-column:span 4;display:grid;gap:14px;align-content:start}
+.sc{background:var(--mint);padding:24px 26px}
+.sc .n{font:800 84px/1 "Bricolage Grotesque";letter-spacing:-.05em;margin:6px 0 4px}.sc .n small{font-size:24px;opacity:.5;letter-spacing:0;margin-left:6px}
+.gauge{height:14px;border-radius:99px;background:rgba(255,255,255,.7);overflow:hidden}.gauge i{display:block;height:100%;width:70%;background:var(--mint-d);border-radius:99px}
+.pr{background:var(--tile);padding:22px 26px}
+.segs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:12px 0 10px}.segs i{height:10px;border-radius:99px;background:var(--bg)}.segs i.d{background:var(--ink)}.segs i.c{background:linear-gradient(90deg,var(--ink) 40%,var(--bg) 40%)}
+.pr ul{margin:0;padding:0;list-style:none;font-size:14px;display:grid;gap:6px}.pr li{display:flex;gap:10px;align-items:center}.pr li i{width:20px;height:20px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-style:normal;font-size:11px;font-weight:700}
+.pr li.d i{background:var(--ink);color:#fff}.pr li.c{font-weight:700}
+.tip{background:var(--butter);padding:22px 26px}.tip p{margin:8px 0 0;font-size:14.5px;color:#4a3b00}
+</style></head><body><div class="wrap">
+<div class="nav"><div class="logo"><i data-icon="cap"></i>Admission Chances</div><span class="sp"></span><a>Business</a><a class="on">Master in Management</a><a>Save &amp; exit</a></div>
+<div class="bento">
+  <div class="t q"><span class="lab">Step 1 · Your degree</span><h1>Where do you sit in your cohort?</h1><p class="help">Rank within your own cohort travels across borders far better than a converted number does.</p>
+    <div class="opts" id="o"></div>
+    <div class="foot"><span class="btn back">← Back</span><span class="sp"></span><span class="btn">Next question <span data-icon="arrow"></span></span></div></div>
+  <div class="side">
+    <div class="t sc"><span class="lab">Score so far</span><div class="n">70.2<small> /100</small></div><div class="gauge"><i></i></div></div>
+    <div class="t pr"><span class="lab">Your progress</span><div class="segs"><i class="c"></i><i></i><i></i><i></i><i></i></div>
+      <ul><li class="c"><i>1</i>Your degree</li><li><i>2</i>Tests</li><li><i>3</i>Quantitative preparation</li><li><i>4</i>Experience</li><li><i>5</i>Your application</li></ul></div>
+    <div class="t tip"><span class="lab">Good to know</span><p>On the Italian scale, 110 is not a transcript average — committees add discretionary points, so compare by rank instead.</p></div>
+  </div>
+  <div class="t" style="grid-column:span 5;background:var(--sky);padding:24px 28px"><span class="lab">Where this answer counts most</span>
+    <div style="display:grid;gap:10px;margin-top:14px;font-weight:600;font-size:14.5px">
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center">LSE<i style="display:block;height:14px;border-radius:99px;background:var(--sky-d);width:95%"></i></div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center">St. Gallen<i style="display:block;height:14px;border-radius:99px;background:var(--sky-d);width:90%"></i></div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center">Bocconi<i style="display:block;height:14px;border-radius:99px;background:#8fb6f0;width:72%"></i></div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center">HEC Paris<i style="display:block;height:14px;border-radius:99px;background:#8fb6f0;width:44%"></i></div></div></div>
+  <div class="t" style="grid-column:span 7;padding:24px 28px;display:flex;gap:24px;align-items:center"><div style="flex:1"><span class="lab">Italian grade converter · optional</span><p style="margin:8px 0 0;color:var(--soft);font-size:14.5px">Enter your ECTS-weighted exam average to see your projected 110 mark and a comparable GPA side by side.</p></div>
+    <div style="background:var(--bg);border-radius:18px;padding:14px 18px;text-align:center"><div style="font:800 36px 'Bricolage Grotesque'">27.4</div><small style="color:var(--muted)">average /30</small></div>
+    <div style="background:var(--butter);border-radius:18px;padding:14px 18px;text-align:center"><div style="font:800 36px 'Bricolage Grotesque'">3.6</div><small style="color:#6b5500">GPA equivalent</small></div></div>
+</div></div>
+<script>
+var pc=['5%','10%','25%','50%','Mid','Low'];
+document.getElementById('o').innerHTML=D.cohort.map(function(c,i){return '<div class="o'+(i==2?' on':'')+'"><span class="top">'+(i<4?'Top':'&nbsp;')+'</span><span class="pc">'+pc[i]+'</span><b>'+c[1]+'</b><small>'+c[2]+'</small></div>'}).join('');
+</script>
+</body></html>
