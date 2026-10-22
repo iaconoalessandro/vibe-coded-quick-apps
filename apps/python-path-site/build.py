@@ -5,6 +5,7 @@
 Writes two files from the same source:
   dist/artifact.html  the claude.ai artifact (no <html>/<head>: the artifact host adds its own skeleton)
   docs/index.html     the GitHub Pages copy (full document; progress saves only in that browser)
+  docs/python-path.zip  the exercise folder students download (stubs, tests, practice data)
 
 The cheat sheet text comes from the python-path repo's CHEATSHEET.md (single source), and each
 exercise's text from that repo's exercises/*.py stubs. Solutions live in src/solutions/; check them
@@ -14,6 +15,7 @@ import argparse
 import ast
 import json
 import re
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -56,6 +58,17 @@ def exercises(stub_dir):
             assert n.name in sols, f"src/solutions/{stub_file.name} has no {n.name}()"
             fns[f"{week}-{n.name}"] = {"stub": ast.get_source_segment(stub_src, n), "sol": sols[n.name]}
     return {"heads": heads, "fns": fns}
+
+
+def exercise_zip(repo, out):
+    """Pack the student's exercise folder (stubs, tests, practice data) as python-path.zip next to the page."""
+    files = ["README.md", "CHEATSHEET.md", "pyproject.toml", ".gitignore"]
+    files += [p.relative_to(repo).as_posix() for d in ["exercises", "tests", "practice_data"]
+              for p in sorted((repo / d).iterdir()) if p.is_file() and p.name != ".DS_Store"]
+    with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
+        for name in files:
+            # fixed timestamp: the zip only changes when its contents do
+            z.writestr(zipfile.ZipInfo(f"python-path/{name}", (2026, 1, 1, 0, 0, 0)), (repo / name).read_bytes())
 
 
 def slug(title):
@@ -105,4 +118,5 @@ if __name__ == "__main__":
     (ROOT / "dist").mkdir(exist_ok=True)
     (ROOT / "dist" / "artifact.html").write_text(page, encoding="utf-8")
     (ROOT / "docs" / "index.html").write_text(SKELETON + page + "</body></html>", encoding="utf-8")
-    print(f"built dist/artifact.html and docs/index.html ({len(page):,} chars)")
+    exercise_zip(args.exercises.parent, ROOT / "docs" / "python-path.zip")
+    print(f"built dist/artifact.html, docs/index.html and docs/python-path.zip ({len(page):,} chars)")

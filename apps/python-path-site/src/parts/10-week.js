@@ -27,6 +27,7 @@ function wkTask(x) {
 function wkFileHead(w) {
   const head = EXERCISES.heads[w.id];
   return !head ? "" : `<p class="wk-intro">Each exercise is a function in <code>${w.file}</code>: write the body, then run the tests.
+    No exercise folder yet? <a href="${ZIP_URL}" download>Download python-path.zip</a> (stubs, tests, practice data); every week is in it.
     Try it yourself before you open a solution. The top of the file:</p><pre><code>${esc(head)}</code></pre>`;
 }
 function wkQuestion(w, q, i) {
